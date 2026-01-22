@@ -1,0 +1,52 @@
+{% load static %}
+{% comment %}Elevators page: Contact us (Ready--Copy instance 140:5810){% endcomment %}
+
+<section class="demo-elevators-contact" aria-labelledby="elevators-contact-title">
+  <div class="demo-elevators-contact__inner">
+    <h2 class="demo-elevators-contact__title" id="elevators-contact-title">
+      Захватите внимание в шаге от дома клиента
+    </h2>
+    <p class="demo-elevators-contact__text">
+      Оставьте заявку, чтобы получить просчет стоимости и презентацию с примерами интеграции QR-кодов и ботов для вашей сферы
+    </p>
+
+    <form class="demo-elevators-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
+      {% csrf_token %}
+      <input type="hidden" name="source" value="elevators_contact" />
+      <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+
+      <div class="demo-elevators-contact__row">
+        <label class="demo-elevators-contact__field">
+          <span class="sr-only">Имя</span>
+          <input class="demo-elevators-contact__input" type="text" name="name" placeholder=" " autocomplete="name" />
+          <span class="demo-elevators-contact__ph" aria-hidden="true">Имя</span>
+        </label>
+
+        <label class="demo-elevators-contact__field">
+          <span class="sr-only">Телефон</span>
+          <input class="demo-elevators-contact__input" type="tel" name="phone" placeholder=" " autocomplete="tel" required />
+          <span class="demo-elevators-contact__ph" aria-hidden="true">Телефон</span>
+        </label>
+      </div>
+
+      <label class="demo-elevators-contact__field demo-elevators-contact__field--full">
+        <span class="sr-only">Компания</span>
+        <input class="demo-elevators-contact__input" type="text" name="company" placeholder=" " />
+        <span class="demo-elevators-contact__ph" aria-hidden="true">Компания</span>
+      </label>
+
+      <label class="demo-elevators-contact__field demo-elevators-contact__field--full">
+        <span class="sr-only">Интересующий формат</span>
+        <input class="demo-elevators-contact__input" type="text" name="interest_format" placeholder=" " />
+        <span class="demo-elevators-contact__ph" aria-hidden="true">Интересующий формат</span>
+      </label>
+
+      <div class="demo-elevators-contact__actions">
+        <button class="demo-elevators-contact__btn" type="submit">Обсудить мой проект</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+

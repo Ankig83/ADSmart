@@ -1,0 +1,280 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Печать и полиграфия · {{ PROJECT_NAME }}{% endblock %}
+
+{% block page_css %}
+  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/print.css' %}" />
+{% endblock %}
+
+{% block header %}
+  {% include "components/demo/menu.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="demo-print">
+    <section class="demo-print-hero" aria-labelledby="print-hero-title">
+      <div class="demo-print-hero__content">
+        <h1 class="demo-print-hero__title" id="print-hero-title">
+          Печать, которая<br />
+          говорит о вашем<br />
+          уровне
+        </h1>
+        <p class="demo-print-hero__subtitle">
+          Качественная полиграфия и широкоформатная печать от ADSmart — <br />
+          реклама, которую можно потрогать и запомнить.
+        </p>
+
+        <div class="demo-print-hero__actions">
+          <a class="demo-print-hero__btn demo-print-hero__btn--primary" href="#contact">Рассчитать</a>
+          <a class="demo-print-hero__btn demo-print-hero__btn--outline" href="#cases">Наши кейсы</a>
+        </div>
+      </div>
+
+      <div class="demo-print-hero__image-wrap" aria-hidden="true">
+        <div class="demo-print-hero__glow"></div>
+        <img
+          class="demo-print-hero__img"
+          src="{% static 'assets/images/print-hero.png' %}"
+          alt=""
+          width="473"
+          height="556"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <section class="demo-print-system" aria-labelledby="print-system-title">
+      <div class="demo-print-system__inner">
+        <h2 class="demo-print-system__title" id="print-system-title">
+          Ваш бренд — это система,<br />
+          а не набор картинок
+        </h2>
+
+        <div class="demo-print-system__rows">
+          <div class="demo-print-system__row">
+            <div class="demo-print-system__col demo-print-system__col--text">
+              <p class="demo-print-system__p">
+                Каждый напечатанный нами носитель — часть вашей общей стратегии. Мы помогаем выбрать оптимальный формат,
+                бумагу и дизайн, чтобы полиграфия решала конкретную задачу: продавала, информировала, создавала нужное
+                впечатление
+              </p>
+            </div>
+            <div class="demo-print-system__col demo-print-system__col--img">
+              <img
+                class="demo-print-system__img"
+                src="{% static 'assets/images/print-system-1.jpg' %}"
+                alt=""
+                width="504"
+                height="295"
+              />
+            </div>
+          </div>
+
+          <div class="demo-print-system__row demo-print-system__row--reverse">
+            <div class="demo-print-system__col demo-print-system__col--img">
+              <img
+                class="demo-print-system__img"
+                src="{% static 'assets/images/print-system-2.jpg' %}"
+                alt=""
+                width="504"
+                height="295"
+              />
+            </div>
+            <div class="demo-print-system__col demo-print-system__col--text">
+              <div class="demo-print-system__why">
+                <h3 class="demo-print-system__h3">Почему мы:</h3>
+                <ul class="demo-print-system__list">
+                  <li class="demo-print-system__item">Контроль качества на всех этапах</li>
+                  <li class="demo-print-system__item">Современная печать с точной цветопередачей</li>
+                  <li class="demo-print-system__item">Оптимальный подбор материалов под бюджет</li>
+                  <li class="demo-print-system__item">Быстро и строго в срок</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-print-solutions" aria-labelledby="print-solutions-title">
+      <h2 class="demo-print-solutions__title" id="print-solutions-title">
+        Полный спектр полиграфических<br />
+        решений
+      </h2>
+
+      <div class="demo-print-solutions__grid">
+        <div class="demo-print-solutions__card">
+          <div class="demo-print-solutions__icon-wrap">
+            <img
+              class="demo-print-solutions__icon"
+              src="{% static 'assets/icons/frame-133-5179-i140-5254-102-677.svg' %}"
+              alt=""
+            />
+          </div>
+          <div class="demo-print-solutions__content">
+            <h3 class="demo-print-solutions__h3">Деловая полиграфия</h3>
+            <p class="demo-print-solutions__p">
+              Визитки, бланки, папки, конверты. <br />
+              «Лицо вашей компании в каждых руках»
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-print-solutions__card">
+          <div class="demo-print-solutions__icon-wrap">
+            <img class="demo-print-solutions__icon" src="{% static 'assets/icons/book-133-5187.svg' %}" alt="" />
+          </div>
+          <div class="demo-print-solutions__content">
+            <h3 class="demo-print-solutions__h3">Рекламная полиграфия</h3>
+            <p class="demo-print-solutions__p">
+              Листовки, флаеры, буклеты, каталоги. <br />
+              «Яркий акцент для продвижения акций и товаров»
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-print-solutions__card">
+          <div class="demo-print-solutions__icon-wrap">
+            <img
+              class="demo-print-solutions__icon"
+              src="{% static 'assets/icons/frame-133-5192-i140-5256-102-677.svg' %}"
+              alt=""
+            />
+          </div>
+          <div class="demo-print-solutions__content">
+            <h3 class="demo-print-solutions__h3">Календари и открытки</h3>
+            <p class="demo-print-solutions__p">
+              Корпоративные календари, поздравительные открытки. <br />
+              «Полезный подарок, который работает на имидж весь год»
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-print-solutions__card">
+          <div class="demo-print-solutions__icon-wrap">
+            <img class="demo-print-solutions__icon" src="{% static 'assets/icons/print-133-5196.svg' %}" alt="" />
+          </div>
+          <div class="demo-print-solutions__content">
+            <h3 class="demo-print-solutions__h3">Широкоформатная печать</h3>
+            <p class="demo-print-solutions__p">
+              Баннеры для улицы и интерьера, бэклит, постеры, наклейки. <br />
+              «Крупные форматы для крупных заявлений»
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-print-how" aria-labelledby="print-how-title">
+      <h2 class="demo-print-how__title" id="print-how-title">
+        Как мы работаем<br />
+        над вашим заказом
+      </h2>
+
+      <div class="demo-print-how__grid">
+        <div class="demo-print-how__card">
+          <div class="demo-print-how__ring">
+            <img class="demo-print-how__icon" src="{% static 'assets/icons/consultation-133-4949-140-5265.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-print-how__h3">Консультация и ТЗ</h3>
+          <p class="demo-print-how__p">
+            Уточняем цели, сроки, бюджет, помогаем с выбором формата и материалов
+          </p>
+        </div>
+
+        <div class="demo-print-how__card">
+          <div class="demo-print-how__ring">
+            <img class="demo-print-how__icon" src="{% static 'assets/icons/create-133-5126-140-5271.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-print-how__h3">Дизайн/верстка</h3>
+          <p class="demo-print-how__p">
+            Принимаем ваш готовый макет или создаем/дорабатываем его у наших дизайнеров
+          </p>
+        </div>
+
+        <div class="demo-print-how__card">
+          <div class="demo-print-how__ring">
+            <img class="demo-print-how__icon" src="{% static 'assets/icons/print-133-5196-140-5277.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-print-how__h3">Согласование и печать</h3>
+          <p class="demo-print-how__p">
+            Утверждаем цветопробу (при необходимости) и запускаем в печать
+          </p>
+        </div>
+
+        <div class="demo-print-how__card">
+          <div class="demo-print-how__ring">
+            <img class="demo-print-how__icon" src="{% static 'assets/icons/box-133-5203.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-print-how__h3">Готовность и выдача</h3>
+          <p class="demo-print-how__p">
+            Информируем о готовности, упаковываем и выдаем заказ
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-print-contact" aria-labelledby="print-contact-title">
+      <div class="demo-print-contact__inner">
+        <h2 class="demo-print-contact__title" id="print-contact-title">
+          Рассчитайте стоимость<br />
+          вашего заказа
+        </h2>
+        <p class="demo-print-contact__text">
+          Пришлите нам описание задачи (вид продукции, тираж, сроки) или готовый макет. Мы оперативно подготовим расчет
+        </p>
+
+        <form class="demo-print-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
+          {% csrf_token %}
+          <input type="hidden" name="source" value="print_contact" />
+          <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+
+          <div class="demo-print-contact__row">
+            <label class="demo-print-contact__field">
+              <span class="sr-only">Имя</span>
+              <input class="demo-print-contact__input" type="text" name="name" placeholder=" " autocomplete="name" />
+              <span class="demo-print-contact__ph" aria-hidden="true">Имя</span>
+            </label>
+
+            <label class="demo-print-contact__field">
+              <span class="sr-only">Телефон</span>
+              <input class="demo-print-contact__input" type="tel" name="phone" placeholder=" " autocomplete="tel" required />
+              <span class="demo-print-contact__ph" aria-hidden="true">Телефон</span>
+            </label>
+          </div>
+
+          <label class="demo-print-contact__field demo-print-contact__field--full">
+            <span class="sr-only">Сфера бизнеса</span>
+            <input class="demo-print-contact__input" type="text" name="company" placeholder=" " />
+            <span class="demo-print-contact__ph" aria-hidden="true">Сфера бизнеса</span>
+          </label>
+
+          <label class="demo-print-contact__field demo-print-contact__field--full">
+            <span class="sr-only">Какую задачу решаем?</span>
+            <input class="demo-print-contact__input" type="text" name="interest_format" placeholder=" " />
+            <span class="demo-print-contact__ph" aria-hidden="true">Какую задачу решаем?</span>
+          </label>
+
+          <div class="demo-print-contact__actions">
+            <button class="demo-print-contact__btn" type="submit">Обсудить мой проект</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  {% include "components/demo/lead_success_modal.html" %}
+
+  <div id="contact" class="sr-only" aria-hidden="true">contact anchor</div>
+  <div id="cases" class="sr-only" aria-hidden="true">cases anchor</div>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/demo/footer.html" %}
+{% endblock %}
+

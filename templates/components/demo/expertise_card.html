@@ -1,0 +1,37 @@
+{% load static %}
+{% comment %}
+Expertise card (Desktop-16 / Blok).
+Params:
+  - title
+  - icon_svg
+  - bullets (list) OR items (HTML string with <li>...)
+{% endcomment %}
+<article class="demo-exp-card">
+  <div class="demo-exp-card__inner">
+    <div class="demo-exp-card__icon" aria-hidden="true">
+      <img
+        class="demo-exp-card__icon-img"
+        src="{% static icon_svg %}"
+        width="125"
+        height="125"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <div class="demo-exp-card__body">
+      <h3 class="demo-exp-card__title">{{ title }}</h3>
+      <ul class="demo-exp-card__list">
+        {% if bullets %}
+          {% for item in bullets %}
+            <li class="demo-exp-card__item">{{ item }}</li>
+          {% endfor %}
+        {% else %}
+          {{ items|safe }}
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</article>

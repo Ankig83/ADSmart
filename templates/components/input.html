@@ -1,0 +1,29 @@
+{# Params: label, name, value, type=text, placeholder, hint, error #}
+{% with input_id=id|default:name %}
+  <div class="c-field {{ class|default:'' }}">
+    {% if label %}
+      <label class="c-field__label" for="{{ input_id }}">{{ label }}</label>
+    {% endif %}
+    <div class="c-field__control">
+      <input
+        class="c-input {% if error %}is-invalid{% endif %}"
+        id="{{ input_id }}"
+        name="{{ name }}"
+        type="{{ type|default:'text' }}"
+        value="{{ value|default:'' }}"
+        placeholder="{{ placeholder|default:'' }}"
+        {% if disabled %}disabled{% endif %}
+        {% if required %}required{% endif %}
+      />
+    </div>
+    {% if hint %}
+      <div class="c-field__hint">{{ hint }}</div>
+    {% endif %}
+    {% if error %}
+      <div class="c-field__error">{{ error }}</div>
+    {% endif %}
+  </div>
+{% endwith %}
+
+
+

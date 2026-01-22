@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Графический Дизайн · {{ PROJECT_NAME }}{% endblock %}
+
+{% block page_css %}
+  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/design.css' %}" />
+{% endblock %}
+
+{% block header %}
+  {% include "components/demo/menu.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="demo-design">
+    <section class="demo-design-hero" aria-labelledby="design-hero-title">
+      <div class="demo-design-hero__content">
+        <h1 class="demo-design-hero__title" id="design-hero-title">
+          Дизайн, который<br />
+          считает деньги
+        </h1>
+        <p class="demo-design-hero__subtitle">
+          От стратегии бренда до продающего баннера. <br />
+          Создаем визуальный язык, который отличает, запоминается и приводит клиентов
+        </p>
+
+        <div class="demo-design-hero__actions">
+          <a class="demo-design-hero__btn demo-design-hero__btn--primary" href="#contact">Рассчитать</a>
+          <a class="demo-design-hero__btn demo-design-hero__btn--outline" href="#cases">Наши кейсы</a>
+        </div>
+      </div>
+
+      <div class="demo-design-hero__image-wrap" aria-hidden="true">
+        <div class="demo-design-hero__glow"></div>
+        <img
+          class="demo-design-hero__img"
+          src="{% static 'assets/images/design-hero.png' %}"
+          alt=""
+          width="473"
+          height="444"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <section class="demo-design-system" aria-labelledby="design-system-title">
+      <div class="demo-design-system__inner">
+        <h2 class="demo-design-system__title" id="design-system-title">
+          Ваш бренд — это система, а не<br />
+          набор картинок
+        </h2>
+
+        <div class="demo-design-system__content">
+          <div class="demo-design-system__left">
+            <p class="demo-design-system__text">
+              Качественный дизайн начинается с понимания бизнеса. Мы создаем не просто макеты, а масштабируемую
+              визуальную систему, которая работает в рекламе, цифровых каналах и офлайн — и помогает вашему бизнесу расти.
+            </p>
+          </div>
+          <div class="demo-design-system__right">
+            <img
+              class="demo-design-system__img"
+              src="{% static 'assets/images/design-system.jpg' %}"
+              alt=""
+              width="504"
+              height="295"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-design-cycle" aria-labelledby="design-cycle-title">
+      <h2 class="demo-design-cycle__title" id="design-cycle-title">
+        Полный цикл дизайн-поддержки
+      </h2>
+
+      <div class="demo-design-cycle__grid">
+        <div class="demo-design-cycle__card">
+          <div class="demo-design-cycle__icon-wrap">
+            <img class="demo-design-cycle__icon" src="{% static 'assets/icons/target-133-5046-140-5157.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-design-cycle__h3">Фундамент бренда</h3>
+          <p class="demo-design-cycle__p">
+            Разработка логотипа и айдентики. Создание фирменного стиля (брендбука). Дизайн упаковки и полиграфии.
+            «Создаем узнаваемое лицо компании».
+          </p>
+        </div>
+
+        <div class="demo-design-cycle__card">
+          <div class="demo-design-cycle__icon-wrap">
+            <img class="demo-design-cycle__icon" src="{% static 'assets/icons/frame-133-5150-140-5165.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-design-cycle__h3">Дизайн для рекламы и продвижения</h3>
+          <p class="demo-design-cycle__p">
+            Креативы для наружной рекламы (билборды, ситилайты). Дизайн для digital-каналов (баннеры, соцсети, сайты,
+            лендинги). Оформление презентаций и коммерческих предложений. «Визуализируем ваше ключевое сообщение для любой
+            цели».
+          </p>
+        </div>
+
+        <div class="demo-design-cycle__card">
+          <div class="demo-design-cycle__icon-wrap">
+            <img class="demo-design-cycle__icon" src="{% static 'assets/icons/design-133-5037-140-5174.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-design-cycle__h3">Графическое сопровождение</h3>
+          <p class="demo-design-cycle__p">
+            Подготовка макетов к печати (верстка каталогов, буклетов). Регулярное создание контента для социальных сетей.
+            Разработка инфографики и иллюстраций. «Обеспечиваем визуальную поддержку на всех фронтах».
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-design-how" aria-labelledby="design-how-title">
+      <h2 class="demo-design-how__title" id="design-how-title">
+        Как мы создаем дизайн,<br />
+        который работает
+      </h2>
+
+      <div class="demo-design-how__grid">
+        <div class="demo-design-how__card">
+          <div class="demo-design-how__ring">
+            <img class="demo-design-how__icon" src="{% static 'assets/icons/results-133-5154-140-5188.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-design-how__h3">Погружение и стратегия</h3>
+          <p class="demo-design-how__p">
+            Изучаем бизнес, конкурентов, аудиторию. Определяем цели и визуальную стратегию
+          </p>
+        </div>
+
+        <div class="demo-design-how__card">
+          <div class="demo-design-how__ring">
+            <img class="demo-design-how__icon" src="{% static 'assets/icons/create-133-5126-140-5194.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-design-how__h3">Концепция и разработка</h3>
+          <p class="demo-design-how__p">
+            Предлагаем несколько концепций логотипа или стиля. Углубляемся в выбранное направление
+          </p>
+        </div>
+
+        <div class="demo-design-how__card">
+          <div class="demo-design-how__ring">
+            <img class="demo-design-how__icon" src="{% static 'assets/icons/structure-133-5158.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-design-how__h3">Систематизация и передача</h3>
+          <p class="demo-design-how__p">
+            Разрабатываем полный брендбук или гайдлайн. Подготавливаем файлы для всех носителей
+          </p>
+        </div>
+
+        <div class="demo-design-how__card">
+          <div class="demo-design-how__ring">
+            <img class="demo-design-how__icon" src="{% static 'assets/icons/support-133-5161.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-design-how__h3">Поддержка и адаптация</h3>
+          <p class="demo-design-how__p">
+            Помогаем внедрять стиль, создаем дополнительные материалы по запросу
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-design-target" aria-labelledby="design-target-title">
+      <h2 class="demo-design-target__title" id="design-target-title">Для кого это идеально</h2>
+
+      <div class="demo-design-target__grid">
+        <div class="demo-design-target__card">
+          <img class="demo-design-target__icon" src="{% static 'assets/icons/frame-133-5164.svg' %}" alt="" />
+          <div class="demo-design-target__content">
+            <h3 class="demo-design-target__h3">Рекламная экспертиза</h3>
+            <p class="demo-design-target__p">Знаем требования билбордов, полиграфии и digital-форматов</p>
+          </div>
+        </div>
+
+        <div class="demo-design-target__card">
+          <img class="demo-design-target__icon" src="{% static 'assets/icons/chart-line-133-5169.svg' %}" alt="" />
+          <div class="demo-design-target__content">
+            <h3 class="demo-design-target__h3">Дизайн с бизнес-мышлением</h3>
+            <p class="demo-design-target__p">Думаем в метриках: конверсия, узнаваемость, позиционирование</p>
+          </div>
+        </div>
+
+        <div class="demo-design-target__card">
+          <img class="demo-design-target__icon" src="{% static 'assets/icons/diamond-133-5173.svg' %}" alt="" />
+          <div class="demo-design-target__content">
+            <h3 class="demo-design-target__h3">Бренд без искажений</h3>
+            <p class="demo-design-target__p">Единый стиль от брендбука до любой рекламной поверхности</p>
+          </div>
+        </div>
+
+        <div class="demo-design-target__card">
+          <img class="demo-design-target__icon" src="{% static 'assets/icons/frame-133-5176.svg' %}" alt="" />
+          <div class="demo-design-target__content">
+            <h3 class="demo-design-target__h3">Целостная коммуникация</h3>
+            <p class="demo-design-target__p">Все точки контакта работают как одна система</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-design-cta" aria-labelledby="design-cta-title">
+      <div class="demo-design-cta__inner">
+        <h2 class="demo-design-cta__title" id="design-cta-title">
+          Давайте создадим визуальную<br />
+          стратегию для вашего роста
+        </h2>
+        <p class="demo-design-cta__text">
+          Опишите вашу задачу, и мы подготовим индивидуальное предложение с оценкой сроков и стоимости
+        </p>
+
+        <div class="demo-design-cta__actions">
+          <a class="demo-design-cta__btn demo-design-cta__btn--primary" href="#contact">Получить консультацию</a>
+          <a class="demo-design-cta__btn demo-design-cta__btn--outline" href="#cases">Примеры и цены</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  {% include "components/demo/lead_success_modal.html" %}
+
+  <div id="contact" class="sr-only" aria-hidden="true">contact anchor</div>
+  <div id="cases" class="sr-only" aria-hidden="true">cases anchor</div>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/demo/footer.html" %}
+{% endblock %}
+

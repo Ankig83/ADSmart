@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Styleguide · {{ PROJECT_NAME }}{% endblock %}
+
+{% block page_css %}
+  <link rel="stylesheet" href="{% static 'css/pages/styleguide.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <section class="c-section c-section--tight">
+    <div class="container c-section__inner">
+      <header class="c-section__header">
+        <div class="c-section__eyebrow">Components</div>
+        <h1 class="c-section__title">Styleguide</h1>
+      </header>
+
+      <div class="sg">
+        <div class="sg__block">
+          <h2 class="sg__title">Buttons</h2>
+          <div class="sg__row">
+            {% include "components/button.html" with label="Primary" variant="primary" %}
+            {% include "components/button.html" with label="Secondary" variant="secondary" %}
+            {% include "components/button.html" with label="Ghost" variant="ghost" %}
+            {% include "components/button.html" with label="Danger" variant="danger" %}
+            {% include "components/button.html" with label="Small" variant="primary" size="sm" %}
+          </div>
+        </div>
+
+        <div class="sg__block">
+          <h2 class="sg__title">Inputs</h2>
+          <div class="sg__grid">
+            {% include "components/input.html" with label="Email" name="email" placeholder="you@example.com" %}
+            {% include "components/input.html" with label="Password" name="password" type="password" placeholder="••••••••" %}
+            {% include "components/input.html" with label="Invalid" name="invalid" placeholder="Bad value" error="Example validation error" %}
+          </div>
+        </div>
+
+        <div class="sg__block">
+          <h2 class="sg__title">Badges</h2>
+          <div class="sg__row">
+            {% include "components/badge.html" with text="Neutral" %}
+            {% include "components/badge.html" with text="Success" tone="success" %}
+            {% include "components/badge.html" with text="Warning" tone="warning" %}
+            {% include "components/badge.html" with text="Danger" tone="danger" %}
+            {% include "components/badge.html" with text="Solid" variant="solid" tone="success" %}
+          </div>
+        </div>
+
+        <div class="sg__block">
+          <h2 class="sg__title">Cards</h2>
+          <div class="grid grid--cards">
+            {% include "components/card.html" with title="Card title" subtitle="Subtitle" content="Card body content. Replace with real design blocks." %}
+            {% include "components/card.html" with title="Card" content="Use tokens.css to match Figma typography/spacing." %}
+            {% include "components/card.html" with title="Interactive" content="<button class='c-btn c-btn--secondary c-btn--sm js-toast-demo' type='button'>Toast</button>" %}
+          </div>
+        </div>
+
+        <div class="sg__block">
+          <h2 class="sg__title">Modal</h2>
+          <div class="sg__row">
+            <button class="c-btn c-btn--secondary" type="button" data-modal-open="demo-modal">Open modal</button>
+          </div>
+          {% include "components/modal.html" with id="demo-modal" title="Demo modal" content="<p class='sg__p'>Your content goes here.</p>" %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+

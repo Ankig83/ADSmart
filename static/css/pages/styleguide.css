@@ -1,0 +1,17 @@
+.sg { display: grid; gap: var(--space-8); }
+.sg__block { display: grid; gap: var(--space-3); }
+.sg__title {
+  margin: 0;
+  font-size: var(--text-lg);
+  letter-spacing: -0.01em;
+}
+.sg__row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+.sg__grid { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+.sg__p { margin: 0; }
+
+@media (min-width: 768px) {
+  .sg__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+

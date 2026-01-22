@@ -1,0 +1,17 @@
+{# Params: title (optional), eyebrow (optional) #}
+<section class="c-section {{ class|default:'' }}">
+  <div class="container c-section__inner">
+    {% if eyebrow or title %}
+      <header class="c-section__header">
+        {% if eyebrow %}<div class="c-section__eyebrow">{{ eyebrow }}</div>{% endif %}
+        {% if title %}<h2 class="c-section__title">{{ title }}</h2>{% endif %}
+      </header>
+    {% endif %}
+    <div class="c-section__body">
+      {{ content|default:""|safe }}
+    </div>
+  </div>
+</section>
+
+
+

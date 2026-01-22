@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}404 · {{ PROJECT_NAME }}{% endblock %}
+
+{% block page_css %}
+  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/404.css' %}" />
+{% endblock %}
+
+{% block header %}
+  {% include "components/demo/menu.html" %}
+{% endblock %}
+
+{% block content %}
+  <section class="demo-404" aria-labelledby="demo-404-title">
+    <div class="demo-404__content">
+      <h1 class="demo-404__title" id="demo-404-title">Страница не найдена</h1>
+      <p class="demo-404__desc">
+        Страница, которую вы ищете, не существует или была перемещена. Пожалуйста, вернитесь на главную страницу или воспользуйтесь навигацией по сайту
+      </p>
+      <a class="demo-404__btn" href="{% url 'home_page' %}">Вернуться на главную</a>
+
+      <div class="demo-404__art" aria-hidden="true">
+        <img
+          class="demo-404__art-img"
+          src="{% static 'assets/images/vecteezy-3d-error-404-for-landing-page-24584237-1@2x.png' %}"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/demo/footer.html" %}
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,617 @@
+/* Elevators/Intercom page (Ready--Copy frame 140:5742). Desktop 1440 only for now. */
+.app { background: #000000; }
+.app__main { padding: 0; }
+
+.demo-elevators {
+  width: 1440px;
+  margin: 0 auto;
+  background: #000000;
+}
+
+/* Hero background frame (#2 140:5745 @ y=83). */
+.demo-elevators-hero {
+  position: relative;
+  width: 1440px;
+  height: 751px;
+  margin-top: 13px; /* 83 - menu(70) */
+  overflow: hidden;
+}
+
+.demo-elevators-hero__bg { position: absolute; inset: 0; }
+.demo-elevators-hero__bg-img {
+  width: 1440px;
+  height: 751px;
+  display: block;
+  /* Figma fill is STRETCH */
+  object-fit: fill;
+}
+
+.demo-elevators-hero__content {
+  position: absolute;
+  left: 177px;
+  top: 213px;
+  width: 798px;
+  height: 270px;
+}
+
+.demo-elevators-hero__title {
+  width: 798px;
+  height: 124px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 62.4px;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.demo-elevators-hero__subtitle {
+  position: absolute;
+  left: 0;
+  top: 142px;
+  width: 554px;
+  height: 128px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 31.5px;
+  letter-spacing: 0;
+  color: #c4c4c4;
+}
+
+.demo-elevators-hero__actions {
+  position: absolute;
+  left: 177px;
+  top: 519px; /* 602 - 83 */
+  width: 447px;
+  height: 52px;
+}
+
+.demo-elevators-hero__btn {
+  position: absolute;
+  top: 0;
+  width: 218px;
+  height: 52px;
+  border-radius: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.demo-elevators-hero__btn--primary {
+  left: 0;
+  background: #14f195;
+  color: #000000;
+}
+
+.demo-elevators-hero__btn--outline {
+  left: 229px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.demo-elevators-hero__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+
+/* Desktop-22 (140:5753): benefits cards */
+.demo-elevators-benefits {
+  position: relative;
+  width: 1440px;
+  height: 712px;
+  background: #000000;
+}
+
+.demo-elevators-benefits__title {
+  position: absolute;
+  left: 176px;
+  top: 100px;
+  width: 819px;
+  height: 124px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 62.4px;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.demo-elevators-benefits__cards {
+  position: absolute;
+  left: 177px;
+  top: 292px;
+  width: 1086px;
+  height: 343px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-elevators-benefits__card {
+  position: absolute;
+  top: 0;
+  width: 249px;
+}
+
+.demo-elevators-benefits__card--1 { left: 0; height: 274px; }
+.demo-elevators-benefits__card--2 { left: 279px; height: 343px; }
+.demo-elevators-benefits__card--3 { left: 558px; height: 343px; }
+.demo-elevators-benefits__card--4 { left: 837px; height: 274px; }
+
+.demo-elevators-benefits__ring {
+  position: absolute;
+  left: 43px;
+  top: 0;
+  width: 163px;
+  height: 163px;
+  border-radius: 1000px;
+  background: #19161c;
+  border: 2px solid #ff7b00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-elevators-benefits__icon {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+.demo-elevators-benefits__h3 {
+  position: absolute;
+  left: 0;
+  top: 180px;
+  width: 249px;
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  letter-spacing: -0.54px;
+  color: #ffffff;
+}
+
+.demo-elevators-benefits__p {
+  position: absolute;
+  left: 0;
+  top: 215px;
+  width: 249px;
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: -0.54px;
+  color: #ffffff;
+}
+
+/* Specific heights and adjustments for pixel-perfect match */
+.demo-elevators-benefits__card--1 .demo-elevators-benefits__h3,
+.demo-elevators-benefits__card--3 .demo-elevators-benefits__h3,
+.demo-elevators-benefits__card--4 .demo-elevators-benefits__h3 {
+  height: 13px;
+}
+
+.demo-elevators-benefits__card--2 .demo-elevators-benefits__h3 {
+  height: 36px;
+}
+
+.demo-elevators-benefits__card--1 .demo-elevators-benefits__p,
+.demo-elevators-benefits__card--4 .demo-elevators-benefits__p {
+  height: 59px;
+}
+
+.demo-elevators-benefits__card--2 .demo-elevators-benefits__p {
+  top: 238px;
+  height: 105px;
+}
+
+.demo-elevators-benefits__card--3 .demo-elevators-benefits__p {
+  height: 128px;
+}
+
+/* Frame 140:5795: Poster section */
+.demo-elevators-poster {
+  position: relative;
+  width: 1440px;
+  height: 948px;
+  background: #000000;
+}
+
+.demo-elevators-poster__title {
+  position: absolute;
+  left: 180px;
+  top: 81px;
+  width: 816px;
+  height: 124px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 62.4px;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.demo-elevators-poster__left {
+  position: absolute;
+  left: 180px;
+  top: 230px;
+  width: 533px;
+  height: 618px;
+}
+
+.demo-elevators-poster__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+.demo-elevators-poster__right {
+  position: absolute;
+  left: 735px;
+  top: 230px;
+  width: 533px;
+  height: 618px;
+}
+
+.demo-elevators-poster__card {
+  position: absolute;
+  width: 533px;
+  background: #19161c;
+  border: 1px solid #ff7b00;
+  border-radius: 32px;
+  padding: 33px 36px;
+}
+
+.demo-elevators-poster__card--1 {
+  top: 0;
+  height: 190px;
+}
+
+.demo-elevators-poster__card--2 {
+  top: 215px;
+  height: 189px;
+}
+
+.demo-elevators-poster__card--3 {
+  top: 429px;
+  height: 189px;
+}
+
+.demo-elevators-poster__h3 {
+  margin: 0 0 18px;
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31.2px;
+  letter-spacing: -0.72px;
+  color: #ffffff;
+}
+
+.demo-elevators-poster__p {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: -0.54px;
+  color: #ffffff;
+}
+
+/* Section 140:5781: Steps */
+.demo-elevators-steps {
+  position: relative;
+  width: 1440px;
+  height: 751px;
+  background: #000000;
+}
+
+.demo-elevators-steps__inner {
+  position: absolute;
+  left: 178px;
+  top: 139px;
+  width: 1084px;
+  height: 473px;
+}
+
+.demo-elevators-steps__title {
+  margin: 0 0 63px;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 62.4px;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.demo-elevators-steps__grid {
+  display: flex;
+  gap: 22px;
+}
+
+/* Overriding step card layout for this page */
+.demo-elevators-steps .demo-step-card {
+  display: grid;
+  gap: 41px;
+  width: 199px;
+}
+
+.demo-elevators-steps .demo-step-card__head {
+  position: relative;
+  width: 199px;
+  height: 93px;
+}
+
+.demo-elevators-steps .demo-step-card__circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 93px;
+  height: 93px;
+  border-radius: 50%;
+  background: #ffb661;
+  z-index: 2;
+}
+
+.demo-elevators-steps .demo-step-card__line {
+  position: absolute;
+  left: 41.5px;
+  top: 46.5px;
+  width: 164px;
+  height: 15px;
+  z-index: 1;
+}
+
+.demo-elevators-steps .demo-step-card__arrow {
+  display: block;
+  width: 164px;
+  height: 15px;
+}
+
+.demo-elevators-steps .demo-step-card__icon {
+  position: absolute;
+  left: 21.5px;
+  top: 21.5px;
+  width: 50px;
+  height: 50px;
+  z-index: 3;
+}
+
+.demo-elevators-steps .demo-step-card__icon-img {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.demo-elevators-steps .demo-step-card__body {
+  display: grid;
+  gap: 12px;
+}
+
+.demo-elevators-steps .demo-step-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30.24px;
+  letter-spacing: -0.24px;
+  color: #ffffff;
+}
+
+.demo-elevators-steps .demo-step-card__text {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25.2px;
+  color: #ffffff;
+}
+
+/* Section 140:5788: Ideally for */
+.demo-elevators-target {
+  position: relative;
+  width: 1440px;
+  height: 824px;
+  background: #000000;
+}
+
+.demo-elevators-target__title {
+  position: absolute;
+  left: 176px;
+  top: 100px;
+  width: 917px;
+  height: 34px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 62.4px;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.demo-elevators-target__grid {
+  position: absolute;
+  left: 176px;
+  top: 202px;
+  width: 1088px;
+  height: 522px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.demo-elevators-target__card {
+  width: 533px;
+  height: 250px;
+  background: #19161c;
+  border-radius: 32px;
+  padding: 69.5px 36px 69.5px 44px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.demo-elevators-target__icon {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.demo-elevators-target__h3 {
+  margin: 0 0 22px;
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.72px;
+  color: #ffffff;
+}
+
+.demo-elevators-target__p {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  letter-spacing: -0.54px;
+  color: #ffffff;
+}
+
+/* Section 140:5810: CTA */
+.demo-elevators-contact {
+  position: relative;
+  width: 1440px;
+  height: 746px;
+  background: #000000;
+}
+
+.demo-elevators-contact__inner {
+  position: absolute;
+  left: 177px;
+  top: 100px;
+  width: 1086px;
+  height: 546px;
+}
+
+.demo-elevators-contact__title {
+  width: 777px;
+  margin: 0 0 24px;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -1.44px;
+  color: #ffffff;
+}
+
+.demo-elevators-contact__text {
+  width: 777px;
+  margin: 0 0 38px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  letter-spacing: -0.54px;
+  color: #ffffff;
+}
+
+.demo-elevators-contact__form {
+  width: 780px;
+}
+
+.demo-elevators-contact__row {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.demo-elevators-contact__field {
+  position: relative;
+  width: 383px;
+  height: 56px;
+  display: block;
+}
+
+.demo-elevators-contact__field--full {
+  width: 780px;
+  margin-bottom: 14px;
+}
+
+.demo-elevators-contact__input {
+  width: 100%;
+  height: 56px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0 22px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  color: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.demo-elevators-contact__input:focus {
+  outline: none;
+  border-color: #14f195;
+}
+
+.demo-elevators-contact__ph {
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s;
+}
+
+.demo-elevators-contact__input:focus ~ .demo-elevators-contact__ph,
+.demo-elevators-contact__input:not(:placeholder-shown) ~ .demo-elevators-contact__ph {
+  top: 0;
+  font-size: 12px;
+  background: #000000;
+  padding: 0 4px;
+}
+
+.demo-elevators-contact__actions {
+  margin-top: 17px;
+  display: flex;
+  justify-content: center;
+}
+
+.demo-elevators-contact__btn {
+  width: 383px;
+  height: 52px;
+  background: #14f195;
+  border: none;
+  border-radius: 64px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.demo-elevators-contact__btn:hover {
+  transform: scale(1.02);
+}
+
+
+

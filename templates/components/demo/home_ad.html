@@ -1,0 +1,57 @@
+{% load static %}
+{% comment %}Home section: AD (Ready--Copy desktop 140:4903; mobile 140:5988; tablet 140:8177){% endcomment %}
+
+<section class="demo-ad" aria-labelledby="ad-title">
+  <div class="demo-ad__inner">
+    <div class="demo-ad__media" aria-hidden="true">
+      <picture class="demo-ad__img">
+        <source
+          media="(min-width: 1440px)"
+          srcset="{% static 'assets/images/vecteezy-dramatic-minimalist-olive-pivot-point-chart-with-transparent-60792728-1@2x.png' %} 2x"
+        />
+        <source
+          media="(min-width: 834px)"
+          srcset="{% static 'assets/images/vecteezy-dramatic-minimalist-olive-pivot-point-chart-with-transparent-60792728-1-140-8178@2x.png' %} 2x"
+        />
+        <img
+          class="demo-ad__img-el"
+          src="{% static 'assets/images/vecteezy-dramatic-minimalist-olive-pivot-point-chart-with-transparent-60792728-1-140-5993@2x.png' %}"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+    </div>
+
+    <div class="demo-ad__content">
+      <h2 class="demo-ad__title" id="ad-title">Узнайте, сколько заявок вы теряете!</h2>
+      <p class="demo-ad__subtitle">Бесплатно проанализируем вашу нишу и предложим 3 варианта решений</p>
+
+      <form class="demo-ad__form" action="{% url 'submit_lead' %}" method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="source" value="ad" />
+        <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+        <label class="demo-ad__field demo-ad__field--name">
+          <span class="sr-only">Имя</span>
+          <input class="demo-ad__input" type="text" name="name" placeholder=" " autocomplete="name" />
+          <span class="demo-ad__ph" aria-hidden="true">Имя</span>
+        </label>
+        <label class="demo-ad__field demo-ad__field--phone">
+          <span class="sr-only">Телефон</span>
+          <input class="demo-ad__input" type="tel" name="phone" placeholder=" " autocomplete="tel" />
+          <span class="demo-ad__ph" aria-hidden="true">Телефон</span>
+        </label>
+        <label class="demo-ad__field demo-ad__field--biz">
+          <span class="sr-only">Сфера бизнеса</span>
+          <input class="demo-ad__input" type="text" name="business" placeholder=" " />
+          <span class="demo-ad__ph" aria-hidden="true">Сфера бизнеса</span>
+        </label>
+
+        <button class="demo-ad__btn" type="submit">Рассчитать</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+

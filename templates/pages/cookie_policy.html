@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Политика использования файлов cookie · {{ PROJECT_NAME }}{% endblock %}
+
+{% block page_css %}
+  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/cookie_policy.css' %}" />
+{% endblock %}
+
+{% block header %}
+  {% include "components/demo/menu.html" %}
+{% endblock %}
+
+{% block content %}
+  <section class="demo-cookie-page">
+    <div class="demo-cookie-page__inner">
+      <h1 class="demo-cookie-page__title">Политика использования файлов cookie</h1>
+      <p class="demo-cookie-page__lead">
+        Мы используем cookie, чтобы улучшать работу сайта, анализировать трафик и сохранять пользовательские настройки.
+      </p>
+
+      <div class="demo-cookie-page__card">
+        <h2 class="demo-cookie-page__h2">Что такое cookie</h2>
+        <p class="demo-cookie-page__p">
+          Cookie — это небольшие файлы, которые сохраняются в вашем браузере и помогают сайту корректно работать и запоминать настройки.
+        </p>
+
+        <h2 class="demo-cookie-page__h2">Какие cookie мы используем</h2>
+        <ul class="demo-cookie-page__list">
+          <li><strong>Необходимые</strong>: обеспечивают базовую работу сайта (например, безопасность форм).</li>
+          <li><strong>Функциональные</strong>: запоминают выбор пользователя (например, согласие на cookie).</li>
+          <li><strong>Аналитические</strong>: помогают понять, как пользователи взаимодействуют с сайтом (если подключим аналитику).</li>
+        </ul>
+
+        <h2 class="demo-cookie-page__h2">Как отказаться от cookie</h2>
+        <p class="demo-cookie-page__p">
+          Вы можете удалить cookie в настройках браузера. Учтите, что часть функций сайта может работать некорректно.
+        </p>
+
+        <p class="demo-cookie-page__p demo-cookie-page__muted">
+          Эта страница — шаблон. Юридический текст можно заменить на финальную редакцию.
+        </p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/demo/footer.html" %}
+{% endblock %}
+
+
+
+
+
+

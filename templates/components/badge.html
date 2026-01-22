@@ -1,0 +1,7 @@
+{# Params: text, variant=solid|soft, tone=neutral|success|warning|danger #}
+{% with v=variant|default:"soft" t=tone|default:"neutral" %}
+  <span class="c-badge c-badge--{{ v }} c-badge--{{ t }} {{ class|default:'' }}">{{ text }}</span>
+{% endwith %}
+
+
+

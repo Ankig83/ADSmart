@@ -1,0 +1,16 @@
+{% load static %}
+
+<li class="demo-team__card{% if mod %} demo-team__card--{{ mod }}{% endif %}">
+  <article class="demo-team-card{% if mod %} demo-team-card--{{ mod }}{% endif %}">
+    <div class="demo-team-card__icon" aria-hidden="true">
+      <img class="demo-team-card__icon-img" src="{% static icon %}" alt="" loading="lazy" decoding="async" />
+    </div>
+
+    <div class="demo-team-card__body">
+      <h3 class="demo-team-card__title">{{ title }}</h3>
+      <p class="demo-team-card__text">{{ text }}</p>
+    </div>
+  </article>
+</li>
+
+

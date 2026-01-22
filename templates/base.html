@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ PROJECT_NAME }}" />
+    <title>{% block title %}{{ PROJECT_NAME }}{% endblock %}</title>
+
+    {% comment %}Fonts (match Figma: Poppins + Outfit){% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/tokens.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/components/nav.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components/button.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components/input.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components/card.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components/section.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components/badge.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components/modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components/toast.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components/demo-cookie-consent.css' %}" />
+
+    {% block page_css %}{% endblock %}
+
+    <script src="{% static 'js/app.js' %}" defer></script>
+    {% block page_js %}{% endblock %}
+  </head>
+  <body class="app">
+    {% block header %}
+      {% include "components/nav.html" %}
+    {% endblock %}
+
+    <main id="content" class="app__main">
+      {% block content %}{% endblock %}
+    </main>
+
+    {% block footer %}
+      <footer class="app__footer">
+        <div class="container app__footer-inner">
+          <div class="app__footer-left">{{ PROJECT_NAME }} · {{ CURRENT_YEAR }}</div>
+          <div class="app__footer-right">
+            <a class="app__footer-link" href="{% url 'health' %}">health</a>
+          </div>
+        </div>
+      </footer>
+    {% endblock %}
+
+    {% include "components/demo/cookie_consent_modal.html" %}
+
+    <div class="c-toast-stack" data-toast-stack aria-live="polite" aria-relevant="additions">
+      {% if messages %}
+        {% for message in messages %}
+          {% include "components/toast.html" with text=message tags=message.tags %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </body>
+</html>
+
+

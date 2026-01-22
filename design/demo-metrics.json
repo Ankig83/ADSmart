@@ -1,0 +1,1006 @@
+{
+  "pages": [
+    {
+      "node_id": "46:562",
+      "name": "Home",
+      "size": {
+        "w": 1440,
+        "h": 6755
+      },
+      "blocks": [
+        {
+          "name": "Rectangle",
+          "type": "RECTANGLE"
+        },
+        {
+          "name": "Ваш билборд умеет принимать заказы 24/7?",
+          "type": "TEXT"
+        },
+        {
+          "name": "Превращаем наружную рекламу в автономный канал продаж с AI-ассистентами. Сокращаем путь от интереса к заявке до 60 секунд",
+          "type": "TEXT"
+        },
+        {
+          "name": "Меню",
+          "type": "INSTANCE"
+        },
+        {
+          "name": "20251218_2113_image 1",
+          "type": "RECTANGLE"
+        },
+        {
+          "name": "Desktop - 15",
+          "type": "FRAME"
+        },
+        {
+          "name": "Buttons",
+          "type": "INSTANCE"
+        },
+        {
+          "name": "Desktop - 16",
+          "type": "FRAME"
+        },
+        {
+          "name": "Desktop - 19",
+          "type": "INSTANCE"
+        },
+        {
+          "name": "Frame 427321533",
+          "type": "FRAME"
+        },
+        {
+          "name": "Desktop - 20",
+          "type": "FRAME"
+        },
+        {
+          "name": "Contcat us",
+          "type": "FRAME"
+        },
+        {
+          "name": "Faq",
+          "type": "FRAME"
+        },
+        {
+          "name": "Footer",
+          "type": "INSTANCE"
+        },
+        {
+          "name": "Buttons",
+          "type": "INSTANCE"
+        }
+      ]
+    },
+    {
+      "node_id": "46:806",
+      "name": "Билборды",
+      "size": {
+        "w": 1440,
+        "h": 5402
+      },
+      "blocks": [
+        {
+          "name": "FIGMA 1",
+          "type": "RECTANGLE"
+        },
+        {
+          "name": "Frame 427321549",
+          "type": "FRAME"
+        },
+        {
+          "name": "Frame 427321551",
+          "type": "FRAME"
+        },
+        {
+          "name": "Меню",
+          "type": "INSTANCE"
+        },
+        {
+          "name": "Desktop - 22",
+          "type": "FRAME"
+        },
+        {
+          "name": "Footer",
+          "type": "INSTANCE"
+        },
+        {
+          "name": "Desktop - 15",
+          "type": "FRAME"
+        },
+        {
+          "name": "Group 79",
+          "type": "GROUP"
+        },
+        {
+          "name": "Contcat us",
+          "type": "INSTANCE"
+        },
+        {
+          "name": "Format",
+          "type": "FRAME"
+        }
+      ]
+    }
+  ],
+  "breakpoints": {
+    "frame_widths": [
+      {
+        "px": 1440,
+        "count": 2
+      }
+    ]
+  },
+  "tokens": {
+    "colors_top": [
+      {
+        "value": "#ffffff",
+        "count": 242,
+        "by_type": {
+          "TEXT": 156,
+          "INSTANCE": 54,
+          "VECTOR": 23,
+          "FRAME:stroke": 7,
+          "INSTANCE:stroke": 1
+        }
+      },
+      {
+        "value": "#ffb661",
+        "count": 67,
+        "by_type": {
+          "VECTOR": 47,
+          "VECTOR:stroke": 10,
+          "ELLIPSE": 10
+        }
+      },
+      {
+        "value": "#19161c",
+        "count": 40,
+        "by_type": {
+          "FRAME": 21,
+          "INSTANCE": 19
+        }
+      },
+      {
+        "value": "#000000",
+        "count": 36,
+        "by_type": {
+          "VECTOR": 19,
+          "FRAME": 9,
+          "TEXT": 5,
+          "INSTANCE": 3
+        }
+      },
+      {
+        "value": "#ff7b00",
+        "count": 35,
+        "by_type": {
+          "FRAME:stroke": 16,
+          "TEXT": 9,
+          "FRAME": 5,
+          "VECTOR:stroke": 4,
+          "RECTANGLE": 1
+        }
+      },
+      {
+        "value": "#14f195",
+        "count": 5,
+        "by_type": {
+          "INSTANCE": 5
+        }
+      },
+      {
+        "value": "#c4c4c4",
+        "count": 2,
+        "by_type": {
+          "TEXT": 2
+        }
+      }
+    ],
+    "text_styles": [
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 16.0,
+        "fontWeight": 400,
+        "lineHeight": "24px",
+        "letterSpacing": "0",
+        "count": 30
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 18.0,
+        "fontWeight": 400,
+        "lineHeight": "23.4px",
+        "letterSpacing": "0",
+        "count": 20
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 22.0,
+        "fontWeight": 400,
+        "lineHeight": "28.6px",
+        "letterSpacing": "0",
+        "count": 13
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 48.0,
+        "fontWeight": 600,
+        "lineHeight": "62.4px",
+        "letterSpacing": "0",
+        "count": 11
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 24.0,
+        "fontWeight": 700,
+        "lineHeight": "31.2px",
+        "letterSpacing": "0",
+        "count": 10
+      },
+      {
+        "fontFamily": "Outfit",
+        "fontSize": 24.0,
+        "fontWeight": 700,
+        "lineHeight": "30.24px",
+        "letterSpacing": "0",
+        "count": 10
+      },
+      {
+        "fontFamily": "Outfit",
+        "fontSize": 18.0,
+        "fontWeight": 300,
+        "lineHeight": "25.2px",
+        "letterSpacing": "0",
+        "count": 10
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 16.0,
+        "fontWeight": 400,
+        "lineHeight": "26px",
+        "letterSpacing": "0",
+        "count": 9
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 24.0,
+        "fontWeight": 600,
+        "lineHeight": "31.2px",
+        "letterSpacing": "0",
+        "count": 8
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 22.0,
+        "fontWeight": 400,
+        "lineHeight": "96px",
+        "letterSpacing": "0",
+        "count": 7
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 18.0,
+        "fontWeight": 500,
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "count": 6
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 16.0,
+        "fontWeight": 700,
+        "lineHeight": "20.8px",
+        "letterSpacing": "0",
+        "count": 6
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 18.0,
+        "fontWeight": 400,
+        "lineHeight": "27px",
+        "letterSpacing": "0",
+        "count": 6
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 24.0,
+        "fontWeight": 700,
+        "lineHeight": "36px",
+        "letterSpacing": "0",
+        "count": 5
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 18.0,
+        "fontWeight": 700,
+        "lineHeight": "23.4px",
+        "letterSpacing": "0",
+        "count": 4
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 18.0,
+        "fontWeight": 600,
+        "lineHeight": "26px",
+        "letterSpacing": "0",
+        "count": 3
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 18.0,
+        "fontWeight": 600,
+        "lineHeight": "23.4px",
+        "letterSpacing": "0",
+        "count": 3
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 16.0,
+        "fontWeight": 400,
+        "lineHeight": "20.8px",
+        "letterSpacing": "0",
+        "count": 3
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 21.0,
+        "fontWeight": 400,
+        "lineHeight": "31.5px",
+        "letterSpacing": "0",
+        "count": 2
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 48.0,
+        "fontWeight": 800,
+        "lineHeight": "62.4px",
+        "letterSpacing": "0",
+        "count": 1
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 22.0,
+        "fontWeight": 500,
+        "lineHeight": "96px",
+        "letterSpacing": "0",
+        "count": 1
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 38.0,
+        "fontWeight": 600,
+        "lineHeight": "49.4px",
+        "letterSpacing": "0",
+        "count": 1
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 65.0,
+        "fontWeight": 800,
+        "lineHeight": "84.5px",
+        "letterSpacing": "0",
+        "count": 1
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 24.0,
+        "fontWeight": 500,
+        "lineHeight": "36px",
+        "letterSpacing": "0",
+        "count": 1
+      },
+      {
+        "fontFamily": "Poppins",
+        "fontSize": 28.0,
+        "fontWeight": 600,
+        "lineHeight": "36.4px",
+        "letterSpacing": "0",
+        "count": 1
+      }
+    ],
+    "spacing": [
+      {
+        "px": 18,
+        "count": 14
+      },
+      {
+        "px": 22,
+        "count": 13
+      },
+      {
+        "px": 12,
+        "count": 10
+      },
+      {
+        "px": 14,
+        "count": 7
+      },
+      {
+        "px": 176,
+        "count": 4
+      },
+      {
+        "px": 100,
+        "count": 4
+      },
+      {
+        "px": 17,
+        "count": 4
+      },
+      {
+        "px": 422,
+        "count": 4
+      },
+      {
+        "px": 10,
+        "count": 3
+      },
+      {
+        "px": 36,
+        "count": 3
+      },
+      {
+        "px": 8,
+        "count": 3
+      },
+      {
+        "px": 7,
+        "count": 3
+      },
+      {
+        "px": 41,
+        "count": 2
+      },
+      {
+        "px": 4,
+        "count": 2
+      },
+      {
+        "px": 68,
+        "count": 2
+      },
+      {
+        "px": 26,
+        "count": 2
+      },
+      {
+        "px": 53,
+        "count": 2
+      },
+      {
+        "px": 30,
+        "count": 1
+      }
+    ],
+    "radii": [
+      {
+        "px": 12,
+        "count": 32
+      },
+      {
+        "px": 1000,
+        "count": 12
+      },
+      {
+        "px": 64,
+        "count": 4
+      },
+      {
+        "px": 22,
+        "count": 4
+      },
+      {
+        "px": 8,
+        "count": 4
+      },
+      {
+        "px": 100,
+        "count": 3
+      }
+    ],
+    "shadows": []
+  },
+  "assets": {
+    "image_refs_count": 6,
+    "image_refs": {
+      "1d61b4da92c8559bd009e1498428ec3e6ecbfa4e": [
+        {
+          "page": "Билборды",
+          "node_id": "46:807",
+          "node_name": "FIGMA 1",
+          "path": "Билборды / FIGMA 1",
+          "w": 1440,
+          "h": 751,
+          "scaleMode": "FILL"
+        }
+      ],
+      "cf0ca1e77aaf8f8f8f05f9c4a85fe5fb72ac8f16": [
+        {
+          "page": "Билборды",
+          "node_id": "I46:813;10:2221",
+          "node_name": "image 12",
+          "path": "Билборды / Меню / image 12",
+          "w": 74,
+          "h": 46,
+          "scaleMode": "FILL"
+        },
+        {
+          "page": "Билборды",
+          "node_id": "I46:846;134:425",
+          "node_name": "image 12",
+          "path": "Билборды / Footer / image 12",
+          "w": 74,
+          "h": 46,
+          "scaleMode": "FILL"
+        },
+        {
+          "page": "Home",
+          "node_id": "I46:566;10:2221",
+          "node_name": "image 12",
+          "path": "Home / Меню / image 12",
+          "w": 74,
+          "h": 46,
+          "scaleMode": "FILL"
+        },
+        {
+          "page": "Home",
+          "node_id": "I46:627;134:425",
+          "node_name": "image 12",
+          "path": "Home / Footer / image 12",
+          "w": 74,
+          "h": 46,
+          "scaleMode": "FILL"
+        }
+      ],
+      "526249db7a87ec7c96fbcf90d2b3f3247c19a956": [
+        {
+          "page": "Билборды",
+          "node_id": "I46:902;305:821",
+          "node_name": "Frame 427321580",
+          "path": "Билборды / Format / Наши форматы и интеллектуальные решения / Format / Frame 427321580",
+          "w": 421,
+          "h": 271,
+          "scaleMode": "STRETCH"
+        }
+      ],
+      "993807bd9d92a0912ec86fa93d7434c705f93bd5": [
+        {
+          "page": "Home",
+          "node_id": "46:567",
+          "node_name": "20251218_2113_image 1",
+          "path": "Home / 20251218_2113_image 1",
+          "w": 708,
+          "h": 741,
+          "scaleMode": "STRETCH"
+        }
+      ],
+      "d2923d42ec66949bb7881908cdde6127e8a2e76a": [
+        {
+          "page": "Home",
+          "node_id": "I46:581;65:707",
+          "node_name": "vecteezy_wonderful-classic-a-levitating-microchip-with-visible-exclusive_60335987 1",
+          "path": "Home / Desktop - 19 / Group 70 / vecteezy_wonderful-classic-a-levitating-microchip-with-visible-exclusive_60335987 1",
+          "w": 274,
+          "h": 274,
+          "scaleMode": "FILL"
+        }
+      ],
+      "e21d919160abc8b01b13ecc733505f8489db7b89": [
+        {
+          "page": "Home",
+          "node_id": "46:592",
+          "node_name": "vecteezy_3d-illustration-of-a-growing-bar-graph_57642939 1",
+          "path": "Home / Frame 427321533 / vecteezy_3d-illustration-of-a-growing-bar-graph_57642939 1",
+          "w": 397,
+          "h": 397,
+          "scaleMode": "FILL"
+        }
+      ]
+    },
+    "plan": [
+      {
+        "imageRef": "993807bd9d92a0912ec86fa93d7434c705f93bd5",
+        "suggested": {
+          "path": "static/assets/images/20251218-2113-image-1-993807bd.png",
+          "name": "20251218-2113-image-1-993807bd.png"
+        },
+        "usages": [
+          {
+            "page": "Home",
+            "node_id": "46:567",
+            "node_name": "20251218_2113_image 1",
+            "path": "Home / 20251218_2113_image 1",
+            "w": 708,
+            "h": 741,
+            "scaleMode": "STRETCH"
+          }
+        ]
+      },
+      {
+        "imageRef": "1d61b4da92c8559bd009e1498428ec3e6ecbfa4e",
+        "suggested": {
+          "path": "static/assets/images/figma-1-1d61b4da.png",
+          "name": "figma-1-1d61b4da.png"
+        },
+        "usages": [
+          {
+            "page": "Билборды",
+            "node_id": "46:807",
+            "node_name": "FIGMA 1",
+            "path": "Билборды / FIGMA 1",
+            "w": 1440,
+            "h": 751,
+            "scaleMode": "FILL"
+          }
+        ]
+      },
+      {
+        "imageRef": "526249db7a87ec7c96fbcf90d2b3f3247c19a956",
+        "suggested": {
+          "path": "static/assets/images/frame-427321580-526249db.png",
+          "name": "frame-427321580-526249db.png"
+        },
+        "usages": [
+          {
+            "page": "Билборды",
+            "node_id": "I46:902;305:821",
+            "node_name": "Frame 427321580",
+            "path": "Билборды / Format / Наши форматы и интеллектуальные решения / Format / Frame 427321580",
+            "w": 421,
+            "h": 271,
+            "scaleMode": "STRETCH"
+          }
+        ]
+      },
+      {
+        "imageRef": "cf0ca1e77aaf8f8f8f05f9c4a85fe5fb72ac8f16",
+        "suggested": {
+          "path": "static/assets/images/image-12-cf0ca1e7.png",
+          "name": "image-12-cf0ca1e7.png"
+        },
+        "usages": [
+          {
+            "page": "Билборды",
+            "node_id": "I46:813;10:2221",
+            "node_name": "image 12",
+            "path": "Билборды / Меню / image 12",
+            "w": 74,
+            "h": 46,
+            "scaleMode": "FILL"
+          },
+          {
+            "page": "Билборды",
+            "node_id": "I46:846;134:425",
+            "node_name": "image 12",
+            "path": "Билборды / Footer / image 12",
+            "w": 74,
+            "h": 46,
+            "scaleMode": "FILL"
+          },
+          {
+            "page": "Home",
+            "node_id": "I46:566;10:2221",
+            "node_name": "image 12",
+            "path": "Home / Меню / image 12",
+            "w": 74,
+            "h": 46,
+            "scaleMode": "FILL"
+          },
+          {
+            "page": "Home",
+            "node_id": "I46:627;134:425",
+            "node_name": "image 12",
+            "path": "Home / Footer / image 12",
+            "w": 74,
+            "h": 46,
+            "scaleMode": "FILL"
+          }
+        ]
+      },
+      {
+        "imageRef": "e21d919160abc8b01b13ecc733505f8489db7b89",
+        "suggested": {
+          "path": "static/assets/images/vecteezy-3d-illustration-of-a-growing-bar-graph-57642939-1-e21d9191.png",
+          "name": "vecteezy-3d-illustration-of-a-growing-bar-graph-57642939-1-e21d9191.png"
+        },
+        "usages": [
+          {
+            "page": "Home",
+            "node_id": "46:592",
+            "node_name": "vecteezy_3d-illustration-of-a-growing-bar-graph_57642939 1",
+            "path": "Home / Frame 427321533 / vecteezy_3d-illustration-of-a-growing-bar-graph_57642939 1",
+            "w": 397,
+            "h": 397,
+            "scaleMode": "FILL"
+          }
+        ]
+      },
+      {
+        "imageRef": "d2923d42ec66949bb7881908cdde6127e8a2e76a",
+        "suggested": {
+          "path": "static/assets/images/vecteezy-wonderful-classic-a-levitating-microchip-with-visible-exclusive-60335987-1-d2923d42.png",
+          "name": "vecteezy-wonderful-classic-a-levitating-microchip-with-visible-exclusive-60335987-1-d2923d42.png"
+        },
+        "usages": [
+          {
+            "page": "Home",
+            "node_id": "I46:581;65:707",
+            "node_name": "vecteezy_wonderful-classic-a-levitating-microchip-with-visible-exclusive_60335987 1",
+            "path": "Home / Desktop - 19 / Group 70 / vecteezy_wonderful-classic-a-levitating-microchip-with-visible-exclusive_60335987 1",
+            "w": 274,
+            "h": 274,
+            "scaleMode": "FILL"
+          }
+        ]
+      }
+    ]
+  },
+  "components": {
+    "instances": [
+      {
+        "name": "Component 3",
+        "componentId": "1:18",
+        "count": 10
+      },
+      {
+        "name": "Blok",
+        "componentId": "1:138",
+        "count": 8
+      },
+      {
+        "name": "chevron-down",
+        "componentId": "46:463",
+        "count": 5
+      },
+      {
+        "name": "Format",
+        "componentId": "46:482",
+        "count": 4
+      },
+      {
+        "name": "Buttons",
+        "componentId": "1:42",
+        "count": 3
+      },
+      {
+        "name": "Blok",
+        "componentId": "46:270",
+        "count": 3
+      },
+      {
+        "name": "plus",
+        "componentId": "1:172",
+        "count": 3
+      },
+      {
+        "name": "Меню",
+        "componentId": "1:5",
+        "count": 2
+      },
+      {
+        "name": "chevron-down",
+        "componentId": "1:3",
+        "count": 2
+      },
+      {
+        "name": "Frame",
+        "componentId": "46:362",
+        "count": 2
+      },
+      {
+        "name": "Footer",
+        "componentId": "1:188",
+        "count": 2
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:175",
+        "count": 2
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:179",
+        "count": 2
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:183",
+        "count": 2
+      },
+      {
+        "name": "Frame 427321510",
+        "componentId": "1:22",
+        "count": 2
+      },
+      {
+        "name": "Frame 427321511",
+        "componentId": "1:22",
+        "count": 2
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:129",
+        "count": 2
+      },
+      {
+        "name": "Frame 427321512",
+        "componentId": "1:22",
+        "count": 2
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:78",
+        "count": 2
+      },
+      {
+        "name": "Frame 427321513",
+        "componentId": "1:22",
+        "count": 2
+      },
+      {
+        "name": "Eye",
+        "componentId": "1:14",
+        "count": 2
+      },
+      {
+        "name": "Frame 427321514",
+        "componentId": "1:22",
+        "count": 2
+      },
+      {
+        "name": "Button",
+        "componentId": "1:127",
+        "count": 2
+      },
+      {
+        "name": "Frame",
+        "componentId": "46:374",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "46:378",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "46:382",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "46:429",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "46:433",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "46:437",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "46:440",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "46:444",
+        "count": 1
+      },
+      {
+        "name": "Contcat us",
+        "componentId": "46:450",
+        "count": 1
+      },
+      {
+        "name": "Format",
+        "componentId": "46:465",
+        "count": 1
+      },
+      {
+        "name": "Consultation",
+        "componentId": "1:27",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:31",
+        "count": 1
+      },
+      {
+        "name": "Target",
+        "componentId": "1:34",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:37",
+        "count": 1
+      },
+      {
+        "name": "Buttons",
+        "componentId": "1:44",
+        "count": 1
+      },
+      {
+        "name": "Icon",
+        "componentId": "1:52",
+        "count": 1
+      },
+      {
+        "name": "Icon",
+        "componentId": "1:70",
+        "count": 1
+      },
+      {
+        "name": "Icon",
+        "componentId": "1:56",
+        "count": 1
+      },
+      {
+        "name": "Desktop - 19",
+        "componentId": "46:279",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:75",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:83",
+        "count": 1
+      },
+      {
+        "name": "Target",
+        "componentId": "46:320",
+        "count": 1
+      },
+      {
+        "name": "Разработчики",
+        "componentId": "1:148",
+        "count": 1
+      },
+      {
+        "name": "AI icon",
+        "componentId": "46:325",
+        "count": 1
+      },
+      {
+        "name": "Frame 427321539",
+        "componentId": "1:161",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:158",
+        "count": 1
+      },
+      {
+        "name": "Frame 427321540",
+        "componentId": "1:161",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:166",
+        "count": 1
+      },
+      {
+        "name": "Frame 427321541",
+        "componentId": "1:161",
+        "count": 1
+      },
+      {
+        "name": "Frame",
+        "componentId": "1:169",
+        "count": 1
+      }
+    ]
+  }
+}

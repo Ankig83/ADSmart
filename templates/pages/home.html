@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home · {{ PROJECT_NAME }}{% endblock %}
+
+{% block page_css %}
+  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/home.css' %}" />
+{% endblock %}
+
+{% block header %}
+  {% include "components/demo/menu.html" %}
+{% endblock %}
+
+{% block content %}
+  <section class="demo-home-hero" aria-labelledby="home-hero-title">
+    <div class="demo-home-hero__blob" aria-hidden="true"></div>
+
+    <div class="demo-home-hero__art" aria-hidden="true">
+      <img
+        class="demo-home-hero__img"
+        src="{% static 'assets/images/20251218-2113-image-1@2x.png' %}"
+        alt=""
+        width="708"
+        height="741"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+
+    <div class="demo-home-hero__content">
+      <h1 class="demo-home-hero__title" id="home-hero-title">Ваш билборд умеет принимать заказы 24/7?</h1>
+      <p class="demo-home-hero__subtitle">
+        Превращаем наружную рекламу в автономный канал продаж с AI-ассистентами. Сокращаем путь от интереса к заявке до 60 секунд
+      </p>
+
+      <div class="demo-home-hero__actions" role="group" aria-label="Primary actions">
+        <a class="demo-btn demo-btn--primary" href="#calc">Рассчитать</a>
+        <a class="demo-btn demo-btn--outline" href="#cases">Наши кейсы</a>
+      </div>
+    </div>
+  </section>
+
+  {% include "components/demo/home_desktop_15.html" %}
+  {% include "components/demo/home_desktop_16.html" %}
+  {% include "components/demo/home_desktop_19.html" %}
+  {% include "components/demo/home_ad.html" %}
+  {% include "components/demo/home_desktop_20.html" %}
+  {% include "components/demo/home_contact_us.html" %}
+  {% include "components/demo/home_faq.html" %}
+
+  {% include "components/demo/lead_success_modal.html" %}
+{% endblock %}
+
+{% block footer %}
+  {% include "components/demo/footer.html" %}
+{% endblock %}
+
+

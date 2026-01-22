@@ -1,0 +1,699 @@
+/* Stops/Afishi page (Ready--Copy frame 140:5549). Desktop 1440 only for now. */
+.app { background: #000000; }
+.app__main { padding: 0; }
+
+.demo-stops {
+  width: 1440px;
+  margin: 0 auto;
+  background: #000000;
+}
+
+/* Hero background frame (140:5552 @ y=83) */
+.demo-stops-hero {
+  position: relative;
+  width: 1440px;
+  height: 751px;
+  margin-top: 13px; /* 83 - menu(70) */
+  overflow: hidden;
+}
+
+.demo-stops-hero__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.demo-stops-hero__bg-img {
+  width: 1440px;
+  height: 751px;
+  display: block;
+  /* Figma fill is STRETCH; use fill to match distortion/crop behavior */
+  object-fit: fill;
+}
+
+/* Overlay (140:5553): gradient stops (a=0.8 -> 0.6 -> 0.1) */
+.demo-stops-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 58.1527%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* Text frame (140:5554 @ x=177 y=213 inside hero) */
+.demo-stops-hero__content {
+  position: absolute;
+  left: 177px;
+  top: 213px;
+  width: 798px;
+  height: 238px;
+}
+
+.demo-stops-hero__title {
+  width: 798px;
+  height: 124px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 62.4px;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.demo-stops-hero__subtitle {
+  position: absolute;
+  left: 0;
+  top: 142px;
+  width: 663px;
+  height: 96px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 31.5px;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+/* Buttons frame (140:5557 @ x=177 y=487 inside hero) */
+.demo-stops-hero__actions {
+  position: absolute;
+  left: 177px;
+  top: 487px;
+  width: 409px;
+  height: 52px;
+}
+
+.demo-stops-hero__btn {
+  position: absolute;
+  top: 0;
+  height: 52px;
+  border-radius: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 16px 32px;
+  white-space: nowrap;
+}
+
+.demo-stops-hero__btn--primary {
+  left: 0;
+  width: 221px;
+  background: #14f195;
+  color: #000000;
+}
+
+.demo-stops-hero__btn--outline {
+  left: 232px;
+  width: 177px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.demo-stops-hero__btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Desktop-22 (140:5560): benefits cards */
+.demo-stops-benefits {
+  position: relative;
+  width: 1440px;
+  height: 712px; /* follows hero directly (y=834 in page frame) */
+}
+
+.demo-stops-benefits__title {
+  position: absolute;
+  left: 176px;
+  top: 100px;
+  width: 779px;
+  height: 124px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 62.4px;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.demo-stops-benefits__cards {
+  position: absolute;
+  left: 177px;
+  top: 292px;
+  width: 1086px;
+  height: 274px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-stops-benefits__card {
+  position: absolute;
+  top: 0;
+  width: 249px;
+}
+
+.demo-stops-benefits__card--1 { left: 0; height: 251px; }
+.demo-stops-benefits__card--2 { left: 279px; height: 251px; }
+.demo-stops-benefits__card--3 { left: 558px; height: 274px; }
+.demo-stops-benefits__card--4 { left: 837px; height: 274px; }
+
+.demo-stops-benefits__ring {
+  position: absolute;
+  left: 43px;
+  top: 0;
+  width: 163px;
+  height: 163px;
+  border-radius: 1000px;
+  background: #19161c;
+  border: 2px solid #ff7b00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-stops-benefits__icon {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+.demo-stops-benefits__h3 {
+  position: absolute;
+  left: 0;
+  top: 180px;
+  width: 249px;
+  height: 13px;
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  letter-spacing: -0.54px;
+  color: #ffffff;
+}
+
+.demo-stops-benefits__p {
+  position: absolute;
+  left: 0;
+  top: 215px;
+  width: 249px;
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: -0.54px;
+  color: #ffffff;
+}
+
+.demo-stops-benefits__card--1 .demo-stops-benefits__p,
+.demo-stops-benefits__card--2 .demo-stops-benefits__p { height: 36px; }
+
+.demo-stops-benefits__card--3 .demo-stops-benefits__p,
+.demo-stops-benefits__card--4 .demo-stops-benefits__p { height: 59px; }
+
+/* Frame 140:5588: Poster section */
+.demo-stops-poster {
+  position: relative;
+  width: 1440px;
+  height: 948px;
+}
+
+.demo-stops-poster__title {
+  position: absolute;
+  left: 172px;
+  top: 100px;
+  width: 991px;
+  height: 62px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 62.4px;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.demo-stops-poster__left {
+  position: absolute;
+  left: 180px;
+  top: 230px;
+  width: 533px;
+  height: 618px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.demo-stops-poster__img {
+  width: 533px;
+  height: 618px;
+  display: block;
+  object-fit: cover; /* Figma: IMAGE fill mode FILL */
+}
+
+.demo-stops-poster__right {
+  position: absolute;
+  left: 735px;
+  top: 230px;
+  width: 533px;
+  height: 617px;
+}
+
+.demo-stops-poster__card {
+  position: absolute;
+  left: 0;
+  width: 533px;
+  border-radius: 22px;
+  background: #19161c;
+  border: 2px solid #ff7b00;
+}
+
+.demo-stops-poster__card--1 { top: 0; height: 141px; }
+.demo-stops-poster__card--2 { top: 159px; height: 141px; }
+.demo-stops-poster__card--3 { top: 318px; height: 140px; }
+.demo-stops-poster__card--4 { top: 476px; height: 141px; }
+
+.demo-stops-poster__h3 {
+  position: absolute;
+  left: 36px;
+  top: 33px;
+  width: 461px;
+  height: 17px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.72px;
+  color: #ffffff;
+}
+
+.demo-stops-poster__p {
+  position: absolute;
+  left: 36px;
+  top: 68px;
+  width: 461px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: -0.54px;
+  color: #ffffff;
+}
+
+.demo-stops-poster__card--1 .demo-stops-poster__p,
+.demo-stops-poster__card--2 .demo-stops-poster__p,
+.demo-stops-poster__card--4 .demo-stops-poster__p { height: 40px; }
+
+.demo-stops-poster__card--3 .demo-stops-poster__p { height: 13px; }
+
+/* Steps with arrows (140:5608 Desktop-25) */
+.demo-stops-steps {
+  position: relative;
+  width: 1440px;
+  height: 751px;
+}
+
+.demo-stops-steps__title {
+  position: absolute;
+  left: 178px;
+  top: 139px;
+  width: 805px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 62.4px;
+  letter-spacing: -1.44px;
+  color: #ffffff;
+}
+
+.demo-stops-steps__cards {
+  position: absolute;
+  left: 0;
+  top: 241px;
+  width: 1440px;
+  height: 510px;
+}
+
+.demo-stops-steps__card { position: absolute; top: 0; }
+.demo-stops-steps__card:nth-child(1) { left: 178px; width: 199px; }
+.demo-stops-steps__card:nth-child(2) { left: 399px; width: 200px; }
+.demo-stops-steps__card:nth-child(3) { left: 620px; width: 200px; }
+.demo-stops-steps__card:nth-child(4) { left: 841px; width: 200px; }
+.demo-stops-steps__card:nth-child(5) { left: 1063px; width: 199px; }
+
+/* Reuse step-card visuals (circle + arrow SVG) */
+.demo-stops-steps .demo-step-card { display: grid; gap: 41px; }
+.demo-stops-steps .demo-step-card__head { position: relative; width: 199px; height: 93px; }
+.demo-stops-steps .demo-step-card__circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 93px;
+  height: 93px;
+  border-radius: 50%;
+  background: #ffb661;
+  z-index: 2;
+}
+
+.demo-stops-steps .demo-step-card__line {
+  display: block;
+  position: absolute;
+  left: 35px;
+  top: 39.635px;
+  z-index: 1;
+}
+.demo-stops-steps .demo-step-card__arrow { display: block; width: 164px; height: 15px; }
+
+.demo-stops-steps .demo-step-card__icon {
+  position: absolute;
+  left: 21px;
+  top: 22px;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  z-index: 3;
+}
+.demo-stops-steps .demo-step-card__icon-img { width: 50px; height: 50px; display: block; }
+
+.demo-stops-steps .demo-step-card__body { display: grid; gap: 12px; }
+.demo-stops-steps .demo-step-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30.24px;
+  letter-spacing: -0.24px;
+  color: #ffffff;
+}
+.demo-stops-steps .demo-step-card__text {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25.2px;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+/* Last card: no line/arrow */
+.demo-stops-steps__card:last-child .demo-step-card__line { display: none; }
+
+/* Frame 140:5615: ideal tasks (Group 79) */
+.demo-stops-ideal {
+  position: relative;
+  width: 1440px;
+  height: 824px;
+}
+
+.demo-stops-ideal__title {
+  position: absolute;
+  left: 176px;
+  top: 100px;
+  width: 917px;
+  height: 34px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 62.4px;
+  letter-spacing: -1.44px;
+  color: #ffffff;
+}
+
+.demo-stops-ideal__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.demo-stops-ideal__card {
+  position: absolute;
+  width: 533px;
+  height: 250px;
+  border-radius: 12px;
+  background: #19161c;
+  color: #ffffff;
+}
+.demo-stops-ideal__card--1 { left: 176px; top: 202px; }
+.demo-stops-ideal__card--2 { left: 731px; top: 202px; }
+.demo-stops-ideal__card--3 { left: 176px; top: 474px; }
+.demo-stops-ideal__card--4 { left: 731px; top: 474px; }
+
+.demo-stops-ideal__icon {
+  position: absolute;
+  left: 44px;
+  top: 75px;
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.demo-stops-ideal__h3 {
+  position: absolute;
+  left: 166px;
+  top: 56px;
+  width: 337px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31.2px;
+  letter-spacing: -0.72px;
+  color: #ffffff;
+}
+
+.demo-stops-ideal__p {
+  position: absolute;
+  left: 166px;
+  top: 95px;
+  width: 337px;
+  height: 102px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28.6px;
+  letter-spacing: -0.66px;
+  color: #ffffff;
+}
+
+/* Card 4 has a taller title block (2 lines) */
+.demo-stops-ideal__card--4 .demo-stops-ideal__h3 { top: 40.5px; height: 48px; }
+.demo-stops-ideal__card--4 .demo-stops-ideal__p { top: 110.5px; }
+
+/* Frame 140:5622 / 140:5623: Contact us (Stops) */
+.demo-stops-contact {
+  position: relative;
+  width: 1440px;
+  height: 760px;
+}
+
+.demo-stops-contact__inner {
+  position: absolute;
+  left: 176px;
+  top: 100px;
+  width: 1088px;
+  height: 560px;
+  border-radius: 12px;
+  background: #19161c;
+}
+
+.demo-stops-contact__title {
+  position: absolute;
+  left: 54px;
+  top: 121px;
+  width: 334px;
+  height: 76px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 49.4px;
+  letter-spacing: -1.14px;
+  color: #ffffff;
+}
+
+.demo-stops-contact__text {
+  position: absolute;
+  left: 54px;
+  top: 221px;
+  width: 450px;
+  height: 73px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28.6px;
+  letter-spacing: -0.66px;
+  color: #ffffff;
+}
+
+.demo-stops-contact__dl {
+  position: absolute;
+  left: 54px;
+  width: 363px;
+  height: 52px;
+  border-radius: 64px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #ffffff;
+}
+.demo-stops-contact__dl--stops { top: 324px; }
+.demo-stops-contact__dl--posters { top: 388px; }
+.demo-stops-contact__dl:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+
+.demo-stops-contact__phone {
+  position: absolute;
+  left: 354px;
+  top: 231px;
+  width: 383px;
+  height: 56px;
+}
+
+.demo-stops-contact__phone-input {
+  width: 383px;
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  padding: 18px 22px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: -0.54px;
+  color: #ffffff;
+  outline: none;
+}
+.demo-stops-contact__phone-input:focus-visible { outline: 2px solid rgba(255,255,255,0.9); outline-offset: 2px; }
+
+.demo-stops-contact__phone-ph {
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: -0.54px;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+.demo-stops-contact__phone-input:focus + .demo-stops-contact__phone-ph,
+.demo-stops-contact__phone-input:not(:placeholder-shown) + .demo-stops-contact__phone-ph { opacity: 0; }
+
+/* Right form container (440x501) */
+.demo-stops-contact__formbox {
+  position: absolute;
+  left: 610px;
+  top: 33px;
+  width: 440px;
+  height: 501px;
+  border-radius: 12px;
+  background: #19161c;
+  border: 1px solid #ff7b00;
+}
+
+.demo-stops-contact__form-title {
+  position: absolute;
+  left: 56px;
+  top: 35px;
+  width: 328px;
+  height: 56px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36.4px;
+  letter-spacing: -0.84px;
+  color: #ffffff;
+}
+
+.demo-stops-contact__form { position: absolute; left: 0; top: 0; width: 440px; height: 501px; }
+
+.demo-stops-contact__field {
+  position: absolute;
+  left: 28px;
+  width: 383px;
+  height: 56px;
+}
+.demo-stops-contact__field--name { top: 113px; }
+.demo-stops-contact__field--phone { top: 187px; }
+.demo-stops-contact__field--company { top: 261px; }
+.demo-stops-contact__field--format { top: 335px; }
+
+.demo-stops-contact__input {
+  width: 383px;
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  padding: 18px 22px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: -0.54px;
+  color: #ffffff;
+  outline: none;
+}
+.demo-stops-contact__input:focus-visible { outline: 2px solid rgba(255,255,255,0.9); outline-offset: 2px; }
+
+.demo-stops-contact__field .demo-stops-contact__ph {
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: -0.54px;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+.demo-stops-contact__input:focus + .demo-stops-contact__ph,
+.demo-stops-contact__input:not(:placeholder-shown) + .demo-stops-contact__ph { opacity: 0; }
+
+.demo-stops-contact__submit {
+  position: absolute;
+  left: 28px;
+  top: 414px;
+  width: 383px;
+  height: 52px;
+  border: 0;
+  border-radius: 64px;
+  background: #14f195;
+  color: #000000;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+}
+.demo-stops-contact__submit:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+
+

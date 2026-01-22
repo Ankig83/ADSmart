@@ -1,0 +1,263 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Остановки/Афиши · {{ PROJECT_NAME }}{% endblock %}
+
+{% block page_css %}
+  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/stops.css' %}" />
+{% endblock %}
+
+{% block header %}
+  {% include "components/demo/menu.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="demo-stops">
+    <section class="demo-stops-hero" aria-labelledby="stops-hero-title">
+      <div class="demo-stops-hero__bg" aria-hidden="true">
+        <img
+          class="demo-stops-hero__bg-img"
+          src="{% static 'assets/images/stops-hero-bg.jpg' %}"
+          alt=""
+          width="1440"
+          height="751"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="demo-stops-hero__overlay"></div>
+      </div>
+
+      <div class="demo-stops-hero__content">
+        <h1 class="demo-stops-hero__title" id="stops-hero-title">
+          Остановите взгляд города<br />
+          Запустите диалог
+        </h1>
+        <p class="demo-stops-hero__subtitle">
+          Реклама на остановках и афишах, которая умеет разговаривать. Превращаем поток людей в поток квалифицированных
+          заявок с помощью AI-ассистентов
+        </p>
+      </div>
+
+      <div class="demo-stops-hero__actions" aria-label="Действия">
+        <a class="demo-stops-hero__btn demo-stops-hero__btn--primary" href="#calc">Рассчитать охват</a>
+        <a class="demo-stops-hero__btn demo-stops-hero__btn--outline" href="#cases">Наши кейсы</a>
+      </div>
+    </section>
+
+    <section class="demo-stops-benefits" aria-labelledby="stops-benefits-title">
+      <h2 class="demo-stops-benefits__title" id="stops-benefits-title">
+        Массовый охват в точке<br />
+        принятия решений
+      </h2>
+
+      <ul class="demo-stops-benefits__cards" aria-label="Преимущества рекламы на остановках">
+        <li class="demo-stops-benefits__card demo-stops-benefits__card--1">
+          <div class="demo-stops-benefits__ring" aria-hidden="true">
+            <img class="demo-stops-benefits__icon" src="{% static 'assets/icons/frame-133-5142.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-stops-benefits__h3">Двусторонний обзор</h3>
+          <p class="demo-stops-benefits__p">Торцевые стороны видны пешеходам и водителям</p>
+        </li>
+
+        <li class="demo-stops-benefits__card demo-stops-benefits__card--2">
+          <div class="demo-stops-benefits__ring" aria-hidden="true">
+            <img class="demo-stops-benefits__icon" src="{% static 'assets/icons/location-133-5138-140-5572.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-stops-benefits__h3">Гиперлокальность</h3>
+          <p class="demo-stops-benefits__p">Более 700 сторон по городу. Точный таргетинг на районы</p>
+        </li>
+
+        <li class="demo-stops-benefits__card demo-stops-benefits__card--3">
+          <div class="demo-stops-benefits__ring" aria-hidden="true">
+            <img class="demo-stops-benefits__icon" src="{% static 'assets/icons/frame-133-5284.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-stops-benefits__h3">Высокая частота контакта</h3>
+          <p class="demo-stops-benefits__p">Ежедневный охват аудитории в моменте ожидания</p>
+        </li>
+
+        <li class="demo-stops-benefits__card demo-stops-benefits__card--4">
+          <div class="demo-stops-benefits__ring" aria-hidden="true">
+            <img class="demo-stops-benefits__icon" src="{% static 'assets/icons/frame-133-5287.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-stops-benefits__h3">Эффективная цена</h3>
+          <p class="demo-stops-benefits__p">
+            Стоимость от 9 000 руб./мес. за сторону. Стандартный размер: 1.27 × 1.87 м
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="demo-stops-poster" aria-labelledby="stops-poster-title">
+      <h2 class="demo-stops-poster__title" id="stops-poster-title">Афиша, которая собирает аудиторию</h2>
+
+      <div class="demo-stops-poster__left" aria-hidden="true">
+        <img
+          class="demo-stops-poster__img"
+          src="{% static 'assets/images/stops-poster-left.jpg' %}"
+          alt=""
+          width="533"
+          height="618"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <div class="demo-stops-poster__right" aria-label="Преимущества афиш">
+        <div class="demo-stops-poster__card demo-stops-poster__card--1" role="group" aria-label="Классика событийного маркетинга">
+          <h3 class="demo-stops-poster__h3">Классика событийного маркетинга</h3>
+          <p class="demo-stops-poster__p">Идеально для концертов, спектаклей, выставок, фестивалей</p>
+        </div>
+
+        <div class="demo-stops-poster__card demo-stops-poster__card--2" role="group" aria-label="Широкое городское покрытие">
+          <h3 class="demo-stops-poster__h3">Широкое городское покрытие</h3>
+          <p class="demo-stops-poster__p">Охват ключевых пешеходных и автомобильных потоков</p>
+        </div>
+
+        <div class="demo-stops-poster__card demo-stops-poster__card--3" role="group" aria-label="Оперативный запуск">
+          <h3 class="demo-stops-poster__h3">Оперативный запуск</h3>
+          <p class="demo-stops-poster__p">Быстрый старт кампании для анонса</p>
+        </div>
+
+        <div class="demo-stops-poster__card demo-stops-poster__card--4" role="group" aria-label="Технические параметры">
+          <h3 class="demo-stops-poster__h3">Технические параметры</h3>
+          <p class="demo-stops-poster__p">
+            Минимальный срок размещения — от 10 дней. Индивидуальные пакеты под бюджет и задачи
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-stops-steps" aria-labelledby="stops-steps-title">
+      <h2 class="demo-stops-steps__title" id="stops-steps-title">От стратегии до аналитики лидов</h2>
+
+      <div class="demo-stops-steps__cards" role="list" aria-label="Этапы работы">
+        <div class="demo-stops-steps__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Анализ и подбор" description="Выбор оптимальных локаций под цели" icon_svg="assets/icons/location-133-5138.svg" %}
+        </div>
+        <div class="demo-stops-steps__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Креатив с цифровым CTA" description="Разработка макетов, заточенных под запуск диалога" icon_svg="assets/icons/design-133-5037.svg" %}
+        </div>
+        <div class="demo-stops-steps__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="AI-интеграция" description="Настройка текстовых ботов в Telegram и Max или голосовых ассистентов" icon_svg="assets/icons/robo-133-4988.svg" %}
+        </div>
+        <div class="demo-stops-steps__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Запуск и отчет" description="Размещение и предоставление аналитики по охвату и конверсии в digital-канале" icon_svg="assets/icons/eye-133-4932.svg" %}
+        </div>
+        <div class="demo-stops-steps__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Развитие успеха" description="Корректировка стратегии и сценариев на основе данных для роста ROI." icon_svg="assets/icons/results-133-5154.svg" show_line=False %}
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-stops-ideal" aria-labelledby="stops-ideal-title">
+      <h2 class="demo-stops-ideal__title" id="stops-ideal-title">Для каких задач идеально</h2>
+
+      <ul class="demo-stops-ideal__grid" aria-label="Задачи">
+        <li class="demo-stops-ideal__card demo-stops-ideal__card--1">
+          <img class="demo-stops-ideal__icon" src="{% static 'assets/icons/frame-133-5291.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-stops-ideal__h3">Для остановок</h3>
+          <p class="demo-stops-ideal__p">
+            Локальный ритейл, доставка еды и товаров, такси/каршеринг, кофейни, салоны красоты у метро
+          </p>
+        </li>
+
+        <li class="demo-stops-ideal__card demo-stops-ideal__card--2">
+          <img class="demo-stops-ideal__icon" src="{% static 'assets/icons/frame-133-5206.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-stops-ideal__h3">Для афиш</h3>
+          <p class="demo-stops-ideal__p">
+            Концертные площадки, театры, музеи, фестивали, кинопремьеры, образовательные курсы
+          </p>
+        </li>
+
+        <li class="demo-stops-ideal__card demo-stops-ideal__card--3">
+          <img class="demo-stops-ideal__icon" src="{% static 'assets/icons/frame-133-5179.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-stops-ideal__h3">HR и массовый найм</h3>
+          <p class="demo-stops-ideal__p">
+            Поиск сотрудников в районах проживания. AI-бот проводит первичное интервью и отбор кандидатов 24/7
+          </p>
+        </li>
+
+        <li class="demo-stops-ideal__card demo-stops-ideal__card--4">
+          <img class="demo-stops-ideal__icon" src="{% static 'assets/icons/frame-133-5278-i140-5621-102-677.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-stops-ideal__h3">Недвижимость и застройщики</h3>
+          <p class="demo-stops-ideal__p">
+            Реклама ЖК прямо в локации. Бот мгновенно показывает планировки, цены и записывает на просмотр
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="demo-stops-contact" aria-labelledby="stops-contact-title">
+      <div class="demo-stops-contact__inner">
+        <h2 class="demo-stops-contact__title" id="stops-contact-title">Запустите диалог с городом</h2>
+        <p class="demo-stops-contact__text">
+          Получите адресные программы и рассчитайте эффективность гибридной кампании
+        </p>
+
+        <a class="demo-stops-contact__dl demo-stops-contact__dl--stops" href="#" role="button">
+          Скачать программу (Остановки)
+        </a>
+        <a class="demo-stops-contact__dl demo-stops-contact__dl--posters" href="#" role="button">
+          Скачать программу (Афиши)
+        </a>
+
+        <label class="demo-stops-contact__phone">
+          <span class="sr-only">Телефон</span>
+          <input class="demo-stops-contact__phone-input" type="tel" placeholder=" " autocomplete="tel" />
+          <span class="demo-stops-contact__phone-ph" aria-hidden="true">Телефон</span>
+        </label>
+
+        <div class="demo-stops-contact__formbox" aria-label="Форма заявки">
+          <div class="demo-stops-contact__form-title">Получить комплексное предложение</div>
+
+          <form class="demo-stops-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="source" value="stops_contact" />
+            <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+
+            <label class="demo-stops-contact__field demo-stops-contact__field--name">
+              <span class="sr-only">Имя</span>
+              <input class="demo-stops-contact__input" type="text" name="name" placeholder=" " autocomplete="name" />
+              <span class="demo-stops-contact__ph" aria-hidden="true">Имя</span>
+            </label>
+
+            <label class="demo-stops-contact__field demo-stops-contact__field--phone">
+              <span class="sr-only">Телефон</span>
+              <input class="demo-stops-contact__input" type="tel" name="phone" placeholder=" " autocomplete="tel" required />
+              <span class="demo-stops-contact__ph" aria-hidden="true">Телефон</span>
+            </label>
+
+            <label class="demo-stops-contact__field demo-stops-contact__field--company">
+              <span class="sr-only">Компания</span>
+              <input class="demo-stops-contact__input" type="text" name="company" placeholder=" " autocomplete="organization" />
+              <span class="demo-stops-contact__ph" aria-hidden="true">Компания</span>
+            </label>
+
+            <label class="demo-stops-contact__field demo-stops-contact__field--format">
+              <span class="sr-only">Интересующий формат</span>
+              <input class="demo-stops-contact__input" type="text" name="interest_format" placeholder=" " />
+              <span class="demo-stops-contact__ph" aria-hidden="true">Интересующий формат</span>
+            </label>
+
+            <button class="demo-stops-contact__submit" type="submit">Обсудить мой проект</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    {% include "components/demo/lead_success_modal.html" %}
+
+    {# TODO: следующие секции этой страницы добавим после poster #}
+    <div id="calc" class="sr-only" aria-hidden="true">calc anchor</div>
+    <div id="cases" class="sr-only" aria-hidden="true">cases anchor</div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/demo/footer.html" %}
+{% endblock %}
+
+

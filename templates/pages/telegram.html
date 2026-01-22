@@ -1,0 +1,303 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Telegram продвижение · {{ PROJECT_NAME }}{% endblock %}
+
+{% block page_css %}
+  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/telegram.css' %}" />
+{% endblock %}
+
+{% block header %}
+  {% include "components/demo/menu.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="demo-tg">
+    <section class="demo-tg-hero" aria-labelledby="tg-hero-title">
+      <div class="demo-tg-hero__content">
+        <h1 class="demo-tg-hero__title" id="tg-hero-title">
+          Продажи и сервис<br />
+          там, где общается<br />
+          ваша аудитория
+        </h1>
+        <p class="demo-tg-hero__subtitle">
+          Telegram от ADSmart — стратегический канал роста бизнеса. <br />
+          Превращаем подписчиков в клиентов
+        </p>
+
+        <div class="demo-tg-hero__actions">
+          <a class="demo-tg-hero__btn demo-tg-hero__btn--primary" href="#contact">Рассчитать</a>
+          <a class="demo-tg-hero__btn demo-tg-hero__btn--outline" href="#cases">Наши кейсы</a>
+        </div>
+      </div>
+
+      <div class="demo-tg-hero__image-wrap" aria-hidden="true">
+        <div class="demo-tg-hero__glow"></div>
+        <img
+          class="demo-tg-hero__img"
+          src="{% static 'assets/images/telegram-hero.png' %}"
+          alt=""
+          width="473"
+          height="519"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <section class="demo-tg-why" aria-labelledby="tg-why-title">
+      <h2 class="demo-tg-why__title" id="tg-why-title">
+        Telegram — это новый центр цифровой<br />
+        гравитации для бизнеса в России
+      </h2>
+
+      <div class="demo-tg-why__grid">
+        <div class="demo-tg-why__card">
+          <div class="demo-tg-why__icon-wrap">
+            <img class="demo-tg-why__icon" src="{% static 'assets/icons/icon-133-4980-140-5033.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-tg-why__h3">Безопасность и легальность</h3>
+          <p class="demo-tg-why__p">
+            Официальная рекламная платформа Telegram Ads — легальный и предсказуемый канал после изменений на рынке. Мы
+            работаем строго в рамках правил и закона о маркировке рекламы
+          </p>
+        </div>
+
+        <div class="demo-tg-why__card">
+          <div class="demo-tg-why__icon-wrap">
+            <img class="demo-tg-why__icon" src="{% static 'assets/icons/frame-133-5113.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-tg-why__h3">Экосистема, а не лента</h3>
+          <p class="demo-tg-why__p">
+            Telegram уникален сочетанием мессенджера для личного общения, платформы для массовых рассылок через каналы и
+            полноценной среды для коммерции через Mini Apps
+          </p>
+        </div>
+
+        <div class="demo-tg-why__card">
+          <div class="demo-tg-why__icon-wrap">
+            <img class="demo-tg-why__icon" src="{% static 'assets/icons/frame-133-5116-140-5049.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-tg-why__h3">Лояльность и доверие</h3>
+          <p class="demo-tg-why__p">
+            Аудитория в Telegram воспринимает информацию в каналах как рекомендацию, а не назойливую рекламу, что повышает
+            конверсию. Канал становится точкой входа в ваш сервис
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-tg-approach" aria-labelledby="tg-approach-title">
+      <h2 class="demo-tg-approach__title" id="tg-approach-title">
+        Комплексный подход: от создания<br />
+        сообщества до закрытия сделки
+      </h2>
+
+      <div class="demo-tg-approach__grid">
+        <div class="demo-tg-approach__card">
+          <div class="demo-tg-approach__icon-wrap">
+            <img class="demo-tg-approach__icon" src="{% static 'assets/icons/create-133-5126.svg' %}" alt="" />
+          </div>
+          <div class="demo-tg-approach__content">
+            <h3 class="demo-tg-approach__h3">Создание и ведение каналов</h3>
+            <p class="demo-tg-approach__p">
+              Дизайн, стратегия и контент. Превращаем ваш канал в актив, который прогревает аудиторию и генерирует продажи
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-tg-approach__card">
+          <div class="demo-tg-approach__icon-wrap">
+            <img class="demo-tg-approach__icon" src="{% static 'assets/icons/target-133-5046-i140-5061-102-677.svg' %}" alt="" />
+          </div>
+          <div class="demo-tg-approach__content">
+            <h3 class="demo-tg-approach__h3">Таргетинг Telegram Ads</h3>
+            <p class="demo-tg-approach__p">
+              Официальная реклама с тонкими настройками. Ловим вашу ЦА там, где она читает контент, и приводим «теплый»
+              трафик без баннерной слепоты
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-tg-approach__card">
+          <div class="demo-tg-approach__icon-wrap">
+            <img class="demo-tg-approach__icon" src="{% static 'assets/icons/users-133-5129.svg' %}" alt="" />
+          </div>
+          <div class="demo-tg-approach__content">
+            <h3 class="demo-tg-approach__h3">Посевы в каналах</h3>
+            <p class="demo-tg-approach__p">
+              Рекламные интеграции в тематических сообществах. Трафик через доверие: аудитория воспринимает пост как
+              рекомендацию, а не как рекламу
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-tg-approach__card">
+          <div class="demo-tg-approach__icon-wrap">
+            <img class="demo-tg-approach__icon" src="{% static 'assets/icons/shop-133-5133.svg' %}" alt="" />
+          </div>
+          <div class="demo-tg-approach__content">
+            <h3 class="demo-tg-approach__h3">Telegram Mini Apps</h3>
+            <p class="demo-tg-approach__p">
+              Стратегия, дизайн и копирайтинг. Мы превращаем ваш канал в актив, который формирует лояльное комьюнити и
+              генерирует повторные продажи
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-tg-benefits" aria-labelledby="tg-benefits-title">
+      <h2 class="demo-tg-benefits__title" id="tg-benefits-title">
+        Почему это работает там,<br />
+        где другие каналы «молчат»
+      </h2>
+
+      <div class="demo-tg-benefits__grid">
+        <div class="demo-tg-benefits__card">
+          <div class="demo-tg-benefits__ring">
+            <img class="demo-tg-benefits__icon" src="{% static 'assets/icons/eye-133-4932-140-5071.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-tg-benefits__h3">Аудит и стратегия</h3>
+          <p class="demo-tg-benefits__p">
+            Анализ ЦА, рынка и конкурентов. Определение KPI для каждой услуги (рост подписчиков, стоимость лида, ROI)
+          </p>
+        </div>
+
+        <div class="demo-tg-benefits__card">
+          <div class="demo-tg-benefits__ring">
+            <img class="demo-tg-benefits__icon" src="{% static 'assets/icons/location-133-5138-140-5077.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-tg-benefits__h3">Производство и запуск</h3>
+          <p class="demo-tg-benefits__p">
+            Подготовка креативов и текстов в рамках правил платформ. Обязательная маркировка рекламы в посевах. Запуск
+            кампаний
+          </p>
+        </div>
+
+        <div class="demo-tg-benefits__card">
+          <div class="demo-tg-benefits__ring">
+            <img class="demo-tg-benefits__icon" src="{% static 'assets/icons/frame-133-5142-140-5083.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-tg-benefits__h3">Ведение и модерация</h3>
+          <p class="demo-tg-benefits__p">
+            Постоянный мониторинг каналов, модерация комментариев, защита от спама и соблюдение правил Telegram
+          </p>
+        </div>
+
+        <div class="demo-tg-benefits__card">
+          <div class="demo-tg-benefits__ring">
+            <img class="demo-tg-benefits__icon" src="{% static 'assets/icons/frame-133-5145-140-5089.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-tg-benefits__h3">Аналитика и отчет</h3>
+          <p class="demo-tg-benefits__p">
+            Детальная аналитика по всем каналам: статистика канала, эффективность Ads, конверсии с посевов, метрики Mini App
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-tg-comparison" aria-labelledby="tg-comparison-title">
+      <h2 class="demo-tg-comparison__title" id="tg-comparison-title">
+        Экспертиза там, где другие видят только<br />
+        кнопку «Запустить рекламу»
+      </h2>
+
+      <div class="demo-tg-comparison__grid">
+        <div class="demo-tg-comparison__header">
+          <div class="demo-tg-comparison__col-title">Самостоятельная работа / Разовые исполнители</div>
+          <div class="demo-tg-comparison__col-title demo-tg-comparison__col-title--accent">
+            Работа с ADSmart как с партнером
+          </div>
+        </div>
+
+        <div class="demo-tg-comparison__row">
+          <div class="demo-tg-comparison__cell">Риск наткнуться на каналы с ботами или низкой вовлеченностью</div>
+          <div class="demo-tg-comparison__cell demo-tg-comparison__cell--accent">
+            Глубокий анализ каналов (ER, охваты, цитируемость) — только проверенные площадки
+          </div>
+        </div>
+
+        <div class="demo-tg-comparison__row">
+          <div class="demo-tg-comparison__cell">Риск штрафов из-за ошибок в маркировке рекламы</div>
+          <div class="demo-tg-comparison__cell demo-tg-comparison__cell--accent">
+            Полная ответственность за корректную маркировку рекламы
+          </div>
+        </div>
+
+        <div class="demo-tg-comparison__row">
+          <div class="demo-tg-comparison__cell">Высокий риск бана за нарушение правил коммуникации (спам)</div>
+          <div class="demo-tg-comparison__cell demo-tg-comparison__cell--accent">
+            Проактивное ведение и модерация — диалог вместо рассылок, защита репутации
+          </div>
+        </div>
+
+        <div class="demo-tg-comparison__row">
+          <div class="demo-tg-comparison__cell">Telegram существует в отрыве от общей стратегии</div>
+          <div class="demo-tg-comparison__cell demo-tg-comparison__cell--accent">
+            Интеграция в гибридную экосистему: QR с билбордов и боты из радио ведут в Telegram
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-tg-contact" aria-labelledby="tg-contact-title">
+      <div class="demo-tg-contact__inner">
+        <h2 class="demo-tg-contact__title" id="tg-contact-title">
+          Начните диалог с клиентами в самом перспективном канале
+        </h2>
+        <p class="demo-tg-contact__text">
+          Расскажите о вашем бизнесе. Мы подготовим стратегию продвижения в Telegram с прогнозом по охватам и KPI
+        </p>
+
+        <form class="demo-tg-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
+          {% csrf_token %}
+          <input type="hidden" name="source" value="telegram_contact" />
+          <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+
+          <div class="demo-tg-contact__row">
+            <label class="demo-tg-contact__field">
+              <span class="sr-only">Имя</span>
+              <input class="demo-tg-contact__input" type="text" name="name" placeholder=" " autocomplete="name" />
+              <span class="demo-tg-contact__ph" aria-hidden="true">Имя</span>
+            </label>
+
+            <label class="demo-tg-contact__field">
+              <span class="sr-only">Телефон</span>
+              <input class="demo-tg-contact__input" type="tel" name="phone" placeholder=" " autocomplete="tel" required />
+              <span class="demo-tg-contact__ph" aria-hidden="true">Телефон</span>
+            </label>
+          </div>
+
+          <label class="demo-tg-contact__field demo-tg-contact__field--full">
+            <span class="sr-only">Сфера бизнеса</span>
+            <input class="demo-tg-contact__input" type="text" name="company" placeholder=" " />
+            <span class="demo-tg-contact__ph" aria-hidden="true">Сфера бизнеса</span>
+          </label>
+
+          <label class="demo-tg-contact__field demo-tg-contact__field--full">
+            <span class="sr-only">Какую задачу решаем?</span>
+            <input class="demo-tg-contact__input" type="text" name="interest_format" placeholder=" " />
+            <span class="demo-tg-contact__ph" aria-hidden="true">Какую задачу решаем?</span>
+          </label>
+
+          <div class="demo-tg-contact__actions">
+            <button class="demo-tg-contact__btn" type="submit">Обсудить мой проект</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  {% include "components/demo/lead_success_modal.html" %}
+
+  <div id="contact" class="sr-only" aria-hidden="true">contact anchor</div>
+  <div id="cases" class="sr-only" aria-hidden="true">cases anchor</div>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/demo/footer.html" %}
+{% endblock %}

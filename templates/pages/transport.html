@@ -1,0 +1,273 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Транспорт · {{ PROJECT_NAME }}{% endblock %}
+
+{% block page_css %}
+  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/transport.css' %}" />
+{% endblock %}
+
+{% block header %}
+  {% include "components/demo/menu.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="demo-transport">
+    <section class="demo-transport-hero" aria-labelledby="transport-hero-title">
+      <div class="demo-transport-hero__bg" aria-hidden="true">
+        <img
+          class="demo-transport-hero__bg-img"
+          src="{% static 'assets/images/transport-hero-bg.png' %}"
+          alt=""
+          width="1440"
+          height="751"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="demo-transport-hero__overlay"></div>
+      </div>
+
+      <div class="demo-transport-hero__content">
+        <h1 class="demo-transport-hero__title" id="transport-hero-title">Ваш бренд в движении
+Диалог с<br />клиентом мгновенно</h1>
+        <p class="demo-transport-hero__subtitle">
+          ADSmart в транспорте: реклама, которая разговаривает.<br />
+          AI-диалог прямо в дороге
+        </p>
+        <a class="demo-transport-hero__btn" href="#calc">Рассчитать кампанию</a>
+      </div>
+    </section>
+
+    <section class="demo-transport-benefits" aria-labelledby="transport-benefits-title">
+      <h2 class="demo-transport-benefits__title" id="transport-benefits-title">
+        Почему реклама на<br />
+        транспорте — это мобильная стратегия
+      </h2>
+
+      <ul class="demo-transport-benefits__cards" aria-label="Преимущества">
+        <li class="demo-transport-benefits__card demo-transport-benefits__card--1">
+          <div class="demo-transport-benefits__ring" aria-hidden="true">
+            <img class="demo-transport-benefits__icon" src="{% static 'assets/icons/frame-133-5243-140-5504.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-transport-benefits__h3">Максимальный и динамичный охват</h3>
+          <p class="demo-transport-benefits__p">Ваше сообщение само ищет аудиторию во всех районах, включая труднодоступные</p>
+        </li>
+
+        <li class="demo-transport-benefits__card demo-transport-benefits__card--2">
+          <div class="demo-transport-benefits__ring" aria-hidden="true">
+            <img class="demo-transport-benefits__icon" src="{% static 'assets/icons/frame-133-5262.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-transport-benefits__h3">Высокая частота и навязчивость</h3>
+          <p class="demo-transport-benefits__p">Циклические маршруты обеспечивают многократный контакт, закрепляя образ бренда</p>
+        </li>
+
+        <li class="demo-transport-benefits__card demo-transport-benefits__card--3">
+          <div class="demo-transport-benefits__ring" aria-hidden="true">
+            <img class="demo-transport-benefits__icon" src="{% static 'assets/icons/frame-133-5266.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-transport-benefits__h3">Точечный таргетинг</h3>
+          <p class="demo-transport-benefits__p">
+            Выбор конкретных маршрутов, проходящих мимо ваших точек продаж или офисов конкурентов
+          </p>
+        </li>
+
+        <li class="demo-transport-benefits__card demo-transport-benefits__card--4">
+          <div class="demo-transport-benefits__ring" aria-hidden="true">
+            <img class="demo-transport-benefits__icon" src="{% static 'assets/icons/frame-133-5235-140-5522.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-transport-benefits__h3">Визуальная доминация и WOW-эффект</h3>
+          <p class="demo-transport-benefits__p">Полное брендирование создает незабываемый образ и виральный потенциал</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="demo-transport-formats" aria-labelledby="transport-formats-title">
+      <h2 class="demo-transport-formats__title" id="transport-formats-title">Наши форматы и интеллектуальные решения</h2>
+
+      <div class="demo-transport-formats__items" data-transport-accordion aria-label="Форматы в транспорте">
+        <details class="demo-transport-format demo-transport-format--stickers" open>
+          <summary class="demo-transport-format__summary">
+            <h3 class="demo-transport-format__title">Стикеры в салоне</h3>
+            <p class="demo-transport-format__subtitle">100% внимание пассажира в замкнутом пространстве</p>
+            <img class="demo-transport-format__chevron" src="{% static 'assets/icons/chevron-down-46-463.svg' %}" alt="" aria-hidden="true" />
+          </summary>
+          <div class="demo-transport-format__body">
+            <img class="demo-transport-format__img" src="{% static 'assets/images/transport-format-stickers@2x.png' %}" alt="" />
+
+            <div class="demo-transport-format__box demo-transport-format__box--ai">
+              <div class="demo-transport-format__box-title">Идеально для AI-интеграции</div>
+              <div class="demo-transport-format__box-text">
+                Сценарий: «Скучаешь в дороге? Скачай наш гайд/получи скидку». QR-код на стикере ведет в бота
+              </div>
+            </div>
+
+            <div class="demo-transport-format__box demo-transport-format__box--price">
+              <div class="demo-transport-format__box-title">Стоимость и условия</div>
+              <div class="demo-transport-format__box-text">От 20 000 руб. (фото примера в блоке)</div>
+            </div>
+          </div>
+        </details>
+
+        <details class="demo-transport-format demo-transport-format--headrests">
+          <summary class="demo-transport-format__summary">
+            <h3 class="demo-transport-format__title">Реклама на подголовниках</h3>
+            <p class="demo-transport-format__subtitle">Прямой, длительный контакт «в упор»</p>
+            <img class="demo-transport-format__chevron" src="{% static 'assets/icons/chevron-down-46-463.svg' %}" alt="" aria-hidden="true" />
+          </summary>
+          <div class="demo-transport-format__body">
+            <img class="demo-transport-format__img" src="{% static 'assets/images/transport-format-headrests@2x.png' %}" alt="" />
+
+            <div class="demo-transport-format__box demo-transport-format__box--ai">
+              <div class="demo-transport-format__box-title">Идеально для AI-интеграции</div>
+              <div class="demo-transport-format__box-text">
+                Сценарий: «Узнай больше о продукте». QR рядом с детальной инфографикой для углубленного изучения через бота
+              </div>
+            </div>
+
+            <div class="demo-transport-format__box demo-transport-format__box--price">
+              <div class="demo-transport-format__box-title">Стоимость и условия</div>
+              <div class="demo-transport-format__box-text">
+                6 500 руб./мес за 1 ТС (16 подголовников).<br />
+                Мин. объем — 3 ТС
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="demo-transport-format demo-transport-format--rear-window">
+          <summary class="demo-transport-format__summary">
+            <h3 class="demo-transport-format__title">Реклама на заднем стекле</h3>
+            <p class="demo-transport-format__subtitle">Длительный контакт с водителями в пробках</p>
+            <img class="demo-transport-format__chevron" src="{% static 'assets/icons/chevron-down-46-463.svg' %}" alt="" aria-hidden="true" />
+          </summary>
+          <div class="demo-transport-format__body">
+            <img class="demo-transport-format__img" src="{% static 'assets/images/transport-format-rear-window@2x.png' %}" alt="" />
+
+            <div class="demo-transport-format__box demo-transport-format__box--ai">
+              <div class="demo-transport-format__box-title">Идеально для AI-интеграции</div>
+              <div class="demo-transport-format__box-text">
+                Сценарий: «Застрял в пробке? Закажи кофе с собой рядом с метро [Название]». Геолокационный призыв
+              </div>
+            </div>
+
+            <div class="demo-transport-format__box demo-transport-format__box--price">
+              <div class="demo-transport-format__box-title">Стоимость и условия</div>
+              <div class="demo-transport-format__box-text">9 500 руб./шт. Мин. объем — 3 ТС</div>
+            </div>
+          </div>
+        </details>
+
+        <details class="demo-transport-format demo-transport-format--rear-board">
+          <summary class="demo-transport-format__summary">
+            <h3 class="demo-transport-format__title">Реклама на заднем борту</h3>
+            <p class="demo-transport-format__subtitle">Массовый охват пешеходов и поток машин</p>
+            <img class="demo-transport-format__chevron" src="{% static 'assets/icons/chevron-down-46-463.svg' %}" alt="" aria-hidden="true" />
+          </summary>
+          <div class="demo-transport-format__body">
+            <img class="demo-transport-format__img" src="{% static 'assets/images/transport-format-rear-board@2x.png' %}" alt="" />
+
+            <div class="demo-transport-format__box demo-transport-format__box--ai">
+              <div class="demo-transport-format__box-title">Идеально для AI-интеграции</div>
+              <div class="demo-transport-format__box-text">
+                Сценарий: «Успей заказать!» с QR-кодом для акции «только сегодня»
+              </div>
+            </div>
+
+            <div class="demo-transport-format__box demo-transport-format__box--price">
+              <div class="demo-transport-format__box-title">Стоимость и условия</div>
+              <div class="demo-transport-format__box-text">От 9 000 руб./шт</div>
+            </div>
+          </div>
+        </details>
+
+        <details class="demo-transport-format demo-transport-format--monitors">
+          <summary class="demo-transport-format__summary">
+            <h3 class="demo-transport-format__title">Мониторы в салоне (цифровые)</h3>
+            <p class="demo-transport-format__subtitle">Максимальное вовлечение, динамичный контент</p>
+            <img class="demo-transport-format__chevron" src="{% static 'assets/icons/chevron-down-46-463.svg' %}" alt="" aria-hidden="true" />
+          </summary>
+          <div class="demo-transport-format__body">
+            <img class="demo-transport-format__img" src="{% static 'assets/images/transport-format-monitors@2x.png' %}" alt="" />
+
+            <div class="demo-transport-format__box demo-transport-format__box--ai">
+              <div class="demo-transport-format__box-title">Идеально для AI-интеграции</div>
+              <div class="demo-transport-format__box-text">
+                Сценарий: Прямой показ QR-кода на экране для мгновенного взаимодействия
+              </div>
+            </div>
+
+            <div class="demo-transport-format__box demo-transport-format__box--price">
+              <div class="demo-transport-format__box-title">Стоимость и условия</div>
+              <div class="demo-transport-format__box-text">По запросу (индивидуальный расчет)</div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="demo-transport-steps" aria-labelledby="transport-steps-title">
+      <h2 class="demo-transport-steps__title" id="transport-steps-title">Полный цикл: от выбора<br />маршрута до аналитики лидов</h2>
+
+      <div class="demo-transport-steps__cards" role="list" aria-label="Этапы работы">
+        <div class="demo-transport-steps__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Стратегия и аналитика" description="Подбор маршрутов, соответствующих географии ваших клиентов" icon_svg="assets/icons/location-133-5138.svg" %}
+        </div>
+        <div class="demo-transport-steps__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Креатив с цифровым CTA" description="Разработка макетов, побуждающих к сканированию или звонку" icon_svg="assets/icons/design-133-5037.svg" %}
+        </div>
+        <div class="demo-transport-steps__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Техинтеграция" description="Настройка чат-ботов в Telegram/Max или голосовых ассистентов" icon_svg="assets/icons/robo-133-4988.svg" %}
+        </div>
+        <div class="demo-transport-steps__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Запуск и контроль" description="Координация с перевозчиками, монтаж" icon_svg="assets/icons/eye-133-4932.svg" %}
+        </div>
+        <div class="demo-transport-steps__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Отчетность" description="Анализ не только охвата, но и конверсии из физического маршрута в digital-заявку" icon_svg="assets/icons/results-133-5154.svg" show_line=False %}
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-transport-ideal" aria-labelledby="transport-ideal-title">
+      <h2 class="demo-transport-ideal__title" id="transport-ideal-title">Для каких задач идеально</h2>
+
+      <ul class="demo-transport-ideal__grid" aria-label="Задачи">
+        <li class="demo-transport-ideal__card demo-transport-ideal__card--1">
+          <img class="demo-transport-ideal__icon" src="{% static 'assets/icons/frame-133-5274.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-transport-ideal__h3">Сети и ритейл</h3>
+          <p class="demo-transport-ideal__p">Привлечение трафика в конкретные торговые точки, расположенные на маршруте</p>
+        </li>
+
+        <li class="demo-transport-ideal__card demo-transport-ideal__card--2">
+          <img class="demo-transport-ideal__icon" src="{% static 'assets/icons/frame-133-5269.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-transport-ideal__h3">Сервисы и доставка</h3>
+          <p class="demo-transport-ideal__p">Заказ еды, такси, товаров «здесь и сейчас» по геолокационному принципу</p>
+        </li>
+
+        <li class="demo-transport-ideal__card demo-transport-ideal__card--3">
+          <img class="demo-transport-ideal__icon" src="{% static 'assets/icons/frame-133-5192.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-transport-ideal__h3">События и развлечения</h3>
+          <p class="demo-transport-ideal__p">Анонс мероприятий в районах следования транспорта</p>
+        </li>
+
+        <li class="demo-transport-ideal__card demo-transport-ideal__card--4">
+          <img class="demo-transport-ideal__icon" src="{% static 'assets/icons/frame-133-5278.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-transport-ideal__h3">B2B-услуги</h3>
+          <p class="demo-transport-ideal__p">Таргетинг на бизнес-районы и промышленные зоны</p>
+        </li>
+      </ul>
+    </section>
+
+    {% include "components/demo/transport_contact_us.html" %}
+
+    {% include "components/demo/lead_success_modal.html" %}
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/demo/footer.html" %}
+{% endblock %}
+
+

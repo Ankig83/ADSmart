@@ -1,0 +1,27 @@
+{% load static %}
+{% comment %}Cookie consent modal (Ready--Copy node 140:5850){% endcomment %}
+
+<div class="c-modal demo-cookie" id="cookie-consent-modal" data-modal hidden>
+  <div class="c-modal__backdrop"></div>
+
+  <div class="c-modal__dialog demo-cookie__dialog" role="dialog" aria-modal="true" aria-labelledby="cookie-consent-title">
+    <img
+      class="demo-cookie__icon"
+      src="{% static 'assets/icons/component-1-84-1995.svg' %}"
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+      decoding="async"
+    />
+
+    <h3 class="demo-cookie__title" id="cookie-consent-title">Политика использования файлов cookie</h3>
+    <p class="demo-cookie__text">
+      Мы заботимся о ваших данных и используем файлы cookie только для улучшения вашего опыта. Пользуясь этим сайтом, вы соглашаетесь с нашей
+      <a class="demo-cookie__link" href="{% url 'cookie_policy' %}">Политикой использования файлов cookie</a>.
+    </p>
+
+    <button class="demo-cookie__btn" type="button" data-cookie-accept>Принять</button>
+  </div>
+</div>
+
+

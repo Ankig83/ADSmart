@@ -1,0 +1,72 @@
+{% load static %}
+{% comment %}Home section: Contact us (Ready--Copy: 1440 node 140:4911){% endcomment %}
+
+<section class="demo-contact" id="contacts" aria-labelledby="demo-contact-title">
+  <div class="demo-contact__box">
+    <h2 class="demo-contact__title" id="demo-contact-title">Свяжитесь с нами</h2>
+    <p class="demo-contact__text">
+      Мы всегда на связи в удобном для вас мессенджере. Проведем аудит вашей задачи и предложим решение в течение 24 часов
+    </p>
+
+    <ul class="demo-contact__items" aria-label="Contacts">
+      <li class="demo-contact__item demo-contact__item--phone">
+        <div class="demo-contact__item-icon" aria-hidden="true">
+          <img src="{% static 'assets/icons/frame-133-5061.svg' %}" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="demo-contact__item-body">
+          <div class="demo-contact__item-label">Телефон (общие вопросы)</div>
+          <a class="demo-contact__item-value" href="tel:+78452754471">+7 (8452) 75-44-71 (с 9:00 до 18:00 по МСК)</a>
+        </div>
+      </li>
+
+      <li class="demo-contact__item demo-contact__item--messengers">
+        <div class="demo-contact__item-icon" aria-hidden="true">
+          <img src="{% static 'assets/icons/frame-133-5069.svg' %}" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="demo-contact__item-body">
+          <div class="demo-contact__item-label">Telegram / WhatsApp</div>
+          <a class="demo-contact__item-value" href="tel:+79179816000">+7 (917) 981-60-00</a>
+        </div>
+      </li>
+
+      <li class="demo-contact__item demo-contact__item--email">
+        <div class="demo-contact__item-icon" aria-hidden="true">
+          <img src="{% static 'assets/icons/frame-133-5072.svg' %}" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="demo-contact__item-body">
+          <div class="demo-contact__item-label">Электронная почта</div>
+          <a class="demo-contact__item-value" href="mailto:welcome@ad-smart.ru">welcome@ad-smart.ru</a>
+        </div>
+      </li>
+    </ul>
+
+    <form class="demo-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
+      {% csrf_token %}
+      <input type="hidden" name="source" value="contact" />
+      <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+      <h3 class="demo-contact__form-title">Обсудим ваш проект?</h3>
+
+      <label class="demo-contact__field demo-contact__field--name">
+        <span class="sr-only">Имя</span>
+        <input class="demo-contact__input" type="text" name="name" placeholder=" " autocomplete="name" />
+        <span class="demo-contact__ph" aria-hidden="true">Имя</span>
+      </label>
+
+      <label class="demo-contact__field demo-contact__field--phone">
+        <span class="sr-only">Телефон</span>
+        <input class="demo-contact__input" type="tel" name="phone" placeholder=" " autocomplete="tel" />
+        <span class="demo-contact__ph" aria-hidden="true">Телефон</span>
+      </label>
+
+      <label class="demo-contact__field demo-contact__field--biz">
+        <span class="sr-only">Сфера бизнеса</span>
+        <input class="demo-contact__input" type="text" name="business" placeholder=" " />
+        <span class="demo-contact__ph" aria-hidden="true">Сфера бизнеса</span>
+      </label>
+
+      <button class="demo-contact__btn" type="submit">Обсудить мой проект</button>
+    </form>
+  </div>
+</section>
+
+

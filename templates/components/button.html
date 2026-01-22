@@ -1,0 +1,19 @@
+{# Params: label, variant=primary|secondary|ghost|danger, size=md|sm, href (optional), type (optional) #}
+{% with v=variant|default:"primary" s=size|default:"md" %}
+  {% if href %}
+    <a class="c-btn c-btn--{{ v }} c-btn--{{ s }} {{ class|default:'' }}" href="{{ href }}">
+      {{ label }}
+    </a>
+  {% else %}
+    <button
+      class="c-btn c-btn--{{ v }} c-btn--{{ s }} {{ class|default:'' }}"
+      type="{{ type|default:'button' }}"
+      {% if disabled %}disabled{% endif %}
+    >
+      {{ label }}
+    </button>
+  {% endif %}
+{% endwith %}
+
+
+

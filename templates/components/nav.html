@@ -1,0 +1,29 @@
+{% load ui %}
+<nav class="c-nav">
+  <div class="container c-nav__inner">
+    <a class="c-nav__brand" href="{% url 'home' %}">
+      <span class="c-nav__brand-text">{{ PROJECT_NAME }}</span>
+      <span class="c-badge c-badge--soft">dev</span>
+    </a>
+
+    <button
+      class="c-nav__toggle"
+      type="button"
+      data-menu-toggle
+      aria-controls="site-menu"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Toggle menu</span>
+      <span class="c-nav__burger" aria-hidden="true"></span>
+    </button>
+
+    <div class="c-nav__menu" id="site-menu" data-menu>
+      <a class="c-nav__link {% active_class 'home' %}" href="{% url 'home' %}">Home</a>
+      <a class="c-nav__link {% active_class 'styleguide' %}" href="{% url 'styleguide' %}">Styleguide</a>
+      <a class="c-nav__link" href="{% url 'admin:index' %}">Admin</a>
+    </div>
+  </div>
+</nav>
+
+
+

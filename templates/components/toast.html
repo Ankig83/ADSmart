@@ -1,0 +1,10 @@
+{# Params: text, tags (optional: success|warning|error|info) #}
+{% with tone=tags|default:"info" %}
+  <div class="c-toast c-toast--{{ tone }}" data-toast>
+    <div class="c-toast__body">{{ text }}</div>
+    <button class="c-toast__close" type="button" data-toast-close aria-label="Close">×</button>
+  </div>
+{% endwith %}
+
+
+

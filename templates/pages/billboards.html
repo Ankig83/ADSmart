@@ -1,0 +1,297 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Билборды · {{ PROJECT_NAME }}{% endblock %}
+
+{% block page_css %}
+  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/billboards.css' %}" />
+{% endblock %}
+
+{% block header %}
+  {% include "components/demo/menu.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="demo-billboards">
+    <section class="demo-billboards-hero" aria-labelledby="billboards-hero-title">
+      <div class="demo-billboards-hero__bg" aria-hidden="true">
+        <img
+          class="demo-billboards-hero__bg-img"
+          src="{% static 'assets/images/figma-1@2x.png' %}"
+          alt=""
+          width="1440"
+          height="751"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="demo-billboards-hero__overlay"></div>
+      </div>
+
+      <div class="demo-billboards-hero__content">
+        <h1 class="demo-billboards-hero__title" id="billboards-hero-title">
+          Превращаем массовый охват в поток целевых заявок. Ваш диалог начинается по QR-коду или звонку
+        </h1>
+        <p class="demo-billboards-hero__subtitle">
+          Билборды от ADSmart — это классическая мощь наружной рекламы, усиленная искусственным интеллектом.
+        </p>
+
+        <a class="demo-billboards-hero__btn" href="#calc">Рассчитать кампанию</a>
+      </div>
+    </section>
+
+    <section class="demo-billboards-invest" aria-labelledby="billboards-invest-title">
+      <h2 class="demo-billboards-invest__title" id="billboards-invest-title">
+        Почему билборд — это инвестиция в доминирование
+      </h2>
+
+      <ul class="demo-billboards-invest__cards" aria-label="Преимущества билбордов">
+        <li class="demo-billboards-invest__card demo-billboards-invest__card--1">
+          <div class="demo-billboards-invest__ring" aria-hidden="true">
+            <img class="demo-billboards-invest__icon" src="{% static 'assets/icons/frame-133-5235.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-billboards-invest__h3">Визуальное<br />доминирование и доверие</h3>
+          <p class="demo-billboards-invest__p">
+            Крупный, статичный формат формирует образ надежного и серьезного бренда
+          </p>
+        </li>
+
+        <li class="demo-billboards-invest__card demo-billboards-invest__card--2">
+          <div class="demo-billboards-invest__ring" aria-hidden="true">
+            <img class="demo-billboards-invest__icon" src="{% static 'assets/icons/frame-133-5239.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-billboards-invest__h3">Круглосуточное<br />присутствие</h3>
+          <p class="demo-billboards-invest__p">
+            Ваше сообщение работает 24/7, фиксируя внимание в разное время суток
+          </p>
+        </li>
+
+        <li class="demo-billboards-invest__card demo-billboards-invest__card--3">
+          <div class="demo-billboards-invest__ring" aria-hidden="true">
+            <img class="demo-billboards-invest__icon" src="{% static 'assets/icons/location-133-5138-140-5433.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-billboards-invest__h3">Геолокационная привязка</h3>
+          <p class="demo-billboards-invest__p">
+            Выбор конкретной точки с максимальным трафиком целевой аудитории (возле ТЦ, на въезде в район, на оживленной развязке)
+          </p>
+        </li>
+
+        <li class="demo-billboards-invest__card demo-billboards-invest__card--4">
+          <div class="demo-billboards-invest__ring" aria-hidden="true">
+            <img class="demo-billboards-invest__icon" src="{% static 'assets/icons/frame-133-5243.svg' %}" alt="" />
+          </div>
+          <h3 class="demo-billboards-invest__h3">Массовый охват и частота</h3>
+          <p class="demo-billboards-invest__p">
+            Ежедневно вашу рекламу видят десятки тысяч человек, включая постоянных автомобилистов
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="demo-billboards-formats" aria-labelledby="billboards-formats-title">
+      <h2 class="demo-billboards-formats__title" id="billboards-formats-title">Наши форматы и интеллектуальные сценарии</h2>
+
+      <div
+        class="demo-billboards-formats__tabs"
+        role="tablist"
+        aria-label="Форматы"
+        data-tabs
+        data-tabs-active="digital"
+      >
+        <div class="demo-billboards-formats__tabs-pill" aria-hidden="true"></div>
+
+        <button
+          class="demo-billboards-formats__tab demo-billboards-formats__tab--static"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="billboards-format-static"
+          data-tab="static"
+        >
+          <span class="demo-billboards-formats__tab-text">Статичный билборд</span>
+        </button>
+
+        <button
+          class="demo-billboards-formats__tab demo-billboards-formats__tab--prismatron"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="billboards-format-prismatron"
+          data-tab="prismatron"
+        >
+          <span class="demo-billboards-formats__tab-text">Призматрон</span>
+        </button>
+
+        <button
+          class="demo-billboards-formats__tab demo-billboards-formats__tab--digital"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="billboards-format-digital"
+          data-tab="digital"
+        >
+          <span class="demo-billboards-formats__tab-text">Цифровой билборд</span>
+        </button>
+      </div>
+
+      <div class="demo-billboards-formats__panel-wrap">
+        <div
+          class="demo-billboards-formats__panel demo-billboards-formats__panel--static"
+          id="billboards-format-static"
+          role="tabpanel"
+          data-panel="static"
+          hidden
+        >
+          <div class="demo-billboards-formats__img">
+            <img
+              class="demo-billboards-formats__img-el"
+              src="{% static 'assets/images/billboards-static@2x.png' %}"
+              alt=""
+              width="503"
+              height="368"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="demo-billboards-formats__text">
+            <h3 class="demo-billboards-formats__h3">Статичный билборд (3x6 м)</h3>
+            <p class="demo-billboards-formats__p demo-billboards-formats__p--1">
+              Статичный билборд (3x6 м)<br />
+              Классика, надежность, круглосуточное присутствие. Идеален для формирования долгосрочного имиджа.
+            </p>
+            <p class="demo-billboards-formats__p demo-billboards-formats__p--2">
+              Вечный диалог»: QR-код на «немом» щите ведет к боту-консультанту, который работает 24/7. Идеально для услуг
+              (клиники, автосалоны, стройматериалы)
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="demo-billboards-formats__panel demo-billboards-formats__panel--prismatron"
+          id="billboards-format-prismatron"
+          role="tabpanel"
+          data-panel="prismatron"
+          hidden
+        >
+          <div class="demo-billboards-formats__img">
+            <img
+              class="demo-billboards-formats__img-el"
+              src="{% static 'assets/images/billboards-prismatron@2x.png' %}"
+              alt=""
+              width="503"
+              height="368"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="demo-billboards-formats__text">
+            <h3 class="demo-billboards-formats__h3">Призматрон билборд (3x6 м)</h3>
+            <p class="demo-billboards-formats__p demo-billboards-formats__p--1">
+              Динамика и 3 сообщения вместо одного. Привлекает внимание сменой изображений.
+            </p>
+            <p class="demo-billboards-formats__p demo-billboards-formats__p--2">
+              Трехшаговая воронка»: Каждая из 3-х сторон работает на общую цель. Пример: 1) Проблема, 2) Решение — ваш
+              продукт, 3) Призыв с QR «Узнать, как это работает
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="demo-billboards-formats__panel demo-billboards-formats__panel--digital"
+          id="billboards-format-digital"
+          role="tabpanel"
+          data-panel="digital"
+        >
+          <div class="demo-billboards-formats__img">
+            <img
+              class="demo-billboards-formats__img-el"
+              src="{% static 'assets/images/billboards-digital@2x.png' %}"
+              alt=""
+              width="503"
+              height="368"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="demo-billboards-formats__text">
+            <h3 class="demo-billboards-formats__h3">Цифровой билборд (экран)</h3>
+            <p class="demo-billboards-formats__p demo-billboards-formats__p--1">
+              Максимальная вовлеченность. Видео, анимация, возможность быстрой смены контента.
+            </p>
+            <p class="demo-billboards-formats__p demo-billboards-formats__p--2">
+              Мгновенное действие: Прямой показ QR-кода и призыва в динамическом ролике. Можно запускать геозависимые или
+              временные акции («Только сегодня скидка по QR-коду с этого экрана»)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-billboards-approach" aria-labelledby="billboards-approach-title">
+      <h2 class="demo-billboards-approach__title" id="billboards-approach-title">Наш подход: от локации до лида</h2>
+
+      <div class="demo-billboards-approach__cards" role="list" aria-label="Этапы работы">
+        <div class="demo-billboards-approach__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Стратегия и аналитика" description="Подбор ключевых локаций города с учётом вашей целевой аудитории и бюджета" icon_svg="assets/icons/location-133-5138.svg" %}
+        </div>
+        <div class="demo-billboards-approach__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Креатив и производство" description="Разработка макета, заточенного на конверсию, с продуманным местом для цифрового CTA" icon_svg="assets/icons/design-133-5037.svg" %}
+        </div>
+        <div class="demo-billboards-approach__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Технологическая интеграция" description="Настройка сценариев для чат-бота или голосового ассистента" icon_svg="assets/icons/robo-133-4988.svg" %}
+        </div>
+        <div class="demo-billboards-approach__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Размещение и контроль" description="Монтаж конструкции и мониторинг размещения" icon_svg="assets/icons/eye-133-4932.svg" %}
+        </div>
+        <div class="demo-billboards-approach__card" role="listitem">
+          {% include "components/demo/step_card.html" with title="Отчетность" description="Предоставление данных не только о показе, но и о сканах QR, диалогах и конверсиях" icon_svg="assets/icons/results-133-5154.svg" show_line=False %}
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-billboards-ideal" aria-labelledby="billboards-ideal-title">
+      <h2 class="demo-billboards-ideal__title" id="billboards-ideal-title">Для каких задач идеален</h2>
+
+      <ul class="demo-billboards-ideal__grid" aria-label="Задачи">
+        <li class="demo-billboards-ideal__card demo-billboards-ideal__card--1">
+          <img class="demo-billboards-ideal__icon" src="{% static 'assets/icons/frame-133-5249.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-billboards-ideal__h3">Повышение узнаваемости бренда</h3>
+          <p class="demo-billboards-ideal__p">Крупные компании, федеральные сети, автомобильные бренды</p>
+        </li>
+
+        <li class="demo-billboards-ideal__card demo-billboards-ideal__card--2">
+          <img class="demo-billboards-ideal__icon" src="{% static 'assets/icons/frame-133-5150.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-billboards-ideal__h3">Запуск нового продукта</h3>
+          <p class="demo-billboards-ideal__p">Создание информационного шума и быстрый сбор первых заявок</p>
+        </li>
+
+        <li class="demo-billboards-ideal__card demo-billboards-ideal__card--3">
+          <img class="demo-billboards-ideal__icon" src="{% static 'assets/icons/frame-133-5252.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-billboards-ideal__h3">Геолокационное продвижение</h3>
+          <p class="demo-billboards-ideal__p">Привлечение трафика в конкретную точку продаж (ТЦ, салон, офис)</p>
+        </li>
+
+        <li class="demo-billboards-ideal__card demo-billboards-ideal__card--4">
+          <img class="demo-billboards-ideal__icon" src="{% static 'assets/icons/frame-133-5256.svg' %}" alt="" aria-hidden="true" />
+          <h3 class="demo-billboards-ideal__h3">Импульсные акции</h3>
+          <p class="demo-billboards-ideal__p">Анонс распродаж, открытий, специальных предложений</p>
+        </li>
+      </ul>
+    </section>
+
+    {% include "components/demo/billboards_contact_us.html" %}
+
+    {% include "components/demo/lead_success_modal.html" %}
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/demo/footer.html" %}
+{% endblock %}
+
+

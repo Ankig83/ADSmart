@@ -1,0 +1,16 @@
+{# Minimal modal pattern. Params: id, title, content #}
+<div class="c-modal" id="{{ id }}" data-modal hidden>
+  <div class="c-modal__backdrop" data-modal-close></div>
+  <div class="c-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="{{ id }}-title">
+    <header class="c-modal__header">
+      <h3 class="c-modal__title" id="{{ id }}-title">{{ title }}</h3>
+      <button class="c-btn c-btn--ghost c-btn--sm" type="button" data-modal-close aria-label="Close">×</button>
+    </header>
+    <div class="c-modal__body">
+      {{ content|default:""|safe }}
+    </div>
+  </div>
+</div>
+
+
+

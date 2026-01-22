@@ -1,0 +1,50 @@
+{% load static %}
+{% comment %}
+DEMO step card (from Desktop-15 / componentId 1:22).
+Params: title, description, icon_svg (optional), show_line (optional, default True)
+{% endcomment %}
+<article class="demo-step-card">
+  <div class="demo-step-card__head" aria-hidden="true">
+    <div class="demo-step-card__circle"></div>
+    {% if show_line == False %}
+      {% comment %}no line/arrow{% endcomment %}
+    {% else %}
+      <div class="demo-step-card__line">
+        <img
+          class="demo-step-card__arrow"
+          src="{% static 'assets/icons/vector-292.svg' %}"
+          width="164"
+          height="15"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    {% endif %}
+    <div class="demo-step-card__icon">
+      {% if icon_svg %}
+        <img
+          class="demo-step-card__icon-img"
+          src="{% static icon_svg %}"
+          width="50"
+          height="50"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
+      {% endif %}
+      {% if not icon_svg %}
+        <span class="demo-step-card__icon-fallback">{{ icon|default:"" }}</span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="demo-step-card__body">
+    <h3 class="demo-step-card__title">{{ title }}</h3>
+    <p class="demo-step-card__text">{{ description }}</p>
+  </div>
+</article>
+
+

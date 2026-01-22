@@ -1,0 +1,14 @@
+{# Params: title (optional), subtitle (optional) #}
+<article class="c-card {{ class|default:'' }}">
+  {% if title or subtitle %}
+    <header class="c-card__header">
+      {% if title %}<h3 class="c-card__title">{{ title }}</h3>{% endif %}
+      {% if subtitle %}<p class="c-card__subtitle">{{ subtitle }}</p>{% endif %}
+    </header>
+  {% endif %}
+  <div class="c-card__body">
+    {{ content|default:""|safe }}
+  </div>
+</article>
+
+

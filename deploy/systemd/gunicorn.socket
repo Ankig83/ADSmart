@@ -1,0 +1,14 @@
+[Unit]
+Description=gunicorn socket (adsmart)
+
+[Socket]
+ListenStream=/run/adsmart/gunicorn.sock
+SocketUser=www-data
+SocketGroup=www-data
+SocketMode=0660
+
+[Install]
+WantedBy=sockets.target
+
+
+
