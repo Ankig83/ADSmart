@@ -160,6 +160,7 @@
   width: 18px;
   height: 18px;
   display: block;
+  transform: rotate(-90deg); /* Figma rotation: -1.5707963705062848 radians = -90deg */
 }
 
 /* Main list vertical spacing matches Figma (y: 0, 48, 85, 122, 159, 196) */

@@ -617,7 +617,7 @@
   .demo-tech19__f-voice .demo-tech19__label { left: 0 !important; top: 130px !important; width: 156px !important; height: 36px !important; font-size: 18px !important; }
 
   .demo-tech19__f-chat .demo-tech19__ring { left: 123px !important; top: 0 !important; }
-  .demo-tech19__f-chat .demo-tech19__arc { left: 3px !important; top: 60.708px !important; width: 120.75px !important; height: 63.041668px !important; }
+  .demo-tech19__f-chat .demo-tech19__arc { left: 0px !important; top: 60.708px !important; width: 120.75px !important; height: 63.041668px !important; }
   .demo-tech19__f-chat .demo-tech19__dot { left: 0 !important; top: 122.333px !important; }
   .demo-tech19__f-chat .demo-tech19__label { left: 107px !important; top: 125px !important; width: 156px !important; height: 82px !important; }
 
@@ -627,13 +627,11 @@
   .demo-tech19__f-widget .demo-tech19__label { left: 0 !important; top: 140px !important; width: 156px !important; height: 36px !important; }
 
   .demo-tech19__f-report .demo-tech19__ring { left: 123px !important; top: 14.5px !important; }
-  .demo-tech19__f-report .demo-tech19__arc { left: 3px !important; top: 4.208px !important; width: 120.75px !important; height: 62.423611px !important; }
+  .demo-tech19__f-report .demo-tech19__arc { left: 0px !important; top: 4.208px !important; width: 120.75px !important; height: 62.423611px !important; }
   .demo-tech19__f-report .demo-tech19__dot { left: 0 !important; top: 0 !important; }
   .demo-tech19__f-report .demo-tech19__label { left: 101px !important; top: 140px !important; width: 156px !important; height: 13px !important; }
 
-  /* Rotation */
-  .demo-tech19__f-voice .demo-tech19__arc { transform-origin: top left !important; transform: translate(120.75px, 63.0416679px) rotate(180deg) !important; }
-  .demo-tech19__f-widget .demo-tech19__arc { transform-origin: top left !important; transform: translate(120.75px, 62.4236107px) rotate(180deg) !important; }
+  /* Rotation - все стрелки без поворота (оригинальная ориентация) */
 
   .demo-tech19__card { left: 858px !important; top: 200px !important; width: 404px !important; height: 504px !important; position: absolute !important; display: block !important; }
   .demo-tech19__card-inner { position: absolute !important; inset: 0 !important; display: block !important; }
@@ -1061,6 +1059,7 @@
     line-height: 62.4px;
     letter-spacing: -1.44px;
     color: #ffffff;
+    white-space: nowrap;
   }
 
   .demo-contact__text {
@@ -1171,6 +1170,7 @@
     line-height: 36.4px;
     letter-spacing: -0.84px;
     color: #ffffff;
+    white-space: nowrap;
   }
 
   .demo-contact__field { position: absolute; left: 20px; width: 383px; height: 56px; margin: 0; }
@@ -1251,6 +1251,7 @@
     line-height: 62.4px;
     letter-spacing: -1.44px;
     color: #ffffff;
+    white-space: nowrap;
   }
 
   .demo-faq__subtitle {
@@ -1264,6 +1265,7 @@
     letter-spacing: -0.66px;
     text-align: center;
     color: #ffffff;
+    white-space: nowrap;
   }
 
   .demo-faq__items {
@@ -1286,13 +1288,16 @@
     height: 89px; /* collapsed row height */
     list-style: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
   .demo-faq__summary::-webkit-details-marker { display: none; }
 
   .demo-faq__item-title {
     position: absolute;
     left: 58px; /* collapsed */
-    top: 37px;  /* collapsed */
+    top: 50%;  /* центрирование по вертикали */
+    transform: translateY(-50%);
     margin: 0;
     font-family: var(--font-sans);
     font-size: 24px;
@@ -1300,6 +1305,7 @@
     line-height: 31.2px;
     letter-spacing: -0.72px;
     color: #ffffff;
+    white-space: nowrap;
   }
 
   .demo-faq__item:nth-child(1) .demo-faq__item-title { width: 363px; height: 17px; }
@@ -1320,8 +1326,8 @@
 
   /* Open state (Figma nodes 140:7037 / 140:7038): title x=37 y=44.5, icon x=1016 y=37, answer x=37 y=97 */
   .demo-faq__item[open] .demo-faq__summary { height: 97px; }
-  .demo-faq__item[open] .demo-faq__item-title { left: 37px; top: 44.5px; }
-  .demo-faq__item[open] .demo-faq__item-icon { left: 1016px; top: 37px; }
+  .demo-faq__item[open] .demo-faq__item-title { left: 37px; top: 50%; transform: translateY(-50%); }
+  .demo-faq__item[open] .demo-faq__item-icon { left: 1016px; top: 50%; transform: translateY(-50%); }
   .demo-faq__item[open] .demo-faq__item-icon--plus { display: none; }
   .demo-faq__item[open] .demo-faq__item-icon--minus { display: block; }
 
@@ -1412,10 +1418,30 @@
     line-height: 62.4px !important;
     letter-spacing: -1.44px !important;
     margin: 0 !important;
+    padding: 0 !important;
     text-align: left !important;
+    display: block !important;
   }
   .demo-steps__title-mobile { display: none !important; }
-  .demo-steps__title-wide { display: inline !important; }
+  .demo-steps__title-wide { 
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .demo-steps__title-line1 {
+    display: block !important;
+    line-height: 62.4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+  }
+  .demo-steps__title-line2 {
+    display: block !important;
+    line-height: 62.4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+  }
 
   .demo-steps__cards {
     left: 0 !important;

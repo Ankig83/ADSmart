@@ -340,6 +340,7 @@
   line-height: 62.4px;
   letter-spacing: -1.44px;
   color: #ffffff;
+  white-space: nowrap;
 }
 
 .demo-stops-steps__cards {
@@ -633,7 +634,11 @@
   color: #ffffff;
 }
 
-.demo-stops-contact__form { position: absolute; left: 0; top: 0; width: 440px; height: 501px; }
+.demo-stops-contact__form { 
+  position: relative; 
+  width: 440px; 
+  height: 501px; 
+}
 
 .demo-stops-contact__field {
   position: absolute;
