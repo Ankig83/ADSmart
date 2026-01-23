@@ -228,6 +228,86 @@
   }
 }
 
+/* Tablet: 836-1339px (Figma node 140:8081) */
+@media (min-width: 836px) and (max-width: 1339px) {
+  /* Hero секция для разрешения 836-1339px */
+  /* Figma node 140:8081: width=834px, height=439px */
+  .demo-home-hero {
+    width: 834px !important;
+    margin: 0 auto !important;
+    height: 439px !important;
+    padding: 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  /* Контент: Frame 427321882 - x=32, y=84, width=440 */
+  .demo-home-hero__content {
+    position: absolute !important;
+    left: 32px !important;
+    top: 84px !important;
+    width: 440px !important;
+    max-width: none !important;
+  }
+
+  /* Заголовок: fontSize=32, lineHeight=1.2999999523162842em (≈41.6px), letterSpacing=1.4999999664723873% (≈0.48px) */
+  .demo-home-hero__title {
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: 0.48px !important;
+    margin: 0 0 18px !important;
+    width: 445px !important;
+    height: auto !important;
+    white-space: normal !important;
+  }
+
+  /* Подзаголовок: fontSize=18, lineHeight=1.5em (27px), width=445 */
+  .demo-home-hero__subtitle {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 445px !important;
+    height: auto !important;
+    margin: 0 0 0 !important;
+    font-size: 18px !important;
+    line-height: 27px !important;
+    letter-spacing: 0 !important;
+    white-space: normal !important;
+  }
+
+  /* Кнопки: gap=8px */
+  .demo-home-hero__actions {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    margin-top: 36px !important;
+    gap: 8px !important;
+  }
+
+  .demo-btn {
+    font-size: 16px !important;
+    padding: 16px 32px !important;
+    height: auto !important;
+  }
+
+  /* Изображение: Group 427320861 - x=468, y=16, width=389.47, height=407.67 */
+  .demo-home-hero__art {
+    position: absolute !important;
+    left: 468px !important;
+    top: 16px !important;
+    width: 389.47px !important;
+    height: 407.67px !important;
+    aspect-ratio: auto !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+
+  .demo-home-hero__blob {
+    display: none !important; /* Нет blob для этого разрешения в Figma */
+  }
+}
+
 .demo-home-section { padding: 64px 24px; }
 .demo-home-section__inner { max-width: 900px; margin: 0 auto; }
 .demo-home-section__title { margin: 0 0 12px; font-size: 24px; }
@@ -335,6 +415,227 @@
   color: #ffffff;
 }
 .demo-exp-card__list > li + li { margin-top: 4px; }
+
+/* Tablet: 836-1339px (Figma node 140:8121) */
+@media (min-width: 836px) and (max-width: 1339px) {
+  /* Blok3 (экспертиза) для разрешения 836-1339px */
+  /* Figma node 140:8121: width=834px, padding=44px 32px */
+  .demo-exp {
+    width: 834px !important;
+    padding: 44px 32px !important;
+    margin: 0 auto !important;
+    margin-top: 193px !important; /* Расстояние между секциями 2 и 3 */
+    position: relative !important;
+    display: block !important;
+    background: #000000 !important;
+    overflow: hidden !important;
+  }
+
+  /* Внутренний контейнер: Frame 427321828 - gap=42px */
+  .demo-exp__inner {
+    flex: 1 1 0 !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 42px !important;
+    display: flex !important;
+    width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  /* Заголовок: fontSize=24, lineHeight=1.2999999523162842em (≈31.2px), letterSpacing=-3% */
+  .demo-exp__title {
+    align-self: stretch !important;
+    color: #ffffff !important;
+    font-size: 24px !important;
+    font-family: Poppins, sans-serif !important;
+    font-weight: 600 !important;
+    line-height: 31.20px !important;
+    word-wrap: break-word !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+    white-space: normal !important;
+    text-align: left !important;
+  }
+
+  /* Карточки в колонку: gap=22px */
+  .demo-exp__cards {
+    align-self: stretch !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 22px !important;
+    display: flex !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* Карточка: padding=28px 14px, gap=10px (row), borderRadius=12px */
+  /* Figma: mode: row, alignItems: center, alignSelf: stretch, gap: 10px */
+  .demo-exp__cards .demo-exp-card {
+    align-self: stretch !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+    background: #19161c !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    flex-direction: row !important; /* Иконка слева, текст справа */
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 10px !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* Внутренний контейнер: должен быть row, а не column! */
+  .demo-exp-card__inner {
+    display: flex !important;
+    flex-direction: row !important; /* ИЗМЕНЕНО: было column, стало row - иконка слева, текст справа */
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  /* Иконка: 60x60, должна быть слева от текста */
+  .demo-exp-card__icon {
+    width: 60px !important;
+    height: 60px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important; /* Иконка не сжимается */
+    display: block !important;
+  }
+
+  .demo-exp-card__icon-img {
+    width: 60px !important; /* Figma: 60x60 для 836-1339px */
+    height: 60px !important; /* Figma: 60x60 для 836-1339px */
+    display: block !important;
+    object-fit: contain !important;
+  }
+
+  .demo-exp-card__icon-bg {
+    width: 60px !important;
+    height: 60px !important;
+    left: 0px !important;
+    top: 0px !important;
+    position: absolute !important;
+    background: #ffb661 !important;
+  }
+
+  .demo-exp-card__icon-vector1 {
+    width: 29px !important;
+    height: 27.99px !important;
+    left: 17px !important;
+    top: 9.01px !important;
+    position: absolute !important;
+    background: #ffb661 !important;
+  }
+
+  .demo-exp-card__icon-vector2 {
+    width: 37.45px !important;
+    height: 37.46px !important;
+    left: 11.27px !important;
+    top: 11.27px !important;
+    position: absolute !important;
+    background: #ffb661 !important;
+  }
+
+  .demo-exp-card__icon-vector3 {
+    width: 39.58px !important;
+    height: 52.70px !important;
+    left: 4.67px !important;
+    top: 3.65px !important;
+    position: absolute !important;
+    background: #ffb661 !important;
+  }
+
+  .demo-exp-card__icon-vector4 {
+    width: 47.22px !important;
+    height: 43.29px !important;
+    left: 8.12px !important;
+    top: 5.61px !important;
+    position: absolute !important;
+    background: #ffb661 !important;
+  }
+
+  /* Тело карточки: gap=8px, должно быть справа от иконки */
+  .demo-exp-card__body {
+    flex: 1 1 0 !important; /* Занимает оставшееся пространство */
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    display: flex !important; /* Изменено с inline-flex на flex */
+    width: auto !important;
+    min-width: 0 !important; /* Позволяет сжиматься */
+  }
+
+  /* Заголовок карточки: fontSize=18, lineHeight=1.4444444444444444em (≈26px), letterSpacing=8.333333333333332% */
+  .demo-exp-card__title {
+    align-self: stretch !important;
+    color: #ff7b00 !important;
+    font-size: 18px !important;
+    font-family: Poppins, sans-serif !important;
+    font-weight: 600 !important;
+    line-height: 26px !important;
+    letter-spacing: 1.50px !important;
+    word-wrap: break-word !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Список: gap=4px */
+  .demo-exp-card__list {
+    align-self: stretch !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    display: flex !important;
+    text-align: left !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Текст списка: fontSize=14 (первая карточка) или 16 (остальные), lineHeight=1.5em */
+  .demo-exp-card__list > li {
+    align-self: stretch !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-family: Poppins, sans-serif !important;
+    font-weight: 400 !important;
+    word-wrap: break-word !important;
+    margin: 0 !important;
+    line-height: 24px !important;
+  }
+
+  .demo-exp-card__list > li + li {
+    margin-top: 0 !important;
+  }
+
+  .demo-exp__cards .demo-exp-card:nth-child(1) .demo-exp-card__list > li {
+    font-size: 14px !important;
+  }
+}
 
 @media (min-width: 1440px) {
   .demo-exp { width: 1440px !important; height: 751px !important; margin: 0 auto !important; position: relative !important; }
@@ -567,6 +868,271 @@
   color: #ffffff;
   overflow-wrap: break-word;
 }
+
+/* Tablet: 836-1339px (Figma node 140:8128) */
+@media (min-width: 836px) and (max-width: 1339px) {
+  /* Blok4 (технологии) для разрешения 836-1339px */
+  /* Figma node 140:8128: width=834px, padding=44px 32px */
+  .demo-tech19 {
+    width: 834px !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    display: block !important;
+    background: #000000 !important;
+    overflow: hidden !important;
+  }
+
+  /* Внутренний контейнер: Blok (140:8129) - mode: column, gap: 42px */
+  /* Figma Frame 427321887: mode: row, justifyContent: space-between, alignItems: center, gap: 42px */
+  .demo-tech19__inner {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: 413px 317px !important;
+    grid-template-rows: auto auto !important;
+    gap: 42px !important;
+    column-gap: 42px !important;
+    row-gap: 42px !important;
+  }
+
+  .demo-tech19__title {
+    grid-row: 1 !important;
+    grid-column: 1 / -1 !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 478px !important;
+    height: auto !important;
+    margin: 0 !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+
+  /* Размещаем left и card в ряд через grid */
+  .demo-tech19__left {
+    grid-row: 2 !important;
+    grid-column: 1 !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 413px !important;
+    height: 411px !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  .demo-tech19__card {
+    grid-row: 2 !important;
+    grid-column: 2 !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 317px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 !important;
+    align-self: start !important;
+  }
+
+  /* Внутренний контейнер карточки */
+  .demo-tech19__card-inner {
+    position: static !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 36px !important;
+  }
+
+  /* Features контейнер: Group 427320858 - width=413px, height=411px */
+  .demo-tech19__features {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 413px !important;
+    height: 411px !important;
+    display: block !important;
+  }
+
+  /* Chip: Group 427320856 - x=107, y=88, width=197, height=197 */
+  .demo-tech19__chip {
+    position: absolute !important;
+    left: 107px !important;
+    top: 88px !important;
+    width: 197px !important;
+    height: 197px !important;
+  }
+
+  /* Glow: Frame 427321815 - x=35, y=40 (относительно Group 427320856), width=127, height=127 */
+  .demo-tech19__glow {
+    position: absolute !important;
+    left: 142px !important; /* 107 + 35 */
+    top: 128px !important; /* 88 + 40 */
+    width: 127px !important;
+    height: 127px !important;
+    background: rgba(255, 123, 0, 0.35) !important;
+    filter: blur(150px) !important;
+  }
+
+  /* Features позиции из Group 427320857 */
+  /* Group 427320854 (chat): x=235, y=0, width=178, height=155 */
+  .demo-tech19__f-chat {
+    left: 235px !important;
+    top: 0 !important;
+    width: 178px !important;
+    height: 155px !important;
+  }
+
+  /* Group 427320855 (report): x=233, y=286, width=160, height=107 */
+  .demo-tech19__f-report {
+    left: 233px !important;
+    top: 286px !important;
+    width: 160px !important;
+    height: 107px !important;
+  }
+
+  /* Group 427320852 (widget): x=0, y=286, width=183.28, height=125 */
+  .demo-tech19__f-widget {
+    left: 0 !important;
+    top: 286px !important;
+    width: 183.28px !important;
+    height: 125px !important;
+  }
+
+  /* Group 67 (voice): x=5, y=0, width=178, height=113 */
+  .demo-tech19__f-voice {
+    left: 5px !important;
+    top: 0 !important;
+    width: 178px !important;
+    height: 113px !important;
+  }
+
+  /* Feature internals - размеры из Figma для 836-1339px */
+  .demo-tech19__label {
+    font-size: 14px !important;
+    line-height: 18.2px !important; /* 1.2999999182564872em */
+    letter-spacing: -0.42px !important; /* -3% */
+    position: absolute !important;
+    margin: 0 !important;
+    color: #ffffff !important;
+    text-align: center !important;
+  }
+
+  .demo-tech19__ring-icon {
+    width: 33.82px !important;
+    height: 33.82px !important;
+    display: block !important;
+  }
+
+  .demo-tech19__ring {
+    width: 76.09px !important;
+    height: 76.09px !important;
+    border: 2px solid #ff7b00 !important;
+    border-radius: 1000px !important;
+    display: grid !important;
+    place-items: center !important;
+    position: absolute !important;
+  }
+
+  .demo-tech19__dot {
+    width: 4.06px !important;
+    height: 3.83px !important;
+    background: #ff7b00 !important;
+    border-radius: 1000px !important;
+    position: absolute !important;
+  }
+
+  .demo-tech19__arc {
+    position: absolute !important;
+    display: block !important;
+  }
+
+  /* Chat feature internals */
+  .demo-tech19__f-chat .demo-tech19__ring { left: 83.19px !important; top: 0 !important; }
+  .demo-tech19__f-chat .demo-tech19__arc { left: 2.03px !important; top: 41.06px !important; width: 81.67px !important; height: 42.64px !important; }
+  .demo-tech19__f-chat .demo-tech19__dot { left: 0 !important; top: 82.74px !important; }
+  .demo-tech19__f-chat .demo-tech19__label { left: 72px !important; top: 85px !important; width: 106px !important; height: 70px !important; }
+
+  /* Report feature internals */
+  .demo-tech19__f-report .demo-tech19__ring { left: 83.19px !important; top: 10.48px !important; }
+  .demo-tech19__f-report .demo-tech19__arc { left: 2.03px !important; top: 2.87px !important; width: 81.67px !important; height: 42.64px !important; }
+  .demo-tech19__f-report .demo-tech19__dot { left: 0 !important; top: 0 !important; }
+  .demo-tech19__f-report .demo-tech19__label { left: 83px !important; top: 97px !important; width: 77px !important; height: 10px !important; }
+
+  /* Widget feature internals */
+  .demo-tech19__f-widget .demo-tech19__ring { left: 0 !important; top: 10.48px !important; }
+  .demo-tech19__f-widget .demo-tech19__arc { left: 75.58px !important; top: 2.87px !important; width: 81.67px !important; height: 42.64px !important; }
+  .demo-tech19__f-widget .demo-tech19__dot { left: 79.64px !important; top: 0 !important; }
+  .demo-tech19__f-widget .demo-tech19__label { left: 0 !important; top: 97px !important; width: 124px !important; height: 28px !important; }
+
+  /* Voice feature internals */
+  .demo-tech19__f-voice .demo-tech19__ring { left: 18.72px !important; top: 0 !important; }
+  .demo-tech19__f-voice .demo-tech19__arc { left: 94.3px !important; top: 41.06px !important; width: 81.67px !important; height: 42.64px !important; }
+  .demo-tech19__f-voice .demo-tech19__dot { left: 173.94px !important; top: 82.74px !important; }
+  .demo-tech19__f-voice .demo-tech19__label { left: 0 !important; top: 85px !important; width: 106px !important; height: 28px !important; }
+
+  /* Карточка: Frame 427321525 - width=317px, padding=38px 28px, borderRadius=22px, stroke=3px #FF7B00 */
+  /* Стили уже определены выше с grid-column, добавляем только визуальные */
+  .demo-tech19__card {
+    background: #19161c !important;
+    border: 3px solid #ff7b00 !important;
+    border-radius: 22px !important;
+    padding: 38px 28px !important;
+  }
+
+  .demo-tech19__card-inner {
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 36px !important; /* Figma: Frame 427321816 gap=36px */
+  }
+
+  .demo-tech19__card-item {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important; /* Figma: Frame 427321529 gap=18px */
+  }
+
+  /* Заголовок карточки: fontSize=18, lineHeight=1.5em (27px), letterSpacing=-3% */
+  .demo-tech19__card-title {
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 27px !important;
+    letter-spacing: -0.54px !important;
+    color: #ff7b00 !important;
+    font-weight: 500 !important; /* Первая карточка */
+  }
+
+  .demo-tech19__card-item:nth-child(2) .demo-tech19__card-title,
+  .demo-tech19__card-item:nth-child(3) .demo-tech19__card-title {
+    font-weight: 700 !important;
+  }
+
+  /* Текст карточки: fontSize=16, lineHeight=1.5em (24px), letterSpacing=-3% */
+  .demo-tech19__card-text {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    letter-spacing: -0.48px !important;
+    color: #ffffff !important;
+    font-weight: 400 !important;
+  }
+
+}
+
 
 @media (min-width: 1440px) {
   .demo-tech19 { width: 1440px !important; height: 751px !important; margin: 0 auto !important; position: relative !important; }
@@ -1402,7 +1968,168 @@
 
 .demo-step-card__body { display: grid; gap: 8px; }
 .demo-step-card__title { margin: 0; font-family: var(--font-sans); font-size: 20px; font-weight: 700; line-height: 30px; letter-spacing: -0.2px; color: #ffffff; }
-.demo-step-card__text { margin: 0; font-family: var(--font-sans); font-size: 16px; font-weight: 400; line-height: 22.4px; letter-spacing: 0px; color: #ffffff; }
+  .demo-step-card__text { margin: 0; font-family: var(--font-sans); font-size: 16px; font-weight: 400; line-height: 22.4px; letter-spacing: 0px; color: #ffffff; }
+
+/* Tablet: 836-1339px (Figma node 140:8092) */
+@media (min-width: 836px) and (max-width: 1339px) {
+  /* Blok2 (секция шагов) для разрешения 836-1339px */
+  /* Figma node 140:8092: width=834px, padding=44px 32px, mode: row, alignItems: center, gap: 10px */
+  .demo-steps {
+    width: 834px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    padding: 44px 32px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  /* Внутренний контейнер: Frame 427321813 (140:8093) - width=770px, mode: column, gap=42px */
+  .demo-steps__inner {
+    width: 770px !important;
+    height: auto !important;
+    left: 0 !important;
+    top: 0 !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 42px !important;
+  }
+
+  /* Заголовок: fontSize=32, lineHeight=1.2999999523162842em (≈41.6px), letterSpacing=-3% */
+  .demo-steps__title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 770px !important;
+    height: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    text-align: left !important;
+  }
+  .demo-steps__title-mobile { display: none !important; }
+  .demo-steps__title-wide { display: block !important; }
+
+  /* Карточки в ряд: Frame 427321811 - mode: row, justifyContent: stretch, alignItems: stretch, gap=10px */
+  .demo-steps__cards {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 770px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Важно: карточки должны быть в одну строку */
+    justify-content: stretch !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  /* Каждая карточка: sizing: horizontal: fill - равномерное распределение в ряду */
+  .demo-steps__card {
+    position: relative !important;
+    flex: 1 1 0 !important; /* Равномерное распределение ширины (соответствует sizing: horizontal: fill) */
+    width: auto !important;
+    min-width: 0 !important; /* Позволяет карточкам сжиматься при необходимости */
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: auto !important; /* Убираем абсолютное позиционирование из базовых стилей */
+    top: auto !important; /* Убираем абсолютное позиционирование из базовых стилей */
+  }
+
+  /* Карточка: gap=16px */
+  .demo-step-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-width: 0 !important; /* Важно: позволяет карточке сжиматься */
+    max-width: 100% !important; /* Ограничиваем максимальную ширину */
+  }
+
+  /* Иконка: первая 94x93, остальные 93x93 */
+  .demo-step-card__head {
+    width: 93px !important;
+    height: 93px !important;
+    position: relative !important;
+    margin: 0 !important;
+  }
+  .demo-steps__card:nth-child(1) .demo-step-card__head {
+    width: 94px !important;
+  }
+
+  .demo-step-card__circle {
+    width: 93px !important;
+    height: 93px !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+  .demo-steps__card:nth-child(1) .demo-step-card__circle {
+    width: 94px !important;
+  }
+
+  .demo-step-card__icon {
+    width: 50px !important;
+    height: 50px !important;
+    position: absolute !important;
+    left: 21px !important;
+    top: 22px !important;
+  }
+
+  .demo-step-card__line { display: none !important; }
+  .demo-step-card__arrow { display: none !important; }
+
+  /* Тело карточки: gap=8px */
+  .demo-step-card__body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important; /* Позволяет сжиматься */
+    flex-shrink: 1 !important; /* Позволяет сжиматься при необходимости */
+  }
+
+  /* Заголовок карточки: fontSize=16, lineHeight=1.5em (24px), letterSpacing=-1% */
+  .demo-step-card__title {
+    margin: 0 !important;
+    font-family: Poppins, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+    letter-spacing: -0.16px !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    word-wrap: break-word !important; /* Перенос длинных слов */
+    overflow-wrap: break-word !important; /* Перенос длинных слов */
+    width: 100% !important; /* Занимает всю ширину родителя */
+  }
+
+  /* Текст карточки: fontSize=16, lineHeight=1.399999976158142em (≈22.4px) */
+  .demo-step-card__text {
+    margin: 0 !important;
+    font-family: Poppins, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 22.4px !important;
+    letter-spacing: 0px !important;
+    color: #c9c9c9 !important;
+    text-align: center !important;
+    word-wrap: break-word !important; /* Перенос длинных слов */
+    overflow-wrap: break-word !important; /* Перенос длинных слов */
+    width: 100% !important; /* Занимает всю ширину родителя */
+  }
+}
 
 @media (min-width: 1440px) {
   .demo-steps { width: 1440px !important; height: 751px !important; margin: 0 auto !important; position: relative !important; }

@@ -198,7 +198,64 @@
 .demo-menu__services-sub-panel .demo-menu__services-link:nth-child(2) { position: absolute; left: 0; top: 37px; }
 .demo-menu__services-sub-panel .demo-menu__services-link:nth-child(3) { position: absolute; left: 0; top: 74px; }
 .demo-menu__services-sub-panel .demo-menu__services-link:nth-child(4) { position: absolute; left: 0; top: 111px; }
-.demo-menu__services-sub-panel .demo-menu__services-link:nth-child(5) { position: absolute; left: 0; top: 148px; }
+  .demo-menu__services-sub-panel .demo-menu__services-link:nth-child(5) { position: absolute; left: 0; top: 148px; }
+
+/* Tablet: 836-1339px (Figma node 140:8080) */
+@media (min-width: 836px) and (max-width: 1339px) {
+  /* Меню для разрешения 836-1339px */
+  /* Figma node 140:8080: width=834px, height=70px */
+  .demo-menu {
+    width: 834px !important;
+    margin: 0 auto !important;
+    height: 70px !important;
+  }
+
+  .demo-menu__inner {
+    width: 834px !important;
+    height: 70px !important;
+    padding: 0 !important;
+    display: block !important;
+    position: relative !important;
+  }
+
+  /* Логотип: из Figma layout_QNNULG - x=388, y=17, w=58, h=36 */
+  .demo-menu__logo {
+    position: absolute !important;
+    left: 388px !important;
+    top: 17px !important;
+    display: block !important;
+  }
+
+  .demo-menu__logo-img {
+    width: 58px !important;
+    height: 36px !important;
+  }
+
+  /* Бургер меню: из Figma layout_4OR009 - x=16, y=23, w=24, h=24 */
+  .demo-menu__toggle {
+    position: absolute !important;
+    left: 16px !important;
+    top: 23px !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: inline-flex !important;
+  }
+
+  .demo-menu__burger,
+  .demo-menu__burger::before,
+  .demo-menu__burger::after {
+    width: 20px !important;
+    height: 2px !important;
+  }
+
+  .demo-menu__links {
+    display: none !important;
+  }
+
+  .demo-menu__links.is-open {
+    display: flex !important;
+  }
+}
 
 @media (min-width: 1440px) {
   /* Pixel-perfect header layout (Ready--Copy node 140:13532): */
