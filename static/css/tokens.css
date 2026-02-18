@@ -1,7 +1,7 @@
 :root {
-  /* Breakpoints (from Figma frames): 440 / 834 / 1440 */
-  --bp-sm: 440px;
+  /* Breakpoints (no overlap): mobile ≤833 | tablet 834-1439 | desktop ≥1440 */
   --bp-md: 834px;
+  --bp-md-max: 1439px;
   --bp-lg: 1440px;
 
   /* Layout (adjust to match Figma gutters) */

@@ -520,7 +520,7 @@
   transform: scale(1.02);
 }
 
-@media (min-width: 834px) {
+@media (min-width: 834px) and (max-width: 1439px) {
   .demo-prod {
     width: 834px;
     margin: 0 auto;

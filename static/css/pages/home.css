@@ -228,83 +228,82 @@
   }
 }
 
-/* Tablet: 836-1339px (Figma node 140:8081) */
-@media (min-width: 836px) and (max-width: 1339px) {
-  /* Hero секция для разрешения 836-1339px */
-  /* Figma node 140:8081: width=834px, height=439px */
+/* Tablet: 834-1439px (Figma node 140:8081) */
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* Hero tablet geometry (Figma node 140:8081) */
   .demo-home-hero {
     width: 834px !important;
+    height: 440px !important;
     margin: 0 auto !important;
-    height: 439px !important;
     padding: 0 !important;
     display: block !important;
     overflow: hidden !important;
     position: relative !important;
   }
 
-  /* Контент: Frame 427321882 - x=32, y=84, width=440 */
   .demo-home-hero__content {
     position: absolute !important;
     left: 32px !important;
-    top: 84px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     width: 440px !important;
     max-width: none !important;
   }
 
-  /* Заголовок: fontSize=32, lineHeight=1.2999999523162842em (≈41.6px), letterSpacing=1.4999999664723873% (≈0.48px) */
   .demo-home-hero__title {
-    font-size: 32px !important;
-    line-height: 41.6px !important;
+    font-size: 53px !important;
+    line-height: 68.9px !important;
     letter-spacing: 0.48px !important;
     margin: 0 0 18px !important;
     width: 445px !important;
-    height: auto !important;
     white-space: normal !important;
   }
 
-  /* Подзаголовок: fontSize=18, lineHeight=1.5em (27px), width=445 */
   .demo-home-hero__subtitle {
     position: static !important;
-    left: auto !important;
-    top: auto !important;
     width: 445px !important;
     height: auto !important;
-    margin: 0 0 0 !important;
+    margin: 0 !important;
     font-size: 18px !important;
     line-height: 27px !important;
     letter-spacing: 0 !important;
     white-space: normal !important;
   }
 
-  /* Кнопки: gap=8px */
   .demo-home-hero__actions {
     position: static !important;
-    left: auto !important;
-    top: auto !important;
     margin-top: 36px !important;
     gap: 8px !important;
   }
 
   .demo-btn {
     font-size: 16px !important;
+    line-height: normal !important;
     padding: 16px 32px !important;
     height: auto !important;
   }
 
-  /* Изображение: Group 427320861 - x=468, y=16, width=389.47, height=407.67 */
   .demo-home-hero__art {
     position: absolute !important;
     left: 468px !important;
     top: 16px !important;
-    width: 389.47px !important;
-    height: 407.67px !important;
+    width: 389.474px !important;
+    height: 407.668px !important;
     aspect-ratio: auto !important;
     border-radius: 0 !important;
     margin: 0 !important;
   }
 
   .demo-home-hero__blob {
-    display: none !important; /* Нет blob для этого разрешения в Figma */
+    display: block !important;
+    position: absolute !important;
+    left: 636px !important;
+    top: 154px !important;
+    width: 180px !important;
+    height: 180px !important;
+    border-radius: 100000px !important;
+    background: rgba(255, 123, 0, 0.6) !important;
+    filter: blur(87.6px) !important;
   }
 }
 
@@ -416,15 +415,16 @@
 }
 .demo-exp-card__list > li + li { margin-top: 4px; }
 
-/* Tablet: 836-1339px (Figma node 140:8121) */
-@media (min-width: 836px) and (max-width: 1339px) {
-  /* Blok3 (экспертиза) для разрешения 836-1339px */
+/* Tablet: 834-1439px (Figma node 140:8121) */
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* Blok3 (экспертиза) для разрешения 834-1439px */
   /* Figma node 140:8121: width=834px, padding=44px 32px */
   .demo-exp {
     width: 834px !important;
+    height: auto !important;
     padding: 44px 32px !important;
     margin: 0 auto !important;
-    margin-top: 193px !important; /* Расстояние между секциями 2 и 3 */
+    margin-top: 0 !important;
     position: relative !important;
     display: block !important;
     background: #000000 !important;
@@ -525,8 +525,8 @@
   }
 
   .demo-exp-card__icon-img {
-    width: 60px !important; /* Figma: 60x60 для 836-1339px */
-    height: 60px !important; /* Figma: 60x60 для 836-1339px */
+    width: 60px !important; /* Figma: 60x60 для 834-1439px */
+    height: 60px !important; /* Figma: 60x60 для 834-1439px */
     display: block !important;
     object-fit: contain !important;
   }
@@ -869,9 +869,9 @@
   overflow-wrap: break-word;
 }
 
-/* Tablet: 836-1339px (Figma node 140:8128) */
-@media (min-width: 836px) and (max-width: 1339px) {
-  /* Blok4 (технологии) для разрешения 836-1339px */
+/* Tablet: 834-1439px (Figma node 140:8128) */
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* Blok4 (технологии) для разрешения 834-1439px */
   /* Figma node 140:8128: width=834px, padding=44px 32px */
   .demo-tech19 {
     width: 834px !important;
@@ -1016,7 +1016,7 @@
     height: 113px !important;
   }
 
-  /* Feature internals - размеры из Figma для 836-1339px */
+  /* Feature internals - размеры из Figma для 834-1439px */
   .demo-tech19__label {
     font-size: 14px !important;
     line-height: 18.2px !important; /* 1.2999999182564872em */
@@ -1592,6 +1592,330 @@
   .demo-team__card--ai .demo-team-card__body { top: 85px; }
 }
 
+/* Tablet: 834-1439px (Contact us + FAQ) */
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* Blok7 (Contact us) — Figma node 140:8204 */
+  .demo-contact {
+    width: 834px !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    display: block !important;
+    background: #000000 !important;
+  }
+
+  .demo-contact__box {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 408px !important;
+    align-items: center !important;
+    gap: 42px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  .demo-contact__title,
+  .demo-contact__text,
+  .demo-contact__items {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    grid-column: 1 !important;
+  }
+
+  .demo-contact__title {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 22px 0 !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    white-space: normal !important;
+  }
+
+  .demo-contact__text {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 32px 0 !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    font-weight: 400 !important;
+    color: #c4c4c4 !important;
+  }
+
+  .demo-contact__text-line { display: block !important; }
+
+  .demo-contact__items {
+    width: 376px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    list-style: none !important;
+  }
+
+  .demo-contact__item {
+    position: static !important;
+    width: 376px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .demo-contact__item-icon {
+    position: static !important;
+    width: 38px !important;
+    height: 38px !important;
+    flex-shrink: 0 !important;
+    display: grid !important;
+    place-items: center !important;
+  }
+
+  .demo-contact__item-body {
+    position: static !important;
+    width: 326px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+
+  .demo-contact__item-label {
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-contact__item-value {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 20.8px !important;
+    letter-spacing: -0.48px !important;
+    font-weight: 400 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  /* Figma 140:7415 — форма: flex, без absolute (834–1439) */
+  .demo-contact__form {
+    position: relative !important;
+    grid-column: 2 !important;
+    width: 100% !important;
+    max-width: 408px !important;
+    min-height: 412px !important;
+    margin: 0 !important;
+    padding: 32px 20px !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    border: 1px solid #ff7b00 !important;
+    background: #19161c !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .demo-contact__form-title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 24px 0 !important;
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.84px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    text-align: center !important;
+  }
+
+  .demo-contact__field,
+  .demo-contact__field--name,
+  .demo-contact__field--phone,
+  .demo-contact__field--biz {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 18px 0 !important;
+  }
+  .demo-contact__field--biz { margin-bottom: 24px !important; }
+
+  .demo-contact__input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    height: 56px !important;
+    border-radius: 12px !important;
+    border: 1px solid #ffffff !important;
+    background: transparent !important;
+    padding: 19px 22px 0 !important;
+    color: #ffffff !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+  }
+
+  .demo-contact__ph {
+    position: absolute !important;
+    left: 22px !important;
+    top: 19px !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+  }
+
+  .demo-contact__btn {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0 !important;
+    height: 56px !important;
+    border: 0 !important;
+    border-radius: 100px !important;
+    background: #14f195 !important;
+    color: #000000 !important;
+    font-size: 18px !important;
+    line-height: 20px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+  }
+
+  /* Blok8 (FAQ) — Figma node 140:8222 */
+  .demo-faq {
+    width: 834px !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    background: #000000 !important;
+  }
+
+  .demo-faq__title,
+  .demo-faq__subtitle,
+  .demo-faq__items {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  .demo-faq__title {
+    width: 100% !important;
+    margin: 0 0 22px 0 !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    text-align: left !important;
+  }
+
+  .demo-faq__subtitle {
+    width: 481px !important;
+    margin: 0 0 42px 0 !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    font-weight: 400 !important;
+    color: #c4c4c4 !important;
+    text-align: left !important;
+  }
+
+  .demo-faq__items {
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .demo-faq__item {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 33px 18px !important;
+    background: #19161c !important;
+    border-radius: 12px !important;
+  }
+
+  .demo-faq__summary {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 122px !important;
+    list-style: none !important;
+  }
+
+  .demo-faq__summary::-webkit-details-marker { display: none !important; }
+
+  .demo-faq__item-title {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 20.8px !important;
+    letter-spacing: -0.48px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-faq__item-icon {
+    width: 22px !important;
+    height: 22px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .demo-faq__item-icon--minus { display: none !important; }
+  .demo-faq__item[open] .demo-faq__item-icon--plus { display: none !important; }
+  .demo-faq__item[open] .demo-faq__item-icon--minus { display: block !important; }
+
+  .demo-faq__answer {
+    padding: 22px 0 0 !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    color: #ffffff !important;
+  }
+
+  .demo-faq__answer-p { margin: 0 0 18px 0 !important; }
+  .demo-faq__answer-p:last-child { margin-bottom: 0 !important; }
+
+  /* Safety: keep post-AD sections in normal document flow (prevents overlap near 1438/1439) */
+  .demo-team,
+  .demo-contact,
+  .demo-faq {
+    position: relative !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    margin: 0 auto !important;
+  }
+
+  .demo-team__inner,
+  .demo-contact__box,
+  .demo-faq__items {
+    position: static !important;
+  }
+}
+
 /* Contact us (Ready--Copy 1440: node 140:4911) - implement only desktop */
 @media (min-width: 1440px) {
   .demo-contact {
@@ -1641,6 +1965,22 @@
     line-height: 28.6px;
     letter-spacing: -0.66px;
     color: #ffffff;
+  }
+
+  .demo-contact__text-line {
+    display: inline;
+  }
+
+  .demo-contact__text-line:not(:last-child)::after {
+    content: " ";
+  }
+
+  .demo-contact__text-line {
+    display: inline;
+  }
+
+  .demo-contact__text-line:not(:last-child)::after {
+    content: " ";
   }
 
   .demo-contact__items {
@@ -1970,9 +2310,9 @@
 .demo-step-card__title { margin: 0; font-family: var(--font-sans); font-size: 20px; font-weight: 700; line-height: 30px; letter-spacing: -0.2px; color: #ffffff; }
   .demo-step-card__text { margin: 0; font-family: var(--font-sans); font-size: 16px; font-weight: 400; line-height: 22.4px; letter-spacing: 0px; color: #ffffff; }
 
-/* Tablet: 836-1339px (Figma node 140:8092) */
-@media (min-width: 836px) and (max-width: 1339px) {
-  /* Blok2 (секция шагов) для разрешения 836-1339px */
+/* Tablet: 834-1439px (Figma node 140:8092) */
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* Blok2 (секция шагов) для разрешения 834-1439px */
   /* Figma node 140:8092: width=834px, padding=44px 32px, mode: row, alignItems: center, gap: 10px */
   .demo-steps {
     width: 834px !important;
@@ -2082,8 +2422,9 @@
     width: 50px !important;
     height: 50px !important;
     position: absolute !important;
-    left: 21px !important;
-    top: 22px !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
 
   .demo-step-card__line { display: none !important; }
@@ -2129,6 +2470,530 @@
     overflow-wrap: break-word !important; /* Перенос длинных слов */
     width: 100% !important; /* Занимает всю ширину родителя */
   }
+}
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* Blok5 (AD) */
+  .demo-ad {
+    width: 834px !important;
+    height: auto !important;
+    padding: 42px 54px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 72px !important;
+    background: #000000 !important;
+    border-radius: 9.223962783813477px !important;
+  }
+
+  .demo-ad__inner {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 72px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  .demo-ad__media {
+    position: static !important;
+    width: 300px !important;
+    height: 300px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .demo-ad__img {
+    position: static !important;
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  .demo-ad__content {
+    position: static !important;
+    width: 341px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 17px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .demo-ad__title {
+    margin: 0 !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-ad__subtitle {
+    margin: 0 !important;
+    width: 344px !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    color: #c9cad6 !important;
+  }
+
+  .demo-ad__form {
+    position: static !important;
+    width: 341px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .demo-ad__field {
+    position: relative !important;
+    width: 341px !important;
+    height: 43px !important;
+    margin: 0 !important;
+  }
+
+  .demo-ad__field + .demo-ad__field { margin-top: 0 !important; }
+
+  .demo-ad__input {
+    width: 100% !important;
+    height: 43px !important;
+    padding: 17px !important;
+    border-radius: 9.223962783813477px !important;
+    border: 0.7686635851860046px solid #ffffff !important;
+    background: #19161c !important;
+    color: #ffffff !important;
+    font-size: 13.835944175720215px !important;
+    line-height: 18px !important;
+    letter-spacing: -0.42px !important;
+  }
+
+  .demo-ad__ph {
+    left: 17px !important;
+    top: 17px !important;
+    font-size: 13.835944175720215px !important;
+    line-height: 18px !important;
+    letter-spacing: -0.42px !important;
+  }
+
+  .demo-ad__btn {
+    width: 341px !important;
+    height: 43px !important;
+    margin: 0 !important;
+    padding: 13.835944175720215px 16.910598754882812px !important;
+    border-radius: 76.8663558959961px !important;
+    background: #14f195 !important;
+    color: #000000 !important;
+    font-size: 13.835944175720215px !important;
+    line-height: 15.37px !important;
+    font-weight: 500 !important;
+  }
+
+  /* Blok6 (Team) */
+  .demo-team {
+    width: 834px !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    background: #000000 !important;
+  }
+
+  .demo-team__inner {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 42px !important;
+  }
+
+  .demo-team__title {
+    margin: 0 !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-team__subtitle {
+    margin: 0 !important;
+    font-size: 22px !important;
+    line-height: 28.6px !important;
+    letter-spacing: -0.66px !important;
+    color: #ffffff !important;
+  }
+
+  .demo-team__cards {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    list-style: none !important;
+  }
+
+  .demo-team__card {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  .demo-team__card:nth-child(1),
+  .demo-team__card:nth-child(2),
+  .demo-team__card:nth-child(3),
+  .demo-team__card:nth-child(4) {
+    left: auto !important;
+    top: auto !important;
+    height: auto !important;
+  }
+
+  .demo-team-card {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 35px 14px !important;
+    border-radius: 12px !important;
+    background: #19161c !important;
+  }
+
+  .demo-team-card__icon {
+    position: static !important;
+    width: 65px !important;
+    height: 65px !important;
+    transform: none !important;
+    flex-shrink: 0 !important;
+  }
+
+  .demo-team-card__body {
+    position: static !important;
+    width: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    flex: 1 1 0 !important;
+  }
+
+  .demo-team-card__title {
+    margin: 0 !important;
+    font-size: 22px !important;
+    line-height: 28.6px !important;
+    letter-spacing: -0.66px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-team-card__text {
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    color: #c9cad6 !important;
+  }
+
+  /* Blok7 (Contact us) */
+  .demo-contact {
+    width: 834px !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    display: block !important;
+    background: #000000 !important;
+  }
+
+  .demo-contact__box {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 408px !important;
+    align-items: center !important;
+    gap: 42px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  .demo-contact__title,
+  .demo-contact__text,
+  .demo-contact__items {
+    position: static !important;
+    grid-column: 1 !important;
+  }
+
+  .demo-contact__title {
+    margin: 0 0 22px 0 !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-contact__text {
+    margin: 0 0 32px 0 !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    color: #c4c4c4 !important;
+  }
+
+  .demo-contact__text-line { display: block !important; }
+
+  .demo-contact__items {
+    width: 376px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    list-style: none !important;
+  }
+
+  .demo-contact__item {
+    position: static !important;
+    width: 376px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .demo-contact__item-icon {
+    position: static !important;
+    width: 38px !important;
+    height: 38px !important;
+    display: grid !important;
+    place-items: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .demo-contact__item-body {
+    position: static !important;
+    width: 326px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+
+  .demo-contact__item-label {
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-contact__item-value {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 20.8px !important;
+    letter-spacing: -0.48px !important;
+    font-weight: 400 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  .demo-contact__form {
+    position: relative !important;
+    grid-column: 2 !important;
+    width: 100% !important;
+    max-width: 408px !important;
+    min-height: 412px !important;
+    margin: 0 !important;
+    padding: 32px 20px !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    border: 1px solid #ff7b00 !important;
+    background: #19161c !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .demo-contact__form-title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 24px 0 !important;
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.84px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    text-align: center !important;
+  }
+  .demo-contact__field,
+  .demo-contact__field--name,
+  .demo-contact__field--phone,
+  .demo-contact__field--biz {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 18px 0 !important;
+  }
+  .demo-contact__field--biz { margin-bottom: 24px !important; }
+  .demo-contact__input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    height: 56px !important;
+    border-radius: 12px !important;
+    border: 1px solid #ffffff !important;
+    background: transparent !important;
+    padding: 19px 22px 0 !important;
+    color: #ffffff !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+  }
+  .demo-contact__ph {
+    position: absolute !important;
+    left: 22px !important;
+    top: 19px !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    font-size: 18px !important;
+  }
+  .demo-contact__btn {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0 !important;
+    height: 56px !important;
+    border: 0 !important;
+    border-radius: 100px !important;
+    background: #14f195 !important;
+    color: #000000 !important;
+    font-size: 18px !important;
+    line-height: 20px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+  }
+
+  /* Blok8 (FAQ) */
+  .demo-faq {
+    width: 834px !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    background: #000000 !important;
+  }
+
+  .demo-faq__title,
+  .demo-faq__subtitle,
+  .demo-faq__items {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  .demo-faq__title {
+    margin: 0 0 22px 0 !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    text-align: left !important;
+  }
+
+  .demo-faq__subtitle {
+    width: 481px !important;
+    margin: 0 0 42px 0 !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    font-weight: 400 !important;
+    color: #c4c4c4 !important;
+    text-align: left !important;
+  }
+
+  .demo-faq__items {
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .demo-faq__item {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 33px 18px !important;
+    background: #19161c !important;
+    border-radius: 12px !important;
+  }
+
+  .demo-faq__summary {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 122px !important;
+    list-style: none !important;
+  }
+
+  .demo-faq__summary::-webkit-details-marker { display: none !important; }
+
+  .demo-faq__item-title {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 20.8px !important;
+    letter-spacing: -0.48px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-faq__item-icon {
+    width: 22px !important;
+    height: 22px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .demo-faq__item-icon--minus { display: none !important; }
+  .demo-faq__item[open] .demo-faq__item-icon--plus { display: none !important; }
+  .demo-faq__item[open] .demo-faq__item-icon--minus { display: block !important; }
+
+  .demo-faq__answer {
+    padding: 22px 0 0 !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    color: #ffffff !important;
+  }
+
+  .demo-faq__answer-p { margin: 0 0 18px 0 !important; }
+  .demo-faq__answer-p:last-child { margin-bottom: 0 !important; }
 }
 
 @media (min-width: 1440px) {
@@ -2211,3 +3076,612 @@
 }
 
 
+/* Tablet smoothing pass: sections 2-8 scale softer across 834-1439 */
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* Keep hero fluid across the whole tablet range */
+  .demo-home-hero {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    height: clamp(440px, 47vw, 620px) !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+  }
+
+  .demo-home-hero__content {
+    left: clamp(32px, 4vw, 64px) !important;
+    top: clamp(72px, 10vw, 150px) !important;
+    transform: none !important;
+    width: clamp(420px, 45vw, 620px) !important;
+  }
+
+  .demo-home-hero__title {
+    width: min(100%, 620px) !important;
+    font-size: clamp(36px, 4.2vw, 53px) !important;
+    line-height: 1.28 !important;
+  }
+
+  .demo-home-hero__subtitle {
+    width: min(100%, 560px) !important;
+    font-size: clamp(17px, 1.45vw, 20px) !important;
+    line-height: 1.45 !important;
+  }
+
+  .demo-home-hero__actions {
+    margin-top: clamp(20px, 2.8vw, 36px) !important;
+  }
+
+  .demo-home-hero__art {
+    left: auto !important;
+    right: clamp(0px, 4vw, 64px) !important;
+    top: clamp(16px, 3vw, 44px) !important;
+    width: clamp(360px, 36vw, 560px) !important;
+    height: auto !important;
+    aspect-ratio: 389.474 / 407.668 !important;
+  }
+
+  .demo-home-hero__blob {
+    left: auto !important;
+    right: clamp(24px, 6vw, 180px) !important;
+    top: clamp(130px, 17vw, 240px) !important;
+    width: clamp(160px, 16vw, 220px) !important;
+    height: clamp(160px, 16vw, 220px) !important;
+  }
+
+  .demo-steps,
+  .demo-exp,
+  .demo-tech19,
+  .demo-ad,
+  .demo-team,
+  .demo-contact,
+  .demo-faq {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+  }
+
+  .demo-steps,
+  .demo-exp,
+  .demo-tech19,
+  .demo-team,
+  .demo-contact,
+  .demo-faq {
+    padding-left: clamp(24px, 3vw, 40px) !important;
+    padding-right: clamp(24px, 3vw, 40px) !important;
+    padding-top: clamp(36px, 4vw, 56px) !important;
+    padding-bottom: clamp(36px, 4vw, 56px) !important;
+  }
+
+  .demo-ad {
+    padding-left: clamp(28px, 4.2vw, 64px) !important;
+    padding-right: clamp(28px, 4.2vw, 64px) !important;
+    padding-top: clamp(36px, 3.8vw, 52px) !important;
+    padding-bottom: clamp(36px, 3.8vw, 52px) !important;
+  }
+
+  .demo-steps__inner,
+  .demo-exp__inner,
+  .demo-tech19__inner,
+  .demo-ad__inner,
+  .demo-team__inner,
+  .demo-contact__box,
+  .demo-faq__items {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .demo-steps__cards {
+    width: 100% !important;
+    gap: clamp(8px, 1.1vw, 16px) !important;
+  }
+
+  /* Prevent section 2 from visually climbing over hero */
+  .demo-home-hero + .demo-steps {
+    margin-top: clamp(12px, 1.8vw, 28px) !important;
+    z-index: 1 !important;
+  }
+
+  .demo-step-card__title {
+    font-size: clamp(16px, 1.3vw, 20px) !important;
+    line-height: 1.35 !important;
+  }
+
+  .demo-step-card__text {
+    font-size: clamp(14px, 1.1vw, 16px) !important;
+    line-height: 1.4 !important;
+  }
+
+  .demo-exp__cards {
+    gap: clamp(16px, 1.8vw, 24px) !important;
+  }
+
+  .demo-tech19__title {
+    width: min(100%, clamp(420px, 58vw, 760px)) !important;
+    font-size: clamp(28px, 2.7vw, 36px) !important;
+    line-height: 1.3 !important;
+  }
+
+  .demo-tech19__card {
+    width: clamp(320px, 35vw, 420px) !important;
+  }
+
+  .demo-ad__inner {
+    gap: clamp(24px, 4vw, 72px) !important;
+  }
+
+  .demo-ad__media,
+  .demo-ad__img {
+    width: clamp(240px, 28vw, 300px) !important;
+    height: clamp(240px, 28vw, 300px) !important;
+  }
+
+  .demo-ad__content,
+  .demo-ad__form,
+  .demo-ad__field,
+  .demo-ad__btn {
+    width: clamp(300px, 33vw, 380px) !important;
+  }
+
+  .demo-ad__title {
+    font-size: clamp(28px, 2.6vw, 34px) !important;
+    line-height: 1.25 !important;
+  }
+
+  .demo-ad__subtitle {
+    width: 100% !important;
+    font-size: clamp(16px, 1.4vw, 19px) !important;
+  }
+
+  .demo-team__cards {
+    gap: clamp(12px, 1.4vw, 18px) !important;
+  }
+
+  .demo-team-card {
+    padding: clamp(24px, 2.6vw, 35px) clamp(12px, 1.4vw, 18px) !important;
+  }
+
+  .demo-team-card__title {
+    font-size: clamp(20px, 1.8vw, 24px) !important;
+  }
+
+  .demo-team-card__text {
+    font-size: clamp(16px, 1.45vw, 19px) !important;
+  }
+
+  .demo-contact__box {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, clamp(340px, 38vw, 430px)) !important;
+    align-items: start !important;
+    gap: clamp(24px, 3vw, 42px) !important;
+  }
+
+  .demo-contact__items {
+    width: min(100%, 420px) !important;
+  }
+
+  .demo-contact__item {
+    width: 100% !important;
+  }
+
+  .demo-contact__item-body {
+    width: auto !important;
+    flex: 1 1 auto !important;
+  }
+
+  .demo-contact__form {
+    width: 100% !important;
+    max-width: 430px !important;
+    min-height: 412px !important;
+  }
+
+  .demo-contact__form-title {
+    left: clamp(28px, 2.6vw, 53px) !important;
+    width: calc(100% - 56px) !important;
+    font-size: clamp(24px, 2.1vw, 28px) !important;
+  }
+
+  .demo-contact__field,
+  .demo-contact__input,
+  .demo-contact__btn {
+    width: calc(100% - 30px) !important;
+  }
+
+  .demo-faq__subtitle {
+    width: min(100%, clamp(481px, 62vw, 760px)) !important;
+  }
+
+  .demo-faq__item {
+    padding: clamp(24px, 2.6vw, 33px) clamp(16px, 2vw, 24px) !important;
+  }
+
+  .demo-faq__summary {
+    gap: clamp(16px, 2vw, 48px) !important;
+  }
+
+  .demo-faq__item-title {
+    font-size: clamp(16px, 1.25vw, 18px) !important;
+  }
+}
+
+/* Tablet final stabilization for sections 140:8192 and 140:8203 */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-team {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    padding: clamp(36px, 4vw, 56px) clamp(24px, 3vw, 40px) !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .demo-team__inner {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(24px, 2.8vw, 42px) !important;
+  }
+
+  .demo-team__title {
+    width: min(100%, 760px) !important;
+    margin: 0 !important;
+    font-size: clamp(30px, 2.9vw, 40px) !important;
+    line-height: 1.3 !important;
+  }
+
+  .demo-team__subtitle {
+    width: min(100%, 860px) !important;
+    margin: 0 !important;
+    font-size: clamp(18px, 1.6vw, 24px) !important;
+    line-height: 1.35 !important;
+  }
+
+  .demo-team__cards {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(12px, 1.4vw, 18px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .demo-team__card,
+  .demo-team__card:nth-child(1),
+  .demo-team__card:nth-child(2),
+  .demo-team__card:nth-child(3),
+  .demo-team__card:nth-child(4) {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  .demo-team-card {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: clamp(10px, 1.2vw, 16px) !important;
+    padding: clamp(24px, 2.6vw, 35px) clamp(12px, 1.4vw, 18px) !important;
+    border-radius: 12px !important;
+    background: #19161c !important;
+  }
+
+  .demo-team-card__icon {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: clamp(58px, 5.4vw, 72px) !important;
+    height: clamp(58px, 5.4vw, 72px) !important;
+    transform: none !important;
+    flex-shrink: 0 !important;
+  }
+
+  .demo-team-card__body,
+  .demo-team__card--strategists .demo-team-card__body,
+  .demo-team__card--designers .demo-team-card__body,
+  .demo-team__card--developers .demo-team-card__body,
+  .demo-team__card--ai .demo-team-card__body {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(10px, 1.2vw, 16px) !important;
+    flex: 1 1 auto !important;
+  }
+
+  .demo-team-card__title {
+    margin: 0 !important;
+    font-size: clamp(20px, 1.8vw, 26px) !important;
+    line-height: 1.3 !important;
+  }
+
+  .demo-team-card__text {
+    margin: 0 !important;
+    font-size: clamp(16px, 1.45vw, 20px) !important;
+    line-height: 1.3 !important;
+  }
+
+  .demo-contact {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    padding: clamp(36px, 4vw, 56px) clamp(24px, 3vw, 40px) !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .demo-contact__box {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, clamp(340px, 38vw, 430px)) !important;
+    align-items: start !important;
+    gap: clamp(24px, 3vw, 42px) !important;
+  }
+
+  .demo-contact__title,
+  .demo-contact__text,
+  .demo-contact__items {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+    grid-column: 1 !important;
+  }
+
+  .demo-contact__items {
+    width: min(100%, 430px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .demo-contact__item,
+  .demo-contact__item--phone,
+  .demo-contact__item--messengers,
+  .demo-contact__item--email {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .demo-contact__item-icon {
+    position: static !important;
+    width: 38px !important;
+    height: 38px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .demo-contact__item-body {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    flex: 1 1 auto !important;
+  }
+
+  .demo-contact__form {
+    position: relative !important;
+    grid-column: 2 !important;
+    width: 100% !important;
+    max-width: 430px !important;
+    min-height: 412px !important;
+    margin: 0 !important;
+  }
+
+  .demo-contact__form-title {
+    left: clamp(28px, 2.6vw, 53px) !important;
+    width: calc(100% - 56px) !important;
+    font-size: clamp(24px, 2.1vw, 28px) !important;
+  }
+
+  .demo-contact__field,
+  .demo-contact__input,
+  .demo-contact__btn {
+    width: calc(100% - 30px) !important;
+  }
+}
+
+/* Tablet hard-fix for nodes 140:8177 / 140:8192 / 140:8203 / 140:8222 */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-ad,
+  .demo-team,
+  .demo-contact,
+  .demo-faq {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    clear: both !important;
+    overflow: visible !important;
+  }
+
+  /* 140:8177 */
+  .demo-ad {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    padding: clamp(30px, 3.4vw, 42px) clamp(24px, 3vw, 54px) !important;
+    margin: 0 auto !important;
+  }
+
+  .demo-ad__inner {
+    position: static !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: minmax(240px, clamp(240px, 27vw, 300px)) minmax(300px, clamp(300px, 34vw, 420px)) !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: clamp(24px, 4vw, 72px) !important;
+  }
+
+  .demo-ad__media,
+  .demo-ad__img {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: clamp(240px, 27vw, 300px) !important;
+    height: clamp(240px, 27vw, 300px) !important;
+  }
+
+  .demo-ad__content {
+    position: static !important;
+    width: 100% !important;
+    max-width: 420px !important;
+  }
+
+  .demo-ad__form,
+  .demo-ad__field,
+  .demo-ad__btn,
+  .demo-ad__subtitle {
+    width: 100% !important;
+  }
+
+  .demo-ad__title {
+    font-size: clamp(30px, 2.9vw, 40px) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* 140:8192 */
+  .demo-team__card,
+  .demo-team__card:nth-child(1),
+  .demo-team__card:nth-child(2),
+  .demo-team__card:nth-child(3),
+  .demo-team__card:nth-child(4) {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  .demo-team-card__body,
+  .demo-team__card--strategists .demo-team-card__body,
+  .demo-team__card--designers .demo-team-card__body,
+  .demo-team__card--developers .demo-team-card__body,
+  .demo-team__card--ai .demo-team-card__body {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  /* 140:8203 */
+  .demo-contact__item,
+  .demo-contact__item--phone,
+  .demo-contact__item--messengers,
+  .demo-contact__item--email,
+  .demo-contact__item-body {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  .demo-contact__box {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, clamp(340px, 38vw, 430px)) !important;
+    align-items: start !important;
+  }
+
+  .demo-contact__form {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 430px !important;
+    min-height: 412px !important;
+  }
+
+  /* Figma 140:7415 — Blok7 форма: flex, оранжевая рамка (перебивает ранние absolute в этом же файле) */
+  .demo-contact__form {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 32px 20px !important;
+    box-sizing: border-box !important;
+    border: 1px solid #ff7b00 !important;
+    border-radius: 12px !important;
+    background: #19161c !important;
+  }
+  .demo-contact__form-title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0 0 24px 0 !important;
+    text-align: center !important;
+    font-size: clamp(24px, 2.1vw, 28px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.84px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+  .demo-contact__field,
+  .demo-contact__field--name,
+  .demo-contact__field--phone,
+  .demo-contact__field--biz {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0 0 18px 0 !important;
+  }
+  .demo-contact__field--biz { margin-bottom: 24px !important; }
+  .demo-contact__input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    height: 56px !important;
+    border-radius: 12px !important;
+    border: 1px solid #ffffff !important;
+    background: transparent !important;
+    padding: 19px 22px 0 !important;
+    color: #ffffff !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+  }
+  .demo-contact__ph {
+    left: 22px !important;
+    top: 19px !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    font-size: 18px !important;
+  }
+  .demo-contact__btn {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0 !important;
+    height: 56px !important;
+    border-radius: 100px !important;
+    background: #14f195 !important;
+    color: #000000 !important;
+    font-size: 18px !important;
+    line-height: 20px !important;
+    font-weight: 500 !important;
+  }
+
+  /* 140:8222 */
+  .demo-faq__subtitle {
+    width: min(100%, clamp(420px, 62vw, 760px)) !important;
+  }
+
+  .demo-faq__summary {
+    gap: clamp(12px, 1.8vw, 32px) !important;
+  }
+}

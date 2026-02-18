@@ -548,36 +548,42 @@
   top: 0;
   width: 1088px;
   height: 425px;
+  border-radius: 12px;
+  background: #19161c;
 }
 
 .demo-billboards-contact__title {
   position: absolute;
-  left: 154px;
+  left: 50%;
   top: 54px;
   width: 781px;
-  height: 76px;
+  max-width: calc(100% - 64px);
   margin: 0;
+  transform: translateX(-50%);
   font-family: var(--font-sans);
   font-size: 38px;
   font-weight: 600;
   line-height: 49.4px;
   letter-spacing: -1.14px;
   color: #ffffff;
+  text-align: center;
 }
 
 .demo-billboards-contact__text {
   position: absolute;
-  left: 217px;
+  left: 50%;
   top: 155px;
   width: 660px;
-  height: 44px;
+  max-width: calc(100% - 64px);
   margin: 0;
+  transform: translateX(-50%);
   font-family: var(--font-sans);
   font-size: 22px;
   font-weight: 400;
   line-height: 28.6px;
   letter-spacing: -0.66px;
   color: #ffffff;
+  text-align: center;
 }
 
 .demo-billboards-contact__form { position: absolute; left: 0; top: 0; width: 1088px; height: 425px; }
@@ -653,3 +659,473 @@
 .demo-billboards-invest__card--4 .demo-billboards-invest__p { top: 215px; }
 
 
+/* Tablet fluid layout (834-1339): restored from previous working pass */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-billboards {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Hero */
+  .demo-billboards-hero {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: 435px !important;
+    padding: 99px clamp(32px, 3.8vw, 44px) 0 !important;
+    position: relative !important;
+  }
+  .demo-billboards-hero__bg {
+    inset: 0 !important;
+  }
+  .demo-billboards-hero__bg-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .demo-billboards-hero__overlay {
+    inset: 0 !important;
+  }
+  .demo-billboards-hero__content {
+    position: relative !important;
+    z-index: 1 !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: clamp(462px, 55vw, 560px) !important;
+    height: auto !important;
+  }
+  .demo-billboards-hero__title {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+  }
+  .demo-billboards-hero__subtitle {
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 16px !important;
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+  }
+  .demo-billboards-hero__btn {
+    position: static !important;
+    margin-top: 24px !important;
+  }
+
+  /* Invest */
+  .demo-billboards-invest {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+    position: relative !important;
+  }
+  .demo-billboards-invest__title {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    height: auto !important;
+    margin: 0 0 clamp(32px, 4vw, 42px) !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+  }
+  .demo-billboards-invest__cards {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    gap: clamp(10px, 1.2vw, 22px) !important;
+  }
+  .demo-billboards-invest__card {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    display: grid !important;
+    justify-items: center !important;
+    align-content: start !important;
+    gap: 12px !important;
+  }
+  .demo-billboards-invest__ring {
+    position: static !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .demo-billboards-invest__icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .demo-billboards-invest__h3,
+  .demo-billboards-invest__p {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .demo-billboards-invest__h3 {
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+  }
+  .demo-billboards-invest__p {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+  }
+
+  /* Formats */
+  .demo-billboards-formats {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
+  }
+  .demo-billboards-formats__title {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    margin: 0 0 32px !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+  }
+  .demo-billboards-formats__tabs {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    height: 71px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-items: center !important;
+    column-gap: 8px !important;
+    padding: 8px !important;
+  }
+  .demo-billboards-formats__tabs-pill {
+    display: none !important;
+  }
+  .demo-billboards-formats__tab {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: 55px !important;
+    border-radius: 12px !important;
+  }
+  .demo-billboards-formats__tab-text {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+  }
+  .demo-billboards-formats__tab[aria-selected="true"] {
+    background: #ff7b00 !important;
+    font-weight: 600 !important;
+  }
+  .demo-billboards-formats__panel-wrap {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    height: auto !important;
+    margin-top: 22px !important;
+    padding: 32px !important;
+  }
+  .demo-billboards-formats__panel {
+    position: static !important;
+    inset: auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(280px, 44%) minmax(0, 1fr) !important;
+    column-gap: clamp(20px, 2.4vw, 40px) !important;
+    align-items: center !important;
+  }
+  .demo-billboards-formats__panel[hidden] {
+    display: none !important;
+  }
+  .demo-billboards-formats__img,
+  .demo-billboards-formats__panel--prismatron .demo-billboards-formats__img {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .demo-billboards-formats__img-el {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .demo-billboards-formats__text,
+  .demo-billboards-formats__panel--prismatron .demo-billboards-formats__text {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .demo-billboards-formats__h3,
+  .demo-billboards-formats__p,
+  .demo-billboards-formats__panel--digital .demo-billboards-formats__h3,
+  .demo-billboards-formats__panel--digital .demo-billboards-formats__p--1,
+  .demo-billboards-formats__panel--digital .demo-billboards-formats__p--2,
+  .demo-billboards-formats__panel--static .demo-billboards-formats__h3,
+  .demo-billboards-formats__panel--static .demo-billboards-formats__p--1,
+  .demo-billboards-formats__panel--static .demo-billboards-formats__p--2,
+  .demo-billboards-formats__panel--prismatron .demo-billboards-formats__h3,
+  .demo-billboards-formats__panel--prismatron .demo-billboards-formats__p--1,
+  .demo-billboards-formats__panel--prismatron .demo-billboards-formats__p--2 {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+  .demo-billboards-formats__h3 {
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    margin-bottom: 14px !important;
+  }
+  .demo-billboards-formats__p {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Approach */
+  .demo-billboards-approach {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
+    position: relative !important;
+  }
+  .demo-billboards-approach__title {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    margin: 0 0 clamp(32px, 4vw, 42px) !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+  }
+  .demo-billboards-approach__cards {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: clamp(10px, 1.2vw, 22px) !important;
+  }
+  .demo-billboards-approach__card,
+  .demo-billboards-approach__card:nth-child(1),
+  .demo-billboards-approach__card:nth-child(2),
+  .demo-billboards-approach__card:nth-child(3),
+  .demo-billboards-approach__card:nth-child(4),
+  .demo-billboards-approach__card:nth-child(5) {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+  }
+  .demo-step-card__line,
+  .demo-step-card__arrow {
+    display: none !important;
+  }
+  .demo-step-card__head {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .demo-step-card__circle {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .demo-step-card__icon {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .demo-step-card__icon-img {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .demo-step-card__body {
+    gap: 10px !important;
+  }
+  .demo-step-card__title {
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+  }
+  .demo-step-card__text {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+  }
+
+  /* Ideal */
+  .demo-billboards-ideal {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
+  }
+  .demo-billboards-ideal__title {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    height: auto !important;
+    margin: 0 0 24px !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+  }
+  .demo-billboards-ideal__grid {
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(16px, 2vw, 24px) !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+  }
+  .demo-billboards-ideal__card,
+  .demo-billboards-ideal__card--1,
+  .demo-billboards-ideal__card--2,
+  .demo-billboards-ideal__card--3,
+  .demo-billboards-ideal__card--4 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 170px !important;
+    padding: 24px !important;
+    display: grid !important;
+    grid-template-columns: 80px minmax(0, 1fr) !important;
+    column-gap: 16px !important;
+    align-items: center !important;
+  }
+  .demo-billboards-ideal__icon {
+    position: static !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .demo-billboards-ideal__h3,
+  .demo-billboards-ideal__p,
+  .demo-billboards-ideal__card--1 .demo-billboards-ideal__h3,
+  .demo-billboards-ideal__card--1 .demo-billboards-ideal__p,
+  .demo-billboards-ideal__card--2 .demo-billboards-ideal__h3,
+  .demo-billboards-ideal__card--2 .demo-billboards-ideal__p,
+  .demo-billboards-ideal__card--3 .demo-billboards-ideal__h3,
+  .demo-billboards-ideal__card--3 .demo-billboards-ideal__p,
+  .demo-billboards-ideal__card--4 .demo-billboards-ideal__h3,
+  .demo-billboards-ideal__card--4 .demo-billboards-ideal__p {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+  .demo-billboards-ideal__h3 {
+    color: #ff7b00 !important;
+    font-size: 22px !important;
+    line-height: 28.6px !important;
+    margin-bottom: 10px !important;
+  }
+  .demo-billboards-ideal__p {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+  }
+
+  /* Contact */
+  .demo-billboards-contact {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: clamp(44px, 5vw, 56px) auto 80px !important;
+    height: auto !important;
+  }
+  .demo-billboards-contact__inner {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+  }
+  .demo-billboards-contact__title,
+  .demo-billboards-contact__text {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    transform: none !important;
+    margin: 0 0 24px !important;
+    text-align: center !important;
+    font-size: 28px !important;
+    line-height: 36.4px !important;
+  }
+  .demo-billboards-contact__text {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+    margin-bottom: 32px !important;
+  }
+  .demo-billboards-contact__form {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  .demo-billboards-contact__field {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 383px !important;
+  }
+  .demo-billboards-contact__input {
+    width: 100% !important;
+  }
+  .demo-billboards-contact__ph {
+    position: absolute !important;
+    left: 22px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+  }
+  .demo-billboards-contact__input:focus + .demo-billboards-contact__ph,
+  .demo-billboards-contact__input:not(:placeholder-shown) + .demo-billboards-contact__ph {
+    opacity: 0 !important;
+  }
+  .demo-billboards-contact__btn {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 200px !important;
+  }
+}

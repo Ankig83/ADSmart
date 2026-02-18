@@ -34,8 +34,8 @@
           Реклама на радио с искусственным интеллектом
         </h1>
         <p class="demo-radio-hero__subtitle">
-          Приводим в ваш бизнес не просто слушателей, а готовых к диалогу клиентов.<br />
-          Усиливаем эфирные кампании голосовым AI-ассистентом
+          Приводим в ваш бизнес не просто слушателей, а готовых к диалогу клиентов. Усиливаем эфирные кампании голосовым
+          AI-ассистентом
         </p>
       </div>
 
@@ -217,18 +217,15 @@
 
     <section class="demo-radio-cta" id="contact" aria-labelledby="radio-cta-title">
       <div class="demo-radio-cta__inner">
-        <div class="demo-radio-cta__left">
-          <h2 class="demo-radio-cta__title" id="radio-cta-title">Подберём эффективное решение для вашего проекта</h2>
-          <p class="demo-radio-cta__subtitle">
-            Расскажите о задаче, и мы подготовим стратегию продвижения на радио с интеграцией AI-ассистента
-          </p>
-        </div>
+        <h2 class="demo-radio-cta__title" id="radio-cta-title">Подберём эффективное решение для вашего проекта</h2>
+        <p class="demo-radio-cta__subtitle">
+          Расскажите о задаче, и мы подготовим стратегию продвижения на радио с интеграцией AI-ассистента
+        </p>
 
         <form class="demo-radio-cta__form" action="{% url 'submit_lead' %}" method="post" novalidate>
           {% csrf_token %}
           <input type="hidden" name="source" value="radio_cta" />
           <input type="hidden" name="next" value="{{ request.get_full_path }}" />
-          <div class="demo-radio-cta__form-title">Обсудим ваш проект?</div>
 
           <label class="demo-radio-cta__field demo-radio-cta__field--name">
             <span class="sr-only">Имя</span>

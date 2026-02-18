@@ -8,6 +8,645 @@
   background: #000000;
 }
 
+/* Figma 140:7415–140:7427 — отступы/размеры для 834px из design/stops-contact-834-nodes.json */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-stops-contact {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    padding: 44px 32px !important; /* Figma 140:7415: paddingTop/Bottom 44, Left/Right 32 */
+    height: auto !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .demo-stops-contact__inner {
+    position: static !important;
+    width: 100% !important;
+    max-width: 770px !important; /* Figma 140:7416: 769px content */
+    margin: 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 408px !important; /* Figma 140:7427 width 408 */
+    column-gap: 42px !important; /* Figma 140:7416 itemSpacing 42 */
+    row-gap: 0 !important;
+    align-items: center !important; /* Figma counterAxisAlignItems CENTER */
+    background: #19161c !important;
+    border-radius: 12px !important;
+    padding: 44px 32px !important; /* как у Blok7 */
+    box-sizing: border-box !important;
+  }
+
+  .demo-stops-contact__title,
+  .demo-stops-contact__text,
+  .demo-stops-contact__dl {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: 400px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .demo-stops-contact__title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 0 22px !important; /* Figma 140:7418 itemSpacing 22 */
+    font-size: 32px !important;
+    font-weight: 600 !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    color: #ffffff !important;
+  }
+
+  .demo-stops-contact__text {
+    margin: 0 0 32px !important; /* Figma 140:7417 itemSpacing 32 между текстом и кнопками */
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    color: #c4c4c4 !important;
+  }
+
+  .demo-stops-contact__dl {
+    height: auto !important;
+    min-height: 52px !important;
+    margin: 0 0 12px !important; /* Figma itemSpacing 12 между кнопками */
+    padding: 16px 32px !important;
+    border-radius: 64px !important;
+    border: 1px solid #ffffff !important;
+    background: transparent !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    letter-spacing: -0.32px !important;
+    color: #ffffff !important;
+  }
+
+  .demo-stops-contact__dl--posters {
+    margin-bottom: 0 !important;
+  }
+
+  .demo-stops-contact__phone {
+    display: none !important;
+  }
+
+  /* Figma 140:7427: 408×412, border 12px, #19161c */
+  .demo-stops-contact__formbox {
+    position: relative !important;
+    grid-column: 2 !important;
+    grid-row: 1 / -1 !important;
+    width: 408px !important;
+    max-width: 100% !important;
+    min-height: 412px !important;
+    height: auto !important;
+    border: 1px solid #ff7b00 !important;
+    border-radius: 12px !important;
+    background: #19161c !important;
+    padding: 32px 22px !important; /* по макету: отступ до заголовка ~32, бок 22 */
+    align-self: center !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .demo-stops-contact__form-title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    margin: 0 0 24px !important; /* отступ до первого поля по макету */
+    text-align: center !important;
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    line-height: 36.4px !important;
+    letter-spacing: -0.84px !important;
+    color: #ffffff !important;
+  }
+
+  .demo-stops-contact__form {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+  }
+
+  .demo-stops-contact__field {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 10px !important; /* Figma 140:7427 itemSpacing 10 между полями */
+  }
+  .demo-stops-contact__field--name,
+  .demo-stops-contact__field--phone,
+  .demo-stops-contact__field--company {
+    top: auto !important;
+  }
+  .demo-stops-contact__field--format {
+    display: none !important;
+  }
+  .demo-stops-contact__field--company {
+    margin-bottom: 24px !important; /* отступ до кнопки */
+  }
+
+  .demo-stops-contact__input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    height: 56px !important;
+    border-radius: 12px !important;
+    border: 1px solid #ffffff !important;
+    background: transparent !important;
+    padding: 18px 22px !important; /* Figma paddingTop/Bottom 18, Left/Right 22 */
+    color: #ffffff !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+  }
+
+  .demo-stops-contact__submit {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 56px !important;
+    border-radius: 100px !important;
+    margin: 0 !important;
+    background: #14f195 !important;
+    color: #000000 !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+  }
+}
+
+/* MCP LOCK: Stops page tablet 834-1339
+   Nodes: 140:7314, 140:7315, 140:7327, 140:7355, 140:7377, 140:7406, 140:7415 */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-stops {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 140:7315 hero */
+  .demo-stops-hero {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    height: 435px !important;
+    margin: 0 auto !important;
+    margin-top: 0 !important;
+    padding: 99px 32px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 36px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .demo-stops-hero__bg {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+  }
+  .demo-stops-hero__bg-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+  .demo-stops-hero__overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 4.375%,
+      rgba(0, 0, 0, 0.52) 42.78%,
+      rgba(0, 0, 0, 0.05) 70.417%
+    ) !important;
+  }
+  .demo-stops-hero__content {
+    position: relative !important;
+    z-index: 1 !important;
+    left: auto !important;
+    top: auto !important;
+    width: 462px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+  .demo-stops-hero__title {
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.48px !important;
+    color: #ffffff !important;
+  }
+  .demo-stops-hero__subtitle {
+    position: static !important;
+    width: 439px !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    color: #c4c4c4 !important;
+  }
+  .demo-stops-hero__actions {
+    position: relative !important;
+    z-index: 1 !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+  }
+  .demo-stops-hero__btn {
+    position: static !important;
+    height: auto !important;
+    padding: 16px 32px !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    letter-spacing: -0.32px !important;
+  }
+
+  /* 140:7327 benefits */
+  .demo-stops-benefits {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+  }
+  .demo-stops-benefits__title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 0 42px !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: 0.48px !important;
+  }
+  .demo-stops-benefits__cards {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+  }
+  .demo-stops-benefits__card,
+  .demo-stops-benefits__card--1,
+  .demo-stops-benefits__card--2,
+  .demo-stops-benefits__card--3,
+  .demo-stops-benefits__card--4 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 184px !important;
+    min-width: 0 !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 17px !important;
+    text-align: center !important;
+  }
+  .demo-stops-benefits__ring {
+    position: static !important;
+    width: 94px !important;
+    height: 94px !important;
+    border-width: 3px !important;
+  }
+  .demo-stops-benefits__icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .demo-stops-benefits__h3,
+  .demo-stops-benefits__p,
+  .demo-stops-benefits__card--1 .demo-stops-benefits__p,
+  .demo-stops-benefits__card--2 .demo-stops-benefits__p,
+  .demo-stops-benefits__card--3 .demo-stops-benefits__p,
+  .demo-stops-benefits__card--4 .demo-stops-benefits__p {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+  .demo-stops-benefits__h3 {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.54px !important;
+    color: #ffffff !important;
+  }
+  .demo-stops-benefits__p {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.42px !important;
+    color: #c9cad6 !important;
+  }
+
+  /* 140:7355 poster */
+  .demo-stops-poster {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 42px !important;
+    background: #19161c !important;
+    border-radius: 12px !important;
+  }
+  .demo-stops-poster__title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.48px !important;
+  }
+  .demo-stops-poster__left {
+    position: static !important;
+    width: 100% !important;
+    height: 368px !important;
+    border-radius: 12px !important;
+  }
+  .demo-stops-poster__img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .demo-stops-poster__right {
+    position: static !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    height: auto !important;
+  }
+  .demo-stops-poster__card {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    padding: 33px 36px !important;
+    border-radius: 22px !important;
+    border: 2px solid #ff7b00 !important;
+    background: #19161c !important;
+  }
+  .demo-stops-poster__card--3 {
+    padding-top: 46px !important;
+    padding-bottom: 46px !important;
+  }
+  .demo-stops-poster__h3 {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: normal !important;
+    letter-spacing: -0.54px !important;
+    color: #ff7b00 !important;
+  }
+  .demo-stops-poster__p {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    letter-spacing: -0.48px !important;
+    color: #ffffff !important;
+  }
+
+  /* 140:7377 steps */
+  .demo-stops-steps {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+  }
+  .demo-stops-steps__title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 0 42px !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    white-space: normal !important;
+  }
+  .demo-stops-steps__cards {
+    position: static !important;
+    width: 770px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+  }
+  .demo-stops-steps__card,
+  .demo-stops-steps__card:nth-child(1),
+  .demo-stops-steps__card:nth-child(2),
+  .demo-stops-steps__card:nth-child(3),
+  .demo-stops-steps__card:nth-child(4),
+  .demo-stops-steps__card:nth-child(5) {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    flex: 1 1 0 !important;
+  }
+  .demo-stops-steps .demo-step-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  .demo-stops-steps .demo-step-card__head {
+    width: 93px !important;
+    height: 93px !important;
+    margin: 0 !important;
+    position: relative !important;
+  }
+  .demo-stops-steps .demo-step-card__circle {
+    position: absolute !important;
+    width: 93px !important;
+    height: 93px !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+  .demo-stops-steps .demo-step-card__icon {
+    left: 21px !important;
+    top: 22px !important;
+    width: 50px !important;
+    height: 50px !important;
+    transform: none !important;
+  }
+  .demo-stops-steps .demo-step-card__line,
+  .demo-stops-steps .demo-step-card__arrow {
+    display: none !important;
+  }
+  .demo-stops-steps .demo-step-card__body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .demo-stops-steps .demo-step-card__title {
+    font-size: 16px !important;
+    line-height: normal !important;
+    letter-spacing: -0.16px !important;
+    text-align: center !important;
+    color: #ffffff !important;
+  }
+  .demo-stops-steps .demo-step-card__text {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    color: #c9cad6 !important;
+  }
+
+  /* 140:7406 ideal */
+  .demo-stops-ideal {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+  }
+  .demo-stops-ideal__title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 0 42px !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+  }
+  .demo-stops-ideal__grid {
+    position: static !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .demo-stops-ideal__card,
+  .demo-stops-ideal__card--1,
+  .demo-stops-ideal__card--2,
+  .demo-stops-ideal__card--3,
+  .demo-stops-ideal__card--4 {
+    position: static !important;
+    width: 100% !important;
+    min-height: 164px !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 35px 14px !important;
+    border-radius: 12px !important;
+    background: #19161c !important;
+  }
+  .demo-stops-ideal__icon {
+    position: static !important;
+    width: 94px !important;
+    height: 94px !important;
+    flex-shrink: 0 !important;
+  }
+  .demo-stops-ideal__h3,
+  .demo-stops-ideal__p {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+  .demo-stops-ideal__h3 {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.54px !important;
+    color: #ffffff !important;
+  }
+  .demo-stops-ideal__p {
+    margin-top: 8px !important;
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.48px !important;
+    color: #c9cad6 !important;
+  }
+
+  /* 140:7415 contact — центрируем с формой, подзаголовок и кнопки плотно под заголовком */
+  .demo-stops-contact__inner {
+    align-items: center !important;
+  }
+  .demo-stops-contact__title {
+    font-size: clamp(28px, 2.5vw, 32px) !important;
+    margin-bottom: 12px !important;
+  }
+  .demo-stops-contact__text {
+    margin-bottom: 16px !important;
+  }
+  .demo-stops-contact__dl {
+    margin-bottom: 8px !important;
+  }
+  .demo-stops-contact__formbox {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 28px 20px !important;
+    height: auto !important;
+  }
+  .demo-stops-contact__form-title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 0 20px !important;
+    width: 100% !important;
+  }
+  .demo-stops-contact__form {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .demo-stops-contact__field {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0 0 16px !important;
+  }
+  .demo-stops-contact__field--name,
+  .demo-stops-contact__field--phone,
+  .demo-stops-contact__field--company { top: auto !important; }
+  .demo-stops-contact__field--format { display: none !important; }
+  .demo-stops-contact__field--company { margin-bottom: 20px !important; }
+  .demo-stops-contact__input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    height: 56px !important;
+  }
+  .demo-stops-contact__submit {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 56px !important;
+    border-radius: 100px !important;
+    margin: 0 !important;
+  }
+}
+
 /* Hero background frame (140:5552 @ y=83) */
 .demo-stops-hero {
   position: relative;
@@ -567,12 +1206,21 @@
 .demo-stops-contact__dl--posters { top: 388px; }
 .demo-stops-contact__dl:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
 
+/* Figma 140:5624: Frame с полем "Телефон" имеет visible: false на 1440 — скрыт в макете */
 .demo-stops-contact__phone {
   position: absolute;
   left: 354px;
   top: 231px;
   width: 383px;
   height: 56px;
+  isolation: isolate;
+}
+
+@media (min-width: 1440px) {
+  /* Desktop: по Figma поле "Телефон" слева скрыто, остаётся только поле в форме */
+  .demo-stops-contact__phone {
+    display: none;
+  }
 }
 
 .demo-stops-contact__phone-input {
@@ -590,7 +1238,11 @@
   color: #ffffff;
   outline: none;
 }
-.demo-stops-contact__phone-input:focus-visible { outline: 2px solid rgba(255,255,255,0.9); outline-offset: 2px; }
+/* Focus без двойной рамки: outline поверх border */
+.demo-stops-contact__phone-input:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.9);
+  outline-offset: -2px;
+}
 
 .demo-stops-contact__phone-ph {
   position: absolute;
@@ -666,7 +1318,11 @@
   color: #ffffff;
   outline: none;
 }
-.demo-stops-contact__input:focus-visible { outline: 2px solid rgba(255,255,255,0.9); outline-offset: 2px; }
+/* Focus без двойной рамки */
+.demo-stops-contact__input:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.9);
+  outline-offset: -2px;
+}
 
 .demo-stops-contact__field .demo-stops-contact__ph {
   position: absolute;
@@ -701,4 +1357,1016 @@
 }
 .demo-stops-contact__submit:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
 
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-stops {
+    width: min(100%, clamp(834px, 92vw, 1160px));
+    margin: 0 auto;
+  }
+
+  /* Blok1: Hero (140:7315) */
+  .demo-stops-hero {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    height: 435px !important;
+    margin-top: 0 !important;
+    padding: 99px clamp(32px, 3.8vw, 44px) 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 36px !important;
+  }
+
+  .demo-stops-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .demo-stops-hero__bg-img {
+    width: 100%;
+    height: 435px;
+    object-fit: fill;
+  }
+
+  .demo-stops-hero__overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 4%,
+      rgba(0, 0, 0, 0.52) 43%,
+      rgba(0, 0, 0, 0.05) 70%
+    );
+  }
+
+  .demo-stops-hero__content,
+  .demo-stops-hero__actions {
+    position: relative;
+    z-index: 1;
+  }
+
+  .demo-stops-hero__content {
+    width: clamp(462px, 55vw, 560px) !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .demo-stops-hero__title {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    margin: 0 !important;
+  }
+
+  .demo-stops-hero__subtitle {
+    position: static !important;
+    width: 100% !important;
+    max-width: 439px !important;
+    height: auto !important;
+    margin: 18px 0 0 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
+  .demo-stops-hero__actions {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+  }
+
+  .demo-stops-hero__btn {
+    position: static;
+    height: auto;
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  /* Block2: Benefits (140:7327) */
+  .demo-stops-benefits {
+    width: min(100%, clamp(834px, 92vw, 1160px));
+    height: auto;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px);
+  }
+
+  .demo-stops-benefits__title {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0 0 42px;
+    font-size: 32px;
+    line-height: 41.6px;
+  }
+
+  .demo-stops-benefits__cards {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(10px, 1.2vw, 22px);
+  }
+
+  .demo-stops-benefits__card {
+    position: static;
+    width: auto;
+    min-width: 0;
+    flex: 1 1 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+    text-align: center;
+  }
+
+  .demo-stops-benefits__ring {
+    position: static;
+    width: 94px;
+    height: 94px;
+    border-width: 3px;
+  }
+
+  .demo-stops-benefits__icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .demo-stops-benefits__h3 {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    font-size: 18px;
+    line-height: 23.4px;
+  }
+
+  .demo-stops-benefits__p {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    font-size: 14px;
+    line-height: 18.2px;
+    color: #c9cad6;
+  }
+
+  /* Block3: Poster (140:7355) */
+  .demo-stops-poster {
+    width: min(100%, clamp(834px, 92vw, 1160px));
+    height: auto;
+    margin: 0 auto;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px);
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    background: #19161c;
+    border-radius: 12px;
+  }
+
+  .demo-stops-poster__title {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    font-size: 32px;
+    line-height: 41.6px;
+  }
+
+  .demo-stops-poster__left {
+    position: static;
+    width: 100%;
+    height: 368px;
+    border-radius: 12px;
+  }
+
+  .demo-stops-poster__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .demo-stops-poster__right {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .demo-stops-poster__card {
+    position: static;
+    width: 100%;
+    padding: 33px 36px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border-radius: 22px;
+    border-width: 2px;
+  }
+
+  .demo-stops-poster__card--3 {
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+
+  .demo-stops-poster__h3 {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.54px;
+    color: #ff7b00;
+  }
+
+  .demo-stops-poster__p {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.48px;
+    color: #ffffff;
+  }
+
+  /* Block4: Steps (140:7377) */
+  .demo-stops-steps {
+    width: min(100%, clamp(834px, 92vw, 1160px));
+    height: auto;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px);
+  }
+
+  .demo-stops-steps__title {
+    position: static;
+    width: 100%;
+    margin: 0 0 42px;
+    font-size: 32px;
+    line-height: 41.6px;
+    white-space: normal;
+  }
+
+  .demo-stops-steps__cards {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: clamp(10px, 1.2vw, 22px) !important;
+  }
+
+  .demo-stops-steps__card {
+    position: relative !important;
+    width: auto !important;
+    min-width: 0 !important;
+    flex: 1 1 0 !important;
+  }
+
+  .demo-stops-steps .demo-step-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .demo-stops-steps .demo-step-card__head {
+    width: 93px !important;
+    height: 93px !important;
+    margin: 0 !important;
+    position: relative !important;
+  }
+
+  .demo-stops-steps__card:nth-child(1) .demo-step-card__head {
+    width: 94px;
+  }
+
+  .demo-stops-steps .demo-step-card__circle {
+    width: 93px !important;
+    height: 93px !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+
+  .demo-stops-steps__card:nth-child(1) .demo-step-card__circle {
+    width: 94px;
+  }
+
+  .demo-stops-steps .demo-step-card__icon {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .demo-stops-steps .demo-step-card__line,
+  .demo-stops-steps .demo-step-card__arrow {
+    display: none;
+  }
+
+  .demo-stops-steps .demo-step-card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .demo-stops-steps .demo-step-card__title {
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    text-align: center !important;
+  }
+
+  .demo-stops-steps .demo-step-card__text {
+    font-size: 16px;
+    line-height: 22.4px;
+    text-align: center;
+    color: #c9cad6;
+  }
+
+  /* Block5: Ideal (140:7406) */
+  .demo-stops-ideal {
+    width: min(100%, clamp(834px, 92vw, 1160px));
+    height: auto;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px);
+  }
+
+  .demo-stops-ideal__title {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0 0 42px;
+    font-size: 32px;
+    line-height: 41.6px;
+  }
+
+  .demo-stops-ideal__grid {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .demo-stops-ideal__card {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 35px 14px;
+  }
+
+  .demo-stops-ideal__icon {
+    position: static;
+    width: 65px;
+    height: 65px;
+  }
+
+  .demo-stops-ideal__h3 {
+    position: static;
+    width: auto;
+    margin: 0;
+    font-size: 22px;
+    line-height: 28.6px;
+  }
+
+  .demo-stops-ideal__p {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    font-size: 18px;
+    line-height: 23.4px;
+    color: #c9cad6;
+  }
+
+  /* Block7: Contact (140:7415) */
+  .demo-stops-contact {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: clamp(44px, 5vw, 56px) auto 80px !important;
+    height: auto !important;
+    padding: 0 clamp(32px, 3.8vw, 44px) !important;
+  }
+
+  .demo-stops-contact__inner {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) !important;
+    background: #19161c !important;
+    border-radius: 12px !important;
+    display: grid !important;
+    grid-template-columns: minmax(280px, 1fr) minmax(320px, 408px) !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: clamp(24px, 3vw, 42px) !important;
+  }
+
+  .demo-stops-contact__title,
+  .demo-stops-contact__text,
+  .demo-stops-contact__dl,
+  .demo-stops-contact__phone {
+    position: static !important;
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: 420px !important;
+  }
+
+  .demo-stops-contact__title {
+    width: 100%;
+    height: auto;
+    margin: 0 0 12px;
+    font-size: 32px;
+    line-height: 41.6px;
+  }
+
+  .demo-stops-contact__text {
+    width: 100%;
+    height: auto;
+    margin: 0 0 16px;
+    font-size: 18px;
+    line-height: 23.4px;
+  }
+
+  .demo-stops-contact__dl {
+    width: 100%;
+    height: auto;
+    margin: 0 0 8px;
+    padding: 16px 32px;
+  }
+
+  .demo-stops-contact__dl--posters {
+    margin-bottom: 32px;
+  }
+
+  .demo-stops-contact__phone {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 383px !important;
+    height: 56px !important;
+    margin: 0 !important;
+  }
+
+  .demo-stops-contact__phone-input {
+    width: 100%;
+    height: 56px;
+  }
+
+  .demo-stops-contact__formbox {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 408px !important;
+    height: 412px !important;
+    grid-column: 2 !important;
+    grid-row: 1 / -1 !important;
+    align-self: center !important;
+  }
+
+  .demo-stops-contact__form-title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0 0 20px !important;
+  }
+
+  .demo-stops-contact__field {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0 0 16px !important;
+  }
+  .demo-stops-contact__field--company { margin-bottom: 20px !important; }
+
+  .demo-stops-contact__submit {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+  }
+
+  /* MCP re-sync fixes for broken sections:
+     140:7315 (Hero), 140:7377 (Steps), 140:5622 (Contact) */
+
+  /* 140:7315 Hero */
+  .demo-stops-hero {
+    height: 435px !important;
+    padding: 99px clamp(32px, 3.8vw, 44px) 0 !important;
+    gap: 36px !important;
+  }
+  .demo-stops-hero__content {
+    width: 462px !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+  .demo-stops-hero__title {
+    width: 100% !important;
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.48px !important;
+  }
+  .demo-stops-hero__subtitle {
+    position: static !important;
+    width: 439px !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    color: #c4c4c4 !important;
+  }
+  .demo-stops-hero__actions {
+    position: static !important;
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+  }
+  .demo-stops-hero__btn {
+    height: auto !important;
+    padding: 16px 32px !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    letter-spacing: -0.32px !important;
+  }
+
+  /* 140:7377 Steps */
+  .demo-stops-steps {
+    padding: 44px 32px !important;
+  }
+  .demo-stops-steps__title {
+    margin: 0 0 42px !important;
+    font-size: 48px !important;
+    line-height: 62.4px !important;
+    letter-spacing: -1.44px !important;
+  }
+  .demo-stops-steps__cards {
+    width: 770px !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+  }
+  .demo-stops-steps__card:nth-child(1),
+  .demo-stops-steps__card:nth-child(2),
+  .demo-stops-steps__card:nth-child(3),
+  .demo-stops-steps__card:nth-child(4),
+  .demo-stops-steps__card:nth-child(5) {
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+  }
+  .demo-stops-steps .demo-step-card {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .demo-stops-steps .demo-step-card__head {
+    width: 93px !important;
+    height: 93px !important;
+  }
+  .demo-stops-steps .demo-step-card__circle {
+    width: 93px !important;
+    height: 93px !important;
+  }
+  .demo-stops-steps .demo-step-card__title {
+    font-size: 16px !important;
+    line-height: normal !important;
+    letter-spacing: -0.16px !important;
+  }
+  .demo-stops-steps .demo-step-card__text {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    color: #c9cad6 !important;
+  }
+
+  /* 140:5622 Contact */
+  .demo-stops-contact {
+    padding: 44px 32px !important;
+    margin: 0 auto !important;
+  }
+  .demo-stops-contact__inner {
+    max-width: 770px !important;
+    margin: 0 auto !important;
+    min-height: 0 !important;
+    padding: 33px 20px 26px 40px !important;
+    background: #19161c !important;
+    border-radius: 12px !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 440px !important;
+    column-gap: 24px !important;
+    align-items: center !important;
+  }
+  .demo-stops-contact__title,
+  .demo-stops-contact__text,
+  .demo-stops-contact__dl {
+    grid-column: 1 !important;
+    max-width: 450px !important;
+  }
+  .demo-stops-contact__title {
+    margin: 0 0 12px !important;
+    font-size: 38px !important;
+    line-height: 49.4px !important;
+    letter-spacing: -1.14px !important;
+  }
+  .demo-stops-contact__text {
+    margin: 0 0 16px !important;
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  .demo-stops-contact__dl {
+    width: 363px !important;
+    max-width: 100% !important;
+    height: 52px !important;
+    margin: 0 0 12px !important;
+    padding: 16px 32px !important;
+  }
+  .demo-stops-contact__dl--posters {
+    margin-bottom: 0 !important;
+  }
+  /* left standalone phone input is hidden in this frame */
+  .demo-stops-contact__phone {
+    display: none !important;
+  }
+  .demo-stops-contact__formbox {
+    grid-column: 2 !important;
+    grid-row: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 408px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    border: 1px solid #ff7b00 !important;
+    border-radius: 12px !important;
+    background: #19161c !important;
+    padding: 28px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    align-self: center !important;
+  }
+  .demo-stops-contact__form-title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0 0 20px !important;
+    text-align: center !important;
+    font-size: clamp(24px, 2.2vw, 28px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.84px !important;
+  }
+  .demo-stops-contact__form {
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .demo-stops-contact__field {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0 0 16px !important;
+  }
+  .demo-stops-contact__field--name,
+  .demo-stops-contact__field--phone,
+  .demo-stops-contact__field--company { top: auto !important; }
+  .demo-stops-contact__field--format { display: none !important; }
+  .demo-stops-contact__field--company { margin-bottom: 20px !important; }
+  .demo-stops-contact__submit {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: 56px !important;
+  }
+}
+
+/* FINAL LOCK (834px): exact 140:7415 layout from Figma.
+   This block is intentionally last to override all earlier duplicates. */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-stops-contact {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    padding: 44px 32px !important; /* node 140:7415 */
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .demo-stops-contact__inner {
+    position: static !important;
+    width: 769px !important; /* node 140:7416 */
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    min-height: 412px !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 408px !important;
+    column-gap: 42px !important; /* node 140:7416 itemSpacing */
+    row-gap: 0 !important;
+    align-items: center !important; /* node 140:7416 counterAxisAlignItems */
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  .demo-stops-contact__title,
+  .demo-stops-contact__text,
+  .demo-stops-contact__dl {
+    grid-column: 1 !important;
+    width: 319px !important; /* left block width in 140:7418 */
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .demo-stops-contact__title {
+    position: static !important;
+    margin: 0 0 22px !important; /* node 140:7421 itemSpacing */
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-stops-contact__text {
+    position: static !important;
+    margin: 0 0 24px !important; /* frame-group gap before buttons */
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    color: #c4c4c4 !important;
+  }
+
+  .demo-stops-contact__dl {
+    position: static !important;
+    min-height: 52px !important;
+    margin: 0 0 12px !important;
+    padding: 16px 32px !important;
+    border-radius: 64px !important;
+    border: 1px solid #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    letter-spacing: -0.32px !important;
+  }
+
+  .demo-stops-contact__dl--posters {
+    margin-bottom: 0 !important;
+  }
+
+  .demo-stops-contact__phone {
+    display: none !important;
+  }
+
+  .demo-stops-contact__formbox {
+    grid-column: 2 !important;
+    grid-row: 1 / -1 !important;
+    width: 408px !important; /* node 140:7427 */
+    height: 412px !important; /* node 140:7427 */
+    max-width: 100% !important;
+    position: relative !important;
+    border-radius: 12px !important;
+    border: 1px solid #ff7b00 !important;
+    background: #19161c !important;
+    overflow: hidden !important;
+    align-self: center !important;
+    padding: 0 !important;
+  }
+
+  .demo-stops-contact__form-title {
+    position: absolute !important;
+    top: 32px !important;
+    left: calc(50% - 151px) !important;
+    width: 301px !important;
+    margin: 0 !important;
+    text-align: center !important;
+    font-size: 28px !important;
+    line-height: 36.4px !important;
+    letter-spacing: -0.84px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-stops-contact__form {
+    position: relative !important;
+    width: 408px !important;
+    height: 412px !important;
+    min-height: 0 !important;
+  }
+
+  .demo-stops-contact__field {
+    position: absolute !important;
+    left: 15px !important;
+    width: 379px !important;
+    height: 56px !important;
+    margin: 0 !important;
+  }
+  .demo-stops-contact__field--name { top: 88px !important; }
+  .demo-stops-contact__field--phone { top: 162px !important; }
+  .demo-stops-contact__field--company { top: 236px !important; }
+  .demo-stops-contact__field--format { display: none !important; }
+
+  .demo-stops-contact__input {
+    width: 100% !important;
+    height: 56px !important;
+    border-radius: 12px !important;
+    border: 1px solid #ffffff !important;
+    box-sizing: border-box !important;
+    padding: 18px 22px !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+  }
+
+  .demo-stops-contact__submit {
+    position: absolute !important;
+    bottom: 37px !important;
+    left: calc(50% - 189px) !important;
+    width: 379px !important;
+    height: 56px !important;
+    margin: 0 !important;
+    border-radius: 100px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 18px 22px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* FINAL LOCK (834px): exact 140:7415 layout from Figma.
+   This block is intentionally last to override all earlier duplicates. */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-stops-contact {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    padding: 44px 32px !important; /* node 140:7415 */
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .demo-stops-contact__inner {
+    position: static !important;
+    width: 769px !important; /* node 140:7416 */
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    min-height: 412px !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 408px !important;
+    column-gap: 42px !important; /* node 140:7416 itemSpacing */
+    row-gap: 0 !important;
+    align-items: center !important; /* node 140:7416 counterAxisAlignItems */
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  .demo-stops-contact__title,
+  .demo-stops-contact__text,
+  .demo-stops-contact__dl {
+    grid-column: 1 !important;
+    width: 319px !important; /* left block width in 140:7418 */
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .demo-stops-contact__title {
+    position: static !important;
+    margin: 0 0 22px !important; /* node 140:7421 itemSpacing */
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-stops-contact__text {
+    position: static !important;
+    margin: 0 0 24px !important; /* frame-group gap before buttons */
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+    color: #c4c4c4 !important;
+  }
+
+  .demo-stops-contact__dl {
+    position: static !important;
+    min-height: 52px !important;
+    margin: 0 0 12px !important;
+    padding: 16px 32px !important;
+    border-radius: 64px !important;
+    border: 1px solid #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    letter-spacing: -0.32px !important;
+  }
+
+  .demo-stops-contact__dl--posters {
+    margin-bottom: 0 !important;
+  }
+
+  .demo-stops-contact__phone {
+    display: none !important;
+  }
+
+  .demo-stops-contact__formbox {
+    grid-column: 2 !important;
+    grid-row: 1 / -1 !important;
+    width: 408px !important; /* node 140:7427 */
+    height: 412px !important; /* node 140:7427 */
+    max-width: 100% !important;
+    position: relative !important;
+    border-radius: 12px !important;
+    border: 1px solid #ff7b00 !important;
+    background: #19161c !important;
+    overflow: hidden !important;
+    align-self: center !important;
+    padding: 0 !important;
+  }
+
+  .demo-stops-contact__form-title {
+    position: absolute !important;
+    top: 32px !important;
+    left: calc(50% - 151px) !important;
+    width: 301px !important;
+    margin: 0 !important;
+    text-align: center !important;
+    font-size: 28px !important;
+    line-height: 36.4px !important;
+    letter-spacing: -0.84px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+
+  .demo-stops-contact__form {
+    position: relative !important;
+    width: 408px !important;
+    height: 412px !important;
+    min-height: 0 !important;
+  }
+
+  .demo-stops-contact__field {
+    position: absolute !important;
+    left: 15px !important;
+    width: 379px !important;
+    height: 56px !important;
+    margin: 0 !important;
+  }
+  .demo-stops-contact__field--name { top: 88px !important; }
+  .demo-stops-contact__field--phone { top: 162px !important; }
+  .demo-stops-contact__field--company { top: 236px !important; }
+  .demo-stops-contact__field--format { display: none !important; }
+
+  .demo-stops-contact__input {
+    width: 100% !important;
+    height: 56px !important;
+    border-radius: 12px !important;
+    border: 1px solid #ffffff !important;
+    box-sizing: border-box !important;
+    padding: 18px 22px !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.54px !important;
+  }
+
+  .demo-stops-contact__submit {
+    position: absolute !important;
+    bottom: 37px !important;
+    left: calc(50% - 189px) !important;
+    width: 379px !important;
+    height: 56px !important;
+    margin: 0 !important;
+    border-radius: 100px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 18px 22px !important;
+    box-sizing: border-box !important;
+  }
+}
 

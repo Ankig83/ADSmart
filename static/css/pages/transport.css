@@ -565,34 +565,39 @@
   background: #19161c;
 }
 
+/* Figma 140:5548: title и text — constraints horizontal CENTER, textAlignHorizontal CENTER */
 .demo-transport-contact__title {
   position: absolute;
-  left: 154px;
+  left: 50%;
   top: 54px;
   width: 781px;
-  height: 76px;
+  max-width: calc(100% - 64px);
   margin: 0;
+  transform: translateX(-50%);
   font-family: var(--font-sans);
   font-size: 38px;
   font-weight: 600;
   line-height: 49.4px;
   letter-spacing: -1.14px;
   color: #ffffff;
+  text-align: center;
 }
 
 .demo-transport-contact__text {
   position: absolute;
-  left: 217px;
+  left: 50%;
   top: 155px;
   width: 660px;
-  height: 44px;
+  max-width: calc(100% - 64px);
   margin: 0;
+  transform: translateX(-50%);
   font-family: var(--font-sans);
   font-size: 22px;
   font-weight: 400;
   line-height: 28.6px;
   letter-spacing: -0.66px;
   color: #ffffff;
+  text-align: center;
 }
 
 .demo-transport-contact__form { position: absolute; left: 0; top: 0; width: 1088px; height: 425px; }
@@ -657,3 +662,487 @@
 .demo-transport-contact__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
 
 
+/* Tablet 834-1339 (Figma 140:7209): fluid scaling like billboards */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-transport {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Hero */
+  .demo-transport-hero {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    margin-top: 0 !important;
+    height: 435px !important;
+    padding: 99px clamp(32px, 3.8vw, 44px) 0 !important;
+    position: relative !important;
+  }
+  .demo-transport-hero__bg-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .demo-transport-hero__content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: clamp(462px, 55vw, 560px) !important;
+  }
+  .demo-transport-hero__title {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+  }
+  .demo-transport-hero__subtitle {
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 16px !important;
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+  }
+  .demo-transport-hero__btn {
+    position: static !important;
+    margin-top: 24px !important;
+  }
+
+  /* Benefits */
+  .demo-transport-benefits {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+  }
+  .demo-transport-benefits__title {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    height: auto !important;
+    margin: 0 0 clamp(32px, 4vw, 42px) !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+  }
+  .demo-transport-benefits__cards {
+    position: static !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    gap: clamp(10px, 1.2vw, 22px) !important;
+  }
+  .demo-transport-benefits__card,
+  .demo-transport-benefits__card--1,
+  .demo-transport-benefits__card--2,
+  .demo-transport-benefits__card--3,
+  .demo-transport-benefits__card--4 {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    display: grid !important;
+    justify-items: center !important;
+    align-content: start !important;
+    gap: 12px !important;
+  }
+  .demo-transport-benefits__ring {
+    position: static !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .demo-transport-benefits__icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .demo-transport-benefits__h3,
+  .demo-transport-benefits__p,
+  .demo-transport-benefits__card--1 .demo-transport-benefits__p,
+  .demo-transport-benefits__card--2 .demo-transport-benefits__p,
+  .demo-transport-benefits__card--3 .demo-transport-benefits__p,
+  .demo-transport-benefits__card--4 .demo-transport-benefits__p {
+    position: static !important;
+    width: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .demo-transport-benefits__h3 {
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+  }
+  .demo-transport-benefits__p {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+  }
+
+  /* Formats — секция 140:7248 */
+  .demo-transport-formats {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
+  }
+  .demo-transport-formats__title {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    margin: 0 0 24px !important;
+    left: auto !important;
+    top: auto !important;
+    height: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+  }
+  .demo-transport-formats__items {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    height: auto !important;
+  }
+  .demo-transport-format,
+  .demo-transport-format[open] {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 104px !important;
+    margin-bottom: 18px !important;
+  }
+  .demo-transport-format__summary {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 104px !important;
+    padding: 30px 50px 30px 38px !important;
+    box-sizing: border-box !important;
+  }
+  .demo-transport-format__title,
+  .demo-transport-format__subtitle {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 4px 0 !important;
+    font-size: 20px !important;
+    line-height: 26px !important;
+  }
+  .demo-transport-format__subtitle {
+    font-size: 16px !important;
+    line-height: 22px !important;
+  }
+  .demo-transport-format__chevron {
+    position: absolute !important;
+    right: 20px !important;
+    left: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+  .demo-transport-format[open] .demo-transport-format__chevron {
+    transform: translateY(-50%) rotate(180deg) !important;
+  }
+  .demo-transport-format__body {
+    display: none !important;
+  }
+  .demo-transport-format[open] .demo-transport-format__body {
+    display: grid !important;
+    grid-template-columns: minmax(280px, 40%) minmax(0, 1fr) !important;
+    column-gap: 24px !important;
+    row-gap: 12px !important;
+    align-items: start !important;
+    padding: 0 38px 38px !important;
+  }
+  .demo-transport-format__img {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+  }
+  .demo-transport-format[open] .demo-transport-format__img {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+  }
+  .demo-transport-format__box,
+  .demo-transport-format__box--ai,
+  .demo-transport-format__box--price {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 24px !important;
+    box-sizing: border-box !important;
+  }
+  .demo-transport-format[open] .demo-transport-format__box--ai,
+  .demo-transport-format[open] .demo-transport-format__box--price {
+    grid-column: 2 !important;
+    margin-bottom: 0 !important;
+  }
+  .demo-transport-format__box-title,
+  .demo-transport-format__box-text,
+  .demo-transport-format--stickers .demo-transport-format__box--ai .demo-transport-format__box-title,
+  .demo-transport-format--rear-window .demo-transport-format__box--ai .demo-transport-format__box-title,
+  .demo-transport-format--rear-board .demo-transport-format__box--ai .demo-transport-format__box-title,
+  .demo-transport-format--monitors .demo-transport-format__box--ai .demo-transport-format__box-title,
+  .demo-transport-format--stickers .demo-transport-format__box--ai .demo-transport-format__box-text,
+  .demo-transport-format--rear-window .demo-transport-format__box--ai .demo-transport-format__box-text,
+  .demo-transport-format--rear-board .demo-transport-format__box--ai .demo-transport-format__box-text,
+  .demo-transport-format--monitors .demo-transport-format__box--ai .demo-transport-format__box-text,
+  .demo-transport-format--stickers .demo-transport-format__box--price .demo-transport-format__box-title,
+  .demo-transport-format--rear-window .demo-transport-format__box--price .demo-transport-format__box-title,
+  .demo-transport-format--rear-board .demo-transport-format__box--price .demo-transport-format__box-title,
+  .demo-transport-format--monitors .demo-transport-format__box--price .demo-transport-format__box-title,
+  .demo-transport-format--stickers .demo-transport-format__box--price .demo-transport-format__box-text,
+  .demo-transport-format--rear-window .demo-transport-format__box--price .demo-transport-format__box-text,
+  .demo-transport-format--rear-board .demo-transport-format__box--price .demo-transport-format__box-text,
+  .demo-transport-format--monitors .demo-transport-format__box--price .demo-transport-format__box-text,
+  .demo-transport-format--headrests .demo-transport-format__box--ai .demo-transport-format__box-title,
+  .demo-transport-format--headrests .demo-transport-format__box--ai .demo-transport-format__box-text,
+  .demo-transport-format--headrests .demo-transport-format__box--price .demo-transport-format__box-title,
+  .demo-transport-format--headrests .demo-transport-format__box--price .demo-transport-format__box-text {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 8px 0 !important;
+  }
+  .demo-transport-format__box-text { margin-bottom: 0 !important; }
+
+  /* Steps */
+  .demo-transport-steps {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
+  }
+  .demo-transport-steps__title {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    height: auto !important;
+    margin: 0 0 32px !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+    letter-spacing: -0.96px !important;
+  }
+  .demo-transport-steps__cards {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: clamp(10px, 1.2vw, 22px) !important;
+  }
+  .demo-transport-steps__card,
+  .demo-transport-steps__card:nth-child(1),
+  .demo-transport-steps__card:nth-child(2),
+  .demo-transport-steps__card:nth-child(3),
+  .demo-transport-steps__card:nth-child(4),
+  .demo-transport-steps__card:nth-child(5) {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+  }
+  .demo-transport-steps .demo-step-card__line,
+  .demo-transport-steps .demo-step-card__arrow {
+    display: none !important;
+  }
+  .demo-transport-steps .demo-step-card__head {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .demo-transport-steps .demo-step-card__circle {
+    position: relative !important;
+    width: 80px !important;
+    height: 80px !important;
+    left: auto !important;
+    top: auto !important;
+  }
+  .demo-transport-steps .demo-step-card__icon {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .demo-transport-steps .demo-step-card__icon-img {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .demo-transport-steps .demo-step-card__title {
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+  }
+  .demo-transport-steps .demo-step-card__text {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+  }
+
+  /* Ideal */
+  .demo-transport-ideal {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
+  }
+  .demo-transport-ideal__title {
+    position: static !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    height: auto !important;
+    margin: 0 0 24px !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+  }
+  .demo-transport-ideal__grid {
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(16px, 2vw, 24px) !important;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+  }
+  .demo-transport-ideal__card,
+  .demo-transport-ideal__card--1,
+  .demo-transport-ideal__card--2,
+  .demo-transport-ideal__card--3,
+  .demo-transport-ideal__card--4 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 170px !important;
+    padding: 24px !important;
+    display: grid !important;
+    grid-template-columns: 80px minmax(0, 1fr) !important;
+    column-gap: 16px !important;
+    align-items: center !important;
+  }
+  .demo-transport-ideal__icon {
+    position: static !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .demo-transport-ideal__h3,
+  .demo-transport-ideal__p,
+  .demo-transport-ideal__card--1 .demo-transport-ideal__h3,
+  .demo-transport-ideal__card--1 .demo-transport-ideal__p,
+  .demo-transport-ideal__card--2 .demo-transport-ideal__h3,
+  .demo-transport-ideal__card--2 .demo-transport-ideal__p,
+  .demo-transport-ideal__card--3 .demo-transport-ideal__h3,
+  .demo-transport-ideal__card--3 .demo-transport-ideal__p,
+  .demo-transport-ideal__card--4 .demo-transport-ideal__h3,
+  .demo-transport-ideal__card--4 .demo-transport-ideal__p {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+  .demo-transport-ideal__h3 {
+    color: #ff7b00 !important;
+    font-size: 22px !important;
+    line-height: 28.6px !important;
+    margin-bottom: 10px !important;
+  }
+  .demo-transport-ideal__p {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+  }
+
+  /* Contact */
+  .demo-transport-contact {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: clamp(44px, 5vw, 56px) auto 80px !important;
+    height: auto !important;
+  }
+  .demo-transport-contact__inner {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+  }
+  .demo-transport-contact__title,
+  .demo-transport-contact__text {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    transform: none !important;
+    margin: 0 0 24px !important;
+    text-align: center !important;
+    font-size: 28px !important;
+    line-height: 36.4px !important;
+  }
+  .demo-transport-contact__text {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+    margin-bottom: 32px !important;
+  }
+  .demo-transport-contact__form {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  .demo-transport-contact__field {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 383px !important;
+  }
+  .demo-transport-contact__input {
+    width: 100% !important;
+  }
+  .demo-transport-contact__ph {
+    position: absolute !important;
+    left: 22px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 18px !important;
+    line-height: 23.4px !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+  }
+  .demo-transport-contact__input:focus + .demo-transport-contact__ph,
+  .demo-transport-contact__input:not(:placeholder-shown) + .demo-transport-contact__ph {
+    opacity: 0 !important;
+  }
+  .demo-transport-contact__btn {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 200px !important;
+  }
+}

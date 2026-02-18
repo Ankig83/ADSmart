@@ -9,7 +9,7 @@
 .sg__grid { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
 .sg__p { margin: 0; }
 
-@media (min-width: 768px) {
+@media (min-width: 834px) {
   .sg__grid { grid-template-columns: repeat(3, 1fr); }
 }
 

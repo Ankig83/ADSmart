@@ -70,7 +70,7 @@
   border: 1px solid var(--border);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 834px) {
   .c-nav__toggle { display: none; }
   .c-nav__menu { display: flex; position: static; }
   .c-nav__menu.is-open {
