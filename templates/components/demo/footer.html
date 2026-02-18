@@ -1,27 +1,29 @@
 {% load static %}
 <footer class="demo-footer" id="contacts">
   <div class="demo-footer__inner">
-    <div class="demo-footer__brand">
-      <img
-        class="demo-footer__logo"
-        src="{% static 'assets/images/image-12-cf0ca1e7.png' %}"
-        width="74"
-        height="46"
-        alt="ADSmart"
-      />
-      <div class="demo-footer__title">Студия умной рекламы ADSmart</div>
-    </div>
+    <div class="demo-footer__left">
+      <div class="demo-footer__brand">
+        <img
+          class="demo-footer__logo"
+          src="{% static 'assets/images/image-12-cf0ca1e7.png' %}"
+          width="74"
+          height="46"
+          alt="ADSmart"
+        />
+        <div class="demo-footer__title">Студия умной рекламы ADSmart</div>
+      </div>
 
-    <div class="demo-footer__social" aria-label="Messengers">
-      <a class="demo-footer__social-link" href="#" aria-label="Messenger 1 (TODO)">
-        <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13222.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      </a>
-      <a class="demo-footer__social-link" href="#" aria-label="Messenger 2 (TODO)">
-        <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13226.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      </a>
-      <a class="demo-footer__social-link" href="#" aria-label="Messenger 3 (TODO)">
-        <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13230.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      </a>
+      <div class="demo-footer__social" aria-label="Messengers">
+        <a class="demo-footer__social-link" href="#" aria-label="Messenger 1 (TODO)">
+          <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13222.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        </a>
+        <a class="demo-footer__social-link" href="#" aria-label="Messenger 2 (TODO)">
+          <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13226.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        </a>
+        <a class="demo-footer__social-link" href="#" aria-label="Messenger 3 (TODO)">
+          <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13230.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        </a>
+      </div>
     </div>
 
     <div class="demo-footer__cols">
@@ -45,9 +47,9 @@
 
       <nav class="demo-footer__col" aria-label="Информационные разделы">
         <div class="demo-footer__col-title">Информационные разделы</div>
-        <a class="demo-footer__link" href="#help">FAQ</a>
-        <a class="demo-footer__link" href="#about">Команда</a>
-        <a class="demo-footer__link" href="#contacts">Контакты</a>
+        <a class="demo-footer__link" href="{% url 'home' %}#help">FAQ</a>
+        <a class="demo-footer__link" href="{% url 'home' %}#about">Команда</a>
+        <a class="demo-footer__link" href="{% url 'home' %}#contacts">Контакты</a>
       </nav>
     </div>
   </div>
