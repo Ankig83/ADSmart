@@ -415,8 +415,8 @@
     color: #c4c4c4 !important;
   }
   .demo-elevators-contact__formbox {
-    width: 408px !important;
-    max-width: 408px !important;
+    width: min(408px, 100%) !important;
+    max-width: 100% !important;
     height: 412px !important;
     border-radius: 12px !important;
     border: 1px solid #ff7b00 !important;
@@ -495,7 +495,8 @@
     left: 50% !important;
     bottom: 36px !important;
     transform: translateX(-50%) !important;
-    width: 220px !important;
+    width: min(220px, calc(100% - 28px)) !important;
+    max-width: calc(100% - 28px) !important;
     height: 56px !important;
     border-radius: 100px !important;
     margin: 0 !important;
@@ -508,8 +509,8 @@
 /* MCP hard lock: frame 140:7742 (contact form) — prevent cascade conflicts */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-elevators-contact .demo-elevators-contact__formbox {
-    width: 408px !important;
-    max-width: 408px !important;
+    width: min(408px, 100%) !important;
+    max-width: 100% !important;
     height: 412px !important;
     border: 1px solid #ff7b00 !important;
     border-radius: 12px !important;
@@ -555,7 +556,8 @@
     left: 50% !important;
     bottom: 36px !important;
     transform: translateX(-50%) !important;
-    width: 220px !important;
+    width: min(220px, calc(100% - 28px)) !important;
+    max-width: calc(100% - 28px) !important;
     height: 56px !important;
   }
 }

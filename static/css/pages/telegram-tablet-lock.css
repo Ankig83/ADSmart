@@ -338,8 +338,8 @@
     color: #c4c4c4 !important;
   }
   .demo-tg-contact__formbox {
-    width: 408px !important;
-    max-width: 408px !important;
+    width: min(408px, 100%) !important;
+    max-width: 100% !important;
     height: 412px !important;
     border-radius: 12px !important;
     border: 1px solid #ff7b00 !important;
@@ -367,7 +367,7 @@
   }
   .demo-tg-contact__form {
     position: relative !important;
-    width: 408px !important;
+    width: 100% !important;
     height: 412px !important;
     margin: 0 !important;
     background: transparent !important;
@@ -380,7 +380,9 @@
   .demo-tg-contact__field {
     position: absolute !important;
     left: 15px !important;
-    width: 379px !important;
+    width: min(379px, calc(100% - 30px)) !important;
+    max-width: calc(100% - 30px) !important;
+    box-sizing: border-box !important;
     height: 56px !important;
     margin: 0 !important;
     display: block !important;
@@ -420,7 +422,8 @@
     left: 50% !important;
     bottom: 36px !important;
     transform: translateX(-50%) !important;
-    width: 379px !important;
+    width: min(379px, calc(100% - 30px)) !important;
+    max-width: calc(100% - 30px) !important;
     height: 56px !important;
     border-radius: 100px !important;
     margin: 0 !important;
@@ -438,8 +441,8 @@
     max-width: 768px !important;
   }
   .demo-tg-contact .demo-tg-contact__formbox {
-    width: 408px !important;
-    max-width: 408px !important;
+    width: min(408px, 100%) !important;
+    max-width: 100% !important;
     height: 412px !important;
     min-height: 412px !important;
     border: 1px solid #ff7b00 !important;
@@ -450,7 +453,7 @@
   }
   .demo-tg-contact .demo-tg-contact__form {
     position: relative !important;
-    width: 408px !important;
+    width: 100% !important;
     height: 412px !important;
   }
   .demo-tg-contact .demo-tg-contact__form-title {
@@ -465,8 +468,10 @@
   .demo-tg-contact .demo-tg-contact__field {
     position: absolute !important;
     left: 15px !important;
-    width: 379px !important;
+    width: min(379px, calc(100% - 30px)) !important;
+    max-width: calc(100% - 30px) !important;
     height: 56px !important;
+    box-sizing: border-box !important;
   }
   .demo-tg-contact .demo-tg-contact__form .demo-tg-contact__field:nth-of-type(1) { top: 87px !important; }
   .demo-tg-contact .demo-tg-contact__form .demo-tg-contact__field:nth-of-type(2) { top: 161px !important; }
@@ -485,7 +490,8 @@
     left: 50% !important;
     bottom: 36px !important;
     transform: translateX(-50%) !important;
-    width: 379px !important;
+    width: min(379px, calc(100% - 30px)) !important;
+    max-width: calc(100% - 30px) !important;
     height: 56px !important;
   }
 }

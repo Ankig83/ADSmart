@@ -167,6 +167,11 @@
   justify-content: center;
 }
 
+.demo-tg-why__content {
+  width: 100%;
+  text-align: center;
+}
+
 .demo-tg-why__icon {
   width: 125px;
   height: 125px;

@@ -692,6 +692,8 @@
     background: #19161c;
     padding: 24px;
     position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .demo-elevators-contact__form-title {
@@ -750,6 +752,7 @@
 
   .demo-elevators-contact__btn {
     width: 100%;
+    max-width: 100%;
     height: 52px;
     border: none;
     border-radius: 64px;
@@ -759,6 +762,7 @@
     font-weight: 500;
     color: #000000;
     cursor: pointer;
+    box-sizing: border-box;
   }
 }
 
