@@ -122,8 +122,9 @@
 }
 
 .demo-ai-comparison__title {
-  margin: 0 0 68px; /* 1872 - 1680 - 124 (height) = 68 */
-  padding-left: 176px;
+  width: 770px;
+  margin: 0 auto 68px;
+  padding-left: 0;
   font-family: var(--font-sans);
   font-size: 48px;
   font-weight: 600;
@@ -133,55 +134,46 @@
 }
 
 .demo-ai-comparison__grid {
-  width: 1086px;
+  width: 770px;
   margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  overflow: hidden;
-}
-
-.demo-ai-comparison__header,
-.demo-ai-comparison__row {
   display: flex;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-direction: column;
+  gap: 24px;
 }
 
-.demo-ai-comparison__row:last-child {
-  border-bottom: none;
+.demo-ai-comparison__block {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.demo-ai-comparison__col-title {
-  flex: 1;
+.demo-ai-comparison__block-header {
   padding: 30px 40px;
   font-family: var(--font-sans);
   font-size: 18px;
+  font-weight: 600;
   line-height: 23.4px;
   color: #000000;
-  display: flex;
-  align-items: center;
-  font-weight: 700;
   background: #ffb661;
+  border-radius: 8px 8px 0 0;
 }
 
-.demo-ai-comparison__col-title--accent {
+.demo-ai-comparison__block-header--accent {
   background: #ff7b00;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 8px 8px 0 0;
 }
 
-.demo-ai-comparison__cell {
-  flex: 1;
+.demo-ai-comparison__block-cell {
   padding: 30px 40px;
   font-family: var(--font-sans);
   font-size: 18px;
   line-height: 23.4px;
   color: #ffffff;
-  display: flex;
-  align-items: center;
-}
-
-.demo-ai-comparison__cell--accent {
-  background: #1e1b22;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  background: #19161c;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Competencies Section (140:4990) */

@@ -145,39 +145,40 @@
 }
 
 @media (min-width: 834px) and (max-width: 1439px) {
-  /* Footer Pad (Figma node 140:8079): fluid in 834-1339 without horizontal overflow */
+  /* Footer Pad (Figma node 140:8079): shared tablet layout for all pages */
   .demo-footer {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    height: 328px !important;
+    min-height: 328px !important;
+    height: auto !important;
     margin: 0 auto !important;
     padding: 0 !important;
     background: #19161c !important;
-    overflow: hidden !important;
   }
 
   .demo-footer__inner {
     width: 100% !important;
-    height: 328px !important;
+    min-height: 328px !important;
+    height: auto !important;
     margin: 0 auto !important;
     padding: 50px 37px !important;
     box-sizing: border-box !important;
     position: static !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 8px 24px !important;
+    display: grid !important;
+    grid-template-columns: 223px minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 24px !important;
+    row-gap: 24px !important;
     align-items: start !important;
-    align-content: flex-start !important;
-    overflow: hidden !important;
+    align-content: start !important;
   }
 
-  /* left meta column */
   .demo-footer__brand {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
     position: static !important;
     width: 223px !important;
-    display: flex !important;
-    flex-direction: column !important;
+    display: grid !important;
     gap: 27px !important;
-    flex: 0 0 auto !important;
   }
 
   .demo-footer__logo {
@@ -193,44 +194,45 @@
   }
 
   .demo-footer__social {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
     position: static !important;
     display: flex !important;
     align-items: center !important;
     gap: 14px !important;
-    height: 50px !important;
+    height: 28px !important;
   }
 
-  .demo-footer__social-link {
-    width: 50px !important;
-    height: 50px !important;
-    border-radius: 0 !important;
-  }
-
+  .demo-footer__social-link,
   .demo-footer__social-icon {
-    width: 50px !important;
-    height: 50px !important;
+    width: 28px !important;
+    height: 28px !important;
   }
 
-  /* three columns to the right: each flex-1 (as in Figma) */
   .demo-footer__cols {
+    grid-column: 2 !important;
+    grid-row: 1 / span 2 !important;
     position: static !important;
-    width: calc(100% - 223px - 24px) !important;
+    width: 100% !important;
+    max-width: 921px !important;
     height: auto !important;
-    display: flex !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 24px !important;
     align-items: start !important;
-    align-content: flex-start !important;
-    flex: 1 1 auto !important;
     min-width: 0 !important;
   }
 
+  /* Match Figma column order: services, outdoor, info */
+  .demo-footer__col:nth-child(1) { order: 2 !important; }
+  .demo-footer__col:nth-child(2) { order: 1 !important; }
+  .demo-footer__col:nth-child(3) { order: 3 !important; }
+
   .demo-footer__col {
-    width: auto !important;
+    width: 100% !important;
     min-width: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
+    display: grid !important;
     gap: 18px !important;
-    flex: 1 1 0 !important;
   }
 
   .demo-footer__col-title {
@@ -243,10 +245,10 @@
 
   .demo-footer__link {
     font-size: 16px !important;
-    line-height: normal !important;
+    line-height: 24px !important;
     letter-spacing: -0.48px !important;
     font-weight: 400 !important;
-    color: rgba(255, 255, 255, 0.6) !important;
+    color: #ffffff !important;
     word-break: break-word !important;
     overflow-wrap: anywhere !important;
   }

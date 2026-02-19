@@ -662,7 +662,7 @@
 .demo-transport-contact__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
 
 
-/* Tablet 834-1339 (Figma 140:7209): fluid scaling like billboards */
+/* Tablet 834-1439: fluid scaling like billboards */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-transport {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;

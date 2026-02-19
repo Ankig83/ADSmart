@@ -18,6 +18,31 @@
   overflow: hidden;
 }
 
+.demo-prod-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.demo-prod-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.demo-prod-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 58%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
 .demo-prod-hero__content {
   position: absolute;
   left: 178px;
@@ -520,91 +545,81 @@
   transform: scale(1.02);
 }
 
+/* Tablet fluid layout (834-1439) — Figma 140:7999 Производство рекламы */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-prod {
-    width: 834px;
-    margin: 0 auto;
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
   }
 
-  /* Hero Section */
+  /* Hero — 140:8000 Blok1 */
   .demo-prod-hero {
-    position: relative;
-    width: 834px;
-    height: 435px;
-    padding: 0;
-    display: block;
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: clamp(435px, 38vw, 535px) !important;
+    padding: clamp(86px, 8vw, 110px) clamp(24px, 2.8vw, 40px) clamp(52px, 6vw, 80px) !important;
+    position: relative !important;
+    box-sizing: border-box !important;
   }
-
   .demo-prod-hero__content {
-    left: 32px; /* 17697 - 17665 */
-    top: 97px;  /* 17680 - 17583 */
-    width: 444px;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: min(100%, 444px) !important;
+    z-index: 2 !important;
   }
-
   .demo-prod-hero__title {
-    font-size: 32px;
-    line-height: 41.6px;
-    letter-spacing: 0.48px;
-    margin: 0 0 18px;
+    width: 100% !important;
+    margin: 0 0 24px !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
   }
-
   .demo-prod-hero__subtitle {
-    font-size: 18px;
-    line-height: 27px;
-    margin: 0 0 36px;
-    width: 444px;
+    width: 100% !important;
+    margin: 0 0 24px !important;
+    font-size: 16px !important;
+    line-height: 22.4px !important;
   }
-
   .demo-prod-hero__actions {
-    gap: 8px;
+    display: flex !important;
+    gap: 8px !important;
   }
-
   .demo-prod-hero__btn {
-    font-size: 16px;
-    padding: 16px 24px;
-    width: auto;
-    height: 52px;
+    width: auto !important;
+    padding: 16px 32px !important;
   }
-
   .demo-prod-hero__image-wrap {
-    left: 468px;
-    top: 16px;
-    width: 389.5px;
-    height: 407.7px;
+    display: none !important;
   }
 
-  .demo-prod-hero__glow {
-    width: 180px;
-    height: 180px;
-    filter: blur(175px);
-    opacity: 0.6;
-  }
-
-  /* Section 2: Emotions */
+  /* Emotions — 140:8012 Blok3 */
   .demo-prod-emotions {
-    position: relative;
-    width: 834px;
-    height: 657px;
-    padding-top: 44px;
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+    box-sizing: border-box !important;
   }
-
   .demo-prod-emotions__title {
-    width: 770px;
-    margin: 0 0 44px 32px;
-    font-size: 32px;
-    line-height: 41.6px;
+    width: 100% !important;
+    margin: 0 0 clamp(32px, 4vw, 44px) !important;
+    padding-left: 0 !important;
+    font-size: clamp(28px, 2.2vw, 36px) !important;
+    line-height: 1.3 !important;
   }
-
   .demo-prod-emotions__grid {
-    width: 770px;
-    margin: 0 auto;
-    gap: 22px;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    margin: 0 auto !important;
+    gap: clamp(16px, 2vw, 22px) !important;
   }
-
   .demo-prod-emotions__card {
-    width: 242px;
-    height: 447px;
-    padding: 28px 14px;
+    flex: 1 !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: clamp(24px, 2.5vw, 36px) clamp(20px, 2vw, 32px) !important;
   }
 
   .demo-prod-emotions__icon-wrap {
@@ -628,190 +643,182 @@
     line-height: 21px;
   }
 
-  /* Section 3: Solutions */
+  /* Solutions — 140:8019 Blok5 */
   .demo-prod-solutions {
-    position: relative;
-    width: 834px;
-    height: 862px;
-    padding-top: 44px;
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+    box-sizing: border-box !important;
   }
-
   .demo-prod-solutions__title {
-    width: 770px;
-    margin: 0 0 44px 32px;
-    font-size: 32px;
-    line-height: 41.6px;
+    width: 100% !important;
+    margin: 0 0 clamp(32px, 4vw, 44px) !important;
+    padding-left: 0 !important;
+    font-size: clamp(28px, 2.2vw, 36px) !important;
+    line-height: 1.3 !important;
   }
-
   .demo-prod-solutions__grid {
-    width: 770px;
-    grid-template-columns: repeat(2, 374px);
-    gap: 22px;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    margin: 0 auto !important;
+    grid-template-columns: 1fr !important;
+    gap: clamp(16px, 2vw, 22px) !important;
   }
-
   .demo-prod-solutions__card {
-    width: 374px;
-    height: 376px;
-    flex-direction: column;
-    padding: 28px 32px;
-    align-items: flex-start;
-    text-align: left;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    flex-direction: row !important;
+    padding: clamp(24px, 2.5vw, 36px) clamp(20px, 2vw, 32px) !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: clamp(20px, 2.5vw, 32px) !important;
   }
-
   .demo-prod-solutions__icon-wrap {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 24px;
+    width: clamp(60px, 6vw, 100px) !important;
+    height: clamp(60px, 6vw, 100px) !important;
+    flex-shrink: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .demo-prod-solutions__icon {
-    width: 60px;
-    height: 60px;
+    width: 100% !important;
+    height: 100% !important;
   }
-
   .demo-prod-solutions__content {
-    width: 100%;
+    width: 100% !important;
+    min-width: 0 !important;
   }
-
   .demo-prod-solutions__h3 {
-    font-size: 18px;
-    line-height: 23.4px;
+    font-size: clamp(16px, 1.35vw, 20px) !important;
+    line-height: 1.3 !important;
   }
-
   .demo-prod-solutions__p {
-    font-size: 14px;
-    line-height: 21px;
+    font-size: clamp(14px, 1.1vw, 16px) !important;
+    line-height: 1.5 !important;
   }
 
-  /* Section 4: How We Work */
+  /* How — 140:8028 Block2 */
   .demo-prod-how {
-    position: relative;
-    width: 834px;
-    height: 417px;
-    padding-top: 44px;
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+    box-sizing: border-box !important;
   }
-
   .demo-prod-how__title {
-    width: 770px;
-    margin: 0 0 44px 32px;
-    font-size: 32px;
-    line-height: 41.6px;
+    width: 100% !important;
+    margin: 0 0 clamp(32px, 4vw, 42px) !important;
+    padding-left: 0 !important;
+    font-size: clamp(28px, 2.2vw, 36px) !important;
+    line-height: 1.3 !important;
   }
-
   .demo-prod-how__grid {
-    width: 770px;
-    gap: 22px;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    margin: 0 auto !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: clamp(8px, 1vw, 12px) !important;
   }
-
   .demo-prod-how__card {
-    width: 176px;
+    flex: 1 !important;
+    min-width: 0 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
   }
-
   .demo-prod-how__ring {
-    width: 93px;
-    height: 93px;
-    margin-bottom: 12px;
+    width: clamp(80px, 8vw, 120px) !important;
+    height: clamp(80px, 8vw, 120px) !important;
+    margin-bottom: 0 !important;
   }
-
   .demo-prod-how__icon {
-    width: 50px;
-    height: 50px;
+    width: clamp(40px, 4vw, 60px) !important;
+    height: clamp(40px, 4vw, 60px) !important;
   }
 
-  .demo-prod-how__h3 {
-    font-size: 16px;
-    line-height: 20.8px;
-    margin-bottom: 8px;
-  }
-
-  .demo-prod-how__p {
-    font-size: 14px;
-    line-height: 18.2px;
-  }
-
-  /* Section 5: Expertise */
+  /* Expertise — 140:8056 Blok4 */
   .demo-prod-expertise {
-    position: relative;
-    width: 834px;
-    height: 681px;
-    padding-top: 44px;
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+    box-sizing: border-box !important;
   }
-
   .demo-prod-expertise__inner {
-    width: 770px;
-    margin: 0 auto;
+    width: 100% !important;
+    max-width: clamp(770px, 88vw, 1096px) !important;
+    margin: 0 auto !important;
   }
-
   .demo-prod-expertise__title {
-    font-size: 32px;
-    line-height: 41.6px;
-    margin-bottom: 44px;
+    width: 100% !important;
+    font-size: clamp(28px, 2.2vw, 36px) !important;
+    line-height: 1.3 !important;
+    margin-bottom: clamp(24px, 3vw, 44px) !important;
   }
-
   .demo-prod-expertise__content {
-    flex-direction: column;
-    gap: 44px;
-    align-items: flex-start;
+    flex-direction: column !important;
+    gap: clamp(24px, 3vw, 44px) !important;
+    align-items: stretch !important;
   }
-
-  .demo-prod-expertise__left {
-    width: 770px;
-  }
-
-  .demo-prod-expertise__text {
-    font-size: 18px;
-    line-height: 27px;
-  }
-
+  .demo-prod-expertise__left,
   .demo-prod-expertise__right {
-    width: 770px;
+    width: 100% !important;
+    max-width: 100% !important;
   }
-
   .demo-prod-expertise__img {
-    width: 100%;
-    height: 350px;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 200px !important;
+    border-radius: 12px !important;
   }
 
-  /* Section 6: Contact */
+  /* Contact — 140:8062 Blok (особое внимание) */
   .demo-prod-contact {
-    position: relative;
-    width: 834px;
-    height: 500px;
-    padding-top: 44px;
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+    box-sizing: border-box !important;
   }
-
   .demo-prod-contact__inner {
-    width: 770px;
-    height: 412px;
+    width: 100% !important;
+    max-width: clamp(680px, 88vw, 900px) !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: clamp(32px, 4vw, 48px) clamp(24px, 2.8vw, 40px) !important;
+    box-sizing: border-box !important;
   }
-
   .demo-prod-contact__title {
-    width: 301px;
-    font-size: 28px;
-    line-height: 36.4px;
+    width: 100% !important;
+    margin: 0 0 clamp(16px, 2vw, 24px) !important;
+    font-size: clamp(28px, 2.2vw, 36px) !important;
+    line-height: 1.3 !important;
   }
-
   .demo-prod-contact__text {
-    width: 319px;
-    font-size: 18px;
-    line-height: 23.4px;
+    width: 100% !important;
+    margin: 0 0 clamp(24px, 3vw, 38px) !important;
+    font-size: clamp(16px, 1.2vw, 18px) !important;
+    line-height: 1.5 !important;
   }
-
   .demo-prod-contact__form {
-    width: 379px;
+    width: 100% !important;
   }
-
   .demo-prod-contact__row {
-    flex-direction: column;
-    gap: 14px;
+    flex-direction: column !important;
+    gap: 14px !important;
   }
-
   .demo-prod-contact__field {
-    width: 379px;
+    width: 100% !important;
   }
-
+  .demo-prod-contact__field--full {
+    width: 100% !important;
+  }
   .demo-prod-contact__btn {
-    width: 379px;
+    width: 100% !important;
+    max-width: 360px !important;
   }
 }
 

@@ -17,15 +17,26 @@
 {% block content %}
   <div class="demo-print">
     <section class="demo-print-hero" aria-labelledby="print-hero-title">
+      <div class="demo-print-hero__bg" aria-hidden="true">
+        <img
+          class="demo-print-hero__bg-img"
+          src="{% static 'assets/images/print-hero-bg.png' %}"
+          alt=""
+          width="834"
+          height="435"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="demo-print-hero__overlay"></div>
+      </div>
+
       <div class="demo-print-hero__content">
         <h1 class="demo-print-hero__title" id="print-hero-title">
-          Печать, которая<br />
-          говорит о вашем<br />
-          уровне
+          Печать, которая говорит<br />
+          о вашем уровне
         </h1>
         <p class="demo-print-hero__subtitle">
-          Качественная полиграфия и широкоформатная печать от ADSmart — <br />
-          реклама, которую можно потрогать и запомнить.
+          Осязаемая реклама от ADSmart
         </p>
 
         <div class="demo-print-hero__actions">
@@ -51,8 +62,7 @@
     <section class="demo-print-system" aria-labelledby="print-system-title">
       <div class="demo-print-system__inner">
         <h2 class="demo-print-system__title" id="print-system-title">
-          Ваш бренд — это система,<br />
-          а не набор картинок
+          Ваш бренд это система, а не набор картинок
         </h2>
 
         <div class="demo-print-system__rows">
@@ -75,16 +85,7 @@
             </div>
           </div>
 
-          <div class="demo-print-system__row demo-print-system__row--reverse">
-            <div class="demo-print-system__col demo-print-system__col--img">
-              <img
-                class="demo-print-system__img"
-                src="{% static 'assets/images/print-system-2.jpg' %}"
-                alt=""
-                width="504"
-                height="295"
-              />
-            </div>
+          <div class="demo-print-system__row demo-print-system__row--why">
             <div class="demo-print-system__col demo-print-system__col--text">
               <div class="demo-print-system__why">
                 <h3 class="demo-print-system__h3">Почему мы:</h3>
@@ -96,6 +97,15 @@
                 </ul>
               </div>
             </div>
+            <div class="demo-print-system__col demo-print-system__col--img">
+              <img
+                class="demo-print-system__img"
+                src="{% static 'assets/images/print-system-2.jpg' %}"
+                alt=""
+                width="504"
+                height="295"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -103,8 +113,7 @@
 
     <section class="demo-print-solutions" aria-labelledby="print-solutions-title">
       <h2 class="demo-print-solutions__title" id="print-solutions-title">
-        Полный спектр полиграфических<br />
-        решений
+        Полный спектр полиграфических решений
       </h2>
 
       <div class="demo-print-solutions__grid">
@@ -172,8 +181,7 @@
 
     <section class="demo-print-how" aria-labelledby="print-how-title">
       <h2 class="demo-print-how__title" id="print-how-title">
-        Как мы работаем<br />
-        над вашим заказом
+        Как мы работаем над вашим заказом
       </h2>
 
       <div class="demo-print-how__grid">

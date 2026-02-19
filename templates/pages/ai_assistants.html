@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/ai_assistants.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/ai_assistants-tablet-lock.css' %}" />
 {% endblock %}
 
 {% block header %}
@@ -17,6 +18,19 @@
 {% block content %}
   <div class="demo-ai">
     <section class="demo-ai-hero" aria-labelledby="ai-hero-title">
+      <div class="demo-ai-hero__bg" aria-hidden="true">
+        <img
+          class="demo-ai-hero__bg-img"
+          src="{% static 'assets/images/figma-1-5462128d.png' %}"
+          alt=""
+          width="1440"
+          height="751"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="demo-ai-hero__overlay"></div>
+      </div>
+
       <div class="demo-ai-hero__content">
         <h1 class="demo-ai-hero__title" id="ai-hero-title">
           AI-ассистенты<br />
@@ -50,34 +64,26 @@
 
     <section class="demo-ai-comparison" aria-labelledby="ai-comparison-title">
       <h2 class="demo-ai-comparison__title" id="ai-comparison-title">
-        Мы привносим экспертизу туда, <br />
-        где технологии нуждаются в стратегии
+        Мы привносим экспертизу туда, где технологии нуждаются в стратегии
       </h2>
 
       <div class="demo-ai-comparison__grid">
-        <div class="demo-ai-comparison__header">
-          <div class="demo-ai-comparison__col-title">Если вы берете «просто платформу»</div>
-          <div class="demo-ai-comparison__col-title demo-ai-comparison__col-title--accent">Когда вы работаете с ADSmart как партнером</div>
+        <!-- Block 1: платформа (140:7695) -->
+        <div class="demo-ai-comparison__block demo-ai-comparison__block--platform">
+          <div class="demo-ai-comparison__block-header">Если вы берете «просто платформу»</div>
+          <div class="demo-ai-comparison__block-cell">Вы получаете доступ к инструментам</div>
+          <div class="demo-ai-comparison__block-cell">Вам нужно самим настраивать сценарии, дизайн и интеграции</div>
+          <div class="demo-ai-comparison__block-cell">Техподдержка решает общие технические вопросы</div>
+          <div class="demo-ai-comparison__block-cell">Внедрение зависит от ваших IT-ресурсов</div>
         </div>
 
-        <div class="demo-ai-comparison__row">
-          <div class="demo-ai-comparison__cell">Вы получаете доступ к инструментам</div>
-          <div class="demo-ai-comparison__cell demo-ai-comparison__cell--accent">Вы получаете готовое бизнес-решение, заточенное под ваши процессы</div>
-        </div>
-
-        <div class="demo-ai-comparison__row">
-          <div class="demo-ai-comparison__cell">Вам нужно самим настраивать сценарии, дизайн и интеграции</div>
-          <div class="demo-ai-comparison__cell demo-ai-comparison__cell--accent">Наша команда аналитиков, дизайнеров и маркетологов делает это за вас</div>
-        </div>
-
-        <div class="demo-ai-comparison__row">
-          <div class="demo-ai-comparison__cell">Техподдержка решает общие технические вопросы</div>
-          <div class="demo-ai-comparison__cell demo-ai-comparison__cell--accent">Вы получаете персонального менеджера проекта, который отвечает за конечный результат и ваши KPI</div>
-        </div>
-
-        <div class="demo-ai-comparison__row">
-          <div class="demo-ai-comparison__cell">Внедрение зависит от ваших IT-ресурсов</div>
-          <div class="demo-ai-comparison__cell demo-ai-comparison__cell--accent">Мы берем на себя полный цикл: от аудита до внедрения «под ключ» и обучения сотрудников</div>
+        <!-- Block 2: партнер (140:7707) -->
+        <div class="demo-ai-comparison__block demo-ai-comparison__block--partner">
+          <div class="demo-ai-comparison__block-header demo-ai-comparison__block-header--accent">Когда вы работаете с ADSmart как партнером</div>
+          <div class="demo-ai-comparison__block-cell">Вы получаете готовое бизнес-решение, заточенное под ваши процессы</div>
+          <div class="demo-ai-comparison__block-cell">Наша команда аналитиков, дизайнеров и маркетологов делает это за вас</div>
+          <div class="demo-ai-comparison__block-cell">Вы получаете персонального менеджера проекта, который отвечает за конечный результат и ваши KPI</div>
+          <div class="demo-ai-comparison__block-cell">Мы берем на себя полный цикл: от аудита до внедрения «под ключ» и обучения сотрудников</div>
         </div>
       </div>
     </section>

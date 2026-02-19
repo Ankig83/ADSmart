@@ -491,131 +491,275 @@
   color: #ffffff;
 }
 
-/* Section 140:5810: CTA */
-.demo-elevators-contact {
-  position: relative;
-  width: 1440px;
-  height: 746px;
-  background: #000000;
+/* Section 140:5810: CTA (desktop 1440) — layout in __inner (__left + __formbox) */
+@media (min-width: 1440px) {
+  .demo-elevators-contact {
+    position: relative;
+    width: 1440px;
+    height: 746px;
+    background: #000000;
+  }
+
+  .demo-elevators-contact__inner {
+    position: absolute;
+    left: 177px;
+    top: 100px;
+    width: 1086px;
+    height: 546px;
+    border-radius: 12px;
+    background: #19161c;
+    display: grid;
+    grid-template-columns: 330px 408px;
+    column-gap: 32px;
+    align-items: center;
+  }
+
+  .demo-elevators-contact__left {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .demo-elevators-contact__title {
+    width: 100%;
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 62.4px;
+    letter-spacing: -1.44px;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  .demo-elevators-contact__text {
+    width: 100%;
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    letter-spacing: -0.54px;
+    color: #c4c4c4;
+    text-align: left;
+  }
+
+  .demo-elevators-contact__formbox {
+    width: 408px;
+    height: 412px;
+    border-radius: 12px;
+    border: 1px solid #ff7b00;
+    background: #19161c;
+    position: relative;
+  }
+
+  .demo-elevators-contact__form-title {
+    position: absolute;
+    left: 50%;
+    top: 31px;
+    transform: translateX(-50%);
+    width: 302px;
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.84px;
+    color: #ffffff;
+  }
+
+  .demo-elevators-contact__form {
+    position: relative;
+    width: 408px;
+    height: 412px;
+  }
+
+  .demo-elevators-contact__row,
+  .demo-elevators-contact__actions {
+    display: block;
+    margin: 0;
+  }
+
+  .demo-elevators-contact__field,
+  .demo-elevators-contact__field--name,
+  .demo-elevators-contact__field--phone,
+  .demo-elevators-contact__field--company {
+    position: absolute;
+    left: 14px;
+    width: 379px;
+    height: 56px;
+    margin: 0;
+  }
+
+  .demo-elevators-contact__field--name { top: 87px; }
+  .demo-elevators-contact__field--phone { top: 161px; }
+  .demo-elevators-contact__field--company { top: 235px; }
+
+  .demo-elevators-contact__input {
+    width: 100%;
+    height: 56px;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    padding: 18px 22px;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  .demo-elevators-contact__input:focus {
+    outline: none;
+    border-color: #14f195;
+  }
+
+  .demo-elevators-contact__ph {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .demo-elevators-contact__input:focus ~ .demo-elevators-contact__ph,
+  .demo-elevators-contact__input:not(:placeholder-shown) ~ .demo-elevators-contact__ph {
+    opacity: 0;
+  }
+
+  .demo-elevators-contact__btn {
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 56px;
+    border: none;
+    border-radius: 100px;
+    background: #14f195;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  .demo-elevators-contact__btn:hover {
+    transform: translateX(-50%) scale(1.02);
+  }
 }
 
-.demo-elevators-contact__inner {
-  position: absolute;
-  left: 177px;
-  top: 100px;
-  width: 1086px;
-  height: 546px;
-  border-radius: 12px;
-  background: #19161c;
-}
+/* Contact fallback (< 834px): simple stacked layout */
+@media (max-width: 833px) {
+  .demo-elevators-contact {
+    background: #000000;
+    padding: 44px 24px;
+    box-sizing: border-box;
+  }
 
-.demo-elevators-contact__title {
-  width: 777px;
-  margin: 0 auto 24px;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -1.44px;
-  color: #ffffff;
-  text-align: center;
-}
+  .demo-elevators-contact__inner {
+    max-width: 400px;
+    margin: 0 auto;
+  }
 
-.demo-elevators-contact__text {
-  width: 777px;
-  margin: 0 auto 38px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.6px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-  text-align: center;
-}
+  .demo-elevators-contact__left {
+    margin-bottom: 24px;
+  }
 
-.demo-elevators-contact__form {
-  width: 780px;
-  margin: 0 auto;
-}
+  .demo-elevators-contact__title {
+    margin: 0 0 16px;
+    font-family: var(--font-sans);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #ffffff;
+  }
 
-.demo-elevators-contact__row {
-  display: flex;
-  gap: 14px;
-  margin-bottom: 14px;
-}
+  .demo-elevators-contact__text {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.4;
+    color: #c4c4c4;
+  }
 
-.demo-elevators-contact__field {
-  position: relative;
-  width: 383px;
-  height: 56px;
-  display: block;
-}
+  .demo-elevators-contact__formbox {
+    border-radius: 12px;
+    border: 1px solid #ff7b00;
+    background: #19161c;
+    padding: 24px;
+    position: relative;
+  }
 
-.demo-elevators-contact__field--full {
-  width: 780px;
-  margin-bottom: 14px;
-}
+  .demo-elevators-contact__form-title {
+    margin: 0 0 24px;
+    font-family: var(--font-sans);
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+  }
 
-.demo-elevators-contact__input {
-  width: 100%;
-  height: 56px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 0 22px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  color: #ffffff;
-  transition: border-color 0.2s;
-}
+  .demo-elevators-contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
 
-.demo-elevators-contact__input:focus {
-  outline: none;
-  border-color: #14f195;
-}
+  .demo-elevators-contact__field {
+    position: relative;
+    display: block;
+  }
 
-.demo-elevators-contact__ph {
-  position: absolute;
-  left: 22px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.5);
-  transition: all 0.2s;
-}
+  .demo-elevators-contact__input {
+    width: 100%;
+    height: 56px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0 22px;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
 
-.demo-elevators-contact__input:focus ~ .demo-elevators-contact__ph,
-.demo-elevators-contact__input:not(:placeholder-shown) ~ .demo-elevators-contact__ph {
-  top: 0;
-  font-size: 12px;
-  background: #000000;
-  padding: 0 4px;
-}
+  .demo-elevators-contact__input:focus {
+    outline: none;
+    border-color: #14f195;
+  }
 
-.demo-elevators-contact__actions {
-  margin-top: 17px;
-  display: flex;
-  justify-content: center;
-}
+  .demo-elevators-contact__ph {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+  }
 
-.demo-elevators-contact__btn {
-  width: 383px;
-  height: 52px;
-  background: #14f195;
-  border: none;
-  border-radius: 64px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  color: #000000;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+  .demo-elevators-contact__input:focus ~ .demo-elevators-contact__ph,
+  .demo-elevators-contact__input:not(:placeholder-shown) ~ .demo-elevators-contact__ph {
+    opacity: 0;
+  }
 
-.demo-elevators-contact__btn:hover {
-  transform: scale(1.02);
+  .demo-elevators-contact__btn {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 64px;
+    background: #14f195;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    cursor: pointer;
+  }
 }
 
 

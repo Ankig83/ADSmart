@@ -17,6 +17,19 @@
 {% block content %}
   <div class="demo-prod">
     <section class="demo-prod-hero" aria-labelledby="prod-hero-title">
+      <div class="demo-prod-hero__bg" aria-hidden="true">
+        <img
+          class="demo-prod-hero__bg-img"
+          src="{% static 'assets/images/production-hero-bg.png' %}"
+          alt=""
+          width="834"
+          height="435"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="demo-prod-hero__overlay"></div>
+      </div>
+
       <div class="demo-prod-hero__content">
         <h1 class="demo-prod-hero__title" id="prod-hero-title">
           Материализуем<br />

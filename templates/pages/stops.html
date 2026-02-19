@@ -193,26 +193,28 @@
 
     <section class="demo-stops-contact" aria-labelledby="stops-contact-title">
       <div class="demo-stops-contact__inner">
-        <h2 class="demo-stops-contact__title" id="stops-contact-title">Запустите диалог с городом</h2>
-        <p class="demo-stops-contact__text">
-          Получите адресные программы и рассчитайте эффективность гибридной кампании
-        </p>
+        <div class="demo-stops-contact__left">
+          <h2 class="demo-stops-contact__title" id="stops-contact-title">Запустите диалог с городом</h2>
+          <p class="demo-stops-contact__text">
+            Получите адресные программы и рассчитайте эффективность гибридной кампании
+          </p>
 
-        <a class="demo-stops-contact__dl demo-stops-contact__dl--stops" href="#" role="button">
-          Скачать программу (Остановки)
-        </a>
-        <a class="demo-stops-contact__dl demo-stops-contact__dl--posters" href="#" role="button">
-          Скачать программу (Афиши)
-        </a>
+          <a class="demo-stops-contact__dl demo-stops-contact__dl--stops" href="#" role="button">
+            Скачать программу (Остановки)
+          </a>
+          <a class="demo-stops-contact__dl demo-stops-contact__dl--posters" href="#" role="button">
+            Скачать программу (Афиши)
+          </a>
 
-        <label class="demo-stops-contact__phone">
-          <span class="sr-only">Телефон</span>
-          <input class="demo-stops-contact__phone-input" type="tel" placeholder=" " autocomplete="tel" />
-          <span class="demo-stops-contact__phone-ph" aria-hidden="true">Телефон</span>
-        </label>
+          <label class="demo-stops-contact__phone">
+            <span class="sr-only">Телефон</span>
+            <input class="demo-stops-contact__phone-input" type="tel" placeholder=" " autocomplete="tel" />
+            <span class="demo-stops-contact__phone-ph" aria-hidden="true">Телефон</span>
+          </label>
+        </div>
 
         <div class="demo-stops-contact__formbox" aria-label="Форма заявки">
-          <div class="demo-stops-contact__form-title">Получить комплексное предложение</div>
+          <div class="demo-stops-contact__form-title">Обсудим ваш проект?</div>
 
           <form class="demo-stops-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
             {% csrf_token %}
@@ -232,15 +234,9 @@
             </label>
 
             <label class="demo-stops-contact__field demo-stops-contact__field--company">
-              <span class="sr-only">Компания</span>
-              <input class="demo-stops-contact__input" type="text" name="company" placeholder=" " autocomplete="organization" />
-              <span class="demo-stops-contact__ph" aria-hidden="true">Компания</span>
-            </label>
-
-            <label class="demo-stops-contact__field demo-stops-contact__field--format">
-              <span class="sr-only">Интересующий формат</span>
-              <input class="demo-stops-contact__input" type="text" name="interest_format" placeholder=" " />
-              <span class="demo-stops-contact__ph" aria-hidden="true">Интересующий формат</span>
+              <span class="sr-only">Сфера бизнеса</span>
+              <input class="demo-stops-contact__input" type="text" name="business" placeholder=" " autocomplete="organization" />
+              <span class="demo-stops-contact__ph" aria-hidden="true">Сфера бизнеса</span>
             </label>
 
             <button class="demo-stops-contact__submit" type="submit">Обсудить мой проект</button>

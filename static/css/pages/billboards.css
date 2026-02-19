@@ -659,7 +659,7 @@
 .demo-billboards-invest__card--4 .demo-billboards-invest__p { top: 215px; }
 
 
-/* Tablet fluid layout (834-1339): restored from previous working pass */
+/* Tablet fluid layout (834-1439) */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-billboards {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;

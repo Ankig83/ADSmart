@@ -17,6 +17,19 @@
 {% block content %}
   <div class="demo-design">
     <section class="demo-design-hero" aria-labelledby="design-hero-title">
+      <div class="demo-design-hero__bg" aria-hidden="true">
+        <img
+          class="demo-design-hero__bg-img"
+          src="{% static 'assets/images/design-hero-bg.png' %}"
+          alt=""
+          width="834"
+          height="435"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="demo-design-hero__overlay"></div>
+      </div>
+
       <div class="demo-design-hero__content">
         <h1 class="demo-design-hero__title" id="design-hero-title">
           Дизайн, который<br />

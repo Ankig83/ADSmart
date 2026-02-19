@@ -200,7 +200,7 @@
 .demo-menu__services-sub-panel .demo-menu__services-link:nth-child(4) { position: absolute; left: 0; top: 111px; }
   .demo-menu__services-sub-panel .demo-menu__services-link:nth-child(5) { position: absolute; left: 0; top: 148px; }
 
-/* Tablet: 834-1439px (Figma node 140:8080) */
+/* Tablet: 834-1439px */
 @media (min-width: 834px) and (max-width: 1439px) {
   /* Меню для разрешения 834-1439px */
   /* Figma node 140:8080: width=834px, height=70px */
@@ -271,7 +271,7 @@
   }
 }
 
-/* Tablet menu hard-fix: no fixed 834 canvas behavior */
+/* Tablet menu hard-fix */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-menu {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;
