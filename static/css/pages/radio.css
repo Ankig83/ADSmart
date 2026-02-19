@@ -538,30 +538,44 @@
 .demo-radio-ideal__card--3 .demo-radio-ideal__p,
 .demo-radio-ideal__card--4 .demo-radio-ideal__p { top: 95px; height: 102px; }
 
-/* CTA form (140:5727) inside wrapper 140:5726 */
+/* CTA form (140:5727) — Figma layout, fluid для 1440+ */
 @media (min-width: 1440px) {
   .demo-radio-cta {
     position: relative;
-    width: 1440px;
-    height: 746px;
+    width: min(100%, 1440px);
+    margin: 0 auto;
+    min-height: 746px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px clamp(24px, 2.5vw, 177px);
+    box-sizing: border-box;
   }
 
   .demo-radio-cta__inner {
-    position: absolute;
-    left: 177px;
-    top: 100px;
-    width: 1086px;
-    height: 546px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 1086px;
+    padding: 45px clamp(24px, 2.5vw, 154px) clamp(40px, 4vw, 60px);
     border-radius: 12px;
     background: #19161c;
+    box-sizing: border-box;
+  }
+
+  .demo-radio-cta__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 777px;
+    text-align: center;
   }
 
   .demo-radio-cta__title {
-    position: absolute;
-    left: 154px;
-    top: 45px;
-    width: 777px;
-    height: 96px;
     margin: 0;
     font-family: var(--font-sans);
     font-size: 48px;
@@ -572,38 +586,50 @@
   }
 
   .demo-radio-cta__subtitle {
-    position: absolute;
-    left: 154px;
-    top: 165px;
-    width: 777px;
-    height: 44px;
     margin: 0;
     font-family: var(--font-sans);
     font-size: 22px;
     font-weight: 400;
     line-height: 28.6px;
     letter-spacing: -0.66px;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.8);
   }
 
-  .demo-radio-cta__form { position: absolute; left: 0; top: 0; width: 1086px; height: 546px; }
+  .demo-radio-cta__form-title {
+    display: none;
+  }
+
+  .demo-radio-cta__formbox {
+    width: 100%;
+    max-width: 780px;
+  }
+
+  .demo-radio-cta__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .demo-radio-cta__row {
+    display: flex;
+    gap: 14px;
+  }
 
   .demo-radio-cta__field {
-    position: absolute;
-    top: 247px;
-    width: 383px;
-    height: 56px;
+    position: relative;
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
   }
-
-  .demo-radio-cta__field--name { left: 153px; }
-  .demo-radio-cta__field--phone { left: 550px; }
 
   .demo-radio-cta__field--wide {
-    left: 153px;
-    width: 778px;
+    flex: 1 1 100%;
   }
-  .demo-radio-cta__field--company { top: 317px; }
-  .demo-radio-cta__field--format { top: 387px; }
+
+  .demo-radio-cta__field--name,
+  .demo-radio-cta__field--phone {
+    flex: 0 0 383px;
+  }
 
   .demo-radio-cta__input {
     width: 100%;
@@ -611,7 +637,7 @@
     border-radius: 12px;
     border: 1px solid #ffffff;
     background: transparent;
-    padding: 18px 22px;
+    padding: 0 22px;
     font-family: var(--font-sans);
     font-size: 18px;
     font-weight: 400;
@@ -619,13 +645,21 @@
     letter-spacing: -0.54px;
     color: #ffffff;
     outline: none;
+    box-sizing: border-box;
   }
-  .demo-radio-cta__input:focus-visible { outline: 2px solid rgba(255,255,255,0.9); outline-offset: 2px; }
+  .demo-radio-cta__input::placeholder {
+    color: transparent;
+  }
+  .demo-radio-cta__input:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 2px;
+  }
 
   .demo-radio-cta__ph {
     position: absolute;
     left: 22px;
-    top: 22px;
+    top: 50%;
+    transform: translateY(-50%);
     font-family: var(--font-sans);
     font-size: 18px;
     font-weight: 400;
@@ -633,16 +667,17 @@
     letter-spacing: -0.54px;
     color: rgba(255, 255, 255, 0.3);
     pointer-events: none;
+    transition: opacity 0.2s;
   }
-  .demo-radio-cta__input:focus + .demo-radio-cta__ph,
-  .demo-radio-cta__input:not(:placeholder-shown) + .demo-radio-cta__ph { opacity: 0; }
+  .demo-radio-cta__input:focus ~ .demo-radio-cta__ph,
+  .demo-radio-cta__input:not(:placeholder-shown) ~ .demo-radio-cta__ph {
+    opacity: 0;
+  }
 
   .demo-radio-cta__submit {
-    position: absolute;
-    left: 352px;
-    top: 460px;
     width: 383px;
     height: 52px;
+    margin-top: 6px;
     border: 0;
     border-radius: 64px;
     background: #14f195;
@@ -652,8 +687,15 @@
     font-weight: 500;
     line-height: 20px;
     cursor: pointer;
+    transition: transform 0.2s;
   }
-  .demo-radio-cta__submit:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+  .demo-radio-cta__submit:hover {
+    transform: scale(1.02);
+  }
+  .demo-radio-cta__submit:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
 }
 
 

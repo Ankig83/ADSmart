@@ -603,7 +603,6 @@
   .demo-radio-cta__field--name { top: 87px !important; }
   .demo-radio-cta__field--phone { top: 161px !important; }
   .demo-radio-cta__field--company { top: 235px !important; }
-  .demo-radio-cta__field--wide,
   .demo-radio-cta__field--format {
     display: none !important;
   }

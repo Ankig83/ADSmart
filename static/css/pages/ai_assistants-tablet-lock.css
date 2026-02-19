@@ -119,7 +119,7 @@
     max-width: 770px !important;
     border-radius: 8px !important;
     overflow: hidden !important;
-    border: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     display: flex !important;
     flex-direction: column !important;
   }

@@ -226,28 +226,36 @@
         </div>
 
         <div class="demo-radio-cta__formbox" aria-label="Форма заявки">
-          <div class="demo-radio-cta__form-title">Обсудим ваш проект?</div>
+          <div class="demo-radio-cta__form-title" aria-hidden="true">Обсудим ваш проект?</div>
           <form class="demo-radio-cta__form" action="{% url 'submit_lead' %}" method="post" novalidate>
             {% csrf_token %}
             <input type="hidden" name="source" value="radio_cta" />
             <input type="hidden" name="next" value="{{ request.get_full_path }}" />
 
-            <label class="demo-radio-cta__field demo-radio-cta__field--name">
-              <span class="sr-only">Имя</span>
-              <input class="demo-radio-cta__input" type="text" name="name" placeholder=" " autocomplete="name" />
-              <span class="demo-radio-cta__ph" aria-hidden="true">Имя</span>
-            </label>
+            <div class="demo-radio-cta__row">
+              <label class="demo-radio-cta__field demo-radio-cta__field--name">
+                <span class="sr-only">Имя</span>
+                <input class="demo-radio-cta__input" type="text" name="name" placeholder=" " autocomplete="name" />
+                <span class="demo-radio-cta__ph" aria-hidden="true">Имя</span>
+              </label>
 
-            <label class="demo-radio-cta__field demo-radio-cta__field--phone">
-              <span class="sr-only">Телефон</span>
-              <input class="demo-radio-cta__input" type="tel" name="phone" placeholder=" " autocomplete="tel" required />
-              <span class="demo-radio-cta__ph" aria-hidden="true">Телефон</span>
-            </label>
+              <label class="demo-radio-cta__field demo-radio-cta__field--phone">
+                <span class="sr-only">Телефон</span>
+                <input class="demo-radio-cta__input" type="tel" name="phone" placeholder=" " autocomplete="tel" required />
+                <span class="demo-radio-cta__ph" aria-hidden="true">Телефон</span>
+              </label>
+            </div>
 
-            <label class="demo-radio-cta__field demo-radio-cta__field--company">
+            <label class="demo-radio-cta__field demo-radio-cta__field--wide demo-radio-cta__field--company">
               <span class="sr-only">Компания</span>
               <input class="demo-radio-cta__input" type="text" name="company" placeholder=" " autocomplete="organization" />
               <span class="demo-radio-cta__ph" aria-hidden="true">Компания</span>
+            </label>
+
+            <label class="demo-radio-cta__field demo-radio-cta__field--wide demo-radio-cta__field--format">
+              <span class="sr-only">Интересующий формат</span>
+              <input class="demo-radio-cta__input" type="text" name="interest_format" placeholder=" " />
+              <span class="demo-radio-cta__ph" aria-hidden="true">Интересующий формат</span>
             </label>
 
             <button class="demo-radio-cta__submit" type="submit">Обсудить мой проект</button>

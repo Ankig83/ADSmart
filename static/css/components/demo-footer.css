@@ -105,10 +105,12 @@
 }
 
 @media (min-width: 1440px) {
+  /* Figma 140:5025 — Desktop 1440 */
   .demo-footer {
     width: 1440px !important;
     height: 380px !important;
     margin: 0 auto !important;
+    background: #19161c !important;
   }
 
   .demo-footer__inner {
@@ -121,6 +123,19 @@
     top: 55px !important;
     width: 271px !important;
     gap: 27px !important;
+  }
+
+  .demo-footer__logo {
+    width: 74px !important;
+    height: 46px !important;
+  }
+
+  .demo-footer__title {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 31.2px !important;
+    letter-spacing: -0.72px !important;
+    color: #ffffff !important;
   }
 
   .demo-footer__social {
@@ -139,8 +154,29 @@
     column-gap: 24px !important;
   }
 
+  /* Figma order: Основные услуги (left) | Наружная реклама (middle) | Информационные разделы (right) */
+  .demo-footer__col:nth-child(1) { order: 2 !important; }
+  .demo-footer__col:nth-child(2) { order: 1 !important; }
+  .demo-footer__col:nth-child(3) { order: 3 !important; }
+
   .demo-footer__col {
     gap: 18px !important;
+  }
+
+  .demo-footer__col-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 20.8px !important;
+    letter-spacing: -0.48px !important;
+    color: #ffffff !important;
+  }
+
+  .demo-footer__link {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    letter-spacing: -0.48px !important;
+    color: rgba(255, 255, 255, 0.6) !important;
   }
 }
 
