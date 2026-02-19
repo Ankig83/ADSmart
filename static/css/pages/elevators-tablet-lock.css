@@ -1,0 +1,561 @@
+/* FINAL LOCK (834-1439): Лифты/Домофоны */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-elevators {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    background: #000000 !important;
+  }
+
+  /* 140:7680 Hero */
+  .demo-elevators-hero {
+    width: 100% !important;
+    min-height: clamp(435px, 36vw, 620px) !important;
+    height: auto !important;
+    margin-top: 0 !important;
+    padding: clamp(86px, 8vw, 110px) clamp(24px, 2.8vw, 40px) clamp(52px, 6vw, 80px) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 36px !important;
+  }
+  .demo-elevators-hero::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 4.4%, rgba(0, 0, 0, 0.52) 42.8%, rgba(0, 0, 0, 0.05) 70.4%) !important;
+  }
+  .demo-elevators-hero__bg,
+  .demo-elevators-hero__bg-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .demo-elevators-hero__content,
+  .demo-elevators-hero__actions {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .demo-elevators-hero__content {
+    width: min(100%, clamp(462px, 56vw, 690px)) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  .demo-elevators-hero__title {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    font-size: clamp(32px, 2.9vw, 42px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.48px !important;
+  }
+  .demo-elevators-hero__subtitle {
+    position: static !important;
+    width: min(100%, 560px) !important;
+    height: auto !important;
+    margin: 0 !important;
+    font-size: clamp(16px, 1.25vw, 20px) !important;
+    line-height: 1.5 !important;
+    color: #c4c4c4 !important;
+  }
+  .demo-elevators-hero__actions {
+    margin-top: 0 !important;
+    display: flex !important;
+    gap: 8px !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  .demo-elevators-hero__btn,
+  .demo-elevators-hero__btn--primary,
+  .demo-elevators-hero__btn--outline {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    height: 52px !important;
+    padding: 16px 32px !important;
+    width: auto !important;
+  }
+
+  /* 140:7692 Benefits */
+  .demo-elevators-benefits {
+    width: 100% !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+    box-sizing: border-box !important;
+  }
+  .demo-elevators-benefits__title {
+    position: static !important;
+    width: min(100%, clamp(770px, 78vw, 1086px)) !important;
+    height: auto !important;
+    margin: 0 auto 42px !important;
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.48px !important;
+  }
+  .demo-elevators-benefits__cards {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: min(100%, clamp(770px, 78vw, 1086px)) !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: clamp(12px, 1.2vw, 18px) !important;
+  }
+  .demo-elevators-benefits__card,
+  .demo-elevators-benefits__card--1,
+  .demo-elevators-benefits__card--2,
+  .demo-elevators-benefits__card--3,
+  .demo-elevators-benefits__card--4 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .demo-elevators-benefits__ring {
+    position: static !important;
+    width: 94px !important;
+    height: 94px !important;
+    margin: 0 auto 17px !important;
+    border-width: 3px !important;
+  }
+  .demo-elevators-benefits__icon {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .demo-elevators-benefits__h3,
+  .demo-elevators-benefits__p,
+  .demo-elevators-benefits__card--1 .demo-elevators-benefits__h3,
+  .demo-elevators-benefits__card--2 .demo-elevators-benefits__h3,
+  .demo-elevators-benefits__card--3 .demo-elevators-benefits__h3,
+  .demo-elevators-benefits__card--4 .demo-elevators-benefits__h3,
+  .demo-elevators-benefits__card--1 .demo-elevators-benefits__p,
+  .demo-elevators-benefits__card--2 .demo-elevators-benefits__p,
+  .demo-elevators-benefits__card--3 .demo-elevators-benefits__p,
+  .demo-elevators-benefits__card--4 .demo-elevators-benefits__p {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .demo-elevators-benefits__h3 {
+    font-size: clamp(18px, 1.35vw, 22px) !important;
+    line-height: 1.3 !important;
+    margin-bottom: 16px !important;
+  }
+  .demo-elevators-benefits__p {
+    font-size: clamp(14px, 1.05vw, 16px) !important;
+    line-height: 1.4 !important;
+    color: #c9cad6 !important;
+  }
+
+  /* 140:7718 Poster */
+  .demo-elevators-poster {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 44px 32px !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    background: #19161c !important;
+  }
+  .demo-elevators-poster__title {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 24px !important;
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+  }
+  .demo-elevators-poster__left,
+  .demo-elevators-poster__img,
+  .demo-elevators-poster__right {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+  .demo-elevators-poster__img {
+    border-radius: 12px !important;
+    display: block !important;
+    margin-bottom: 24px !important;
+  }
+  .demo-elevators-poster__right {
+    display: grid !important;
+    gap: 18px !important;
+  }
+  .demo-elevators-poster__card,
+  .demo-elevators-poster__card--1,
+  .demo-elevators-poster__card--2,
+  .demo-elevators-poster__card--3 {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    border: 2px solid #ff7b00 !important;
+    border-radius: 22px !important;
+    padding: 33px 36px !important;
+    box-sizing: border-box !important;
+  }
+  .demo-elevators-poster__h3 {
+    position: static !important;
+    margin: 0 0 18px !important;
+    color: #ff7b00 !important;
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+  .demo-elevators-poster__p {
+    position: static !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+    color: #ffffff !important;
+  }
+
+  /* 140:7736 Steps */
+  .demo-elevators-steps {
+    width: 100% !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+    box-sizing: border-box !important;
+  }
+  .demo-elevators-steps__inner {
+    position: static !important;
+    width: min(100%, clamp(770px, 78vw, 1086px)) !important;
+    margin: 0 auto !important;
+  }
+  .demo-elevators-steps__title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 0 42px !important;
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.96px !important;
+  }
+  .demo-elevators-steps__grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: clamp(10px, 1.1vw, 18px) !important;
+  }
+  .demo-elevators-steps .demo-step-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  .demo-elevators-steps .demo-step-card__head {
+    position: relative !important;
+    width: 93px !important;
+    height: 93px !important;
+    margin: 0 !important;
+  }
+  .demo-elevators-steps .demo-step-card__circle {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 93px !important;
+    height: 93px !important;
+    border-radius: 50% !important;
+    background: #ffb661 !important;
+  }
+  .demo-elevators-steps .demo-step-card__icon {
+    position: absolute !important;
+    left: 21px !important;
+    top: 22px !important;
+    width: 50px !important;
+    height: 50px !important;
+    transform: none !important;
+  }
+  .demo-elevators-steps .demo-step-card__line,
+  .demo-elevators-steps .demo-step-card__arrow {
+    display: none !important;
+  }
+  .demo-elevators-steps .demo-step-card__body {
+    width: 100% !important;
+    display: grid !important;
+    gap: 8px !important;
+    text-align: center !important;
+  }
+  .demo-elevators-steps .demo-step-card__title {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.16px !important;
+  }
+  .demo-elevators-steps .demo-step-card__text {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    color: #c9cad6 !important;
+  }
+
+  /* Target — 140:7654 Blok5: в один ряд вертикально */
+  .demo-elevators-target {
+    width: 100% !important;
+    height: auto !important;
+    padding: 44px 32px !important;
+    box-sizing: border-box !important;
+  }
+  .demo-elevators-target__title {
+    position: static !important;
+    width: min(100%, clamp(770px, 78vw, 1086px)) !important;
+    height: auto !important;
+    margin: 0 auto 42px !important;
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.96px !important;
+  }
+  .demo-elevators-target__grid {
+    position: static !important;
+    width: min(100%, clamp(770px, 88vw, 1096px)) !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(16px, 2vw, 22px) !important;
+  }
+  .demo-elevators-target__card {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    border-radius: 12px !important;
+    background: #19161c !important;
+    padding: clamp(24px, 2.5vw, 36px) clamp(24px, 2.5vw, 44px) !important;
+    gap: clamp(16px, 2vw, 22px) !important;
+    box-sizing: border-box !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+  .demo-elevators-target__icon {
+    width: clamp(65px, 6.5vw, 100px) !important;
+    height: clamp(65px, 6.5vw, 100px) !important;
+    flex-shrink: 0 !important;
+  }
+  .demo-elevators-target__content {
+    width: 100% !important;
+    min-width: 0 !important;
+    text-align: left !important;
+  }
+  .demo-elevators-target__h3 {
+    margin: 0 0 clamp(8px, 1vw, 16px) !important;
+    font-size: clamp(18px, 1.5vw, 22px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.54px !important;
+  }
+  .demo-elevators-target__p {
+    margin: 0 !important;
+    font-size: clamp(14px, 1.1vw, 16px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.48px !important;
+    color: #c9cad6 !important;
+  }
+
+  /* 140:7742 Contact (2-col: left text + right form) */
+  .demo-elevators-contact {
+    width: 100% !important;
+    height: auto !important;
+    padding: 44px 33px !important;
+    box-sizing: border-box !important;
+    background: #000000 !important;
+  }
+  .demo-elevators-contact__inner {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 770px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    height: 412px !important;
+    display: grid !important;
+    grid-template-columns: 330px 408px !important;
+    column-gap: 32px !important;
+    align-items: center !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+  .demo-elevators-contact__left {
+    width: 330px !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+  }
+  .demo-elevators-contact__title {
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: left !important;
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.96px !important;
+  }
+  .demo-elevators-contact__text {
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: left !important;
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.54px !important;
+    color: #c4c4c4 !important;
+  }
+  .demo-elevators-contact__formbox {
+    width: 408px !important;
+    max-width: 408px !important;
+    height: 412px !important;
+    border-radius: 12px !important;
+    border: 1px solid #ff7b00 !important;
+    background: #19161c !important;
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+  }
+  .demo-elevators-contact__form-title {
+    position: absolute !important;
+    left: 50% !important;
+    top: 31px !important;
+    transform: translateX(-50%) !important;
+    width: 302px !important;
+    margin: 0 !important;
+    text-align: center !important;
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.84px !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    z-index: 5 !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+  .demo-elevators-contact__form {
+    position: relative !important;
+    width: 408px !important;
+    height: 412px !important;
+    margin: 0 !important;
+    background: transparent !important;
+  }
+  .demo-elevators-contact__row,
+  .demo-elevators-contact__actions {
+    display: block !important;
+    margin: 0 !important;
+  }
+  .demo-elevators-contact__field,
+  .demo-elevators-contact__field--name,
+  .demo-elevators-contact__field--phone,
+  .demo-elevators-contact__field--company {
+    position: absolute !important;
+    left: 14px !important;
+    width: 379px !important;
+    height: 56px !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  .demo-elevators-contact__field--name { top: 87px !important; }
+  .demo-elevators-contact__field--phone { top: 161px !important; }
+  .demo-elevators-contact__field--company { top: 235px !important; }
+  .demo-elevators-contact__input {
+    width: 100% !important;
+    height: 56px !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 12px !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
+    padding: 18px 22px !important;
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+  .demo-elevators-contact__ph {
+    position: absolute !important;
+    left: 22px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    pointer-events: none !important;
+  }
+  .demo-elevators-contact__btn {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 36px !important;
+    transform: translateX(-50%) !important;
+    width: 220px !important;
+    height: 56px !important;
+    border-radius: 100px !important;
+    margin: 0 !important;
+    padding: 18px 22px !important;
+    background: #14f195 !important;
+    color: #000000 !important;
+  }
+}
+
+/* MCP hard lock: frame 140:7742 (contact form) — prevent cascade conflicts */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-elevators-contact .demo-elevators-contact__formbox {
+    width: 408px !important;
+    max-width: 408px !important;
+    height: 412px !important;
+    border: 1px solid #ff7b00 !important;
+    border-radius: 12px !important;
+    background: #19161c !important;
+  }
+  .demo-elevators-contact .demo-elevators-contact__form-title {
+    position: absolute !important;
+    left: 50% !important;
+    top: 31px !important;
+    transform: translateX(-50%) !important;
+    width: 302px !important;
+    display: block !important;
+    visibility: visible !important;
+    z-index: 5 !important;
+    font-size: 28px !important;
+    color: #ffffff !important;
+  }
+  .demo-elevators-contact .demo-elevators-contact__field {
+    position: absolute !important;
+    left: 14px !important;
+    width: 379px !important;
+    height: 56px !important;
+  }
+  .demo-elevators-contact .demo-elevators-contact__field--name { top: 87px !important; }
+  .demo-elevators-contact .demo-elevators-contact__field--phone { top: 161px !important; }
+  .demo-elevators-contact .demo-elevators-contact__field--company { top: 235px !important; }
+  .demo-elevators-contact .demo-elevators-contact__input {
+    width: 379px !important;
+    height: 56px !important;
+    padding: 18px 22px !important;
+    box-sizing: border-box !important;
+  }
+  .demo-elevators-contact .demo-elevators-contact__ph {
+    left: 22px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+  .demo-elevators-contact .demo-elevators-contact__input:focus ~ .demo-elevators-contact__ph,
+  .demo-elevators-contact .demo-elevators-contact__input:not(:placeholder-shown) ~ .demo-elevators-contact__ph {
+    opacity: 0 !important;
+  }
+  .demo-elevators-contact .demo-elevators-contact__btn {
+    left: 50% !important;
+    bottom: 36px !important;
+    transform: translateX(-50%) !important;
+    width: 220px !important;
+    height: 56px !important;
+  }
+}
