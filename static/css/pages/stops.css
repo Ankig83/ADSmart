@@ -564,6 +564,13 @@
     height: 94px !important;
     flex-shrink: 0 !important;
   }
+  .demo-stops-ideal__content {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
   .demo-stops-ideal__h3,
   .demo-stops-ideal__p {
     position: static !important;
@@ -1103,6 +1110,11 @@
   width: 100px;
   height: 100px;
   display: block;
+}
+
+/* Wrapper for mobile flex layout; desktop uses contents to preserve absolute positioning */
+.demo-stops-ideal__content {
+  display: contents;
 }
 
 .demo-stops-ideal__h3 {
@@ -1727,6 +1739,14 @@
     position: static;
     width: 65px;
     height: 65px;
+  }
+
+  .demo-stops-ideal__content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .demo-stops-ideal__h3 {

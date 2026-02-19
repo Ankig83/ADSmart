@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/radio.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/radio-tablet-lock.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/radio-mobile-lock.css' %}" />
 {% endblock %}
 
 {% block header %}
@@ -91,15 +92,19 @@
 
       <div class="demo-radio-measure__glow" aria-hidden="true"></div>
 
-      <div class="demo-radio-measure__circle demo-radio-measure__circle--calls" aria-hidden="true">
-        <img class="demo-radio-measure__icon" src="{% static 'assets/icons/frame-133-5301.svg' %}" alt="" />
+      <div class="demo-radio-measure__block demo-radio-measure__block--calls">
+        <div class="demo-radio-measure__circle demo-radio-measure__circle--calls" aria-hidden="true">
+          <img class="demo-radio-measure__icon" src="{% static 'assets/icons/frame-133-5301.svg' %}" alt="" />
+        </div>
+        <div class="demo-radio-measure__metric demo-radio-measure__metric--calls">Обработка звонков 24/7</div>
       </div>
-      <div class="demo-radio-measure__metric demo-radio-measure__metric--calls">Обработка звонков 24/7</div>
 
-      <div class="demo-radio-measure__circle demo-radio-measure__circle--roi" aria-hidden="true">
-        <img class="demo-radio-measure__icon" src="{% static 'assets/icons/results-133-5154-140-5711.svg' %}" alt="" />
+      <div class="demo-radio-measure__block demo-radio-measure__block--roi">
+        <div class="demo-radio-measure__circle demo-radio-measure__circle--roi" aria-hidden="true">
+          <img class="demo-radio-measure__icon" src="{% static 'assets/icons/results-133-5154-140-5711.svg' %}" alt="" />
+        </div>
+        <div class="demo-radio-measure__metric demo-radio-measure__metric--roi">сквозная аналитика ROI</div>
       </div>
-      <div class="demo-radio-measure__metric demo-radio-measure__metric--roi">сквозная аналитика ROI</div>
 
       <img
         class="demo-radio-measure__robot"
@@ -137,10 +142,12 @@
       <div class="demo-radio-measure__dot demo-radio-measure__dot--3" aria-hidden="true"></div>
       <div class="demo-radio-measure__vline" aria-hidden="true"></div>
 
-      <div class="demo-radio-measure__circle demo-radio-measure__circle--handoff" aria-hidden="true">
-        <img class="demo-radio-measure__icon" src="{% static 'assets/icons/frame-133-5298.svg' %}" alt="" />
+      <div class="demo-radio-measure__block demo-radio-measure__block--handoff">
+        <div class="demo-radio-measure__circle demo-radio-measure__circle--handoff" aria-hidden="true">
+          <img class="demo-radio-measure__icon" src="{% static 'assets/icons/frame-133-5298.svg' %}" alt="" />
+        </div>
+        <div class="demo-radio-measure__handoff-text">передача менеджеру только готовых клиентов</div>
       </div>
-      <div class="demo-radio-measure__handoff-text">передача менеджеру только готовых клиентов</div>
 
       <div class="demo-radio-measure__scheme" aria-label="Схема работы">
         <div class="demo-radio-measure__scheme-title">Схема работы:</div>

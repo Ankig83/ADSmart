@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/stops.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/stops-tablet-lock.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/stops-mobile-lock.css' %}" />
 {% endblock %}
 
 {% block header %}
@@ -159,34 +160,42 @@
       <ul class="demo-stops-ideal__grid" aria-label="Задачи">
         <li class="demo-stops-ideal__card demo-stops-ideal__card--1">
           <img class="demo-stops-ideal__icon" src="{% static 'assets/icons/frame-133-5291.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-stops-ideal__h3">Для остановок</h3>
-          <p class="demo-stops-ideal__p">
+          <div class="demo-stops-ideal__content">
+            <h3 class="demo-stops-ideal__h3">Для остановок</h3>
+            <p class="demo-stops-ideal__p">
             Локальный ритейл, доставка еды и товаров, такси/каршеринг, кофейни, салоны красоты у метро
-          </p>
+            </p>
+          </div>
         </li>
 
         <li class="demo-stops-ideal__card demo-stops-ideal__card--2">
           <img class="demo-stops-ideal__icon" src="{% static 'assets/icons/frame-133-5206.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-stops-ideal__h3">Для афиш</h3>
-          <p class="demo-stops-ideal__p">
+          <div class="demo-stops-ideal__content">
+            <h3 class="demo-stops-ideal__h3">Для афиш</h3>
+            <p class="demo-stops-ideal__p">
             Концертные площадки, театры, музеи, фестивали, кинопремьеры, образовательные курсы
-          </p>
+            </p>
+          </div>
         </li>
 
         <li class="demo-stops-ideal__card demo-stops-ideal__card--3">
           <img class="demo-stops-ideal__icon" src="{% static 'assets/icons/frame-133-5179.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-stops-ideal__h3">HR и массовый найм</h3>
-          <p class="demo-stops-ideal__p">
+          <div class="demo-stops-ideal__content">
+            <h3 class="demo-stops-ideal__h3">HR и массовый найм</h3>
+            <p class="demo-stops-ideal__p">
             Поиск сотрудников в районах проживания. AI-бот проводит первичное интервью и отбор кандидатов 24/7
-          </p>
+            </p>
+          </div>
         </li>
 
         <li class="demo-stops-ideal__card demo-stops-ideal__card--4">
           <img class="demo-stops-ideal__icon" src="{% static 'assets/icons/frame-133-5278-i140-5621-102-677.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-stops-ideal__h3">Недвижимость и застройщики</h3>
-          <p class="demo-stops-ideal__p">
+          <div class="demo-stops-ideal__content">
+            <h3 class="demo-stops-ideal__h3">Недвижимость и застройщики</h3>
+            <p class="demo-stops-ideal__p">
             Реклама ЖК прямо в локации. Бот мгновенно показывает планировки, цены и записывает на просмотр
-          </p>
+            </p>
+          </div>
         </li>
       </ul>
     </section>

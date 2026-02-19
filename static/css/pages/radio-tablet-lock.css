@@ -91,12 +91,15 @@
     height: auto !important;
     padding: 44px 32px !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 45px !important;
   }
   .demo-radio-benefits__title {
     position: static !important;
     width: min(100%, clamp(770px, 78vw, 1086px)) !important;
     height: auto !important;
-    margin: 0 auto 42px !important;
+    margin: 0 !important;
     font-size: clamp(32px, 2.2vw, 40px) !important;
     line-height: 1.3 !important;
     letter-spacing: 0.48px !important;
@@ -170,6 +173,7 @@
     position: relative !important;
     overflow: hidden !important;
   }
+  .demo-radio-measure__block { display: contents !important; }
   .demo-radio-measure__title {
     position: static !important;
     width: min(100%, 772px) !important;
@@ -346,18 +350,21 @@
     margin-bottom: 30.395px !important;
   }
 
-  /* 140:7512 Steps */
+  /* 140:7512 Steps — gap 45px */
   .demo-radio-steps {
     width: 100% !important;
     height: auto !important;
     padding: 44px 32px !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 45px !important;
   }
   .demo-radio-steps__title {
     position: static !important;
     width: min(100%, clamp(770px, 78vw, 1086px)) !important;
     height: auto !important;
-    margin: 0 auto 42px !important;
+    margin: 0 !important;
     font-size: clamp(32px, 2.2vw, 40px) !important;
     line-height: 1.3 !important;
     letter-spacing: -0.96px !important;
@@ -433,18 +440,21 @@
     color: #c9cad6 !important;
   }
 
-  /* 140:7541 Ideal list */
+  /* 140:7541 Ideal list — gap 45px */
   .demo-radio-ideal {
     width: 100% !important;
     height: auto !important;
     padding: clamp(36px, 3.2vw, 44px) clamp(24px, 2.8vw, 32px) !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 45px !important;
   }
   .demo-radio-ideal__title {
     position: static !important;
     width: min(100%, clamp(770px, 78vw, 1086px)) !important;
     height: auto !important;
-    margin: 0 auto 42px !important;
+    margin: 0 !important;
     font-size: clamp(32px, 2.2vw, 40px) !important;
     line-height: 1.3 !important;
     letter-spacing: -0.96px !important;

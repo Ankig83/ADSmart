@@ -165,6 +165,26 @@
   display: block;
 }
 
+.demo-elevators-benefits__content {
+  position: absolute;
+  left: 0;
+  top: 180px;
+  width: 249px;
+}
+
+.demo-elevators-benefits__content .demo-elevators-benefits__h3,
+.demo-elevators-benefits__content .demo-elevators-benefits__p {
+  position: static;
+  left: auto;
+  top: auto;
+  width: 100%;
+  height: auto;
+}
+
+.demo-elevators-benefits__content .demo-elevators-benefits__p {
+  margin-top: 6px;
+}
+
 .demo-elevators-benefits__h3 {
   position: absolute;
   left: 0;

@@ -494,6 +494,11 @@
   display: block;
 }
 
+/* Wrapper for mobile flex layout; desktop uses contents to preserve absolute positioning */
+.demo-billboards-ideal__content {
+  display: contents;
+}
+
 .demo-billboards-ideal__h3 {
   position: absolute;
   left: 166px;
@@ -1027,6 +1032,12 @@
     position: static !important;
     width: 80px !important;
     height: 80px !important;
+  }
+  .demo-billboards-ideal__content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    min-width: 0 !important;
   }
   .demo-billboards-ideal__h3,
   .demo-billboards-ideal__p,

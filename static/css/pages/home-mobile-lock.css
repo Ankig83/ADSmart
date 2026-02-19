@@ -1,9 +1,42 @@
-/* Home mobile lock (≤833px) — Figma Home 140:5885 */
+/* Home mobile lock (≤833px) — Figma Home 140:5885.
+   Паттерны: Hero object-position 78%, Steps иконка СВЕРХУ 2+2+1, gap 45px, overflow-x hidden */
 @media (max-width: 833px) {
-  /* Hero (#2 / 140:5889): padding 16, title 32px ExtraBold, subtitle 16px */
+  .app__main {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Hero (#2 / 140:5889): фон __bg, padding 16, title 32px ExtraBold */
+  .demo-home-hero__bg {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+  }
+  .demo-home-hero__bg-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 78% center !important;
+  }
+  .demo-home-hero__overlay {
+    position: absolute !important;
+    inset: 0 !important;
+  }
+  .demo-home-hero__content {
+    z-index: 2 !important;
+  }
+  .demo-home-hero__art {
+    z-index: 1 !important;
+  }
+
   .demo-home-hero {
     width: 100% !important;
-    min-height: auto !important;
+    min-height: clamp(360px, 85vh, 480px) !important;
     padding: clamp(20px, 6vw, 36px) 16px clamp(36px, 9vw, 56px) !important;
     display: flex !important;
     flex-direction: column !important;
@@ -55,7 +88,7 @@
   }
 
   .demo-home-hero__img {
-    object-position: left center !important;
+    object-position: 78% center !important;
   }
 
   .demo-home-hero__blob {
@@ -92,13 +125,13 @@
     margin-top: 0 !important;
   }
 
-  /* Steps (Blok2 / 140:5902): title 24px SemiBold, itemSpacing 42 */
+  /* Steps (Blok2 / 140:5902): title 24px SemiBold, gap 45px, иконка СВЕРХУ, сетка 2+2+1 */
   .demo-steps__inner {
     position: static !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 42px !important;
+    gap: 45px !important;
   }
 
   .demo-steps__title {
@@ -123,9 +156,9 @@
     position: static !important;
     width: 100% !important;
     height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: clamp(16px, 3.6vw, 24px) !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
   }
 
   .demo-steps__card {
@@ -133,11 +166,19 @@
     left: auto !important;
     top: auto !important;
     width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .demo-steps__cards > *:nth-child(5) {
+    grid-column: 1 / 2 !important;
   }
 
   .demo-step-card {
-    display: grid !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     gap: 12px !important;
+    text-align: center !important;
   }
 
   .demo-step-card__head {
@@ -150,6 +191,7 @@
     height: 100% !important;
   }
 
+  .demo-step-card__line,
   .demo-step-card__arrow {
     display: none !important;
   }
@@ -165,13 +207,13 @@
     line-height: 1.4 !important;
   }
 
-  /* Expertise (Blok3 / 140:5931): card padding 14/28 */
+  /* Expertise (Blok3 / 140:5931): gap 45px, card padding 14/28 */
   .demo-exp__inner {
     position: static !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: clamp(20px, 4.5vw, 28px) !important;
+    gap: 45px !important;
   }
 
   .demo-exp__title {
@@ -180,7 +222,7 @@
     font-size: 24px !important;
     font-weight: 600 !important;
     letter-spacing: -0.72px !important;
-    margin: 0 0 clamp(16px, 3.6vw, 24px) !important;
+    margin: 0 !important;
   }
 
   .demo-exp__cards {
@@ -219,20 +261,20 @@
     line-height: 1.4 !important;
   }
 
-  /* Tech19 (Blok4 / 140:5939) */
+  /* Tech19 (Blok4 / 140:5939): gap 45px */
   .demo-tech19__inner {
     position: static !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: clamp(24px, 5.5vw, 36px) !important;
+    gap: 45px !important;
   }
 
   .demo-tech19__title {
     position: static !important;
     width: 100% !important;
     font-size: clamp(24px, 5.5vw, 32px) !important;
-    margin: 0 0 clamp(16px, 3.6vw, 24px) !important;
+    margin: 0 !important;
   }
 
   .demo-tech19__left {
@@ -287,14 +329,14 @@
     font-size: clamp(15px, 3.4vw, 18px) !important;
   }
 
-  /* AD (Blok5 / 140:5988): padding 16/44, form padding 28/38 */
+  /* AD (Blok5 / 140:5988): gap 45px */
   .demo-ad__inner {
     position: static !important;
     width: 100% !important;
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: clamp(20px, 4.5vw, 28px) !important;
+    gap: 45px !important;
     padding: 0 !important;
     left: 0 !important;
     top: 0 !important;
@@ -348,13 +390,13 @@
     width: 100% !important;
   }
 
-  /* Team (Blok6 / 140:6004): card padding 22/18 */
+  /* Team (Blok6 / 140:6004): gap 45px */
   .demo-team__inner {
     position: static !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: clamp(20px, 4.5vw, 28px) !important;
+    gap: 45px !important;
   }
 
   .demo-team__title {
@@ -417,13 +459,13 @@
     margin-top: clamp(8px, 1.8vw, 12px) !important;
   }
 
-  /* Contact (Blok7 / 140:6014) */
+  /* Contact (Blok7 / 140:6014): gap 45px */
   .demo-contact__box {
     position: static !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: clamp(20px, 4.5vw, 28px) !important;
+    gap: 45px !important;
   }
 
   .demo-contact__title {
@@ -458,5 +500,103 @@
 
   .demo-faq__answer-p {
     font-size: clamp(14px, 3.2vw, 16px) !important;
+  }
+}
+
+/* Экстра-малые < 440px */
+@media (max-width: 439px) {
+  .demo-home-hero {
+    padding: 36px 12px 32px !important;
+  }
+  .demo-home-hero__title {
+    font-size: 24px !important;
+  }
+  .demo-home-hero__subtitle {
+    font-size: 14px !important;
+  }
+
+  .demo-steps,
+  .demo-exp,
+  .demo-tech19,
+  .demo-ad,
+  .demo-team,
+  .demo-contact,
+  .demo-faq {
+    padding: 24px 12px !important;
+  }
+  .demo-steps__title {
+    font-size: 20px !important;
+  }
+  .demo-step-card__head {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .demo-step-card__title {
+    font-size: 18px !important;
+  }
+  .demo-step-card__text {
+    font-size: 14px !important;
+  }
+
+  .demo-exp__title {
+    font-size: 20px !important;
+  }
+  .demo-exp-card {
+    padding: 20px 12px !important;
+  }
+  .demo-exp-card__icon {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .demo-exp-card__title {
+    font-size: 18px !important;
+  }
+  .demo-exp-card__list > li {
+    font-size: 13px !important;
+  }
+
+  .demo-tech19__title {
+    font-size: 20px !important;
+  }
+  .demo-tech19__card-title {
+    font-size: 16px !important;
+  }
+  .demo-tech19__card-text {
+    font-size: 14px !important;
+  }
+
+  .demo-ad__title {
+    font-size: 20px !important;
+  }
+  .demo-ad__subtitle {
+    font-size: 14px !important;
+  }
+
+  .demo-team__title {
+    font-size: 18px !important;
+  }
+  .demo-team-card {
+    padding: 14px 16px !important;
+  }
+  .demo-team-card__icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .demo-team-card__title {
+    font-size: 15px !important;
+  }
+  .demo-team-card__text {
+    font-size: 13px !important;
+  }
+
+  .demo-contact__title {
+    font-size: 18px !important;
+  }
+
+  .demo-faq__question {
+    font-size: 14px !important;
+  }
+  .demo-faq__answer-p {
+    font-size: 13px !important;
   }
 }

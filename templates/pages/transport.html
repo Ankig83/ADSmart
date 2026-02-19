@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/transport.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/transport-mobile-lock.css' %}" />
 {% endblock %}
 
 {% block header %}
@@ -236,26 +237,34 @@
       <ul class="demo-transport-ideal__grid" aria-label="Задачи">
         <li class="demo-transport-ideal__card demo-transport-ideal__card--1">
           <img class="demo-transport-ideal__icon" src="{% static 'assets/icons/frame-133-5274.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-transport-ideal__h3">Сети и ритейл</h3>
-          <p class="demo-transport-ideal__p">Привлечение трафика в конкретные торговые точки, расположенные на маршруте</p>
+          <div class="demo-transport-ideal__content">
+            <h3 class="demo-transport-ideal__h3">Сети и ритейл</h3>
+            <p class="demo-transport-ideal__p">Привлечение трафика в конкретные торговые точки, расположенные на маршруте</p>
+          </div>
         </li>
 
         <li class="demo-transport-ideal__card demo-transport-ideal__card--2">
           <img class="demo-transport-ideal__icon" src="{% static 'assets/icons/frame-133-5269.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-transport-ideal__h3">Сервисы и доставка</h3>
-          <p class="demo-transport-ideal__p">Заказ еды, такси, товаров «здесь и сейчас» по геолокационному принципу</p>
+          <div class="demo-transport-ideal__content">
+            <h3 class="demo-transport-ideal__h3">Сервисы и доставка</h3>
+            <p class="demo-transport-ideal__p">Заказ еды, такси, товаров «здесь и сейчас» по геолокационному принципу</p>
+          </div>
         </li>
 
         <li class="demo-transport-ideal__card demo-transport-ideal__card--3">
           <img class="demo-transport-ideal__icon" src="{% static 'assets/icons/frame-133-5192.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-transport-ideal__h3">События и развлечения</h3>
-          <p class="demo-transport-ideal__p">Анонс мероприятий в районах следования транспорта</p>
+          <div class="demo-transport-ideal__content">
+            <h3 class="demo-transport-ideal__h3">События и развлечения</h3>
+            <p class="demo-transport-ideal__p">Анонс мероприятий в районах следования транспорта</p>
+          </div>
         </li>
 
         <li class="demo-transport-ideal__card demo-transport-ideal__card--4">
           <img class="demo-transport-ideal__icon" src="{% static 'assets/icons/frame-133-5278.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-transport-ideal__h3">B2B-услуги</h3>
-          <p class="demo-transport-ideal__p">Таргетинг на бизнес-районы и промышленные зоны</p>
+          <div class="demo-transport-ideal__content">
+            <h3 class="demo-transport-ideal__h3">B2B-услуги</h3>
+            <p class="demo-transport-ideal__p">Таргетинг на бизнес-районы и промышленные зоны</p>
+          </div>
         </li>
       </ul>
     </section>

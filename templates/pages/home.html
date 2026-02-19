@@ -19,6 +19,19 @@
 
 {% block content %}
   <section class="demo-home-hero" aria-labelledby="home-hero-title">
+    <div class="demo-home-hero__bg" aria-hidden="true">
+      <img
+        class="demo-home-hero__bg-img"
+        src="{% static 'assets/images/figma-1@2x.png' %}"
+        alt=""
+        width="1440"
+        height="751"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="demo-home-hero__overlay"></div>
+    </div>
+
     <div class="demo-home-hero__blob" aria-hidden="true"></div>
 
     <div class="demo-home-hero__art" aria-hidden="true">

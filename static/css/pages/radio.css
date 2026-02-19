@@ -218,6 +218,9 @@
     color: #ffffff;
   }
 
+  /* Block wrappers: transparent for desktop (children positioned absolutely) */
+  .demo-radio-measure__block { display: contents; }
+
   /* Glow (140:5681): orange blur */
   .demo-radio-measure__glow {
     position: absolute;
