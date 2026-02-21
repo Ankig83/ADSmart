@@ -3,7 +3,8 @@
   PRODUCTION MOBILE LOCK (static/css/pages/production-mobile-lock.css)
   Figma: 140:6944 «Производство рекламы» — 440×4791 (mobile)
   @media (max-width: 833px) — перекрывает tablet/desktop.
-  Адаптив: 320px → 833px (clamp, min, max-width).
+  Адаптив: 320px → 833px. Секции fluid, в ровень с меню и подвалом:
+  --prod-mobile-width: clamp(440px, 92vw, calc(100vw - 32px))
   ═══════════════════════════════════════════════════════════════════════════════
 */
 @media (max-width: 833px) {
@@ -17,18 +18,27 @@
     box-sizing: border-box !important;
   }
 
-  /* ─── HERO (#2) — адаптивная высота и ширина ─── */
+  /* ─── HERO (#2) — fluid как меню/подвал ─── */
   .demo-prod-hero {
     width: 100% !important;
-    max-width: min(440px, 100vw) !important;
-    min-height: clamp(400px, 95vh, 483px) !important;
+    max-width: min(100vw, clamp(440px, 92vw, 834px)) !important;
+    min-height: clamp(400px, 90vh, 483px) !important;
     height: auto !important;
     margin: 0 auto !important;
     padding: 0 !important;
     position: relative !important;
     box-sizing: border-box !important;
-    overflow: visible !important;
+    overflow: hidden !important;
     display: block !important;
+  }
+  .demo-prod-hero__bg-img--desktop {
+    display: none !important;
+  }
+  .demo-prod-hero__bg-img--mobile {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
   }
   .demo-prod-hero__overlay {
     position: absolute !important;
@@ -44,33 +54,36 @@
   }
   .demo-prod-hero__content {
     position: absolute !important;
-    left: clamp(12px, 4vw, 16px) !important;
-    top: clamp(80px, 20vw, 121px) !important;
-    width: calc(100% - clamp(24px, 8vw, 32px)) !important;
-    max-width: 408px !important;
+    left: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: min(clamp(408px, 92vw, 834px), calc(100% - 32px)) !important;
     margin: 0 !important;
-    z-index: 2 !important;
+    z-index: 3 !important; /* текст поверх всего */
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 0 !important;
+    gap: 18px !important;
     text-align: left !important;
   }
   .demo-prod-hero__title {
     width: 100% !important;
     max-width: 408px !important;
-    margin: 0 0 clamp(12px, 3vw, 18px) !important;
-    font-size: clamp(26px, 7.5vw, 32px) !important;
+    margin: 0 !important;
+    font-family: 'Poppins', var(--font-sans) !important;
     font-weight: 800 !important;
-    line-height: 1.3 !important;
+    font-size: 32px !important;
+    line-height: 130% !important;
     letter-spacing: 0.48px !important;
     color: #ffffff !important;
   }
   .demo-prod-hero__subtitle {
     width: 100% !important;
     max-width: 277px !important;
-    margin: 0 0 clamp(24px, 6vw, 36px) !important;
-    font-size: clamp(14px, 4vw, 16px) !important;
+    margin: 0 !important;
+    font-family: 'Poppins', var(--font-sans) !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
     line-height: 24px !important;
     color: #c4c4c4 !important;
   }
@@ -78,45 +91,58 @@
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
-    justify-content: center !important;
     align-items: center !important;
     gap: 14px !important;
     width: 100% !important;
-    margin-top: 0 !important;
+    margin: 18px 0 0 !important; /* 18+18=36px от subtitle до кнопок */
   }
   .demo-prod-hero__btn {
     padding: 16px 32px !important;
     height: 56px !important;
+    font-family: 'Poppins', var(--font-sans) !important;
+    font-weight: 500 !important;
     font-size: 16px !important;
     line-height: 24px !important;
+    letter-spacing: -0.02em !important;
+    border-radius: 64px !important;
   }
   .demo-prod-hero__btn--primary {
-    width: min(218px, 100%) !important;
+    width: 218px !important;
     min-width: min-content !important;
+    background: #14f195 !important;
+    color: #000000 !important;
   }
   .demo-prod-hero__btn--outline {
-    width: min(176px, 100%) !important;
+    width: 176px !important;
     min-width: min-content !important;
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
   }
   .demo-prod-hero__image-wrap {
     display: none !important;
   }
-
-  /* AI блок: масштабируется на узких экранах */
+  /* AI голова: позиция справа в hero
+     СДВИГ ПРАВЕЕ/ЛЕВЕЕ — меняй эти значения:
+     right: 0   = вплотную к правому краю контейнера hero
+     right: -N  = уходит за край вправо (N пикселей)
+     right: N   = отступ от правого края (N пикселей) */
   .demo-prod-hero__ai {
     display: block !important;
     position: absolute !important;
-    width: min(274px, 70vw) !important;
-    height: min(274px, 70vw) !important;
-    left: 57.7% !important;
-    top: clamp(60px, 15vw, 84px) !important;
-    z-index: 1 !important;
+    width: min(274px, calc(100vw - 32px)) !important;
+    height: min(274px, calc(100vw - 32px)) !important;
+    right: -50px !important; /* ← СЮДА: сдвиг головы по горизонтали (0 = к краю) */
+    left: auto !important;
+    top: 84px !important; /* ← СЮДА: сдвиг головы по вертикали */
+    z-index: 2 !important; /* выше overlay */
+    overflow: hidden !important;
+    box-sizing: border-box !important;
   }
   .demo-prod-hero__ai-glow {
     position: absolute !important;
-    width: 56% !important;
-    height: 59% !important;
-    left: 50% !important;
+    width: 154.6px !important;
+    height: 161.42px !important;
+    left: calc(50% + 20px) !important;
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
     background: rgba(255, 123, 0, 0.58) !important;
@@ -125,15 +151,33 @@
   }
   .demo-prod-hero__ai-img {
     position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
+    inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
     display: block !important;
-    object-fit: cover !important;
-    object-position: right center !important;
-    transform: scaleX(-1) !important; /* зеркало: смотрит влево */
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform: none !important; /* смотрит влево */
     border-radius: 0 !important;
+  }
+
+  /* 600–833px: кнопки под заголовком (слева), голова масштабируется пропорционально */
+  @media (min-width: 600px) and (max-width: 833px) {
+    .demo-prod-hero__content {
+      top: clamp(80px, 15vw, 121px) !important;
+      transform: none !important; /* не по центру — сверху */
+    }
+    .demo-prod-hero__actions {
+      justify-content: flex-start !important;
+    }
+    .demo-prod-hero__ai {
+      width: clamp(274px, 42vw, 380px) !important;
+      height: clamp(274px, 42vw, 380px) !important;
+    }
+    .demo-prod-hero__ai-glow {
+      width: 55% !important;
+      height: 59% !important;
+    }
   }
 
   /* ─── EMOTIONS (Blok2) ─── */
@@ -152,7 +196,7 @@
   }
   .demo-prod-emotions__grid {
     width: 100% !important;
-    max-width: min(408px, calc(100vw - 32px)) !important;
+    max-width: min(clamp(408px, 92vw, 834px), calc(100vw - 32px)) !important;
     margin: 0 auto !important;
     display: flex !important;
     flex-direction: column !important;
@@ -193,24 +237,24 @@
     line-height: 18.2px !important;
   }
 
-  /* ─── SOLUTIONS (Blok3) Figma 140:6967 — секция целиком видна ─── */
+  /* ─── SOLUTIONS (Blok3) Figma 140:6966 — fluid как остальные секции ─── */
   .demo-prod-solutions {
     width: 100% !important;
-    max-width: min(440px, 100vw) !important;
+    max-width: 100% !important;
     height: auto !important;
     min-height: 0 !important;
     margin: 0 auto !important;
     padding: clamp(32px, 8vw, 44px) clamp(16px, 4.5vw, 24px) clamp(32px, 8vw, 48px) !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: stretch !important;
     gap: clamp(28px, 7vw, 42px) !important;
     box-sizing: border-box !important;
     overflow: visible !important;
   }
   .demo-prod-solutions__title {
     width: 100% !important;
-    max-width: 408px !important;
+    max-width: min(clamp(408px, 92vw, 834px), calc(100vw - 32px)) !important;
     margin: 0 0 clamp(28px, 7vw, 42px) !important;
     font-family: 'Poppins', var(--font-sans) !important;
     font-weight: 600 !important;
@@ -222,8 +266,8 @@
   }
   .demo-prod-solutions__grid {
     width: 100% !important;
-    max-width: min(408px, calc(100vw - 32px)) !important;
-    margin: 0 !important;
+    max-width: min(clamp(408px, 92vw, 834px), calc(100vw - 32px)) !important;
+    margin: 0 auto !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 16px !important;
@@ -231,7 +275,7 @@
   }
   .demo-prod-solutions__card {
     width: 100% !important;
-    max-width: 408px !important;
+    max-width: 100% !important; /* карточки растут с гридом */
     height: auto !important;
     min-height: 0 !important;
     flex-direction: row !important;
@@ -299,7 +343,7 @@
   /* Block4 Figma 140:6975 — кружки 94px, gap 17px, выравнивание по центру */
   .demo-prod-how__grid {
     width: 100% !important;
-    max-width: min(408px, calc(100vw - 32px)) !important;
+    max-width: min(clamp(408px, 92vw, 834px), calc(100vw - 32px)) !important;
     margin: 0 auto !important;
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -355,7 +399,7 @@
   }
   .demo-prod-expertise__inner {
     width: 100% !important;
-    max-width: min(408px, calc(100vw - 32px)) !important;
+    max-width: min(clamp(408px, 92vw, 834px), calc(100vw - 32px)) !important;
     margin: 0 auto !important;
   }
   .demo-prod-expertise__title {
@@ -387,16 +431,15 @@
     border-radius: 12px !important;
   }
 
-  /* ─── CONTACT (Blok) Figma 140:7009 ─── */
+  /* ─── CONTACT (Blok) Figma 140:7009 — 3 поля, точные отступы ─── */
   .demo-prod-contact {
     width: 100% !important;
-    height: auto !important;
-    padding: clamp(32px, 8vw, 44px) 16px !important;
+    padding: 44px 16px !important;
     box-sizing: border-box !important;
   }
   .demo-prod-contact__inner {
     width: 100% !important;
-    max-width: min(408px, calc(100vw - 32px)) !important;
+    max-width: min(clamp(408px, 92vw, 834px), calc(100vw - 32px)) !important;
     margin: 0 auto !important;
     padding: 0 !important;
     display: flex !important;
@@ -411,7 +454,7 @@
     margin: 0 0 24px !important;
     font-family: 'Poppins', var(--font-sans) !important;
     font-weight: 600 !important;
-    font-size: clamp(20px, 5.5vw, 24px) !important;
+    font-size: 24px !important;
     line-height: 130% !important;
     letter-spacing: -0.03em !important;
     color: #ffffff !important;
@@ -421,37 +464,41 @@
     margin: 0 !important;
     font-family: 'Poppins', var(--font-sans) !important;
     font-weight: 400 !important;
-    font-size: clamp(14px, 3.8vw, 16px) !important;
+    font-size: 16px !important;
     line-height: 130% !important;
     letter-spacing: -0.03em !important;
     color: #c4c4c4 !important;
   }
   .demo-prod-contact__form {
     width: 100% !important;
-    padding: clamp(20px, 5vw, 32px) 15px clamp(24px, 6vw, 37px) !important;
+    min-height: 412px !important;
+    padding: 32px 15px 37px !important;
     background: #19161c !important;
     border: 1px solid #ff7b00 !important;
     border-radius: 12px !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: clamp(14px, 3.5vw, 22px) !important;
+    gap: 0 !important;
   }
   .demo-prod-contact__form-title {
-    margin: 0 !important;
+    margin: 0 0 24px !important;
     font-family: 'Poppins', var(--font-sans) !important;
     font-weight: 600 !important;
-    font-size: clamp(24px, 6.5vw, 28px) !important;
+    font-size: 28px !important;
     line-height: 130% !important;
     letter-spacing: -0.03em !important;
     color: #ffffff !important;
     text-align: center !important;
-    order: -1 !important;
+  }
+  /* Figma: 3 поля (Имя, Телефон, Компания) — 4-е скрыто на мобильных */
+  .demo-prod-contact__field--extra {
+    display: none !important;
   }
   .demo-prod-contact__row {
     flex-direction: column !important;
-    gap: clamp(14px, 3.5vw, 22px) !important;
-    margin: 0 !important;
+    gap: 18px !important;
+    margin: 0 0 18px !important;
     width: 100% !important;
   }
   .demo-prod-contact__field {
@@ -460,7 +507,7 @@
   }
   .demo-prod-contact__field--full {
     width: 100% !important;
-    margin: 0 !important;
+    margin: 0 0 18px !important;
   }
   .demo-prod-contact__input {
     width: 100% !important;
@@ -468,23 +515,41 @@
     padding: 0 22px !important;
     border: 1px solid #ffffff !important;
     border-radius: 12px !important;
-    font-size: clamp(16px, 4.2vw, 18px) !important;
+    font-family: 'Poppins', var(--font-sans) !important;
+    font-size: 18px !important;
+    line-height: 130% !important;
+    letter-spacing: -0.03em !important;
+    color: #ffffff !important;
     box-sizing: border-box !important;
   }
+  .demo-prod-contact__input::placeholder {
+    color: transparent !important;
+  }
   .demo-prod-contact__input:focus {
+    outline: none !important;
     border-color: #14f195 !important;
   }
   .demo-prod-contact__ph {
     left: 22px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     color: rgba(255, 255, 255, 0.3) !important;
-    font-size: clamp(16px, 4.2vw, 18px) !important;
+    font-family: 'Poppins', var(--font-sans) !important;
+    font-size: 18px !important;
+    line-height: 130% !important;
+    letter-spacing: -0.03em !important;
   }
   .demo-prod-contact__input:focus ~ .demo-prod-contact__ph,
   .demo-prod-contact__input:not(:placeholder-shown) ~ .demo-prod-contact__ph {
+    top: 0 !important;
+    transform: translateY(-50%) !important;
+    font-size: 12px !important;
     background: #19161c !important;
+    padding: 0 4px !important;
   }
   .demo-prod-contact__actions {
     margin-top: auto !important;
+    padding-top: 0 !important;
   }
   .demo-prod-contact__btn {
     width: 100% !important;
@@ -492,10 +557,12 @@
     padding: 18px 22px !important;
     font-family: 'Poppins', var(--font-sans) !important;
     font-weight: 500 !important;
-    font-size: clamp(16px, 4.2vw, 18px) !important;
+    font-size: 18px !important;
     line-height: 20px !important;
     background: #14f195 !important;
+    border: none !important;
     border-radius: 100px !important;
     color: #000000 !important;
+    cursor: pointer !important;
   }
 }

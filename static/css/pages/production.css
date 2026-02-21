@@ -30,6 +30,9 @@
   display: block;
   object-fit: cover;
 }
+.demo-prod-hero__bg-img--mobile {
+  display: none;
+}
 
 .demo-prod-hero__overlay {
   position: absolute;
