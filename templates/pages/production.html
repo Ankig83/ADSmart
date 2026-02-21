@@ -37,9 +37,8 @@
           вашу репутацию
         </h1>
         <p class="demo-prod-hero__subtitle">
-          Производство наружной и интерьерной рекламы,<br />
-          вывесок и сувенирной продукции. Создаем<br />
-          физическое присутствие бренда, которому доверяют
+          Наружная и интерьерная реклама.<br />
+          Физическое присутствие бренда
         </p>
 
         <div class="demo-prod-hero__actions">
@@ -56,6 +55,20 @@
           alt=""
           width="473"
           height="481"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+
+      {% comment %}Fig 140:6947 AI — голова отдельно на мобильных{% endcomment %}
+      <div class="demo-prod-hero__ai" aria-hidden="true">
+        <div class="demo-prod-hero__ai-glow"></div>
+        <img
+          class="demo-prod-hero__ai-img"
+          src="{% static 'assets/images/vecteezy-dazzling-avant-garde-humanoid-robot-head-with-exposed-wires-60342218-1-48a337d8.png' %}"
+          alt=""
+          width="274"
+          height="274"
           loading="eager"
           decoding="async"
         />
@@ -263,6 +276,7 @@
         <form class="demo-prod-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
           {% csrf_token %}
           <input type="hidden" name="source" value="production_contact" />
+          <p class="demo-prod-contact__form-title">Обсудим ваш проект?</p>
           <input type="hidden" name="next" value="{{ request.get_full_path }}" />
 
           <div class="demo-prod-contact__row">
@@ -292,7 +306,7 @@
           </label>
 
           <div class="demo-prod-contact__actions">
-            <button class="demo-prod-contact__btn" type="submit">Заказать вывеску</button>
+            <button class="demo-prod-contact__btn" type="submit">Рассчитать</button>
           </div>
         </form>
       </div>

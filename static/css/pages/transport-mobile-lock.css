@@ -1,0 +1,697 @@
+/* Mobile lock (≤833px): Транспорт — Figma 140:6133.
+   Паттерны: Hero object-position 78%, Benefits иконка СВЕРХУ 2×2, Formats gap 45px,
+   Steps иконка СВЕРХУ 2+2+1 (последняя слева), Ideal иконка СЛЕВА, Contact overflow */
+@media (max-width: 833px) {
+  .demo-transport {
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 auto !important;
+    background: #000000 !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Hero */
+  .demo-transport-hero {
+    width: 100% !important;
+    min-height: clamp(360px, 85vh, 480px) !important;
+    height: auto !important;
+    margin-top: 0 !important;
+    padding: clamp(48px, 12vw, 72px) clamp(16px, 4.5vw, 24px) clamp(36px, 9vw, 48px) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .demo-transport-hero__bg {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+  }
+  .demo-transport-hero__bg-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 78% center !important;
+  }
+  .demo-transport-hero__content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(12px, 3vw, 18px) !important;
+  }
+  .demo-transport-hero__title {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    font-size: clamp(24px, 6.5vw, 32px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.48px !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  .demo-transport-hero__subtitle {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    font-size: clamp(14px, 3.8vw, 18px) !important;
+    line-height: 1.4 !important;
+    color: #c4c4c4 !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+  .demo-transport-hero__btn {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 48px !important;
+    padding: 12px clamp(20px, 5vw, 28px) !important;
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Benefits — иконка СВЕРХУ, gap 45px, сетка 2×2 */
+  .demo-transport-benefits {
+    width: 100% !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(32px, 8vw, 44px) clamp(16px, 4.5vw, 24px) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 45px !important;
+  }
+  .demo-transport-benefits__title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(20px, 5.5vw, 28px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.48px !important;
+    color: #ffffff !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  .demo-transport-benefits__cards {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+  .demo-transport-benefits__card,
+  .demo-transport-benefits__card--1,
+  .demo-transport-benefits__card--2,
+  .demo-transport-benefits__card--3,
+  .demo-transport-benefits__card--4 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: #19161c !important;
+    border-radius: 12px !important;
+    padding: clamp(20px, 5vw, 24px) clamp(14px, 4vw, 20px) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+  .demo-transport-benefits__ring {
+    position: static !important;
+    width: clamp(60px, 16vw, 80px) !important;
+    min-width: 60px !important;
+    height: clamp(60px, 16vw, 80px) !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  .demo-transport-benefits__icon {
+    width: clamp(32px, 8vw, 40px) !important;
+    height: clamp(32px, 8vw, 40px) !important;
+  }
+  .demo-transport-benefits__h3 {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 6px !important;
+    top: auto !important;
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    word-wrap: break-word !important;
+  }
+  .demo-transport-benefits__p {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    top: auto !important;
+    font-size: clamp(13px, 3.5vw, 14px) !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    color: #c9cad6 !important;
+  }
+
+  /* Formats — accordion, gap 45px */
+  .demo-transport-formats {
+    width: 100% !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(32px, 8vw, 44px) clamp(16px, 4.5vw, 24px) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 45px !important;
+  }
+  .demo-transport-formats__title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(20px, 5.5vw, 28px) !important;
+    line-height: 1.3 !important;
+    overflow-wrap: break-word !important;
+  }
+  .demo-transport-formats__items {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .demo-transport-format {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    background: #19161c !important;
+    overflow: hidden !important;
+  }
+  .demo-transport-format[open] {
+    height: auto !important;
+  }
+  .demo-transport-format__summary {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 80px !important;
+    height: auto !important;
+    padding: 20px clamp(16px, 4vw, 24px) 20px !important;
+    padding-right: 56px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  .demo-transport-format__chevron {
+    position: absolute !important;
+    right: 16px !important;
+    top: 50% !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .demo-transport-format[open] .demo-transport-format__chevron {
+    transform: translateY(-50%) rotate(180deg) !important;
+    left: auto !important;
+  }
+  .demo-transport-format__title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: clamp(16px, 4vw, 18px) !important;
+    line-height: 1.3 !important;
+    overflow-wrap: break-word !important;
+  }
+  .demo-transport-format__subtitle {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: clamp(14px, 3.5vw, 16px) !important;
+    line-height: 1.4 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    overflow-wrap: break-word !important;
+  }
+  .demo-transport-format[open] .demo-transport-format__body {
+    display: block !important;
+  }
+  .demo-transport-format__body {
+    padding: 0 clamp(16px, 4vw, 24px) clamp(20px, 5vw, 24px) !important;
+    padding-top: 0 !important;
+  }
+  .demo-transport-format__img {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: clamp(160px, 40vw, 220px) !important;
+    margin-bottom: 16px !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+  }
+  .demo-transport-format__box,
+  .demo-transport-format__box--ai,
+  .demo-transport-format__box--price {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 0 12px !important;
+    padding: clamp(16px, 4vw, 20px) !important;
+    box-sizing: border-box !important;
+  }
+  .demo-transport-format__box:last-of-type {
+    margin-bottom: 0 !important;
+  }
+  .demo-transport-format__box-title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 0 8px !important;
+    font-size: clamp(15px, 4vw, 17px) !important;
+    overflow-wrap: break-word !important;
+  }
+  .demo-transport-format__box-text {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: clamp(14px, 3.5vw, 16px) !important;
+    line-height: 1.45 !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Steps — иконки СВЕРХУ, сетка 2+2+1, последняя карточка СЛЕВА, gap 45px */
+  .demo-transport-steps {
+    width: 100% !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(32px, 8vw, 44px) clamp(16px, 4.5vw, 24px) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 45px !important;
+  }
+  .demo-transport-steps__title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: clamp(20px, 5.5vw, 28px) !important;
+    line-height: 1.3 !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  .demo-transport-steps__cards {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+  .demo-transport-steps__card {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .demo-transport-steps__cards > *:nth-child(5) {
+    grid-column: 1 / 2 !important;
+  }
+  .demo-transport-steps .demo-step-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+  .demo-transport-steps .demo-step-card__head {
+    position: relative !important;
+    width: 80px !important;
+    min-width: 80px !important;
+    height: 80px !important;
+    flex-shrink: 0 !important;
+  }
+  .demo-transport-steps .demo-step-card__line,
+  .demo-transport-steps .demo-step-card__arrow {
+    display: none !important;
+  }
+  .demo-transport-steps .demo-step-card__circle {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+  /* Иконка по центру круга: 50% + translate вместо фиксированных 15px */
+  .demo-transport-steps .demo-step-card__icon {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  .demo-transport-steps .demo-step-card__icon-img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .demo-transport-steps .demo-step-card__body {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .demo-transport-steps .demo-step-card__title {
+    font-size: clamp(16px, 4vw, 18px) !important;
+    overflow-wrap: break-word !important;
+  }
+  .demo-transport-steps .demo-step-card__text {
+    font-size: clamp(14px, 3.5vw, 16px) !important;
+    line-height: 1.45 !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Ideal — иконка СЛЕВА, gap 45px, __content */
+  .demo-transport-ideal {
+    width: 100% !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(32px, 8vw, 44px) clamp(16px, 4.5vw, 24px) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 45px !important;
+  }
+  .demo-transport-ideal__title {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: clamp(20px, 5.5vw, 28px) !important;
+    line-height: 1.3 !important;
+    overflow-wrap: break-word !important;
+  }
+  .demo-transport-ideal__grid {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .demo-transport-ideal__card,
+  .demo-transport-ideal__card--1,
+  .demo-transport-ideal__card--2,
+  .demo-transport-ideal__card--3,
+  .demo-transport-ideal__card--4 {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: #19161c !important;
+    border-radius: 12px !important;
+    padding: clamp(20px, 5vw, 28px) clamp(16px, 4vw, 24px) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .demo-transport-ideal__icon {
+    width: clamp(48px, 12vw, 64px) !important;
+    height: clamp(48px, 12vw, 64px) !important;
+    flex-shrink: 0 !important;
+  }
+  .demo-transport-ideal__content {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .demo-transport-ideal__h3 {
+    margin: 0 !important;
+    font-size: clamp(16px, 4vw, 18px) !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+  .demo-transport-ideal__p {
+    position: static !important;
+    margin: 0 !important;
+    font-size: clamp(14px, 3.5vw, 16px) !important;
+    line-height: 1.45 !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    color: #c9cad6 !important;
+  }
+
+  /* Contact — overflow handling */
+  .demo-transport-contact {
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: clamp(28px, 7vw, 44px) clamp(16px, 4.5vw, 24px) !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  .demo-transport-contact__inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(16px, 4vw, 24px) !important;
+    box-sizing: border-box !important;
+  }
+  .demo-transport-contact__title {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: clamp(22px, 5.8vw, 28px) !important;
+    line-height: 1.3 !important;
+    overflow-wrap: break-word !important;
+  }
+  .demo-transport-contact__text {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+    overflow-wrap: break-word !important;
+  }
+  .demo-transport-contact__form {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    box-sizing: border-box !important;
+  }
+  .demo-transport-contact__field {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .demo-transport-contact__input {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .demo-transport-contact__btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Экстра-малые < 440px */
+@media (max-width: 439px) {
+  .demo-transport-hero {
+    padding: 36px 12px 32px !important;
+  }
+  .demo-transport-hero__title {
+    font-size: 22px !important;
+  }
+  .demo-transport-hero__subtitle {
+    font-size: 13px !important;
+  }
+  .demo-transport-hero__btn {
+    height: 44px !important;
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+  }
+
+  .demo-transport-benefits {
+    padding: 24px 12px 32px !important;
+  }
+  .demo-transport-benefits__title {
+    font-size: 18px !important;
+  }
+  .demo-transport-benefits__card {
+    padding: 18px 14px !important;
+    gap: 10px !important;
+  }
+  .demo-transport-benefits__ring {
+    width: 56px !important;
+    min-width: 56px !important;
+    height: 56px !important;
+  }
+  .demo-transport-benefits__icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .demo-transport-benefits__h3 {
+    font-size: 14px !important;
+  }
+  .demo-transport-benefits__p {
+    font-size: 12px !important;
+  }
+
+  .demo-transport-formats {
+    padding: 24px 12px 32px !important;
+  }
+  .demo-transport-formats__title {
+    font-size: 18px !important;
+  }
+  .demo-transport-format__summary {
+    padding: 16px 48px 16px 12px !important;
+  }
+  .demo-transport-format__title {
+    font-size: 15px !important;
+  }
+  .demo-transport-format__subtitle {
+    font-size: 13px !important;
+  }
+  .demo-transport-format__body {
+    padding: 0 12px 16px !important;
+  }
+  .demo-transport-format__box-title {
+    font-size: 14px !important;
+  }
+  .demo-transport-format__box-text {
+    font-size: 13px !important;
+  }
+
+  .demo-transport-steps {
+    padding: 24px 12px 32px !important;
+  }
+  .demo-transport-steps__title {
+    font-size: 18px !important;
+  }
+  .demo-transport-steps .demo-step-card__head {
+    width: 60px !important;
+    min-width: 60px !important;
+    height: 60px !important;
+  }
+  .demo-transport-steps .demo-step-card__circle {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .demo-transport-steps .demo-step-card__icon {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  .demo-transport-steps .demo-step-card__icon-img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .demo-transport-steps .demo-step-card__title {
+    font-size: 15px !important;
+  }
+  .demo-transport-steps .demo-step-card__text {
+    font-size: 13px !important;
+  }
+
+  .demo-transport-ideal {
+    padding: 24px 12px 32px !important;
+  }
+  .demo-transport-ideal__title {
+    font-size: 18px !important;
+  }
+  .demo-transport-ideal__card {
+    padding: 16px 12px !important;
+    gap: 10px !important;
+  }
+  .demo-transport-ideal__icon {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .demo-transport-ideal__h3 {
+    font-size: 15px !important;
+  }
+  .demo-transport-ideal__p {
+    font-size: 13px !important;
+  }
+
+  .demo-transport-contact {
+    padding: 24px 12px !important;
+  }
+}

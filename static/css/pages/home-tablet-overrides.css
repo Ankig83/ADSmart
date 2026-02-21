@@ -1,34 +1,5 @@
 @media (min-width: 834px) and (max-width: 1439px) {
-  /* Tablet anti-overflow: keep width+padding inside viewport */
-  .demo-menu,
-  .demo-footer,
-  .demo-footer__inner,
-  .demo-ad,
-  .demo-team,
-  .demo-contact,
-  .demo-faq,
-  .demo-ad__inner,
-  .demo-team__inner,
-  .demo-contact__box,
-  .demo-faq__items {
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-  }
-
-  .demo-menu {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-  }
-
-  .demo-menu__inner {
-    width: 100% !important;
-  }
-
-  .demo-menu__toggle,
-  .demo-menu__links.is-open {
-    left: clamp(16px, 2vw, 24px) !important;
-  }
-
+  /* Tablet anti-overflow: keep width+padding inside viewport (menu/footer in demo-menu.css, demo-footer.css) */
   .demo-ad,
   .demo-team,
   .demo-contact,

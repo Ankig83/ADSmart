@@ -73,6 +73,7 @@
 
 .demo-prod-hero__actions {
   display: flex;
+  justify-content: center;
   gap: 14px;
 }
 
@@ -136,6 +137,11 @@
   object-fit: contain;
 }
 
+/* Figma 140:6947 — AI голова: скрыта на desktop, только mobile */
+.demo-prod-hero__ai {
+  display: none;
+}
+
 /* Section 2: Emotions (140:5316) */
 .demo-prod-emotions {
   position: relative;
@@ -165,29 +171,36 @@
 
 .demo-prod-emotions__card {
   width: 348px;
-  height: 447px;
+  min-height: 250px;
+  height: auto;
   background: #19161c;
   border-radius: 32px;
-  padding: 48px 36px;
+  padding: 28px 24px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
+  text-align: left;
+  gap: 22px;
 }
 
 .demo-prod-emotions__icon-wrap {
-  width: 125px;
-  height: 125px;
-  margin-bottom: 36px;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .demo-prod-emotions__icon {
-  width: 125px;
-  height: 125px;
+  width: 80px;
+  height: 80px;
   display: block;
+}
+
+.demo-prod-emotions__content {
+  flex: 1;
+  min-width: 0;
 }
 
 .demo-prod-emotions__h3 {
@@ -197,7 +210,7 @@
   font-weight: 700;
   line-height: 31.2px;
   letter-spacing: -0.72px;
-  color: #ffffff;
+  color: #ff7b00;
 }
 
 .demo-prod-emotions__p {
@@ -275,7 +288,7 @@
   font-weight: 700;
   line-height: 31.2px;
   letter-spacing: -0.72px;
-  color: #ffffff;
+  color: #ff7b00;
 }
 
 .demo-prod-solutions__p {
@@ -568,6 +581,10 @@
     top: auto !important;
     width: min(100%, 444px) !important;
     z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   .demo-prod-hero__title {
     width: 100% !important;
@@ -583,7 +600,15 @@
   }
   .demo-prod-hero__actions {
     display: flex !important;
+    justify-content: center !important;
     gap: 8px !important;
+    width: 100% !important;
+  }
+  .demo-prod-hero__title {
+    text-align: center !important;
+  }
+  .demo-prod-hero__subtitle {
+    text-align: center !important;
   }
   .demo-prod-hero__btn {
     width: auto !important;
@@ -622,10 +647,17 @@
     padding: clamp(24px, 2.5vw, 36px) clamp(20px, 2vw, 32px) !important;
   }
 
+  .demo-prod-emotions__card {
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+
   .demo-prod-emotions__icon-wrap {
     width: 60px;
     height: 60px;
-    margin-bottom: 24px;
+    flex-shrink: 0;
+    margin-bottom: 0;
   }
 
   .demo-prod-emotions__icon {
@@ -633,9 +665,15 @@
     height: 60px;
   }
 
+  .demo-prod-emotions__content {
+    flex: 1;
+    min-width: 0;
+  }
+
   .demo-prod-emotions__h3 {
     font-size: 18px;
     line-height: 23.4px;
+    color: #ff7b00 !important;
   }
 
   .demo-prod-emotions__p {
@@ -693,6 +731,7 @@
   .demo-prod-solutions__h3 {
     font-size: clamp(16px, 1.35vw, 20px) !important;
     line-height: 1.3 !important;
+    color: #ff7b00 !important;
   }
   .demo-prod-solutions__p {
     font-size: clamp(14px, 1.1vw, 16px) !important;
