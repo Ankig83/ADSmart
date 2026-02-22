@@ -1,0 +1,295 @@
+/*
+  ═══════════════════════════════════════════════════════════════════════════════
+  DESIGN PAGE — Desktop 1440+ Fluid
+  Figma 1440px эталон. clamp(min, calc(X * 100vw / 1440), max)
+  Hero без фона
+  ═══════════════════════════════════════════════════════════════════════════════
+*/
+@media (min-width: 1440px) {
+  .demo-design {
+    width: min(100%, clamp(1440px, 100vw, 2560px)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .demo-design-hero__bg {
+    display: none;
+  }
+
+  .demo-design-hero__overlay {
+    display: none;
+  }
+
+  /* Hero — fluid */
+  .demo-design-hero {
+    width: 100% !important;
+    height: clamp(702px, calc(702 * 100vw / 1440), 1250px) !important;
+  }
+
+  .demo-design-hero__content {
+    left: clamp(178px, calc(178 * 100vw / 1440), 317px) !important;
+    top: clamp(184px, calc(184 * 100vw / 1440), 328px) !important;
+    width: clamp(686px, calc(686 * 100vw / 1440), 1222px) !important;
+  }
+
+  .demo-design-hero__title {
+    margin: 0 0 clamp(88px, calc(88 * 100vw / 1440), 157px) !important;
+    font-size: clamp(65px, calc(65 * 100vw / 1440), 116px) !important;
+    line-height: clamp(84.5px, calc(84.5 * 100vw / 1440), 151px) !important;
+  }
+
+  .demo-design-hero__subtitle {
+    width: clamp(512px, calc(512 * 100vw / 1440), 911px) !important;
+    margin: 0 0 clamp(36px, calc(36 * 100vw / 1440), 64px) !important;
+    font-size: clamp(21px, calc(21 * 100vw / 1440), 37px) !important;
+    line-height: clamp(31.5px, calc(31.5 * 100vw / 1440), 56px) !important;
+  }
+
+  .demo-design-hero__actions {
+    gap: clamp(14px, calc(14 * 100vw / 1440), 25px) !important;
+  }
+
+  .demo-design-hero__btn {
+    width: clamp(177px, calc(177 * 100vw / 1440), 315px) !important;
+    height: clamp(52px, calc(52 * 100vw / 1440), 93px) !important;
+    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px) !important;
+    line-height: clamp(20px, calc(20 * 100vw / 1440), 36px) !important;
+  }
+
+  .demo-design-hero__image-wrap {
+    left: clamp(894px, calc(894 * 100vw / 1440), 1592px) !important;
+    top: clamp(144px, calc(144 * 100vw / 1440), 257px) !important;
+    width: clamp(473px, calc(473 * 100vw / 1440), 842px) !important;
+    height: clamp(444px, calc(444 * 100vw / 1440), 791px) !important;
+  }
+
+  .demo-design-hero__glow {
+    width: clamp(514px, calc(514 * 100vw / 1440), 916px) !important;
+    height: clamp(453px, calc(453 * 100vw / 1440), 806px) !important;
+  }
+
+  /* System */
+  .demo-design-system {
+    width: 100% !important;
+    height: auto !important;
+    min-height: clamp(670px, calc(670 * 100vw / 1440), 1194px) !important;
+    padding-top: clamp(100px, calc(100 * 100vw / 1440), 178px) !important;
+  }
+
+  .demo-design-system__inner {
+    width: clamp(1087px, calc(1087 * 100vw / 1440), 1937px) !important;
+    margin-left: clamp(177px, calc(177 * 100vw / 1440), 315px) !important;
+  }
+
+  .demo-design-system__title {
+    width: clamp(974px, calc(974 * 100vw / 1440), 1735px) !important;
+    margin: 0 0 clamp(51px, calc(51 * 100vw / 1440), 91px) !important;
+    font-size: clamp(48px, calc(48 * 100vw / 1440), 85px) !important;
+    line-height: clamp(62.4px, calc(62.4 * 100vw / 1440), 111px) !important;
+  }
+
+  .demo-design-system__content {
+    gap: clamp(64px, calc(64 * 100vw / 1440), 114px) !important;
+  }
+
+  .demo-design-system__left {
+    width: clamp(519px, calc(519 * 100vw / 1440), 924px) !important;
+  }
+
+  .demo-design-system__text {
+    margin: clamp(32px, calc(32 * 100vw / 1440), 57px) 0 0 !important;
+    font-size: clamp(21px, calc(21 * 100vw / 1440), 37px) !important;
+    line-height: clamp(31.5px, calc(31.5 * 100vw / 1440), 56px) !important;
+  }
+
+  .demo-design-system__right {
+    width: clamp(504px, calc(504 * 100vw / 1440), 897px) !important;
+    height: clamp(295px, calc(295 * 100vw / 1440), 525px) !important;
+  }
+
+  /* Cycle */
+  .demo-design-cycle {
+    width: 100% !important;
+    height: auto !important;
+    min-height: clamp(817px, calc(817 * 100vw / 1440), 1456px) !important;
+    padding-top: clamp(100px, calc(100 * 100vw / 1440), 178px) !important;
+  }
+
+  .demo-design-cycle__title {
+    width: clamp(960px, calc(960 * 100vw / 1440), 1710px) !important;
+    margin: 0 0 clamp(58px, calc(58 * 100vw / 1440), 103px) clamp(177px, calc(177 * 100vw / 1440), 315px) !important;
+    font-size: clamp(48px, calc(48 * 100vw / 1440), 85px) !important;
+    line-height: clamp(62.4px, calc(62.4 * 100vw / 1440), 111px) !important;
+  }
+
+  .demo-design-cycle__grid {
+    width: clamp(1089px, calc(1089 * 100vw / 1440), 1939px) !important;
+    gap: clamp(22px, calc(22 * 100vw / 1440), 39px) !important;
+  }
+
+  .demo-design-cycle__card {
+    width: clamp(348px, calc(348 * 100vw / 1440), 620px) !important;
+    height: clamp(525px, calc(525 * 100vw / 1440), 935px) !important;
+    padding: clamp(48px, calc(48 * 100vw / 1440), 85px) clamp(19px, calc(19 * 100vw / 1440), 34px) !important;
+  }
+
+  .demo-design-cycle__icon-wrap {
+    width: clamp(125px, calc(125 * 100vw / 1440), 223px) !important;
+    height: clamp(125px, calc(125 * 100vw / 1440), 223px) !important;
+    margin-bottom: clamp(36px, calc(36 * 100vw / 1440), 64px) !important;
+  }
+
+  .demo-design-cycle__icon {
+    width: clamp(125px, calc(125 * 100vw / 1440), 223px) !important;
+    height: clamp(125px, calc(125 * 100vw / 1440), 223px) !important;
+  }
+
+  .demo-design-cycle__h3 {
+    width: clamp(309px, calc(309 * 100vw / 1440), 551px) !important;
+    margin: 0 0 clamp(12px, calc(12 * 100vw / 1440), 21px) !important;
+    font-size: clamp(24px, calc(24 * 100vw / 1440), 43px) !important;
+    line-height: clamp(31.2px, calc(31.2 * 100vw / 1440), 56px) !important;
+  }
+
+  .demo-design-cycle__p {
+    width: clamp(309px, calc(309 * 100vw / 1440), 551px) !important;
+    font-size: clamp(16px, calc(16 * 100vw / 1440), 28px) !important;
+    line-height: clamp(26px, calc(26 * 100vw / 1440), 46px) !important;
+  }
+
+  /* How */
+  .demo-design-how {
+    width: 100% !important;
+    height: auto !important;
+    min-height: clamp(712px, calc(712 * 100vw / 1440), 1268px) !important;
+    padding-top: clamp(100px, calc(100 * 100vw / 1440), 178px) !important;
+  }
+
+  .demo-design-how__title {
+    width: clamp(819px, calc(819 * 100vw / 1440), 1459px) !important;
+    margin: 0 0 clamp(68px, calc(68 * 100vw / 1440), 121px) clamp(177px, calc(177 * 100vw / 1440), 315px) !important;
+    font-size: clamp(48px, calc(48 * 100vw / 1440), 85px) !important;
+    line-height: clamp(62.4px, calc(62.4 * 100vw / 1440), 111px) !important;
+  }
+
+  .demo-design-how__grid {
+    width: clamp(1088px, calc(1088 * 100vw / 1440), 1938px) !important;
+    gap: clamp(30px, calc(30 * 100vw / 1440), 53px) !important;
+  }
+
+  .demo-design-how__card {
+    width: clamp(249px, calc(249 * 100vw / 1440), 443px) !important;
+  }
+
+  .demo-design-how__ring {
+    width: clamp(163px, calc(163 * 100vw / 1440), 290px) !important;
+    height: clamp(163px, calc(163 * 100vw / 1440), 290px) !important;
+    margin-bottom: clamp(17px, calc(17 * 100vw / 1440), 30px) !important;
+  }
+
+  .demo-design-how__icon {
+    width: clamp(80px, calc(80 * 100vw / 1440), 142px) !important;
+    height: clamp(80px, calc(80 * 100vw / 1440), 142px) !important;
+  }
+
+  .demo-design-how__h3 {
+    margin: 0 0 clamp(22px, calc(22 * 100vw / 1440), 39px) !important;
+    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px) !important;
+    line-height: clamp(23.4px, calc(23.4 * 100vw / 1440), 42px) !important;
+  }
+
+  .demo-design-how__p {
+    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px) !important;
+    line-height: clamp(23.4px, calc(23.4 * 100vw / 1440), 42px) !important;
+  }
+
+  /* Target */
+  .demo-design-target {
+    width: 100% !important;
+    height: auto !important;
+    min-height: clamp(824px, calc(824 * 100vw / 1440), 1468px) !important;
+    padding-top: clamp(100px, calc(100 * 100vw / 1440), 178px) !important;
+  }
+
+  .demo-design-target__title {
+    width: clamp(917px, calc(917 * 100vw / 1440), 1634px) !important;
+    margin: 0 0 clamp(58px, calc(58 * 100vw / 1440), 103px) clamp(177px, calc(177 * 100vw / 1440), 315px) !important;
+    font-size: clamp(48px, calc(48 * 100vw / 1440), 85px) !important;
+    line-height: clamp(62.4px, calc(62.4 * 100vw / 1440), 111px) !important;
+  }
+
+  .demo-design-target__grid {
+    width: clamp(1088px, calc(1088 * 100vw / 1440), 1938px) !important;
+    gap: clamp(22px, calc(22 * 100vw / 1440), 39px) !important;
+  }
+
+  .demo-design-target__card {
+    width: clamp(533px, calc(533 * 100vw / 1440), 949px) !important;
+    height: clamp(250px, calc(250 * 100vw / 1440), 445px) !important;
+    padding: clamp(44px, calc(44 * 100vw / 1440), 78px) clamp(36px, calc(36 * 100vw / 1440), 64px) !important;
+    gap: clamp(22px, calc(22 * 100vw / 1440), 39px) !important;
+  }
+
+  .demo-design-target__icon {
+    width: clamp(100px, calc(100 * 100vw / 1440), 178px) !important;
+    height: clamp(100px, calc(100 * 100vw / 1440), 178px) !important;
+  }
+
+  .demo-design-target__h3 {
+    margin: 0 0 clamp(22px, calc(22 * 100vw / 1440), 39px) !important;
+    font-size: clamp(24px, calc(24 * 100vw / 1440), 43px) !important;
+  }
+
+  .demo-design-target__p {
+    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px) !important;
+    line-height: clamp(21.6px, calc(21.6 * 100vw / 1440), 38px) !important;
+  }
+
+  /* CTA */
+  .demo-design-cta {
+    width: 100% !important;
+    height: auto !important;
+    min-height: clamp(581px, calc(581 * 100vw / 1440), 1035px) !important;
+    padding: clamp(100px, calc(100 * 100vw / 1440), 178px) clamp(177px, calc(177 * 100vw / 1440), 315px) !important;
+  }
+
+  .demo-design-cta__inner {
+    width: clamp(1086px, calc(1086 * 100vw / 1440), 1935px) !important;
+    height: clamp(381px, calc(381 * 100vw / 1440), 679px) !important;
+    border-radius: clamp(32px, calc(32 * 100vw / 1440), 57px) !important;
+  }
+
+  .demo-design-cta__title {
+    width: clamp(916px, calc(916 * 100vw / 1440), 1632px) !important;
+    margin: 0 0 clamp(24px, calc(24 * 100vw / 1440), 43px) !important;
+    font-size: clamp(48px, calc(48 * 100vw / 1440), 85px) !important;
+    line-height: clamp(48px, calc(48 * 100vw / 1440), 85px) !important;
+  }
+
+  .demo-design-cta__text {
+    width: clamp(916px, calc(916 * 100vw / 1440), 1632px) !important;
+    margin: 0 0 clamp(34px, calc(34 * 100vw / 1440), 61px) !important;
+    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px) !important;
+    line-height: clamp(21.6px, calc(21.6 * 100vw / 1440), 38px) !important;
+  }
+
+  .demo-design-cta__actions {
+    gap: clamp(12px, calc(12 * 100vw / 1440), 21px) !important;
+  }
+
+  .demo-design-cta__btn {
+    width: clamp(218px, calc(218 * 100vw / 1440), 388px) !important;
+    height: clamp(52px, calc(52 * 100vw / 1440), 93px) !important;
+    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px) !important;
+    line-height: clamp(20px, calc(20 * 100vw / 1440), 36px) !important;
+  }
+
+  .demo-design-cta__btn--primary {
+    width: clamp(250px, calc(250 * 100vw / 1440), 445px) !important;
+  }
+
+  .demo-design-cta__btn--outline {
+    width: clamp(232px, calc(232 * 100vw / 1440), 413px) !important;
+  }
+}

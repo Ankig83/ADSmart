@@ -1,0 +1,497 @@
+/*
+  ═══════════════════════════════════════════════════════════════════════════════
+  PRINT PAGE — Tablet 834-1439px Fluid
+  Figma 140:7922 Печать и полиграфия. clamp(min, calc(X * 100vw / 834), max)
+  ═══════════════════════════════════════════════════════════════════════════════
+*/
+@media (min-width: 834px) and (max-width: 1439px) {
+  .app { background: #000000 !important; }
+  .app__main { padding: 0 !important; }
+
+  .demo-print {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    background: #000000 !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Hero — 140:7923 Blok1: фон + overlay, космонавт скрыт */
+  .demo-print-hero {
+    width: 100% !important;
+    margin: 0 auto !important;
+    height: clamp(435px, calc(435 * 100vw / 834), 751px) !important;
+    padding: clamp(86px, calc(86 * 100vw / 834), 148px) clamp(32px, calc(32 * 100vw / 834), 55px) clamp(52px, calc(52 * 100vw / 834), 90px) !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    background: #000000 !important;
+  }
+  .demo-print-hero__bg {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+  }
+  .demo-print-hero__bg-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .demo-print-hero__overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 58%,
+      rgba(0, 0, 0, 0.05) 100%
+    ) !important;
+    pointer-events: none !important;
+  }
+  .demo-print-hero__content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: min(100%, clamp(444px, calc(444 * 100vw / 834), 767px)) !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .demo-print-hero__title {
+    width: 100% !important;
+    margin: 0 0 clamp(24px, calc(24 * 100vw / 834), 41px) !important;
+    font-size: clamp(32px, calc(32 * 100vw / 834), 55px) !important;
+    font-weight: 800 !important;
+    line-height: 130% !important;
+    letter-spacing: 0.48px !important;
+    color: #ffffff !important;
+  }
+  .demo-print-hero__subtitle {
+    width: 100% !important;
+    max-width: clamp(337px, calc(337 * 100vw / 834), 582px) !important;
+    margin: 0 0 clamp(24px, calc(24 * 100vw / 834), 41px) !important;
+    font-size: clamp(16px, calc(16 * 100vw / 834), 28px) !important;
+    line-height: 1.5 !important;
+    color: #c4c4c4 !important;
+  }
+  /* Hero buttons — Frame 427321900: 324×56, gap 8 */
+  .demo-print-hero__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    width: clamp(280px, calc(324 * 100vw / 834), 560px) !important;
+    height: 56px !important;
+  }
+  .demo-print-hero__btn {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 16px 32px !important;
+    gap: 10px !important;
+    border-radius: 64px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    letter-spacing: -0.02em !important;
+  }
+  .demo-print-hero__btn--primary {
+    width: 152px !important;
+    height: 56px !important;
+    background: #14f195 !important;
+    line-height: 24px !important;
+    color: #000000 !important;
+  }
+  .demo-print-hero__btn--outline {
+    width: 164px !important;
+    height: 52px !important;
+    background: transparent !important;
+    border: 1px solid #ffffff !important;
+    line-height: 20px !important;
+    text-align: center !important;
+    color: #ffffff !important;
+  }
+  .demo-print-hero__image-wrap {
+    display: none !important;
+  }
+
+  /* System — 140:7935 Blok2 */
+  .demo-print-system {
+    width: 100% !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, calc(44 * 100vw / 834), 76px) clamp(32px, calc(32 * 100vw / 834), 55px) !important;
+    box-sizing: border-box !important;
+    background: #000000 !important;
+  }
+  .demo-print-system__inner {
+    width: 100% !important;
+    margin: 0 auto !important;
+    max-width: clamp(770px, calc(770 * 100vw / 834), 1330px) !important;
+  }
+  .demo-print-system__title {
+    width: 100% !important;
+    margin: 0 0 clamp(24px, calc(24 * 100vw / 834), 41px) !important;
+    font-size: clamp(24px, calc(24 * 100vw / 834), 41px) !important;
+    line-height: 1.3 !important;
+    color: #ffffff !important;
+  }
+  .demo-print-system__rows {
+    flex-direction: column !important;
+    gap: clamp(36px, calc(36 * 100vw / 834), 62px) !important;
+  }
+  .demo-print-system__row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: clamp(24px, calc(24 * 100vw / 834), 41px) !important;
+  }
+  .demo-print-system__row--reverse,
+  .demo-print-system__row--why {
+    flex-direction: column !important;
+  }
+  .demo-print-system__col--text,
+  .demo-print-system__col--img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .demo-print-system__img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: clamp(200px, calc(200 * 100vw / 834), 345px) !important;
+    border-radius: 12px !important;
+  }
+  .demo-print-system__why {
+    width: 100% !important;
+  }
+  .demo-print-system__p,
+  .demo-print-system__item {
+    font-size: clamp(16px, calc(16 * 100vw / 834), 28px) !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Solutions 140:7946 — fluid */
+  .demo-print-solutions {
+    width: 100% !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: clamp(44px, 5.3vw, 76px) clamp(32px, 2.6vw, 55px) !important;
+    box-sizing: border-box !important;
+    background: #000000 !important;
+  }
+  .demo-print-solutions__title {
+    width: 100% !important;
+    max-width: min(100%, clamp(770px, 78vw, 1086px)) !important;
+    margin: 0 auto clamp(42px, 5vw, 56px) !important;
+    padding-left: 0 !important;
+    font-size: clamp(28px, 3.84vw, 48px) !important;
+    font-weight: 600 !important;
+    line-height: 130% !important;
+    letter-spacing: -0.96px !important;
+    color: #ffffff !important;
+  }
+  .demo-print-solutions__grid {
+    display: grid !important;
+    width: 100% !important;
+    max-width: min(100%, clamp(770px, 78vw, 1086px)) !important;
+    margin: 0 auto !important;
+    grid-template-columns: 1fr !important;
+    gap: clamp(16px, 1.9vw, 28px) !important;
+  }
+  /* Figma 140:6893 — strokes: [], cornerRadius 12 */
+  .demo-print-solutions__card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: clamp(28px, calc(35 * 100vw / 834), 60px) clamp(14px, calc(14 * 100vw / 834), 24px) !important;
+    gap: clamp(10px, calc(12 * 100vw / 834), 21px) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    background: #19161c !important;
+    border: none !important;
+    border-radius: 12px !important;
+  }
+  .demo-print-solutions__icon-wrap {
+    order: -1 !important;
+    width: clamp(48px, calc(65 * 100vw / 834), 65px) !important;
+    height: clamp(48px, calc(65 * 100vw / 834), 65px) !important;
+    min-width: clamp(48px, calc(65 * 100vw / 834), 65px) !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .demo-print-solutions__icon {
+    width: clamp(48px, calc(65 * 100vw / 834), 65px) !important;
+    height: clamp(48px, calc(65 * 100vw / 834), 65px) !important;
+  }
+  .demo-print-solutions__content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: clamp(12px, calc(16 * 100vw / 834), 28px) !important;
+  }
+  .demo-print-solutions__h3 {
+    font-size: clamp(18px, calc(22 * 100vw / 834), 32px) !important;
+    font-weight: 700 !important;
+    line-height: 130% !important;
+    letter-spacing: -0.03em !important;
+    color: #ffffff !important;
+  }
+  .demo-print-solutions__p {
+    font-size: clamp(15px, calc(18 * 100vw / 834), 28px) !important;
+    font-weight: 400 !important;
+    line-height: 130% !important;
+    letter-spacing: -0.03em !important;
+    color: #c9cad6 !important;
+  }
+
+  /* How 140:7955/140:7956 — fluid */
+  .demo-print-how {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: clamp(44px, calc(44 * 100vw / 834), 76px) clamp(32px, calc(32 * 100vw / 834), 55px) !important;
+    box-sizing: border-box !important;
+    background: #000000 !important;
+  }
+  .demo-print-how__title {
+    width: 100% !important;
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px)) !important;
+    margin: 0 auto clamp(42px, calc(42 * 100vw / 834), 72px) 0 !important;
+    font-size: clamp(28px, calc(32 * 100vw / 834), 48px) !important;
+    font-weight: 600 !important;
+    line-height: 130% !important;
+    letter-spacing: 0.48px !important;
+    color: #ffffff !important;
+  }
+  .demo-print-how__grid {
+    width: 100% !important;
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px)) !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    gap: clamp(12px, calc(12 * 100vw / 834), 21px) !important;
+  }
+    .demo-print-how__card {
+    flex: 1 !important;
+    min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  /* Убираем gap, будем использовать margin */
+}
+
+  .demo-print-how__ring {
+    width: clamp(70px, calc(94 * 100vw / 834), 94px) !important;
+    height: clamp(70px, calc(94 * 100vw / 834), 94px) !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #19161c !important;
+    border: 3px solid #ff7b00 !important;
+    border-radius: 50% !important;
+    box-sizing: border-box !important;
+    margin: 0 0 clamp(12px, calc(17 * 100vw / 834), 29px) 0 !important;
+  }
+  .demo-print-how__icon {
+    width: clamp(32px, calc(42 * 100vw / 834), 42px) !important;
+    height: clamp(32px, calc(42 * 100vw / 834), 42px) !important;
+    object-fit: contain !important;
+  }
+  .demo-print-how__h3 {
+    margin: 0 0 clamp(12px, calc(16 * 100vw / 834), 28px) 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: clamp(16px, calc(18 * 100vw / 834), 24px) !important;
+    line-height: 130% !important;
+    letter-spacing: -0.03em !important;
+    color: #ffffff !important;
+  }
+  .demo-print-how__p {
+    margin: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: clamp(13px, calc(14 * 100vw / 834), 24px) !important;
+    line-height: 130% !important;
+    letter-spacing: -0.03em !important;
+    color: #c9cad6 !important;
+  }
+
+  /* Contact 140:7984 — fluid */
+  .demo-print-contact {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: clamp(44px, calc(44 * 100vw / 834), 76px) clamp(32px, calc(32 * 100vw / 834), 55px) !important;
+    box-sizing: border-box !important;
+    background: #000000 !important;
+  }
+  .demo-print-contact__inner {
+    width: 100% !important;
+    max-width: min(100%, clamp(736px, calc(736 * 100vw / 834), 1272px)) !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) clamp(320px, calc(406 * 100vw / 834), 406px) !important;
+    grid-template-rows: auto auto !important;
+    column-gap: clamp(24px, calc(32 * 100vw / 834), 55px) !important;
+    row-gap: 0 !important;
+    align-items: start !important;
+  }
+  .demo-print-contact__title {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    max-width: 330px !important;
+    font-size: clamp(26px, calc(32 * 100vw / 834), 48px) !important;
+    font-weight: 600 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.03em !important;
+    color: #ffffff !important;
+    margin: 0 0 clamp(22px, calc(22 * 100vw / 834), 38px) 0 !important;
+  }
+  .demo-print-contact__text {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    max-width: 330px !important;
+    font-size: clamp(16px, calc(18 * 100vw / 834), 28px) !important;
+    font-weight: 400 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.03em !important;
+    color: #c4c4c4 !important;
+    margin: 0 !important;
+  }
+  .demo-print-contact__form {
+    grid-column: 2 !important;
+    grid-row: 1 / -1 !important;
+    align-self: center !important;
+    box-sizing: border-box !important;
+    width: clamp(320px, calc(406 * 100vw / 834), 406px) !important;
+    height: clamp(340px, calc(412 * 100vw / 834), 412px) !important;
+    background: #19161c !important;
+    border: 1px solid #ff7b00 !important;
+    border-radius: 12px !important;
+    padding: 32px 14px 36px !important;
+    position: relative !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .demo-print-contact__form-title {
+    position: absolute !important;
+    left: 50% !important;
+    top: clamp(24px, 7.5%, 31px) !important;
+    transform: translateX(-50%) !important;
+    width: 302px !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    line-height: 130% !important;
+    letter-spacing: -0.03em !important;
+    color: #ffffff !important;
+    text-align: center !important;
+  }
+  .demo-print-contact__row,
+  .demo-print-contact__actions {
+    display: block !important;
+    margin: 0 !important;
+  }
+  .demo-print-contact__row .demo-print-contact__field,
+  .demo-print-contact__field--full {
+    position: absolute !important;
+    left: clamp(14px, 3.4%, 24px) !important;
+    width: calc(100% - clamp(28px, 6.9%, 48px)) !important;
+    max-width: 379px !important;
+    height: clamp(48px, calc(56 * 100vw / 834), 56px) !important;
+    margin: 0 !important;
+  }
+  .demo-print-contact__row .demo-print-contact__field:nth-child(1) {
+    top: 21% !important;
+  }
+  .demo-print-contact__row .demo-print-contact__field:nth-child(2) {
+    top: 39% !important;
+  }
+  .demo-print-contact__field--full:has([name="company"]) {
+    top: 57% !important;
+  }
+  /* Figma 834: скрыть 4-й инпут */
+  .demo-print-contact__field--full:has([name="interest_format"]) {
+    display: none !important;
+  }
+  .demo-print-contact__input {
+    width: 100% !important;
+    max-width: 379px !important;
+    height: clamp(48px, calc(56 * 100vw / 834), 56px) !important;
+    padding: 18px 22px !important;
+    background: transparent !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 12px !important;
+    font-size: 18px !important;
+    box-sizing: border-box !important;
+    color: #ffffff !important;
+  }
+  /* Figma 140:6926 — надписи внутри инпутов */
+  .demo-print-contact__input::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+  }
+  .demo-print-contact__btn {
+    /* Кнопка: bottom 36px */
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 36px !important;
+    transform: translateX(-50%) !important;
+    width: min(220px, calc(100% - 28px)) !important;
+    max-width: calc(100% - 28px) !important;
+    height: 56px !important;
+    padding: 18px 22px !important;
+    background: #14f195 !important;
+    border-radius: 100px !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #000000 !important;
+  }
+}
+
+/* MCP hard lock: 140:7990 — fluid form */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-print-contact .demo-print-contact__form {
+    width: clamp(320px, calc(406 * 100vw / 834), 406px) !important;
+    height: clamp(340px, calc(412 * 100vw / 834), 412px) !important;
+    border: 1px solid #ff7b00 !important;
+    border-radius: 12px !important;
+  }
+  .demo-print-contact .demo-print-contact__form-title {
+    position: absolute !important;
+    left: 50% !important;
+    top: 31px !important;
+    transform: translateX(-50%) !important;
+  }
+  .demo-print-contact .demo-print-contact__field,
+  .demo-print-contact .demo-print-contact__field--full {
+    position: absolute !important;
+    left: clamp(14px, 3.4%, 24px) !important;
+    width: calc(100% - clamp(28px, 6.9%, 48px)) !important;
+    max-width: 379px !important;
+    height: clamp(48px, calc(56 * 100vw / 834), 56px) !important;
+  }
+  .demo-print-contact .demo-print-contact__input {
+    padding: 18px 22px !important;
+    box-sizing: border-box !important;
+  }
+  .demo-print-contact .demo-print-contact__btn {
+    left: 50% !important;
+    bottom: 36px !important;
+    transform: translateX(-50%) !important;
+    width: min(220px, calc(100% - 28px)) !important;
+    height: 56px !important;
+  }
+}

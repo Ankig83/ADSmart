@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/print.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/print-desktop.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/print-tablet-lock.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/print-mobile-lock.css' %}" />
 {% endblock %}
 
@@ -50,9 +52,9 @@
         <div class="demo-print-hero__glow"></div>
         <img
           class="demo-print-hero__img"
-          src="{% static 'assets/images/print-hero.png' %}"
+          src="{% static 'assets/images/vecteezy-3d-cute-astronaut-isolated-47307951-1-aa07456d.png' %}"
           alt=""
-          width="473"
+          width="556"
           height="556"
           loading="eager"
           decoding="async"
@@ -242,31 +244,28 @@
           {% csrf_token %}
           <input type="hidden" name="source" value="print_contact" />
           <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+          <p class="demo-print-contact__form-title">Обсудим ваш проект?</p>
 
           <div class="demo-print-contact__row">
             <label class="demo-print-contact__field">
               <span class="sr-only">Имя</span>
-              <input class="demo-print-contact__input" type="text" name="name" placeholder=" " autocomplete="name" />
-              <span class="demo-print-contact__ph" aria-hidden="true">Имя</span>
+              <input class="demo-print-contact__input" type="text" name="name" placeholder="Имя" autocomplete="name" />
             </label>
 
             <label class="demo-print-contact__field">
               <span class="sr-only">Телефон</span>
-              <input class="demo-print-contact__input" type="tel" name="phone" placeholder=" " autocomplete="tel" required />
-              <span class="demo-print-contact__ph" aria-hidden="true">Телефон</span>
+              <input class="demo-print-contact__input" type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required />
             </label>
           </div>
 
           <label class="demo-print-contact__field demo-print-contact__field--full">
             <span class="sr-only">Сфера бизнеса</span>
-            <input class="demo-print-contact__input" type="text" name="company" placeholder=" " />
-            <span class="demo-print-contact__ph" aria-hidden="true">Сфера бизнеса</span>
+            <input class="demo-print-contact__input" type="text" name="company" placeholder="Сфера бизнеса" />
           </label>
 
           <label class="demo-print-contact__field demo-print-contact__field--full">
             <span class="sr-only">Какую задачу решаем?</span>
-            <input class="demo-print-contact__input" type="text" name="interest_format" placeholder=" " />
-            <span class="demo-print-contact__ph" aria-hidden="true">Какую задачу решаем?</span>
+            <input class="demo-print-contact__input" type="text" name="interest_format" placeholder="Какую задачу решаем?" />
           </label>
 
           <div class="demo-print-contact__actions">

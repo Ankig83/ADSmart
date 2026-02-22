@@ -1,0 +1,49 @@
+{
+  "source": "Figma node 140:6863 (Печать и полиграфия mobile 440px), fileKey RgixkfQjBcvWPRvylxy0u8",
+  "extracted_at": "2026-02-22",
+  "hero_frame": {
+    "id": "140:6865",
+    "name": "#2",
+    "type": "FRAME",
+    "dimensions": {
+      "width": 440,
+      "height": 483
+    },
+    "absoluteBoundingBox": {
+      "x": 13192,
+      "y": 9247,
+      "width": 440,
+      "height": 483
+    },
+    "layout": "No layoutMode; contains stacked children (AI group + content overlay)"
+  },
+  "background_image": {
+    "node_id": "140:6868",
+    "node_name": "vecteezy_ai-chip-with-half-brain-symbolizing-artificial-intelligence_71143548 1",
+    "type": "RECTANGLE",
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "aa07456d0efb0162db7c5a034a838d5abbc305ae"
+      }
+    ],
+    "absoluteBoundingBox": {
+      "x": 13426,
+      "y": 9351,
+      "width": 274,
+      "height": 274
+    },
+    "preserveRatio": true,
+    "targetAspectRatio": { "x": 4000, "y": 4000 },
+    "constraints": { "vertical": "TOP", "horizontal": "LEFT" },
+    "parent_group": "AI (140:6866)"
+  },
+  "summary": {
+    "scaleMode": "FILL",
+    "imageRef": "aa07456d0efb0162db7c5a034a838d5abbc305ae",
+    "dimensions": { "width": 440, "height": 483 },
+    "object_position": "Figma does not expose object-position in API. Image node has constraints TOP/LEFT; positioned at right side of hero (x=13426 vs frame left=13192). For CSS: use object-position: right center when implementing as full-bleed hero background."
+  }
+}
