@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/ai_assistants.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/ai_assistants-tablet-lock.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/ai_assistants-mobile-lock.css' %}" />
 {% endblock %}
 
@@ -20,11 +21,18 @@
     <section class="demo-ai-hero" aria-labelledby="ai-hero-title">
       <div class="demo-ai-hero__bg" aria-hidden="true">
         <img
-          class="demo-ai-hero__bg-img"
+          class="demo-ai-hero__bg-img demo-ai-hero__bg-img--desktop"
           src="{% static 'assets/images/figma-1-5462128d.png' %}"
           alt=""
           width="1440"
           height="751"
+          loading="eager"
+          decoding="async"
+        />
+        <img
+          class="demo-ai-hero__bg-img demo-ai-hero__bg-img--mobile"
+          src="{% static 'assets/images/2-55cbcda6.png' %}"
+          alt=""
           loading="eager"
           decoding="async"
         />

@@ -48,15 +48,21 @@
 
       <div class="demo-tg-hero__image-wrap" aria-hidden="true">
         <div class="demo-tg-hero__glow"></div>
-        <img
-          class="demo-tg-hero__img"
-          src="{% static 'assets/images/telegram-hero.png' %}"
-          alt=""
-          width="473"
-          height="519"
-          loading="eager"
-          decoding="async"
-        />
+        <picture>
+          <source
+            media="(max-width: 833px)"
+            srcset="{% static 'assets/images/20251228_1514_image 1.png.png' %}"
+          />
+          <img
+            class="demo-tg-hero__img"
+            src="{% static 'assets/images/telegram-hero.png' %}"
+            alt=""
+            width="473"
+            height="519"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
       </div>
     </section>
 

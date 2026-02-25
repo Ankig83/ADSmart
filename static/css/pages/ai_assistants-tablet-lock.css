@@ -35,6 +35,25 @@
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    display: block !important;
+  }
+  .demo-ai-hero__bg-img--desktop {
+    display: block !important;
+  }
+  .demo-ai-hero__bg-img--mobile {
+    display: none !important;
+  }
+  .demo-ai-hero__overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 58%,
+      rgba(0, 0, 0, 0.05) 100%
+    ) !important;
+    pointer-events: none !important;
+    display: block !important;
   }
   .demo-ai-hero__content {
     position: relative !important;

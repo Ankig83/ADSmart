@@ -184,7 +184,7 @@
   .demo-prod-emotions__p {
     font-size: clamp(14px, calc(14 * 100vw / 834), 24px) !important;
     line-height: 1.5 !important;
-    color: #ffffff !important;
+    color: #C4C4C4 !important;
   }
 
   /* Solutions — 140:8019 Blok5 */
@@ -250,7 +250,7 @@
   .demo-prod-solutions__p {
     font-size: clamp(14px, calc(14 * 100vw / 834), 24px) !important;
     line-height: 1.5 !important;
-    color: #ffffff !important;
+    color: #C4C4C4 !important;
   }
 
   /* How — 140:8028 Block2, 140:8029 Frame 427321839 */

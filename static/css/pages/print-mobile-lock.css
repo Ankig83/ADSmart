@@ -228,27 +228,32 @@
     width: 100% !important;
     max-width: min(clamp(297px, calc(408 * 100vw / 440), 773px), calc(100vw - 32px)) !important;
     margin: 0 auto !important;
+    display: grid !important;
     grid-template-columns: 1fr !important;
     gap: clamp(16px, calc(16 * 100vw / 440), 28px) !important;
   }
   /* Figma 140:6893 — strokes: [], padding 14/35, cornerRadius 12 */
   .demo-print-solutions__card {
     width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    padding: clamp(14px, calc(35 * 100vw / 440), 50px) clamp(14px, calc(14 * 100vw / 440), 24px) !important;
+    position: relative !important;
+    border-radius: 12px !important;
+    background-color: #19161c !important;
+    overflow: hidden !important;
     display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
+    align-items: center !important;
+    padding: clamp(28px, calc(35 * 100vw / 440), 50px) clamp(14px, calc(14 * 100vw / 440), 24px) !important;
+    box-sizing: border-box !important;
     gap: clamp(12px, calc(12 * 100vw / 440), 20px) !important;
-    border: none !important;
+    text-align: left !important;
+    font-size: 18px !important;
+    color: #fff !important;
+    font-family: Poppins !important;
   }
   .demo-print-solutions__icon-wrap {
-    order: 0 !important;
-    flex-shrink: 0 !important;
     width: clamp(48px, calc(65 * 100vw / 440), 80px) !important;
-    height: clamp(48px, calc(65 * 100vw / 440), 80px) !important;
-    min-width: clamp(48px, calc(65 * 100vw / 440), 80px) !important;
+    position: relative !important;
+    max-height: 100% !important;
+    flex-shrink: 0 !important;
   }
   .demo-print-solutions__icon {
     width: 100% !important;
@@ -257,16 +262,31 @@
   }
   .demo-print-solutions__content {
     flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: clamp(12px, calc(16 * 100vw / 440), 20px) !important;
     min-width: 0 !important;
-    text-align: left !important;
   }
   .demo-print-solutions__h3 {
+    align-self: stretch !important;
+    position: relative !important;
     font-size: clamp(16px, calc(20 * 100vw / 440), 28px) !important;
-    margin: 0 0 clamp(8px, calc(10 * 100vw / 440), 14px) !important;
+    margin: 0 !important;
+    letter-spacing: -0.03em !important;
+    line-height: 130% !important;
+    font-weight: 700 !important;
+    color: #fff !important;
   }
   .demo-print-solutions__p {
+    align-self: stretch !important;
+    position: relative !important;
     font-size: clamp(14px, calc(16 * 100vw / 440), 22px) !important;
-    line-height: 1.4 !important;
+    letter-spacing: -0.03em !important;
+    line-height: 130% !important;
+    color: #C4C4C4 !important;
+    margin: 0 !important;
   }
 
   /* How Block4 */

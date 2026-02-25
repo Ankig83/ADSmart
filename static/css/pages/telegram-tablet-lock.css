@@ -123,7 +123,7 @@
   .demo-tg-why__p {
     font-size: clamp(16px, 1.2vw, 18px) !important;
     line-height: 1.4 !important;
-    color: #c9cad6 !important;
+    color: #C4C4C4 !important;
   }
 
   /* 140:7771 Blok5 Approach (4 cards, 2×2) — больше внимание */
@@ -170,7 +170,7 @@
   .demo-tg-approach__p {
     font-size: clamp(16px, 1.2vw, 18px) !important;
     line-height: 1.4 !important;
-    color: #c9cad6 !important;
+    color: #C4C4C4 !important;
   }
 
   /* 140:7780 Block2 Benefits */
@@ -216,7 +216,7 @@
   .demo-tg-benefits__p {
     font-size: clamp(14px, 1.05vw, 16px) !important;
     line-height: 1.4 !important;
-    color: #c9cad6 !important;
+    color: #C4C4C4 !important;
   }
 
   /* 140:7808 Blok5 Comparison — Figma design/node-140-7808.json */

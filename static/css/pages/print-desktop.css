@@ -326,7 +326,7 @@
     font-weight: 400;
     line-height: clamp(23.4px, calc(23.4 * 100vw / 1440), 42px);
     letter-spacing: -0.54px;
-    color: #ffffff;
+    color: #C4C4C4;
   }
 
   /* Section 4: How (140:5258) */

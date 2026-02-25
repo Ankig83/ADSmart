@@ -31,6 +31,19 @@
     overflow: hidden !important;
     border-radius: 0 !important;
   }
+  .demo-tg-hero::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.8) 4.38%,
+      rgba(0, 0, 0, 0.619) 28.02%,
+      rgba(0, 0, 0, 0.4) 56.72%,
+      rgba(0, 0, 0, 0.1) 66.25%
+    ) !important;
+  }
   .demo-tg-hero__bg {
     position: absolute !important;
     inset: 0 !important;
@@ -43,6 +56,8 @@
   .demo-tg-hero__bg-img {
     display: none !important;
   }
+
+  /* Content — left 16px, top 50%, z-index 3 (выше шара) */
   .demo-tg-hero__content {
     position: absolute !important;
     left: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
@@ -50,21 +65,20 @@
     transform: translateY(-50%) !important;
     width: clamp(286px, calc(408 * 100vw / 440), 612px) !important;
     max-width: calc(100% - 32px) !important;
-    z-index: 2 !important;
+    z-index: 3 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     padding: 0 !important;
-    gap: clamp(29px, calc(41 * 100vw / 440), 62px) !important;
+    gap: clamp(13px, calc(18 * 100vw / 440), 27px) !important;
   }
   .demo-tg-hero__title {
-    width: 100% !important;
-    max-width: clamp(286px, calc(408 * 100vw / 440), 612px) !important;
+    width: clamp(286px, calc(408 * 100vw / 440), 612px) !important;
+    max-width: 100% !important;
     margin: 0 !important;
     font-family: 'Poppins', var(--font-sans) !important;
-    font-style: normal !important;
     font-weight: 800 !important;
-    font-size: clamp(17px, calc(24 * 100vw / 440), 36px) !important;
+    font-size: clamp(22px, calc(32 * 100vw / 440), 48px) !important;
     line-height: 130% !important;
     letter-spacing: 0.48px !important;
     color: #ffffff !important;
@@ -73,74 +87,91 @@
     width: clamp(194px, calc(277 * 100vw / 440), 416px) !important;
     margin: 0 !important;
     font-family: 'Poppins', var(--font-sans) !important;
-    font-style: normal !important;
     font-weight: 400 !important;
     font-size: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
-    line-height: 1.3 !important;
+    line-height: 24px !important;
     color: #c4c4c4 !important;
   }
   .demo-tg-hero__actions {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     padding: 0 !important;
-    gap: clamp(7px, calc(10 * 100vw / 440), 15px) !important;
-    width: clamp(286px, calc(351 * 100vw / 440), 527px) !important;
-    max-width: 100% !important;
+    margin-top: clamp(13px, calc(18 * 100vw / 440), 27px) !important;
+    gap: clamp(10px, calc(14 * 100vw / 440), 21px) !important;
   }
   .demo-tg-hero__btn {
     box-sizing: border-box !important;
     display: flex !important;
-    flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
     padding: clamp(11px, calc(16 * 100vw / 440), 24px) clamp(22px, calc(32 * 100vw / 440), 48px) !important;
-    gap: 10px !important;
     border-radius: 64px !important;
     font-family: 'Poppins', var(--font-sans) !important;
-    font-style: normal !important;
     font-weight: 500 !important;
-    font-size: clamp(12px, calc(17 * 100vw / 440), 26px) !important;
-    line-height: 20px !important;
-    text-align: center !important;
+    font-size: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
+    line-height: 24px !important;
+    letter-spacing: -0.02em !important;
   }
   .demo-tg-hero__btn--primary {
-    width: clamp(116px, calc(166 * 100vw / 440), 249px) !important;
-    height: clamp(36px, calc(52 * 100vw / 440), 78px) !important;
-    flex: none !important;
+    width: clamp(153px, calc(218 * 100vw / 440), 327px) !important;
+    height: clamp(39px, calc(56 * 100vw / 440), 84px) !important;
     background: #14f195 !important;
     border: none !important;
     color: #000000 !important;
   }
   .demo-tg-hero__btn--outline {
-    width: clamp(124px, calc(177 * 100vw / 440), 266px) !important;
-    height: clamp(36px, calc(52 * 100vw / 440), 78px) !important;
-    flex: none !important;
+    width: clamp(123px, calc(176 * 100vw / 440), 264px) !important;
+    height: clamp(39px, calc(56 * 100vw / 440), 84px) !important;
     background: transparent !important;
     border: 1px solid #ffffff !important;
     color: #ffffff !important;
   }
-  /* Hero image 267×293 mobile — decorative */
+
+  /* Hero AI ball — z-index 2 (выше фона, ниже контента); вплотную справа
+     Ручная настройка: right, top, width, height — здесь */
   .demo-tg-hero__image-wrap {
     display: block !important;
     position: absolute !important;
-    right: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
-    top: clamp(73px, calc(104 * 100vw / 440), 156px) !important;
+    left: auto !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     width: clamp(187px, calc(267 * 100vw / 440), 401px) !important;
     height: clamp(205px, calc(293 * 100vw / 440), 440px) !important;
-    z-index: 1 !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    overflow: visible !important;
+  }
+  .demo-tg-hero__image-wrap picture {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
   }
   .demo-tg-hero__img {
+    display: block !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important;
   }
   .demo-tg-hero__glow {
-    display: none !important;
+    display: block !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: clamp(108px, calc(155 * 100vw / 440), 233px) !important;
+    height: clamp(113px, calc(162 * 100vw / 440), 243px) !important;
+    background: #ff7b00 !important;
+    opacity: 0.35 !important;
+    filter: blur(clamp(68px, calc(114 * 100vw / 440), 171px)) !important;
+    border-radius: 50% !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
   }
 
-  /* Blok2 — Why (Telegram центр цифровой гравитации) */
+  /* Blok2 — Why */
   .demo-tg-why {
     width: 100% !important;
     height: auto !important;
@@ -166,51 +197,61 @@
   }
   .demo-tg-why__card {
     width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    text-align: left !important;
-    padding: clamp(20px, calc(28 * 100vw / 440), 42px) clamp(10px, calc(14 * 100vw / 440), 21px) !important;
-    gap: clamp(7px, calc(10 * 100vw / 440), 15px) !important;
+    position: relative !important;
+    border-radius: 12px !important;
+    background-color: #19161c !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: clamp(28px, calc(35 * 100vw / 440), 50px) clamp(14px, calc(14 * 100vw / 440), 24px) !important;
     box-sizing: border-box !important;
-    background: #19161c !important;
-    border-radius: clamp(8px, calc(12 * 100vw / 440), 18px) !important;
+    gap: clamp(12px, calc(12 * 100vw / 440), 20px) !important;
+    text-align: left !important;
+    font-size: 18px !important;
+    color: #fff !important;
+    font-family: Poppins !important;
   }
   .demo-tg-why__icon-wrap {
-    width: clamp(56px, calc(80 * 100vw / 440), 120px) !important;
-    height: clamp(56px, calc(80 * 100vw / 440), 120px) !important;
+    width: clamp(48px, calc(65 * 100vw / 440), 80px) !important;
+    position: relative !important;
+    max-height: 100% !important;
     flex-shrink: 0 !important;
-    margin-bottom: 0 !important;
   }
-  .demo-tg-why__icon {
-    width: 100% !important;
-    height: 100% !important;
-  }
-  .demo-tg-why__content {
-    flex: 1 !important;
-    min-width: 0 !important;
+  .demo-tg-why__icon { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+  .demo-tg-why__content { 
+    flex: 1 !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: clamp(12px, calc(16 * 100vw / 440), 20px) !important;
+    min-width: 0 !important; 
   }
   .demo-tg-why__h3 {
-    width: 100% !important;
-    font-size: clamp(13px, calc(18 * 100vw / 440), 27px) !important;
-    margin: 0 0 clamp(6px, calc(8 * 100vw / 440), 12px) !important;
-    color: #ffffff !important;
+    align-self: stretch !important;
+    position: relative !important;
+    font-size: clamp(16px, calc(20 * 100vw / 440), 28px) !important;
+    margin: 0 !important;
+    letter-spacing: -0.03em !important;
+    line-height: 130% !important;
+    font-weight: 700 !important;
+    color: #fff !important;
   }
   .demo-tg-why__p {
-    width: 100% !important;
-    font-size: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
-    line-height: 1.5 !important;
-    color: #ffffff !important;
+    align-self: stretch !important;
+    position: relative !important;
+    font-size: clamp(14px, calc(16 * 100vw / 440), 22px) !important;
+    letter-spacing: -0.03em !important;
+    line-height: 130% !important;
+    color: #C4C4C4 !important;
+    margin: 0 !important;
   }
 
-  /* Blok3 — Approach (Комплексный подход) */
+  /* Blok3 — Approach */
   .demo-tg-approach {
     width: 100% !important;
     height: auto !important;
-    min-height: 0 !important;
     margin: 0 !important;
-    overflow: visible !important;
     padding: clamp(31px, calc(44 * 100vw / 440), 66px) clamp(11px, calc(16 * 100vw / 440), 24px) !important;
     box-sizing: border-box !important;
   }
@@ -232,29 +273,27 @@
   }
   .demo-tg-approach__card {
     width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    padding: clamp(24px, calc(35 * 100vw / 440), 53px) clamp(10px, calc(14 * 100vw / 440), 21px) !important;
-    gap: clamp(8px, calc(12 * 100vw / 440), 18px) !important;
+    position: relative !important;
+    border-radius: 12px !important;
+    background-color: #19161c !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: clamp(28px, calc(35 * 100vw / 440), 50px) clamp(14px, calc(14 * 100vw / 440), 24px) !important;
     box-sizing: border-box !important;
-    background: #19161c !important;
-    border-radius: clamp(8px, calc(12 * 100vw / 440), 18px) !important;
+    gap: clamp(12px, calc(12 * 100vw / 440), 20px) !important;
+    text-align: left !important;
+    font-size: 18px !important;
+    color: #fff !important;
+    font-family: Poppins !important;
   }
   .demo-tg-approach__icon-wrap {
     width: clamp(70px, calc(100 * 100vw / 440), 150px) !important;
     height: clamp(70px, calc(100 * 100vw / 440), 150px) !important;
     flex-shrink: 0 !important;
   }
-  .demo-tg-approach__icon {
-    width: 100% !important;
-    height: 100% !important;
-  }
-  .demo-tg-approach__content {
-    flex: 1 !important;
-    min-width: 0 !important;
-  }
+  .demo-tg-approach__icon { width: 100% !important; height: 100% !important; }
+  .demo-tg-approach__content { flex: 1 !important; min-width: 0 !important; }
   .demo-tg-approach__h3 {
     font-size: clamp(13px, calc(18 * 100vw / 440), 27px) !important;
     margin: 0 0 clamp(6px, calc(8 * 100vw / 440), 12px) !important;
@@ -263,16 +302,14 @@
   .demo-tg-approach__p {
     font-size: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
     line-height: 1.5 !important;
-    color: #ffffff !important;
+    color: #C4C4C4 !important;
   }
 
-  /* Block4 — Benefits (Почему это работает) */
+  /* Block4 — Benefits */
   .demo-tg-benefits {
     width: 100% !important;
     height: auto !important;
-    min-height: 0 !important;
     margin: 0 !important;
-    overflow: visible !important;
     padding: clamp(31px, calc(44 * 100vw / 440), 66px) clamp(11px, calc(16 * 100vw / 440), 24px) !important;
     box-sizing: border-box !important;
   }
@@ -328,14 +365,13 @@
     margin: 0 !important;
     font-size: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
     line-height: 1.3 !important;
-    color: #ffffff !important;
+    color: #C4C4C4 !important;
   }
 
-  /* Blok5 — Comparison (Экспертиза там, где другие) */
+  /* Blok5 — Comparison */
   .demo-tg-comparison {
     width: 100% !important;
     height: auto !important;
-    min-height: 0 !important;
     margin: 0 !important;
     padding: clamp(31px, calc(44 * 100vw / 440), 66px) clamp(11px, calc(16 * 100vw / 440), 24px) !important;
     box-sizing: border-box !important;
@@ -377,7 +413,6 @@
   .demo-tg-contact {
     width: 100% !important;
     height: auto !important;
-    min-height: 0 !important;
     margin: 0 !important;
     padding: clamp(31px, calc(44 * 100vw / 440), 66px) clamp(11px, calc(16 * 100vw / 440), 24px) !important;
     box-sizing: border-box !important;
@@ -391,13 +426,8 @@
     gap: clamp(12px, calc(17 * 100vw / 440), 26px) !important;
     box-sizing: border-box !important;
   }
-  .demo-tg-contact__left {
-    display: block !important;
-    width: 100% !important;
-  }
-  .demo-tg-contact__form-title {
-    display: block !important;
-  }
+  .demo-tg-contact__left { display: block !important; width: 100% !important; }
+  .demo-tg-contact__form-title { display: block !important; }
   .demo-tg-contact__title {
     width: 100% !important;
     margin: 0 0 clamp(12px, calc(17 * 100vw / 440), 26px) !important;
@@ -409,9 +439,7 @@
     margin: 0 0 clamp(12px, calc(16 * 100vw / 440), 24px) !important;
     font-size: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
   }
-  .demo-tg-contact__form {
-    width: 100% !important;
-  }
+  .demo-tg-contact__form { width: 100% !important; }
   .demo-tg-contact__row {
     flex-direction: column !important;
     gap: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
@@ -432,13 +460,8 @@
     font-size: clamp(11px, calc(15 * 100vw / 440), 23px) !important;
     box-sizing: border-box !important;
   }
-  .demo-tg-contact__formbox {
-    width: 100% !important;
-    margin: 0 !important;
-  }
-  .demo-tg-contact__actions {
-    margin-top: clamp(8px, calc(12 * 100vw / 440), 18px) !important;
-  }
+  .demo-tg-contact__formbox { width: 100% !important; margin: 0 !important; }
+  .demo-tg-contact__actions { margin-top: clamp(8px, calc(12 * 100vw / 440), 18px) !important; }
   .demo-tg-contact__btn {
     width: 100% !important;
     height: clamp(38px, calc(55 * 100vw / 440), 83px) !important;
