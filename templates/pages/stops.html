@@ -44,7 +44,7 @@
       </div>
 
       <div class="demo-stops-hero__actions" aria-label="Действия">
-        <a class="demo-stops-hero__btn demo-stops-hero__btn--primary" href="#calc">Рассчитать охват</a>
+        <button class="demo-stops-hero__btn demo-stops-hero__btn--primary" type="button" data-modal-open="home-calc-modal">Рассчитать охват</button>
         <a class="demo-stops-hero__btn demo-stops-hero__btn--outline" href="#cases">Наши кейсы</a>
       </div>
     </section>
@@ -220,6 +220,8 @@
           <form class="demo-stops-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
             {% csrf_token %}
             <input type="hidden" name="source" value="stops_contact" />
+            <input type="hidden" name="page" value="{{ request.get_full_path }}" />
+            <input type="hidden" name="type" value="contact" />
             <input type="hidden" name="next" value="{{ request.get_full_path }}" />
 
             <label class="demo-stops-contact__field demo-stops-contact__field--name">

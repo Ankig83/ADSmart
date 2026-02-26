@@ -8,7 +8,9 @@
     <div class="c-modal__body demo-home-calc__body">
       <form class="demo-home-calc__form" action="{% url 'submit_lead' %}" method="post" novalidate>
         {% csrf_token %}
-        <input type="hidden" name="source" value="home_calc_hero" />
+        <input type="hidden" name="source" value="{% if request.resolver_match.url_name == 'home_page' %}home{% else %}{{ request.resolver_match.url_name }}{% endif %}_calc" />
+        <input type="hidden" name="page" value="{{ request.get_full_path }}" />
+        <input type="hidden" name="type" value="calc_modal" />
         <input type="hidden" name="next" value="{{ request.get_full_path }}" />
 
         <div class="demo-home-calc__top">

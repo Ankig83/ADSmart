@@ -43,7 +43,7 @@
         </p>
 
         <div class="demo-print-hero__actions">
-          <a class="demo-print-hero__btn demo-print-hero__btn--primary" href="#contact">Рассчитать</a>
+          <button class="demo-print-hero__btn demo-print-hero__btn--primary" type="button" data-modal-open="home-calc-modal">Рассчитать</button>
           <a class="demo-print-hero__btn demo-print-hero__btn--outline" href="#cases">Наши кейсы</a>
         </div>
       </div>
@@ -243,6 +243,8 @@
         <form class="demo-print-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
           {% csrf_token %}
           <input type="hidden" name="source" value="print_contact" />
+          <input type="hidden" name="page" value="{{ request.get_full_path }}" />
+          <input type="hidden" name="type" value="contact" />
           <input type="hidden" name="next" value="{{ request.get_full_path }}" />
           <p class="demo-print-contact__form-title">Обсудим ваш проект?</p>
 

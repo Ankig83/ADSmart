@@ -39,7 +39,7 @@
         </p>
 
         <div class="demo-tg-hero__actions">
-          <a class="demo-tg-hero__btn demo-tg-hero__btn--primary" href="#contact">Рассчитать</a>
+          <button class="demo-tg-hero__btn demo-tg-hero__btn--primary" type="button" data-modal-open="home-calc-modal">Рассчитать</button>
           <a class="demo-tg-hero__btn demo-tg-hero__btn--outline" href="#cases">Наши кейсы</a>
         </div>
       </div>
@@ -269,6 +269,8 @@
           <form class="demo-tg-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
           {% csrf_token %}
           <input type="hidden" name="source" value="telegram_contact" />
+          <input type="hidden" name="page" value="{{ request.get_full_path }}" />
+          <input type="hidden" name="type" value="contact" />
           <input type="hidden" name="next" value="{{ request.get_full_path }}" />
 
           <div class="demo-tg-contact__row">

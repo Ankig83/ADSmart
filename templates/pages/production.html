@@ -51,7 +51,7 @@
         </p>
 
         <div class="demo-prod-hero__actions">
-          <a class="demo-prod-hero__btn demo-prod-hero__btn--primary" href="#contact">Рассчитать</a>
+          <button class="demo-prod-hero__btn demo-prod-hero__btn--primary" type="button" data-modal-open="home-calc-modal">Рассчитать</button>
           <a class="demo-prod-hero__btn demo-prod-hero__btn--outline" href="#cases">Наши кейсы</a>
         </div>
       </div>
@@ -285,6 +285,8 @@
         <form class="demo-prod-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
           {% csrf_token %}
           <input type="hidden" name="source" value="production_contact" />
+          <input type="hidden" name="page" value="{{ request.get_full_path }}" />
+          <input type="hidden" name="type" value="contact" />
           <p class="demo-prod-contact__form-title">Обсудим ваш проект?</p>
           <input type="hidden" name="next" value="{{ request.get_full_path }}" />
 
