@@ -1,7 +1,10 @@
 /* Lead success modal (Frame 39949) — один фрейм для всех размеров */
+/* ПРОКРУТКА МОДАЛКИ — на всех брекпоинтах: при переполнении контента */
 .demo-lead-success__dialog {
   width: 600px;
   max-width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
   margin: 12vh auto 0;
   padding: 30px;
   display: flex;
@@ -69,24 +72,25 @@
   outline-offset: 2px;
 }
 
-/* Адаптация для 440px (мобильный lock) */
+/* Адаптация для мобильного (440px и меньше, вплоть до 320px) */
 @media (max-width: 500px) {
   .demo-lead-success__dialog {
-    width: min(408px, calc(100vw - 32px));
-    margin: 8vh auto 0;
-    padding: clamp(20px, 5vw, 24px);
-    gap: clamp(16px, 4vw, 20px);
+    width: calc(100vw - 16px);
+    max-width: 360px;
+    margin: 2vh auto 0;
+    padding: clamp(12px, 3vw, 20px);
+    gap: clamp(12px, 3vw, 20px);
   }
 
   .demo-lead-success__icon {
-    width: clamp(80px, 22vw, 120px);
-    height: clamp(80px, 22vw, 120px);
+    width: clamp(60px, 18vw, 100px);
+    height: clamp(60px, 18vw, 100px);
   }
 
   .demo-lead-success__title {
     width: 100%;
     height: auto;
-    font-size: clamp(22px, 5.5vw, 28px);
+    font-size: clamp(18px, 4.8vw, 24px);
     line-height: 1.2;
   }
 
@@ -94,13 +98,13 @@
     width: 100%;
     height: auto;
     font-size: clamp(12px, 3.2vw, 14px);
-    line-height: 1.4;
+    line-height: 1.35;
   }
 
   .demo-lead-success__btn {
-    width: clamp(120px, 31vw, 136px);
-    height: clamp(44px, 11vw, 52px);
-    font-size: clamp(16px, 4vw, 18px);
+    width: clamp(100px, 28vw, 136px);
+    height: clamp(40px, 11vw, 48px);
+    font-size: clamp(14px, 3.8vw, 17px);
   }
 }
 
