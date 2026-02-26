@@ -426,14 +426,15 @@
     overflow-wrap: break-word !important;
   }
 
-  /* Contact — overflow handling */
+  /* Contact — same fixes as stops: overflow, footer spacing, background */
   .demo-elevators-contact {
     width: 100% !important;
     max-width: 100vw !important;
     margin: 0 auto !important;
-    padding: clamp(28px, 7vw, 44px) clamp(16px, 4.5vw, 24px) !important;
+    padding: clamp(24px, 6vw, 44px) 16px clamp(80px, 20vw, 120px) !important;
     box-sizing: border-box !important;
     overflow-x: hidden !important;
+    background: #19161c !important;
   }
   .demo-elevators-contact__inner {
     width: 100% !important;
@@ -464,8 +465,10 @@
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
+    flex-shrink: 0 !important;
     padding: clamp(20px, 5vw, 24px) !important;
     box-sizing: border-box !important;
+    overflow: visible !important;
   }
   .demo-elevators-contact__form {
     width: 100% !important;
@@ -482,6 +485,7 @@
   .demo-elevators-contact__input {
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
     box-sizing: border-box !important;
   }
   .demo-elevators-contact__btn {

@@ -3,13 +3,14 @@
 .app__main { padding: 0; }
 
 .demo-stops {
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   background: #000000;
 }
 
-/* Figma 140:7415–140:7427 — отступы/размеры для 834px из design/stops-contact-834-nodes.json */
-@media (min-width: 834px) and (max-width: 1439px) {
+/* Figma 140:7415–140:7427 — отступы/размеры для 834px из design/stops-contact-834-nodes.json (legacy, disabled) */
+@media (min-width: 0px) and (max-width: 0px) {
   .demo-stops-contact {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;
     margin: 0 auto !important;
@@ -22,7 +23,7 @@
   .demo-stops-contact__inner {
     position: static !important;
     width: 100% !important;
-    max-width: 770px !important; /* Figma 140:7416: 769px content */
+    max-width: 769px !important; /* Figma 140:7416 */
     margin: 0 auto !important;
     height: auto !important;
     min-height: 0 !important;
@@ -189,9 +190,9 @@
   }
 }
 
-/* MCP LOCK: Stops page tablet 834-1439
+/* MCP LOCK: Stops page tablet 834-1439 (legacy, disabled)
    Nodes: 140:7314, 140:7315, 140:7327, 140:7355, 140:7377, 140:7406, 140:7415 */
-@media (min-width: 834px) and (max-width: 1439px) {
+@media (min-width: 0px) and (max-width: 0px) {
   .demo-stops {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;
     margin: 0 auto !important;
@@ -650,7 +651,7 @@
 /* Hero background frame (140:5552 @ y=83) */
 .demo-stops-hero {
   position: relative;
-  width: 1440px;
+  width: 100%;
   height: 751px;
   margin-top: 13px; /* 83 - menu(70) */
   overflow: hidden;
@@ -766,7 +767,7 @@
 /* Desktop-22 (140:5560): benefits cards */
 .demo-stops-benefits {
   position: relative;
-  width: 1440px;
+  width: 100%;
   height: 712px; /* follows hero directly (y=834 in page frame) */
 }
 
@@ -855,7 +856,7 @@
   font-weight: 400;
   line-height: 23.4px;
   letter-spacing: -0.54px;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .demo-stops-benefits__card--1 .demo-stops-benefits__p,
@@ -867,7 +868,7 @@
 /* Frame 140:5588: Poster section */
 .demo-stops-poster {
   position: relative;
-  width: 1440px;
+  width: 100%;
   height: 948px;
 }
 
@@ -937,7 +938,7 @@
   font-weight: 700;
   line-height: 36px;
   letter-spacing: -0.72px;
-  color: #ffffff;
+  color: #ff7b00;
 }
 
 .demo-stops-poster__p {
@@ -963,7 +964,7 @@
 /* Steps with arrows (140:5608 Desktop-25) */
 .demo-stops-steps {
   position: relative;
-  width: 1440px;
+  width: 100%;
   height: 751px;
 }
 
@@ -1058,7 +1059,7 @@
 /* Frame 140:5615: ideal tasks (Group 79) */
 .demo-stops-ideal {
   position: relative;
-  width: 1440px;
+  width: 100%;
   height: 824px;
 }
 
@@ -1141,7 +1142,7 @@
 /* Frame 140:5622 / 140:5623: Contact us (Stops) */
 .demo-stops-contact {
   position: relative;
-  width: 1440px;
+  width: 100%;
   height: 760px;
 }
 
@@ -1465,15 +1466,16 @@
     height: auto;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: clamp(10px, 1.2vw, 22px);
+    flex-wrap: nowrap;
+    gap: 12px;
   }
 
   .demo-stops-benefits__card {
     position: static;
     width: auto;
+    max-width: 100%;
     min-width: 0;
-    flex: 1 1 0;
+    flex: 0 0 calc((100% - 36px) / 4);
     height: auto;
     display: flex;
     flex-direction: column;
@@ -1758,7 +1760,7 @@
   .demo-stops-contact__inner {
     position: static !important;
     width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
+    max-width: clamp(769px, 88vw, 1096px) !important;
     margin: 0 auto !important;
     height: auto !important;
     padding: clamp(44px, 5vw, 56px) !important;
@@ -1869,6 +1871,7 @@
     gap: 36px !important;
   }
   .demo-stops-hero__content {
+    position: static !important;
     width: 462px !important;
     max-width: 100% !important;
     display: flex !important;
@@ -1959,7 +1962,7 @@
     margin: 0 auto !important;
   }
   .demo-stops-contact__inner {
-    max-width: 770px !important;
+    max-width: 769px !important;
     margin: 0 auto !important;
     min-height: 0 !important;
     padding: 33px 20px 26px 40px !important;

@@ -40,7 +40,7 @@
       </p>
 
       <div class="demo-home-hero__actions" role="group" aria-label="Primary actions">
-        <a class="demo-btn demo-btn--primary" href="#calc">Рассчитать</a>
+        <button class="demo-btn demo-btn--primary" type="button" data-modal-open="home-calc-modal">Рассчитать</button>
         <a class="demo-btn demo-btn--outline" href="#cases">Наши кейсы</a>
       </div>
     </div>
@@ -54,6 +54,7 @@
   {% include "components/demo/home_contact_us.html" %}
   {% include "components/demo/home_faq.html" %}
 
+  {% include "components/demo/home_calc_modal.html" %}
   {% include "components/demo/lead_success_modal.html" %}
 {% endblock %}
 

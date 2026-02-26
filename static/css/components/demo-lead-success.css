@@ -1,78 +1,71 @@
-/* Lead success modal (Ready--Copy node 143:5029) */
+/* Lead success modal (Frame 39949) — один фрейм для всех размеров */
 .demo-lead-success__dialog {
   width: 600px;
-  height: 396.3706px;
+  max-width: 100%;
   margin: 12vh auto 0;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
   background: #19161c;
   border: none;
   border-radius: 12px;
   box-shadow: none;
-  position: relative;
-  overflow: hidden;
 }
 
+/* Круг с галочкой 150.37×150.37 — вся графика внутри SVG */
 .demo-lead-success__icon {
-  position: absolute;
-  left: 224.8149px;
-  top: 30px;
   width: 150.3706px;
   height: 150.3706px;
   display: block;
 }
 
 .demo-lead-success__title {
-  position: absolute;
-  left: 30px;
-  top: 208.3705px;
-  width: 540px;
-  height: 30px;
   margin: 0;
-  font-family: var(--font-sans);
-  font-size: 30px;
+  width: 540px;
+  max-width: 100%;
+  height: 30px;
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
   font-weight: 600;
+  font-size: 30px;
   line-height: 30px;
-  letter-spacing: 0;
   text-align: center;
   color: #ffffff;
 }
 
 .demo-lead-success__text {
-  position: absolute;
-  left: 30px;
-  top: 266.3705px;
-  width: 540px;
-  height: 20px;
   margin: 0;
-  font-family: var(--font-sans);
-  font-size: 14px;
+  width: 540px;
+  max-width: 100%;
+  height: 20px;
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
   font-weight: 400;
+  font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0;
   text-align: center;
   color: #ffffff;
 }
 
+/* Кнопка 136×52, радиус 64 */
 .demo-lead-success__btn {
-  position: absolute;
-  left: 232px;
-  top: 314.3705px;
   width: 136px;
   height: 52px;
   border: 0;
   border-radius: 64px;
   background: #14f195;
   color: #000000;
-  font-family: var(--font-sans);
-  font-size: 18px;
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
   font-weight: 500;
+  font-size: 18px;
   line-height: 20px;
   cursor: pointer;
 }
-.demo-lead-success__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
-
-
-
-
-
-
+.demo-lead-success__btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
 

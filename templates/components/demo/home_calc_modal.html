@@ -1,0 +1,48 @@
+{% load static %}
+{% comment %}Home: hero «Рассчитать» → calc form modal (Figma 140:8290){% endcomment %}
+
+<div class="c-modal demo-home-calc" id="home-calc-modal" data-modal hidden>
+  <div class="c-modal__backdrop" data-modal-close></div>
+
+  <div class="c-modal__dialog demo-home-calc__dialog" role="dialog" aria-modal="true" aria-labelledby="home-calc-modal-title">
+    <div class="c-modal__body demo-home-calc__body">
+      <form class="demo-home-calc__form" action="{% url 'submit_lead' %}" method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="source" value="home_calc_hero" />
+        <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+
+        <div class="demo-home-calc__top">
+          <button class="demo-home-calc__close" type="button" data-modal-close aria-label="Закрыть">×</button>
+          <div class="demo-home-calc__brand">
+            <span class="demo-home-calc__brand-text">ADSmart</span>
+          </div>
+        </div>
+
+        <div class="demo-home-calc__intro">
+          <h3 class="demo-home-calc__title" id="home-calc-modal-title">Получите расчёт под ваш бюджет</h3>
+          <p class="demo-home-calc__subtitle">Наш специалист проанализирует ваш кейс и даст предварительную оценку в течение часа</p>
+        </div>
+
+        <div class="demo-home-calc__fields">
+          <label class="demo-home-calc__field">
+            <input class="demo-home-calc__input" type="text" name="name" autocomplete="name" placeholder="Имя" />
+          </label>
+
+          <label class="demo-home-calc__field demo-home-calc__field--phone">
+            <input class="demo-home-calc__input" type="tel" name="phone" autocomplete="tel" required placeholder="+7 (000) 000-00-00" />
+          </label>
+
+          <label class="demo-home-calc__field">
+            <input class="demo-home-calc__input" type="text" name="business" placeholder="Комментарии" />
+          </label>
+        </div>
+
+        <div class="demo-home-calc__actions">
+          <button class="demo-home-calc__btn" type="submit">Рассчитать</button>
+          <button class="demo-home-calc__btn demo-home-calc__btn--secondary" type="button">Обсудить проект</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

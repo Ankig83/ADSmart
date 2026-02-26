@@ -232,7 +232,7 @@
     grid-template-columns: 1fr !important;
     gap: clamp(16px, calc(16 * 100vw / 440), 28px) !important;
   }
-  /* Figma 140:6893 — strokes: [], padding 14/35, cornerRadius 12 */
+  /* Figma 140:6889 Blok5 — карточка серый #19161C, иконка слева по центру */
   .demo-print-solutions__card {
     width: 100% !important;
     position: relative !important;
@@ -240,6 +240,7 @@
     background-color: #19161c !important;
     overflow: hidden !important;
     display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
     padding: clamp(28px, calc(35 * 100vw / 440), 50px) clamp(14px, calc(14 * 100vw / 440), 24px) !important;
     box-sizing: border-box !important;
@@ -251,13 +252,20 @@
   }
   .demo-print-solutions__icon-wrap {
     width: clamp(48px, calc(65 * 100vw / 440), 80px) !important;
-    position: relative !important;
-    max-height: 100% !important;
+    height: clamp(48px, calc(65 * 100vw / 440), 80px) !important;
+    min-width: clamp(48px, calc(65 * 100vw / 440), 80px) !important;
     flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    background: #19161c !important;
+    border: 2px solid #ff7b00 !important;
+    box-sizing: border-box !important;
   }
   .demo-print-solutions__icon {
-    width: 100% !important;
-    height: 100% !important;
+    width: clamp(24px, calc(32 * 100vw / 440), 48px) !important;
+    height: clamp(24px, calc(32 * 100vw / 440), 48px) !important;
     object-fit: contain !important;
   }
   .demo-print-solutions__content {

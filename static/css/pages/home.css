@@ -415,6 +415,247 @@
 }
 .demo-exp-card__list > li + li { margin-top: 4px; }
 
+/* Home hero calc modal (140:8290) — точные размеры из Figma */
+.demo-home-calc__dialog {
+  width: 440px;
+  max-width: 100%;
+  margin: 6vh auto 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+}
+
+.demo-home-calc__body {
+  padding: 0;
+  color: #ffffff;
+}
+
+.demo-home-calc__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 22px;
+  width: 183px;
+  height: 29px;
+}
+
+.demo-home-calc__close {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.demo-home-calc__brand-text {
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: #ff7b00;
+}
+
+/* Контент: заголовок + описание 374×220 */
+.demo-home-calc__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 374px;
+}
+
+.demo-home-calc__title {
+  margin: 0;
+  width: 374px;
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 130%;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.demo-home-calc__subtitle {
+  margin: 0;
+  width: 374px;
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 32px;
+  color: #c4c4c4;
+}
+
+/* Группа полей 374×204, gap: 18px */
+.demo-home-calc__fields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  width: 374px;
+}
+
+/* Фрейм «Форма» 440×753, padding: 56px 33px, gap: 22px */
+.demo-home-calc__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 56px 33px;
+  gap: 22px;
+  width: 440px;
+  height: 753px;
+  box-sizing: border-box;
+  background: #19161c;
+}
+
+.demo-home-calc__field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 374px;
+}
+
+.demo-home-calc__label {
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Инпуты 374×56, радиус 12, белая рамка */
+.demo-home-calc__input {
+  width: 374px;
+  height: 56px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  padding: 0 22px;
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+/* Плейсхолдер как текст внутри поля */
+.demo-home-calc__input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+/* Поле телефона — белый текст-плейсхолдер */
+.demo-home-calc__field--phone .demo-home-calc__input::placeholder {
+  color: #ffffff;
+}
+
+/* Блок с кнопками 374×120, две кнопки 374×56 каждая */
+.demo-home-calc__actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  width: 374px;
+  height: 120px;
+}
+
+.demo-home-calc__btn {
+  width: 374px;
+  height: 56px;
+  box-sizing: border-box;
+  border-radius: 64px;
+  border: 0;
+  padding: 16px 32px;
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  cursor: pointer;
+  background: #14f195;
+  color: #000000;
+}
+
+.demo-home-calc__btn--secondary {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+/* Tablet layout for calc modal (Figma tablet frame) */
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* Форма 746×689, padding: 56px 33px, gap: 22px */
+  .demo-home-calc__dialog {
+    width: 746px;
+    max-width: 100%;
+    margin: 8vh auto 0;
+  }
+
+  .demo-home-calc__form {
+    padding: 56px 33px;
+    gap: 22px;
+    width: 746px;
+    height: 689px;
+  }
+
+  /* Внутренний контент 680px */
+  .demo-home-calc__intro,
+  .demo-home-calc__title,
+  .demo-home-calc__subtitle,
+  .demo-home-calc__fields,
+  .demo-home-calc__field,
+  .demo-home-calc__actions,
+  .demo-home-calc__btn,
+  .demo-home-calc__input {
+    width: 680px;
+  }
+}
+
+/* Desktop layout for calc modal (Figma desktop frame) */
+@media (min-width: 1440px) {
+  /* Форма 690×689, padding: 56px, gap: 22px */
+  .demo-home-calc__dialog {
+    width: 690px;
+    max-width: 100%;
+    margin: 8vh auto 0;
+  }
+
+  .demo-home-calc__form {
+    padding: 56px;
+    gap: 22px;
+    width: 690px;
+    height: 689px;
+  }
+
+  /* Внутренний контент 578px */
+  .demo-home-calc__intro,
+  .demo-home-calc__title,
+  .demo-home-calc__subtitle,
+  .demo-home-calc__fields,
+  .demo-home-calc__field,
+  .demo-home-calc__actions,
+  .demo-home-calc__btn,
+  .demo-home-calc__input {
+    width: 578px;
+  }
+}
+
 /* Tablet: 834-1439px (Figma node 140:8121) */
 @media (min-width: 834px) and (max-width: 1439px) {
   /* Blok3 (экспертиза) для разрешения 834-1439px */
@@ -711,7 +952,7 @@
   padding: 0;
   margin: 0 auto;
   width: 440px;
-  height: 1049px;
+  height: 1200px; /* увеличили запас по высоте, чтобы рамка с текстом не касалась следующего блока */
 }
 
 .demo-tech19__inner {
@@ -814,39 +1055,49 @@
 .demo-tech19__f-voice .demo-tech19__ring-icon { width: 33.816425px; height: 33.816425px; }
 .demo-tech19__f-voice .demo-tech19__label { left: 0; top: 85px; width: 106px; height: 28px; }
 
-/* Chip + glow (mobile/tablet crop) */
+/* Chip + glow (mobile/tablet crop)
+   IMPORTANT: centered relative to .demo-tech19__features (413×411) for 140:5938.
+   Смещаем чип чуть выше геометрического центра (‑20px по Y), как в макете. */
 .demo-tech19__chip {
   position: absolute;
-  left: 102px; /* frame coords */
-  top: 178px;
+  left: 103px;  /* centerX(413/2) - chipW(197)/2 ≈ 103 */
+  top: 87px;    /* 107 (геометрический центр) - 20px, см. комментарий выше */
   width: 197px;
   height: 197px;
 }
 .demo-tech19__chip-img { display: block; width: 100%; height: 100%; }
 .demo-tech19__glow {
   position: absolute;
-  left: 137px; /* chip(102) + 35 */
-  top: 218px;  /* chip(178) + 40 */
+  left: 138px; /* chip(103) + 35 */
+  top: 127px;  /* chip(87) + 40 */
   width: 127px;
   height: 127px;
   background: rgba(255, 123, 0, 0.35);
   filter: blur(150px);
 }
 
-/* Right card (mobile) */
+/* Right card (mobile) — рамка с текстом под чипом (140:5976) */
 .demo-tech19__card {
   position: absolute;
   left: 0;
-  top: 633px; /* 90 + 543 */
+  top: 613px; /* было 633px: поднимаем карточку на 20px, чтобы появился зазор от feature‑блока */
   width: 408px;
-  height: 418px;
+  height: auto; /* высота теперь определяется содержимым и внутренними отступами */
   background: #19161c;
   outline: 3px solid #ff7b00;
   outline-offset: -3px; /* inside stroke, like Figma */
   border-radius: 22px;
   overflow: hidden;
 }
-.demo-tech19__card-inner { position: absolute; inset: 0; }
+.demo-tech19__card-inner {
+  position: static;
+  width: 100%;
+  height: auto;
+  padding: 32px 20px; /* внутренние отступы, как во фрейме 140:5976, чтобы текст не прилипал к рамке */
+  box-sizing: border-box;
+  display: grid;
+  gap: 18px;
+}
 .demo-tech19__card-item { display: grid; gap: 18px; }
 .demo-tech19__card-title {
   margin: 0;
