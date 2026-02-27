@@ -1,0 +1,15 @@
+/* variables.css — переменные и токены */
+
+:root {
+  --container-max: 1440px;
+  --container-padding-mobile: 16px;
+  --container-padding-tablet: 32px;
+
+  --bp-tablet: 834px;
+  --bp-desktop: 1440px;
+
+  --radius-lg: 24px;
+  --radius-md: 16px;
+
+  --transition-fast: 0.2s ease;
+}

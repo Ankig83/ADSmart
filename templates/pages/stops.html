@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{% static 'css/pages/stops.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/stops-tablet-lock.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/stops-mobile-lock.css' %}" />
+  <link rel="stylesheet" href="{% static 'css_v2/main.css' %}" />
 {% endblock %}
 
 {% block header %}
@@ -18,6 +19,7 @@
 
 {% block content %}
   <div class="demo-stops">
+    {% comment %} Старый hero (demo-stops-hero) — закомментирован для рефакторинга
     <section class="demo-stops-hero" aria-labelledby="stops-hero-title">
       <div class="demo-stops-hero__bg" aria-hidden="true">
         <img
@@ -46,6 +48,31 @@
       <div class="demo-stops-hero__actions" aria-label="Действия">
         <button class="demo-stops-hero__btn demo-stops-hero__btn--primary" type="button" data-modal-open="home-calc-modal">Рассчитать охват</button>
         <a class="demo-stops-hero__btn demo-stops-hero__btn--outline" href="#cases">Наши кейсы</a>
+      </div>
+    </section>
+    {% endcomment %}
+
+    <section class="hero hero--stops">
+      <div class="hero__bg">
+        <img src="{% static 'assets/images/stops-hero-bg.jpg' %}" alt="" class="hero__bg-img" loading="eager" decoding="async">
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Реклама на остановках
+          </h1>
+
+          <p class="hero__subtitle">
+            Эффективное размещение в городских локациях
+          </p>
+
+          <div class="hero__actions">
+            <a href="#" class="hero__btn hero__btn--primary">Оставить заявку</a>
+            <a href="#" class="hero__btn hero__btn--outline">Подробнее</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -150,6 +177,74 @@
         </div>
         <div class="demo-stops-steps__card" role="listitem">
           {% include "components/demo/step_card.html" with title="Развитие успеха" description="Корректировка стратегии и сценариев на основе данных для роста ROI." icon_svg="assets/icons/results-133-5154.svg" show_line=False %}
+        </div>
+      </div>
+    </section>
+
+    <section class="steps steps--stops" aria-labelledby="steps-v2-title">
+      <div class="container">
+        <h2 class="steps__title" id="steps-v2-title">От стратегии до аналитики лидов</h2>
+
+        <div class="steps__grid">
+        <article class="step-card">
+          <div class="step-card__head">
+            <div class="step-card__circle">
+              <img class="step-card__icon" src="{% static 'assets/icons/location-133-5138.svg' %}" alt="" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="step-card__body">
+            <h3 class="step-card__title">Анализ и подбор</h3>
+            <p class="step-card__text">Выбор оптимальных локаций под цели</p>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-card__head">
+            <div class="step-card__circle">
+              <img class="step-card__icon" src="{% static 'assets/icons/design-133-5037.svg' %}" alt="" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="step-card__body">
+            <h3 class="step-card__title">Креатив с цифровым CTA</h3>
+            <p class="step-card__text">Разработка макетов, заточенных под запуск диалога</p>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-card__head">
+            <div class="step-card__circle">
+              <img class="step-card__icon" src="{% static 'assets/icons/robo-133-4988.svg' %}" alt="" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="step-card__body">
+            <h3 class="step-card__title">AI-интеграция</h3>
+            <p class="step-card__text">Настройка текстовых ботов в Telegram и Max или голосовых ассистентов</p>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-card__head">
+            <div class="step-card__circle">
+              <img class="step-card__icon" src="{% static 'assets/icons/eye-133-4932.svg' %}" alt="" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="step-card__body">
+            <h3 class="step-card__title">Запуск и отчет</h3>
+            <p class="step-card__text">Размещение и предоставление аналитики по охвату и конверсии в digital-канале</p>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-card__head">
+            <div class="step-card__circle">
+              <img class="step-card__icon" src="{% static 'assets/icons/results-133-5154.svg' %}" alt="" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="step-card__body">
+            <h3 class="step-card__title">Развитие успеха</h3>
+            <p class="step-card__text">Корректировка стратегии и сценариев на основе данных для роста ROI.</p>
+          </div>
+        </article>
         </div>
       </div>
     </section>
