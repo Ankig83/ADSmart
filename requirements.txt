@@ -4,5 +4,4 @@ dj-database-url
 gunicorn==22.0.0
 psycopg[binary]
 whitenoise
-
-
+requests
