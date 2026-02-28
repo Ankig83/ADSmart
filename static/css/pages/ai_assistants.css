@@ -54,36 +54,6 @@
   gap: 14px;
 }
 
-.demo-ai-hero__btn {
-  width: 177px;
-  height: 52px;
-  border-radius: 64px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  text-decoration: none;
-  transition: transform 0.2s, background 0.2s;
-}
-
-.demo-ai-hero__btn--primary {
-  background: #14f195;
-  color: #000000;
-}
-
-.demo-ai-hero__btn--outline {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-}
-
-.demo-ai-hero__btn:hover {
-  transform: scale(1.05);
-}
-
 .demo-ai-hero__image-wrap {
   position: absolute;
   left: 782px;
@@ -518,37 +488,6 @@
   gap: 12px;
 }
 
-.demo-ai-cta__btn {
-  width: 218px;
-  height: 52px;
-  border-radius: 64px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  text-decoration: none;
-  transition: transform 0.2s;
-}
-
-.demo-ai-cta__btn--primary {
-  background: #14f195;
-  color: #000000;
-}
-
-.demo-ai-cta__btn--outline {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  width: 232px; /* From Figma: 140:5018 has width 232 */
-}
-
-.demo-ai-cta__btn:hover {
-  transform: scale(1.05);
-}
-
 /* Tablet fluid layout (834-1439) — как design/print/production */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-ai {
@@ -604,12 +543,6 @@
   .demo-ai-hero__actions {
     display: flex !important;
     gap: 8px !important;
-  }
-  .demo-ai-hero__btn,
-  .demo-ai-hero__btn--primary,
-  .demo-ai-hero__btn--outline {
-    width: auto !important;
-    padding: 16px 32px !important;
   }
   .demo-ai-hero__image-wrap {
     display: none !important;
@@ -790,13 +723,6 @@
   .demo-ai-cta__actions {
     flex-wrap: wrap !important;
     justify-content: center !important;
-  }
-  .demo-ai-cta__btn {
-    width: auto !important;
-    min-width: 177px !important;
-  }
-  .demo-ai-cta__btn--outline {
-    min-width: 180px !important;
   }
 }
 

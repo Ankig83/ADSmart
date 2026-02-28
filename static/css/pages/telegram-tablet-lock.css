@@ -57,15 +57,6 @@
     margin-top: 0 !important;
     z-index: 2 !important;
   }
-  .demo-tg-hero__btn,
-  .demo-tg-hero__btn--primary,
-  .demo-tg-hero__btn--outline {
-    position: static !important;
-    height: 52px !important;
-    padding: 16px 32px !important;
-    width: auto !important;
-    font-size: 16px !important;
-  }
   .demo-tg-hero__bg,
   .demo-tg-hero__bg-img {
     position: absolute !important;
@@ -417,19 +408,6 @@
   .demo-tg-contact__input:not(:placeholder-shown) ~ .demo-tg-contact__ph {
     opacity: 0 !important;
   }
-  .demo-tg-contact__btn {
-    position: absolute !important;
-    left: 50% !important;
-    bottom: 36px !important;
-    transform: translateX(-50%) !important;
-    width: min(379px, calc(100% - 30px)) !important;
-    max-width: calc(100% - 30px) !important;
-    height: 56px !important;
-    border-radius: 100px !important;
-    margin: 0 !important;
-    padding: 18px 22px !important;
-    box-sizing: border-box !important;
-  }
 }
 
 /* MCP hard lock: 140:7834 contact form — prevent cascade conflicts */
@@ -485,13 +463,5 @@
   .demo-tg-contact .demo-tg-contact__input:focus ~ .demo-tg-contact__ph,
   .demo-tg-contact .demo-tg-contact__input:not(:placeholder-shown) ~ .demo-tg-contact__ph {
     opacity: 0 !important;
-  }
-  .demo-tg-contact .demo-tg-contact__btn {
-    left: 50% !important;
-    bottom: 36px !important;
-    transform: translateX(-50%) !important;
-    width: min(379px, calc(100% - 30px)) !important;
-    max-width: calc(100% - 30px) !important;
-    height: 56px !important;
   }
 }

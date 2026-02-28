@@ -30,18 +30,7 @@
 }
 
 .demo-home-calc__close {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 999px;
-  background: transparent;
-  color: #ffffff;
   font-size: 20px;
-  cursor: pointer;
-  padding: 0;
 }
 
 .demo-home-calc__brand-text {
@@ -167,28 +156,10 @@
   min-height: 120px;
 }
 
-.demo-home-calc__btn {
+.demo-home-calc__actions .button {
   width: 374px;
   max-width: 100%;
-  height: 56px;
   box-sizing: border-box;
-  border-radius: 64px;
-  border: 0;
-  padding: 16px 32px;
-  font-family: 'Poppins', var(--font-sans);
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 20px;
-  cursor: pointer;
-  background: #14f195;
-  color: #000000;
-}
-
-.demo-home-calc__btn--secondary {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
 }
 
 /* Мобильный ≤500px — уменьшенные размеры, учёт 320px и меньше */
@@ -213,8 +184,7 @@
   .demo-home-calc__subtitle,
   .demo-home-calc__fields,
   .demo-home-calc__field,
-  .demo-home-calc__actions,
-  .demo-home-calc__btn,
+  .demo-home-calc__actions .button,
   .demo-home-calc__input {
     width: 100%;
     max-width: 100%;
@@ -248,11 +218,6 @@
     gap: 8px;
     min-height: auto;
   }
-
-  .demo-home-calc__btn {
-    height: 44px;
-    font-size: 15px;
-  }
 }
 
 /* Tablet: 834-1439px — уменьшена */
@@ -276,8 +241,7 @@
   .demo-home-calc__subtitle,
   .demo-home-calc__fields,
   .demo-home-calc__field,
-  .demo-home-calc__actions,
-  .demo-home-calc__btn,
+  .demo-home-calc__actions .button,
   .demo-home-calc__input {
     width: 456px;
     max-width: 100%;
@@ -293,10 +257,6 @@
   }
 
   .demo-home-calc__input {
-    height: 48px;
-  }
-
-  .demo-home-calc__btn {
     height: 48px;
   }
 }
@@ -321,8 +281,7 @@
   .demo-home-calc__subtitle,
   .demo-home-calc__fields,
   .demo-home-calc__field,
-  .demo-home-calc__actions,
-  .demo-home-calc__btn,
+  .demo-home-calc__actions .button,
   .demo-home-calc__input {
     width: 456px;
     max-width: 100%;
@@ -338,10 +297,6 @@
   }
 
   .demo-home-calc__input {
-    height: 48px;
-  }
-
-  .demo-home-calc__btn {
     height: 48px;
   }
 }

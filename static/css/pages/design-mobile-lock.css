@@ -104,38 +104,6 @@
     width: clamp(286px, calc(351 * 100vw / 440), 527px) !important;
     max-width: 100% !important;
   }
-  .demo-design-hero__btn {
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: clamp(11px, calc(16 * 100vw / 440), 24px) clamp(22px, calc(32 * 100vw / 440), 48px) !important;
-    gap: 10px !important;
-    border-radius: 64px !important;
-    font-family: 'Poppins', var(--font-sans) !important;
-    font-style: normal !important;
-    font-weight: 500 !important;
-    font-size: clamp(11px, calc(18 * 100vw / 440), 27px) !important;
-    line-height: 20px !important;
-    text-align: center !important;
-  }
-  .demo-design-hero__btn--primary {
-    width: clamp(116px, calc(166 * 100vw / 440), 249px) !important;
-    height: clamp(36px, calc(52 * 100vw / 440), 78px) !important;
-    flex: none !important;
-    background: #14f195 !important;
-    border: none !important;
-    color: #000000 !important;
-  }
-  .demo-design-hero__btn--outline {
-    width: clamp(124px, calc(177 * 100vw / 440), 266px) !important;
-    height: clamp(36px, calc(52 * 100vw / 440), 78px) !important;
-    flex: none !important;
-    background: transparent !important;
-    border: 1px solid #ffffff !important;
-    color: #ffffff !important;
-  }
   /* vecteezy_ai-chip 444×444 → 274×274 mobile, left 234px top 104px */
   .demo-design-hero__image-wrap {
     display: block !important;
@@ -420,12 +388,5 @@
     flex-wrap: wrap !important;
     justify-content: center !important;
     gap: clamp(8px, calc(12 * 100vw / 440), 18px) !important;
-  }
-  .demo-design-cta__btn {
-    width: auto !important;
-    min-width: clamp(180px, calc(220 * 100vw / 440), 330px) !important;
-    height: clamp(36px, calc(52 * 100vw / 440), 78px) !important;
-    padding: clamp(11px, calc(16 * 100vw / 440), 24px) clamp(22px, calc(32 * 100vw / 440), 48px) !important;
-    font-size: clamp(14px, calc(18 * 100vw / 440), 27px) !important;
   }
 }

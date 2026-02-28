@@ -50,13 +50,6 @@
     gap: clamp(14px, calc(14 * 100vw / 1440), 25px) !important;
   }
 
-  .demo-design-hero__btn {
-    width: clamp(177px, calc(177 * 100vw / 1440), 315px) !important;
-    height: clamp(52px, calc(52 * 100vw / 1440), 93px) !important;
-    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px) !important;
-    line-height: clamp(20px, calc(20 * 100vw / 1440), 36px) !important;
-  }
-
   .demo-design-hero__image-wrap {
     left: clamp(894px, calc(894 * 100vw / 1440), 1592px) !important;
     top: clamp(144px, calc(144 * 100vw / 1440), 257px) !important;
@@ -276,20 +269,5 @@
 
   .demo-design-cta__actions {
     gap: clamp(12px, calc(12 * 100vw / 1440), 21px) !important;
-  }
-
-  .demo-design-cta__btn {
-    width: clamp(218px, calc(218 * 100vw / 1440), 388px) !important;
-    height: clamp(52px, calc(52 * 100vw / 1440), 93px) !important;
-    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px) !important;
-    line-height: clamp(20px, calc(20 * 100vw / 1440), 36px) !important;
-  }
-
-  .demo-design-cta__btn--primary {
-    width: clamp(250px, calc(250 * 100vw / 1440), 445px) !important;
-  }
-
-  .demo-design-cta__btn--outline {
-    width: clamp(232px, calc(232 * 100vw / 1440), 413px) !important;
   }
 }

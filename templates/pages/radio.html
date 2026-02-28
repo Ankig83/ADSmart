@@ -7,9 +7,8 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css_v2/main.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/radio.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/pages/radio-tablet-lock.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/pages/radio-mobile-lock.css' %}" />
 {% endblock %}
 
 {% block header %}
@@ -17,11 +16,11 @@
 {% endblock %}
 
 {% block content %}
-  <div class="demo-radio">
-    <section class="demo-radio-hero" aria-labelledby="radio-hero-title">
-      <div class="demo-radio-hero__bg" aria-hidden="true">
+  <main class="radio-page">
+    <section class="hero hero--radio section" aria-labelledby="radio-hero-title">
+      <div class="hero__bg">
         <img
-          class="demo-radio-hero__bg-img"
+          class="hero__bg-img"
           src="{% static 'assets/images/radio-hero-bg.jpg' %}"
           alt=""
           width="1440"
@@ -29,253 +28,267 @@
           loading="eager"
           decoding="async"
         />
+        <div class="hero__overlay"></div>
       </div>
 
-      <div class="demo-radio-hero__content">
-        <h1 class="demo-radio-hero__title" id="radio-hero-title">
-          Реклама на радио с искусственным интеллектом
-        </h1>
-        <p class="demo-radio-hero__subtitle">
-          Приводим в ваш бизнес не просто слушателей, а готовых к диалогу клиентов. Усиливаем эфирные кампании голосовым
-          AI-ассистентом
-        </p>
-      </div>
-
-      <div class="demo-radio-hero__actions" aria-label="Действия">
-        <a class="demo-radio-hero__btn demo-radio-hero__btn--primary" href="#contact">Обсудить проект</a>
-        <a class="demo-radio-hero__btn demo-radio-hero__btn--outline" href="#case">Посмотреть кейс</a>
-      </div>
-    </section>
-
-    <section class="demo-radio-benefits" aria-labelledby="radio-benefits-title">
-      <h2 class="demo-radio-benefits__title" id="radio-benefits-title">Радио — для скорости и доверия</h2>
-
-      <ul class="demo-radio-benefits__cards" aria-label="Преимущества рекламы на радио">
-        <li class="demo-radio-benefits__card demo-radio-benefits__card--1">
-          <div class="demo-radio-benefits__ring" aria-hidden="true">
-            <img class="demo-radio-benefits__icon" src="{% static 'assets/icons/frame-133-5295.svg' %}" alt="" />
-          </div>
-          <h3 class="demo-radio-benefits__h3">Импульс</h3>
-          <p class="demo-radio-benefits__p">Запуск точечных акций, анонс открытий, создание ажиотажа</p>
-        </li>
-
-        <li class="demo-radio-benefits__card demo-radio-benefits__card--2">
-          <div class="demo-radio-benefits__ring" aria-hidden="true">
-            <img class="demo-radio-benefits__icon" src="{% static 'assets/icons/frame-133-4985-140-5664.svg' %}" alt="" />
-          </div>
-          <h3 class="demo-radio-benefits__h3">Позиционирование</h3>
-          <p class="demo-radio-benefits__p">Формирование звукового образа бренда</p>
-        </li>
-
-        <li class="demo-radio-benefits__card demo-radio-benefits__card--3">
-          <div class="demo-radio-benefits__ring" aria-hidden="true">
-            <img class="demo-radio-benefits__icon" src="{% static 'assets/icons/location-133-5138-140-5670.svg' %}" alt="" />
-          </div>
-          <h3 class="demo-radio-benefits__h3">Локализация</h3>
-          <p class="demo-radio-benefits__p">Прямой разговор с аудиторией города и области</p>
-        </li>
-
-        <li class="demo-radio-benefits__card demo-radio-benefits__card--4">
-          <div class="demo-radio-benefits__ring" aria-hidden="true">
-            <img class="demo-radio-benefits__icon" src="{% static 'assets/icons/frame-133-5116.svg' %}" alt="" />
-          </div>
-          <h3 class="demo-radio-benefits__h3">Наш подход</h3>
-          <p class="demo-radio-benefits__p">Широкий выбор и стратегическое партнерство</p>
-        </li>
-      </ul>
-    </section>
-
-    <section class="demo-radio-measure" aria-labelledby="radio-measure-title">
-      <h2 class="demo-radio-measure__title" id="radio-measure-title">
-        Эфирный ролик + AI-ассистент = Измеряемый результат
-      </h2>
-
-      <div class="demo-radio-measure__glow" aria-hidden="true"></div>
-
-      <div class="demo-radio-measure__circle demo-radio-measure__circle--calls" aria-hidden="true">
-        <img class="demo-radio-measure__icon" src="{% static 'assets/icons/frame-133-5301.svg' %}" alt="" />
-      </div>
-      <div class="demo-radio-measure__metric demo-radio-measure__metric--calls">Обработка звонков 24/7</div>
-
-      <div class="demo-radio-measure__circle demo-radio-measure__circle--roi" aria-hidden="true">
-        <img class="demo-radio-measure__icon" src="{% static 'assets/icons/results-133-5154-140-5711.svg' %}" alt="" />
-      </div>
-      <div class="demo-radio-measure__metric demo-radio-measure__metric--roi">сквозная аналитика ROI</div>
-
-      <img
-        class="demo-radio-measure__robot"
-        src="{% static 'assets/images/radio-robot-head.png' %}"
-        alt=""
-        width="263"
-        height="263"
-        loading="lazy"
-        decoding="async"
-      />
-
-      <img
-        class="demo-radio-measure__arrow demo-radio-measure__arrow--left"
-        src="{% static 'assets/icons/vector-295-140-5701.svg' %}"
-        alt=""
-        aria-hidden="true"
-        width="121"
-        height="63"
-        loading="lazy"
-        decoding="async"
-      />
-      <img
-        class="demo-radio-measure__arrow demo-radio-measure__arrow--right"
-        src="{% static 'assets/icons/vector-295-140-5707.svg' %}"
-        alt=""
-        aria-hidden="true"
-        width="121"
-        height="63"
-        loading="lazy"
-        decoding="async"
-      />
-
-      <div class="demo-radio-measure__dot demo-radio-measure__dot--1" aria-hidden="true"></div>
-      <div class="demo-radio-measure__dot demo-radio-measure__dot--2" aria-hidden="true"></div>
-      <div class="demo-radio-measure__dot demo-radio-measure__dot--3" aria-hidden="true"></div>
-      <div class="demo-radio-measure__vline" aria-hidden="true"></div>
-
-      <div class="demo-radio-measure__circle demo-radio-measure__circle--handoff" aria-hidden="true">
-        <img class="demo-radio-measure__icon" src="{% static 'assets/icons/frame-133-5298.svg' %}" alt="" />
-      </div>
-      <div class="demo-radio-measure__handoff-text">передача менеджеру только готовых клиентов</div>
-
-      <div class="demo-radio-measure__scheme" aria-label="Схема работы">
-        <div class="demo-radio-measure__scheme-title">Схема работы:</div>
-        <div class="demo-radio-measure__scheme-step demo-radio-measure__scheme-step--1">Призыв по уникальному номеру</div>
-        <div class="demo-radio-measure__scheme-step demo-radio-measure__scheme-step--2">
-          Голосовой AI принимает звонок, консультирует, квалифицирует
-        </div>
-        <div class="demo-radio-measure__scheme-step demo-radio-measure__scheme-step--3">
-          Теплая заявка поступает в вашу CRM
-        </div>
-      </div>
-    </section>
-
-    <section class="demo-radio-steps" aria-labelledby="radio-steps-title">
-      <h2 class="demo-radio-steps__title" id="radio-steps-title">
-        Работаем со всеми ведущими радиостанциями и холдингами
-      </h2>
-
-      <div class="demo-radio-steps__cards" role="list" aria-label="Преимущества работы с ADSmart на радио">
-        <div class="demo-radio-steps__card" role="listitem">
-          {% include "components/demo/step_card.html" with title="Объективность" description="Подбираем станции строго под ваши задачи, не лоббируя интересы конкретных холдингов" icon_svg="assets/icons/frame-133-5305.svg" %}
-        </div>
-        <div class="demo-radio-steps__card" role="listitem">
-          {% include "components/demo/step_card.html" with title="Точный таргетинг" description="Ориентируемся на портрет вашего клиента и его интересы, а не просто на рейтинги станций" icon_svg="assets/icons/target-133-5046-i140-5715-14-272-138-651.svg" %}
-        </div>
-        <div class="demo-radio-steps__card" role="listitem">
-          {% include "components/demo/step_card.html" with title="AI-усиление" description="Единственные, кто сразу внедряет голосового ассистента в медиаплан для 100% обработки звонков" icon_svg="assets/icons/frame-133-5309.svg" %}
-        </div>
-        <div class="demo-radio-steps__card" role="listitem">
-          {% include "components/demo/step_card.html" with title="Full-service" description="Берём на себя всё: сценарий, профессиональную озвучку, закупку эфира и настройку бота" icon_svg="assets/icons/clipboard-133-5219.svg" %}
-        </div>
-        <div class="demo-radio-steps__card" role="listitem">
-          {% include "components/demo/step_card.html" with title="Оптимизация бюджета" description="Отслеживаем эффективность каждой частоты и оперативно перераспределяем деньги туда, где есть результат" icon_svg="assets/icons/frame-133-5313.svg" show_line=False %}
-        </div>
-      </div>
-    </section>
-
-    <section class="demo-radio-ideal" aria-labelledby="radio-ideal-title">
-      <h2 class="demo-radio-ideal__title" id="radio-ideal-title">Для каких задач идеально</h2>
-
-      <ul class="demo-radio-ideal__grid" aria-label="Задачи для радио">
-        <li class="demo-radio-ideal__card demo-radio-ideal__card--1">
-          <img class="demo-radio-ideal__icon" src="{% static 'assets/icons/frame-133-5295-i140-5722-102-677.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-radio-ideal__h3">Импульсные акции</h3>
-          <p class="demo-radio-ideal__p">
-            Анонсы открытий, распродажи, сезонные скидки. Мгновенный захват звонков в пик эфира
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__title" id="radio-hero-title">Реклама на радио с искусственным интеллектом</h1>
+          <p class="hero__subtitle">
+            Приводим в ваш бизнес не просто слушателей, а готовых к диалогу клиентов. Усиливаем эфирные кампании голосовым
+            AI-ассистентом
           </p>
-        </li>
-
-        <li class="demo-radio-ideal__card demo-radio-ideal__card--2">
-          <img class="demo-radio-ideal__icon" src="{% static 'assets/icons/frame-133-5235-i140-5721-102-677.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-radio-ideal__h3">Построение бренда</h3>
-          <p class="demo-radio-ideal__p">
-            Имиджевая реклама, вывод новинок, рост узнаваемости и доверия к компании
-          </p>
-        </li>
-
-        <li class="demo-radio-ideal__card demo-radio-ideal__card--3">
-          <img class="demo-radio-ideal__icon" src="{% static 'assets/icons/frame-133-5192-i140-5724-102-677.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-radio-ideal__h3">Продвижение услуг</h3>
-          <p class="demo-radio-ideal__p">
-            Автосервисы, клиники, салоны, доставка. Автоматическая запись на прием и консультация
-          </p>
-        </li>
-
-        <li class="demo-radio-ideal__card demo-radio-ideal__card--4">
-          <img class="demo-radio-ideal__icon" src="{% static 'assets/icons/frame-133-5179-i140-5725-102-677.svg' %}" alt="" aria-hidden="true" />
-          <h3 class="demo-radio-ideal__h3">Массовый найм</h3>
-          <p class="demo-radio-ideal__p">
-            Водители, курьеры, кассиры, рабочие. Первичный отбор и анкетирование кандидатов ботом
-          </p>
-        </li>
-      </ul>
+          <div class="hero__actions" aria-label="Действия">
+            <a class="button button--lg button--primary" href="#contact">Обсудить проект</a>
+            <a class="button button--lg button--outline" href="#case">Посмотреть кейс</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="demo-radio-cta" id="contact" aria-labelledby="radio-cta-title">
-      <div class="demo-radio-cta__inner">
-        <div class="demo-radio-cta__left">
-          <h2 class="demo-radio-cta__title" id="radio-cta-title">Подберём эффективное решение для вашего проекта</h2>
-          <p class="demo-radio-cta__subtitle">
+    <section class="benefits benefits--radio section" aria-labelledby="radio-benefits-title">
+      <div class="container">
+        <h2 class="benefits__title" id="radio-benefits-title">Радио — для скорости и доверия</h2>
+        <ul class="benefits__grid" aria-label="Преимущества рекламы на радио">
+          <li class="benefit-card">
+            <div class="benefit-card__ring" aria-hidden="true">
+              <img class="benefit-card__icon" src="{% static 'assets/icons/frame-133-5295.svg' %}" alt="" />
+            </div>
+            <div class="benefit-card__body">
+              <h3 class="benefit-card__title">Импульс</h3>
+              <p class="benefit-card__text">Запуск точечных акций, анонс открытий, создание ажиотажа</p>
+            </div>
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__ring" aria-hidden="true">
+              <img class="benefit-card__icon" src="{% static 'assets/icons/frame-133-4985-140-5664.svg' %}" alt="" />
+            </div>
+            <div class="benefit-card__body">
+              <h3 class="benefit-card__title">Позиционирование</h3>
+              <p class="benefit-card__text">Формирование звукового образа бренда</p>
+            </div>
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__ring" aria-hidden="true">
+              <img class="benefit-card__icon" src="{% static 'assets/icons/location-133-5138-140-5670.svg' %}" alt="" />
+            </div>
+            <div class="benefit-card__body">
+              <h3 class="benefit-card__title">Локализация</h3>
+              <p class="benefit-card__text">Прямой разговор с аудиторией города и области</p>
+            </div>
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__ring" aria-hidden="true">
+              <img class="benefit-card__icon" src="{% static 'assets/icons/frame-133-5116.svg' %}" alt="" />
+            </div>
+            <div class="benefit-card__body">
+              <h3 class="benefit-card__title">Наш подход</h3>
+              <p class="benefit-card__text">Широкий выбор и стратегическое партнерство</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="ai-diagram-section section" aria-labelledby="radio-measure-title">
+      <div class="container">
+        <h2 class="section-title" id="radio-measure-title">
+          Эфирный ролик + AI-ассистент = Измеряемый результат
+        </h2>
+        <div class="ai-diagram" aria-label="Схема работы">
+          <div class="ai-diagram__center" aria-hidden="true">
+            <img src="{% static 'assets/images/radio-robot-head.png' %}" alt="" width="171" height="171" loading="lazy" decoding="async" />
+          </div>
+          <div class="ai-diagram__node ai-diagram__node--left" role="group" aria-label="Обработка звонков">
+            <div class="ai-diagram__icon" aria-hidden="true">
+              <img src="{% static 'assets/icons/frame-133-5284.svg' %}" alt="" width="32" height="32" />
+            </div>
+            <p>Обработка звонков 24/7</p>
+          </div>
+          <div class="ai-diagram__node ai-diagram__node--right" role="group" aria-label="Аналитика">
+            <div class="ai-diagram__icon" aria-hidden="true">
+              <img src="{% static 'assets/icons/results-133-5154.svg' %}" alt="" width="32" height="32" />
+            </div>
+            <p>сквозная аналитика ROI</p>
+          </div>
+          <div class="ai-diagram__node ai-diagram__node--bottom" role="group" aria-label="Квалификация">
+            <div class="ai-diagram__icon" aria-hidden="true">
+              <img src="{% static 'assets/icons/frame-133-5179.svg' %}" alt="" width="32" height="32" />
+            </div>
+            <p>передача менеджеру только готовых клиентов</p>
+          </div>
+          <svg class="ai-diagram__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <line x1="50%" y1="50%" x2="10%" y2="29%" />
+            <line x1="50%" y1="50%" x2="90%" y2="29%" />
+            <line x1="50%" y1="50%" x2="50%" y2="90%" />
+          </svg>
+        </div>
+        <div class="ai-diagram__scheme" role="region" aria-labelledby="radio-scheme-title">
+          <h3 class="ai-diagram__scheme-title" id="radio-scheme-title">Схема работы:</h3>
+          <ul class="ai-diagram__scheme-list">
+            <li>Призыв по уникальному номеру</li>
+            <li>Голосовой AI принимает звонок, консультирует, квалифицирует</li>
+            <li>Теплая заявка поступает в вашу CRM</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps steps--radio section" aria-labelledby="radio-steps-title">
+      <div class="container">
+        <h2 class="steps__title" id="radio-steps-title">Работаем со всеми ведущими радиостанциями и холдингами</h2>
+        <div class="steps__grid" aria-label="Преимущества работы с ADSmart на радио">
+          <article class="step-card">
+            <div class="step-card__head">
+              <div class="step-card__circle">
+                <img class="step-card__icon" src="{% static 'assets/icons/frame-133-5305.svg' %}" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="step-card__body">
+              <h3 class="step-card__title">Объективность</h3>
+              <p class="step-card__text">Подбираем станции строго под ваши задачи, не лоббируя интересы конкретных холдингов</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-card__head">
+              <div class="step-card__circle">
+                <img class="step-card__icon" src="{% static 'assets/icons/target-133-5046-i140-5715-14-272-138-651.svg' %}" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="step-card__body">
+              <h3 class="step-card__title">Точный таргетинг</h3>
+              <p class="step-card__text">Ориентируемся на портрет вашего клиента и его интересы, а не просто на рейтинги станций</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-card__head">
+              <div class="step-card__circle">
+                <img class="step-card__icon" src="{% static 'assets/icons/frame-133-5309.svg' %}" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="step-card__body">
+              <h3 class="step-card__title">AI-усиление</h3>
+              <p class="step-card__text">Единственные, кто сразу внедряет голосового ассистента в медиаплан для 100% обработки звонков</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-card__head">
+              <div class="step-card__circle">
+                <img class="step-card__icon" src="{% static 'assets/icons/clipboard-133-5219.svg' %}" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="step-card__body">
+              <h3 class="step-card__title">Full-service</h3>
+              <p class="step-card__text">Берём на себя всё: сценарий, профессиональную озвучку, закупку эфира и настройку бота</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-card__head">
+              <div class="step-card__circle">
+                <img class="step-card__icon" src="{% static 'assets/icons/frame-133-5313.svg' %}" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="step-card__body">
+              <h3 class="step-card__title">Оптимизация бюджета</h3>
+              <p class="step-card__text">Отслеживаем эффективность каждой частоты и оперативно перераспределяем деньги туда, где есть результат</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-grid feature-grid--radio section" aria-labelledby="radio-ideal-title">
+      <div class="container">
+        <h2 class="feature-grid__title" id="radio-ideal-title">Для каких задач идеально</h2>
+        <ul class="feature-grid__grid" aria-label="Задачи для радио">
+          <li class="feature-card">
+            <img class="feature-card__icon" src="{% static 'assets/icons/frame-133-5295-i140-5722-102-677.svg' %}" alt="" aria-hidden="true" />
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Импульсные акции</h3>
+              <p class="feature-card__text">
+                Анонсы открытий, распродажи, сезонные скидки. Мгновенный захват звонков в пик эфира
+              </p>
+            </div>
+          </li>
+          <li class="feature-card">
+            <img class="feature-card__icon" src="{% static 'assets/icons/frame-133-5235-i140-5721-102-677.svg' %}" alt="" aria-hidden="true" />
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Построение бренда</h3>
+              <p class="feature-card__text">
+                Имиджевая реклама, вывод новинок, рост узнаваемости и доверия к компании
+              </p>
+            </div>
+          </li>
+          <li class="feature-card">
+            <img class="feature-card__icon" src="{% static 'assets/icons/frame-133-5192-i140-5724-102-677.svg' %}" alt="" aria-hidden="true" />
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Продвижение услуг</h3>
+              <p class="feature-card__text">
+                Автосервисы, клиники, салоны, доставка. Автоматическая запись на прием и консультация
+              </p>
+            </div>
+          </li>
+          <li class="feature-card">
+            <img class="feature-card__icon" src="{% static 'assets/icons/frame-133-5179-i140-5725-102-677.svg' %}" alt="" aria-hidden="true" />
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Массовый найм</h3>
+              <p class="feature-card__text">
+                Водители, курьеры, кассиры, рабочие. Первичный отбор и анкетирование кандидатов ботом
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-form cta-form--radio section" aria-labelledby="radio-cta-title" id="contact">
+      <div class="container">
+        <div class="cta-form__content">
+          <h2 class="cta-form__title" id="radio-cta-title">Подберём эффективное решение для вашего проекта</h2>
+          <p class="cta-form__text">
             Расскажите о задаче, и мы подготовим стратегию продвижения на радио с интеграцией AI-ассистента
           </p>
         </div>
-
-        <div class="demo-radio-cta__formbox" aria-label="Форма заявки">
-          <div class="demo-radio-cta__form-title" aria-hidden="true">Обсудим ваш проект?</div>
-          <form class="demo-radio-cta__form" action="{% url 'submit_lead' %}" method="post" novalidate>
-            {% csrf_token %}
-            <input type="hidden" name="source" value="radio_cta" />
-            <input type="hidden" name="page" value="{{ request.get_full_path }}" />
-            <input type="hidden" name="type" value="contact" />
-            <input type="hidden" name="next" value="{{ request.get_full_path }}" />
-
-            <div class="demo-radio-cta__row">
-              <label class="demo-radio-cta__field demo-radio-cta__field--name">
-                <span class="sr-only">Имя</span>
-                <input class="demo-radio-cta__input" type="text" name="name" placeholder=" " autocomplete="name" />
-                <span class="demo-radio-cta__ph" aria-hidden="true">Имя</span>
-              </label>
-
-              <label class="demo-radio-cta__field demo-radio-cta__field--phone">
-                <span class="sr-only">Телефон</span>
-                <input class="demo-radio-cta__input" type="tel" name="phone" placeholder=" " autocomplete="tel" required />
-                <span class="demo-radio-cta__ph" aria-hidden="true">Телефон</span>
-              </label>
-            </div>
-
-            <label class="demo-radio-cta__field demo-radio-cta__field--wide demo-radio-cta__field--company">
-              <span class="sr-only">Компания</span>
-              <input class="demo-radio-cta__input" type="text" name="company" placeholder=" " autocomplete="organization" />
-              <span class="demo-radio-cta__ph" aria-hidden="true">Компания</span>
-            </label>
-
-            <label class="demo-radio-cta__field demo-radio-cta__field--wide demo-radio-cta__field--format">
-              <span class="sr-only">Интересующий формат</span>
-              <input class="demo-radio-cta__input" type="text" name="interest_format" placeholder=" " />
-              <span class="demo-radio-cta__ph" aria-hidden="true">Интересующий формат</span>
-            </label>
-
-            <button class="demo-radio-cta__submit" type="submit">Обсудить мой проект</button>
-          </form>
+        <div class="cta-form__form-wrapper">
+          <div class="cta-form__form">
+            <div class="cta-form__form-title">Обсудим ваш проект?</div>
+            <form action="{% url 'submit_lead' %}" method="post" novalidate>
+              {% csrf_token %}
+              <input type="hidden" name="source" value="radio_cta" />
+              <input type="hidden" name="page" value="{{ request.get_full_path }}" />
+              <input type="hidden" name="type" value="contact" />
+              <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+              <div class="cta-form__fields">
+                <label class="cta-form__field">
+                  <span class="sr-only">Имя</span>
+                  <input class="cta-form__input" type="text" name="name" placeholder="Имя" autocomplete="name" />
+                </label>
+                <label class="cta-form__field">
+                  <span class="sr-only">Телефон</span>
+                  <input class="cta-form__input" type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required />
+                </label>
+                <label class="cta-form__field">
+                  <span class="sr-only">Компания</span>
+                  <input class="cta-form__input" type="text" name="company" placeholder="Компания" autocomplete="organization" />
+                </label>
+                <label class="cta-form__field">
+                  <span class="sr-only">Интересующий формат</span>
+                  <input class="cta-form__input" type="text" name="interest_format" placeholder="Интересующий формат" />
+                </label>
+              </div>
+              <button class="button button--lg button--primary" type="submit">Обсудить мой проект</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
 
     {% include "components/demo/lead_success_modal.html" %}
 
-    {# TODO: следующие секции страницы радио добавим после hero #}
     <div id="case" class="sr-only" aria-hidden="true">case anchor</div>
-  </div>
+  </main>
 {% endblock %}
 
 {% block footer %}
   {% include "components/demo/footer.html" %}
 {% endblock %}
-
-

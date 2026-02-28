@@ -10,112 +10,93 @@
     overflow-x: hidden !important;
   }
 
-  /* Benefits — иконка в круге без карточек, сетка 2×2 */
-  .demo-stops-benefits {
+  /* Hero — паттерн Print/Production/Telegram */
+  .demo-stops-hero {
     width: 100% !important;
-    margin: 0 auto !important;
+    min-height: clamp(360px, 85vh, 480px) !important;
     height: auto !important;
-    padding: clamp(32px, 8vw, 44px) clamp(16px, 4.5vw, 24px) !important;
+    margin-top: 0 !important;
+    padding: clamp(48px, 12vw, 72px) clamp(16px, 4.5vw, 24px) clamp(36px, 9vw, 48px) !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 45px !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    position: relative !important;
+    overflow: hidden !important;
   }
-
-  .demo-stops-benefits__title {
-    position: static !important;
+  .demo-stops-hero__bg {
+    position: absolute !important;
+    inset: 0 !important;
     width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: clamp(20px, 5.5vw, 28px) !important;
-    line-height: 1.3 !important;
-    letter-spacing: 0.48px !important;
-    color: #ffffff !important;
-    overflow-wrap: break-word !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
   }
-
-  .demo-stops-benefits__cards {
-    position: static !important;
+  .demo-stops-hero__bg-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 78% center !important;
+  }
+  .demo-stops-hero__content,
+  .demo-stops-hero__actions {
+    position: relative !important;
     left: auto !important;
     top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
-    margin: 0 !important;
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    row-gap: 18px !important;
-    column-gap: 12px !important;
+    z-index: 2 !important;
   }
-
-  .demo-stops-benefits__card,
-  .demo-stops-benefits__card--1,
-  .demo-stops-benefits__card--2,
-  .demo-stops-benefits__card--3,
-  .demo-stops-benefits__card--4 {
+  .demo-stops-hero__content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(12px, 3vw, 18px) !important;
+  }
+  .demo-stops-hero__title {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    font-size: clamp(24px, 6.5vw, 32px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.48px !important;
+    word-wrap: break-word !important;
+  }
+  .demo-stops-hero__subtitle {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    font-size: clamp(14px, 3.8vw, 18px) !important;
+    line-height: 1.4 !important;
+    color: #c4c4c4 !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+  .demo-stops-hero__actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: clamp(8px, 2vw, 12px) !important;
+    margin-top: 0 !important;
+  }
+  .demo-stops-hero__btn,
+  .demo-stops-hero__btn--primary,
+  .demo-stops-hero__btn--outline {
     position: static !important;
     left: auto !important;
     top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 12px !important;
-  }
-
-  .demo-stops-benefits__ring {
-    position: static !important;
-    width: clamp(60px, 16vw, 80px) !important;
-    min-width: 60px !important;
-    height: clamp(60px, 16vw, 80px) !important;
-    margin: 0 !important;
-    flex-shrink: 0 !important;
-    border-radius: 1000px !important;
-    background: #19161c !important;
-    border: 2px solid #ff7b00 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .demo-stops-benefits__icon {
-    width: clamp(32px, 8vw, 40px) !important;
-    height: clamp(32px, 8vw, 40px) !important;
-    display: block !important;
-  }
-
-  .demo-stops-benefits__h3 {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 0 6px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 48px !important;
+    padding: 12px clamp(20px, 5vw, 28px) !important;
     font-size: clamp(14px, 3.8vw, 16px) !important;
-    line-height: 1.3 !important;
-    text-align: center !important;
-    word-wrap: break-word !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
   }
 
-  .demo-stops-benefits__p {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    font-size: clamp(13px, 3.5vw, 14px) !important;
-    line-height: 1.4 !important;
-    text-align: center !important;
-    overflow-wrap: break-word !important;
-    word-wrap: break-word !important;
-    color: #c9cad6 !important;
-  }
 
   /* Poster — gap 45px (заголовок→фото→карточки) */
   .demo-stops-poster {
@@ -174,28 +155,14 @@
     border-radius: 12px !important;
     padding: clamp(20px, 5vw, 28px) clamp(16px, 4vw, 24px) !important;
     box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
   }
-  /* 140:6280 — текст в карточках под фото: переопределяем десктопный position:absolute */
   .demo-stops-poster__h3 {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
     font-size: clamp(16px, 4vw, 18px) !important;
-    margin: 0 0 4px !important;
+    margin: 0 0 8px !important;
     overflow-wrap: break-word !important;
-    color: #ff7b00 !important;
+    color: #ffffff !important;
   }
   .demo-stops-poster__p {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
     margin: 0 !important;
     font-size: clamp(14px, 3.5vw, 16px) !important;
     line-height: 1.45 !important;
@@ -348,8 +315,6 @@
     gap: 12px !important;
   }
   .demo-stops-ideal__icon {
-    position: static !important;
-    display: block !important;
     width: clamp(48px, 12vw, 64px) !important;
     height: clamp(48px, 12vw, 64px) !important;
     flex-shrink: 0 !important;
@@ -362,12 +327,8 @@
     gap: 8px !important;
   }
   .demo-stops-ideal__h3 {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
     margin: 0 !important;
     font-size: clamp(16px, 4vw, 18px) !important;
-    line-height: 1.3 !important;
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
   }
@@ -381,187 +342,83 @@
     color: #c9cad6 !important;
   }
 
-  /* Contact (140:6340) — переопределяем базовый stops.css: убираем 440×501, absolute, left:176px */
+  /* Contact — overflow handling */
   .demo-stops-contact {
-    position: relative !important;
-    left: 0 !important;
     width: 100% !important;
     max-width: 100vw !important;
-    height: auto !important;
     margin: 0 auto !important;
-    padding: clamp(24px, 6vw, 44px) 16px clamp(80px, 20vw, 120px) !important;
+    padding: clamp(28px, 7vw, 44px) clamp(16px, 4.5vw, 24px) !important;
     box-sizing: border-box !important;
     overflow-x: hidden !important;
-    background: #19161c !important;
   }
   .demo-stops-contact__inner {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     margin: 0 !important;
-    padding: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: stretch !important;
-    gap: clamp(20px, 5vw, 32px) !important;
+    gap: clamp(20px, 5vw, 24px) !important;
     box-sizing: border-box !important;
-    background: transparent !important;
-    border-radius: 0 !important;
   }
   .demo-stops-contact__left {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
     margin-bottom: 0 !important;
   }
   .demo-stops-contact__title {
-    position: static !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 0 4px !important;
-    font-size: clamp(20px, 5.5vw, 24px) !important;
+    margin: 0 0 clamp(12px, 3vw, 16px) !important;
+    font-size: clamp(22px, 5.8vw, 28px) !important;
     line-height: 1.3 !important;
-    letter-spacing: -0.72px !important;
     overflow-wrap: break-word !important;
   }
   .demo-stops-contact__text {
-    position: static !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
     font-size: clamp(14px, 3.8vw, 16px) !important;
-    line-height: 1.3 !important;
-    letter-spacing: -0.48px !important;
-    color: #c4c4c4 !important;
     overflow-wrap: break-word !important;
   }
   .demo-stops-contact__dl,
   .demo-stops-contact__dl--stops,
   .demo-stops-contact__dl--posters {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
-    height: auto !important;
-    min-height: 48px !important;
-    margin: 0 0 8px !important;
-    padding: 14px 24px !important;
-    border-radius: 64px !important;
-    border: 1px solid #ffffff !important;
-    background: transparent !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: clamp(14px, 3.8vw, 16px) !important;
-  }
-  .demo-stops-contact__dl--posters {
-    margin-bottom: 0 !important;
-  }
-  .demo-stops-contact__phone {
-    display: none !important;
   }
   .demo-stops-contact__formbox {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
-    height: auto !important;
-    min-height: 0 !important;
-    flex-shrink: 0 !important;
-    padding: clamp(18px, 4.5vw, 24px) clamp(14px, 3.5vw, 22px) !important;
+    padding: clamp(20px, 5vw, 24px) !important;
     box-sizing: border-box !important;
-    border: 1px solid #ff7b00 !important;
-    border-radius: 12px !important;
-    background: #19161c !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    overflow: visible !important;
-  }
-  .demo-stops-contact__form-title {
     position: static !important;
     left: auto !important;
     top: auto !important;
-    width: 100% !important;
-    margin: 0 0 16px !important;
-    font-size: clamp(20px, 5vw, 28px) !important;
-    line-height: 1.3 !important;
-    letter-spacing: -0.84px !important;
-    text-align: center !important;
-    color: #ffffff !important;
   }
   .demo-stops-contact__form {
-    position: static !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
-    height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
     box-sizing: border-box !important;
   }
   .demo-stops-contact__field {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
-    height: auto !important;
-    margin: 0 0 8px !important;
     box-sizing: border-box !important;
-  }
-  .demo-stops-contact__field--company {
-    margin-bottom: 16px !important;
   }
   .demo-stops-contact__input {
     width: 100% !important;
     max-width: 100% !important;
-    min-width: 0 !important;
-    height: 48px !important;
     box-sizing: border-box !important;
-    padding: 14px 18px !important;
-    font-size: clamp(15px, 4vw, 18px) !important;
-    border-radius: 12px !important;
-    border: 1px solid #ffffff !important;
-    background: transparent !important;
-    color: #ffffff !important;
-  }
-  .demo-stops-contact__ph {
-    position: absolute !important;
-    left: 18px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    font-size: clamp(15px, 4vw, 18px) !important;
-    color: rgba(255, 255, 255, 0.3) !important;
-    pointer-events: none !important;
   }
   .demo-stops-contact__submit {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
-    height: 48px !important;
-    margin: 0 !important;
-    padding: 14px 18px !important;
     box-sizing: border-box !important;
-    border-radius: 100px !important;
-    background: #14f195 !important;
-    color: #000000 !important;
-    font-size: clamp(15px, 4vw, 18px) !important;
-    font-weight: 500 !important;
   }
 }
 
@@ -575,6 +432,21 @@
 
 /* Экстра-малые < 440px */
 @media (max-width: 439px) {
+  .demo-stops-hero {
+    padding: 36px 12px 32px !important;
+  }
+  .demo-stops-hero__title {
+    font-size: 22px !important;
+  }
+  .demo-stops-hero__subtitle {
+    font-size: 13px !important;
+  }
+  .demo-stops-hero__btn {
+    height: 44px !important;
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+  }
+
   .demo-stops-benefits {
     padding: 24px 12px 32px !important;
   }
@@ -679,3 +551,13 @@
     font-size: 18px !important;
   }
 }
+
+/* STOPS — BENEFITS — убрать рамки карточек окончательно */
+
+.demo-stops-benefits__card {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+

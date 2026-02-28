@@ -84,30 +84,6 @@
     gap: clamp(10px, calc(10 * 100vw / 834), 17px) !important;
     width: 100% !important;
   }
-  .demo-prod-hero__btn {
-    width: auto !important;
-    min-width: clamp(152px, calc(152 * 100vw / 834), 262px) !important;
-    height: clamp(56px, calc(56 * 100vw / 834), 97px) !important;
-    padding: clamp(16px, calc(16 * 100vw / 834), 28px) clamp(32px, calc(32 * 100vw / 834), 55px) !important;
-    border-radius: 64px !important;
-    font-family: 'Poppins', var(--font-sans) !important;
-    font-size: clamp(16px, calc(16 * 100vw / 834), 28px) !important;
-    font-weight: 500 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-decoration: none !important;
-  }
-  .demo-prod-hero__btn--primary {
-    background: #14f195 !important;
-    color: #000000 !important;
-    border: none !important;
-  }
-  .demo-prod-hero__btn--outline {
-    background: transparent !important;
-    border: 1px solid #ffffff !important;
-    color: #ffffff !important;
-  }
   .demo-prod-hero__image-wrap {
     display: none !important;
   }
@@ -446,18 +422,5 @@
     margin-top: clamp(17px, calc(17 * 100vw / 834), 29px) !important;
     display: flex !important;
     justify-content: center !important;
-  }
-  .demo-prod-contact__btn {
-    width: 100% !important;
-    max-width: clamp(360px, calc(360 * 100vw / 834), 622px) !important;
-    height: clamp(52px, calc(52 * 100vw / 834), 90px) !important;
-    background: #14f195 !important;
-    border: none !important;
-    border-radius: 64px !important;
-    font-family: var(--font-sans) !important;
-    font-size: clamp(18px, calc(18 * 100vw / 834), 31px) !important;
-    font-weight: 500 !important;
-    color: #000000 !important;
-    cursor: pointer !important;
   }
 }

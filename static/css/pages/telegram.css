@@ -59,36 +59,6 @@
   gap: 14px;
 }
 
-.demo-tg-hero__btn {
-  width: 177px;
-  height: 52px;
-  border-radius: 64px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  text-decoration: none;
-  transition: transform 0.2s, background 0.2s;
-}
-
-.demo-tg-hero__btn--primary {
-  background: #14f195;
-  color: #000000;
-}
-
-.demo-tg-hero__btn--outline {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-}
-
-.demo-tg-hero__btn:hover {
-  transform: scale(1.05);
-}
-
 .demo-tg-hero__image-wrap {
   position: absolute;
   left: 894px; /* 20295 - 19401 */
@@ -581,24 +551,6 @@
   justify-content: center;
 }
 
-.demo-tg-contact__btn {
-  width: 383px;
-  height: 52px;
-  background: #14f195;
-  border: none;
-  border-radius: 64px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  color: #000000;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.demo-tg-contact__btn:hover {
-  transform: scale(1.02);
-}
-
 /* Tablet fluid layout (834-1439) — как design/print/production */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-tg {
@@ -654,12 +606,6 @@
   .demo-tg-hero__actions {
     display: flex !important;
     gap: 8px !important;
-  }
-  .demo-tg-hero__btn,
-  .demo-tg-hero__btn--primary,
-  .demo-tg-hero__btn--outline {
-    width: auto !important;
-    padding: 16px 32px !important;
   }
   .demo-tg-hero__image-wrap {
     display: none !important;
@@ -1009,10 +955,5 @@
   }
   .demo-tg-contact__field--full {
     width: 100% !important;
-  }
-  .demo-tg-contact__btn {
-    width: 100% !important;
-    max-width: clamp(300px, 88vw, 383px) !important;
-    margin: 0 auto !important;
   }
 }

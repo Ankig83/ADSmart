@@ -36,7 +36,7 @@ CREATE DATABASE adsmart_db OWNER adsmart_user;
 GRANT ALL PRIVILEGES ON DATABASE adsmart_db TO adsmart_user;
 ALTER USER adsmart_user CREATEDB;
 
--- Выход
+-- Выход    
 \q
 ```
 
@@ -167,7 +167,7 @@ python manage.py collectstatic --noinput
 Используется существующий конфиг. Проверьте пути:
 
 - `chdir` = `/var/www/ADSmart`
-- `bind` = `unix:/run/adsmart/gunicorn.sock`
+- `bind` =  
 
 Создайте каталог для сокета:
 
@@ -218,6 +218,16 @@ SocketGroup=www-data
 SocketMode=0660
 
 [Install]
+WantedBy=sockets.target[Unit]
+Description=gunicorn socket (adsmart)
+
+[Socket]
+ListenStream=/run/adsmart/gunicorn.sock
+SocketUser=www-data
+SocketGroup=www-data
+SocketMode=0660
+
+[Install]
 WantedBy=sockets.target
 ```
 
@@ -251,35 +261,7 @@ sudo systemctl status gunicorn-adsmart.service
 
 ### Конфиг: `/etc/nginx/sites-available/adsmart`
 
-```nginx
-server {
-    listen 80;
-    server_name 109.172.46.145;
 
-    client_max_body_size 20m;
-
-    location /static/ {
-        alias /var/www/ADSmart/staticfiles/;
-        expires 7d;
-        add_header Cache-Control "public";
-    }
-
-    location /media/ {
-        alias /var/www/ADSmart/media/;
-        expires 7d;
-        add_header Cache-Control "public";
-    }
-
-    location / {
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-
-        proxy_pass http://unix:/run/adsmart/gunicorn.sock;
-    }
-}
-```
 
 ### Подключение и перезапуск
 

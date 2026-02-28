@@ -88,17 +88,6 @@
     flex-wrap: wrap !important;
     gap: clamp(8px, 2vw, 12px) !important;
   }
-  .demo-radio-hero__btn {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: auto !important;
-    min-width: 0 !important;
-    height: 48px !important;
-    padding: 12px clamp(20px, 5vw, 28px) !important;
-    font-size: clamp(14px, 3.8vw, 16px) !important;
-    white-space: normal !important;
-  }
 
   /* ─── BENEFITS (140:6373) ───────────────────────────────────────────────────
      Figma: padding 44px 16px 56px, inner 408px, gap 42 (title→cards), 12 между карточками.
@@ -721,21 +710,6 @@
     border-radius: 12px !important;
     border: 1px solid rgba(255, 255, 255, 0.8) !important;
     background: rgba(47, 44, 51, 0.6) !important;
-  }
-  .demo-radio-cta__submit {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    height: 56px !important;
-    margin-top: 0 !important;
-    border-radius: 9999px !important;
-    background: #00ff8c !important;
-    color: #000000 !important;
-    font-weight: 600 !important;
-    box-sizing: border-box !important;
   }
 }
 

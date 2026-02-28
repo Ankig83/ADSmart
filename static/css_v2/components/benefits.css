@@ -1,0 +1,126 @@
+/* benefits.css — универсальный компонент Benefits v2 (mobile-first, без absolute) */
+
+/* MOBILE — 2 колонки, 2+2 */
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.benefits__title {
+  margin: 0 0 32px;
+  font-size: clamp(24px, 5vw, 28px);
+  line-height: 1.3;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.benefit-card__ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #19161c;
+  border: 2px solid #ff7b00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-card__icon {
+  width: 42px;
+  height: 42px;
+  display: block;
+}
+
+.benefit-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.benefit-card__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.benefit-card__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* TABLET — 2 колонки или 4 в ряд */
+@media (min-width: 834px) {
+  .benefits__title {
+    font-size: clamp(32px, 3vw, 36px);
+    margin-bottom: 40px;
+  }
+
+  .benefits__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .benefit-card__ring {
+    width: 94px;
+    height: 94px;
+  }
+
+  .benefit-card__icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1440px) {
+  .benefits__title {
+    font-size: clamp(40px, 3vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 48px;
+  }
+
+  .benefits__grid {
+    gap: 32px;
+  }
+
+  .benefit-card__ring {
+    width: 94px;
+    height: 94px;
+  }
+
+  .benefit-card__icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .benefit-card__title {
+    font-size: 18px;
+  }
+
+  .benefit-card__text {
+    font-size: 18px;
+  }
+}

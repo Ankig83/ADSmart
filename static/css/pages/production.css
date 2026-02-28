@@ -72,36 +72,6 @@
     gap: clamp(14px, calc(14 * 100vw / 1440), 25px);
   }
 
-  .demo-prod-hero__btn {
-    width: clamp(177px, calc(177 * 100vw / 1440), 315px);
-    height: clamp(52px, calc(52 * 100vw / 1440), 93px);
-    border-radius: 64px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-sans);
-    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px);
-    font-weight: 500;
-    line-height: clamp(20px, calc(20 * 100vw / 1440), 36px);
-    text-decoration: none;
-    transition: transform 0.2s, background 0.2s;
-  }
-
-  .demo-prod-hero__btn--primary {
-    background: #14f195;
-    color: #000000;
-  }
-
-  .demo-prod-hero__btn--outline {
-    background: transparent;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-  }
-
-  .demo-prod-hero__btn:hover {
-    transform: scale(1.05);
-  }
-
   .demo-prod-hero__image-wrap {
     position: absolute;
     left: clamp(894px, calc(894 * 100vw / 1440), 1592px);
@@ -550,23 +520,5 @@
     margin-top: clamp(17px, calc(17 * 100vw / 1440), 30px);
     display: flex;
     justify-content: center;
-  }
-
-  .demo-prod-contact__btn {
-    width: clamp(383px, calc(383 * 100vw / 1440), 682px);
-    height: clamp(52px, calc(52 * 100vw / 1440), 93px);
-    background: #14f195;
-    border: none;
-    border-radius: 64px;
-    font-family: var(--font-sans);
-    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px);
-    font-weight: 500;
-    color: #000000;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-
-  .demo-prod-contact__btn:hover {
-    transform: scale(1.02);
   }
 }

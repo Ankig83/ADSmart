@@ -1,6 +1,6 @@
 /* steps.css — универсальный компонент Steps v2 (mobile-first, без absolute) */
 
-/* MOBILE — 1 колонка, круг и иконка сверху, текст снизу */
+/* MOBILE — 2 колонки, схема 2+2+1, последняя карточка на всю ширину */
 .steps {
   display: flex;
   flex-direction: column;
@@ -8,16 +8,20 @@
 }
 
 .steps__title {
-  margin: 0;
-  font-size: clamp(20px, 5vw, 28px);
+  margin: 0 0 32px;
+  font-size: clamp(24px, 5vw, 28px);
   line-height: 1.3;
   color: #ffffff;
 }
 
 .steps__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
+}
+
+.step-card:last-child {
+  grid-column: 1 / -1;
 }
 
 .step-card {
@@ -35,8 +39,8 @@
 }
 
 .step-card__circle {
-  width: 80px;
-  height: 80px;
+  width: 93px;
+  height: 93px;
   border-radius: 50%;
   background: var(--step-circle-bg, #ffb661);
   display: flex;
@@ -71,19 +75,55 @@
   color: #c9cad6;
 }
 
-/* TABLET — 2 колонки, равные карточки */
+/* TABLET — все карточки в один ряд, 5 колонок, без стрелок */
 @media (min-width: 834px) {
+  .steps__title {
+    font-size: clamp(32px, 3vw, 36px);
+    margin-bottom: 40px;
+  }
+
   .steps__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(24px, 3vw, 32px);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .step-card:last-child {
+    grid-column: auto;
   }
 }
 
-/* DESKTOP — 3 колонки (auto-fit minmax) */
+/* DESKTOP — 5 колонок, стрелки только у карточек 1–4 */
 @media (min-width: 1440px) {
+  .steps__title {
+    font-size: clamp(40px, 3vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 48px;
+  }
+
   .steps__grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
+  }
+
+  .step-card {
+    position: relative;
+  }
+
+  /* Стрелка строго по центру gap (24px в 32px), вертикально по центру карточки */
+  .step-card:not(:last-child)::after {
+    --arrow-width: 24px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: calc((32px - var(--arrow-width)) / 2);
+    width: var(--arrow-width);
+    height: 12px;
+    background-image: url("../../assets/icons/step-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translateY(-50%);
   }
 
   .step-card__circle {

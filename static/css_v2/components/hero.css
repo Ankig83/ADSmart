@@ -55,24 +55,6 @@
   flex-wrap: wrap;
 }
 
-.hero__btn {
-  padding: 12px 20px;
-  border-radius: var(--radius-md);
-  transition: var(--transition-fast);
-}
-
-.hero__btn--primary {
-  background: black;
-  color: white;
-  border: none;
-}
-
-.hero__btn--outline {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
-}
-
 /* TABLET — min-width: 834px */
 @media (min-width: 834px) {
   .hero {

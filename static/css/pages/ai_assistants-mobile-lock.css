@@ -119,36 +119,6 @@
     margin: clamp(13px, calc(18 * 100vw / 440), 34px) 0 0 !important;
   }
   
-  .demo-ai-hero__btn {
-    padding: clamp(12px, calc(16 * 100vw / 440), 30px) clamp(23px, calc(32 * 100vw / 440), 61px) !important;
-    height: auto !important;
-    width: auto !important;
-    min-width: clamp(110px, calc(152 * 100vw / 440), 290px) !important;
-    font-size: clamp(12px, calc(16 * 100vw / 440), 30px) !important;
-    font-weight: 500 !important;
-    border-radius: 64px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-decoration: none !important;
-    transition: transform 0.2s, background 0.2s !important;
-  }
-  
-  .demo-ai-hero__btn--primary {
-    background: #14f195 !important;
-    color: #000000 !important;
-  }
-  
-  .demo-ai-hero__btn--outline {
-    background: transparent !important;
-    border: 1px solid #ffffff !important;
-    color: #ffffff !important;
-  }
-  
-  .demo-ai-hero__btn:hover {
-    transform: scale(1.05) !important;
-  }
-  
   .demo-ai-hero__image-wrap {
     display: none !important;
   }
@@ -416,28 +386,5 @@
     flex-wrap: wrap !important;
     gap: clamp(8px, calc(12 * 100vw / 440), 18px) !important;
     justify-content: center !important;
-  }
-  .demo-ai-cta__btn {
-    width: auto !important;
-    min-width: 0 !important;
-    height: clamp(44px, calc(52 * 100vw / 440), 78px) !important;
-    padding: 0 clamp(20px, calc(28 * 100vw / 440), 42px) !important;
-    font-family: 'Poppins', var(--font-sans) !important;
-    font-size: clamp(14px, calc(16 * 100vw / 440), 24px) !important;
-    font-weight: 500 !important;
-    border-radius: 64px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-decoration: none !important;
-  }
-  .demo-ai-cta__btn--primary {
-    background: #14f195 !important;
-    color: #000000 !important;
-  }
-  .demo-ai-cta__btn--outline {
-    background: transparent !important;
-    border: 1px solid #ffffff !important;
-    color: #ffffff !important;
   }
 }

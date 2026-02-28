@@ -1,7 +1,7 @@
-/* typography.css — типографика */
+/* typography.css — типографика (Poppins из tokens.css) */
 
 body {
-  font-family: inherit;
+  font-family: var(--font-sans);
   line-height: 1.5;
 }
 

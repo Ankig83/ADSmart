@@ -80,36 +80,6 @@
   gap: 14px;
 }
 
-.demo-design-hero__btn {
-  width: 177px;
-  height: 52px;
-  border-radius: 64px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  text-decoration: none;
-  transition: transform 0.2s, background 0.2s;
-}
-
-.demo-design-hero__btn--primary {
-  background: #14f195;
-  color: #000000;
-}
-
-.demo-design-hero__btn--outline {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-}
-
-.demo-design-hero__btn:hover {
-  transform: scale(1.05);
-}
-
 .demo-design-hero__image-wrap {
   position: absolute;
   left: 894px;
@@ -463,38 +433,6 @@
   gap: 12px;
 }
 
-.demo-design-cta__btn {
-  width: 218px;
-  height: 52px;
-  border-radius: 64px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  text-decoration: none;
-  transition: transform 0.2s;
-}
-
-.demo-design-cta__btn--primary {
-  background: #14f195;
-  color: #000000;
-  width: 250px;
-}
-
-.demo-design-cta__btn--outline {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  width: 232px;
-}
-
-.demo-design-cta__btn:hover {
-  transform: scale(1.05);
-}
-
 /* Tablet fluid layout (834-1439) — Figma 140:7850 */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-design {
@@ -534,10 +472,6 @@
   .demo-design-hero__actions {
     display: flex !important;
     gap: 8px !important;
-  }
-  .demo-design-hero__btn {
-    width: auto !important;
-    padding: 16px 32px !important;
   }
   .demo-design-hero__image-wrap {
     display: none !important;
@@ -759,12 +693,6 @@
     flex-wrap: wrap !important;
     justify-content: center !important;
     gap: 12px !important;
-  }
-  .demo-design-cta__btn {
-    width: auto !important;
-    min-width: 180px !important;
-    padding: 16px 32px !important;
-    font-size: 16px !important;
   }
 }
 

@@ -40,37 +40,6 @@
   flex-wrap: wrap;
 }
 
-.demo-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 32px; /* Figma button padding */
-  border-radius: 64px; /* Figma cornerRadius */
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0;
-  text-decoration: none;
-  user-select: none;
-}
-
-.demo-btn--primary {
-  background: #14f195;
-  color: #000000;
-}
-
-.demo-btn--outline {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-}
-
-.demo-btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(255, 123, 0, 0.25);
-}
-
 .demo-home-hero__art {
   margin-top: 24px;
   width: min(100%, 708.112px);
@@ -144,24 +113,6 @@
   text-align: center;
   color: #ffffff;
 }
-
-.demo-lead-success__btn {
-  position: absolute;
-  left: 232px;
-  top: 314.3705px;
-  width: 136px;
-  height: 52px;
-  border: 0;
-  border-radius: 64px;
-  background: #14f195;
-  color: #000000;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  cursor: pointer;
-}
-.demo-lead-success__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
 
 @media (min-width: 1440px) {
   /* Desktop exact positioning from Figma Home frame */
@@ -274,13 +225,6 @@
     position: static !important;
     margin-top: 36px !important;
     gap: 8px !important;
-  }
-
-  .demo-btn {
-    font-size: 16px !important;
-    line-height: normal !important;
-    padding: 16px 32px !important;
-    height: auto !important;
   }
 
   .demo-home-hero__art {
@@ -441,18 +385,7 @@
 }
 
 .demo-home-calc__close {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 999px;
-  background: transparent;
-  color: #ffffff;
   font-size: 20px;
-  cursor: pointer;
-  padding: 0;
 }
 
 .demo-home-calc__brand-text {
@@ -575,27 +508,10 @@
   height: 120px;
 }
 
-.demo-home-calc__btn {
+.demo-home-calc__actions .button {
   width: 374px;
-  height: 56px;
+  max-width: 100%;
   box-sizing: border-box;
-  border-radius: 64px;
-  border: 0;
-  padding: 16px 32px;
-  font-family: 'Poppins', var(--font-sans);
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 20px;
-  cursor: pointer;
-  background: #14f195;
-  color: #000000;
-}
-
-.demo-home-calc__btn--secondary {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
 }
 
 /* Tablet layout for calc modal (Figma tablet frame) */
@@ -621,7 +537,7 @@
   .demo-home-calc__fields,
   .demo-home-calc__field,
   .demo-home-calc__actions,
-  .demo-home-calc__btn,
+  .demo-home-calc__actions .button,
   .demo-home-calc__input {
     width: 680px;
   }
@@ -650,7 +566,7 @@
   .demo-home-calc__fields,
   .demo-home-calc__field,
   .demo-home-calc__actions,
-  .demo-home-calc__btn,
+  .demo-home-calc__actions .button,
   .demo-home-calc__input {
     width: 578px;
   }
@@ -1563,21 +1479,6 @@
 }
 .demo-ad__field + .demo-ad__field { margin-top: 14px; } /* 70-56 */
 
-.demo-ad__btn {
-  margin-top: 22px; /* 218-196-196? align to button y=218 in frame */
-  width: 100%;
-  height: 56px;
-  border: 0;
-  border-radius: 100px;
-  background: #14f195; /* same as hero primary */
-  color: #000000;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  cursor: pointer;
-}
-
 @media (min-width: 1440px) {
   .demo-ad { width: 1440px; height: 588px; }
   .demo-ad__inner {
@@ -1637,16 +1538,6 @@
     padding-right: 22px;
   }
 
-  .demo-ad__btn {
-    position: absolute;
-    left: 0;
-    top: 226px; /* 477-251 */
-    width: 383px;
-    height: 56px;
-    padding: 18px 22px;
-    margin: 0;
-    border-radius: 100px;
-  }
 }
 
 /* Desktop-20 / Blok6: team (Ready--Copy frames: 440=140:6003, 1440=140:4904) */
@@ -2030,23 +1921,6 @@
     letter-spacing: -0.54px !important;
   }
 
-  .demo-contact__btn {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    margin: 0 !important;
-    height: 56px !important;
-    border: 0 !important;
-    border-radius: 100px !important;
-    background: #14f195 !important;
-    color: #000000 !important;
-    font-size: 18px !important;
-    line-height: 20px !important;
-    font-weight: 500 !important;
-    cursor: pointer !important;
-  }
-
   /* Blok8 (FAQ) — Figma node 140:8222 */
   .demo-faq {
     width: 834px !important;
@@ -2367,23 +2241,6 @@
   }
   .demo-contact__input:not(:placeholder-shown) + .demo-contact__ph { opacity: 0; }
 
-  .demo-contact__btn {
-    position: absolute;
-    left: 20px;
-    top: 319px;
-    width: 383px;
-    height: 56px;
-    border: 0;
-    border-radius: 100px;
-    background: #14f195;
-    color: #000000;
-    font-family: var(--font-sans);
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 20px;
-    cursor: pointer;
-  }
-  .demo-contact__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
 }
 
 /* FAQ (Ready--Copy 1440: node 140:4926) - implement only desktop */
@@ -2833,19 +2690,6 @@
     letter-spacing: -0.42px !important;
   }
 
-  .demo-ad__btn {
-    width: 341px !important;
-    height: 43px !important;
-    margin: 0 !important;
-    padding: 13.835944175720215px 16.910598754882812px !important;
-    border-radius: 76.8663558959961px !important;
-    background: #14f195 !important;
-    color: #000000 !important;
-    font-size: 13.835944175720215px !important;
-    line-height: 15.37px !important;
-    font-weight: 500 !important;
-  }
-
   /* Blok6 (Team) */
   .demo-team {
     width: 834px !important;
@@ -3128,23 +2972,6 @@
     color: rgba(255, 255, 255, 0.3) !important;
     font-size: 18px !important;
   }
-  .demo-contact__btn {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    margin: 0 !important;
-    height: 56px !important;
-    border: 0 !important;
-    border-radius: 100px !important;
-    background: #14f195 !important;
-    color: #000000 !important;
-    font-size: 18px !important;
-    line-height: 20px !important;
-    font-weight: 500 !important;
-    cursor: pointer !important;
-  }
-
   /* Blok8 (FAQ) */
   .demo-faq {
     width: 834px !important;
@@ -3468,8 +3295,7 @@
 
   .demo-ad__content,
   .demo-ad__form,
-  .demo-ad__field,
-  .demo-ad__btn {
+  .demo-ad__field {
     width: clamp(300px, 33vw, 380px) !important;
   }
 
@@ -3531,8 +3357,7 @@
   }
 
   .demo-contact__field,
-  .demo-contact__input,
-  .demo-contact__btn {
+  .demo-contact__input {
     width: calc(100% - 30px) !important;
   }
 
@@ -3751,8 +3576,7 @@
   }
 
   .demo-contact__field,
-  .demo-contact__input,
-  .demo-contact__btn {
+  .demo-contact__input {
     width: calc(100% - 30px) !important;
   }
 }
@@ -3804,7 +3628,6 @@
 
   .demo-ad__form,
   .demo-ad__field,
-  .demo-ad__btn,
   .demo-ad__subtitle {
     width: 100% !important;
   }
@@ -3912,21 +3735,6 @@
     color: rgba(255, 255, 255, 0.3) !important;
     font-size: 18px !important;
   }
-  .demo-contact__btn {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    margin: 0 !important;
-    height: 56px !important;
-    border-radius: 100px !important;
-    background: #14f195 !important;
-    color: #000000 !important;
-    font-size: 18px !important;
-    line-height: 20px !important;
-    font-weight: 500 !important;
-  }
-
   /* 140:8222 */
   .demo-faq__subtitle {
     width: min(100%, clamp(420px, 62vw, 760px)) !important;

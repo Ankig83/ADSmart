@@ -73,18 +73,6 @@
     display: flex !important;
     gap: 8px !important;
   }
-  .demo-radio-hero__btn,
-  .demo-radio-hero__btn--primary,
-  .demo-radio-hero__btn--outline {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    height: 52px !important;
-    padding: 16px 32px !important;
-    width: auto !important;
-    font-size: 16px !important;
-  }
-
   /* 140:7449 Benefits */
   .demo-radio-benefits {
     width: 100% !important;
@@ -632,28 +620,6 @@
   .demo-radio-cta__input:not(:placeholder-shown) + .demo-radio-cta__ph {
     opacity: 0 !important;
   }
-  .demo-radio-cta__submit {
-    position: absolute !important;
-    left: 14px !important;
-    bottom: 36px !important;
-    transform: none !important;
-    width: 379px !important;
-    height: 56px !important;
-    border-radius: 100px !important;
-    margin: 0 !important;
-    padding: 18px 22px !important;
-    border: none !important;
-    background: #14f195 !important;
-    color: #000000 !important;
-    font-size: 18px !important;
-    line-height: 20px !important;
-    font-weight: 500 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    white-space: nowrap !important;
-  }
 }
 
 /* Hard conflict resolver for frame 140:7557. */
@@ -676,14 +642,6 @@
     left: 14px !important;
     width: 379px !important;
     height: 56px !important;
-  }
-
-  .demo-radio-cta .demo-radio-cta__submit {
-    left: 14px !important;
-    width: 379px !important;
-    height: 56px !important;
-    bottom: 36px !important;
-    transform: none !important;
   }
 }
 
@@ -765,20 +723,5 @@
     color: rgba(255, 255, 255, 0.3) !important;
     z-index: 4 !important;
     pointer-events: none !important;
-  }
-
-  .demo-radio-cta .demo-radio-cta__submit {
-    position: absolute !important;
-    left: 14px !important;
-    bottom: 36px !important;
-    width: 379px !important;
-    height: 56px !important;
-    border-radius: 100px !important;
-    transform: none !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    z-index: 4 !important;
   }
 }

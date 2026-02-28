@@ -86,15 +86,6 @@
     margin-top: 0 !important;
     z-index: 2 !important;
   }
-  .demo-ai-hero__btn,
-  .demo-ai-hero__btn--primary,
-  .demo-ai-hero__btn--outline {
-    position: static !important;
-    height: 52px !important;
-    padding: 16px 32px !important;
-    width: auto !important;
-    font-size: 16px !important;
-  }
   .demo-ai-hero__image-wrap {
     display: none !important;
   }
@@ -333,15 +324,5 @@
     flex-wrap: wrap !important;
     gap: 12px !important;
     justify-content: center !important;
-  }
-  .demo-ai-cta__btn {
-    width: auto !important;
-    min-width: 177px !important;
-    height: 52px !important;
-    padding: 16px 32px !important;
-    font-size: 16px !important;
-  }
-  .demo-ai-cta__btn--outline {
-    min-width: 180px !important;
   }
 }

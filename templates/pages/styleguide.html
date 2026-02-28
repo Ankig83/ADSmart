@@ -52,14 +52,14 @@
           <div class="grid grid--cards">
             {% include "components/card.html" with title="Card title" subtitle="Subtitle" content="Card body content. Replace with real design blocks." %}
             {% include "components/card.html" with title="Card" content="Use tokens.css to match Figma typography/spacing." %}
-            {% include "components/card.html" with title="Interactive" content="<button class='c-btn c-btn--secondary c-btn--sm js-toast-demo' type='button'>Toast</button>" %}
+            {% include "components/card.html" with title="Interactive" content="<button class='button button--sm button--secondary js-toast-demo' type='button'>Toast</button>" %}
           </div>
         </div>
 
         <div class="sg__block">
           <h2 class="sg__title">Modal</h2>
           <div class="sg__row">
-            <button class="c-btn c-btn--secondary" type="button" data-modal-open="demo-modal">Open modal</button>
+            <button class="button button--md button--secondary" type="button" data-modal-open="demo-modal">Open modal</button>
           </div>
           {% include "components/modal.html" with id="demo-modal" title="Demo modal" content="<p class='sg__p'>Your content goes here.</p>" %}
         </div>

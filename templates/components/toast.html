@@ -2,7 +2,7 @@
 {% with tone=tags|default:"info" %}
   <div class="c-toast c-toast--{{ tone }}" data-toast>
     <div class="c-toast__body">{{ text }}</div>
-    <button class="c-toast__close" type="button" data-toast-close aria-label="Close">×</button>
+    <button class="button button--sm button--ghost" type="button" data-toast-close aria-label="Close">×</button>
   </div>
 {% endwith %}
 

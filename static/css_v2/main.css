@@ -1,8 +1,15 @@
 @import "base/reset.css";
 @import "base/variables.css";
 @import "base/typography.css";
+@import "base/sections.css";
 
-@import "layout/container.css";
+@import "base/container.css";
 
+@import "components/button.css";
 @import "components/hero.css";
+@import "components/benefits.css";
+@import "components/media-split.css";
+@import "components/feature-grid.css";
+@import "components/cta-form.css";
 @import "components/steps.css";
+@import "components/ai-diagram.css";
