@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
   <link rel="stylesheet" href="{% static 'css_v2/main.css' %}" />
+  <link rel="stylesheet" href="{% static 'css_v2/components/ai-result.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/radio.css' %}" />
 {% endblock %}
 
@@ -90,42 +91,27 @@
       </div>
     </section>
 
-    <section class="ai-diagram-section section" aria-labelledby="radio-measure-title">
-      <div class="container">
-        <h2 class="section-title" id="radio-measure-title">
+    <section class="ai-result section" aria-labelledby="radio-measure-title">
+      <div class="ai-result__inner">
+        <h2 class="ai-result__title" id="radio-measure-title">
           Эфирный ролик + AI-ассистент = Измеряемый результат
         </h2>
-        <div class="ai-diagram" aria-label="Схема работы">
-          <div class="ai-diagram__center" aria-hidden="true">
-            <img src="{% static 'assets/images/radio-robot-head.png' %}" alt="" width="171" height="171" loading="lazy" decoding="async" />
+        <div class="ai-visual">
+          <div class="ai-visual__container">
+            <img
+              class="ai-visual__diagram"
+              src="{% static 'assets/icons/Group 83.png' %}"
+              alt="Обработка звонков 24/7, сквозная аналитика ROI, передача менеджеру только готовых клиентов"
+              width="426"
+              height="361"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
-          <div class="ai-diagram__node ai-diagram__node--left" role="group" aria-label="Обработка звонков">
-            <div class="ai-diagram__icon" aria-hidden="true">
-              <img src="{% static 'assets/icons/frame-133-5284.svg' %}" alt="" width="32" height="32" />
-            </div>
-            <p>Обработка звонков 24/7</p>
-          </div>
-          <div class="ai-diagram__node ai-diagram__node--right" role="group" aria-label="Аналитика">
-            <div class="ai-diagram__icon" aria-hidden="true">
-              <img src="{% static 'assets/icons/results-133-5154.svg' %}" alt="" width="32" height="32" />
-            </div>
-            <p>сквозная аналитика ROI</p>
-          </div>
-          <div class="ai-diagram__node ai-diagram__node--bottom" role="group" aria-label="Квалификация">
-            <div class="ai-diagram__icon" aria-hidden="true">
-              <img src="{% static 'assets/icons/frame-133-5179.svg' %}" alt="" width="32" height="32" />
-            </div>
-            <p>передача менеджеру только готовых клиентов</p>
-          </div>
-          <svg class="ai-diagram__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <line x1="50%" y1="50%" x2="10%" y2="29%" />
-            <line x1="50%" y1="50%" x2="90%" y2="29%" />
-            <line x1="50%" y1="50%" x2="50%" y2="90%" />
-          </svg>
         </div>
-        <div class="ai-diagram__scheme" role="region" aria-labelledby="radio-scheme-title">
-          <h3 class="ai-diagram__scheme-title" id="radio-scheme-title">Схема работы:</h3>
-          <ul class="ai-diagram__scheme-list">
+        <div class="ai-result__card" role="region" aria-labelledby="radio-scheme-title">
+          <h3 class="ai-result__card-title" id="radio-scheme-title">Схема работы:</h3>
+          <ul class="ai-result__steps">
             <li>Призыв по уникальному номеру</li>
             <li>Голосовой AI принимает звонок, консультирует, квалифицирует</li>
             <li>Теплая заявка поступает в вашу CRM</li>

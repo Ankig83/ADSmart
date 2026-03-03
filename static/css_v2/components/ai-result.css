@@ -1,0 +1,96 @@
+/* ai-result.css — исключение, блок «Эфирный ролик + AI-ассистент» (Radio) */
+
+/* 1. Общие настройки секции — теперь она широкая */
+.ai-result {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background: #000000;
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: var(--font-sans, 'Poppins', sans-serif);
+}
+
+.ai-result__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.ai-result__title {
+  width: 100%;
+  font-weight: 600;
+  font-size: clamp(20px, 6vw, 24px);
+  line-height: 130%;
+  letter-spacing: 0.48px;
+  text-align: center;
+  margin: 0;
+}
+
+/* 2. Визуальный блок — увеличиваем его общее пространство */
+.ai-visual {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.ai-visual__container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+.ai-visual__diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Карточка "Схема работы" */
+.ai-result__card {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #19161c;
+  border: 2px solid #ff7b00;
+  border-radius: 24px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.ai-result__card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff7b00;
+  margin: 0 0 20px;
+}
+
+.ai-result__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: disc;
+  padding-left: 25px;
+  margin: 0;
+}
+
+.ai-result__steps li {
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+@media (max-width: 360px) {
+  .ai-result__card {
+    padding: 16px;
+  }
+  .ai-result__title {
+    font-size: 18px;
+  }
+}
