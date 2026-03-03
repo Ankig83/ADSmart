@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="{% static 'css/pages/billboards.css' %}" />
 {% endblock %}
 
+{% block page_js %}
+  <script src="{% static 'js/billboard-formats.js' %}" defer></script>
+{% endblock %}
+
 {% block header %}
   {% include "components/demo/menu.html" %}
 {% endblock %}
@@ -93,52 +97,63 @@
       </div>
     </section>
 
-    <section class="media-split media-split--poster media-split--billboards section" aria-labelledby="billboards-media-title">
-      <div class="container">
-        <h2 class="media-split__title" id="billboards-media-title">Почему наружная реклама эффективна</h2>
-        <div class="media-split__media" aria-hidden="true">
-          <img
-            class="media-split__img"
-            src="{% static 'assets/images/billboards-static@2x.png' %}"
-            alt=""
-            width="503"
-            height="368"
-            loading="lazy"
-            decoding="async"
-          />
+    <section class="billboard-formats section" aria-labelledby="billboards-formats-scenarios-title" data-billboard-formats>
+      <div class="billboard-formats__inner">
+        <h2 class="billboard-formats__title" id="billboards-formats-scenarios-title">Наши форматы и интеллектуальные сценарии</h2>
+        <div class="billboard-formats__tabs" role="tablist" aria-label="Выбор формата билборда">
+          <button type="button" class="billboard-formats__tab" role="tab" data-billboard-tab aria-selected="false">Статичный билборд</button>
+          <button type="button" class="billboard-formats__tab" role="tab" data-billboard-tab aria-selected="false">Призматрон</button>
+          <button type="button" class="billboard-formats__tab is-active" role="tab" data-billboard-tab aria-selected="true">Цифровой билборд</button>
         </div>
-        <div class="media-split__content" aria-label="Преимущества наружной рекламы">
-          <ul class="media-split__list">
-            <li class="media-split__item" role="group" aria-label="QR-код и диалог">
-              <h3 class="media-split__item-title">QR-код и диалог</h3>
-              <p class="media-split__item-text">«Немой» щит ведёт к боту-консультанту, который работает 24/7. Идеально для услуг</p>
-            </li>
-            <li class="media-split__item" role="group" aria-label="Динамика и 3 сообщения">
-              <h3 class="media-split__item-title">Динамика и 3 сообщения</h3>
-              <p class="media-split__item-text">Призматрон — 3 стороны, каждая на общую цель. Проблема → Решение → Призыв с QR</p>
-            </li>
-            <li class="media-split__item" role="group" aria-label="Мгновенное действие">
-              <h3 class="media-split__item-title">Мгновенное действие</h3>
-              <p class="media-split__item-text">Цифровой экран — прямой показ QR и призыва. Геозависимые и временные акции</p>
-            </li>
-          </ul>
+        <div class="billboard-formats__content">
+          <div class="billboard-formats__panel" data-billboard-panel role="tabpanel" hidden>
+            <div class="billboard-formats__image">
+              <img src="{% static 'assets/images/billboards-static@2x.png' %}" alt="Статичный билборд" width="503" height="368" loading="lazy" decoding="async" />
+            </div>
+            <div class="billboard-formats__body">
+              <h3 class="billboard-formats__panel-title">Статичный билборд</h3>
+              <p class="billboard-formats__panel-text">«Немой» щит ведёт к боту-консультанту, который работает 24/7. Идеально для услуг</p>
+              <p class="billboard-formats__panel-action"><span class="highlight">Мгновенное действие: </span><span class="text">QR-код на щите — переход в диалог с AI-ассистентом</span></p>
+            </div>
+          </div>
+          <div class="billboard-formats__panel" data-billboard-panel role="tabpanel" hidden>
+            <div class="billboard-formats__image">
+              <img src="{% static 'assets/images/billboards-static@2x.png' %}" alt="Призматрон" width="503" height="368" loading="lazy" decoding="async" />
+            </div>
+            <div class="billboard-formats__body">
+              <h3 class="billboard-formats__panel-title">Призматрон</h3>
+              <p class="billboard-formats__panel-text">3 стороны, каждая на общую цель. Проблема → Решение → Призыв с QR</p>
+              <p class="billboard-formats__panel-action"><span class="highlight">Мгновенное действие: </span><span class="text">Динамика привлекает внимание, QR на третьей стороне ведёт в бота</span></p>
+            </div>
+          </div>
+          <div class="billboard-formats__panel is-visible" data-billboard-panel role="tabpanel">
+            <div class="billboard-formats__image">
+              <img src="{% static 'assets/images/billboards-static@2x.png' %}" alt="Цифровой билборд" width="503" height="368" loading="lazy" decoding="async" />
+            </div>
+            <div class="billboard-formats__body">
+              <h3 class="billboard-formats__panel-title">Цифровой билборд (экран)</h3>
+              <p class="billboard-formats__panel-text">Максимальная вовлеченность. Видео, анимация, возможность быстрой смены контента.</p>
+              <p class="billboard-formats__panel-action"><span class="highlight">Мгновенное действие: </span><span class="text">Прямой показ QR-кода и призыва в динамическом ролике. Можно запускать геозависимые или временные акции («Только сегодня скидка по QR-коду с этого экрана»)</span></p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="steps steps--billboards section" aria-labelledby="billboards-steps-title">
       <div class="container">
-        <h2 class="steps__title" id="billboards-steps-title">От локации до лида</h2>
+        <h2 class="steps__title" id="billboards-steps-title">Наш подход: от локации до лида</h2>
         <div class="steps__grid" aria-label="Этапы работы">
           <article class="step-card">
             <div class="step-card__head">
               <div class="step-card__circle">
                 <img class="step-card__icon" src="{% static 'assets/icons/location-133-5138.svg' %}" alt="" loading="lazy" decoding="async" />
               </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
             </div>
             <div class="step-card__body">
-              <h3 class="step-card__title">Подбор локаций</h3>
-              <p class="step-card__text">Выбор ключевых точек города с учётом ЦА и бюджета</p>
+              <h3 class="step-card__title">Стратегия и аналитика</h3>
+              <p class="step-card__text">Подбор ключевых локаций города с учётом вашей целевой аудитории и бюджета</p>
             </div>
           </article>
           <article class="step-card">
@@ -146,10 +161,23 @@
               <div class="step-card__circle">
                 <img class="step-card__icon" src="{% static 'assets/icons/design-133-5037.svg' %}" alt="" loading="lazy" decoding="async" />
               </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
             </div>
             <div class="step-card__body">
-              <h3 class="step-card__title">Разработка макета</h3>
-              <p class="step-card__text">Креатив, заточенный на конверсию, с местом для цифрового CTA</p>
+              <h3 class="step-card__title">Креатив и производство</h3>
+              <p class="step-card__text">Разработка макета, заточенного на конверсию, с продуманным местом для цифрового CTA</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-card__head">
+              <div class="step-card__circle">
+                <img class="step-card__icon" src="{% static 'assets/icons/robo-133-4988.svg' %}" alt="" loading="lazy" decoding="async" />
+              </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
+            </div>
+            <div class="step-card__body">
+              <h3 class="step-card__title">Технологическая интеграция</h3>
+              <p class="step-card__text">Настройка сценариев для чат-бота или голосового ассистента</p>
             </div>
           </article>
           <article class="step-card">
@@ -157,9 +185,10 @@
               <div class="step-card__circle">
                 <img class="step-card__icon" src="{% static 'assets/icons/eye-133-4932.svg' %}" alt="" loading="lazy" decoding="async" />
               </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
             </div>
             <div class="step-card__body">
-              <h3 class="step-card__title">Печать и размещение</h3>
+              <h3 class="step-card__title">Размещение и контроль</h3>
               <p class="step-card__text">Монтаж конструкции и мониторинг размещения</p>
             </div>
           </article>
@@ -168,10 +197,11 @@
               <div class="step-card__circle">
                 <img class="step-card__icon" src="{% static 'assets/icons/results-133-5154.svg' %}" alt="" loading="lazy" decoding="async" />
               </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
             </div>
             <div class="step-card__body">
-              <h3 class="step-card__title">Отчёт и аналитика</h3>
-              <p class="step-card__text">Данные о показе, сканах QR, диалогах и конверсиях</p>
+              <h3 class="step-card__title">Отчетность</h3>
+              <p class="step-card__text">Предоставление данных не только о показе, но и о сканах QR, диалогах и конверсиях</p>
             </div>
           </article>
         </div>

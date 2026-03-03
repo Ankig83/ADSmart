@@ -1,10 +1,18 @@
-/* steps.css — универсальный компонент Steps v2 (mobile-first, без absolute) */
+/* steps.css — универсальный компонент Steps v2 (1:1 Figma, стрелки как img) */
 
-/* MOBILE — 2 колонки, схема 2+2+1, последняя карточка на всю ширину */
+:root {
+  --step-circle-size: 93px;
+  --step-icon-size: 50px;
+}
+
+/* ОБЩИЕ СТИЛИ */
 .steps {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  width: 100%;
+  background: #000;
+  color: #fff;
 }
 
 .steps__title {
@@ -16,12 +24,7 @@
 
 .steps__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
-}
-
-.step-card:last-child {
-  grid-column: 1 / -1;
 }
 
 .step-card {
@@ -33,25 +36,42 @@
 }
 
 .step-card__head {
+  position: relative;
+  width: 100%;
+  height: var(--step-circle-size);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 
 .step-card__circle {
-  width: 93px;
-  height: 93px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: var(--step-circle-size);
+  height: var(--step-circle-size);
+  background-color: var(--step-circle-bg, #ffb661);
   border-radius: 50%;
-  background: var(--step-circle-bg, #ffb661);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .step-card__icon {
-  width: 50px;
-  height: 50px;
+  width: var(--step-icon-size);
+  height: var(--step-icon-size);
   display: block;
+}
+
+/* Стрелка — скрыта по умолчанию (mobile/tablet) */
+.step-card__arrow {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  object-fit: contain;
 }
 
 .step-card__body {
@@ -75,7 +95,21 @@
   color: #c9cad6;
 }
 
-/* TABLET — все карточки в один ряд, 5 колонок, без стрелок */
+/* MOBILE — 2 колонки, схема 2+2+1 */
+@media (max-width: 833px) {
+  .steps__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+  }
+
+  .step-card:last-child {
+    grid-column: 1;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* TABLET 834px — 5 колонок */
 @media (min-width: 834px) {
   .steps__title {
     font-size: clamp(32px, 3vw, 36px);
@@ -83,8 +117,8 @@
   }
 
   .steps__grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
   }
 
   .step-card:last-child {
@@ -92,8 +126,12 @@
   }
 }
 
-/* DESKTOP — 5 колонок, стрелки только у карточек 1–4 */
+/* DESKTOP 1440px — 5 колонок + стрелки */
 @media (min-width: 1440px) {
+  .steps {
+    padding: 100px 0;
+  }
+
   .steps__title {
     font-size: clamp(40px, 3vw, 48px);
     font-weight: 700;
@@ -102,38 +140,43 @@
   }
 
   .steps__grid {
-    gap: 32px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 22px;
+    overflow: visible;
   }
 
+  /* z-index: стрелка карточки N рисуется над карточкой N+1 */
   .step-card {
     position: relative;
   }
+  .step-card:nth-child(1) { z-index: 5; }
+  .step-card:nth-child(2) { z-index: 4; }
+  .step-card:nth-child(3) { z-index: 3; }
+  .step-card:nth-child(4) { z-index: 2; }
+  .step-card:nth-child(5) { z-index: 1; }
 
-  /* Стрелка строго по центру gap (24px в 32px), вертикально по центру карточки */
-  .step-card:not(:last-child)::after {
-    --arrow-width: 24px;
-    content: "";
-    position: absolute;
+  /* Включаем стрелки: кончик упирается в левый край соседней иконки */
+  .step-card__arrow {
+    display: block;
+    width: 135px;
+    height: 15px;
     top: 50%;
-    left: 100%;
-    margin-left: calc((32px - var(--arrow-width)) / 2);
-    width: var(--arrow-width);
-    height: 12px;
-    background-image: url("../../assets/icons/step-arrow.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    left: calc(50% + var(--step-circle-size) / 2 + 8px);
     transform: translateY(-50%);
   }
 
+  .step-card:last-child .step-card__arrow {
+    display: none;
+  }
+
   .step-card__circle {
-    width: 93px;
-    height: 93px;
+    width: var(--step-circle-size);
+    height: var(--step-circle-size);
   }
 
   .step-card__icon {
-    width: 50px;
-    height: 50px;
+    width: var(--step-icon-size);
+    height: var(--step-icon-size);
   }
 
   .step-card__title {

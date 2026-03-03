@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
   <link rel="stylesheet" href="{% static 'css_v2/main.css' %}" />
+  <link rel="stylesheet" href="{% static 'css_v2/components/transport-formats.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/transport.css' %}" />
 {% endblock %}
 
@@ -94,41 +95,116 @@
       </div>
     </section>
 
-    <section class="media-split media-split--poster media-split--transport section" aria-labelledby="transport-poster-title">
-      <div class="container">
-        <h2 class="media-split__title" id="transport-poster-title">Наши форматы и интеллектуальные решения</h2>
+    <section class="transport-formats section" aria-labelledby="transport-formats-title">
+      <div class="transport-formats__inner" data-transport-accordion>
+        <h2 class="transport-formats__title" id="transport-formats-title">Наши форматы и интеллектуальные решения</h2>
 
-        <div class="media-split__media" aria-hidden="true">
-          <img
-            class="media-split__img"
-            src="{% static 'assets/images/transport-format-stickers@2x.png' %}"
-            alt=""
-            width="533"
-            height="360"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
+        <div class="transport-formats__list">
+          <div class="transport-formats__hero">
+            <div class="transport-formats__hero-header">
+              <h3 class="transport-formats__hero-title">Стикеры в салоне</h3>
+              <p class="transport-formats__hero-desc">100% внимание пассажира в замкнутом пространстве</p>
+            </div>
+            <div class="transport-formats__hero-content">
+              <div class="transport-formats__hero-image">
+                <img src="{% static 'assets/images/transport-format-stickers@2x.png' %}" alt="" width="533" height="368" loading="lazy" decoding="async" />
+              </div>
+              <div class="transport-formats__hero-details">
+                <p class="transport-formats__hero-subtitle">Идеально для AI-интеграции</p>
+                <p class="transport-formats__hero-text">Сценарий: «Скучаешь в дороге? Скачай наш гайд/получи скидку». QR-код на стикере ведет в бота</p>
+                <p class="transport-formats__hero-subtitle">Стоимость и условия</p>
+                <p class="transport-formats__hero-text">От 20 000 руб. (фото примера в блоке)</p>
+              </div>
+            </div>
+          </div>
 
-        <div class="media-split__content" aria-label="Форматы в транспорте">
-          <ul class="media-split__list">
-            <li class="media-split__item" role="group" aria-label="Стикеры в салоне">
-              <h3 class="media-split__item-title">Стикеры в салоне</h3>
-              <p class="media-split__item-text">100% внимание пассажира в замкнутом пространстве. Идеально для AI-интеграции: «Скучаешь в дороге? Скачай наш гайд»</p>
-            </li>
-            <li class="media-split__item" role="group" aria-label="Реклама на подголовниках">
-              <h3 class="media-split__item-title">Реклама на подголовниках</h3>
-              <p class="media-split__item-text">Прямой, длительный контакт «в упор». 6 500 руб./мес за 1 ТС (16 подголовников), мин. объём — 3 ТС</p>
-            </li>
-            <li class="media-split__item" role="group" aria-label="Реклама на заднем стекле">
-              <h3 class="media-split__item-title">Реклама на заднем стекле</h3>
-              <p class="media-split__item-text">Длительный контакт с водителями в пробках. Геолокационный призыв: «Застрял в пробке? Закажи кофе»</p>
-            </li>
-            <li class="media-split__item" role="group" aria-label="Полное брендирование">
-              <h3 class="media-split__item-title">Полное брендирование</h3>
-              <p class="media-split__item-text">Мониторы в салоне, задний борт — максимум охвата. Индивидуальный расчёт под задачи</p>
-            </li>
-          </ul>
+          <details class="transport-formats__item demo-transport-format">
+            <summary>
+              <div class="transport-formats__item-head">
+                <h3 class="transport-formats__item-title">Реклама на подголовниках</h3>
+                <p class="transport-formats__item-desc">Прямой, длительный контакт «в упор»</p>
+              </div>
+            </summary>
+            <div class="transport-formats__item-body">
+              <div class="transport-formats__item-content">
+                <div class="transport-formats__item-image">
+                  <img src="{% static 'assets/images/transport-format-headrests@2x.png' %}" alt="" width="421" height="271" loading="lazy" decoding="async" />
+                </div>
+                <div class="transport-formats__item-details">
+                  <p class="transport-formats__item-subtitle">Идеально для AI-интеграции</p>
+                  <p class="transport-formats__item-text">Сценарий: «Узнай больше о продукте». QR рядом с детальной инфографикой для углубленного изучения через бота</p>
+                  <p class="transport-formats__item-subtitle">Стоимость и условия</p>
+                  <p class="transport-formats__item-text">6 500 руб./мес за 1 ТС (16 подголовников). Мин. объём — 3 ТС</p>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="transport-formats__item demo-transport-format">
+            <summary>
+              <div class="transport-formats__item-head">
+                <h3 class="transport-formats__item-title">Реклама на заднем стекле</h3>
+                <p class="transport-formats__item-desc">Длительный контакт с водителями в пробках</p>
+              </div>
+            </summary>
+            <div class="transport-formats__item-body">
+              <div class="transport-formats__item-content">
+                <div class="transport-formats__item-image">
+                  <img src="{% static 'assets/images/transport-format-rear-window@2x.png' %}" alt="" width="421" height="271" loading="lazy" decoding="async" />
+                </div>
+                <div class="transport-formats__item-details">
+                  <p class="transport-formats__item-subtitle">Идеально для AI-интеграции</p>
+                  <p class="transport-formats__item-text">Сценарий: «Застрял в пробке? Закажи кофе с собой рядом с метро [Название]». Геолокационный призыв</p>
+                  <p class="transport-formats__item-subtitle">Стоимость и условия</p>
+                  <p class="transport-formats__item-text">9 500 руб./шт. Мин. объём — 3 ТС</p>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="transport-formats__item demo-transport-format">
+            <summary>
+              <div class="transport-formats__item-head">
+                <h3 class="transport-formats__item-title">Реклама на заднем борту</h3>
+                <p class="transport-formats__item-desc">Массовый охват пешеходов и поток машин</p>
+              </div>
+            </summary>
+            <div class="transport-formats__item-body">
+              <div class="transport-formats__item-content">
+                <div class="transport-formats__item-image">
+                  <img src="{% static 'assets/images/transport-format-rear-board@2x.png' %}" alt="" width="421" height="271" loading="lazy" decoding="async" />
+                </div>
+                <div class="transport-formats__item-details">
+                  <p class="transport-formats__item-subtitle">Идеально для AI-интеграции</p>
+                  <p class="transport-formats__item-text">Сценарий: «Успей заказать!» с QR-кодом для акции «только сегодня»</p>
+                  <p class="transport-formats__item-subtitle">Стоимость и условия</p>
+                  <p class="transport-formats__item-text">От 9 000 руб./шт</p>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="transport-formats__item demo-transport-format">
+            <summary>
+              <div class="transport-formats__item-head">
+                <h3 class="transport-formats__item-title">Мониторы в салоне (цифровые)</h3>
+                <p class="transport-formats__item-desc">Максимальное вовлечение, динамичный контент</p>
+              </div>
+            </summary>
+            <div class="transport-formats__item-body">
+              <div class="transport-formats__item-content">
+                <div class="transport-formats__item-image">
+                  <img src="{% static 'assets/images/transport-format-monitors@2x.png' %}" alt="" width="421" height="271" loading="lazy" decoding="async" />
+                </div>
+                <div class="transport-formats__item-details">
+                  <p class="transport-formats__item-subtitle">Идеально для AI-интеграции</p>
+                  <p class="transport-formats__item-text">Сценарий: Прямой показ QR-кода на экране для мгновенного взаимодействия</p>
+                  <p class="transport-formats__item-subtitle">Стоимость и условия</p>
+                  <p class="transport-formats__item-text">По запросу (индивидуальный расчёт)</p>
+                </div>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -143,6 +219,7 @@
               <div class="step-card__circle">
                 <img class="step-card__icon" src="{% static 'assets/icons/location-133-5138.svg' %}" alt="" loading="lazy" decoding="async" />
               </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
             </div>
             <div class="step-card__body">
               <h3 class="step-card__title">Стратегия и аналитика</h3>
@@ -155,6 +232,7 @@
               <div class="step-card__circle">
                 <img class="step-card__icon" src="{% static 'assets/icons/design-133-5037.svg' %}" alt="" loading="lazy" decoding="async" />
               </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
             </div>
             <div class="step-card__body">
               <h3 class="step-card__title">Креатив с цифровым CTA</h3>
@@ -167,6 +245,7 @@
               <div class="step-card__circle">
                 <img class="step-card__icon" src="{% static 'assets/icons/robo-133-4988.svg' %}" alt="" loading="lazy" decoding="async" />
               </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
             </div>
             <div class="step-card__body">
               <h3 class="step-card__title">Техинтеграция</h3>
@@ -179,6 +258,7 @@
               <div class="step-card__circle">
                 <img class="step-card__icon" src="{% static 'assets/icons/eye-133-4932.svg' %}" alt="" loading="lazy" decoding="async" />
               </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
             </div>
             <div class="step-card__body">
               <h3 class="step-card__title">Запуск и контроль</h3>
@@ -191,6 +271,7 @@
               <div class="step-card__circle">
                 <img class="step-card__icon" src="{% static 'assets/icons/results-133-5154.svg' %}" alt="" loading="lazy" decoding="async" />
               </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
             </div>
             <div class="step-card__body">
               <h3 class="step-card__title">Отчётность</h3>

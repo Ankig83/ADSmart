@@ -17,7 +17,7 @@
   .cta-form.cta-form--radio .container {
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     gap: 40px;
   }
 }

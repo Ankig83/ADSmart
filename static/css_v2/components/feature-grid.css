@@ -58,7 +58,7 @@
   margin: 0;
 }
 
-/* TABLET — 2 колонки */
+/* TABLET 834px — 2+2 колонки */
 @media (min-width: 834px) {
   .feature-grid__title {
     font-size: clamp(32px, 3vw, 36px);
@@ -66,7 +66,7 @@
   }
 
   .feature-grid__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 40px;
   }
 }
