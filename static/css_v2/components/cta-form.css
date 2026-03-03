@@ -96,11 +96,12 @@
   width: 100%;
 }
 
-/* TABLET — 2 колонки */
+/* TABLET — 2 колонки, контент по центру */
 @media (min-width: 834px) {
   .cta-form {
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     gap: 48px;
   }
 
@@ -118,7 +119,102 @@
 /* DESKTOP */
 @media (min-width: 1440px) {
   .cta-form {
-    align-items: flex-start;
     gap: 64px;
+  }
+}
+
+/* ═══ forms_1 — стандарт Radio (Figma 140:5726) ═══
+   440, 834: базовая структура, без «Интересующий формат»
+   1440: модификатор desktop — 1:1 Figma: одна карточка, grid полей
+*/
+
+/* Скрыть «Интересующий формат» на 440, 834; на 1440 — показать (Figma) */
+@media (max-width: 1439px) {
+  .cta-form--forms-1 .cta-form__field--interest {
+    display: none;
+  }
+}
+
+.cta-form--forms-1 .cta-form__form-title {
+  display: none;
+}
+
+/* 440, 834 — card как passthrough (children в container) */
+.cta-form--forms-1 .cta-form__card {
+  display: contents;
+}
+
+/* ═══ 1440 — модификатор desktop: Figma 140:5726 1:1 ═══ */
+@media (min-width: 1440px) {
+  .cta-form--forms-1 .container {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .cta-form--forms-1 .cta-form__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1086px;
+    background: #19161c;
+    border-radius: 12px;
+    padding: 100px 154px 80px;
+    box-sizing: border-box;
+  }
+
+  .cta-form--forms-1 .cta-form__content {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .cta-form--forms-1 .cta-form__title {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+  }
+
+  .cta-form--forms-1 .cta-form__text {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: -0.02em;
+  }
+
+  .cta-form--forms-1 .cta-form__form-wrapper {
+    width: 100%;
+    max-width: 778px;
+    margin: 0 auto;
+  }
+
+  .cta-form--forms-1 .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 14px;
+  }
+
+  .cta-form--forms-1 .cta-form__fields {
+    display: grid;
+    grid-template-columns: 383px 383px;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .cta-form--forms-1 .cta-form__field:nth-child(3),
+  .cta-form--forms-1 .cta-form__field:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  .cta-form--forms-1 .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .cta-form--forms-1 .cta-form__form .button {
+    width: 383px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
   }
 }
