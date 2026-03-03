@@ -155,13 +155,13 @@
   .step-card:nth-child(4) { z-index: 2; }
   .step-card:nth-child(5) { z-index: 1; }
 
-  /* Включаем стрелки: кончик упирается в левый край соседней иконки */
+  /* Стрелка: из центра круга — до левого края соседнего круга справа */
   .step-card__arrow {
     display: block;
-    width: 135px;
+    width: 175px;
     height: 15px;
     top: 50%;
-    left: calc(50% + var(--step-circle-size) / 2 + 8px);
+    left: 50%;
     transform: translateY(-50%);
   }
 

@@ -1,11 +1,11 @@
 /* ai-result.css — исключение, блок «Эфирный ролик + AI-ассистент» (Radio) */
 
-/* 1. Общие настройки секции — теперь она широкая */
+/* 1. Общие настройки секции — левый край как у .container (benefits) */
 .ai-result {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 60px 20px 60px max(16px, calc((100vw - min(1120px, calc(100vw - 32px))) / 2));
   background: #000000;
   color: #ffffff;
   box-sizing: border-box;
@@ -36,22 +36,26 @@
     gap: 24px 32px;
     max-width: 1264px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding-right: 20px;
   }
 
+  /* Заголовок — по Figma */
   .ai-result__title {
     grid-area: title;
-    width: 100%;
-    max-width: 1055px;
+    width: 1055px;
+    max-width: 100%;
     font-size: 48px;
     letter-spacing: 0.48px;
+    line-height: 130%;
     font-weight: 800;
-    height: auto;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
   }
 
+  /* Диаграмма: не выходит правее заголовка (Figma 140:5680) */
   .ai-visual {
     grid-area: visual;
-    max-width: none;
+    max-width: 1055px;
   }
 
   .ai-result__card {
