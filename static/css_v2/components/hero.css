@@ -166,9 +166,32 @@
   }
 }
 
-/* Модификатор для страницы Stops */
+/* Модификатор для страницы Stops — FIGMA 1. На 1440 идеально по центру */
 .hero--stops .hero__bg-img {
-  object-position: 78% center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Mobile — остановка в центр кадра */
+@media (max-width: 833px) {
+  .hero--stops .hero__bg-img {
+    object-position: 85% center;
+  }
+}
+
+/* Tablet 834–1439px — остановка чуть левее */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero--stops .hero__bg-img {
+    object-position: 70% center;
+  }
+}
+
+/* Desktop ≥1440px — идеально */
+@media (min-width: 1440px) {
+  .hero--stops .hero__bg-img {
+    object-position: center center;
+  }
 }
 
 /* Модификатор Production: два фона (mobile/desktop), декоративное изображение, AI-голова */
