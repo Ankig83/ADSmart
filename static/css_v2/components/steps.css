@@ -104,8 +104,8 @@
 
   .step-card:last-child {
     grid-column: 1;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
   }
 }
 

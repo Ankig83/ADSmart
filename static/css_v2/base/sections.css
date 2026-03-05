@@ -15,3 +15,8 @@
     padding: 120px 0;
   }
 }
+
+/* Radio page: фон страницы — чистый чёрный (Figma) */
+.radio-page {
+  background: #000000;
+}

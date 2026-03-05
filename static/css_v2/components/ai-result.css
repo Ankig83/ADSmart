@@ -20,10 +20,11 @@
   gap: 40px;
 }
 
-/* Desktop 1440px — layout как в Figma 140:5680: диаграмма слева, карточка справа */
+/* Desktop 1440px — фикс. padding, иначе диаграмма «катается» при ресайзе */
 @media (min-width: 1440px) {
   .ai-result {
     max-width: 1440px;
+    padding: 60px 20px 60px 160px;
   }
 
   .ai-result__inner {
@@ -171,6 +172,15 @@
     color: #ffffff;
     text-align: left;
     display: inline-block;
+  }
+}
+
+/* 440: заголовок чётко — 2 строки, по центру */
+@media (max-width: 439px) {
+  .ai-result__title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
   }
 }
 

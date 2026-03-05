@@ -3,10 +3,6 @@
 .app { background: #000000; }
 .radio-page { padding: 0; }
 
-.hero--radio .hero__bg-img {
-  object-position: center center;
-}
-
 /* CTA form: layout контейнера (440, 834 — до применения forms_1 desktop) */
 .cta-form.cta-form--radio .container {
   display: flex;
