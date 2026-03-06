@@ -250,38 +250,133 @@
   }
 }
 
+/* ═══ 834px — Figma Blok3 layout ═══ */
 @media (min-width: 834px) {
-  .transport-formats {
-    padding: 60px 24px;
-  }
-
-  .transport-formats__inner {
-    max-width: 600px;
-  }
-
-  .transport-formats__title {
-    font-size: 28px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .transport-formats__inner {
-    max-width: 834px;
-  }
-
-  .transport-formats__title {
-    font-size: 32px;
-  }
-}
-
-/* Desktop 1440px — Figma 140-7248 */
-@media (min-width: 1440px) {
   .transport-formats {
     padding: 44px 32px;
   }
 
   .transport-formats__inner {
     max-width: 770px;
+  }
+
+  .transport-formats__title {
+    font-size: 28px;
+  }
+
+  .transport-formats__list {
+    gap: 14px;
+  }
+
+  /* Hero block: 770px, padding 23px */
+  .transport-formats__hero {
+    padding: 23px;
+  }
+
+  .transport-formats__hero-header {
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  .transport-formats__hero-title {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  .transport-formats__hero-desc {
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .transport-formats__hero-content {
+    flex-wrap: nowrap;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .transport-formats__hero-image {
+    flex: 0 0 328px;
+    width: 328px;
+    height: 368px;
+  }
+
+  .transport-formats__hero-details {
+    flex: 1 1 356px;
+    gap: 25px;
+  }
+
+  .transport-formats__hero-subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  .transport-formats__hero-text {
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  /* Accordion items: padding 30px 23px */
+  .transport-formats__item summary {
+    padding: 30px 23px;
+  }
+
+  .transport-formats__item-head {
+    gap: 14px;
+  }
+
+  .transport-formats__item-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  .transport-formats__item-desc {
+    font-size: 16px;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Accordion expanded content — как hero */
+  .transport-formats__item-content {
+    flex-wrap: nowrap;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .transport-formats__item-image {
+    flex: 0 0 328px;
+    width: 328px;
+    height: 368px;
+  }
+
+  .transport-formats__item-details {
+    flex: 1 1 356px;
+    gap: 25px;
+  }
+
+  .transport-formats__item-subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  .transport-formats__item-text {
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Desktop 1440px — ширина 1088px */
+@media (min-width: 1440px) {
+  .transport-formats {
+    padding: 44px 32px;
+  }
+
+  .transport-formats__inner {
+    max-width: 1088px;
   }
 
   .transport-formats__hero-details {

@@ -14,6 +14,11 @@
   .hero--transport .hero__bg-img {
     object-position: 85% center;
   }
+
+  /* 440: одна кнопка — Рассчитать кампанию */
+  .hero--transport .hero__actions .button--outline {
+    display: none;
+  }
 }
 
 @media (min-width: 834px) and (max-width: 1439px) {
@@ -26,6 +31,11 @@
   .hero--transport .hero__bg-img {
     object-position: center center;
   }
+
+  /* 1440: одна кнопка — Рассчитать кампанию */
+  .hero--transport .hero__actions .button--outline {
+    display: none;
+  }
 }
 
 /* CTA form: layout контейнера */
@@ -34,21 +44,320 @@
   flex-direction: column;
   gap: 32px;
 }
-@media (min-width: 834px) {
-  .cta-form.cta-form--transport .container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 40px;
+
+/* ═══ 440px — упрощённый контакт: карточка на всю ширину ═══ */
+@media (max-width: 833px) {
+  .cta-form.cta-form--transport {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    padding: 0 16px;
   }
-}
-@media (min-width: 1440px) {
+
   .cta-form.cta-form--transport .container {
-    gap: 48px;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    padding: 44px 16px;
+    background: #19161c;
+    border-radius: 12px;
+  }
+
+  .cta-form--transport .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__text {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-form--transport .cta-form__form-wrapper {
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .cta-form--transport .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__form-title {
+    display: none;
+  }
+
+  /* Только поле телефона (второе поле) */
+  .cta-form--transport .cta-form__fields {
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__field:nth-child(1),
+  .cta-form--transport .cta-form__field:nth-child(3),
+  .cta-form--transport .cta-form__field:nth-child(4) {
+    display: none;
+  }
+
+  .cta-form--transport .cta-form__field:nth-child(2) {
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__input {
+    width: 100%;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+  }
+
+  .cta-form--transport .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
   }
 }
 
-/* Контакты: стандарт forms_1, текст слева по центру */
-.cta-form--transport.cta-form--forms-1 .cta-form__content {
-  text-align: left;
+/* ═══ 834px — упрощённый контакт: Figma 770px карточка, 738px контент ═══ */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .cta-form.cta-form--transport {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+  }
+
+  .cta-form.cta-form--transport .container {
+    max-width: 770px;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    padding: 44px 16px;
+    background: #19161c;
+    border-radius: 12px;
+  }
+
+  .cta-form--transport .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__text {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-form--transport .cta-form__form-wrapper {
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .cta-form--transport .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__form-title {
+    display: none;
+  }
+
+  /* Только поле телефона (второе поле) */
+  .cta-form--transport .cta-form__fields {
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__field:nth-child(1),
+  .cta-form--transport .cta-form__field:nth-child(3),
+  .cta-form--transport .cta-form__field:nth-child(4) {
+    display: none;
+  }
+
+  .cta-form--transport .cta-form__field:nth-child(2) {
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__input {
+    width: 100%;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+  }
+
+  .cta-form--transport .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
+  }
+}
+
+/* ═══ 1440px — ширина 1088px ═══ */
+@media (min-width: 1440px) {
+  .cta-form.cta-form--transport {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    padding: 0 32px;
+  }
+
+  .cta-form.cta-form--transport .container {
+    max-width: 1088px;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    padding: 44px 16px;
+    background: #19161c;
+    border-radius: 12px;
+  }
+
+  .cta-form--transport .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__title {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__text {
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-form--transport .cta-form__form-wrapper {
+    width: auto;
+  }
+
+  .cta-form--transport .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .cta-form--transport .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .cta-form--transport .cta-form__form-title {
+    display: none;
+  }
+
+  /* Только поле телефона — 383px */
+  .cta-form--transport .cta-form__fields {
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta-form--transport .cta-form__field:nth-child(1),
+  .cta-form--transport .cta-form__field:nth-child(3),
+  .cta-form--transport .cta-form__field:nth-child(4) {
+    display: none;
+  }
+
+  .cta-form--transport .cta-form__field:nth-child(2) {
+    width: 383px;
+  }
+
+  .cta-form--transport .cta-form__input {
+    width: 383px;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+  }
+
+  .cta-form--transport .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
+  }
 }
