@@ -53,46 +53,6 @@
   }
 }
 
-@media (min-width: 1440px) {
-  .media-split--elevators .container {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "title title"
-      "media content";
-    align-items: stretch;
-    column-gap: 32px;
-    row-gap: 40px;
-  }
-
-  .media-split--elevators .media-split__title {
-    grid-area: title;
-    max-width: 816px;
-  }
-
-  .media-split--elevators .media-split__media {
-    grid-area: media;
-  }
-
-  .media-split--elevators .media-split__content {
-    grid-area: content;
-  }
-
-  .media-split--elevators .media-split__media,
-  .media-split--elevators .media-split__content {
-    width: 100%;
-    max-width: 533px;
-    height: 100%;
-  }
-
-  .media-split--elevators .media-split__list {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-}
 
 /* CTA form: layout контейнера (как stops) */
 .cta-form.cta-form--elevators .container {

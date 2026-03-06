@@ -19,20 +19,22 @@
   <main class="stops-page">
     <section class="hero hero--stops section" aria-labelledby="stops-hero-title">
       <div class="hero__bg">
-        <img src="{% static 'assets/images/FIGMA 1.png' %}" alt="" class="hero__bg-img" loading="eager" decoding="async">
+        <img src="{% static 'assets/images/fon_s.png' %}" alt="" class="hero__bg-img" loading="eager" decoding="async">
         <div class="hero__overlay"></div>
       </div>
 
       <div class="container">
         <div class="hero__content">
           <h1 class="hero__title" id="stops-hero-title">
-            Остановите взгляд города<br />
-            Запустите диалог
+            Остановите взгляд<br />
+            города Запустите<br />
+            диалог
           </h1>
 
           <p class="hero__subtitle">
-            Реклама на остановках и афишах, которая говорит.<br />
-            Превращаем трафик в заявки с помощью AI
+            Реклама на остановках и афишах,<br />
+            которая говорит. Превращаем трафик<br />
+            в заявки с помощью AI
           </p>
 
           <div class="hero__actions">
@@ -261,50 +263,57 @@
       </div>
     </section>
 
-    <section class="cta-form cta-form--stops section" aria-labelledby="stops-contact-title">
+    <section class="cta-form cta-form--stops cta-form--forms-1 section" aria-labelledby="stops-contact-title">
       <div class="container">
-        <div class="cta-form__content">
-          <h2 class="cta-form__title" id="stops-contact-title">Запустите диалог с городом</h2>
-          <p class="cta-form__text">
-            Получите адресные программы и рассчитайте эффективность гибридной кампании
-          </p>
+        <div class="cta-form__card">
+          <div class="cta-form__content">
+            <h2 class="cta-form__title" id="stops-contact-title">Запустите диалог с городом</h2>
+            <p class="cta-form__text">
+              Получите адресные программы и рассчитайте эффективность гибридной кампании
+            </p>
 
-          <div class="cta-form__links">
-            <a class="button button--md button--outline" href="#" role="button">Скачать программу (Остановки)</a>
-            <a class="button button--md button--outline" href="#" role="button">Скачать программу (Афиши)</a>
+            <div class="cta-form__links">
+              <a class="button button--md button--outline" href="#" role="button">Скачать программу (Остановки)</a>
+              <a class="button button--md button--outline" href="#" role="button">Скачать программу (Афиши)</a>
+            </div>
           </div>
-        </div>
 
-        <div class="cta-form__form-wrapper">
-          <div class="cta-form__form">
-            <div class="cta-form__form-title">Получить комплексное предложение</div>
+          <div class="cta-form__form-wrapper">
+            <div class="cta-form__form">
+              <div class="cta-form__form-title">Получить комплексное предложение</div>
 
-            <form action="{% url 'submit_lead' %}" method="post" novalidate>
-              {% csrf_token %}
-              <input type="hidden" name="source" value="stops_contact" />
-              <input type="hidden" name="page" value="{{ request.get_full_path }}" />
-              <input type="hidden" name="type" value="contact" />
-              <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+              <form action="{% url 'submit_lead' %}" method="post" novalidate>
+                {% csrf_token %}
+                <input type="hidden" name="source" value="stops_contact" />
+                <input type="hidden" name="page" value="{{ request.get_full_path }}" />
+                <input type="hidden" name="type" value="contact" />
+                <input type="hidden" name="next" value="{{ request.get_full_path }}" />
 
-              <div class="cta-form__fields">
-                <label class="cta-form__field">
-                  <span class="sr-only">Имя</span>
-                  <input class="cta-form__input" type="text" name="name" placeholder="Имя" autocomplete="name" />
-                </label>
+                <div class="cta-form__fields">
+                  <label class="cta-form__field">
+                    <span class="sr-only">Имя</span>
+                    <input class="cta-form__input" type="text" name="name" placeholder="Имя" autocomplete="name" />
+                  </label>
 
-                <label class="cta-form__field">
-                  <span class="sr-only">Телефон</span>
-                  <input class="cta-form__input" type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required />
-                </label>
+                  <label class="cta-form__field">
+                    <span class="sr-only">Телефон</span>
+                    <input class="cta-form__input" type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required />
+                  </label>
 
-                <label class="cta-form__field">
-                  <span class="sr-only">Сфера бизнеса</span>
-                  <input class="cta-form__input" type="text" name="business" placeholder="Сфера бизнеса" autocomplete="organization" />
-                </label>
-              </div>
+                  <label class="cta-form__field">
+                    <span class="sr-only">Сфера бизнеса</span>
+                    <input class="cta-form__input" type="text" name="business" placeholder="Сфера бизнеса" autocomplete="organization" />
+                  </label>
 
-              <button class="button button--lg button--primary" type="submit">Обсудить мой проект</button>
-            </form>
+                  <label class="cta-form__field cta-form__field--interest">
+                    <span class="sr-only">Интересующий формат</span>
+                    <input class="cta-form__input" type="text" name="interest_format" placeholder="Интересующий формат" />
+                  </label>
+                </div>
+
+                <button class="button button--lg button--primary" type="submit">Обсудить мой проект</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

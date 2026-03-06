@@ -114,6 +114,45 @@
     flex-basis: 100%;
   }
 
+  /* Poster (остановки + лифты): grid — фото слева, карточки справа по верху и низу */
+  .media-split--poster .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "title title"
+      "media content";
+    align-items: stretch;
+    column-gap: 32px;
+    row-gap: 40px;
+  }
+
+  .media-split--poster .media-split__title {
+    grid-area: title;
+  }
+
+  .media-split--poster .media-split__media {
+    grid-area: media;
+  }
+
+  .media-split--poster .media-split__content {
+    grid-area: content;
+  }
+
+  .media-split--poster .media-split__media,
+  .media-split--poster .media-split__content {
+    width: 100%;
+    max-width: 533px;
+    height: 100%;
+  }
+
+  .media-split--poster .media-split__list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .media-split__title {
     font-size: clamp(40px, 3vw, 48px);
     font-weight: 700;
@@ -128,9 +167,5 @@
   .media-split__content {
     flex: 1;
     min-width: 0;
-  }
-
-  .media-split--poster .media-split__list {
-    gap: 32px;
   }
 }
