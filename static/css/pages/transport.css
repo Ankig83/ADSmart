@@ -3,8 +3,29 @@
 .app { background: #000000; }
 .transport-page { padding: 0; }
 
+/* Фото фона — те же object-position по брейкпоинтам, что и Stops */
 .hero--transport .hero__bg-img {
-  object-position: center center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 833px) {
+  .hero--transport .hero__bg-img {
+    object-position: 85% center;
+  }
+}
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero--transport .hero__bg-img {
+    object-position: 70% center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero--transport .hero__bg-img {
+    object-position: center center;
+  }
 }
 
 /* CTA form: layout контейнера */
@@ -25,4 +46,9 @@
   .cta-form.cta-form--transport .container {
     gap: 48px;
   }
+}
+
+/* Контакты: стандарт forms_1, текст слева по центру */
+.cta-form--transport.cta-form--forms-1 .cta-form__content {
+  text-align: left;
 }

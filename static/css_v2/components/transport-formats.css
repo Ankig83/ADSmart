@@ -273,3 +273,39 @@
     font-size: 32px;
   }
 }
+
+/* Desktop 1440px — Figma 140-7248 */
+@media (min-width: 1440px) {
+  .transport-formats {
+    padding: 44px 32px;
+  }
+
+  .transport-formats__inner {
+    max-width: 770px;
+  }
+
+  .transport-formats__hero-details {
+    gap: 25px;
+  }
+
+  .transport-formats__hero-subtitle {
+    font-size: 24px;
+  }
+
+  .transport-formats__hero-text {
+    font-size: 18px;
+  }
+
+  .transport-formats__item-details {
+    gap: 18px;
+  }
+
+  .transport-formats__item-subtitle {
+    font-size: 24px;
+    color: #ff7b00;
+  }
+
+  .transport-formats__item-text {
+    font-size: 18px;
+  }
+}

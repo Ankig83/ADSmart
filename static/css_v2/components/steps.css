@@ -187,3 +187,9 @@
     font-size: 18px;
   }
 }
+
+/* Центральная иконка (3-я карточка) — чёрная для stops и transport */
+.steps--stops .step-card:nth-child(3) .step-card__icon,
+.steps--transport .step-card:nth-child(3) .step-card__icon {
+  filter: grayscale(1) brightness(0);
+}
