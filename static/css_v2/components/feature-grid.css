@@ -66,7 +66,7 @@
   }
 
   .feature-grid__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: 1fr;
     gap: 40px;
   }
 }
@@ -81,6 +81,7 @@
   }
 
   .feature-grid__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 48px;
   }
 

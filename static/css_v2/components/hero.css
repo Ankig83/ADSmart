@@ -166,94 +166,67 @@
   }
 }
 
-/* Модификатор для страницы Stops — FIGMA 1. На 1440 идеально по центру */
-.hero--stops .hero__bg-img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-/* Mobile — остановка в центр кадра */
-@media (max-width: 833px) {
-  .hero--stops .hero__bg-img {
-    object-position: 85% center;
-  }
-}
-
-/* Tablet 834–1439px — остановка чуть левее */
-@media (min-width: 834px) and (max-width: 1439px) {
-  .hero--stops .hero__bg-img {
-    object-position: 70% center;
-  }
-}
-
-/* Desktop ≥1440px — идеально */
-@media (min-width: 1440px) {
-  .hero--stops .hero__bg-img {
-    object-position: center center;
-  }
-}
-
-/* Модификатор Production: два фона (mobile/desktop), декоративное изображение, AI-голова */
-.hero--production .hero__bg-img--desktop {
+/* Модификатор для страницы Elevators: три варианта заголовка (440 / 834 / desktop) */
+.hero--elevators .hero__title-inner {
   display: none;
 }
-.hero--production .hero__bg-img--mobile {
+
+/* По умолчанию на планшете/десктопе используем десктопный фон */
+.hero--elevators .hero__bg-img--elevators-mobile {
+  display: none;
+}
+.hero--elevators .hero__bg-img--elevators-desktop {
   display: block;
 }
-.hero--production .hero__image-wrap {
-  display: none;
-}
-.hero--production .hero__ai {
-  display: none;
-}
-
-@media (min-width: 834px) {
-  .hero--production .hero__bg-img--desktop {
-    display: block;
-  }
-  .hero--production .hero__bg-img--mobile {
-    display: none;
-  }
-  .hero--production .hero__ai {
-    display: none;
-  }
-}
-
-@media (min-width: 1440px) {
-  .hero--production .hero__image-wrap {
-    display: block;
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: min(473px, 33vw);
-    height: auto;
-    z-index: 1;
-    pointer-events: none;
-  }
-  .hero--production .hero__glow {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 110%;
-    height: 110%;
-    background: #ff7b00;
-    opacity: 0.3;
-    filter: blur(80px);
-    pointer-events: none;
-    z-index: -1;
-  }
-  .hero--production .hero__img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-  }
-}
 
 @media (max-width: 833px) {
+  .hero--elevators .hero__title--440 {
+    display: block;
+  }
+
+  /* Мобильный фон лифтов: отдельное изображение fon_l, заполняет контейнер как у Radio */
+  .hero--elevators .hero__bg-img--elevators-mobile {
+    display: block;
+    object-position: center center;
+  }
+
+  .hero--elevators .hero__bg-img--elevators-desktop {
+    display: none;
+  }
+}
+
+/* TABLET 834–1439px — показываем только вариант 834 */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero--elevators .hero__title--834 {
+    display: block;
+  }
+}
+
+/* DESKTOP ≥1440px — показываем только desktop-вариант (layout не трогаем) */
+@media (min-width: 1440px) {
+  .hero--elevators .hero__title--desktop {
+    display: block;
+  }
+}
+
+/* Мобильная версия (≤833px) */
+@media (max-width: 833px) {
+  /* Для остановок - центрируем изображение */
+  .hero--stops {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero--stops .hero__bg-img {
+    position: absolute;
+    width: 800px; /* Фиксированная ширина */
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+  }
+
+  /* Для production - AI голова */
   .hero--production .hero__ai {
     display: block;
     position: absolute;
@@ -264,6 +237,7 @@
     z-index: 2;
     pointer-events: none;
   }
+  
   .hero--production .hero__ai-glow {
     position: absolute;
     width: 55%;
@@ -275,11 +249,23 @@
     filter: blur(56px);
     border-radius: 100px;
   }
+  
   .hero--production .hero__ai-img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+
+  /* Для лифтов - корректировка отступов */
+  .hero--elevators .hero__content {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  /* Лифты 440: убираем затемнение, чтобы фон не был слишком тёмным */
+  .hero--elevators .hero__overlay {
+    background: transparent;
   }
 }
