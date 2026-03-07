@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css_v2/main.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/ai_assistants.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/ai_assistants-tablet-lock.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/ai_assistants-mobile-lock.css' %}" />
@@ -18,57 +19,7 @@
 
 {% block content %}
   <div class="demo-ai">
-    <section class="demo-ai-hero" aria-labelledby="ai-hero-title">
-      <div class="demo-ai-hero__bg" aria-hidden="true">
-        <img
-          class="demo-ai-hero__bg-img demo-ai-hero__bg-img--desktop"
-          src="{% static 'assets/images/figma-1-5462128d.png' %}"
-          alt=""
-          width="1440"
-          height="751"
-          loading="eager"
-          decoding="async"
-        />
-        <img
-          class="demo-ai-hero__bg-img demo-ai-hero__bg-img--mobile"
-          src="{% static 'assets/images/2-55cbcda6.png' %}"
-          alt=""
-          loading="eager"
-          decoding="async"
-        />
-        <div class="demo-ai-hero__overlay"></div>
-      </div>
-
-      <div class="demo-ai-hero__content">
-        <h1 class="demo-ai-hero__title" id="ai-hero-title">
-          AI-ассистенты<br />
-          для вашего<br />
-          бизнеса
-        </h1>
-        <p class="demo-ai-hero__subtitle">
-          Сокращаем расходы, автоматизируя продажи, найм и поддержку. <br />
-          От умных чат-ботов до голосовых AI-ассистентов и виджетов на сайте
-        </p>
-
-        <div class="demo-ai-hero__actions">
-          <button class="button button--lg button--primary" type="button" data-modal-open="home-calc-modal">Рассчитать</button>
-          <a class="button button--lg button--outline" href="#cases">Наши кейсы</a>
-        </div>
-      </div>
-
-      <div class="demo-ai-hero__image-wrap" aria-hidden="true">
-        <div class="demo-ai-hero__glow"></div>
-        <img
-          class="demo-ai-hero__img"
-          src="{% static 'assets/images/ai-assistants-hero.png' %}"
-          alt=""
-          width="564"
-          height="564"
-          loading="eager"
-          decoding="async"
-        />
-      </div>
-    </section>
+    {% include "components/hero_with_figure.html" with figure_img="assets/images/ai-assistants-hero.png" bg_desktop="assets/images/figma-1-5462128d.png" bg_mobile="assets/images/2-55cbcda6.png" title_html="AI-ассистенты<br />для вашего<br />бизнеса" subtitle_html="Сокращаем расходы, автоматизируя продажи, найм и поддержку.<br />От умных чат-ботов до голосовых AI-ассистентов и виджетов на сайте" btn_primary_text="Рассчитать" btn_primary_action="home-calc-modal" btn_outline_text="Наши кейсы" btn_outline_href="#cases" title_id="ai-hero-title" %}
 
     <section class="demo-ai-comparison" aria-labelledby="ai-comparison-title">
       <h2 class="demo-ai-comparison__title" id="ai-comparison-title">

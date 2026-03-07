@@ -11,107 +11,7 @@
   box-sizing: border-box;
 }
 
-/* Hero Section (140:4957 direct children) */
-.demo-ai-hero {
-  position: relative;
-  width: 100%;
-  max-width: 1440px;
-  height: 754px; /* From image end (1505) to page start (826) is more, but let's use a standard height or from Figma */
-  background: #000000;
-  overflow: hidden;
-}
-
-.demo-ai-hero__content {
-  position: absolute;
-  left: 178px;
-  top: 184px; /* 1010 - 826 */
-  width: 686px;
-  z-index: 2;
-}
-
-.demo-ai-hero__title {
-  margin: 0 0 88px;
-  font-family: var(--font-sans);
-  font-size: 65px;
-  font-weight: 800;
-  line-height: 84.5px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-ai-hero__subtitle {
-  width: 512px;
-  margin: 0 0 36px;
-  font-family: var(--font-sans);
-  font-size: 21px;
-  font-weight: 400;
-  line-height: 31.5px;
-  color: #c4c4c4;
-}
-
-.demo-ai-hero__actions {
-  display: flex;
-  gap: 14px;
-}
-
-.demo-ai-hero__image-wrap {
-  position: absolute;
-  left: 782px;
-  top: 115px;
-  width: 564px;
-  height: 564px;
-  z-index: 1;
-}
-
-/* Figma 140:4958: Dev Mode — #FF7B00 30%, blur 250px, radius 100px */
-.demo-ai-hero__glow {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 633.226px;
-  height: 642px;
-  border-radius: 100px;
-  background: rgba(255, 123, 0, 0.30);
-  filter: blur(250px);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.demo-ai-hero__img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-}
-
-/* Background images setup */
-.demo-ai-hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.demo-ai-hero__bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.demo-ai-hero__bg-img--desktop {
-  display: block;
-}
-
-.demo-ai-hero__bg-img--mobile {
-  display: none;
-}
-
-.demo-ai-hero__overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
+/* Hero — перенесён в css_v2/components/hero-with-figure.css */
 
 /* Comparison Section — base (mobile/<834), desktop 1440+ в @media ниже.
    834-1439: НЕ ТРОГАТЬ — в ai_assistants-tablet-lock.css */
@@ -191,12 +91,12 @@
 
 /* Desktop 1440+ — Figma 140:4968 (Frame 427321600): exact values from node dump */
 @media (min-width: 1440px) {
-  /* Hide background on desktop 1440+ */
-  .demo-ai-hero__bg {
+  /* Hide background on desktop 1440+ (hero-with-figure) */
+  .hero-with-figure__bg {
     display: none;
   }
 
-  .demo-ai-hero__overlay {
+  .hero-with-figure__overlay {
     display: none;
   }
 
@@ -496,7 +396,7 @@
     overflow-x: hidden !important;
   }
 
-  .demo-ai-hero {
+  .hero-with-figure {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;
     margin: 0 auto !important;
     height: clamp(435px, 38vw, 535px) !important;
@@ -506,45 +406,45 @@
     box-sizing: border-box !important;
     overflow: hidden !important;
   }
-  .demo-ai-hero::before {
+  .hero-with-figure::before {
     content: "" !important;
     position: absolute !important;
     inset: 0 !important;
     z-index: 1 !important;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 4.4%, rgba(0, 0, 0, 0.52) 42.8%, rgba(0, 0, 0, 0.05) 70.4%) !important;
   }
-  .demo-ai-hero__bg,
-  .demo-ai-hero__bg-img {
+  .hero-with-figure__bg,
+  .hero-with-figure__bg-img {
     position: absolute !important;
     inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
   }
-  .demo-ai-hero__content {
+  .hero-with-figure__content {
     position: relative !important;
     left: auto !important;
     top: auto !important;
     width: min(100%, clamp(462px, 56vw, 690px)) !important;
     z-index: 2 !important;
   }
-  .demo-ai-hero__title {
+  .hero-with-figure__title {
     width: 100% !important;
     margin: 0 0 24px !important;
     font-size: 32px !important;
     line-height: 41.6px !important;
   }
-  .demo-ai-hero__subtitle {
+  .hero-with-figure__subtitle {
     width: 100% !important;
     margin: 0 0 24px !important;
     font-size: 16px !important;
     line-height: 22.4px !important;
   }
-  .demo-ai-hero__actions {
+  .hero-with-figure__actions {
     display: flex !important;
     gap: 8px !important;
   }
-  .demo-ai-hero__image-wrap {
+  .hero-with-figure__image-wrap {
     display: none !important;
   }
 
