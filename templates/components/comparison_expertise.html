@@ -1,0 +1,36 @@
+{% comment %}
+  comparison_expertise — блок «Мы привносим экспертизу…» (платформа vs партнёр).
+  Variables: title_id, title_line1, title_line2, platform_header, platform_cells, partner_header, partner_cells
+{% endcomment %}
+<section class="comparison-expertise" aria-labelledby="{{ title_id|default:'comparison-expertise-title' }}">
+  <h2 class="comparison-expertise__title comparison-expertise__title--two-lines" id="{{ title_id|default:'comparison-expertise-title' }}">
+    <span class="comparison-expertise__title-line">{% if title_line1 %}{{ title_line1 }}{% else %}Мы привносим экспертизу туда, где{% endif %}</span>
+    <span class="comparison-expertise__title-line">{% if title_line2 %}{{ title_line2 }}{% else %}технологии нуждаются в стратегии{% endif %}</span>
+  </h2>
+
+  <div class="comparison-expertise__grid">
+    <div class="comparison-expertise__block comparison-expertise__block--platform">
+      <div class="comparison-expertise__block-header">{{ platform_header|default:"Если вы берете «просто платформу»" }}</div>
+      {% for cell in platform_cells %}
+      <div class="comparison-expertise__block-cell">{{ cell }}</div>
+      {% empty %}
+      <div class="comparison-expertise__block-cell">Вы получаете доступ к инструментам</div>
+      <div class="comparison-expertise__block-cell">Вам нужно самим настраивать сценарии, дизайн и интеграции</div>
+      <div class="comparison-expertise__block-cell">Техподдержка решает общие технические вопросы</div>
+      <div class="comparison-expertise__block-cell">Внедрение зависит от ваших IT-ресурсов</div>
+      {% endfor %}
+    </div>
+
+    <div class="comparison-expertise__block comparison-expertise__block--partner">
+      <div class="comparison-expertise__block-header comparison-expertise__block-header--accent">{{ partner_header|default:"Когда вы работаете с ADSmart как партнером" }}</div>
+      {% for cell in partner_cells %}
+      <div class="comparison-expertise__block-cell">{{ cell }}</div>
+      {% empty %}
+      <div class="comparison-expertise__block-cell">Вы получаете готовое бизнес-решение, заточенное под ваши процессы</div>
+      <div class="comparison-expertise__block-cell">Наша команда аналитиков, дизайнеров и маркетологов делает это за вас</div>
+      <div class="comparison-expertise__block-cell">Вы получаете персонального менеджера проекта, который отвечает за конечный результат и ваши KPI</div>
+      <div class="comparison-expertise__block-cell">Мы берем на себя полный цикл: от аудита до внедрения «под ключ» и обучения сотрудников</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

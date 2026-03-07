@@ -153,6 +153,22 @@
     justify-content: space-between;
   }
 
+  .media-split--poster .media-split__media {
+    align-self: start;
+  }
+
+  .media-split--poster .media-split__content {
+    align-self: start;
+  }
+
+  .media-split--poster .media-split__list {
+    gap: 18px;
+  }
+
+  .media-split--poster .media-split__item {
+    padding: 24px 32px;
+  }
+
   .media-split__title {
     font-size: clamp(40px, 3vw, 48px);
     font-weight: 700;

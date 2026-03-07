@@ -21,41 +21,14 @@
   <div class="demo-ai">
     {% include "components/hero_with_figure.html" with figure_img="assets/images/ai-assistants-hero.png" bg_desktop="assets/images/figma-1-5462128d.png" bg_mobile="assets/images/2-55cbcda6.png" title_html="AI-ассистенты<br />для вашего<br />бизнеса" subtitle_html="Сокращаем расходы, автоматизируя продажи, найм и поддержку.<br />От умных чат-ботов до голосовых AI-ассистентов и виджетов на сайте" btn_primary_text="Рассчитать" btn_primary_action="home-calc-modal" btn_outline_text="Наши кейсы" btn_outline_href="#cases" title_id="ai-hero-title" %}
 
-    <section class="demo-ai-comparison" aria-labelledby="ai-comparison-title">
-      <h2 class="demo-ai-comparison__title" id="ai-comparison-title">
-        Мы привносим экспертизу туда, где технологии нуждаются в стратегии
-      </h2>
+    {% include "components/comparison_expertise.html" with title_id="ai-comparison-title" title_line1="Мы привносим экспертизу туда, где" title_line2="технологии нуждаются в стратегии" %}
 
-      <div class="demo-ai-comparison__grid">
-        <!-- Block 1: платформа (140:7695) -->
-        <div class="demo-ai-comparison__block demo-ai-comparison__block--platform">
-          <div class="demo-ai-comparison__block-header">Если вы берете «просто платформу»</div>
-          <div class="demo-ai-comparison__block-cell">Вы получаете доступ к инструментам</div>
-          <div class="demo-ai-comparison__block-cell">Вам нужно самим настраивать сценарии, дизайн и интеграции</div>
-          <div class="demo-ai-comparison__block-cell">Техподдержка решает общие технические вопросы</div>
-          <div class="demo-ai-comparison__block-cell">Внедрение зависит от ваших IT-ресурсов</div>
-        </div>
-
-        <!-- Block 2: партнер (140:7707) -->
-        <div class="demo-ai-comparison__block demo-ai-comparison__block--partner">
-          <div class="demo-ai-comparison__block-header demo-ai-comparison__block-header--accent">Когда вы работаете с ADSmart как партнером</div>
-          <div class="demo-ai-comparison__block-cell">Вы получаете готовое бизнес-решение, заточенное под ваши процессы</div>
-          <div class="demo-ai-comparison__block-cell">Наша команда аналитиков, дизайнеров и маркетологов делает это за вас</div>
-          <div class="demo-ai-comparison__block-cell">Вы получаете персонального менеджера проекта, который отвечает за конечный результат и ваши KPI</div>
-          <div class="demo-ai-comparison__block-cell">Мы берем на себя полный цикл: от аудита до внедрения «под ключ» и обучения сотрудников</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="demo-ai-competencies" aria-labelledby="ai-competencies-title">
-      <h2 class="demo-ai-competencies__title" id="ai-competencies-title">
-        Наши компетенции как партнера-интегратора
-      </h2>
-
-      <div class="demo-ai-competencies__inner">
-        <div class="demo-ai-competencies__left">
+    <section class="media-split media-split--poster media-split--ai section" aria-labelledby="ai-competencies-title">
+      <div class="container">
+        <h2 class="media-split__title" id="ai-competencies-title">Наши компетенции как партнера-интегратора</h2>
+        <div class="media-split__media" aria-hidden="true">
           <img
-            class="demo-ai-competencies__img"
+            class="media-split__img"
             src="{% static 'assets/images/ai-assistants-competencies.jpg' %}"
             alt=""
             width="533"
@@ -64,31 +37,30 @@
             decoding="async"
           />
         </div>
-
-        <div class="demo-ai-competencies__right">
-          <div class="demo-ai-competencies__card">
-            <h3 class="demo-ai-competencies__h3">Адаптация и стратегия</h3>
-            <p class="demo-ai-competencies__p">
-              Мы не используем шаблонных ботов: анализируем ваш бизнес и клиентов, выявляем их боли и создаём диалоговые
-              сценарии, которые решают реальные задачи и повышают конверсию.
-            </p>
-          </div>
-
-          <div class="demo-ai-competencies__card">
-            <h3 class="demo-ai-competencies__h3">Креатив и дизайн</h3>
-            <p class="demo-ai-competencies__p">
-              Наши дизайнеры создают уникальные интерфейсы для виджетов и диалогов, которые соответствуют вашему
-              бренд-буку, а не выглядят шаблонно
-            </p>
-          </div>
-
-          <div class="demo-ai-competencies__card">
-            <h3 class="demo-ai-competencies__h3">Глубокая интеграция</h3>
-            <p class="demo-ai-competencies__p">
-              Мы интегрируем AI-решения с вашими CRM, ERP и другими системами, обеспечивая бесшовный обмен данными и
-              автоматизацию процессов.
-            </p>
-          </div>
+        <div class="media-split__content" aria-label="Компетенции">
+          <ul class="media-split__list">
+            <li class="media-split__item" role="group" aria-label="Адаптация и стратегия">
+              <h3 class="media-split__item-title">Адаптация и стратегия</h3>
+              <p class="media-split__item-text">
+                Мы не используем шаблонных ботов: анализируем ваш бизнес и клиентов, выявляем их боли и создаём диалоговые
+                сценарии, которые решают реальные задачи и повышают конверсию.
+              </p>
+            </li>
+            <li class="media-split__item" role="group" aria-label="Креатив и дизайн">
+              <h3 class="media-split__item-title">Креатив и дизайн</h3>
+              <p class="media-split__item-text">
+                Наши дизайнеры создают уникальные интерфейсы для виджетов и диалогов, которые соответствуют вашему
+                бренд-буку, а не выглядят шаблонно.
+              </p>
+            </li>
+            <li class="media-split__item" role="group" aria-label="Глубокая интеграция">
+              <h3 class="media-split__item-title">Глубокая интеграция</h3>
+              <p class="media-split__item-text">
+                Мы интегрируем AI-решения с вашими CRM, ERP и другими системами, обеспечивая бесшовный обмен данными и
+                автоматизацию процессов.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
