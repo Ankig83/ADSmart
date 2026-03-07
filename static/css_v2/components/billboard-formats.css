@@ -25,6 +25,15 @@
   color: #ffffff;
 }
 
+/* Title: mobile by default */
+.billboard-formats__title-desktop {
+  display: none;
+}
+
+.billboard-formats__title-mobile {
+  display: block;
+}
+
 .billboard-formats__tabs {
   display: flex;
   gap: 10px;
@@ -79,17 +88,15 @@
 
 .billboard-formats__image {
   width: 100%;
-  height: 368px;
   border-radius: 12px;
   overflow: hidden;
-  background: #19161c;
 }
 
 .billboard-formats__image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
+  border-radius: 12px;
 }
 
 .billboard-formats__body {
@@ -136,7 +143,7 @@
   }
 
   .billboard-formats__inner {
-    max-width: 600px;
+    max-width: 770px;
   }
 
   .billboard-formats__title {
@@ -151,5 +158,74 @@
 
   .billboard-formats__title {
     font-size: 32px;
+  }
+}
+
+/* 1440px: ширина 1090px, изображение слева, текст справа */
+@media (min-width: 1440px) {
+  .billboard-formats {
+    padding: 80px 32px;
+  }
+
+  .billboard-formats__inner {
+    max-width: 1090px;
+  }
+
+  .billboard-formats__title {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.48px;
+  }
+
+  .billboard-formats__title-mobile {
+    display: none;
+  }
+
+  .billboard-formats__title-desktop {
+    display: block;
+  }
+
+  /* Панель: горизонтальный layout */
+  .billboard-formats__panel.is-visible {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  /* Изображение слева */
+  .billboard-formats__image {
+    flex: 0 0 503px;
+    width: 503px;
+    max-height: 368px;
+  }
+
+  .billboard-formats__image img {
+    max-height: 368px;
+    object-fit: contain;
+  }
+
+  /* Текст справа */
+  .billboard-formats__body {
+    flex: 1;
+    min-width: 0;
+    gap: 24px;
+  }
+
+  .billboard-formats__panel-title {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  .billboard-formats__panel-text {
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .billboard-formats__panel-action {
+    font-size: 18px;
+    letter-spacing: -0.03em;
   }
 }

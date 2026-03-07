@@ -171,27 +171,36 @@
   display: none;
 }
 
-/* По умолчанию на планшете/десктопе используем десктопный фон */
-.hero--elevators .hero__bg-img--elevators-mobile {
+/* По умолчанию скрываем все фоны лифтов */
+.hero--elevators .hero__bg-img--elevators-mobile,
+.hero--elevators .hero__bg-img--elevators-tablet,
+.hero--elevators .hero__bg-img--elevators-desktop {
   display: none;
 }
-.hero--elevators .hero__bg-img--elevators-desktop {
-  display: block;
-}
 
+/* Mobile ≤833px */
 @media (max-width: 833px) {
   .hero--elevators .hero__title--440 {
     display: block;
   }
 
-  /* Мобильный фон лифтов: отдельное изображение fon_l, заполняет контейнер как у Radio */
   .hero--elevators .hero__bg-img--elevators-mobile {
     display: block;
     object-position: center center;
   }
+}
 
+/* Tablet 834–1439px */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero--elevators .hero__bg-img--elevators-tablet {
+    display: block;
+  }
+}
+
+/* Desktop ≥1440px */
+@media (min-width: 1440px) {
   .hero--elevators .hero__bg-img--elevators-desktop {
-    display: none;
+    display: block;
   }
 }
 

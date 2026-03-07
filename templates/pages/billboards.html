@@ -38,10 +38,14 @@
       <div class="container">
         <div class="hero__content">
           <h1 class="hero__title" id="billboards-hero-title">
-            Превращаем массовый охват в поток целевых заявок
+            <span class="hero__title-inner hero__title--mobile">Превращаем массовый охват в поток целевых заявок</span>
+            <span class="hero__title-inner hero__title--834">Превращаем массовый охват в<br />поток целевых заявок. Ваш<br />диалог начинается по QR-коду<br />или звонку</span>
+            <span class="hero__title-inner hero__title--desktop">Превращаем массовый охват<br />в поток целевых заявок.<br />Ваш диалог начинается по<br />QR-коду или звонку</span>
           </h1>
           <p class="hero__subtitle">
-            Билборды от ADSmart — это классическая мощь наружной рекламы, усиленная искусственным интеллектом. Ваш диалог начинается по QR-коду или звонку
+            <span class="hero__subtitle-inner hero__subtitle--mobile">Билборды от ADSmart — это классическая мощь наружной рекламы, усиленная искусственным интеллектом. Ваш диалог начинается по QR-коду или звонку</span>
+            <span class="hero__subtitle-inner hero__subtitle--834">Билборды от ADSmart — это классическая мощь<br />наружной рекламы, усиленная искусственным<br />интеллектом.</span>
+            <span class="hero__subtitle-inner hero__subtitle--desktop">Билборды от ADSmart — это классическая мощь наружной рекламы,<br />усиленная искусственным интеллектом.</span>
           </p>
           <div class="hero__actions" aria-label="Действия">
             <button class="button button--lg button--primary" type="button" data-modal-open="home-calc-modal">Рассчитать кампанию</button>
@@ -99,7 +103,10 @@
 
     <section class="billboard-formats section" aria-labelledby="billboards-formats-scenarios-title" data-billboard-formats>
       <div class="billboard-formats__inner">
-        <h2 class="billboard-formats__title" id="billboards-formats-scenarios-title">Наши форматы и интеллектуальные сценарии</h2>
+        <h2 class="billboard-formats__title" id="billboards-formats-scenarios-title">
+          <span class="billboard-formats__title-mobile">Наши форматы и интеллектуальные сценарии</span>
+          <span class="billboard-formats__title-desktop">Наши форматы и<br />интеллектуальные сценарии</span>
+        </h2>
         <div class="billboard-formats__tabs" role="tablist" aria-label="Выбор формата билборда">
           <button type="button" class="billboard-formats__tab" role="tab" data-billboard-tab aria-selected="false">Статичный билборд</button>
           <button type="button" class="billboard-formats__tab" role="tab" data-billboard-tab aria-selected="false">Призматрон</button>
@@ -108,7 +115,7 @@
         <div class="billboard-formats__content">
           <div class="billboard-formats__panel" data-billboard-panel role="tabpanel" hidden>
             <div class="billboard-formats__image">
-              <img src="{% static 'assets/images/billboards-static@2x.png' %}" alt="Статичный билборд" width="503" height="368" loading="lazy" decoding="async" />
+              <img src="{% static 'assets/images/stata.png' %}" alt="Статичный билборд" width="503" height="368" loading="lazy" decoding="async" />
             </div>
             <div class="billboard-formats__body">
               <h3 class="billboard-formats__panel-title">Статичный билборд</h3>
@@ -118,7 +125,7 @@
           </div>
           <div class="billboard-formats__panel" data-billboard-panel role="tabpanel" hidden>
             <div class="billboard-formats__image">
-              <img src="{% static 'assets/images/billboards-static@2x.png' %}" alt="Призматрон" width="503" height="368" loading="lazy" decoding="async" />
+              <img src="{% static 'assets/images/prizma.png' %}" alt="Призматрон" width="503" height="368" loading="lazy" decoding="async" />
             </div>
             <div class="billboard-formats__body">
               <h3 class="billboard-formats__panel-title">Призматрон</h3>
@@ -128,7 +135,7 @@
           </div>
           <div class="billboard-formats__panel is-visible" data-billboard-panel role="tabpanel">
             <div class="billboard-formats__image">
-              <img src="{% static 'assets/images/billboards-static@2x.png' %}" alt="Цифровой билборд" width="503" height="368" loading="lazy" decoding="async" />
+              <img src="{% static 'assets/images/monic.png' %}" alt="Цифровой билборд" width="503" height="368" loading="lazy" decoding="async" />
             </div>
             <div class="billboard-formats__body">
               <h3 class="billboard-formats__panel-title">Цифровой билборд (экран)</h3>

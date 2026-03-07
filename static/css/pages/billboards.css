@@ -4,7 +4,122 @@
 .billboards-page { padding: 0; }
 
 .hero--billboards .hero__bg-img {
-  object-position: center center;
+  object-fit: cover;
+}
+
+/* Фон по брейкпоинтам — как на радио */
+@media (max-width: 439px) {
+  .hero--billboards .hero__bg-img {
+    object-position: right center;
+  }
+}
+
+@media (min-width: 440px) and (max-width: 1439px) {
+  .hero--billboards .hero__bg-img {
+    object-position: 90% center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero--billboards .hero__bg-img {
+    object-position: center center;
+  }
+}
+
+/* Hero title/subtitle: mobile by default */
+.hero--billboards .hero__title-inner,
+.hero--billboards .hero__subtitle-inner {
+  display: none;
+}
+
+.hero--billboards .hero__title--mobile,
+.hero--billboards .hero__subtitle--mobile {
+  display: block;
+}
+
+/* 834px: tablet — Figma Blok1 */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero--billboards {
+    min-height: 435px;
+  }
+
+  .hero--billboards .container {
+    max-width: 834px;
+  }
+
+  .hero--billboards .hero__content {
+    padding: 56px 32px 80px;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .hero--billboards .hero__content .hero__actions {
+    margin-top: 18px;
+  }
+
+
+  .hero--billboards .hero__title--mobile,
+  .hero--billboards .hero__subtitle--mobile {
+    display: none;
+  }
+
+  .hero--billboards .hero__title--834,
+  .hero--billboards .hero__subtitle--834 {
+    display: block;
+  }
+
+  .hero--billboards .hero__title {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.48px;
+  }
+
+  .hero--billboards .hero__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #c4c4c4;
+    margin-bottom: 0;
+  }
+
+  .hero--billboards .hero__actions {
+    gap: 0;
+  }
+
+  .hero--billboards .hero__actions .button--outline {
+    display: none;
+  }
+
+  .hero--billboards .hero__actions .button--primary {
+    width: 243px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #14f195;
+    color: #000000;
+    border-radius: 64px;
+  }
+}
+
+/* 1440px: desktop variants */
+@media (min-width: 1440px) {
+  .hero--billboards .hero__title--mobile,
+  .hero--billboards .hero__subtitle--mobile,
+  .hero--billboards .hero__title--834,
+  .hero--billboards .hero__subtitle--834 {
+    display: none;
+  }
+
+  .hero--billboards .hero__title--desktop,
+  .hero--billboards .hero__subtitle--desktop {
+    display: block;
+  }
+
+  .hero--billboards .hero__actions .button--outline {
+    display: none;
+  }
 }
 
 .media-split--billboards .container {
@@ -45,5 +160,120 @@
 @media (min-width: 1440px) {
   .cta-form.cta-form--billboards .container {
     gap: 48px;
+  }
+}
+
+/* Steps: центральная (3-я) иконка — чёрная */
+.steps--billboards .step-card:nth-child(3) .step-card__icon {
+  filter: brightness(0);
+}
+
+/* ═══ CTA Contact 1440px — Figma 1088px карточка ═══ */
+@media (min-width: 1440px) {
+  .cta-form.cta-form--billboards {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    padding: 0 32px;
+  }
+
+  .cta-form.cta-form--billboards .container {
+    max-width: 1088px;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 54px 44px 60px;
+    background: #19161c;
+    border-radius: 12px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__title {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__text {
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form-wrapper {
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form-title {
+    display: none;
+  }
+
+  /* Только поле телефона — 383px */
+  .cta-form.cta-form--billboards .cta-form__fields {
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(1),
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(3) {
+    display: none;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(2) {
+    width: 383px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__input {
+    width: 383px;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
   }
 }
