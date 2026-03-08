@@ -65,52 +65,9 @@
       </div>
     </section>
 
-    <section class="demo-ai-security" aria-labelledby="ai-security-title">
-      <div class="demo-ai-security__inner">
-        <h2 class="demo-ai-security__title" id="ai-security-title">
-          Мы понимаем специфику требований безопасности и импортозамещения
-        </h2>
+    {% include "components/content_media_block.html" with title_id="ai-security-title" title="Мы понимаем специфику требований безопасности и импортозамещения" text="Работая с проверенной российской платформой, мы гарантируем полное соответствие требованиям 152-ФЗ и регуляторов. Мы берем на себя всю проектно-техническую работу по подготовке документации и внедрению решений в строгих IT-контурах" img_src="assets/images/ai-assistants-security.jpg" img_width="504" img_height="295" %}
 
-        <div class="demo-ai-security__content">
-          <div class="demo-ai-security__left">
-            <p class="demo-ai-security__text">
-              Работая с проверенной российской платформой, мы гарантируем полное соответствие требованиям 152-ФЗ и
-              регуляторов. Мы берем на себя всю проектно-техническую работу по подготовке документации и внедрению решений
-              в строгих IT-контурах
-            </p>
-          </div>
-          <div class="demo-ai-security__right">
-            <img
-              class="demo-ai-security__img"
-              src="{% static 'assets/images/ai-assistants-security.jpg' %}"
-              alt=""
-              width="504"
-              height="295"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="demo-ai-cta" aria-labelledby="ai-cta-title">
-      <div class="demo-ai-cta__inner">
-        <h2 class="demo-ai-cta__title" id="ai-cta-title">
-          Давайте обсудим не возможности платформы, <br />
-          а ваши бизнес-задачи
-        </h2>
-        <p class="demo-ai-cta__text">
-          Расскажите о процессе, который хотите автоматизировать. <br />
-          Мы подготовим концепцию внедрения и покажем кейсы для вашей отрасли
-        </p>
-
-        <div class="demo-ai-cta__actions">
-          <a class="button button--md button--primary" href="#contact">Обсудить проект</a>
-          <a class="button button--md button--outline" href="#cases">Посмотреть кейсы</a>
-        </div>
-      </div>
-    </section>
+    {% include "components/cta_card.html" with title_id="ai-cta-title" title_html="Давайте обсудим не возможности платформы, <br />а ваши бизнес-задачи" text_html="Расскажите о процессе, который хотите автоматизировать. <br />Мы подготовим концепцию внедрения и покажем кейсы для вашей отрасли" btn_primary_text="Обсудить проект" btn_primary_href="#contact" btn_outline_text="Посмотреть кейсы" btn_outline_href="#cases" %}
   </div>
 
   {% include "components/demo/lead_success_modal.html" %}

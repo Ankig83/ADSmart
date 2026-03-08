@@ -1,0 +1,190 @@
+/* cta-card.css — блок CTA (контакты): заголовок, текст, кнопки
+   Figma 440: CTA = bg #19161C, inner = прозрачный, gap 26px.
+   BPs: 440, 834, 1440. */
+
+/* 440: CTA — flex column, bg #19161C, padding 44px 16px, gap 10px */
+.cta-card {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 44px 16px;
+  gap: 10px;
+  background: #19161c;
+  box-sizing: border-box;
+}
+
+/* 440: inner — flex column center, gap 26px, width 408px, без фона и бордера */
+.cta-card__inner {
+  width: 100%;
+  max-width: min(408px, calc(100vw - 32px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 26px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+/* content: flex column, gap 24px */
+.cta-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.cta-card__title {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+}
+
+.cta-card__text {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+}
+
+.cta-card__actions {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+.cta-card__actions .button--primary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 199px;
+  height: 52px;
+  padding: 16px 32px;
+  gap: 10px;
+  background: #14f195;
+  border-radius: 64px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.cta-card__actions .button--outline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 196px;
+  height: 52px;
+  padding: 16px 32px;
+  gap: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 64px;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Tablet 834px — та же конструкция: bg #19161C, inner без карточки */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .cta-card {
+    padding: 44px 16px;
+  }
+
+  .cta-card__inner {
+    max-width: 802px;
+    gap: 26px;
+  }
+
+  .cta-card__content {
+    gap: 32px;
+  }
+}
+
+/* Desktop 1440px */
+@media (min-width: 1440px) {
+  .cta-card {
+    min-height: 581px;
+    background: #000000;
+    padding: 100px 177px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-card__inner {
+    width: 1086px;
+    max-width: 1086px;
+    min-height: 381px;
+    padding: 66px 85px 66px;
+    background: #19161c;
+    border-radius: 12px;
+    gap: 34px;
+    position: relative;
+  }
+
+  .cta-card__content {
+    max-width: 916px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .cta-card__title {
+    font-size: 48px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    margin: 0;
+    max-width: 916px;
+  }
+
+  .cta-card__text {
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    max-width: 916px;
+  }
+
+  .cta-card__actions {
+    gap: 12px;
+    align-items: center;
+  }
+
+  .cta-card__actions .button--primary {
+    width: 218px;
+    font-size: 18px;
+  }
+
+  .cta-card__actions .button--outline {
+    width: 232px;
+    font-size: 18px;
+  }
+}

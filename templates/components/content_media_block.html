@@ -1,0 +1,28 @@
+{% load static %}
+{% comment %}
+  content_media_block — блок «текст + изображение» (Blok4 Security).
+  Variables: title_id, title, text, img_src, img_alt, img_width, img_height
+{% endcomment %}
+<section class="content-media-block" aria-labelledby="{{ title_id|default:'content-media-title' }}">
+  <div class="content-media-block__inner">
+    <h2 class="content-media-block__title" id="{{ title_id|default:'content-media-title' }}">
+      {{ title|default:"Заголовок" }}
+    </h2>
+    <div class="content-media-block__row">
+      <div class="content-media-block__content">
+        <p class="content-media-block__text">{{ text|default:"" }}</p>
+      </div>
+      <div class="content-media-block__media" aria-hidden="true">
+      <img
+        class="content-media-block__img"
+        src="{% static img_src %}"
+        alt="{{ img_alt|default:'' }}"
+        width="{{ img_width|default:504 }}"
+        height="{{ img_height|default:295 }}"
+        loading="lazy"
+        decoding="async"
+      />
+      </div>
+    </div>
+  </div>
+</section>
