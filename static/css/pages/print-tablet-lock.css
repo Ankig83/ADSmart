@@ -31,12 +31,12 @@
     position: absolute !important;
     inset: 0 !important;
     z-index: 0 !important;
+    background-image: url('../../assets/images/fon_834_tg.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
   }
   .demo-print-hero__bg-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
+    display: none !important;
   }
   .demo-print-hero__overlay {
     position: absolute !important;

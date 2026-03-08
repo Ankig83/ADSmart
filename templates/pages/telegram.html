@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css_v2/main.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/telegram.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/telegram-tablet-lock.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/telegram-mobile-lock.css' %}" />
 {% endblock %}
 
@@ -17,105 +19,9 @@
 
 {% block content %}
   <div class="demo-tg">
-    <section class="demo-tg-hero" aria-labelledby="tg-hero-title">
-      <div class="demo-tg-hero__bg" aria-hidden="true">
-        <img
-          class="demo-tg-hero__bg-img"
-          src="{% static 'assets/images/figma-1-910e2421.png' %}"
-          alt=""
-          width="1440"
-          height="751"
-          loading="eager"
-          decoding="async"
-        />
-      </div>
-      <div class="demo-tg-hero__content">
-        <h1 class="demo-tg-hero__title" id="tg-hero-title">
-          Продажи и сервис в каналах аудитории
-        </h1>
-        <p class="demo-tg-hero__subtitle">
-          Telegram от ADSmart — канал роста бизнеса. <br />
-          Превращаем подписчиков в клиентов
-        </p>
+    {% include "components/hero_with_figure.html" with figure_img="assets/images/telegram-hero.png" bg_desktop="assets/images/figma-1-910e2421.png" bg_mobile="assets/images/fon_2.png" title_html="Продажи и сервис<br />в каналах аудитории" subtitle_html="Telegram от ADSmart — канал роста бизнеса.<br />Превращаем подписчиков в клиентов" btn_primary_text="Рассчитать" btn_primary_action="home-calc-modal" btn_outline_text="Наши кейсы" btn_outline_href="#cases" title_id="tg-hero-title" %}
 
-        <div class="demo-tg-hero__actions">
-          <button class="button button--lg button--primary" type="button" data-modal-open="home-calc-modal">Рассчитать</button>
-          <a class="button button--lg button--outline" href="#cases">Наши кейсы</a>
-        </div>
-      </div>
-
-      <div class="demo-tg-hero__image-wrap" aria-hidden="true">
-        <div class="demo-tg-hero__glow"></div>
-        <picture>
-          <source
-            media="(max-width: 833px)"
-            srcset="{% static 'assets/images/telegram-hero.png' %}"
-          />
-          <img
-            class="demo-tg-hero__img"
-            src="{% static 'assets/images/telegram-hero.png' %}"
-            alt=""
-            width="473"
-            height="519"
-            loading="eager"
-            decoding="async"
-          />
-        </picture>
-      </div>
-    </section>
-
-    <section class="demo-prod-emotions demo-tg-why" aria-labelledby="tg-why-title">
-      <h2 class="demo-prod-emotions__title" id="tg-why-title">
-        Telegram центр цифровой гравитации бизнеса
-      </h2>
-    
-      <div class="demo-prod-emotions__grid">
-        
-        <div class="demo-prod-emotions__card">
-          <div class="demo-prod-emotions__icon-wrap">
-            <img class="demo-prod-emotions__icon"
-                 src="{% static 'assets/icons/icon-133-4980-140-5033.svg' %}" alt="" />
-          </div>
-          <div class="demo-prod-emotions__content">
-            <h3 class="demo-prod-emotions__h3">Безопасность и легальность</h3>
-            <p class="demo-prod-emotions__p">
-              Официальная рекламная платформа Telegram Ads — легальный и предсказуемый канал после изменений на рынке.
-              Мы работаем строго в рамках правил и закона о маркировке рекламы
-            </p>
-          </div>
-        </div>
-    
-        <div class="demo-prod-emotions__card">
-          <div class="demo-prod-emotions__icon-wrap">
-            <img class="demo-prod-emotions__icon"
-                 src="{% static 'assets/icons/frame-133-5113.svg' %}" alt="" />
-          </div>
-          <div class="demo-prod-emotions__content">
-            <h3 class="demo-prod-emotions__h3">Экосистема, а не лента</h3>
-            <p class="demo-prod-emotions__p">
-              Telegram уникален сочетанием мессенджера для личного общения,
-              платформы для массовых рассылок через каналы и полноценной среды для коммерции через Mini Apps
-            </p>
-          </div>
-        </div>
-    
-        <div class="demo-prod-emotions__card">
-          <div class="demo-prod-emotions__icon-wrap">
-            <img class="demo-prod-emotions__icon"
-                 src="{% static 'assets/icons/frame-133-5116-140-5049.svg' %}" alt="" />
-          </div>
-          <div class="demo-prod-emotions__content">
-            <h3 class="demo-prod-emotions__h3">Лояльность и доверие</h3>
-            <p class="demo-prod-emotions__p">
-              Аудитория в Telegram воспринимает информацию в каналах как рекомендацию,
-              а не назойливую рекламу, что повышает конверсию.
-              Канал становится точкой входа в ваш сервис
-            </p>
-          </div>
-        </div>
-    
-      </div>
-    </section>
+    {% include "components/why_cards.html" with title_id="tg-why-title" title_html="Telegram центр цифровой<br />гравитации бизнеса" modifier="desktop" card_1_icon="assets/icons/icon-133-4980-140-5033.svg" card_1_title="Безопасность и легальность" card_1_text="Официальная рекламная платформа Telegram Ads — легальный и предсказуемый канал после изменений на рынке. Мы работаем строго в рамках правил и закона о маркировке рекламы" card_2_icon="assets/icons/frame-133-5113.svg" card_2_title="Экосистема, а не лента" card_2_text="Telegram уникален сочетанием мессенджера для личного общения, платформы для массовых рассылок через каналы и полноценной среды для коммерции через Mini Apps" card_3_icon="assets/icons/frame-133-5116-140-5049.svg" card_3_title="Лояльность и доверие" card_3_text="Аудитория в Telegram воспринимает информацию в каналах как рекомендацию, а не назойливую рекламу, что повышает конверсию. Канал становится точкой входа в ваш сервис" %}
 
     <section class="demo-tg-approach" aria-labelledby="tg-approach-title">
       <h2 class="demo-tg-approach__title" id="tg-approach-title">

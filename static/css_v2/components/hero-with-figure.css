@@ -133,6 +133,21 @@
   }
 }
 
+/* 834–1439: фон fon_834_tg, фигуру скрыть */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero-with-figure__bg-img {
+    display: none !important;
+  }
+  .hero-with-figure__bg {
+    background-image: url('../../assets/images/fon_834_tg.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+  .hero-with-figure__image-wrap {
+    display: none !important;
+  }
+}
+
 @media (min-width: 1440px) {
   .hero-with-figure {
     display: flex;

@@ -1,172 +1,94 @@
-/* Telegram promotion page (140:5019). Desktop 1440 only. */
+/* Telegram promotion page — Hero как AI Assistants (hero-with-figure) */
 .app { background: #000000; }
 .app__main { padding: 0; }
 
 .demo-tg {
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   background: #000000;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* Hero Section (140:5019 direct children) */
-.demo-tg-hero {
-  position: relative;
-  width: 1440px;
-  height: 787px; /* 1613 - 826 */
-  background: #000000;
-  overflow: hidden;
+/* Desktop 1440+ */
+@media (min-width: 1440px) {
+  .demo-tg {
+    width: 1440px;
+  }
+  .hero-with-figure__bg {
+    display: none;
+  }
+  .hero-with-figure__overlay {
+    display: none;
+  }
 }
 
-.demo-tg-hero__bg { position: absolute; inset: 0; }
-.demo-tg-hero__bg-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
+/* Tablet 834-1439 — как AI Assistants */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-tg {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .hero-with-figure {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: clamp(435px, 38vw, 535px) !important;
+    min-height: clamp(435px, 38vw, 535px) !important;
+    padding: clamp(86px, 8vw, 110px) clamp(24px, 2.8vw, 40px) clamp(52px, 6vw, 80px) !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .hero-with-figure::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 4.4%, rgba(0, 0, 0, 0.52) 42.8%, rgba(0, 0, 0, 0.05) 70.4%) !important;
+  }
+  .hero-with-figure__bg,
+  .hero-with-figure__bg-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .hero-with-figure__content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: min(100%, clamp(462px, 56vw, 690px)) !important;
+    z-index: 2 !important;
+  }
+  .hero-with-figure__title {
+    width: 100% !important;
+    margin: 0 0 24px !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+  }
+  .hero-with-figure__subtitle {
+    width: 100% !important;
+    margin: 0 0 24px !important;
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+  }
+  .hero-with-figure__actions {
+    display: flex !important;
+    gap: 8px !important;
+  }
+  .hero-with-figure__image-wrap {
+    display: none !important;
+  }
 }
 
-.demo-tg-hero__content {
-  position: absolute;
-  left: 178px;
-  top: 184px; /* 1010 - 826 */
-  width: 686px;
-  z-index: 2;
-}
-
-.demo-tg-hero__title {
-  margin: 0 0 88px;
-  font-family: var(--font-sans);
-  font-size: 65px;
-  font-weight: 800;
-  line-height: 84.5px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-tg-hero__subtitle {
-  width: 512px;
-  margin: 0 0 36px;
-  font-family: var(--font-sans);
-  font-size: 21px;
-  font-weight: 400;
-  line-height: 31.5px;
-  color: #c4c4c4;
-}
-
-.demo-tg-hero__actions {
-  display: flex;
-  gap: 14px;
-}
-
-.demo-tg-hero__image-wrap {
-  position: absolute;
-  left: 894px; /* 20295 - 19401 */
-  top: 139px; /* 965 - 826 */
-  width: 473px;
-  height: 519px;
-  z-index: 1;
-}
-
-.demo-tg-hero__glow {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 514px;
-  height: 453px;
-  background: #ff7b00;
-  opacity: 0.3;
-  filter: blur(250px);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.demo-tg-hero__img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-}
+/* Hero — hero-with-figure (css_v2) */
 
 /* Section 2: Why Telegram? (140:5028) */
-.demo-tg-why {
-  position: relative;
-  width: 1440px;
-  height: 678px;
-  background: #000000;
-  padding-top: 40px; /* 1653 - 1613 */
-}
-
-.demo-tg-why__title {
-  width: 960px;
-  margin: 0 0 58px 177px;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-tg-why__grid {
-  width: 1089px;
-  margin: 0 auto;
-  display: flex;
-  gap: 22px;
-}
-
-.demo-tg-why__card {
-  width: 348px;
-  height: 447px;
-  background: #19161c;
-  border-radius: 32px;
-  padding: 48px 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.demo-tg-why__icon-wrap {
-  width: 125px;
-  height: 125px;
-  margin-bottom: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.demo-tg-why__content {
-  width: 100%;
-  text-align: center;
-}
-
-.demo-tg-why__icon {
-  width: 125px;
-  height: 125px;
-  display: block;
-}
-
-.demo-tg-why__h3 {
-  margin: 0 0 8px;
-  font-family: var(--font-sans);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 31.2px;
-  letter-spacing: -0.72px;
-  color: #ffffff;
-}
-
-.demo-tg-why__p {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-}
+/* WHY — перенесён в css_v2/components/why-cards.css, include why_cards.html */
 
 /* Section 3: Approach (140:5056) */
 .demo-tg-approach {
@@ -559,212 +481,15 @@
     overflow-x: hidden !important;
   }
 
-  .demo-tg-hero {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    height: clamp(435px, 38vw, 535px) !important;
+  /* Hero — hero-with-figure (css_v2) */
+  .hero-with-figure {
     min-height: clamp(435px, 38vw, 535px) !important;
     padding: clamp(86px, 8vw, 110px) clamp(24px, 2.8vw, 40px) clamp(52px, 6vw, 80px) !important;
-    position: relative !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
   }
-  .demo-tg-hero::before {
-    content: "" !important;
-    position: absolute !important;
-    inset: 0 !important;
-    z-index: 1 !important;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 4.4%, rgba(0, 0, 0, 0.52) 42.8%, rgba(0, 0, 0, 0.05) 70.4%) !important;
-  }
-  .demo-tg-hero__bg,
-  .demo-tg-hero__bg-img {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-  }
-  .demo-tg-hero__content {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: min(100%, clamp(462px, 56vw, 690px)) !important;
-    z-index: 2 !important;
-  }
-  .demo-tg-hero__title {
-    width: 100% !important;
-    margin: 0 0 24px !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-  }
-  .demo-tg-hero__subtitle {
-    width: 100% !important;
-    margin: 0 0 24px !important;
-    font-size: 16px !important;
-    line-height: 22.4px !important;
-  }
-  .demo-tg-hero__actions {
-    display: flex !important;
-    gap: 8px !important;
-  }
-  .demo-tg-hero__image-wrap {
-    display: none !important;
-  }
+  .hero-with-figure__content { width: min(100%, clamp(462px, 56vw, 690px)) !important; }
+  .hero-with-figure__image-wrap { display: none !important; }
 
-  /* Why — те же стили, что на 440px (не переопределять) */
-  .demo-tg-why {
-    width: 100% !important;
-    height: auto !important;
-    padding: clamp(23px, calc(32 * 100vw / 440), 61px) clamp(12px, calc(16 * 100vw / 440), 30px) !important;
-    box-sizing: border-box !important;
-  }
-  .demo-tg-why__title {
-    width: 100% !important;
-    margin: 0 0 clamp(17px, calc(24 * 100vw / 440), 45px) !important;
-    font-size: clamp(15px, calc(20 * 100vw / 440), 38px) !important;
-    line-height: 1.3 !important;
-    text-align: left !important;
-  }
-  .demo-tg-why__grid {
-    width: 100% !important;
-    max-width: min(clamp(297px, calc(408 * 100vw / 440), 773px), calc(100vw - 32px)) !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: clamp(12px, calc(16 * 100vw / 440), 30px) !important;
-  }
-  .demo-tg-why__card {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    position: relative !important;
-    border-radius: 12px !important;
-    background-color: #19161c !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    padding: clamp(16px, calc(24 * 100vw / 440), 36px) clamp(14px, calc(14 * 100vw / 440), 24px) !important;
-    box-sizing: border-box !important;
-    gap: clamp(12px, calc(12 * 100vw / 440), 20px) !important;
-    text-align: left !important;
-    font-size: 18px !important;
-    color: #fff !important;
-    font-family: Poppins !important;
-  }
-  .demo-tg-why__icon-wrap {
-    width: clamp(48px, calc(65 * 100vw / 440), 80px) !important;
-    position: relative !important;
-    max-height: 100% !important;
-    flex-shrink: 0 !important;
-  }
-  .demo-tg-why__icon {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-  }
-  .demo-tg-why__content {
-    flex: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: center !important;
-    gap: clamp(12px, calc(16 * 100vw / 440), 20px) !important;
-    min-width: 0 !important;
-  }
-  .demo-tg-why__h3 {
-    align-self: stretch !important;
-    position: relative !important;
-    font-size: clamp(12px, calc(16 * 100vw / 440), 30px) !important;
-    margin: 0 !important;
-    letter-spacing: -0.03em !important;
-    line-height: 1.3 !important;
-    font-weight: 700 !important;
-    color: #ff7b00 !important;
-  }
-  .demo-tg-why__p {
-    align-self: stretch !important;
-    position: relative !important;
-    font-size: clamp(10px, calc(14 * 100vw / 440), 27px) !important;
-    letter-spacing: -0.03em !important;
-    line-height: 1.3 !important;
-    color: #C4C4C4 !important;
-    margin: 0 !important;
-  }
-  /* Блок 2 на Telegram — классы demo-prod-emotions__* (те же стили для планшета) */
-  .demo-tg-why .demo-prod-emotions__title {
-    width: 100% !important;
-    margin: 0 0 clamp(17px, calc(24 * 100vw / 440), 45px) !important;
-    font-size: clamp(15px, calc(20 * 100vw / 440), 38px) !important;
-    line-height: 1.3 !important;
-    text-align: left !important;
-  }
-  .demo-tg-why .demo-prod-emotions__grid {
-    width: 100% !important;
-    max-width: min(clamp(297px, calc(408 * 100vw / 440), 773px), calc(100vw - 32px)) !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: clamp(12px, calc(16 * 100vw / 440), 30px) !important;
-  }
-  .demo-tg-why .demo-prod-emotions__card {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    position: relative !important;
-    border-radius: 12px !important;
-    background-color: #19161c !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    padding: clamp(16px, calc(24 * 100vw / 440), 36px) clamp(14px, calc(14 * 100vw / 440), 24px) !important;
-    box-sizing: border-box !important;
-    gap: clamp(12px, calc(12 * 100vw / 440), 20px) !important;
-    text-align: left !important;
-    font-size: 18px !important;
-    color: #fff !important;
-    font-family: Poppins !important;
-  }
-  .demo-tg-why .demo-prod-emotions__icon-wrap {
-    width: clamp(48px, calc(65 * 100vw / 440), 80px) !important;
-    position: relative !important;
-    max-height: 100% !important;
-    flex-shrink: 0 !important;
-  }
-  .demo-tg-why .demo-prod-emotions__icon {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-  }
-  .demo-tg-why .demo-prod-emotions__content {
-    flex: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: center !important;
-    gap: clamp(12px, calc(16 * 100vw / 440), 20px) !important;
-    min-width: 0 !important;
-  }
-  .demo-tg-why .demo-prod-emotions__h3 {
-    align-self: stretch !important;
-    position: relative !important;
-    font-size: clamp(12px, calc(16 * 100vw / 440), 30px) !important;
-    margin: 0 !important;
-    letter-spacing: -0.03em !important;
-    line-height: 1.3 !important;
-    font-weight: 700 !important;
-    color: #ff7b00 !important;
-  }
-  .demo-tg-why .demo-prod-emotions__p {
-    align-self: stretch !important;
-    position: relative !important;
-    font-size: clamp(10px, calc(14 * 100vw / 440), 27px) !important;
-    letter-spacing: -0.03em !important;
-    line-height: 1.3 !important;
-    color: #C4C4C4 !important;
-    margin: 0 !important;
-  }
+  /* WHY — css_v2 why-cards.css */
 
   .demo-tg-approach {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;

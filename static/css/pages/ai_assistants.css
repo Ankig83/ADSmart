@@ -1,4 +1,4 @@
-/* AI Assistants page (Ready--Copy frame 140:4957). Desktop 1440 only. */
+/* AI Assistants page — Hero, Comparison, Competencies, Security, CTA в css_v2 */
 .app { background: #000000; }
 .app__main { padding: 0; }
 
@@ -10,10 +10,6 @@
   overflow-x: hidden;
   box-sizing: border-box;
 }
-
-/* Hero — перенесён в css_v2/components/hero-with-figure.css */
-/* Comparison — перенесён в css_v2/components/comparison-expertise.css */
-/* Competencies — media-split--poster (как лифты) */
 
 .media-split--ai .media-split__item-text {
   color: #c9cad6;
@@ -32,10 +28,7 @@
 
 }
 
-/* Security — content-media-block (css_v2) */
-/* CTA — cta-card (css_v2) */
-
-/* Tablet fluid layout (834-1439) — как design/print/production */
+/* Tablet 834-1439 (834-1439) — как design/print/production */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-ai {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;

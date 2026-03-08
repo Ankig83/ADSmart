@@ -91,10 +91,6 @@
   }
 
   .hero-with-figure__image-wrap {
-    display: block !important;
+    display: none !important;
   }
-
-  /* Blok4 Security — content-media-block (css_v2) */
-
-  /* CTA — cta-card (css_v2) */
 }

@@ -1,0 +1,35 @@
+{% load static %}
+{% comment %}
+  why_cards — блок «Почему / ценность» (центр цифровой гравитации и т.п.)
+  Variables: title_id, title, title_html, modifier (desktop = 3 в ряд, вертикальные карточки), card_1_icon, ...
+{% endcomment %}
+<section class="why-cards {% if modifier == 'desktop' %}why-cards--desktop{% endif %} section" aria-labelledby="{{ title_id|default:'why-cards-title' }}">
+  <div class="container">
+    <h2 class="why-cards__title" id="{{ title_id|default:'why-cards-title' }}">
+      {% if title_html %}{{ title_html|safe }}{% elif title %}{{ title }}{% else %}Заголовок блока{% endif %}
+    </h2>
+    <ul class="why-cards__grid" aria-label="Преимущества">
+      <li class="why-card">
+        <img class="why-card__icon" src="{% static card_1_icon|default:'assets/icons/icon-133-4980-140-5033.svg' %}" alt="" aria-hidden="true" />
+        <div class="why-card__body">
+          <h3 class="why-card__title">{% if card_1_title %}{{ card_1_title }}{% else %}Карточка 1{% endif %}</h3>
+          <p class="why-card__text">{% if card_1_text %}{{ card_1_text }}{% else %}Текст карточки 1{% endif %}</p>
+        </div>
+      </li>
+      <li class="why-card">
+        <img class="why-card__icon" src="{% static card_2_icon|default:'assets/icons/frame-133-5113.svg' %}" alt="" aria-hidden="true" />
+        <div class="why-card__body">
+          <h3 class="why-card__title">{% if card_2_title %}{{ card_2_title }}{% else %}Карточка 2{% endif %}</h3>
+          <p class="why-card__text">{% if card_2_text %}{{ card_2_text }}{% else %}Текст карточки 2{% endif %}</p>
+        </div>
+      </li>
+      <li class="why-card">
+        <img class="why-card__icon" src="{% static card_3_icon|default:'assets/icons/frame-133-5116-140-5049.svg' %}" alt="" aria-hidden="true" />
+        <div class="why-card__body">
+          <h3 class="why-card__title">{% if card_3_title %}{{ card_3_title }}{% else %}Карточка 3{% endif %}</h3>
+          <p class="why-card__text">{% if card_3_text %}{{ card_3_text }}{% else %}Текст карточки 3{% endif %}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

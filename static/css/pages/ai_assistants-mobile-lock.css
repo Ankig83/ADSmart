@@ -158,8 +158,4 @@
     width: clamp(220px, 59.5vw, 360px) !important;
     height: clamp(220px, 59.5vw, 360px) !important;
   }
-  
-  /* Security — content-media-block (css_v2) */
-
-  /* CTA — cta-card (css_v2) */
 }
