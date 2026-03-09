@@ -179,34 +179,6 @@ function initDemoButtons() {
   });
 }
 
-function initTabs() {
-  qsa("[data-tabs]").forEach((tabs) => {
-    const buttons = qsa("[data-tab]", tabs);
-    const root = tabs.closest("section") || document;
-    const panels = qsa("[data-panel]", root);
-    if (!buttons.length) return;
-
-    function setActive(name) {
-      tabs.setAttribute("data-tabs-active", name);
-      buttons.forEach((b) => {
-        const isActive = b.getAttribute("data-tab") === name;
-        b.setAttribute("aria-selected", String(isActive));
-      });
-      panels.forEach((p) => {
-        const isActive = p.getAttribute("data-panel") === name;
-        p.hidden = !isActive;
-      });
-    }
-
-    buttons.forEach((b) => {
-      b.addEventListener("click", () => setActive(b.getAttribute("data-tab")));
-    });
-
-    // Initial state (from markup attr) fallback to first tab.
-    setActive(tabs.getAttribute("data-tabs-active") || buttons[0].getAttribute("data-tab"));
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   initLeadSuccessModal();
@@ -215,7 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initDetailsAccordion("[data-transport-accordion]", "details.demo-transport-format");
   initModals();
   initDemoButtons();
-  initTabs();
 
   // wire close buttons for server-rendered toasts
   document.body.addEventListener("click", (e) => {

@@ -1,12 +1,12 @@
 {% load static %}
 {% comment %}
-  content_media_block — блок «текст + изображение» (Blok4 Security).
-  Variables: title_id, title, text, img_src, img_alt, img_width, img_height
+  content_media_block — блок «текст + изображение» (Blok4 Security, Design system).
+  Variables: title_id, title, title_html, text, img_src, img_alt, img_width, img_height
 {% endcomment %}
 <section class="content-media-block" aria-labelledby="{{ title_id|default:'content-media-title' }}">
   <div class="content-media-block__inner">
     <h2 class="content-media-block__title" id="{{ title_id|default:'content-media-title' }}">
-      {{ title|default:"Заголовок" }}
+      {% if title_html %}{{ title_html|safe }}{% else %}{{ title|default:"Заголовок" }}{% endif %}
     </h2>
     <div class="content-media-block__row">
       <div class="content-media-block__content">

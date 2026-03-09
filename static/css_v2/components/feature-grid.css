@@ -1,4 +1,5 @@
-/* feature-grid.css — компонент Feature Grid v2 (mobile-first, без absolute) */
+/* feature-grid.css — компонент Feature Grid v2 (mobile-first)
+   Figma: карточка 408×135 (fill×hug), padding 35px 14px, gap 12px */
 
 /* MOBILE — 1 колонка, карточка: иконка слева, текст справа */
 .feature-grid {
@@ -28,10 +29,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
   background: #19161c;
-  padding: 32px;
-  border-radius: 24px;
+  padding: 35px 14px;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .feature-card__icon {
@@ -45,20 +47,31 @@
 .feature-card__body {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: center;
+  gap: 8px;
   flex: 1;
   min-width: 0;
 }
 
 .feature-card__title {
   margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #ffffff;
 }
 
 .feature-card__text {
   margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #c9cad6;
 }
 
-/* TABLET 834px — 2+2 колонки */
+/* TABLET 834px — ширина 770px в tablet-770.css */
 @media (min-width: 834px) {
   .feature-grid__title {
     font-size: clamp(32px, 3vw, 36px);

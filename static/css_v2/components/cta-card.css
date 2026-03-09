@@ -115,6 +115,17 @@
   box-sizing: border-box;
 }
 
+/* Модификатор design — Figma design page CTA */
+.cta-card--design {
+  margin-bottom: 44px;
+}
+
+@media (min-width: 1440px) {
+  .cta-card--design .cta-card__inner {
+    border-radius: 32px;
+  }
+}
+
 /* Tablet 834px — та же конструкция: bg #19161C, inner без карточки */
 @media (min-width: 834px) and (max-width: 1439px) {
   .cta-card {

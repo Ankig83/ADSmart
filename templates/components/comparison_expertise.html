@@ -1,11 +1,18 @@
 {% comment %}
   comparison_expertise — блок «Мы привносим экспертизу…» (платформа vs партнёр).
   Variables: title_id, title_line1, title_line2, platform_header, platform_cells, partner_header, partner_cells
+  Optional responsive (440/834/1440): title_html_mobile, title_html_tablet, title_html_desktop
 {% endcomment %}
 <section class="comparison-expertise" aria-labelledby="{{ title_id|default:'comparison-expertise-title' }}">
-  <h2 class="comparison-expertise__title comparison-expertise__title--two-lines" id="{{ title_id|default:'comparison-expertise-title' }}">
+  <h2 class="comparison-expertise__title {% if title_html_mobile %}comparison-expertise__title--responsive{% else %}comparison-expertise__title--two-lines{% endif %}" id="{{ title_id|default:'comparison-expertise-title' }}">
+    {% if title_html_mobile %}
+    <span class="comparison-expertise__title-mobile">{{ title_html_mobile|safe }}</span>
+    <span class="comparison-expertise__title-tablet">{{ title_html_tablet|safe }}</span>
+    <span class="comparison-expertise__title-desktop">{{ title_html_desktop|safe }}</span>
+    {% else %}
     <span class="comparison-expertise__title-line">{% if title_line1 %}{{ title_line1 }}{% else %}Мы привносим экспертизу туда, где{% endif %}</span>
     <span class="comparison-expertise__title-line">{% if title_line2 %}{{ title_line2 }}{% else %}технологии нуждаются в стратегии{% endif %}</span>
+    {% endif %}
   </h2>
 
   <div class="comparison-expertise__grid">

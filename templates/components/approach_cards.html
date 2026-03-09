@@ -1,0 +1,46 @@
+{% load static %}
+{% comment %}
+  approach_cards — блок «Комплексный подход: от … до …»
+  Variables: title_id, title_html (440), title_html_tablet (834), title_html_desktop (1440), modifier (desktop), card_1_icon, ...
+{% endcomment %}
+<section class="approach-cards {% if modifier == 'desktop' %}approach-cards--desktop{% endif %} section" aria-labelledby="{{ title_id|default:'approach-cards-title' }}">
+  <div class="container">
+    <h2 class="approach-cards__title" id="{{ title_id|default:'approach-cards-title' }}">
+      {% if title_html_tablet %}
+      <span class="approach-cards__title-mobile">{{ title_html|safe }}</span>
+      <span class="approach-cards__title-tablet">{{ title_html_tablet|safe }}</span>
+      {% if title_html_desktop %}<span class="approach-cards__title-desktop">{{ title_html_desktop|safe }}</span>{% endif %}
+      {% elif title_html %}{{ title_html|safe }}{% elif title %}{{ title }}{% else %}Заголовок{% endif %}
+    </h2>
+    <ul class="approach-cards__grid" aria-label="Этапы подхода">
+      <li class="approach-card">
+        <img class="approach-card__icon" src="{% static card_1_icon|default:'assets/icons/create-133-5126.svg' %}" alt="" aria-hidden="true" />
+        <div class="approach-card__body">
+          <h3 class="approach-card__title">{% if card_1_title %}{{ card_1_title }}{% endif %}</h3>
+          <p class="approach-card__text">{% if card_1_text %}{{ card_1_text }}{% endif %}</p>
+        </div>
+      </li>
+      <li class="approach-card">
+        <img class="approach-card__icon" src="{% static card_2_icon|default:'assets/icons/target-133-5046-i140-5061-102-677.svg' %}" alt="" aria-hidden="true" />
+        <div class="approach-card__body">
+          <h3 class="approach-card__title">{% if card_2_title %}{{ card_2_title }}{% endif %}</h3>
+          <p class="approach-card__text">{% if card_2_text %}{{ card_2_text }}{% endif %}</p>
+        </div>
+      </li>
+      <li class="approach-card">
+        <img class="approach-card__icon" src="{% static card_3_icon|default:'assets/icons/users-133-5129.svg' %}" alt="" aria-hidden="true" />
+        <div class="approach-card__body">
+          <h3 class="approach-card__title">{% if card_3_title %}{{ card_3_title }}{% endif %}</h3>
+          <p class="approach-card__text">{% if card_3_text %}{{ card_3_text }}{% endif %}</p>
+        </div>
+      </li>
+      <li class="approach-card">
+        <img class="approach-card__icon" src="{% static card_4_icon|default:'assets/icons/shop-133-5133.svg' %}" alt="" aria-hidden="true" />
+        <div class="approach-card__body">
+          <h3 class="approach-card__title">{% if card_4_title %}{{ card_4_title }}{% endif %}</h3>
+          <p class="approach-card__text">{% if card_4_text %}{{ card_4_text }}{% endif %}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

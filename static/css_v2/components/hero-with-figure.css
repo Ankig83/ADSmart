@@ -128,23 +128,35 @@
     display: block;
     width: clamp(350px, 40vw, 564px);
     height: clamp(350px, 40vw, 564px);
-    right: 5%;
+    right: 0;
     left: auto;
   }
 }
 
-/* 834–1439: фон fon_834_tg, фигуру скрыть */
+/* 834–1439: Telegram — fon_834_tg; Design — fon_834_d; фигуру скрыть */
 @media (min-width: 834px) and (max-width: 1439px) {
-  .hero-with-figure__bg-img {
-    display: none !important;
+  .demo-tg .hero-with-figure__bg-img {
+    display: none;
   }
-  .hero-with-figure__bg {
-    background-image: url('../../assets/images/fon_834_tg.png') !important;
-    background-size: cover !important;
-    background-position: center !important;
+  .demo-tg .hero-with-figure__bg {
+    background-image: url('../../assets/images/fon_834_tg.png');
+    background-size: cover;
+    background-position: center;
   }
-  .hero-with-figure__image-wrap {
-    display: none !important;
+  .demo-tg .hero-with-figure__image-wrap {
+    display: none;
+  }
+
+  .demo-design .hero-with-figure__bg-img {
+    display: none;
+  }
+  .demo-design .hero-with-figure__bg {
+    background-image: url('../../assets/images/fon_834_d.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .demo-design .hero-with-figure__image-wrap {
+    display: none;
   }
 }
 
@@ -207,6 +219,7 @@
     transform: none;
     width: 564px;
     height: 564px;
+    margin-right: -24px;
   }
 
   .hero-with-figure__glow {

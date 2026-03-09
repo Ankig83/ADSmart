@@ -1,8 +1,8 @@
 {% comment %}
   cta_card — блок CTA (контакты): заголовок, текст, кнопки.
-  Variables: title_id, title_html, text_html, btn_primary_text, btn_primary_href, btn_outline_text, btn_outline_href
+  Variables: title_id, title_html, text_html, btn_primary_text, btn_primary_href, btn_outline_text, btn_outline_href, modifier (design, etc.)
 {% endcomment %}
-<section class="cta-card" aria-labelledby="{{ title_id|default:'cta-card-title' }}">
+<section class="cta-card {% if modifier %}cta-card--{{ modifier }}{% endif %}" aria-labelledby="{{ title_id|default:'cta-card-title' }}">
   <div class="cta-card__inner">
     <div class="cta-card__content">
       <h2 class="cta-card__title" id="{{ title_id|default:'cta-card-title' }}">

@@ -18,375 +18,130 @@
     box-sizing: border-box !important;
   }
 
-  /* Hero #2 — Figma 440×483 */
-  .demo-design-hero {
+  /* Hero — как Telegram (hero-with-figure) */
+  .hero-with-figure {
     width: 100% !important;
-    max-width: clamp(320px, calc(440 * 100vw / 440), 660px) !important;
     min-height: clamp(338px, calc(483 * 100vw / 440), 725px) !important;
     height: auto !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     padding: 0 !important;
     position: relative !important;
     box-sizing: border-box !important;
     overflow: hidden !important;
-    border-radius: 0 !important;
   }
-  .demo-design-hero__bg {
-    position: absolute !important;
-    inset: 0 !important;
-    z-index: 0 !important;
-    background-image: url('../../assets/images/fon_2.png') !important;
-    background-size: cover !important;
-    background-position: right center !important;
-    background-repeat: no-repeat !important;
-  }
-  .demo-design-hero__bg-img {
-    display: none !important;
-  }
-  .demo-design-hero__overlay {
-    position: absolute !important;
-    inset: 0 !important;
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.5) 58%,
-      rgba(0, 0, 0, 0.05) 100%
-    ) !important;
-  }
-  /* Frame 427321637 — content left 16px, gap 36px */
-  .demo-design-hero__content {
-    position: absolute !important;
-    left: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: clamp(286px, calc(408 * 100vw / 440), 612px) !important;
-    max-width: calc(100% - 32px) !important;
-    min-height: clamp(153px, calc(218 * 100vw / 440), 327px) !important;
-    z-index: 2 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    padding: 0 !important;
-    gap: clamp(25px, calc(36 * 100vw / 440), 54px) !important;
-  }
-  /* Title — Дизайн, который считает деньги */
-  .demo-design-hero__title {
-    width: 100% !important;
-    max-width: clamp(286px, calc(408 * 100vw / 440), 612px) !important;
-    margin: 0 !important;
-    font-family: 'Poppins', var(--font-sans) !important;
-    font-style: normal !important;
-    font-weight: 800 !important;
-    font-size: clamp(22px, calc(32 * 100vw / 440), 48px) !important;
-    line-height: 130% !important;
-    letter-spacing: 0.48px !important;
-    color: #ffffff !important;
-  }
-  /* Subtitle */
-  .demo-design-hero__subtitle {
-    width: clamp(194px, calc(277 * 100vw / 440), 416px) !important;
-    margin: 0 !important;
-    font-family: 'Poppins', var(--font-sans) !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    font-size: clamp(11px, calc(16 * 100vw / 440), 24px) !important;
-    line-height: 24px !important;
-    color: #c4c4c4 !important;
-  }
-  /* Frame 427321635 — buttons gap 8px */
-  .demo-design-hero__actions {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
-    padding: 0 !important;
-    gap: clamp(6px, calc(8 * 100vw / 440), 12px) !important;
-    width: clamp(286px, calc(351 * 100vw / 440), 527px) !important;
-    max-width: 100% !important;
-  }
-  /* vecteezy_ai-chip 444×444 → 274×274 mobile, left 234px top 104px */
-  .demo-design-hero__image-wrap {
-    display: block !important;
-    position: absolute !important;
-    left: clamp(164px, calc(234 * 100vw / 440), 351px) !important;
-    top: clamp(73px, calc(104 * 100vw / 440), 156px) !important;
-    width: clamp(192px, calc(274 * 100vw / 440), 411px) !important;
-    height: clamp(192px, calc(274 * 100vw / 440), 411px) !important;
+  .hero-with-figure__bg { position: absolute !important; inset: 0 !important; z-index: 0 !important; }
+  .hero-with-figure__bg-img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; }
+  .hero-with-figure__bg-img--desktop { display: none !important; }
+  .hero-with-figure__bg-img--mobile { display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .hero-with-figure__overlay {
+    position: absolute !important; inset: 0 !important;
+    background: linear-gradient(90deg, rgba(0,0,0,0.8) 4.38%, rgba(0,0,0,0.619) 28.02%, rgba(0,0,0,0.4) 56.72%, rgba(0,0,0,0.1) 66.25%) !important;
     z-index: 1 !important;
   }
-  .demo-design-hero__img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
+  .hero-with-figure__content {
+    position: absolute !important; left: 16px !important; top: 50% !important; transform: translateY(-50%) !important;
+    width: min(408px, calc(100% - 32px)) !important; max-width: 408px !important; margin: 0 !important; padding: 0 !important;
+    z-index: 3 !important; display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 36px !important; text-align: left !important;
   }
-  .demo-design-hero__glow {
-    display: none !important;
-  }
-
-  /* Blok2 System */
-  .demo-design-system {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: clamp(44px, calc(56 * 100vw / 440), 84px) clamp(16px, calc(20 * 100vw / 440), 32px) !important;
-    box-sizing: border-box !important;
-  }
-  .demo-design-system__inner {
-    width: 100% !important;
-    margin: 0 !important;
-    max-width: 100% !important;
-  }
-  .demo-design-system__title {
-    width: 100% !important;
-    margin: 0 0 clamp(24px, calc(32 * 100vw / 440), 48px) !important;
-    font-size: clamp(22px, calc(28 * 100vw / 440), 36px) !important;
-    line-height: 1.3 !important;
-  }
-  .demo-design-system__content {
-    flex-direction: column !important;
-    gap: clamp(24px, calc(32 * 100vw / 440), 48px) !important;
-  }
-  .demo-design-system__left,
-  .demo-design-system__right {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  .demo-design-system__right {
-    height: auto !important;
-    min-height: clamp(160px, calc(200 * 100vw / 440), 280px) !important;
-  }
-  .demo-design-system__img {
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 12px !important;
-  }
-  .demo-design-system__text {
-    margin: 0 !important;
-    font-size: clamp(14px, calc(16 * 100vw / 440), 22px) !important;
-    line-height: 1.5 !important;
-    color: #c4c4c4 !important;
+  .hero-with-figure__title { width: 100% !important; margin: 0 !important; font-family: 'Poppins', var(--font-sans) !important; font-weight: 800 !important; font-size: 32px !important; line-height: 1.3 !important; letter-spacing: 0.48px !important; color: #fff !important; }
+  .hero-with-figure__subtitle { width: 100% !important; max-width: 277px !important; margin: 0 !important; font-family: 'Poppins', var(--font-sans) !important; font-weight: 400 !important; font-size: 16px !important; line-height: 24px !important; color: #c4c4c4 !important; }
+  .hero-with-figure__actions { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; align-items: center !important; gap: 14px !important; }
+  .hero-with-figure__image-wrap {
+    display: block !important; position: absolute !important; right: 0 !important; top: 50% !important; transform: translateY(-50%) !important; left: auto !important;
+    width: clamp(187px, calc(267 * 100vw / 440), 401px) !important;
+    height: clamp(205px, calc(293 * 100vw / 440), 440px) !important;
   }
 
-  /* Blok3 Cycle — Полный цикл дизайн-поддержки */
-  .demo-design-cycle {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    overflow: visible !important;
-    padding: clamp(44px, calc(56 * 100vw / 440), 84px) clamp(16px, calc(20 * 100vw / 440), 32px) !important;
-    box-sizing: border-box !important;
+  /* Blok2 System — css_v2/content-media-block.css */
+
+  /* Blok3 Cycle — why-cards, Figma 440 */
+  .demo-design .why-cards .container {
+    padding: clamp(44px, calc(44 * 100vw / 440), 56px) 16px;
+    gap: 42px;
+    max-width: min(440px, 100vw);
+    box-sizing: border-box;
   }
-  .demo-design-cycle__title {
-    width: 100% !important;
-    margin: 0 0 clamp(24px, calc(32 * 100vw / 440), 48px) !important;
-    font-size: clamp(22px, calc(28 * 100vw / 440), 36px) !important;
-    line-height: 1.3 !important;
+  .demo-design .why-cards__title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.3;
   }
-  .demo-design-cycle__grid {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: clamp(16px, calc(22 * 100vw / 440), 33px) !important;
+  .demo-design .why-cards__grid {
+    gap: 22px;
   }
-  .demo-design-cycle__card {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    text-align: left !important;
-    padding: clamp(24px, calc(32 * 100vw / 440), 48px) clamp(16px, calc(20 * 100vw / 440), 32px) !important;
-    gap: clamp(16px, calc(24 * 100vw / 440), 36px) !important;
-    box-sizing: border-box !important;
+  .demo-design .why-card {
+    padding: 28px 14px;
+    gap: 10px;
   }
-  .demo-design-cycle__icon-wrap {
-    width: clamp(64px, calc(80 * 100vw / 440), 120px) !important;
-    height: clamp(64px, calc(80 * 100vw / 440), 120px) !important;
-    flex-shrink: 0 !important;
-    margin-bottom: 0 !important;
+  .demo-design .why-card__icon {
+    width: 60px;
+    height: 60px;
   }
-  .demo-design-cycle__icon {
-    width: 100% !important;
-    height: 100% !important;
+  .demo-design .why-card__body {
+    gap: 8px;
   }
-  .demo-design-cycle__content {
-    flex: 1 !important;
-    min-width: 0 !important;
+  .demo-design .why-card__title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 1.5px;
   }
-  .demo-design-cycle__h3 {
-    width: 100% !important;
-    font-size: clamp(16px, calc(18 * 100vw / 440), 24px) !important;
-    margin: 0 0 clamp(8px, calc(12 * 100vw / 440), 18px) !important;
-    color: #ff7b00 !important;
-  }
-  .demo-design-cycle__p {
-    width: 100% !important;
-    font-size: clamp(14px, calc(16 * 100vw / 440), 22px) !important;
-    line-height: 1.5 !important;
-    color: #ffffff !important;
+  .demo-design .why-card__text {
+    font-size: 14px;
+    line-height: 21px;
+    color: #ffffff;
   }
 
-  /* Block4 How — Как мы создаем дизайн */
-  .demo-design-how {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    overflow: visible !important;
-    padding: clamp(44px, calc(56 * 100vw / 440), 84px) clamp(16px, calc(20 * 100vw / 440), 32px) !important;
-    box-sizing: border-box !important;
+  /* Block4 How — benefits, Figma 440: 2×2, отступ заголовок→сетка 42px */
+  .demo-design .benefits .container {
+    padding: clamp(44px, calc(44 * 100vw / 440), 56px) 16px;
+    max-width: min(440px, 100vw);
+    box-sizing: border-box;
   }
-  .demo-design-how__title {
-    width: 100% !important;
-    margin: 0 0 clamp(24px, calc(32 * 100vw / 440), 48px) !important;
-    font-size: clamp(22px, calc(28 * 100vw / 440), 36px) !important;
-    line-height: 1.3 !important;
+  .demo-design .benefits__title {
+    margin: 0 0 42px;
+    font-size: 24px;
+    line-height: 1.3;
   }
-  .demo-design-how__grid {
-    width: 100% !important;
-    max-width: min(clamp(320px, calc(408 * 100vw / 440), 600px), calc(100vw - 32px)) !important;
-    margin: 0 auto !important;
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: clamp(16px, calc(20 * 100vw / 440), 30px) clamp(10px, calc(12 * 100vw / 440), 18px) !important;
-    align-items: start !important;
-    justify-items: center !important;
-    grid-auto-rows: minmax(min-content, auto) !important;
+  .demo-design .benefits__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 12px;
   }
-  .demo-design-how__card {
-    width: 100% !important;
-    max-width: clamp(140px, calc(184 * 100vw / 440), 220px) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    margin: 0 auto !important;
+  .demo-design .benefit-card {
+    width: 198px;
+    gap: 17px;
   }
-  .demo-design-how__ring {
-    width: clamp(70px, calc(94 * 100vw / 440), 94px) !important;
-    height: clamp(70px, calc(94 * 100vw / 440), 94px) !important;
-    flex-shrink: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: #19161c !important;
-    border: 2px solid #ff7b00 !important;
-    border-radius: 50% !important;
-    box-sizing: border-box !important;
-    margin: 0 0 clamp(12px, calc(17 * 100vw / 440), 24px) 0 !important;
+  .demo-design .benefit-card__ring {
+    width: 94px;
+    height: 94px;
+    border-width: 3px;
   }
-  .demo-design-how__icon {
-    width: clamp(32px, calc(42 * 100vw / 440), 42px) !important;
-    height: clamp(32px, calc(42 * 100vw / 440), 42px) !important;
-    object-fit: contain !important;
-    display: block !important;
+  .demo-design .benefit-card__icon {
+    width: 42px;
+    height: 42px;
   }
-  .demo-design-how__h3 {
-    margin: 0 0 clamp(12px, calc(16 * 100vw / 440), 24px) 0 !important;
-    font-family: 'Poppins', var(--font-sans) !important;
-    font-weight: 700 !important;
-    font-size: clamp(15px, calc(18 * 100vw / 440), 22px) !important;
-    line-height: 1.3 !important;
-    letter-spacing: -0.03em !important;
-    color: #ffffff !important;
-    text-align: center !important;
+  .demo-design .benefit-card__title {
+    font-size: 18px;
   }
-  .demo-design-how__p {
-    margin: 0 !important;
-    font-family: 'Poppins', var(--font-sans) !important;
-    font-weight: 400 !important;
-    font-size: clamp(12px, calc(14 * 100vw / 440), 18px) !important;
-    line-height: 1.3 !important;
-    letter-spacing: -0.03em !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-    text-align: center !important;
+  .demo-design .benefit-card__text {
+    font-size: 14px;
+    line-height: 1.3;
   }
 
-  /* Blok5 Target — Для кого это идеально */
-  .demo-design-target {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: clamp(44px, calc(56 * 100vw / 440), 84px) clamp(16px, calc(20 * 100vw / 440), 32px) !important;
-    box-sizing: border-box !important;
+  /* Blok5 Target — feature-grid, отступ заголовок→сетка 42px */
+  .demo-design .feature-grid .container {
+    padding: clamp(44px, calc(44 * 100vw / 440), 56px) 16px;
+    max-width: min(440px, 100vw);
+    box-sizing: border-box;
   }
-  .demo-design-target__title {
-    width: 100% !important;
-    margin: 0 0 clamp(24px, calc(32 * 100vw / 440), 48px) !important;
-    font-size: clamp(22px, calc(28 * 100vw / 440), 36px) !important;
-    line-height: 1.3 !important;
+  .demo-design .feature-grid__title {
+    margin: 0 0 42px;
+    font-size: 24px;
   }
-  .demo-design-target__grid {
-    width: 100% !important;
-    grid-template-columns: 1fr !important;
-    gap: clamp(16px, calc(22 * 100vw / 440), 33px) !important;
-  }
-  .demo-design-target__card {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    flex-direction: row !important;
-    padding: clamp(24px, calc(32 * 100vw / 440), 48px) clamp(20px, calc(28 * 100vw / 440), 36px) !important;
-    gap: clamp(16px, calc(22 * 100vw / 440), 33px) !important;
-  }
-  .demo-design-target__icon {
-    width: clamp(56px, calc(70 * 100vw / 440), 100px) !important;
-    height: clamp(56px, calc(70 * 100vw / 440), 100px) !important;
-    flex-shrink: 0 !important;
-  }
-  .demo-design-target__content {
-    flex: 1 !important;
-    min-width: 0 !important;
-  }
-  .demo-design-target__h3 {
-    font-size: clamp(18px, calc(20 * 100vw / 440), 24px) !important;
-    margin: 0 0 clamp(8px, calc(12 * 100vw / 440), 18px) !important;
-  }
-  .demo-design-target__p {
-    font-size: clamp(14px, calc(16 * 100vw / 440), 22px) !important;
-    line-height: 1.5 !important;
+  .demo-design .feature-grid__grid {
+    gap: 16px;
   }
 
-  /* CTA */
-  .demo-design-cta {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: clamp(44px, calc(56 * 100vw / 440), 84px) clamp(16px, calc(20 * 100vw / 440), 32px) !important;
-    box-sizing: border-box !important;
-  }
-  .demo-design-cta__inner {
-    width: 100% !important;
-    max-width: min(clamp(320px, calc(440 * 100vw / 440), 600px), calc(100vw - 32px)) !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 auto !important;
-    padding: clamp(28px, calc(36 * 100vw / 440), 48px) clamp(20px, calc(24 * 100vw / 440), 36px) !important;
-    border-radius: 12px !important;
-    gap: clamp(20px, calc(34 * 100vw / 440), 51px) !important;
-  }
-  .demo-design-cta__title {
-    width: 100% !important;
-    margin: 0 0 clamp(12px, calc(24 * 100vw / 440), 36px) !important;
-    font-size: clamp(22px, calc(28 * 100vw / 440), 48px) !important;
-    line-height: 1.3 !important;
-    letter-spacing: -0.03em !important;
-    text-align: center !important;
-  }
-  .demo-design-cta__text {
-    width: 100% !important;
-    margin: 0 0 clamp(20px, calc(24 * 100vw / 440), 36px) !important;
-    font-size: clamp(14px, calc(16 * 100vw / 440), 22px) !important;
-    line-height: 1.4 !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-    text-align: center !important;
-  }
-  .demo-design-cta__actions {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: clamp(8px, calc(12 * 100vw / 440), 18px) !important;
-  }
+  /* CTA — перенесено в design.css @media (max-width: 833px) */
 }

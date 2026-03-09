@@ -46,7 +46,23 @@ def ai_assistants(request):
 
 
 def telegram(request):
-    return render(request, "pages/telegram.html")
+    tg_platform_cells = [
+        "Риск наткнуться на каналы с ботами или низкой вовлеченностью",
+        "Риск штрафов из-за ошибок в маркировке рекламы",
+        "Высокий риск бана за нарушение правил коммуникации (спам)",
+        "Telegram существует в отрыве от общей стратегии",
+    ]
+    tg_partner_cells = [
+        "Глубокий анализ каналов (ER, охваты, цитируемость) — только проверенные площадки",
+        "Полная ответственность за корректную маркировку рекламы",
+        "Проактивное ведение и модерация — диалог вместо рассылок, защита репутации",
+        "Интеграция в гибридную экосистему: QR с билбордов и боты из радио ведут в Telegram",
+    ]
+    return render(
+        request,
+        "pages/telegram.html",
+        {"tg_platform_cells": tg_platform_cells, "tg_partner_cells": tg_partner_cells},
+    )
 
 
 def design(request):

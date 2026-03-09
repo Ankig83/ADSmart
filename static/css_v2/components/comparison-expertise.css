@@ -27,6 +27,35 @@
   display: block;
 }
 
+/* Responsive title: mobile / tablet / desktop */
+.comparison-expertise__title-mobile,
+.comparison-expertise__title-tablet,
+.comparison-expertise__title-desktop {
+  display: block;
+}
+.comparison-expertise__title-tablet,
+.comparison-expertise__title-desktop {
+  display: none;
+}
+
+@media (min-width: 834px) {
+  .comparison-expertise__title--responsive .comparison-expertise__title-mobile {
+    display: none;
+  }
+  .comparison-expertise__title--responsive .comparison-expertise__title-tablet {
+    display: block;
+  }
+}
+
+@media (min-width: 1440px) {
+  .comparison-expertise__title--responsive .comparison-expertise__title-tablet {
+    display: none;
+  }
+  .comparison-expertise__title--responsive .comparison-expertise__title-desktop {
+    display: block;
+  }
+}
+
 .comparison-expertise__grid {
   width: 100%;
   max-width: 100%;
