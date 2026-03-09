@@ -47,7 +47,7 @@
 /* 834px: tablet — Figma Blok1 */
 @media (min-width: 834px) and (max-width: 1439px) {
   .hero--billboards {
-    min-height: 435px;
+    min-height: 485px;
   }
 
   .hero--billboards .container {
@@ -173,6 +173,118 @@
 /* Steps: центральная (3-я) иконка — чёрная */
 .steps--billboards .step-card:nth-child(3) .step-card__icon {
   filter: brightness(0);
+}
+
+/* ═══ CTA Contact 440 — Figma Frame 427321845 ═══ */
+@media (max-width: 833px) {
+  .cta-form.cta-form--billboards .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 44px 16px;
+    gap: 26px;
+    background: #19161c;
+    width: 100%;
+    max-width: 440px;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 408px;
+    max-width: 100%;
+    align-self: stretch;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__title {
+    width: 100%;
+    max-width: 408px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form-wrapper {
+    width: 408px;
+    max-width: 100%;
+    align-self: stretch;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form-title {
+    display: none;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__fields {
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(1),
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(3) {
+    display: none;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(2) {
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__input {
+    width: 100%;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
+  }
 }
 
 /* ═══ CTA Contact 1440px — Figma 1088px карточка ═══ */

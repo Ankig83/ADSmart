@@ -1,12 +1,17 @@
 /* hero.css — универсальный компонент Hero v2 (mobile-first) */
 
-/* MOBILE — базовый слой */
+/* MOBILE — базовый слой (440×485 по Figma) */
 .hero {
   position: relative;
-  min-height: 520px;
+  min-height: var(--hero-mobile-h, 485px);
+  height: var(--hero-mobile-h, 485px);
+  width: 100%;
+  max-width: min(var(--hero-mobile-w, 440px), 100vw);
+  margin-inline: auto;
   display: flex;
   align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .hero__bg {
@@ -59,7 +64,9 @@
 /* TABLET — min-width: 834px */
 @media (min-width: 834px) {
   .hero {
-    min-height: 640px;
+    min-height: 485px;
+    height: auto;
+    max-width: none;
   }
 
   .hero__title {
@@ -74,7 +81,7 @@
 /* DESKTOP — min-width: 1440px */
 @media (min-width: 1440px) {
   .hero {
-    min-height: 720px;
+    min-height: 485px;
   }
 
   .hero__title {
@@ -110,6 +117,33 @@
     color: #c4c4c4;
     line-height: normal;
     max-width: 306px;
+  }
+
+  /* Radio 440 — кнопки по Figma (Frame 427321850), влезают в экран */
+  .hero--radio .hero__actions {
+    gap: 14px;
+    width: 100%;
+    max-width: 408px;
+    align-items: center;
+  }
+
+  .hero--radio .hero__actions .button {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    padding: 16px 32px;
+    min-height: 56px;
+    height: 56px;
+    border-radius: 64px;
+    min-width: 0;
+  }
+
+  .hero--radio .hero__actions .button--primary {
+    flex: 1 1 218px;
+  }
+
+  .hero--radio .hero__actions .button--outline {
+    flex: 1 1 176px;
   }
 }
 
@@ -188,6 +222,33 @@
     display: block;
     object-position: center center;
   }
+
+  /* Elevators 440 — кнопки по Figma (как Radio), влезают в экран */
+  .hero--elevators .hero__actions {
+    gap: 14px;
+    width: 100%;
+    max-width: 408px;
+    align-items: center;
+  }
+
+  .hero--elevators .hero__actions .button {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    padding: 16px 32px;
+    min-height: 56px;
+    height: 56px;
+    border-radius: 64px;
+    min-width: 0;
+  }
+
+  .hero--elevators .hero__actions .button--primary {
+    flex: 1 1 218px;
+  }
+
+  .hero--elevators .hero__actions .button--outline {
+    flex: 1 1 176px;
+  }
 }
 
 /* Tablet 834–1439px */
@@ -233,6 +294,21 @@
     left: 50%;
     transform: translateX(-50%);
     object-fit: cover;
+  }
+
+  /* Billboards 440: заголовок и подзаголовок по Figma */
+  .hero--billboards .hero__title {
+    width: 408px;
+    max-width: calc(100vw - 32px);
+    font-family: 'Poppins', var(--font-sans);
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 130%;
+    letter-spacing: 0.48px;
+    color: #ffffff;
+  }
+  .hero--billboards .hero__subtitle {
+    color: #c4c4c4;
   }
 
   /* Production: AI-фигура — 15% обрезка справа, по центру */

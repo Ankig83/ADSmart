@@ -1,0 +1,95 @@
+/* prod-expertise.css — блок «Экспертиза, встроенная в систему» (Production)
+   Mobile-first, layout по Figma: текст слева, изображение справа на desktop. */
+
+.prod-expertise {
+  width: 100%;
+}
+
+.prod-expertise__inner.container {
+  display: block;
+}
+
+.prod-expertise__title {
+  margin: 0 0 var(--space-6, 24px);
+  font-family: var(--font-sans);
+  font-size: clamp(24px, 5vw, 28px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.prod-expertise__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6, 24px);
+}
+
+.prod-expertise__left,
+.prod-expertise__right {
+  width: 100%;
+}
+
+.prod-expertise__text {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.prod-expertise__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (min-width: 834px) {
+  .prod-expertise__title {
+    font-size: clamp(28px, 3vw, 36px);
+    margin-bottom: var(--space-8, 32px);
+  }
+
+  .prod-expertise__content {
+    gap: var(--space-8, 32px);
+  }
+
+  .prod-expertise__img {
+    min-height: 200px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .prod-expertise__title {
+    font-size: clamp(40px, 3vw, 48px);
+    font-weight: 700;
+    margin-bottom: var(--space-10, 40px);
+  }
+
+  .prod-expertise__content {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .prod-expertise__left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .prod-expertise__right {
+    flex-shrink: 0;
+    width: min(504px, 45%);
+  }
+
+  .prod-expertise__text {
+    font-size: 21px;
+    line-height: 1.5;
+  }
+
+  .prod-expertise__img {
+    border-radius: 24px;
+  }
+}
+

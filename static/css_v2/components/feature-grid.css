@@ -1,5 +1,5 @@
 /* feature-grid.css — компонент Feature Grid v2 (mobile-first)
-   Figma: карточка 408×135 (fill×hug), padding 35px 14px, gap 12px */
+   440: карточка 408×154, gap 14, padding 35, radius 12 */
 
 /* MOBILE — 1 колонка, карточка: иконка слева, текст справа */
 .feature-grid {
@@ -19,7 +19,7 @@
 .feature-grid__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 14px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -29,11 +29,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   background: #19161c;
-  padding: 35px 14px;
+  padding: 35px;
+  width: 100%;
+  max-width: 408px;
+  min-height: 154px;
   border-radius: 12px;
   box-sizing: border-box;
+  margin-inline: auto;
 }
 
 .feature-card__icon {

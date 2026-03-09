@@ -3,12 +3,14 @@
 
 .hero-with-figure {
   position: relative;
-  min-height: 520px;
+  min-height: var(--hero-mobile-h, 485px);
+  height: var(--hero-mobile-h, 485px);
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+  max-width: min(var(--hero-mobile-w, 440px), 100vw);
+  margin-inline: auto;
   background: #000000;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .hero-with-figure__bg {
@@ -106,7 +108,9 @@
 
 @media (min-width: 834px) {
   .hero-with-figure {
-    min-height: 640px;
+    min-height: 485px;
+    height: auto;
+    max-width: 1440px;
   }
 
   .hero-with-figure__content {
@@ -187,7 +191,7 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
-    min-height: 754px;
+    min-height: 485px;
     padding: 0 48px;
   }
 

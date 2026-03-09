@@ -1,0 +1,60 @@
+/* tablet-770.css — ширина контейнера на планшете (770→1330). Специфичность вместо !important */
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  .benefits .container,
+  .steps .container,
+  .feature-grid .container,
+  .why-cards .container,
+  .media-split .container,
+  .approach-cards .container {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px));
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .content-media-block__inner,
+  .transport-formats__inner,
+  .billboard-formats__inner,
+  .ai-result__inner {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px));
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .comparison-expertise__grid {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px));
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .demo-steps__inner,
+  .demo-exp__inner,
+  .demo-tech19__inner,
+  .demo-team__inner {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px));
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .demo-faq {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px));
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
+
+  .content-media-rows__inner,
+  .demo-print-solutions__grid,
+  .demo-print-how__grid {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px));
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+}

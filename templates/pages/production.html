@@ -4,10 +4,6 @@
 {% block title %}Производство наружной рекламы · {{ PROJECT_NAME }}{% endblock %}
 
 {% block page_css %}
-  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
-  <link rel="stylesheet" href="{% static 'css_v2/main.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/production.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/production-mobile-lock.css' %}" />
 {% endblock %}
@@ -23,6 +19,15 @@
         <img
           class="hero__bg-img hero__bg-img--desktop"
           src="{% static 'assets/images/production-hero-bg.png' %}"
+          alt=""
+          width="834"
+          height="435"
+          loading="eager"
+          decoding="async"
+        />
+        <img
+          class="hero__bg-img hero__bg-img--production-tablet"
+          src="{% static 'assets/images/fon_834_pr.png' %}"
           alt=""
           width="834"
           height="435"
@@ -211,31 +216,7 @@
       </div>
     </section>
 
-    <section class="demo-prod-expertise section" aria-labelledby="prod-expertise-title">
-      <div class="demo-prod-expertise__inner container">
-        <h2 class="demo-prod-expertise__title" id="prod-expertise-title">
-          Экспертиза, встроенная в систему
-        </h2>
-
-        <div class="demo-prod-expertise__content">
-          <div class="demo-prod-expertise__left">
-            <p class="demo-prod-expertise__text">
-              Мы — студия умной рекламы, поэтому понимаем, как физический носитель работает в общей коммуникационной стратегии. Ваша вывеска или стенд — это не изолированный объект, а важная часть бренда, которую мы создаем с учетом общей картины
-            </p>
-          </div>
-          <div class="demo-prod-expertise__right">
-            <img
-              class="demo-prod-expertise__img"
-              src="{% static 'assets/images/production-expertise.jpg' %}"
-              alt=""
-              width="504"
-              height="295"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+    {% include "components/prod_expertise.html" with title_id="prod-expertise-title" title_html="Экспертиза, встроенная в систему" text="Мы — студия умной рекламы, поэтому понимаем, как физический носитель работает в общей коммуникационной стратегии. Ваша вывеска или стенд — это не изолированный объект, а важная часть бренда, которую мы создаем с учетом общей картины" img_src="assets/images/production-expertise.jpg" img_width="504" img_height="295" %}
 
     <section class="cta-form cta-form--production section" aria-labelledby="prod-contact-title" id="contact">
       <div class="container">

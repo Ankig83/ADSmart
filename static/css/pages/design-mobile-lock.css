@@ -21,7 +21,7 @@
   /* Hero — как Telegram (hero-with-figure) */
   .hero-with-figure {
     width: 100% !important;
-    min-height: clamp(338px, calc(483 * 100vw / 440), 725px) !important;
+    min-height: 485px !important;
     height: auto !important;
     margin: 0 !important;
     padding: 0 !important;

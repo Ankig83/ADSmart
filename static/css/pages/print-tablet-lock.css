@@ -18,7 +18,7 @@
 
   /* Hero — hero-with-figure (css_v2), overrides для print tablet */
   .demo-print .hero-with-figure {
-    min-height: clamp(435px, calc(435 * 100vw / 834), 751px) !important;
+    min-height: 485px !important;
     display: flex !important;
     align-items: center !important;
   }

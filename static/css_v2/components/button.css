@@ -1,11 +1,14 @@
-/* button.css — Button v2 (единая система) */
+/* button.css — Button v2. Figma 440 mobile-first, 834+ tablet/desktop */
 
 .button {
   display: inline-flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', var(--font-sans);
   font-weight: 500;
+  font-style: normal;
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -14,27 +17,36 @@
   box-sizing: border-box;
 }
 
+/* 440: mobile — padding 18px 20px, height 56px, font 18px, radius 100px */
 .button--sm {
   font-size: 14px;
-  padding: 8px 16px;
-  border-radius: 24px;
+  line-height: 20px;
+  padding: 14px 16px;
+  min-height: 44px;
+  border-radius: 100px;
 }
 
 .button--md {
   font-size: 16px;
-  padding: 12px 20px;
-  border-radius: 32px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  padding: 16px 24px;
+  min-height: 56px;
+  border-radius: 100px;
 }
 
 .button--lg {
   font-size: 18px;
-  padding: 16px 24px;
-  border-radius: 40px;
+  line-height: 20px;
+  text-align: center;
+  padding: 18px 20px;
+  min-height: 56px;
+  border-radius: 100px;
 }
 
 .button--primary {
   background: #14f195;
-  color: #000;
+  color: #000000;
 }
 .button--primary:hover {
   filter: brightness(0.9);
@@ -50,11 +62,25 @@
 
 .button--outline {
   background: transparent;
-  border: 1px solid currentColor;
-  color: #fff;
+  border: 1px solid #ffffff;
+  color: #ffffff;
 }
 .button--outline:hover {
   background: rgba(255, 255, 255, 0.05);
+}
+
+/* Вариант: белый фон, чёрная обводка */
+.button--outline.button--light {
+  background: #ffffff;
+  border: 1px solid #000000;
+  color: #000000;
+}
+
+/* Вариант: белый фон, белая обводка (светлый фон страницы) */
+.button--outline.button--white {
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  color: #000000;
 }
 
 .button--ghost {
@@ -63,4 +89,32 @@
 }
 .button--ghost:hover {
   text-decoration: underline;
+}
+
+/* 834+: tablet/desktop — padding 16px 32px, font 16px, radius 64px */
+@media (min-width: 834px) {
+  .button--sm {
+    font-size: 14px;
+    padding: 10px 18px;
+    min-height: 44px;
+    border-radius: 64px;
+  }
+
+  .button--md {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    padding: 16px 32px;
+    min-height: 56px;
+    border-radius: 64px;
+  }
+
+  .button--lg {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    padding: 16px 32px;
+    min-height: 56px;
+    border-radius: 64px;
+  }
 }

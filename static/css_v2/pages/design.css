@@ -1,0 +1,329 @@
+/* design.css — страница Дизайн. Mobile-first, без !important */
+
+.page--design.app .app__main {
+  padding: 0;
+}
+
+.demo-design {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  background: #000000;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Hero — Desktop: скрыть фон (design-desktop) */
+@media (min-width: 1440px) {
+  .demo-design .hero-with-figure__bg,
+  .demo-design .hero-with-figure__bg-img,
+  .demo-design .hero-with-figure__overlay {
+    display: none;
+  }
+
+  .demo-design {
+    width: min(100%, clamp(1440px, 100vw, 2560px));
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Tablet */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-design {
+    width: min(100%, clamp(834px, 92vw, 1160px));
+    margin: 0 auto;
+  }
+
+  .hero-with-figure {
+    min-height: 485px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-with-figure__bg-img--mobile {
+    display: none;
+  }
+
+  .hero-with-figure__bg-img--desktop {
+    display: block;
+  }
+
+  .hero-with-figure__content {
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 462px;
+    max-width: calc(100% - 64px);
+    padding: 0;
+    gap: 18px;
+  }
+
+  .hero-with-figure__content .hero-with-figure__actions {
+    margin-top: 18px;
+  }
+
+  .hero-with-figure__title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.48px;
+    margin: 0;
+  }
+
+  .hero-with-figure__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    color: #c4c4c4;
+    margin: 0;
+    max-width: 439px;
+  }
+
+  .hero-with-figure__actions {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .hero-with-figure__actions .button--primary {
+    width: 196px;
+    height: 56px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    background: #14f195;
+    color: #000000;
+    border-radius: 64px;
+  }
+
+  .hero-with-figure__actions .button--outline {
+    width: 164px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #ffffff;
+    border-radius: 64px;
+    color: #ffffff;
+  }
+
+  .hero-with-figure__image-wrap {
+    display: none;
+  }
+}
+
+/* Mobile — hero and content blocks */
+@media (max-width: 833px) {
+  .hero-with-figure {
+    width: 100%;
+    min-height: var(--hero-mobile-h, 485px);
+    height: var(--hero-mobile-h, 485px);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .hero-with-figure__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-with-figure__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-with-figure__bg-img--desktop {
+    display: none;
+  }
+
+  .hero-with-figure__bg-img--mobile {
+    display: block;
+  }
+
+  .hero-with-figure__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.8) 4.38%, rgba(0,0,0,0.619) 28.02%, rgba(0,0,0,0.4) 56.72%, rgba(0,0,0,0.1) 66.25%);
+    z-index: 1;
+  }
+
+  .hero-with-figure__content {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(408px, calc(100% - 32px));
+    max-width: 408px;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    text-align: left;
+  }
+
+  .hero-with-figure__title {
+    width: 100%;
+    margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.3;
+    letter-spacing: 0.48px;
+    color: #fff;
+  }
+
+  .hero-with-figure__subtitle {
+    width: 100%;
+    max-width: 277px;
+    margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #c4c4c4;
+  }
+
+  .hero-with-figure__actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero-with-figure__image-wrap {
+    display: block;
+    position: absolute;
+    right: -30%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: auto;
+    width: clamp(260px, 75vw, 420px);
+    height: clamp(260px, 75vw, 420px);
+  }
+
+  /* Why-cards */
+  .demo-design .why-cards .container {
+    padding: clamp(44px, calc(44 * 100vw / 440), 56px) 16px;
+    gap: 42px;
+    max-width: min(440px, 100vw);
+  }
+
+  .demo-design .why-cards__title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .demo-design .why-cards__grid {
+    gap: 22px;
+  }
+
+  .demo-design .why-card {
+    padding: 28px 14px;
+    gap: 10px;
+  }
+
+  .demo-design .why-card__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .demo-design .why-card__body {
+    gap: 8px;
+  }
+
+  .demo-design .why-card__title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 1.5px;
+  }
+
+  .demo-design .why-card__text {
+    font-size: 14px;
+    line-height: 21px;
+    color: #ffffff;
+  }
+
+  /* Benefits */
+  .demo-design .benefits .container {
+    padding: clamp(44px, calc(44 * 100vw / 440), 56px) 16px;
+    max-width: min(440px, 100vw);
+  }
+
+  .demo-design .benefits__title {
+    margin: 0 0 42px;
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .demo-design .benefits__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 12px;
+  }
+
+  .demo-design .benefit-card {
+    width: 198px;
+    gap: 17px;
+  }
+
+  .demo-design .benefit-card__ring {
+    width: 94px;
+    height: 94px;
+    border-width: 3px;
+  }
+
+  .demo-design .benefit-card__icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .demo-design .benefit-card__title {
+    font-size: 18px;
+  }
+
+  .demo-design .benefit-card__text {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  /* Feature-grid */
+  .demo-design .feature-grid .container {
+    padding: clamp(44px, calc(44 * 100vw / 440), 56px) 16px;
+    max-width: min(440px, 100vw);
+  }
+
+  .demo-design .feature-grid__title {
+    margin: 0 0 42px;
+    font-size: 24px;
+  }
+
+  .demo-design .feature-grid__grid {
+    gap: 16px;
+  }
+}
+
+/* Общие отступы (десктоп + планшет + мобилка) */
+.demo-design .content-media-block__inner {
+  gap: 42px;
+}
+
+.demo-design .benefits__title {
+  margin-bottom: 42px;
+}
+
+.demo-design .feature-grid__title {
+  margin-bottom: 42px;
+}

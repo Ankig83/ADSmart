@@ -36,7 +36,7 @@
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;
     margin: 0 auto !important;
     height: clamp(435px, 38vw, 535px) !important;
-    min-height: clamp(435px, 38vw, 535px) !important;
+    min-height: 485px !important;
     padding: clamp(86px, 8vw, 110px) clamp(24px, 2.8vw, 40px) clamp(52px, 6vw, 80px) !important;
     position: relative !important;
     box-sizing: border-box !important;
@@ -126,7 +126,7 @@
 
   /* Hero — hero-with-figure (css_v2) */
   .hero-with-figure {
-    min-height: clamp(435px, 38vw, 535px) !important;
+    min-height: 485px !important;
     padding: clamp(86px, 8vw, 110px) clamp(24px, 2.8vw, 40px) clamp(52px, 6vw, 80px) !important;
   }
   .hero-with-figure__content { width: min(100%, clamp(462px, 56vw, 690px)) !important; }

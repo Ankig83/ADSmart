@@ -1,0 +1,32 @@
+{% load static %}
+{% comment %}
+  prod_expertise — блок «Экспертиза, встроенная в систему» для Production.
+  Использует css_v2/components/prod-expertise.css.
+{% endcomment %}
+<section class="prod-expertise section" aria-labelledby="{{ title_id|default:'prod-expertise-title' }}">
+  <div class="prod-expertise__inner container">
+    <h2 class="prod-expertise__title" id="{{ title_id|default:'prod-expertise-title' }}">
+      {{ title_html|default:"Экспертиза, встроенная в систему"|safe }}
+    </h2>
+
+    <div class="prod-expertise__content">
+      <div class="prod-expertise__left">
+        <p class="prod-expertise__text">
+          {{ text|default:"Мы — студия умной рекламы, поэтому понимаем, как физический носитель работает в общей коммуникационной стратегии. Ваша вывеска или стенд — это не изолированный объект, а важная часть бренда, которую мы создаем с учетом общей картины"|safe }}
+        </p>
+      </div>
+      <div class="prod-expertise__right">
+        <img
+          class="prod-expertise__img"
+          src="{% static img_src|default:'assets/images/production-expertise.jpg' %}"
+          alt="{{ img_alt|default:'' }}"
+          width="{{ img_width|default:'504' }}"
+          height="{{ img_height|default:'295' }}"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+

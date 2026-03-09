@@ -54,14 +54,6 @@
     box-sizing: border-box !important;
   }
 
-  /* === Production: demo-prod-expertise === */
-  .demo-prod-expertise__inner {
-    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px)) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    box-sizing: border-box !important;
-  }
-
   /* === Print: content-media-rows, demo-print-solutions, demo-print-how === */
   .content-media-rows__inner,
   .demo-print-solutions__grid,

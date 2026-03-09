@@ -22,7 +22,7 @@
   /* ─── HERO ─── */
   .hero-with-figure {
     width: 100% !important;
-    min-height: clamp(291px, calc(400 * 100vw / 440), 757px) !important;
+    min-height: 485px !important;
     height: auto !important;
     margin: 0 !important;
     padding: 0 !important;

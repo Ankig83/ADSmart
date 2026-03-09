@@ -12,7 +12,8 @@ body {
   font-size: var(--text-16);
   line-height: 1.45;
   color: var(--text);
-  background: var(--bg);
+  /* Глобальный фон страниц — чёрный, как в макетах */
+  background: #000000;
 }
 
 .app,

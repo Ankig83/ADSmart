@@ -1,11 +1,21 @@
+/* main.css — единая точка входа. Mobile-first, BEM, без !important */
+
+@import "base/tokens.css";
 @import "base/reset.css";
-@import "base/variables.css";
 @import "base/typography.css";
+@import "base/layout.css";
 @import "base/sections.css";
+@import "base/tablet-770.css";
 
-@import "base/container.css";
-
+/* Компоненты */
+@import "components/nav.css";
 @import "components/button.css";
+@import "components/input.css";
+@import "components/card.css";
+@import "components/section.css";
+@import "components/badge.css";
+@import "components/modal.css";
+@import "components/toast.css";
 @import "components/hero.css";
 @import "components/hero-with-figure.css";
 @import "components/comparison-expertise.css";
@@ -20,3 +30,11 @@
 @import "components/approach-cards.css";
 @import "components/cta-form.css";
 @import "components/steps.css";
+@import "components/prod-expertise.css";
+@import "components/ai-result.css";
+@import "components/transport-formats.css";
+@import "components/demo-cookie-consent.css";
+@import "components/demo-home-calc.css";
+@import "components/demo-lead-success.css";
+@import "components/demo-menu.css";
+@import "components/demo-footer.css";

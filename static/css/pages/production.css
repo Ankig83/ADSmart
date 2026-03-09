@@ -1,13 +1,46 @@
 /*
   Production — Производство наружной рекламы (css_v2).
   Стандартные блоки: hero, feature-grid, steps, cta-form.
-  Кастомный блок: .demo-prod-expertise (Экспертиза, встроенная в систему).
+  Кастомный блок prod-expertise вынесен в css_v2/components/prod-expertise.css.
 */
+
+/* Основной фон страницы — чёрный, как на других demo-страницах */
+.app {
+  background: #000000;
+}
 
 /* Обёртка страницы */
 .demo-prod {
   width: 100%;
   overflow-x: hidden;
+}
+
+/* Hero фон: 834 — fon_834_pr, 1440+ — production-hero-bg */
+.hero--production .hero__bg-img--production-tablet {
+  display: none;
+}
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero--production .hero__bg-img--mobile,
+  .hero--production .hero__bg-img--desktop {
+    display: none !important;
+  }
+  .hero--production .hero__bg-img--production-tablet {
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero--production .hero__bg-img--mobile,
+  .hero--production .hero__bg-img--production-tablet {
+    display: none !important;
+  }
+  .hero--production .hero__bg-img--desktop {
+    display: block !important;
+  }
 }
 
 /* ——— Steps: модификатор Production (тёмный круг с оранжевой обводкой, 4 карточки) ——— */
@@ -18,97 +51,4 @@
 
 .steps--production .step-card:last-child {
   grid-column: auto;
-}
-
-/* ——— Экспертиза, встроенная в систему (кастомный блок) ——— */
-.demo-prod-expertise {
-  width: 100%;
-}
-
-.demo-prod-expertise__inner.container {
-  display: block;
-}
-
-.demo-prod-expertise__title {
-  margin: 0 0 var(--space-6, 24px);
-  font-family: var(--font-sans);
-  font-size: clamp(24px, 5vw, 28px);
-  font-weight: 600;
-  line-height: 1.3;
-  color: #ffffff;
-}
-
-.demo-prod-expertise__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6, 24px);
-}
-
-.demo-prod-expertise__left,
-.demo-prod-expertise__right {
-  width: 100%;
-}
-
-.demo-prod-expertise__text {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.5;
-  color: #ffffff;
-}
-
-.demo-prod-expertise__img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-@media (min-width: 834px) {
-  .demo-prod-expertise__title {
-    font-size: clamp(28px, 3vw, 36px);
-    margin-bottom: var(--space-8, 32px);
-  }
-
-  .demo-prod-expertise__content {
-    gap: var(--space-8, 32px);
-  }
-
-  .demo-prod-expertise__img {
-    min-height: 200px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .demo-prod-expertise__title {
-    font-size: clamp(40px, 3vw, 48px);
-    font-weight: 700;
-    margin-bottom: var(--space-10, 40px);
-  }
-
-  .demo-prod-expertise__content {
-    flex-direction: row;
-    align-items: center;
-    gap: 64px;
-  }
-
-  .demo-prod-expertise__left {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .demo-prod-expertise__right {
-    flex-shrink: 0;
-    width: min(504px, 45%);
-  }
-
-  .demo-prod-expertise__text {
-    font-size: 21px;
-    line-height: 1.5;
-  }
-
-  .demo-prod-expertise__img {
-    border-radius: 24px;
-  }
 }
