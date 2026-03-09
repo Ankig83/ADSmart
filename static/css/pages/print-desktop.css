@@ -253,107 +253,37 @@
     color: #ffffff;
   }
 
-  /* Section 5: Contact (140:5287) */
-  .demo-print-contact {
-    position: relative;
-    width: 100%;
-    height: auto;
+  /* Section 5: Contact (140:5287) — cta-form Figma CTA, 1440 */
+  .cta-form--print {
     min-height: clamp(746px, calc(746 * 100vw / 1440), 1328px);
+    padding: clamp(100px, calc(100 * 100vw / 1440), 178px) 0;
     background: #000000;
-    padding-top: clamp(100px, calc(100 * 100vw / 1440), 178px);
+    box-sizing: border-box;
   }
-
-  .demo-print-contact__inner {
-    width: clamp(1086px, calc(1086 * 100vw / 1440), 1935px);
-    max-width: 100%;
-    height: clamp(546px, calc(546 * 100vw / 1440), 972px);
-    margin: 0 auto;
-    background: #19161c;
-    border-radius: clamp(32px, calc(32 * 100vw / 1440), 57px);
-    border: 1px solid #ff7b00;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  .cta-form--print.cta-form--forms-1 .container {
+    padding: 0 clamp(177px, calc(177 * 100vw / 1440), 315px);
   }
-
-  .demo-print-contact__title {
-    width: clamp(777px, calc(777 * 100vw / 1440), 1384px);
-    max-width: 100%;
-    margin: 0 0 clamp(24px, calc(24 * 100vw / 1440), 43px);
-    font-family: var(--font-sans);
-    font-size: clamp(48px, calc(48 * 100vw / 1440), 85px);
+  .cta-form--print.cta-form--forms-1 .cta-form__card {
+    padding: clamp(45px, calc(45 * 100vw / 1440), 80px) clamp(153px, calc(153 * 100vw / 1440), 272px);
+    min-height: clamp(546px, calc(546 * 100vw / 1440), 972px);
+  }
+  .cta-form--print .cta-form__title {
     font-weight: 600;
-    line-height: clamp(48px, calc(48 * 100vw / 1440), 85px);
-    letter-spacing: -1.44px;
-    color: #ffffff;
+    margin-bottom: clamp(24px, calc(24 * 100vw / 1440), 43px);
   }
-
-  .demo-print-contact__text {
-    width: clamp(777px, calc(777 * 100vw / 1440), 1384px);
-    max-width: 100%;
-    margin: 0 0 clamp(38px, calc(38 * 100vw / 1440), 68px);
-    font-family: var(--font-sans);
-    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px);
-    font-weight: 400;
-    line-height: clamp(21.6px, calc(21.6 * 100vw / 1440), 38px);
-    letter-spacing: -0.54px;
-    color: #ffffff;
+  .cta-form--print .cta-form__text {
+    margin-bottom: clamp(38px, calc(38 * 100vw / 1440), 68px);
   }
-
-  .demo-print-contact__form-title {
-    display: none;
+  .cta-form--print.cta-form--forms-1 .cta-form__form-wrapper {
+    max-width: 780px;
   }
-  .demo-print-contact__form {
-    width: clamp(780px, calc(780 * 100vw / 1440), 1389px);
-    max-width: 100%;
+  .cta-form--print .cta-form__input {
+    border: 1px solid #ffffff;
+    border-radius: 12px;
   }
-
-  .demo-print-contact__row {
-    display: flex;
-    gap: clamp(14px, calc(14 * 100vw / 1440), 25px);
-    margin-bottom: clamp(14px, calc(14 * 100vw / 1440), 25px);
-  }
-
-  .demo-print-contact__field {
-    position: relative;
+  .cta-form--print .cta-form__form .button {
     width: clamp(383px, calc(383 * 100vw / 1440), 682px);
-    height: clamp(56px, calc(56 * 100vw / 1440), 100px);
-    display: block;
-  }
-
-  .demo-print-contact__field--full {
-    width: 100%;
-    margin-bottom: clamp(14px, calc(14 * 100vw / 1440), 25px);
-  }
-
-  .demo-print-contact__input {
-    width: 100%;
-    height: clamp(56px, calc(56 * 100vw / 1440), 100px);
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    padding: 0 clamp(22px, calc(22 * 100vw / 1440), 39px);
-    font-family: var(--font-sans);
+    height: 52px;
     font-size: clamp(18px, calc(18 * 100vw / 1440), 32px);
-    color: #ffffff;
-    transition: border-color 0.2s;
-  }
-
-  .demo-print-contact__input:focus {
-    outline: none;
-    border-color: #14f195;
-  }
-
-  /* Figma 140:6926 — надписи внутри инпутов (placeholder) */
-  .demo-print-contact__input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
-  }
-
-  .demo-print-contact__actions {
-    margin-top: clamp(17px, calc(17 * 100vw / 1440), 30px);
-    display: flex;
-    justify-content: center;
   }
 }

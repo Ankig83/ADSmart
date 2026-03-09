@@ -6,3 +6,23 @@
 */
 .app { background: #000000; }
 .app__main { padding: 0; }
+
+/* Contact — cta-form как Telegram (834 идентично) */
+.cta-form.cta-form--print .container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 834px) {
+  .cta-form.cta-form--print .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+  }
+}
+@media (min-width: 1440px) {
+  .cta-form.cta-form--print .container {
+    gap: 48px;
+  }
+}

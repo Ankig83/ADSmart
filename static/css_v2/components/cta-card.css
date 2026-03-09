@@ -123,6 +123,7 @@
 @media (min-width: 1440px) {
   .cta-card--design .cta-card__inner {
     border-radius: 32px;
+    border: 1px solid #ff7b00;
   }
 }
 
