@@ -133,8 +133,24 @@
   }
 }
 
-/* 834–1439: Telegram — fon_834_tg; Design — fon_834_d; фигуру скрыть */
+/* 834–1439: затемнение левой стороны на всех страницах; Telegram/Design — свой фон, фигуру скрыть */
 @media (min-width: 834px) and (max-width: 1439px) {
+  /* Figma Frame 427321549: градиент затемнения — единый для всех hero 834 */
+  .hero-with-figure__overlay {
+    left: 0;
+    top: clamp(70px, calc(70 * 100vw / 834), 121px);
+    width: 100%;
+    height: clamp(435px, calc(435 * 100vw / 834), 751px);
+    right: auto;
+    bottom: auto;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 4.38%,
+      rgba(0, 0, 0, 0.525) 52.95%,
+      rgba(0, 0, 0, 0.05) 70.42%
+    );
+  }
+
   .demo-tg .hero-with-figure__bg-img {
     display: none;
   }

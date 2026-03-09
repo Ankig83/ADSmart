@@ -16,191 +16,76 @@
     overflow-x: hidden !important;
   }
 
-  /* Hero — 140:7923 Blok1: фон + overlay, космонавт скрыт */
-  .demo-print-hero {
+  /* Hero — hero-with-figure (css_v2), overrides для print tablet */
+  .demo-print .hero-with-figure {
+    min-height: clamp(435px, calc(435 * 100vw / 834), 751px) !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  /* overlay — градиент из hero-with-figure.css; для print — позиция сверху (Figma Frame 427321549) */
+  .demo-print .hero-with-figure__overlay {
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
     width: 100% !important;
-    margin: 0 auto !important;
-    height: clamp(435px, calc(435 * 100vw / 834), 751px) !important;
-    padding: clamp(86px, calc(86 * 100vw / 834), 148px) clamp(32px, calc(32 * 100vw / 834), 55px) clamp(52px, calc(52 * 100vw / 834), 90px) !important;
-    position: relative !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-    background: #000000 !important;
-  }
-  .demo-print-hero__bg {
-    position: absolute !important;
-    inset: 0 !important;
-    z-index: 0 !important;
-    background-image: url('../../assets/images/fon_834_tg.png') !important;
-    background-size: cover !important;
-    background-position: center !important;
-  }
-  .demo-print-hero__bg-img {
-    display: none !important;
-  }
-  .demo-print-hero__overlay {
-    position: absolute !important;
-    inset: 0 !important;
+    height: 100% !important;
     background: linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.5) 58%,
-      rgba(0, 0, 0, 0.05) 100%
+      rgba(0, 0, 0, 0.7) 4.38%,
+      rgba(0, 0, 0, 0.525) 52.95%,
+      rgba(0, 0, 0, 0.05) 70.42%
     ) !important;
-    pointer-events: none !important;
   }
-  .demo-print-hero__content {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: min(100%, clamp(444px, calc(444 * 100vw / 834), 767px)) !important;
-    z-index: 2 !important;
+  .demo-print .hero-with-figure__bg-img--mobile {
+    display: none !important;
+  }
+  .demo-print .hero-with-figure__bg-img--desktop {
+    display: block !important;
+  }
+  /* Figma Frame 427321799: left 32px, gap 36px между блоками, title-subtitle gap 18px */
+  .demo-print .hero-with-figure__content {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    text-align: left !important;
+    position: absolute !important;
+    left: 32px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: clamp(462px, calc(462 * 100vw / 834), 767px) !important;
+    max-width: calc(100% - 64px) !important;
+    padding: 0 !important;
   }
-  .demo-print-hero__title {
-    width: 100% !important;
-    margin: 0 0 clamp(24px, calc(24 * 100vw / 834), 41px) !important;
+  .demo-print .hero-with-figure__title {
+    margin: 0 0 18px !important;
     font-size: clamp(32px, calc(32 * 100vw / 834), 55px) !important;
     font-weight: 800 !important;
-    line-height: 130% !important;
+    line-height: 1.3 !important;
     letter-spacing: 0.48px !important;
-    color: #ffffff !important;
   }
-  .demo-print-hero__subtitle {
-    width: 100% !important;
-    max-width: clamp(337px, calc(337 * 100vw / 834), 582px) !important;
-    margin: 0 0 clamp(24px, calc(24 * 100vw / 834), 41px) !important;
+  .demo-print .hero-with-figure__subtitle {
+    margin: 0 0 36px !important;
     font-size: clamp(16px, calc(16 * 100vw / 834), 28px) !important;
     line-height: 1.5 !important;
     color: #c4c4c4 !important;
+    max-width: clamp(337px, calc(337 * 100vw / 834), 582px) !important;
   }
-  /* Hero buttons — Frame 427321900: 324×56, gap 8 */
-  .demo-print-hero__actions {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
+  .demo-print .hero-with-figure__actions {
     gap: 8px !important;
-    width: clamp(280px, calc(324 * 100vw / 834), 560px) !important;
-    height: 56px !important;
   }
-  .demo-print-hero__image-wrap {
+  .demo-print .hero-with-figure__image-wrap {
     display: none !important;
   }
-
-  /* System — 140:7935 Blok2 */
-  .demo-print-system {
-    width: 100% !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    padding: clamp(44px, calc(44 * 100vw / 834), 76px) clamp(32px, calc(32 * 100vw / 834), 55px) !important;
-    box-sizing: border-box !important;
-    background: #000000 !important;
+  .demo-print .hero-with-figure__title-mobile {
+    display: none !important;
   }
-  .demo-print-system__inner {
-    width: 100% !important;
-    margin: 0 auto !important;
-    max-width: clamp(770px, calc(770 * 100vw / 834), 1330px) !important;
-  }
-  .demo-print-system__title {
-    width: 100% !important;
-    margin: 0 0 clamp(24px, calc(24 * 100vw / 834), 41px) !important;
-    font-size: clamp(24px, calc(24 * 100vw / 834), 41px) !important;
-    line-height: 1.3 !important;
-    color: #ffffff !important;
-  }
-  .demo-print-system__rows {
-    flex-direction: column !important;
-    gap: clamp(36px, calc(36 * 100vw / 834), 62px) !important;
-  }
-  .demo-print-system__row {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: clamp(24px, calc(24 * 100vw / 834), 41px) !important;
-  }
-  .demo-print-system__row--reverse,
-  .demo-print-system__row--why {
-    flex-direction: column !important;
-  }
-  .demo-print-system__col--text,
-  .demo-print-system__col--img {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  .demo-print-system__img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: clamp(200px, calc(200 * 100vw / 834), 345px) !important;
-    border-radius: 12px !important;
-  }
-  .demo-print-system__why {
-    width: 100% !important;
-  }
-  .demo-print-system__p,
-  .demo-print-system__item {
-    font-size: clamp(16px, calc(16 * 100vw / 834), 28px) !important;
-    line-height: 1.5 !important;
+  .demo-print .hero-with-figure__title-desktop {
+    display: block !important;
   }
 
-  /* Solutions 140:7946 — fluid */
-  .demo-print-solutions {
-    width: 100% !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    padding: clamp(44px, 5.3vw, 76px) clamp(32px, 2.6vw, 55px) !important;
-    box-sizing: border-box !important;
-    background: #000000 !important;
-  }
-  .demo-print-solutions__title {
-    width: 100% !important;
-    max-width: min(100%, clamp(770px, 78vw, 1086px)) !important;
-    margin: 0 auto clamp(42px, 5vw, 56px) !important;
-    padding-left: 0 !important;
-    font-size: clamp(28px, 3.84vw, 48px) !important;
-    font-weight: 600 !important;
-    line-height: 130% !important;
-    letter-spacing: -0.96px !important;
-    color: #ffffff !important;
-  }
-  .demo-print-solutions__grid {
-    display: grid !important;
-    width: 100% !important;
-    max-width: min(100%, clamp(770px, 78vw, 1086px)) !important;
-    margin: 0 auto !important;
-    grid-template-columns: 1fr !important;
-    gap: clamp(16px, 1.9vw, 28px) !important;
-  }
-  /* Figma 140:6893 — strokes: [], cornerRadius 12 */
-  .demo-print-solutions__card {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    padding: clamp(28px, calc(35 * 100vw / 834), 60px) clamp(14px, calc(14 * 100vw / 834), 24px) !important;
-    gap: clamp(10px, calc(12 * 100vw / 834), 21px) !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    background: #19161c !important;
-    border: none !important;
-    border-radius: 12px !important;
-  }
-  .demo-print-solutions__icon-wrap {
-    order: -1 !important;
-    width: clamp(48px, calc(65 * 100vw / 834), 65px) !important;
-    height: clamp(48px, calc(65 * 100vw / 834), 65px) !important;
-    min-width: clamp(48px, calc(65 * 100vw / 834), 65px) !important;
-    flex-shrink: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  .demo-print-solutions__icon {
-    width: clamp(48px, calc(65 * 100vw / 834), 65px) !important;
-    height: clamp(48px, calc(65 * 100vw / 834), 65px) !important;
-  }
+  /* System — css_v2/content-media-rows.css */
+
+  /* Solutions — css_v2/components/feature-grid.css */
   .demo-print-solutions__content {
     display: flex !important;
     flex-direction: column !important;
@@ -250,15 +135,14 @@
     align-items: flex-start !important;
     gap: clamp(12px, calc(12 * 100vw / 834), 21px) !important;
   }
-    .demo-print-how__card {
+  .demo-print-how__card {
     flex: 1 !important;
     min-width: 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-  /* Убираем gap, будем использовать margin */
-}
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
 
   .demo-print-how__ring {
     width: clamp(70px, calc(94 * 100vw / 834), 94px) !important;

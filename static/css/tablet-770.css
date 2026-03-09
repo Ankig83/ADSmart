@@ -62,8 +62,8 @@
     box-sizing: border-box !important;
   }
 
-  /* === Print: demo-print-system, demo-print-solutions, demo-print-how === */
-  .demo-print-system__inner,
+  /* === Print: content-media-rows, demo-print-solutions, demo-print-how === */
+  .content-media-rows__inner,
   .demo-print-solutions__grid,
   .demo-print-how__grid {
     max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px)) !important;

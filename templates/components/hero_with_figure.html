@@ -26,7 +26,12 @@
 
   <div class="hero-with-figure__content">
     <h1 class="hero-with-figure__title" id="{{ title_id|default:'hero-title' }}">
+      {% if title_html_mobile %}
+      <span class="hero-with-figure__title-mobile">{{ title_html_mobile|safe }}</span>
+      <span class="hero-with-figure__title-desktop">{% if title_html %}{{ title_html|safe }}{% endif %}</span>
+      {% else %}
       {% if title_html %}{{ title_html|safe }}{% else %}{{ title|default:"AI-ассистенты для вашего бизнеса" }}{% endif %}
+      {% endif %}
     </h1>
     <p class="hero-with-figure__subtitle">
       {% if subtitle_html %}{{ subtitle_html|safe }}{% else %}{{ subtitle|default:"Сокращаем расходы, автоматизируя продажи, найм и поддержку." }}{% endif %}
