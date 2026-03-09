@@ -235,14 +235,18 @@
     object-fit: cover;
   }
 
-  /* Для production - AI голова */
+  /* Production: AI-фигура — 15% обрезка справа, по центру */
+  .hero--production {
+    overflow: hidden;
+  }
   .hero--production .hero__ai {
     display: block;
     position: absolute;
-    width: clamp(199px, 55vw, 274px);
-    height: clamp(199px, 55vw, 274px);
-    right: -10%;
-    top: 12%;
+    width: clamp(260px, 75vw, 420px);
+    height: clamp(260px, 75vw, 420px);
+    right: -30%;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 2;
     pointer-events: none;
   }

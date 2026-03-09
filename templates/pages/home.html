@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
+  <link rel="stylesheet" href="{% static 'css_v2/main.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/home.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/home-tablet-overrides.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/home-tablet-lock.css' %}" />
@@ -18,33 +19,10 @@
 {% endblock %}
 
 {% block content %}
-  <section class="demo-home-hero" aria-labelledby="home-hero-title">
-    <div class="demo-home-hero__blob" aria-hidden="true"></div>
+  <div class="demo-home">
+    {% include "components/hero_with_figure.html" with figure_img="assets/images/20251218-2113-image-1@2x.png" bg_desktop="assets/images/figma-1-910e2421.png" bg_mobile="assets/images/fon_2.png" title_html="Ваш билборд умеет<br />принимать заказы 24/7?" subtitle_html="Превращаем наружную рекламу в автономный канал продаж с AI-ассистентами.<br />Сокращаем путь от интереса к заявке до 60 секунд" btn_primary_text="Рассчитать" btn_primary_action="home-calc-modal" btn_outline_text="Наши кейсы" btn_outline_href="#cases" title_id="home-hero-title" %}
 
-    <div class="demo-home-hero__art" aria-hidden="true">
-      <img
-        class="demo-home-hero__img"
-        src="{% static 'assets/images/20251218-2113-image-1@2x.png' %}"
-        alt=""
-        width="708"
-        height="741"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
-
-    <div class="demo-home-hero__content">
-      <h1 class="demo-home-hero__title" id="home-hero-title">Ваш билборд умеет принимать заказы 24/7?</h1>
-      <p class="demo-home-hero__subtitle">
-        Превращаем наружную рекламу в автономный канал продаж с AI-ассистентами. Сокращаем путь от интереса к заявке до 60 секунд
-      </p>
-
-      <div class="demo-home-hero__actions" role="group" aria-label="Primary actions">
-        <button class="button button--lg button--primary" type="button" data-modal-open="home-calc-modal">Рассчитать</button>
-        <a class="button button--lg button--outline" href="#cases">Наши кейсы</a>
-      </div>
-    </div>
-  </section>
+  </div>
 
   {% include "components/demo/home_desktop_15.html" %}
   {% include "components/demo/home_desktop_16.html" %}

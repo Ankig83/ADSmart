@@ -101,15 +101,16 @@
     align-items: center !important;
     gap: clamp(10px, calc(14 * 100vw / 440), 21px) !important;
   }
+  /* AI-фигура: 30% обрезка справа, прижата вправо, по центру по вертикали */
   .demo-print .hero-with-figure__image-wrap {
     display: block !important;
     position: absolute !important;
-    right: 0 !important;
+    right: -30% !important;
     left: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    width: clamp(192px, calc(274 * 100vw / 440), 411px) !important;
-    height: clamp(192px, calc(274 * 100vw / 440), 411px) !important;
+    width: clamp(260px, 75vw, 420px) !important;
+    height: clamp(260px, 75vw, 420px) !important;
   }
   .demo-print .hero-with-figure__img {
     width: 100% !important;

@@ -7,6 +7,13 @@
   object-fit: cover;
 }
 
+/* 440: hero — 1 кнопка «Рассчитать кампанию» */
+@media (max-width: 833px) {
+  .hero--billboards .hero__actions .button--outline {
+    display: none;
+  }
+}
+
 /* Фон по брейкпоинтам — как на радио */
 @media (max-width: 439px) {
   .hero--billboards .hero__bg-img {

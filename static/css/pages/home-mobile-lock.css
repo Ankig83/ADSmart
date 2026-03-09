@@ -9,113 +9,45 @@
   .app { background: #000000 !important; }
   .app__main { padding: 0 !important; }
 
-  /* ─── HERO ─── */
-  .demo-home-hero {
+  /* Hero — hero-with-figure, как Telegram */
+  .demo-home {
     width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+  .demo-home .hero-with-figure {
+    width: 100% !important;
+    min-height: clamp(338px, calc(483 * 100vw / 440), 725px) !important;
     height: auto !important;
     margin: 0 !important;
-    padding: clamp(24px, calc(32 * 100vw / 440), 64px) clamp(16px, calc(23 * 100vw / 440), 46px) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    gap: clamp(24px, calc(32 * 100vw / 440), 64px) !important;
+    padding: 0 !important;
     position: relative !important;
     box-sizing: border-box !important;
     overflow: hidden !important;
-    background-color: #000000 !important;
-    background-image: url('../../assets/images/2-55cbcda6.png') !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
   }
-
-  .demo-home-hero__content {
-    position: relative !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-    margin: 0 !important;
-    z-index: 2 !important;
-  }
-
-  /* Мобильный AI-круг как на таблетке, только меньше:
-     отдельный слой над фоном, но под текстом (z-index 1) */
-  .demo-home-hero__blob {
-    display: block !important;
-    position: absolute !important;
-    left: 50% !important;
-    top: clamp(40px, calc(80 * 100vw / 440), 120px) !important;
-    transform: translateX(-50%) !important;
-    width: clamp(200px, calc(260 * 100vw / 440), 320px) !important;
-    height: clamp(200px, calc(260 * 100vw / 440), 320px) !important;
-    border-radius: 1000px !important;
-    background: rgba(255, 123, 0, 0.55) !important;
-    filter: blur(clamp(70px, calc(100 * 100vw / 440), 140px)) !important;
+  .demo-home .hero-with-figure__bg { position: absolute !important; inset: 0 !important; z-index: 0 !important; }
+  .demo-home .hero-with-figure__bg-img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; }
+  .demo-home .hero-with-figure__bg-img--desktop { display: none !important; }
+  .demo-home .hero-with-figure__bg-img--mobile { display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .demo-home .hero-with-figure__overlay {
+    position: absolute !important; inset: 0 !important;
+    background: linear-gradient(90deg, rgba(0,0,0,0.8) 4.38%, rgba(0,0,0,0.619) 28.02%, rgba(0,0,0,0.4) 56.72%, rgba(0,0,0,0.1) 66.25%) !important;
     z-index: 1 !important;
-    pointer-events: none !important;
   }
-
-  .demo-home-hero__title {
-    margin: 0 0 clamp(12px, calc(16 * 100vw / 440), 32px) !important;
-    font-family: var(--font-sans) !important;
-    font-size: clamp(24px, calc(32 * 100vw / 440), 61px) !important;
-    font-weight: 800 !important;
-    line-height: 130% !important;
-    letter-spacing: 0.48px !important;
-    color: #ffffff !important;
-    width: 100% !important;
+  .demo-home .hero-with-figure__content {
+    position: absolute !important; left: 16px !important; top: 50% !important; transform: translateY(-50%) !important;
+    width: min(408px, calc(100% - 32px)) !important; max-width: 408px !important; margin: 0 !important; padding: 0 !important;
+    z-index: 3 !important; display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 36px !important; text-align: left !important;
   }
-
-  .demo-home-hero__subtitle {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 0 clamp(12px, calc(16 * 100vw / 440), 32px) !important;
-    font-family: var(--font-sans) !important;
-    font-size: clamp(14px, calc(16 * 100vw / 440), 32px) !important;
-    font-weight: 400 !important;
-    line-height: 1.5 !important;
-    letter-spacing: 0 !important;
-    color: #c4c4c4 !important;
-    height: auto !important;
-  }
-
-  .demo-home-hero__actions {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    margin-top: 0 !important;
-    display: flex !important;
-    gap: clamp(8px, calc(12 * 100vw / 440), 24px) !important;
-    flex-wrap: wrap !important;
-    z-index: 2 !important;
-  }
-
-  .demo-home-hero__art {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    margin: 0 !important;
-    width: 100% !important;
-    min-height: clamp(280px, calc(360 * 100vw / 440), 600px) !important;
-    aspect-ratio: 708.112 / 741.199 !important;
-    border-radius: clamp(12px, calc(16 * 100vw / 440), 32px) !important;
-    overflow: hidden !important;
-    z-index: 1 !important;
-    display: none !important;
-  }
-
-  .demo-home-hero__img {
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
-    object-fit: cover !important;
-    transform: none !important;
+  .demo-home .hero-with-figure__title { width: 100% !important; margin: 0 !important; font-family: 'Poppins', var(--font-sans) !important; font-weight: 800 !important; font-size: 32px !important; line-height: 1.3 !important; letter-spacing: 0.48px !important; color: #fff !important; }
+  .demo-home .hero-with-figure__subtitle { width: 100% !important; max-width: 277px !important; margin: 0 !important; font-family: 'Poppins', var(--font-sans) !important; font-weight: 400 !important; font-size: 16px !important; line-height: 24px !important; color: #c4c4c4 !important; }
+  .demo-home .hero-with-figure__actions { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; align-items: center !important; gap: 14px !important; }
+  .demo-home .hero-with-figure__image-wrap {
+    display: block !important; position: absolute !important; right: -30% !important; top: 50% !important; transform: translateY(-50%) !important; left: auto !important;
+    width: clamp(260px, 75vw, 420px) !important;
+    height: clamp(260px, 75vw, 420px) !important;
   }
 
   /* ─── STEPS (140:5889) — как блок «От стратегии до аналитики лидов» на остановках ─── */
