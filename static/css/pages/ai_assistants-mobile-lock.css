@@ -149,6 +149,12 @@
   }
   
   /* AI-фигура: 30% обрезка справа, прижата вправо, по центру по вертикали */
+  /* Отступ от контакта до подвала */
+  .demo-ai .cta-card {
+    padding-bottom: 44px;
+    margin-bottom: 0;
+  }
+
   .hero-with-figure__image-wrap {
     display: block !important;
     position: absolute !important;

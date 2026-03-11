@@ -9,11 +9,11 @@
 }
 
 .billboard-formats__inner {
-  max-width: 440px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 42px;
+  gap: 21px;
 }
 
 .billboard-formats__title {

@@ -7,6 +7,12 @@
   gap: 40px;
 }
 
+@media (max-width: 833px) {
+  .cta-form {
+    gap: 56px;
+  }
+}
+
 .cta-form__content {
   display: flex;
   flex-direction: column;

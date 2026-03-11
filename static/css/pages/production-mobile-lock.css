@@ -183,4 +183,92 @@
     height: 100% !important;
     object-fit: contain !important;
   }
+
+  /* Blok2 «Бренд — это и эмоции, и метрология» — why-cards, Figma 440 */
+  .demo-prod .why-cards .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 0 16px !important;
+    gap: 42px !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .demo-prod .why-cards__title {
+    width: 100% !important;
+    max-width: 408px !important;
+    font-family: 'Poppins', var(--font-sans) !important;
+    font-weight: 600 !important;
+    font-size: 24px !important;
+    line-height: 130% !important;
+    letter-spacing: -0.03em !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+  }
+
+  .demo-prod .why-cards__grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 0 !important;
+    gap: 22px !important;
+    width: 100% !important;
+    max-width: 408px !important;
+  }
+
+  .demo-prod .why-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 28px 14px !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 408px !important;
+    background: #19161c !important;
+    border-radius: 12px !important;
+  }
+
+  .demo-prod .why-card__icon {
+    width: 60px !important;
+    height: 60px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .demo-prod .why-card__body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .demo-prod .why-card__title {
+    font-family: 'Poppins', var(--font-sans) !important;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    line-height: 26px !important;
+    letter-spacing: 1.5px !important;
+    color: #ff7b00 !important;
+    margin: 0 !important;
+  }
+
+  .demo-prod .why-card__text {
+    font-family: 'Poppins', var(--font-sans) !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+  }
+
+  /* Contact: отступ подзаголовок → карточка формы (gap на container, не на cta-form) */
+  .demo-prod .cta-form.cta-form--production .container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 42px !important;
+  }
 }

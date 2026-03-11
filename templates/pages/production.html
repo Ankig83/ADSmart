@@ -89,36 +89,7 @@
       </div>
     </section>
 
-    <section class="feature-grid feature-grid--production section" aria-labelledby="prod-emotions-title">
-      <div class="container">
-        <h2 class="feature-grid__title" id="prod-emotions-title">
-          Бренд — это и эмоции, и метрология
-        </h2>
-        <ul class="feature-grid__grid" aria-label="Преимущества">
-          <li class="feature-card">
-            <img class="feature-card__icon" src="{% static 'assets/icons/icon-133-4980-140-5321.svg' %}" alt="" aria-hidden="true" />
-            <div class="feature-card__body">
-              <h3 class="feature-card__title">Полный цикл — ваше спокойствие</h3>
-              <p class="feature-card__text">От эскиза и 3D-визуализации до монтажа «под ключ» и обслуживания. Один подрядчик — полная ответственность</p>
-            </div>
-          </li>
-          <li class="feature-card">
-            <img class="feature-card__icon" src="{% static 'assets/icons/frame-133-5113-140-5329.svg' %}" alt="" aria-hidden="true" />
-            <div class="feature-card__body">
-              <h3 class="feature-card__title">Прочность — наша ответственность</h3>
-              <p class="feature-card__text">Работаем с современными материалами (композит, нержавеющая сталь, долговечные пленки). Гарантируем устойчивость к саратовской погоде</p>
-            </div>
-          </li>
-          <li class="feature-card">
-            <img class="feature-card__icon" src="{% static 'assets/icons/frame-133-5116-140-5337.svg' %}" alt="" aria-hidden="true" />
-            <div class="feature-card__body">
-              <h3 class="feature-card__title">Легальность — основа уверенности</h3>
-              <p class="feature-card__text">Помогаем в подготовке документов и получении разрешений на размещение в Саратове</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
+    {% include "components/why_cards.html" with title_id="prod-emotions-title" title_html="Бренд — это и эмоции, и метрология" modifier="desktop" card_1_icon="assets/icons/icon-133-4980-140-5321.svg" card_1_title="Полный цикл — ваше спокойствие" card_1_text="От эскиза и 3D-визуализации до монтажа «под ключ» и обслуживания. Один подрядчик — полная ответственность" card_2_icon="assets/icons/frame-133-5113-140-5329.svg" card_2_title="Прочность — наша ответственность" card_2_text="Работаем с современными материалами (композит, нержавеющая сталь, долговечные пленки). Гарантируем устойчивость к саратовской погоде" card_3_icon="assets/icons/frame-133-5116-140-5337.svg" card_3_title="Легальность — основа уверенности" card_3_text="Помогаем в подготовке документов и получении разрешений на размещение в Саратове" %}
 
     <section class="feature-grid feature-grid--production section" aria-labelledby="prod-solutions-title">
       <div class="container">

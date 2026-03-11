@@ -52,7 +52,7 @@
 /* Адаптация для 440px (мобильный lock) */
 @media (max-width: 500px) {
   .demo-lead-success__dialog {
-    width: min(408px, calc(100vw - 32px));
+    width: 100%;
     margin: 8vh auto 0;
     padding: clamp(20px, 5vw, 24px);
     gap: clamp(16px, 4vw, 20px);

@@ -12,7 +12,10 @@
   --container-max: 1120px;
   --container-padding-mobile: 16px;
   --container-padding-tablet: 32px;
-  --content-mobile-w: 408px; /* эталон 440: контент 408, масштабируется */
+  --content-mobile-w: 408px;
+
+  /* Fluid 320→834: clamp(min, calc(min + (max-min)*(100vw-320)/514), max)
+     min=значение при 320, max=значение при 834 (совпадает с tablet) */
 
   /* Spacing */
   --space-0: 0;

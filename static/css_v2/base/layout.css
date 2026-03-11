@@ -24,16 +24,16 @@
   box-sizing: border-box;
 }
 
-/* Mobile 440: content 408px (scale: min(440px, 100vw) - 32). Hero и contact — свои правила */
+/* Mobile: блоки растягиваются по ширине экрана */
 @media (max-width: 833px) {
   .container {
-    max-width: min(440px, 100vw);
+    max-width: 100%;
   }
 
   .hero .container,
   .hero-with-figure .container,
   .cta-form .container {
-    max-width: min(100%, calc(100vw - 2 * var(--space-4)));
+    max-width: 100%;
   }
 }
 

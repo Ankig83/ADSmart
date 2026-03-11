@@ -185,7 +185,7 @@
     gap: 26px;
     background: #19161c;
     width: 100%;
-    max-width: 440px;
+    max-width: 100%;
     margin-inline: auto;
     box-sizing: border-box;
   }

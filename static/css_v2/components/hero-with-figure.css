@@ -6,7 +6,7 @@
   min-height: var(--hero-mobile-h, 485px);
   height: var(--hero-mobile-h, 485px);
   width: 100%;
-  max-width: min(var(--hero-mobile-w, 440px), 100vw);
+  max-width: 100%;
   margin-inline: auto;
   background: #000000;
   overflow: hidden;

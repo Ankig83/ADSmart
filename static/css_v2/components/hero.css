@@ -6,7 +6,7 @@
   min-height: var(--hero-mobile-h, 485px);
   height: var(--hero-mobile-h, 485px);
   width: 100%;
-  max-width: min(var(--hero-mobile-w, 440px), 100vw);
+  max-width: 100%;
   margin-inline: auto;
   display: flex;
   align-items: center;
@@ -123,7 +123,7 @@
   .hero--radio .hero__actions {
     gap: 14px;
     width: 100%;
-    max-width: 408px;
+    max-width: 100%;
     align-items: center;
   }
 
@@ -227,7 +227,7 @@
   .hero--elevators .hero__actions {
     gap: 14px;
     width: 100%;
-    max-width: 408px;
+    max-width: 100%;
     align-items: center;
   }
 
@@ -298,7 +298,7 @@
 
   /* Billboards 440: заголовок и подзаголовок по Figma */
   .hero--billboards .hero__title {
-    width: 408px;
+    width: 100%;
     max-width: calc(100vw - 32px);
     font-family: 'Poppins', var(--font-sans);
     font-weight: 800;

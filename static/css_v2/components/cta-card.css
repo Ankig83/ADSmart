@@ -19,7 +19,7 @@
 /* 440: inner — flex column center, gap 26px, width 408px, без фона и бордера */
 .cta-card__inner {
   width: 100%;
-  max-width: min(408px, calc(100vw - 32px));
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -115,9 +115,9 @@
   box-sizing: border-box;
 }
 
-/* Модификатор design — Figma design page CTA */
+/* Модификатор design — Figma design page CTA. Отступ контакт→подвал через app__main padding-bottom */
 .cta-card--design {
-  margin-bottom: 44px;
+  margin-bottom: 0;
 }
 
 @media (min-width: 1440px) {
@@ -134,7 +134,7 @@
   }
 
   .cta-card__inner {
-    max-width: 802px;
+    max-width: 100%;
     gap: 26px;
   }
 

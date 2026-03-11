@@ -1,7 +1,7 @@
 /* sections.css — система вертикальных отступов для секций v2 */
 
 .section {
-  padding: 64px 0;
+  padding: 44px 0;
 }
 
 @media (min-width: 834px) {
@@ -13,6 +13,13 @@
 @media (min-width: 1440px) {
   .section {
     padding: 120px 0;
+  }
+}
+
+/* 440: отступ контакт→подвал как на Billboards (64px), едино на всех страницах */
+@media (max-width: 833px) {
+  .app__main {
+    padding-bottom: var(--space-16) !important;
   }
 }
 

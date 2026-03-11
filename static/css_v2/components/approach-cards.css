@@ -9,12 +9,12 @@
 .approach-cards .container {
   display: flex;
   flex-direction: column;
-  gap: clamp(32px, calc(42 * 100vw / 440), 56px);
+  gap: clamp(28px, calc(28px + (48 - 28) * (100vw - 320px) / 514), 56px);
 }
 
 .approach-cards__title {
   margin: 0;
-  font-size: clamp(24px, calc(24 * 100vw / 440), 32px);
+  font-size: clamp(22px, calc(22px + (28 - 22) * (100vw - 320px) / 514), 32px);
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.03em;
@@ -33,7 +33,7 @@
 .approach-cards__grid {
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, calc(16 * 100vw / 440), 24px);
+  gap: clamp(14px, calc(14px + (22 - 14) * (100vw - 320px) / 514), 24px);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -53,8 +53,8 @@
 
 .approach-card__icon {
   flex-shrink: 0;
-  width: 65px;
-  height: 65px;
+  width: clamp(52px, calc(52px + (80 - 52) * (100vw - 320px) / 514), 80px);
+  height: clamp(52px, calc(52px + (80 - 52) * (100vw - 320px) / 514), 80px);
   display: block;
   object-fit: contain;
 }
