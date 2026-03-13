@@ -4,6 +4,10 @@
 {% block title %}AI ассистенты · {{ PROJECT_NAME }}{% endblock %}
 
 {% block page_css %}
+  {# Новый слой для страницы в css_v2: постепенно переносим стили сюда #}
+  <link rel="stylesheet" href="{% static 'css_v2/pages/ai_assistants.css' %}" />
+
+  {# Legacy-слой: пока оставляем, чтобы не ломать существующую верстку #}
   <link rel="stylesheet" href="{% static 'css/pages/ai_assistants.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/ai_assistants-tablet-lock.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/ai_assistants-mobile-lock.css' %}" />

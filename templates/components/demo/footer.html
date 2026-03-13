@@ -25,30 +25,34 @@
     </div>
 
     <div class="demo-footer__cols">
-      <nav class="demo-footer__col" aria-label="Наружная реклама">
-        <div class="demo-footer__col-title">Наружная реклама</div>
-        <a class="demo-footer__link" href="{% url 'billboards' %}">Реклама на билбордах</a>
-        <a class="demo-footer__link" href="{% url 'transport' %}">Реклама на транспорте</a>
-        <a class="demo-footer__link" href="{% url 'stops' %}">Реклама на остановках</a>
-        <a class="demo-footer__link" href="{% url 'elevators' %}">Лифты / Домофоны</a>
-        <a class="demo-footer__link" href="{% url 'radio' %}">Радио</a>
-      </nav>
-
-      <nav class="demo-footer__col" aria-label="Основные услуги">
-        <div class="demo-footer__col-title">Основные услуги</div>
-        <a class="demo-footer__link" href="{% url 'ai_assistants' %}">AI Ассистенты</a>
-        <a class="demo-footer__link" href="{% url 'telegram' %}">Telegram продвижение</a>
-        <a class="demo-footer__link" href="{% url 'design' %}">Графический дизайн</a>
-        <a class="demo-footer__link" href="{% url 'print_polygraphy' %}">Печать и полиграфия</a>
-        <a class="demo-footer__link" href="{% url 'production' %}">Производство наружной рекламы</a>
-      </nav>
-
-      <nav class="demo-footer__col" aria-label="Информационные разделы">
-        <div class="demo-footer__col-title">Информационные разделы</div>
-        <a class="demo-footer__link" href="{% url 'home' %}#help">FAQ</a>
-        <a class="demo-footer__link" href="{% url 'home' %}#about">Команда</a>
-        <a class="demo-footer__link" href="{% url 'home' %}#contacts">Контакты</a>
-      </nav>
+      <details class="demo-footer__accordion" data-footer-accordion>
+        <summary class="demo-footer__col-title">Основные услуги</summary>
+        <nav class="demo-footer__col" aria-label="Основные услуги">
+          <a class="demo-footer__link" href="{% url 'ai_assistants' %}">AI Ассистенты</a>
+          <a class="demo-footer__link" href="{% url 'telegram' %}">Telegram продвижение</a>
+          <a class="demo-footer__link" href="{% url 'design' %}">Графический дизайн</a>
+          <a class="demo-footer__link" href="{% url 'print_polygraphy' %}">Печать и полиграфия</a>
+          <a class="demo-footer__link" href="{% url 'production' %}">Производство наружной рекламы</a>
+        </nav>
+      </details>
+      <details class="demo-footer__accordion" data-footer-accordion>
+        <summary class="demo-footer__col-title">Наружная реклама</summary>
+        <nav class="demo-footer__col" aria-label="Наружная реклама">
+          <a class="demo-footer__link" href="{% url 'billboards' %}">Реклама на билбордах</a>
+          <a class="demo-footer__link" href="{% url 'transport' %}">Реклама на транспорте</a>
+          <a class="demo-footer__link" href="{% url 'stops' %}">Реклама на остановках</a>
+          <a class="demo-footer__link" href="{% url 'elevators' %}">Лифты / Домофоны</a>
+          <a class="demo-footer__link" href="{% url 'radio' %}">Радио</a>
+        </nav>
+      </details>
+      <details class="demo-footer__accordion" data-footer-accordion>
+        <summary class="demo-footer__col-title">Информационные разделы</summary>
+        <nav class="demo-footer__col" aria-label="Информационные разделы">
+          <a class="demo-footer__link" href="{% url 'home' %}#help">FAQ</a>
+          <a class="demo-footer__link" href="{% url 'home' %}#about">Команда</a>
+          <a class="demo-footer__link" href="{% url 'home' %}#contacts">Контакты</a>
+        </nav>
+      </details>
     </div>
   </div>
 </footer>

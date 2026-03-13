@@ -1,0 +1,37 @@
+/* ai_assistants.css — страничные нюансы для страницы AI-ассистенты.
+   Постепенно переносим сюда всё, что сейчас живёт в static/css/pages/ai_assistants*.css.
+   Mobile-first, без !important, опираемся на компоненты css_v2. */
+
+.demo-ai {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #000000;
+  box-sizing: border-box;
+}
+
+.media-split--ai .media-split__item-text {
+  color: #c9cad6;
+}
+
+/* CTA (контакт): Figma 440 — секция должна быть ~330px. Уменьшаем padding/gap, чтобы контент помещался. */
+@media (max-width: 833px) {
+  .demo-ai .cta-card {
+    padding: clamp(20px, calc(24 * 100vw / 440), 32px) 16px;
+    gap: clamp(8px, calc(10 * 100vw / 440), 12px);
+  }
+  .demo-ai .cta-card .cta-card__inner {
+    gap: clamp(14px, calc(18 * 100vw / 440), 22px);
+  }
+  .demo-ai .cta-card .cta-card__content {
+    gap: clamp(12px, calc(16 * 100vw / 440), 20px);
+  }
+}
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-ai .cta-card {
+    padding: clamp(32px, calc(44 * 100vw / 834), 56px) 16px;
+  }
+}
+
+

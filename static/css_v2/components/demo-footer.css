@@ -75,6 +75,12 @@
   column-gap: 24px;
 }
 
+.demo-footer__accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
 .demo-footer__col {
   display: grid;
   gap: 18px; /* itemSpacing */
@@ -87,6 +93,26 @@
   line-height: 20.8px;
   letter-spacing: -0.48px;
   color: #ffffff;
+  list-style: none;
+}
+
+.demo-footer__col-title::-webkit-details-marker {
+  display: none;
+}
+
+.demo-footer__col-title::after {
+  content: "›";
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 18px;
+  line-height: 1;
+  color: #ffffff;
+  transform: rotate(90deg);
+  transition: transform 0.2s;
+}
+
+.demo-footer__accordion[open] .demo-footer__col-title::after {
+  transform: rotate(-90deg);
 }
 
 .demo-footer__link {
@@ -175,10 +201,24 @@
     gap: 18px !important;
   }
 
-  .demo-footer__col:nth-child(1),
-  .demo-footer__col:nth-child(2),
-  .demo-footer__col:nth-child(3) {
+  .demo-footer__accordion:nth-child(1),
+  .demo-footer__accordion:nth-child(2),
+  .demo-footer__accordion:nth-child(3) {
     order: unset !important;
+  }
+
+  .demo-footer__col-title {
+    cursor: pointer;
+    padding: 16px 0;
+    font-weight: 500;
+  }
+
+  .demo-footer__accordion .demo-footer__col {
+    padding-left: 0;
+  }
+
+  .demo-footer__link {
+    color: rgba(255, 255, 255, 0.6);
   }
 }
 
@@ -233,9 +273,11 @@
   }
 
   /* Figma order: Основные услуги (left) | Наружная реклама (middle) | Информационные разделы (right) */
-  .demo-footer__col:nth-child(1) { order: 2 !important; }
-  .demo-footer__col:nth-child(2) { order: 1 !important; }
-  .demo-footer__col:nth-child(3) { order: 3 !important; }
+  .demo-footer__accordion:nth-child(1) { order: 2 !important; }
+  .demo-footer__accordion:nth-child(2) { order: 1 !important; }
+  .demo-footer__accordion:nth-child(3) { order: 3 !important; }
+
+  .demo-footer__accordion .demo-footer__col-title::after { display: none; }
 
   .demo-footer__col {
     gap: 18px !important;
@@ -340,9 +382,11 @@
   }
 
   /* Match Figma column order: services, outdoor, info */
-  .demo-footer__col:nth-child(1) { order: 2 !important; }
-  .demo-footer__col:nth-child(2) { order: 1 !important; }
-  .demo-footer__col:nth-child(3) { order: 3 !important; }
+  .demo-footer__accordion:nth-child(1) { order: 2 !important; }
+  .demo-footer__accordion:nth-child(2) { order: 1 !important; }
+  .demo-footer__accordion:nth-child(3) { order: 3 !important; }
+
+  .demo-footer__accordion .demo-footer__col-title::after { display: none; }
 
   .demo-footer__col {
     width: 100% !important;
