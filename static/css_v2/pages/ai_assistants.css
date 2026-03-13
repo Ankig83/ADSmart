@@ -1,12 +1,17 @@
-/* ai_assistants.css — страничные нюансы для страницы AI-ассистенты.
-   Постепенно переносим сюда всё, что сейчас живёт в static/css/pages/ai_assistants*.css.
-   Mobile-first, без !important, опираемся на компоненты css_v2. */
+/* ai_assistants.css — страница AI-ассистенты.
+   Перенесено из static/css/pages/ai_assistants*.css.
+   Эталон: 440 (mobile), 834 (tablet), 1440 (desktop). */
+
+/* ─── Глобальные ─── */
+.app { background: #000000; }
+.app__main { padding: 0; }
 
 .demo-ai {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   background: #000000;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
@@ -14,11 +19,154 @@
   color: #c9cad6;
 }
 
-/* CTA (контакт): Figma 440 — секция должна быть ~330px. Уменьшаем padding/gap, чтобы контент помещался. */
+/* ─── Desktop 1440+ ─── */
+@media (min-width: 1440px) {
+  .demo-ai .hero-with-figure__bg {
+    display: none;
+  }
+  .demo-ai .hero-with-figure__overlay {
+    display: none;
+  }
+}
+
+/* ─── Mobile (≤833) ─── */
 @media (max-width: 833px) {
+  .demo-ai {
+    width: 100%;
+    max-width: 100vw;
+    padding: 0;
+  }
+
+  .demo-ai .hero-with-figure {
+    width: 100%;
+    min-height: 485px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: block;
+  }
+
+  .demo-ai .hero-with-figure__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .demo-ai .hero-with-figure__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .demo-ai .hero-with-figure__bg-img--desktop {
+    display: none;
+  }
+
+  .demo-ai .hero-with-figure__bg-img--mobile {
+    display: block;
+  }
+
+  .demo-ai .hero-with-figure__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.8) 4.38%,
+      rgba(0, 0, 0, 0.62) 28.02%,
+      rgba(0, 0, 0, 0.4) 56.72%,
+      rgba(0, 0, 0, 0.1) 66.25%
+    );
+    z-index: 1;
+  }
+
+  .demo-ai .hero-with-figure__content {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(408px, calc(100% - 32px));
+    max-width: 408px;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    text-align: left;
+  }
+
+  .demo-ai .hero-with-figure__title {
+    width: 100%;
+    max-width: 408px;
+    margin: 0;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.3;
+    letter-spacing: 0.48px;
+    color: #ffffff;
+  }
+
+  .demo-ai .hero-with-figure__subtitle {
+    width: 100%;
+    max-width: 277px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #c4c4c4;
+  }
+
+  .demo-ai .hero-with-figure__actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .demo-ai .hero-with-figure__actions .button--primary {
+    width: 218px;
+    height: 56px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    background: #14f195;
+    color: #000000;
+    border-radius: 64px;
+  }
+
+  .demo-ai .hero-with-figure__actions .button--outline {
+    width: 176px;
+    height: 56px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #ffffff;
+    border-radius: 64px;
+    color: #ffffff;
+  }
+
+  .demo-ai .hero-with-figure__image-wrap {
+    display: block;
+    position: absolute;
+    right: -30%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: auto;
+    width: clamp(260px, 75vw, 420px);
+    height: clamp(260px, 75vw, 420px);
+  }
+
+  /* CTA: padding и отступ до подвала */
   .demo-ai .cta-card {
     padding: clamp(20px, calc(24 * 100vw / 440), 32px) 16px;
     gap: clamp(8px, calc(10 * 100vw / 440), 12px);
+    padding-bottom: 44px;
   }
   .demo-ai .cta-card .cta-card__inner {
     gap: clamp(14px, calc(18 * 100vw / 440), 22px);
@@ -28,10 +176,117 @@
   }
 }
 
+/* ─── Tablet 834–1439 ─── */
 @media (min-width: 834px) and (max-width: 1439px) {
+  .demo-ai {
+    width: min(100%, clamp(834px, 92vw, 1160px));
+    overflow-x: hidden;
+  }
+
+  .demo-ai .hero-with-figure {
+    width: min(100%, clamp(834px, 92vw, 1160px));
+    min-height: 485px;
+    height: clamp(435px, 38vw, 535px);
+    padding: clamp(86px, 8vw, 110px) clamp(24px, 2.8vw, 40px) clamp(52px, 6vw, 80px);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .demo-ai .hero-with-figure::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 4.4%, rgba(0, 0, 0, 0.52) 42.8%, rgba(0, 0, 0, 0.05) 70.4%);
+  }
+
+  .demo-ai .hero-with-figure__bg,
+  .demo-ai .hero-with-figure__bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .demo-ai .hero-with-figure__bg-img--mobile {
+    display: none;
+  }
+
+  .demo-ai .hero-with-figure__bg-img--desktop {
+    display: block;
+  }
+
+  .demo-ai .hero-with-figure__content {
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 462px;
+    max-width: calc(100% - 64px);
+    padding: 0;
+    gap: 18px;
+    z-index: 2;
+  }
+
+  .demo-ai .hero-with-figure__content .hero-with-figure__actions {
+    margin-top: 18px;
+  }
+
+  .demo-ai .hero-with-figure__title {
+    width: 100%;
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.48px;
+  }
+
+  .demo-ai .hero-with-figure__subtitle {
+    width: 100%;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #c4c4c4;
+    max-width: 439px;
+  }
+
+  .demo-ai .hero-with-figure__actions {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .demo-ai .hero-with-figure__actions .button--primary {
+    width: 196px;
+    height: 56px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    background: #14f195;
+    color: #000000;
+    border-radius: 64px;
+  }
+
+  .demo-ai .hero-with-figure__actions .button--outline {
+    width: 164px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #ffffff;
+    border-radius: 64px;
+    color: #ffffff;
+  }
+
+  .demo-ai .hero-with-figure__image-wrap {
+    display: none;
+  }
+
   .demo-ai .cta-card {
     padding: clamp(32px, calc(44 * 100vw / 834), 56px) 16px;
   }
 }
-
-
