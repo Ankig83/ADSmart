@@ -3,6 +3,112 @@
 /* Ready--Copy Home (140:4885) backgroundColor: #000000 */
 .app { background: #000000; }
 
+/* Home: убираем базовый вертикальный padding у app__main, чтобы не было пустоты под меню */
+.app__main { padding: 0; }
+
+/* Hero: hero-with-figure — Home 834 по тем же паттернам что 1440 (flex, clamp, масштабирование) */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-home .hero-with-figure {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: clamp(24px, 2.8vw, 40px) !important;
+    position: relative !important;
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    min-height: 440px !important;
+    height: 440px !important;
+    margin: 0 auto !important;
+    padding: 0 clamp(24px, 2.8vw, 48px) !important;
+    background: #000000 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .demo-home .hero-with-figure.section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .demo-home .hero-with-figure__bg-img {
+    display: none !important;
+  }
+
+  /* Контент — flex как на 1440, clamp для масштабирования */
+  .demo-home .hero-with-figure__content {
+    position: relative !important;
+    flex: 0 1 clamp(440px, 53vw, 560px) !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 36px !important;
+  }
+
+  .demo-home .hero-with-figure__title {
+    width: 100% !important;
+    max-width: 445px !important;
+    font-size: clamp(32px, calc(32 * 100vw / 834), 42px) !important;
+    line-height: 130% !important;
+    letter-spacing: 0.48px !important;
+  }
+
+  .demo-home .hero-with-figure__subtitle {
+    width: 100% !important;
+    max-width: 445px !important;
+    font-size: clamp(18px, calc(18 * 100vw / 834), 21px) !important;
+    line-height: 27px !important;
+    color: #c4c4c4 !important;
+  }
+
+  .demo-home .hero-with-figure__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  /* Фигура справа — flex как на 1440, clamp для масштабирования */
+  .demo-home .hero-with-figure__image-wrap {
+    position: relative !important;
+    flex: 0 0 clamp(320px, 47vw, 464px) !important;
+    width: clamp(320px, 47vw, 464px) !important;
+    height: clamp(335px, 49vw, 484px) !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: clamp(-24px, -2.8vw, -40px) !important;
+  }
+
+  .demo-home .hero-with-figure__glow {
+    position: absolute !important;
+    left: 76.2% !important;
+    right: 2.28% !important;
+    top: 153.65px !important;
+    height: 179.54px !important;
+    background: rgba(255, 123, 0, 0.6) !important;
+    filter: blur(87.6px) !important;
+    border-radius: 100000px !important;
+  }
+
+  .demo-home .hero-with-figure__img {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    transform: matrix(0.98, 0.19, -0.19, 0.98, 0, 0) !important;
+    object-fit: contain !important;
+  }
+}
+
+/* Legacy demo-home-hero (not used on current Home, kept for reference) */
 .demo-home-hero {
   position: relative;
   overflow: hidden;
@@ -981,7 +1087,25 @@
   width: 197px;
   height: 197px;
 }
-.demo-tech19__chip-img { display: block; width: 100%; height: 100%; }
+/* Используем только home_svg (diagram), features скрыты — иначе задваивается */
+.demo-tech19__features {
+  display: none !important;
+}
+.demo-tech19__diagram {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.demo-tech19__diagram-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
 .demo-tech19__glow {
   position: absolute;
   left: 138px; /* chip(103) + 35 */
@@ -1120,23 +1244,9 @@
     gap: 36px !important;
   }
 
-  /* Features контейнер: Group 427320858 - width=413px, height=411px */
+  /* Features скрыты — только home_svg (diagram), иначе задваивается */
   .demo-tech19__features {
-    position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
-    width: 413px !important;
-    height: 411px !important;
-    display: block !important;
-  }
-
-  /* Chip: Group 427320856 - x=107, y=88, width=197, height=197 */
-  .demo-tech19__chip {
-    position: absolute !important;
-    left: 107px !important;
-    top: 88px !important;
-    width: 197px !important;
-    height: 197px !important;
+    display: none !important;
   }
 
   /* Glow: Frame 427321815 - x=35, y=40 (относительно Group 427320856), width=127, height=127 */
@@ -1319,9 +1429,9 @@
   }
 
   .demo-tech19__left { left: 157px !important; top: 212px !important; width: 656px !important; height: 507px !important; display: block !important; }
-  .demo-tech19__features { left: 0 !important; top: 0 !important; width: 656px !important; height: 507px !important; display: block !important; position: absolute !important; }
+  .demo-tech19__features { display: none !important; }
 
-  .demo-tech19__chip { left: 172px !important; top: 89px !important; width: 274px !important; height: 274px !important; position: absolute !important; }
+  .demo-tech19__chip { display: none !important; }
   .demo-tech19__glow {
     left: 247px !important;
     top: 169px !important;
