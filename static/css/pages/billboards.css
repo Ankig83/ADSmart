@@ -160,8 +160,15 @@
   .cta-form.cta-form--billboards .container {
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 40px;
+  }
+  .cta-form.cta-form--billboards .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 @media (min-width: 1440px) {
@@ -175,17 +182,18 @@
   filter: brightness(0);
 }
 
-/* ═══ CTA Contact 440 — Figma Frame 427321845 ═══ */
+/* ═══ CTA Contact 440 — Figma Frame 427321845. При увеличении 440→834 — центрирование ═══ */
 @media (max-width: 833px) {
   .cta-form.cta-form--billboards .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 44px 16px;
+    justify-content: center;
+    padding: 44px clamp(20px, 5vw, 32px);
     gap: 26px;
     background: #19161c;
     width: 100%;
-    max-width: 100%;
+    max-width: min(440px, calc(100% - 40px));
     margin-inline: auto;
     box-sizing: border-box;
   }
@@ -194,10 +202,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 24px;
-    width: 408px;
-    max-width: 100%;
-    align-self: stretch;
+    width: 100%;
+    max-width: 408px;
   }
 
   .cta-form.cta-form--billboards .cta-form__title {
@@ -221,9 +230,8 @@
   }
 
   .cta-form.cta-form--billboards .cta-form__form-wrapper {
-    width: 408px;
-    max-width: 100%;
-    align-self: stretch;
+    width: 100%;
+    max-width: 408px;
   }
 
   .cta-form.cta-form--billboards .cta-form__form {
