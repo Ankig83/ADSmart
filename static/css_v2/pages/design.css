@@ -113,8 +113,18 @@
   }
 }
 
-/* Mobile — hero and content blocks */
+/* Mobile — hero, benefits, contact (кнопки wrap как reference) */
 @media (max-width: 833px) {
+  .cta-card--design .cta-card__actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cta-card--design .cta-card__actions .button--primary,
+  .cta-card--design .cta-card__actions .button--outline {
+    min-width: 120px;
+    width: auto;
+    max-width: 199px;
+  }
   .hero-with-figure {
     width: 100%;
     min-height: var(--hero-mobile-h, 485px);
@@ -196,9 +206,9 @@
   .hero-with-figure__actions {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 14px;
+    gap: clamp(10px, calc(14 * 100vw / 440), 21px);
   }
 
   .hero-with-figure__image-wrap {
@@ -256,10 +266,12 @@
     color: #ffffff;
   }
 
-  /* Benefits — вертикальные отступы от .section */
+  /* Benefits «Как мы создаем дизайн» — fluid grid как reference (Print how) */
   .demo-design .benefits .container {
-    padding: 0 16px;
-    max-width: 100%;
+    padding: 0 clamp(16px, calc(20 * 100vw / 440), 24px);
+    max-width: min(100%, clamp(320px, calc(408 * 100vw / 440), 600px));
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .demo-design .benefits__title {
@@ -270,12 +282,17 @@
 
   .demo-design .benefits__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(12px, calc(18 * 100vw / 440), 24px) clamp(10px, calc(12 * 100vw / 440), 18px);
+    max-width: 100%;
+    width: 100%;
   }
 
   .demo-design .benefit-card {
-    width: 198px;
+    width: 100%;
+    max-width: min(100%, 198px);
+    min-width: 0;
+    justify-self: center;
     gap: 17px;
   }
 

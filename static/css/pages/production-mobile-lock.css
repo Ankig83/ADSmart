@@ -110,17 +110,19 @@
     color: #c4c4c4 !important;
   }
 
-  /* Кнопки: flex row, gap 14px */
+  /* Кнопки: flex row wrap, fluid как reference (Print/Telegram) */
   .demo-prod .hero--production .hero__actions {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
     align-items: center !important;
-    gap: 14px !important;
+    gap: clamp(10px, calc(14 * 100vw / 440), 21px) !important;
   }
 
   .demo-prod .hero--production .hero__actions .button--primary {
-    width: 218px !important;
+    min-width: 140px !important;
+    width: auto !important;
+    max-width: 218px !important;
     height: 56px !important;
     padding: 16px 32px !important;
     font-size: 16px !important;
@@ -133,7 +135,9 @@
   }
 
   .demo-prod .hero--production .hero__actions .button--outline {
-    width: 176px !important;
+    min-width: 120px !important;
+    width: auto !important;
+    max-width: 176px !important;
     height: 56px !important;
     padding: 16px 32px !important;
     font-size: 16px !important;
@@ -184,15 +188,15 @@
     object-fit: contain !important;
   }
 
-  /* Blok2 «Бренд — это и эмоции, и метрология» — why-cards, Figma 440 */
+  /* Blok2 «Бренд — это и эмоции, и метрология» — fluid scaling 440→834 как reference */
   .demo-prod .why-cards .container {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    padding: 0 16px !important;
+    padding: 0 clamp(16px, calc(20 * 100vw / 440), 32px) !important;
     gap: 42px !important;
     width: 100% !important;
-    max-width: 440px !important;
+    max-width: min(100%, clamp(440px, calc(100vw - 32px), 770px)) !important;
     margin: 0 auto !important;
     box-sizing: border-box !important;
   }
@@ -212,11 +216,11 @@
   .demo-prod .why-cards__grid {
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: stretch !important;
     padding: 0 !important;
     gap: 22px !important;
     width: 100% !important;
-    max-width: 408px !important;
+    max-width: min(100%, clamp(408px, calc(100vw - 48px), 770px)) !important;
   }
 
   .demo-prod .why-card {
@@ -226,7 +230,7 @@
     padding: 28px 14px !important;
     gap: 10px !important;
     width: 100% !important;
-    max-width: 408px !important;
+    max-width: 100% !important;
     background: #19161c !important;
     border-radius: 12px !important;
   }

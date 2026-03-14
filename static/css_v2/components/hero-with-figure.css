@@ -341,3 +341,33 @@
   .hero-with-figure__glow {
     display: none;
   }
+}
+
+/* Tablet (834–1439): title/subtitle variants когда переданы title_html_tablet, subtitle_html_tablet */
+.hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-mobile { display: block; }
+.hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-tablet { display: none; }
+.hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-desktop { display: none; }
+
+.hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-mobile { display: block; }
+.hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-tablet { display: none; }
+.hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-desktop { display: none; }
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-mobile { display: none; }
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-tablet { display: block; }
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-desktop { display: none; }
+
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-mobile { display: none; }
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-tablet { display: block; }
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-desktop { display: none; }
+}
+
+@media (min-width: 1440px) {
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-mobile { display: none; }
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-tablet { display: none; }
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-desktop { display: block; }
+
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-mobile { display: none; }
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-tablet { display: none; }
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-desktop { display: block; }
+}

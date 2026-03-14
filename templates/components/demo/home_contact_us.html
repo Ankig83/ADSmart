@@ -3,8 +3,9 @@
 
 <section class="demo-contact" id="contacts" aria-labelledby="demo-contact-title">
   <div class="demo-contact__box">
-    <h2 class="demo-contact__title" id="demo-contact-title">Свяжитесь с нами</h2>
-    <p class="demo-contact__text">
+    <div class="demo-contact__left">
+      <h2 class="demo-contact__title" id="demo-contact-title">Свяжитесь с нами</h2>
+      <p class="demo-contact__text">
       <span class="demo-contact__text-line">Мы всегда на связи в удобном для</span>
       <span class="demo-contact__text-line">вас мессенджере. Проведем аудит</span>
       <span class="demo-contact__text-line">вашей задачи и предложим решение</span>
@@ -42,6 +43,7 @@
         </div>
       </li>
     </ul>
+    </div>
 
     <form class="demo-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
       {% csrf_token %}

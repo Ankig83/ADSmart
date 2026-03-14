@@ -29,12 +29,20 @@
       {% if title_html_mobile %}
       <span class="hero-with-figure__title-mobile">{{ title_html_mobile|safe }}</span>
       <span class="hero-with-figure__title-desktop">{% if title_html %}{{ title_html|safe }}{% endif %}</span>
+      {% elif title_html_tablet %}
+      <span class="hero-with-figure__title-mobile">{% if title_html %}{{ title_html|safe }}{% endif %}</span>
+      <span class="hero-with-figure__title-tablet">{{ title_html_tablet|safe }}</span>
+      <span class="hero-with-figure__title-desktop">{% if title_html %}{{ title_html|safe }}{% endif %}</span>
       {% else %}
       {% if title_html %}{{ title_html|safe }}{% else %}{{ title|default:"AI-ассистенты для вашего бизнеса" }}{% endif %}
       {% endif %}
     </h1>
     <p class="hero-with-figure__subtitle">
-      {% if subtitle_html %}{{ subtitle_html|safe }}{% else %}{{ subtitle|default:"Сокращаем расходы, автоматизируя продажи, найм и поддержку." }}{% endif %}
+      {% if subtitle_html_tablet %}
+      <span class="hero-with-figure__subtitle-mobile">{% if subtitle_html %}{{ subtitle_html|safe }}{% endif %}</span>
+      <span class="hero-with-figure__subtitle-tablet">{{ subtitle_html_tablet|safe }}</span>
+      <span class="hero-with-figure__subtitle-desktop">{% if subtitle_html %}{{ subtitle_html|safe }}{% endif %}</span>
+      {% elif subtitle_html %}{{ subtitle_html|safe }}{% else %}{{ subtitle|default:"Сокращаем расходы, автоматизируя продажи, найм и поддержку." }}{% endif %}
     </p>
 
     <div class="hero-with-figure__actions">

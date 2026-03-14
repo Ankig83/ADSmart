@@ -329,38 +329,40 @@
   .demo-menu { width: 1440px !important; margin: 0 auto !important; }
 
   .demo-menu__inner {
-    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
     width: 1440px !important;
     height: 70px !important;
-    padding: 0 !important;
-    display: block !important;
+    padding-left: 178px !important;
+    padding-right: 24px !important;
+    gap: 226px !important;
   }
 
   .demo-menu__logo {
-    position: absolute !important;
-    left: 178px !important;
-    top: 12px !important;
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
   }
 
   .demo-menu__logo-img {
     width: 74px !important;
     height: 46px !important;
+    display: block !important;
+    vertical-align: middle !important;
   }
 
   .demo-menu__toggle { display: none !important; }
 
-  /* Frame 15 bbox: x=478 y=18 w=483 h=34 (from Figma node 140:13532) */
+  .demo-menu__nav {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* Frame 15 bbox: x=478 w=483 h=34 — выровнено с логотипом через flex */
   .demo-menu__links {
     display: flex !important;
-    position: absolute !important;
-    left: 478px !important;
-    top: 18px !important;
-    width: 483px !important;
-    height: 34px !important;
-    gap: 41px !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    gap: 41px !important;
     background: transparent !important;
     padding: 0 !important;
     margin: 0 !important;
