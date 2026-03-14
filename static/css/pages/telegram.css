@@ -114,6 +114,17 @@
   .cta-form.cta-form--telegram .container {
     gap: 48px;
   }
+  .cta-form--telegram .cta-form__actions {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 100%;
+  }
+  .cta-form--telegram .cta-form__actions .button--primary,
+  .cta-form--telegram .cta-form__actions .button--outline {
+    flex: 1 1 0;
+    min-width: 0;
+  }
 }
 
 /* Tablet fluid layout (834-1439) — как design/print/production */

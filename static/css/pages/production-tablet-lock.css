@@ -1,10 +1,46 @@
-/* Production — Tablet 834-1439, hero как Telegram */
+/* Production — Tablet 834-1439: масштабирование, центрирование */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-prod {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    width: min(100%, clamp(834px, 92vw, 1440px)) !important;
     margin: 0 auto !important;
     background: #000000 !important;
     overflow-x: hidden !important;
+  }
+
+  /* Benefits «Как мы создаем результат» — как Design, те же паттерны: контейнер 770→1088 */
+  .demo-prod .benefits .container {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1088px)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 clamp(24px, 2.8vw, 48px) !important;
+  }
+
+  .demo-prod .benefits__title {
+    margin: 0 0 42px !important;
+    font-size: clamp(32px, 3vw, 36px) !important;
+  }
+
+  .demo-prod .benefits__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 32px !important;
+  }
+
+  .demo-prod .benefit-card__ring {
+    width: 94px !important;
+    height: 94px !important;
+  }
+
+  .demo-prod .benefit-card__icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .demo-prod .benefit-card__title {
+    font-size: 18px !important;
+  }
+
+  .demo-prod .benefit-card__text {
+    font-size: 16px !important;
   }
 
   .demo-prod .hero-with-figure {

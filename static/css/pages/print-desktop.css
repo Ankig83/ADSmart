@@ -28,7 +28,8 @@
   }
 
   .demo-print .hero-with-figure {
-    min-height: 485px;
+    min-height: 751px;
+    overflow: visible;
   }
 
   .demo-print .hero-with-figure__content {
@@ -253,37 +254,80 @@
     color: #ffffff;
   }
 
-  /* Section 5: Contact (140:5287) — cta-form Figma CTA, 1440 */
-  .cta-form--print {
-    min-height: clamp(746px, calc(746 * 100vw / 1440), 1328px);
-    padding: clamp(100px, calc(100 * 100vw / 1440), 178px) 0;
-    background: #000000;
-    box-sizing: border-box;
+  /* Section 5: Contact — как Telegram, стили из cta-form.css (forms-1) */
+}
+
+/* 1441px+: lock — не масштабируется, фиксированные 1440 значения */
+@media (min-width: 1441px) {
+  .feature-grid--print {
+    padding-top: 100px;
   }
-  .cta-form--print.cta-form--forms-1 .container {
-    padding: 0 clamp(177px, calc(177 * 100vw / 1440), 315px);
+  .feature-grid--print .container {
+    width: 1088px;
+    margin-left: 176px;
+    gap: 51px;
   }
-  .cta-form--print.cta-form--forms-1 .cta-form__card {
-    padding: clamp(45px, calc(45 * 100vw / 1440), 80px) clamp(153px, calc(153 * 100vw / 1440), 272px);
-    min-height: clamp(546px, calc(546 * 100vw / 1440), 972px);
+  .feature-grid--print .feature-grid__title {
+    width: 917px;
+    font-size: 48px;
   }
-  .cta-form--print .cta-form__title {
-    font-weight: 600;
-    margin-bottom: clamp(24px, calc(24 * 100vw / 1440), 43px);
+  .feature-grid--print .feature-grid__grid {
+    width: 1088px;
+    gap: 22px;
   }
-  .cta-form--print .cta-form__text {
-    margin-bottom: clamp(38px, calc(38 * 100vw / 1440), 68px);
+  .feature-grid--print .feature-card {
+    width: 533px;
+    height: 250px;
+    padding: 0 44px;
+    gap: 22px;
   }
-  .cta-form--print.cta-form--forms-1 .cta-form__form-wrapper {
-    max-width: 780px;
+  .feature-grid--print .feature-card__icon {
+    width: 100px;
+    height: 100px;
   }
-  .cta-form--print .cta-form__input {
-    border: 1px solid #ffffff;
-    border-radius: 12px;
+  .feature-grid--print .feature-card__body {
+    width: 337px;
+    gap: 22px;
   }
-  .cta-form--print .cta-form__form .button {
-    width: clamp(383px, calc(383 * 100vw / 1440), 682px);
-    height: 52px;
-    font-size: clamp(18px, calc(18 * 100vw / 1440), 32px);
+  .feature-grid--print .feature-card__title {
+    font-size: 24px;
+  }
+  .feature-grid--print .feature-card__text {
+    font-size: 22px;
+  }
+  .demo-print-how {
+    min-height: 712px;
+    padding-top: 100px;
+  }
+  .demo-print-how__title {
+    width: 819px;
+    margin: 0 0 68px 177px;
+    font-size: 48px;
+    line-height: 62.4px;
+  }
+  .demo-print-how__grid {
+    width: 1088px;
+    gap: 30px;
+  }
+  .demo-print-how__card {
+    width: 249px;
+  }
+  .demo-print-how__ring {
+    width: 163px;
+    height: 163px;
+    margin-bottom: 17px;
+  }
+  .demo-print-how__icon {
+    width: 80px;
+    height: 80px;
+  }
+  .demo-print-how__h3 {
+    margin: 0 0 22px;
+    font-size: 18px;
+    line-height: 23.4px;
+  }
+  .demo-print-how__p {
+    font-size: 18px;
+    line-height: 23.4px;
   }
 }

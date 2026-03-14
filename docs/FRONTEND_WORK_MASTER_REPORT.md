@@ -254,7 +254,7 @@ clamp(770px, calc(770 * 100vw / 834), 1330px)
 
 ## 11. Строгое правило: не трогать
 
-**Billboards**, **Home**, **Transport**, **Stops**, **Elevators** — не вносить изменения на любых брейкпоинтах.
+**Billboards**, **Home**, **Transport**, **Stops**, **Elevators**, **Radio**, **Telegram**, **AI Assistants** — не вносить изменения на любых брейкпоинтах.
 
 ---
 

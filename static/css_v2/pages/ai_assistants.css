@@ -128,31 +128,38 @@
     gap: clamp(10px, calc(14 * 100vw / 440), 21px);
   }
 
+  /* 440: «Обсудить проект» и «Наши кейсы» — как на Billboards/Transport */
   .demo-ai .hero-with-figure__actions .button--primary {
-    min-width: min(140px, calc(100vw - 180px));
-    width: auto;
-    max-width: 218px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 218px;
     height: 56px;
     padding: 16px 32px;
+    gap: 10px;
     font-size: 16px;
     font-weight: 500;
-    letter-spacing: -0.02em;
+    line-height: 20px;
     background: #14f195;
     color: #000000;
     border-radius: 64px;
+    white-space: nowrap;
   }
 
   .demo-ai .hero-with-figure__actions .button--outline {
-    min-width: min(120px, calc(100vw - 200px));
-    width: auto;
-    max-width: 176px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 176px;
     height: 56px;
     padding: 16px 32px;
+    gap: 10px;
     font-size: 16px;
     font-weight: 500;
     border: 1px solid #ffffff;
     border-radius: 64px;
     color: #ffffff;
+    white-space: nowrap;
   }
 
   .demo-ai .hero-with-figure__image-wrap {
@@ -197,8 +204,12 @@
     overflow-x: hidden;
   }
 
+  /* Hero на всю ширину экрана (hero-with-figure.css) */
   .demo-ai .hero-with-figure {
-    width: min(100%, clamp(834px, 92vw, 1160px));
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     min-height: 485px;
     height: clamp(435px, 38vw, 535px);
     padding: clamp(86px, 8vw, 110px) clamp(24px, 2.8vw, 40px) clamp(52px, 6vw, 80px);
@@ -273,8 +284,9 @@
     flex-shrink: 0;
   }
 
+  /* Hero buttons 218×56 — в button.css */
   .demo-ai .hero-with-figure__actions .button--primary {
-    width: 196px;
+    width: 218px;
     height: 56px;
     padding: 16px 32px;
     font-size: 16px;
@@ -286,8 +298,8 @@
   }
 
   .demo-ai .hero-with-figure__actions .button--outline {
-    width: 164px;
-    height: 52px;
+    width: 176px;
+    height: 56px;
     padding: 16px 32px;
     font-size: 16px;
     font-weight: 500;
@@ -300,7 +312,44 @@
     display: none;
   }
 
+  /* CTA 834px — fluid scaling 834→1440 (растягивается с экраном) */
   .demo-ai .cta-card {
-    padding: clamp(32px, calc(44 * 100vw / 834), 56px) 16px;
+    width: min(100%, clamp(834px, calc(834 * 100vw / 834), 1160px));
+    max-width: 100%;
+    min-height: clamp(250px, calc(274 * 100vw / 834), 320px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: clamp(36px, calc(44 * 100vw / 834), 56px);
+    padding: clamp(36px, calc(44 * 100vw / 834), 56px) clamp(16px, calc(24 * 100vw / 834), 32px);
+    gap: 10px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .demo-ai .cta-card .cta-card__inner {
+    width: 100%;
+    max-width: clamp(802px, calc(802 * 100vw / 834), 1086px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    gap: clamp(22px, calc(26 * 100vw / 834), 32px);
+    box-sizing: border-box;
+  }
+  .demo-ai .cta-card .cta-card__content {
+    width: 100%;
+    max-width: 100%;
+    gap: clamp(24px, calc(32 * 100vw / 834), 40px);
+    align-items: center;
+  }
+  .demo-ai .cta-card .cta-card__title {
+    width: 100%;
+    font-size: clamp(20px, calc(24 * 100vw / 834), 28px);
+    line-height: 130%;
+    text-align: center;
+  }
+  .demo-ai .cta-card .cta-card__text {
+    width: 100%;
+    font-size: clamp(16px, calc(18 * 100vw / 834), 20px);
+    line-height: 130%;
+    text-align: center;
   }
 }

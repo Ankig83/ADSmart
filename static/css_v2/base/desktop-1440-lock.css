@@ -1,0 +1,103 @@
+/* desktop-1440-lock.css — на экранах >1440px контент НЕ масштабируется, остаётся 1440.
+   Только @media (min-width: 1441px), другие брейкпоинты не трогаем. */
+
+@media (min-width: 1441px) {
+  /* Production: hero full-bleed, остальные блоки — lock */
+  .demo-prod {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Print: вся страница lock (hero внутри, но print hero уже в demo-print) */
+  .demo-print {
+    width: 1440px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Design: hero full-bleed, остальные блоки — lock */
+  .demo-design {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Telegram: всё lock включая hero */
+  .demo-tg {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .demo-tg .hero,
+  .demo-tg .hero-with-figure {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* AI Assistants: всё lock включая hero */
+  .demo-ai {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .demo-ai .hero,
+  .demo-ai .hero-with-figure {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Home: всё lock включая hero */
+  .demo-home {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .demo-home .hero,
+  .demo-home .hero-with-figure {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Elevators: hero full-bleed, остальные — lock */
+  .elevators-page {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Radio: hero full-bleed, остальные — lock */
+  .radio-page {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Stops: hero full-bleed, остальные — lock */
+  .stops-page {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Transport: hero full-bleed, остальные — lock */
+  .transport-page {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Billboards: hero full-bleed, остальные — lock */
+  .billboards-page {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

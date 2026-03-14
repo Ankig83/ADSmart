@@ -1,4 +1,5 @@
-/* button.css — Button v2. Figma 440 mobile-first, 834+ tablet/desktop */
+/* button.css — Button v2. Figma 440 mobile-first, 834+ tablet/desktop
+   Hero CTA (Рассчитать, Наши кейсы): primary 218×56, outline 176×56 */
 
 .button {
   display: inline-flex;
@@ -117,4 +118,26 @@
     min-height: 56px;
     border-radius: 64px;
   }
+}
+
+/* Hero CTA (Рассчитать, Наши кейсы) — Figma 218×56 / 176×56, 440+ */
+.hero-with-figure__actions .button--lg.button--primary,
+.hero .hero__actions .button--lg.button--primary {
+  width: 218px;
+  height: 56px;
+  padding: 16px 32px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  border-radius: 64px;
+}
+.hero-with-figure__actions .button--lg.button--outline,
+.hero .hero__actions .button--lg.button--outline {
+  width: 176px;
+  height: 56px;
+  padding: 16px 32px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  border-radius: 64px;
 }

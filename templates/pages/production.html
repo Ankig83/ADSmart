@@ -6,6 +6,7 @@
 {% block page_css %}
   <link rel="stylesheet" href="{% static 'css/pages/production.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/production-mobile-lock.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/pages/production-tablet-lock.css' %}" />
 {% endblock %}
 
 {% block header %}
@@ -129,61 +130,49 @@
       </div>
     </section>
 
-    <section class="steps steps--production section" aria-labelledby="prod-how-title">
+    <section class="benefits benefits--production section" aria-labelledby="prod-how-title">
       <div class="container">
-        <h2 class="steps__title" id="prod-how-title">
+        <h2 class="benefits__title" id="prod-how-title">
           Как мы создаем результат
         </h2>
-        <div class="steps__grid" aria-label="Этапы работы">
-          <article class="step-card">
-            <div class="step-card__head">
-              <div class="step-card__circle">
-                <img class="step-card__icon" src="{% static 'assets/icons/clipboard-133-5219-140-5359.svg' %}" alt="" loading="lazy" decoding="async" />
-              </div>
-              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
+        <ul class="benefits__grid" aria-label="Этапы работы">
+          <li class="benefit-card">
+            <div class="benefit-card__ring" aria-hidden="true">
+              <img class="benefit-card__icon" src="{% static 'assets/icons/clipboard-133-5219-140-5359.svg' %}" alt="" />
             </div>
-            <div class="step-card__body">
-              <h3 class="step-card__title">Бриф и концепция</h3>
-              <p class="step-card__text">Вникаем в задачу, предлагаем варианты, готовим 3D-визуализацию</p>
+            <div class="benefit-card__body">
+              <h3 class="benefit-card__title">Бриф и концепция</h3>
+              <p class="benefit-card__text">Вникаем в задачу, предлагаем варианты, готовим 3D-визуализацию</p>
             </div>
-          </article>
-          <article class="step-card">
-            <div class="step-card__head">
-              <div class="step-card__circle">
-                <img class="step-card__icon" src="{% static 'assets/icons/file-133-5223.svg' %}" alt="" loading="lazy" decoding="async" />
-              </div>
-              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__ring" aria-hidden="true">
+              <img class="benefit-card__icon" src="{% static 'assets/icons/file-133-5223.svg' %}" alt="" />
             </div>
-            <div class="step-card__body">
-              <h3 class="step-card__title">Проект и согласование</h3>
-              <p class="step-card__text">Разрабатываем техническую документацию, помогаем с разрешительной документацией</p>
+            <div class="benefit-card__body">
+              <h3 class="benefit-card__title">Проект и согласование</h3>
+              <p class="benefit-card__text">Разрабатываем техническую документацию, помогаем с разрешительной документацией</p>
             </div>
-          </article>
-          <article class="step-card">
-            <div class="step-card__head">
-              <div class="step-card__circle">
-                <img class="step-card__icon" src="{% static 'assets/icons/settings-133-5227.svg' %}" alt="" loading="lazy" decoding="async" />
-              </div>
-              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__ring" aria-hidden="true">
+              <img class="benefit-card__icon" src="{% static 'assets/icons/settings-133-5227.svg' %}" alt="" />
             </div>
-            <div class="step-card__body">
-              <h3 class="step-card__title">Производство</h3>
-              <p class="step-card__text">Изготавливаем конструкцию на собственном или проверенном производстве с контролем качества</p>
+            <div class="benefit-card__body">
+              <h3 class="benefit-card__title">Производство</h3>
+              <p class="benefit-card__text">Изготавливаем конструкцию на собственном или проверенном производстве с контролем качества</p>
             </div>
-          </article>
-          <article class="step-card">
-            <div class="step-card__head">
-              <div class="step-card__circle">
-                <img class="step-card__icon" src="{% static 'assets/icons/tool-133-5230.svg' %}" alt="" loading="lazy" decoding="async" />
-              </div>
-              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__ring" aria-hidden="true">
+              <img class="benefit-card__icon" src="{% static 'assets/icons/tool-133-5230.svg' %}" alt="" />
             </div>
-            <div class="step-card__body">
-              <h3 class="step-card__title">Монтаж и гарантия</h3>
-              <p class="step-card__text">Профессионально устанавливаем и передаем гарантийные документы</p>
+            <div class="benefit-card__body">
+              <h3 class="benefit-card__title">Монтаж и гарантия</h3>
+              <p class="benefit-card__text">Профессионально устанавливаем и передаем гарантийные документы</p>
             </div>
-          </article>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -218,15 +207,15 @@
                   <input class="cta-form__input" type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required />
                 </label>
                 <label class="cta-form__field">
-                  <span class="sr-only">Компания</span>
-                  <input class="cta-form__input" type="text" name="company" placeholder="Компания" autocomplete="organization" />
+                  <span class="sr-only">Сфера бизнеса</span>
+                  <input class="cta-form__input" type="text" name="company" placeholder="Сфера бизнеса" autocomplete="organization" />
                 </label>
                 <label class="cta-form__field">
                   <span class="sr-only">Какую задачу решаем?</span>
                   <input class="cta-form__input" type="text" name="interest_format" placeholder="Какую задачу решаем?" />
                 </label>
               </div>
-              <button class="button button--lg button--primary" type="submit">Рассчитать</button>
+              <button class="button button--lg button--primary" type="submit">Заказать вывеску</button>
             </form>
           </div>
         </div>

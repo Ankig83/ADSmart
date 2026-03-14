@@ -1,8 +1,9 @@
 import logging
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit, urlparse
 
-import requests
+# import requests  # было для Telegram
 from django.conf import settings
+from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
@@ -113,29 +114,44 @@ def submit_lead(request):
             message_lines.append(f"Доп: {interest}")
         text = "\n".join(message_lines)
 
-        bot_token = getattr(settings, "TELEGRAM_BOT_TOKEN", None)
-        chat_id = getattr(settings, "TELEGRAM_CHAT_ID", None)
-
-        if bot_token and chat_id:
-            url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-            payload = {"chat_id": str(chat_id), "text": text}
+        # Email-рассылка админу о новой заявке
+        admin_email = getattr(settings, "ADMIN_LEAD_EMAIL", None)
+        if admin_email:
             try:
-                resp = requests.post(url, data=payload, timeout=5)
-                if resp.ok:
-                    logger.info("Lead sent to Telegram: phone=%s, source=%s", phone, source)
-                else:
-                    logger.error(
-                        "Telegram API HTTP error: status=%s body=%s",
-                        resp.status_code,
-                        resp.text[:500],
-                    )
-            except requests.RequestException as exc:
-                logger.exception("Error sending lead to Telegram: %s", exc)
-        else:
-            logger.warning(
-                "Telegram not configured (TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID missing). Lead phone=%s",
-                phone,
-            )
+                send_mail(
+                    subject="🚀 Новая заявка с сайта ADSmart",
+                    message=text,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[admin_email],
+                    fail_silently=False,
+                )
+                logger.info("Lead sent via email: phone=%s, source=%s", phone, source)
+            except Exception as exc:
+                logger.exception("Error sending lead email: %s", exc)
+
+        # --- Telegram отправка отключена, переход на email-рассылку ---
+        # bot_token = getattr(settings, "TELEGRAM_BOT_TOKEN", None)
+        # chat_id = getattr(settings, "TELEGRAM_CHAT_ID", None)
+        # if bot_token and chat_id:
+        #     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+        #     payload = {"chat_id": str(chat_id), "text": text}
+        #     try:
+        #         resp = requests.post(url, data=payload, timeout=5)
+        #         if resp.ok:
+        #             logger.info("Lead sent to Telegram: phone=%s, source=%s", phone, source)
+        #         else:
+        #             logger.error(
+        #                 "Telegram API HTTP error: status=%s body=%s",
+        #                 resp.status_code,
+        #                 resp.text[:500],
+        #             )
+        #     except requests.RequestException as exc:
+        #         logger.exception("Error sending lead to Telegram: %s", exc)
+        # else:
+        #     logger.warning(
+        #         "Telegram not configured (TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID missing). Lead phone=%s",
+        #         phone,
+        #     )
 
         next_url = request.POST.get("next") or request.META.get("HTTP_REFERER") or ""
         if next_url and url_has_allowed_host_and_scheme(next_url, allowed_hosts={request.get_host()}, require_https=request.is_secure()):

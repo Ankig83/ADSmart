@@ -1,5 +1,11 @@
 /* design.css — страница Дизайн. Mobile-first, без !important */
 
+/* CTA: кнопки «Получить консультацию» и «Примеры и цены» в одну строку */
+.cta-card--design .cta-card__actions .button--primary,
+.cta-card--design .cta-card__actions .button--outline {
+  white-space: nowrap;
+}
+
 .page--design.app .app__main {
   padding: 0;
 }
@@ -28,15 +34,23 @@
   }
 }
 
-/* Tablet */
+/* Tablet 834–1439: масштабирование до 1440 */
 @media (min-width: 834px) and (max-width: 1439px) {
   .demo-design {
-    width: min(100%, clamp(834px, 92vw, 1160px));
+    width: min(100%, clamp(834px, 92vw, 1440px));
     margin: 0 auto;
   }
 
-  .hero-with-figure {
+  /* Hero на всю ширину экрана */
+  .demo-design .hero-with-figure {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     min-height: 485px;
+  }
+
+  .hero-with-figure {
     display: flex;
     align-items: center;
   }
@@ -85,27 +99,14 @@
     flex-shrink: 0;
   }
 
+  /* Hero buttons 218×56 / 176×56 — button.css */
   .hero-with-figure__actions .button--primary {
-    width: 196px;
+    width: 218px;
     height: 56px;
-    padding: 16px 32px;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    background: #14f195;
-    color: #000000;
-    border-radius: 64px;
   }
-
   .hero-with-figure__actions .button--outline {
-    width: 164px;
-    height: 52px;
-    padding: 16px 32px;
-    font-size: 16px;
-    font-weight: 500;
-    border: 1px solid #ffffff;
-    border-radius: 64px;
-    color: #ffffff;
+    width: 176px;
+    height: 56px;
   }
 
   .hero-with-figure__image-wrap {

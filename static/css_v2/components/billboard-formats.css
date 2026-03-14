@@ -137,27 +137,20 @@
   color: #ffffff;
 }
 
-@media (min-width: 834px) {
+/* 834–1439: масштабирование 770→1090 */
+@media (min-width: 834px) and (max-width: 1439px) {
   .billboard-formats {
-    padding: 60px 24px;
+    padding: clamp(60px, 7vw, 80px) clamp(24px, 2.8vw, 32px);
   }
 
   .billboard-formats__inner {
-    max-width: 770px;
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1090px));
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .billboard-formats__title {
-    font-size: 28px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .billboard-formats__inner {
-    max-width: 834px;
-  }
-
-  .billboard-formats__title {
-    font-size: 32px;
+    font-size: clamp(28px, calc(32 * 100vw / 834), 48px);
   }
 }
 

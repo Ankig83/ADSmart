@@ -44,9 +44,32 @@ function initMenu() {
   const menu = qs("[data-menu]");
   if (!toggle || !menu) return;
 
+  const closeMenu = () => {
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    menu.querySelectorAll("details[open]").forEach((d) => (d.open = false));
+  };
+
   toggle.addEventListener("click", () => {
     const isOpen = menu.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (!isOpen) menu.querySelectorAll("details[open]").forEach((d) => (d.open = false));
+  });
+
+  qsa("[data-menu-close]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeMenu();
+    });
+  });
+
+  qsa("[data-close-services]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const dd = menu.querySelector(".demo-menu__services-dd-mobile");
+      if (dd) dd.removeAttribute("open");
+    });
   });
 }
 
@@ -86,7 +109,8 @@ function initFooterAccordion() {
 
   items.forEach((d) => {
     d.addEventListener("toggle", () => {
-      if (!mq.matches || !d.open) return;
+      if (mq.matches) return; /* 834+: все открыты, не закрывать другие */
+      if (!d.open) return;
       items.forEach((o) => { if (o !== d) o.open = false; });
     });
   });

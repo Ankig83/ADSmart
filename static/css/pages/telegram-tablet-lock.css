@@ -82,5 +82,10 @@
   /* Approach — css_v2/components/approach-cards.css */
   /* Benefits — css_v2/components/benefits.css */
   /* Expertise — css_v2/components/comparison-expertise.css */
-  /* Contact — css_v2/components/cta-form.css */
+  /* Contact — CTA кнопки 834: вертикально, расстояние 12px */
+  .cta-form--telegram .cta-form__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 }

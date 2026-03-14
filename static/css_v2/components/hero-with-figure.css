@@ -7,7 +7,7 @@
   height: var(--hero-mobile-h, 485px);
   width: 100%;
   max-width: 100%;
-  margin-inline: auto;
+  margin-inline: 0;
   background: #000000;
   overflow: hidden;
   box-sizing: border-box;
@@ -70,7 +70,7 @@
 
 .hero-with-figure__actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 12px;
 }
 
@@ -117,7 +117,7 @@
   .hero-with-figure {
     min-height: 485px;
     height: auto;
-    max-width: 1440px;
+    max-width: none;
   }
 
   .hero-with-figure__content {
@@ -144,16 +144,30 @@
   }
 }
 
-/* 834–1439: затемнение левой стороны на всех страницах; Telegram/Design — свой фон, фигуру скрыть */
+/* 834+: hero на всю ширину; родители — overflow visible для full-bleed */
+@media (min-width: 834px) {
+  .demo-ai,
+  .demo-design,
+  .demo-home,
+  .demo-tg {
+    overflow-x: visible;
+  }
+}
+
+/* 834–1439: затемнение — inset 0 (без сползания) */
 @media (min-width: 834px) and (max-width: 1439px) {
-  /* Figma Frame 427321549: градиент затемнения — единый для всех hero 834 */
+
+  /* Hero всегда на всю ширину viewport, без отступов по бокам */
+  .hero-with-figure {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
+  /* Градиент затемнения — покрывает весь hero, без top/height (не сползает) */
   .hero-with-figure__overlay {
-    left: 0;
-    top: clamp(70px, calc(70 * 100vw / 834), 121px);
-    width: 100%;
-    height: clamp(435px, calc(435 * 100vw / 834), 751px);
-    right: auto;
-    bottom: auto;
+    inset: 0;
     background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.7) 4.38%,
@@ -186,12 +200,16 @@
     display: none;
   }
 
-  /* Home 834: макет по Figma (440×271 контент + фигура справа) */
+  /* Home 834: на всю ширину экрана, макет Figma (контент + фигура справа) */
   .demo-home .hero-with-figure {
     position: relative;
-    width: 834px;
-    height: 439px;
-    margin: 70px auto 0;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: 70px;
+    min-height: 439px;
+    height: clamp(435px, 38vw, 535px);
     overflow: hidden;
   }
 
@@ -269,6 +287,7 @@
 }
 
 @media (min-width: 1440px) {
+  /* Hero на всю ширину viewport, без отступов по бокам */
   .hero-with-figure {
     display: flex;
     flex-direction: row;
@@ -276,7 +295,11 @@
     align-items: center;
     gap: 40px;
     min-height: 485px;
-    padding: 0 48px;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0;
   }
 
   .hero-with-figure::before {
@@ -315,7 +338,7 @@
   }
 
   .hero-with-figure__actions {
-    gap: 14px;
+    gap: 10px;
   }
 
   .hero-with-figure__image-wrap {

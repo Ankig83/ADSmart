@@ -111,9 +111,16 @@
   border-radius: 12px;
 }
 
-@media (min-width: 834px) {
+/* 834–1439: масштабирование от 770 до 1088 */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .content-media-rows {
+    padding: clamp(60px, 7vw, 100px) clamp(32px, 3.8vw, 64px);
+  }
+
   .content-media-rows__inner {
-    max-width: min(770px, 88vw);
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1088px));
+    margin-left: auto;
+    margin-right: auto;
     gap: clamp(36px, calc(51 * 100vw / 834), 62px);
   }
 
@@ -208,5 +215,59 @@
     height: clamp(295px, calc(295 * 100vw / 1440), 525px);
     min-height: 0;
     object-fit: cover;
+  }
+}
+
+/* 1441px+: lock — не масштабируется, фиксированные 1440 значения */
+@media (min-width: 1441px) {
+  .content-media-rows {
+    padding: 100px 176px;
+  }
+
+  .content-media-rows__inner {
+    max-width: 1088px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 51px;
+  }
+
+  .content-media-rows__title {
+    font-size: 48px;
+    max-width: 684px;
+  }
+
+  .content-media-rows__rows {
+    gap: 114px;
+  }
+
+  .content-media-rows__row {
+    gap: 64px;
+  }
+
+  .content-media-rows__content {
+    width: 519px;
+  }
+
+  .content-media-rows__text {
+    font-size: 22px;
+    line-height: 33px;
+  }
+
+  .content-media-rows__list-title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .content-media-rows__item {
+    font-size: 22px;
+    line-height: 33px;
+  }
+
+  .content-media-rows__media {
+    width: 504px;
+  }
+
+  .content-media-rows__img {
+    height: 295px;
   }
 }

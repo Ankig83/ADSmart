@@ -115,9 +115,9 @@
   box-sizing: border-box;
 }
 
-/* Модификатор design — Figma design page CTA. Отступ контакт→подвал через app__main padding-bottom */
+/* Модификатор design — Figma design page CTA. Отступ от подвала */
 .cta-card--design {
-  margin-bottom: 0;
+  margin-bottom: 48px;
 }
 
 @media (min-width: 1440px) {

@@ -58,5 +58,30 @@
   /* Approach — перенесён в css_v2/components/approach-cards.css */
   /* Benefits — css_v2/components/benefits.css */
   /* Expertise — css_v2/components/comparison-expertise.css */
-  /* Contact — css_v2/components/cta-form.css */
+  /* Contact — CTA кнопки 440: распределены во фрейме */
+  .cta-form--telegram .cta-form__actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 12px;
+    width: 100%;
+  }
+  .cta-form--telegram .cta-form__actions .button--primary {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    padding: 14px 16px;
+    font-size: 15px;
+    white-space: nowrap;
+    margin-right: 6px;
+  }
+  .cta-form--telegram .cta-form__actions .button--outline {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    padding: 14px 16px;
+    font-size: 15px;
+    white-space: nowrap;
+    margin-left: 6px;
+  }
 }

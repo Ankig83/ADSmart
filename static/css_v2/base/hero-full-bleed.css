@@ -1,0 +1,26 @@
+/* hero-full-bleed.css — Hero ВСЕГДА 100vw на ВСЕХ страницах.
+   Подключается последним. !important перебивает hero.css 1440 и page overflow. */
+
+.hero,
+.hero-with-figure {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+}
+
+/* Родители Hero — overflow visible, чтобы full-bleed не обрезался */
+.app__main,
+.demo-prod,
+.demo-design,
+.demo-home,
+.demo-ai,
+.demo-tg,
+.demo-print,
+.elevators-page,
+.radio-page,
+.stops-page,
+.transport-page,
+.billboards-page {
+  overflow-x: visible !important;
+}

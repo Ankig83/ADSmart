@@ -175,9 +175,23 @@ STORAGES = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Telegram lead notifications
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+# Telegram lead notifications (отключено, переход на email)
+# TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+# TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
+# Email — оповещение админа о новых заявках
+# Dev: не задавай EMAIL_BACKEND — письма пойдут в консоль (stdout)
+_email_backend = os.getenv("EMAIL_BACKEND", "").strip()
+EMAIL_BACKEND = _email_backend or (
+    "django.core.mail.backends.console.EmailBackend" if DEBUG else "django.core.mail.backends.smtp.EmailBackend"
+)
+EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.example.com")
+EMAIL_PORT = int(os.getenv("EMAIL_PORT", "587"))
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "true").lower() in ("1", "true", "yes")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "noreply@ad-smart.ru")
+ADMIN_LEAD_EMAIL = os.getenv("ADMIN_LEAD_EMAIL", "welcome@ad-smart.ru")
 
 # Security defaults for prod (override via env as needed)
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")

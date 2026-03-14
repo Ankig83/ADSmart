@@ -255,15 +255,20 @@
   }
 }
 
-/* ═══ 834px — Figma Blok3 layout ═══ */
-@media (min-width: 834px) {
+/* 834–1439: масштабирование 770→1088 */
+@media (min-width: 834px) and (max-width: 1439px) {
   .transport-formats {
-    padding: 44px 32px;
+    padding: 44px clamp(32px, 3.8vw, 48px);
   }
 
   .transport-formats__inner {
-    max-width: 770px;
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1088px));
+    margin-left: auto;
+    margin-right: auto;
   }
+}
+
+@media (min-width: 834px) {
 
   .transport-formats__title {
     font-size: 28px;

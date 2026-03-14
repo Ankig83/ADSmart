@@ -18,53 +18,67 @@
       </button>
 
       <div class="demo-menu__links" id="demo-menu-links" data-menu>
-        <details class="demo-menu__services-dd">
-          <summary class="demo-menu__link demo-menu__services-summary">
-            <span class="demo-menu__services">
-              <span class="demo-menu__link-text">Услуги</span>
-              <img
-                class="demo-menu__chevron"
-                src="{% static 'assets/icons/chevron-down-140-13284.svg' %}"
-                width="18"
-                height="18"
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-                decoding="async"
-              />
-            </span>
+        <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'home_page' %}">На главную</a>
+        <details class="demo-menu__services-dd-mobile">
+          <summary class="demo-menu__services-row demo-menu__services-row--mobile">
+            <span class="demo-menu__services-label">Услуги</span>
+            <img class="demo-menu__chevron demo-menu__chevron--rotate" src="{% static 'assets/icons/chevron-down-140-13284.svg' %}" width="18" height="18" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           </summary>
-
-          <div class="demo-menu__services-pop" role="menu" aria-label="Услуги">
+          <div class="demo-menu__services-pop-mobile">
+            <button type="button" class="demo-menu__back-btn" data-close-services aria-label="Назад">← Услуги</button>
+            <details class="demo-menu__outdoor-dd-mobile">
+              <summary class="demo-menu__services-row demo-menu__services-row--mobile demo-menu__services-row--outdoor">
+                <span class="demo-menu__services-label">Наружная реклама</span>
+                <img class="demo-menu__chevron demo-menu__chevron--rotate" src="{% static 'assets/icons/chevron-down-140-13284.svg' %}" width="18" height="18" alt="" aria-hidden="true" />
+              </summary>
+              <div class="demo-menu__services-sub-mobile">
+                <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'billboards' %}">Билборды</a>
+                <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'transport' %}">Транспорт</a>
+                <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'stops' %}">Остановки/Афиши</a>
+                <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'radio' %}">Радио</a>
+                <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'elevators' %}">Лифты/Домофоны</a>
+              </div>
+            </details>
+            <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'ai_assistants' %}">AI ассистенты</a>
+            <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'telegram' %}">Телеграм</a>
+            <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'design' %}">Графический Дизайн</a>
+            <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'print_polygraphy' %}">Печать и полиграфия</a>
+            <a class="demo-menu__link demo-menu__link--mobile demo-menu__link--wrap" href="{% url 'production' %}">Производство наружной рекламы</a>
+          </div>
+        </details>
+        <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'home' %}#about">О нас</a>
+        <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'home' %}#help">Помощь</a>
+        <a class="demo-menu__link demo-menu__link--mobile" href="{% url 'home' %}#contacts">Контакты</a>
+        <a class="demo-menu__link demo-menu__link--mobile" href="#" data-menu-close>Версия для компьютера</a>
+        <a class="demo-menu__links-logo demo-menu__links-logo--mobile" href="{% url 'home_page' %}">ADSmart</a>
+        <details class="demo-menu__services-dd demo-menu__services-dd--desktop">
+          <summary class="demo-menu__link">
+            <span class="demo-menu__services"><span class="demo-menu__link-text">Услуги</span><img class="demo-menu__chevron" src="{% static 'assets/icons/chevron-down-140-13284.svg' %}" width="18" height="18" alt="" aria-hidden="true" loading="lazy" decoding="async" /></span>
+          </summary>
+          <div class="demo-menu__services-pop">
             <div class="demo-menu__services-panel">
-              <div class="demo-menu__services-row demo-menu__services-row--has-sub" role="none">
-                <a class="demo-menu__services-link" role="menuitem" href="#outdoor">Наружная реклама</a>
+              <div class="demo-menu__services-row demo-menu__services-row--has-sub">
+                <a class="demo-menu__services-link" href="#outdoor">Наружная реклама</a>
                 <img class="demo-menu__services-arrow" src="{% static 'assets/icons/chevron-down-140-13284.svg' %}" alt="" aria-hidden="true" />
-
-                <div class="demo-menu__services-sub" role="menu" aria-label="Наружная реклама">
-                  <div class="demo-menu__services-sub-panel">
-                    <a class="demo-menu__services-link" role="menuitem" href="{% url 'billboards' %}">Билборды</a>
-                    <a class="demo-menu__services-link" role="menuitem" href="{% url 'transport' %}">Транспорт</a>
-                    <a class="demo-menu__services-link" role="menuitem" href="{% url 'stops' %}">Остановки/Афиши</a>
-                    <a class="demo-menu__services-link" role="menuitem" href="{% url 'radio' %}">Радио</a>
-                    <a class="demo-menu__services-link" role="menuitem" href="{% url 'elevators' %}">Лифты/Домофоны</a>
-                  </div>
+                <div class="demo-menu__services-sub">
+                  <a class="demo-menu__services-link" href="{% url 'billboards' %}">Билборды</a>
+                  <a class="demo-menu__services-link" href="{% url 'transport' %}">Транспорт</a>
+                  <a class="demo-menu__services-link" href="{% url 'stops' %}">Остановки/Афиши</a>
+                  <a class="demo-menu__services-link" href="{% url 'radio' %}">Радио</a>
+                  <a class="demo-menu__services-link" href="{% url 'elevators' %}">Лифты/Домофоны</a>
                 </div>
               </div>
-
-              <a class="demo-menu__services-link" role="menuitem" href="{% url 'ai_assistants' %}">AI ассистенты</a>
-              <a class="demo-menu__services-link" role="menuitem" href="{% url 'telegram' %}">Телеграм</a>
-              <a class="demo-menu__services-link" role="menuitem" href="{% url 'design' %}">Графический Дизайн</a>
-              <a class="demo-menu__services-link" role="menuitem" href="{% url 'print_polygraphy' %}">Печать и полиграфия</a>
-              <a class="demo-menu__services-link demo-menu__services-link--wrap" role="menuitem" href="{% url 'production' %}">
-                Производство наружной рекламы
-              </a>
+              <a class="demo-menu__services-link" href="{% url 'ai_assistants' %}">AI ассистенты</a>
+              <a class="demo-menu__services-link" href="{% url 'telegram' %}">Телеграм</a>
+              <a class="demo-menu__services-link" href="{% url 'design' %}">Графический Дизайн</a>
+              <a class="demo-menu__services-link" href="{% url 'print_polygraphy' %}">Печать и полиграфия</a>
+              <a class="demo-menu__services-link demo-menu__services-link--wrap" href="{% url 'production' %}">Производство наружной рекламы</a>
             </div>
           </div>
         </details>
-        <a class="demo-menu__link" href="{% url 'home' %}#about">О нас</a>
-        <a class="demo-menu__link" href="{% url 'home' %}#help">Помощь</a>
-        <a class="demo-menu__link" href="{% url 'home' %}#contacts">Контакты</a>
+        <a class="demo-menu__link demo-menu__link--desktop" href="{% url 'home' %}#about">О нас</a>
+        <a class="demo-menu__link demo-menu__link--desktop" href="{% url 'home' %}#help">Помощь</a>
+        <a class="demo-menu__link demo-menu__link--desktop" href="{% url 'home' %}#contacts">Контакты</a>
       </div>
     </nav>
   </div>

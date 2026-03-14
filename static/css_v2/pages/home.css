@@ -19,11 +19,13 @@
     align-items: center;
     gap: clamp(24px, 2.8vw, 40px);
     position: relative;
-    width: min(100%, clamp(834px, 92vw, 1160px));
+    width: 100vw;
+    max-width: 100vw;
     min-height: 440px;
     height: 440px;
-    margin: 0 auto;
-    padding: 0 clamp(24px, 2.8vw, 48px);
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0;
     background: #000000;
     overflow: hidden;
     box-sizing: border-box;
@@ -49,7 +51,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 36px;
+    gap: 24px;
   }
 
   .demo-home .hero-with-figure__title {
@@ -96,8 +98,8 @@
     right: 2.28%;
     top: 153.65px;
     height: 179.54px;
-    background: rgba(255, 123, 0, 0.6);
-    filter: blur(87.6px);
+    background: rgba(255, 123, 0, 0.85);
+    filter: blur(65px);
     border-radius: 100000px;
   }
 
@@ -109,255 +111,6 @@
     top: auto;
     transform: matrix(0.98, 0.19, -0.19, 0.98, 0, 0);
     object-fit: contain;
-  }
-}
-
-/* Legacy demo-home-hero (not used on current Home, kept for reference) */
-.demo-home-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 32px 24px 56px;
-}
-
-.demo-home-hero__content {
-  position: relative;
-  max-width: 680px;
-}
-
-.demo-home-hero__title {
-  margin: 0 0 18px;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-home-hero__subtitle {
-  margin: 0 0 22px;
-  font-family: var(--font-sans);
-  font-size: 21px;
-  font-weight: 400;
-  line-height: 31.5px;
-  letter-spacing: 0;
-  color: #c4c4c4; /* from Figma */
-}
-
-.demo-home-hero__actions {
-  display: flex;
-  gap: 8px; /* itemSpacing */
-  flex-wrap: wrap;
-}
-
-.demo-home-hero__art {
-  margin-top: 24px;
-  width: min(100%, 708.112px);
-  aspect-ratio: 708.112 / 741.199;
-  border-radius: 24px;
-  overflow: hidden;
-}
-
-.demo-home-hero__img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  transform: none;
-}
-
-.demo-home-hero__blob {
-  display: none; /* desktop-only, exact positioning */
-}
-
-/* Lead success modal (Ready--Copy node 143:5029) */
-.demo-lead-success__dialog {
-  width: 600px;
-  height: 396.3706px;
-  margin: 12vh auto 0;
-  background: #19161c;
-  border: none;
-  border-radius: 12px;
-  box-shadow: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.demo-lead-success__icon {
-  position: absolute;
-  left: 224.8149px;
-  top: 30px;
-  width: 150.3706px;
-  height: 150.3706px;
-  display: block;
-}
-
-.demo-lead-success__title {
-  position: absolute;
-  left: 30px;
-  top: 208.3705px;
-  width: 540px;
-  height: 30px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-align: center;
-  color: #ffffff;
-}
-
-.demo-lead-success__text {
-  position: absolute;
-  left: 30px;
-  top: 266.3705px;
-  width: 540px;
-  height: 20px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0;
-  text-align: center;
-  color: #ffffff;
-}
-
-@media (min-width: 1440px) {
-  /* Desktop exact positioning from Figma Home frame */
-  .demo-home-hero {
-    width: 1440px;
-    margin: 0 auto;
-    height: 820px; /* next section starts at y=820 */
-    padding: 0;
-    display: block;
-    overflow: visible; /* Figma frame does not clip; donut can overflow a bit */
-  }
-
-  .demo-home-hero__content {
-    position: absolute;
-    left: 178px;
-    top: 184px;
-    width: 654px; /* title bbox width */
-    max-width: none;
-  }
-
-  .demo-home-hero__title {
-    font-size: 65px;
-    line-height: 84.5px;
-    letter-spacing: 0.48px;
-    margin: 0;
-  }
-
-  .demo-home-hero__subtitle {
-    position: absolute;
-    left: 0;
-    top: 270px; /* 454 - 184 */
-    width: 569px;
-    height: 96px;
-    margin: 0;
-  }
-
-  .demo-home-hero__actions {
-    position: absolute;
-    left: -2px; /* buttons start at x=176 while text starts at 178 */
-    top: 402px; /* 586 - 184 */
-  }
-
-  .demo-home-hero__art {
-    position: absolute;
-    left: 738.9433px;
-    top: 46.4004px;
-    width: 708.1124px;
-    height: 741.199px;
-    aspect-ratio: auto;
-    border-radius: 0;
-    overflow: visible; /* avoid cropping the donut */
-  }
-
-  .demo-home-hero__blob {
-    display: block;
-    position: absolute;
-    left: 863.5947px;
-    top: 76px;
-    width: 633.2255px;
-    height: 642px;
-    border-radius: 100px;
-    background: rgba(255, 123, 0, 0.3000000119);
-    filter: blur(500px); /* Figma: LAYER_BLUR radius 500 */
-  }
-}
-
-/* Tablet: 834-1439px (Figma node 140:8081) */
-@media (min-width: 834px) and (max-width: 1439px) {
-  /* Hero tablet geometry (Figma node 140:8081) */
-  .demo-home-hero {
-    width: 834px;
-    height: 440px;
-    margin: 0 auto;
-    padding: 0;
-    display: block;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .demo-home-hero__content {
-    position: absolute;
-    left: 32px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 440px;
-    max-width: none;
-  }
-
-  .demo-home-hero__title {
-    font-size: 53px;
-    line-height: 68.9px;
-    letter-spacing: 0.48px;
-    margin: 0 0 18px;
-    width: 445px;
-    white-space: normal;
-  }
-
-  .demo-home-hero__subtitle {
-    position: static;
-    width: 445px;
-    height: auto;
-    margin: 0;
-    font-size: 18px;
-    line-height: 27px;
-    letter-spacing: 0;
-    white-space: normal;
-  }
-
-  .demo-home-hero__actions {
-    position: static;
-    margin-top: 36px;
-    gap: 8px;
-  }
-
-  .demo-home-hero__art {
-    position: absolute;
-    left: 468px;
-    top: 16px;
-    width: 389.474px;
-    height: 407.668px;
-    aspect-ratio: auto;
-    border-radius: 0;
-    margin: 0;
-  }
-
-  .demo-home-hero__blob {
-    display: block;
-    position: absolute;
-    left: 636px;
-    top: 154px;
-    width: 180px;
-    height: 180px;
-    border-radius: 100000px;
-    background: rgba(255, 123, 0, 0.6);
-    filter: blur(87.6px);
   }
 }
 
@@ -2057,7 +1810,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 22px;
     background: #000000;
   }
 
@@ -2497,11 +2250,13 @@
 }
 
 /* Desktop-15: 5 steps (Ready--Copy frames: 440/1440) */
+/* Base: fluid 320→834 как content-media-block, comparison-expertise — эталон 440, растёт до tablet */
 .demo-steps {
   position: relative;
   padding: 0;
   margin: 0 auto;
-  width: 440px;
+  width: min(100%, clamp(320px, calc(440 * 100vw / 440), 834px));
+  box-sizing: border-box;
   height: 973px;
 }
 
@@ -2509,7 +2264,7 @@
   position: absolute;
   left: 16px; /* (440 - 408) / 2 */
   top: 44px;
-  width: 408px;
+  width: min(calc(100% - 32px), clamp(288px, calc(408 * 100vw / 440), 770px));
   height: 885px;
 }
 
@@ -3130,7 +2885,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 22px;
     background: #000000;
   }
 
@@ -3305,56 +3060,6 @@
 
 /* Tablet smoothing pass: sections 2-8 scale softer across 834-1439 */
 @media (min-width: 834px) and (max-width: 1439px) {
-  /* Keep hero fluid across the whole tablet range */
-  .demo-home-hero {
-    width: min(100%, clamp(834px, 92vw, 1160px));
-    height: clamp(440px, 47vw, 620px);
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
-  }
-
-  .demo-home-hero__content {
-    left: clamp(32px, 4vw, 64px);
-    top: clamp(72px, 10vw, 150px);
-    transform: none;
-    width: clamp(420px, 45vw, 620px);
-  }
-
-  .demo-home-hero__title {
-    width: min(100%, 620px);
-    font-size: clamp(36px, 4.2vw, 53px);
-    line-height: 1.28;
-  }
-
-  .demo-home-hero__subtitle {
-    width: min(100%, 560px);
-    font-size: clamp(17px, 1.45vw, 20px);
-    line-height: 1.45;
-  }
-
-  .demo-home-hero__actions {
-    margin-top: clamp(20px, 2.8vw, 36px);
-  }
-
-  .demo-home-hero__art {
-    left: auto;
-    right: clamp(0px, 4vw, 64px);
-    top: clamp(16px, 3vw, 44px);
-    width: clamp(360px, 36vw, 560px);
-    height: auto;
-    aspect-ratio: 389.474 / 407.668;
-  }
-
-  .demo-home-hero__blob {
-    left: auto;
-    right: clamp(24px, 6vw, 180px);
-    top: clamp(130px, 17vw, 240px);
-    width: clamp(160px, 16vw, 220px);
-    height: clamp(160px, 16vw, 220px);
-  }
-
   .demo-steps,
   .demo-exp,
   .demo-tech19,
@@ -3403,7 +3108,7 @@
   }
 
   /* Prevent section 2 from visually climbing over hero */
-  .demo-home-hero + .demo-steps {
+  .demo-home + .demo-steps {
     margin-top: clamp(12px, 1.8vw, 28px);
     z-index: 1;
   }
@@ -4177,16 +3882,19 @@
 /* ═══ home-tablet-lock.css ═══ */
 /* FINAL LOCK (834-1439): Home */
 @media (min-width: 834px) and (max-width: 1439px) {
-  /* Hero вЂ” РєР°Рє РЅР° Telegram: .demo-tg = РјР°СЃС€С‚Р°Р±РёСЂСѓРµРјС‹Р№ РєРѕРЅС‚РµР№РЅРµСЂ, hero Р·Р°РїРѕР»РЅСЏРµС‚ РµРіРѕ */
+  /* Контент секций — центрирован; hero выходит на всю ширину экрана */
   .demo-home {
     width: min(100%, clamp(834px, 92vw, 1160px));
     margin: 0 auto;
-    overflow-x: hidden;
+    overflow-x: visible;
   }
 
+  /* Hero — full-bleed, на всю ширину viewport при любом разрешении 834–1439 */
   .demo-home .hero-with-figure {
-    width: 100%;
-    margin: 0;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
   }
 
   /* 140:8128 Tech19 */
@@ -4830,10 +4538,11 @@
   .demo-home .hero-with-figure__content {
     position: absolute;
     left: 16px;
+    right: 16px;
     top: 50%;
     transform: translateY(-50%);
-    width: min(408px, calc(100% - 32px));
-    max-width: 408px;
+    width: calc(100% - 32px);
+    max-width: none;
     margin: 0;
     padding: 0;
     z-index: 3;
@@ -4871,7 +4580,15 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 14px;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  @media (max-width: 399px) {
+    .demo-home .hero-with-figure__actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   .demo-home .hero-with-figure__image-wrap {
@@ -4908,7 +4625,7 @@
   .demo-steps__inner {
     position: static;
     width: 100%;
-    max-width: min(408px, 100%);
+    max-width: min(100%, clamp(288px, calc(408 * 100vw / 440), 770px));
     min-width: 0;
     height: auto;
     margin-inline: auto;
@@ -4943,7 +4660,12 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(24px, calc(24px + (40 - 24) * (100vw - 320px) / 514), 40px) clamp(12px, calc(12px + (20 - 12) * (100vw - 320px) / 514), 20px);
   }
-  .demo-steps__card {
+  .demo-steps__card,
+  .demo-steps__card:nth-child(1),
+  .demo-steps__card:nth-child(2),
+  .demo-steps__card:nth-child(3),
+  .demo-steps__card:nth-child(4),
+  .demo-steps__card:nth-child(5) {
     position: static;
     left: auto;
     top: auto;
@@ -5691,6 +5413,10 @@
     box-sizing: border-box;
   }
 
+  .demo-faq__subtitle {
+    margin: 0 0 22px;
+  }
+
   .demo-faq__title {
     margin: 0 0 clamp(24px, calc(32 * 100vw / 440), 64px);
     font-size: clamp(20px, calc(28 * 100vw / 440), 53px);
@@ -5792,13 +5518,7 @@
     box-sizing: border-box;
   }
 
-  /* Подвал: та же ширина что контент, как на design/telegram */
-  .demo-footer {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    max-width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+  /* Подвал — demo-footer.css, Figma 833×328 */
 }
 
 @media (min-width: 1440px) {

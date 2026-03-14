@@ -1,10 +1,27 @@
 /* layout.css — app shell, footer, container. Mobile-first, без !important */
 
+/* Ограничение ширины страницы: контент не выходит за viewport, не режет правую часть */
+.app {
+  max-width: 100vw;
+}
+
 .app,
 .app__main {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* 834+: main не обрезает hero full-bleed */
+@media (min-width: 834px) {
+  .app__main {
+    overflow-x: visible;
+  }
+}
+
+/* Подвал — последний контент, без лишнего скролла ниже */
+.demo-footer {
+  margin-bottom: 0;
 }
 
 .app {
