@@ -1,0 +1,302 @@
+/*
+  Home calc modal (140:8290) — используется глобально на всех страницах.
+  Адаптивность: 440 / 834-1439 / 1440+.
+*/
+/* ПРОКРУТКА МОДАЛКИ — на всех брекпоинтах: при переполнении контента */
+.demo-home-calc__dialog {
+  width: 440px;
+  max-width: calc(100vw - 32px);
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: 6vh auto 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+}
+
+.demo-home-calc__body {
+  padding: 0;
+  color: #ffffff;
+}
+
+.demo-home-calc__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 22px;
+  width: 183px;
+  height: 29px;
+}
+
+.demo-home-calc__close {
+  font-size: 20px;
+}
+
+.demo-home-calc__brand-text {
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: #ff7b00;
+}
+
+.demo-home-calc__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 374px;
+  max-width: 100%;
+}
+
+.demo-home-calc__title {
+  margin: 0;
+  width: 374px;
+  max-width: 100%;
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 130%;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.demo-home-calc__subtitle {
+  margin: 0;
+  width: 374px;
+  max-width: 100%;
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 32px;
+  color: #c4c4c4;
+}
+
+.demo-home-calc__fields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  width: 374px;
+  max-width: 100%;
+}
+
+.demo-home-calc__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 56px 33px;
+  gap: 22px;
+  width: 440px;
+  max-width: calc(100vw - 32px);
+  min-height: 400px;
+  height: auto;
+  box-sizing: border-box;
+  background: #19161c;
+}
+
+.demo-home-calc__field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 374px;
+  max-width: 100%;
+}
+
+.demo-home-calc__label {
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.demo-home-calc__input {
+  width: 374px;
+  max-width: 100%;
+  height: 56px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  padding: 0 22px;
+  font-family: 'Poppins', var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.demo-home-calc__input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.demo-home-calc__field--phone .demo-home-calc__input::placeholder {
+  color: #ffffff;
+}
+
+.demo-home-calc__actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  width: 374px;
+  max-width: 100%;
+  min-height: 120px;
+}
+
+.demo-home-calc__actions .button {
+  width: 374px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Мобильный ≤500px — уменьшенные размеры, учёт 320px и меньше */
+@media (max-width: 500px) {
+  .demo-home-calc__dialog {
+    width: calc(100vw - 16px);
+    max-width: 408px;
+    margin: 2vh auto 0;
+    max-height: 96vh;
+    overflow-y: auto;
+  }
+
+  .demo-home-calc__form {
+    padding: clamp(16px, 4vw, 28px) clamp(12px, 3vw, 20px);
+    gap: clamp(12px, 3vw, 18px);
+    width: 100%;
+    min-height: auto;
+  }
+
+  .demo-home-calc__intro,
+  .demo-home-calc__title,
+  .demo-home-calc__subtitle,
+  .demo-home-calc__fields,
+  .demo-home-calc__field,
+  .demo-home-calc__actions .button,
+  .demo-home-calc__input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .demo-home-calc__top {
+    gap: 12px;
+  }
+
+  .demo-home-calc__title {
+    font-size: clamp(18px, 5vw, 26px);
+    line-height: 1.2;
+  }
+
+  .demo-home-calc__subtitle {
+    font-size: clamp(14px, 3.8vw, 18px);
+    line-height: 1.35;
+  }
+
+  .demo-home-calc__fields {
+    gap: 12px;
+  }
+
+  .demo-home-calc__input {
+    height: 44px;
+    font-size: 16px;
+    padding: 0 14px;
+  }
+
+  .demo-home-calc__actions {
+    gap: 8px;
+    min-height: auto;
+  }
+}
+
+/* Tablet: 834-1439px — уменьшена */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-home-calc__dialog {
+    width: 520px;
+    max-width: calc(100vw - 32px);
+    margin: 6vh auto 0;
+  }
+
+  .demo-home-calc__form {
+    padding: 40px 32px;
+    gap: 18px;
+    width: 520px;
+    max-width: calc(100vw - 32px);
+    min-height: auto;
+  }
+
+  .demo-home-calc__intro,
+  .demo-home-calc__title,
+  .demo-home-calc__subtitle,
+  .demo-home-calc__fields,
+  .demo-home-calc__field,
+  .demo-home-calc__actions .button,
+  .demo-home-calc__input {
+    width: 456px;
+    max-width: 100%;
+  }
+
+  .demo-home-calc__title {
+    font-size: 26px;
+  }
+
+  .demo-home-calc__subtitle {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .demo-home-calc__input {
+    height: 48px;
+  }
+}
+
+/* Desktop: 1440px+ — уменьшена для лучшего размещения на экране */
+@media (min-width: 1440px) {
+  .demo-home-calc__dialog {
+    width: 520px;
+    max-width: 100%;
+    margin: 6vh auto 0;
+  }
+
+  .demo-home-calc__form {
+    padding: 40px 32px;
+    gap: 18px;
+    width: 520px;
+    min-height: auto;
+  }
+
+  .demo-home-calc__intro,
+  .demo-home-calc__title,
+  .demo-home-calc__subtitle,
+  .demo-home-calc__fields,
+  .demo-home-calc__field,
+  .demo-home-calc__actions .button,
+  .demo-home-calc__input {
+    width: 456px;
+    max-width: 100%;
+  }
+
+  .demo-home-calc__title {
+    font-size: 26px;
+  }
+
+  .demo-home-calc__subtitle {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .demo-home-calc__input {
+    height: 48px;
+  }
+}

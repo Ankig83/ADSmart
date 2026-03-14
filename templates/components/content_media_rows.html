@@ -1,0 +1,57 @@
+{% load static ui %}
+{% comment %}
+  content_media_rows — блок «заголовок + 2 ряда (текст+img, список+img)»
+  Print: Ваш бренд это система.
+  Variables: title_id, title_html, text, img_src, img_width, img_height,
+    list_title, list_items (split by ". "), img_src_2, img_width_2, img_height_2
+{% endcomment %}
+<section class="content-media-rows section" aria-labelledby="{{ title_id|default:'content-media-rows-title' }}">
+  <div class="content-media-rows__inner">
+    <h2 class="content-media-rows__title" id="{{ title_id|default:'content-media-rows-title' }}">
+      {% if title_html %}{{ title_html|safe }}{% else %}Заголовок{% endif %}
+    </h2>
+
+    <div class="content-media-rows__rows">
+      <div class="content-media-rows__row">
+        <div class="content-media-rows__content">
+          <p class="content-media-rows__text">{{ text|default:"" }}</p>
+        </div>
+        <div class="content-media-rows__media" aria-hidden="true">
+          <img
+            class="content-media-rows__img"
+            src="{% static img_src %}"
+            alt=""
+            width="{{ img_width|default:504 }}"
+            height="{{ img_height|default:295 }}"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+
+      {% if list_title and list_items %}
+      <div class="content-media-rows__row content-media-rows__row--reverse">
+        <div class="content-media-rows__content">
+          <h3 class="content-media-rows__list-title">{{ list_title }}</h3>
+          <ul class="content-media-rows__list">
+            {% for item in list_items|split:". " %}
+            <li class="content-media-rows__item">{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="content-media-rows__media" aria-hidden="true">
+          <img
+            class="content-media-rows__img"
+            src="{% static img_src_2 %}"
+            alt=""
+            width="{{ img_width_2|default:504 }}"
+            height="{{ img_height_2|default:295 }}"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

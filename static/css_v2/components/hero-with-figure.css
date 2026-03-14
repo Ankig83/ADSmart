@@ -1,0 +1,373 @@
+/* hero-with-figure.css — Hero с AI/фигурой справа (AI-ассистенты, Design, Telegram, Print и т.д.)
+   Конструкция везде одинакова, отличаются только изображения фигуры. */
+
+.hero-with-figure {
+  position: relative;
+  min-height: var(--hero-mobile-h, 485px);
+  height: var(--hero-mobile-h, 485px);
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  background: #000000;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero-with-figure__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-with-figure__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-with-figure__bg-img--mobile {
+  display: none;
+}
+
+.hero-with-figure__bg-img--desktop {
+  display: block;
+}
+
+
+.hero-with-figure__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-with-figure__content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 16px;
+}
+
+.hero-with-figure__title {
+  margin: 0 0 16px;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.hero-with-figure__subtitle {
+  margin: 0 0 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #c4c4c4;
+}
+
+.hero-with-figure__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-with-figure__image-wrap {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(200px, 45vw, 400px);
+  height: clamp(200px, 45vw, 400px);
+  z-index: 1;
+  display: none;
+}
+
+/* с 600px — на всех страницах AI-фигура целиком (без обрезки справа) */
+@media (min-width: 600px) {
+  .hero-with-figure__image-wrap {
+    right: 0 !important;
+  }
+}
+
+.hero-with-figure__glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 100px;
+  background: rgba(255, 123, 0, 0.3);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-with-figure__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+@media (min-width: 834px) {
+  .hero-with-figure {
+    min-height: 485px;
+    height: auto;
+    max-width: 1440px;
+  }
+
+  .hero-with-figure__content {
+    padding: 120px 32px 100px;
+    max-width: 50%;
+  }
+
+  .hero-with-figure__title {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+
+  .hero-with-figure__subtitle {
+    font-size: 21px;
+    margin-bottom: 36px;
+  }
+
+  .hero-with-figure__image-wrap {
+    display: block;
+    width: clamp(350px, 40vw, 564px);
+    height: clamp(350px, 40vw, 564px);
+    right: 0;
+    left: auto;
+  }
+}
+
+/* 834–1439: затемнение левой стороны на всех страницах; Telegram/Design — свой фон, фигуру скрыть */
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* Figma Frame 427321549: градиент затемнения — единый для всех hero 834 */
+  .hero-with-figure__overlay {
+    left: 0;
+    top: clamp(70px, calc(70 * 100vw / 834), 121px);
+    width: 100%;
+    height: clamp(435px, calc(435 * 100vw / 834), 751px);
+    right: auto;
+    bottom: auto;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 4.38%,
+      rgba(0, 0, 0, 0.525) 52.95%,
+      rgba(0, 0, 0, 0.05) 70.42%
+    );
+  }
+
+  .demo-tg .hero-with-figure__bg-img {
+    display: none;
+  }
+  .demo-tg .hero-with-figure__bg {
+    background-image: url('../../assets/images/fon_834_tg.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .demo-tg .hero-with-figure__image-wrap {
+    display: none;
+  }
+
+  .demo-design .hero-with-figure__bg-img {
+    display: none;
+  }
+  .demo-design .hero-with-figure__bg {
+    background-image: url('../../assets/images/fon_834_d.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .demo-design .hero-with-figure__image-wrap {
+    display: none;
+  }
+
+  /* Home 834: макет по Figma (440×271 контент + фигура справа) */
+  .demo-home .hero-with-figure {
+    position: relative;
+    width: 834px;
+    height: 439px;
+    margin: 70px auto 0;
+    overflow: hidden;
+  }
+
+  /* Контентный фрейм 427321882 (текст + кнопки) */
+  .demo-home .hero-with-figure__content {
+    position: absolute;
+    width: 440px;
+    height: 271px;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+  }
+
+  .demo-home .hero-with-figure__title {
+    width: 445px;
+    font-size: 32px;
+    line-height: 130%;
+    letter-spacing: 0.48px;
+  }
+
+  .demo-home .hero-with-figure__subtitle {
+    width: 445px;
+    font-size: 18px;
+    line-height: 27px;
+    color: #c4c4c4;
+  }
+
+  .demo-home .hero-with-figure__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Фигура: Group 427320861 (коробка 389×408 справа) */
+  .demo-home .hero-with-figure__image-wrap {
+    position: absolute;
+    width: 389.47px;
+    height: 407.67px;
+    left: 468px;
+    top: calc(50% - 407.67px / 2 + 0.33px);
+    transform: none;
+    flex: 0 0 auto;
+    display: block;
+  }
+
+  /* Оранжевый прямоугольник‑блюр под фигурой (Rectangle) */
+  .demo-home .hero-with-figure__glow {
+    position: absolute;
+    left: 76.2%;
+    right: 2.28%;
+    top: 153.65px;
+    height: 179.54px;
+    width: auto;
+    background: rgba(255, 123, 0, 0.6);
+    filter: blur(87.6px);
+    border-radius: 100000px;
+  }
+
+  /* Изображение внутри image-wrap (координаты относительно обёртки) */
+  .demo-home .hero-with-figure__img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: auto;
+    top: auto;
+    transform: matrix(0.98, 0.19, -0.19, 0.98, 0, 0);
+    object-fit: contain;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-with-figure {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    min-height: 485px;
+    padding: 0 48px;
+  }
+
+  .hero-with-figure::before {
+    content: "";
+    position: absolute;
+    left: 59.97%;
+    right: -3.95%;
+    top: 76px;
+    height: 642px;
+    background: rgba(255, 123, 0, 0.3);
+    filter: blur(250px);
+    border-radius: 100px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-with-figure__content {
+    flex: 0 1 560px;
+    padding: 184px 0 150px;
+  }
+
+  .hero-with-figure__title {
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.48px;
+    color: #ffffff;
+    margin-bottom: 18px;
+  }
+
+  .hero-with-figure__subtitle {
+    font-size: 21px;
+    line-height: 32px;
+    color: #c4c4c4;
+    max-width: 512px;
+  }
+
+  .hero-with-figure__actions {
+    gap: 14px;
+  }
+
+  .hero-with-figure__image-wrap {
+    position: relative;
+    flex: 0 0 564px;
+    left: auto;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 564px;
+    height: 564px;
+    margin-right: -24px;
+  }
+
+  /* Home 1440: фигура 760×740 как эталон */
+  .demo-home .hero-with-figure__image-wrap {
+    flex: 0 0 760px;
+    width: 760px;
+    height: 740px;
+    margin-right: -40px;
+  }
+
+  .hero-with-figure__glow {
+    display: none;
+  }
+}
+
+/* Tablet (834–1439): title/subtitle variants когда переданы title_html_tablet, subtitle_html_tablet */
+.hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-mobile { display: block; }
+.hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-tablet { display: none; }
+.hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-desktop { display: none; }
+
+.hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-mobile { display: block; }
+.hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-tablet { display: none; }
+.hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-desktop { display: none; }
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-mobile { display: none; }
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-tablet { display: block; }
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-desktop { display: none; }
+
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-mobile { display: none; }
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-tablet { display: block; }
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-desktop { display: none; }
+}
+
+@media (min-width: 1440px) {
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-mobile { display: none; }
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-tablet { display: none; }
+  .hero-with-figure__title:has(.hero-with-figure__title-tablet) .hero-with-figure__title-desktop { display: block; }
+
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-mobile { display: none; }
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-tablet { display: none; }
+  .hero-with-figure__subtitle:has(.hero-with-figure__subtitle-tablet) .hero-with-figure__subtitle-desktop { display: block; }
+}

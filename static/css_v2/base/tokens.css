@@ -1,0 +1,127 @@
+/* tokens.css — единый источник токенов (Figma: 440 mobile, 834 tablet, 1440 desktop) */
+
+:root {
+  /* Breakpoints: mobile ≤833 | tablet 834-1439 | desktop ≥1440 */
+  --bp-md: 834px;
+  --bp-md-max: 1439px;
+  --bp-lg: 1440px;
+  --bp-tablet: 834px;
+  --bp-desktop: 1440px;
+
+  /* Layout */
+  --container-max: 1120px;
+  --container-padding-mobile: 16px;
+  --container-padding-tablet: 32px;
+  --content-mobile-w: 408px;
+
+  /* Fluid 320→834: clamp(min, calc(min + (max-min)*(100vw-320)/514), max)
+     min=значение при 320, max=значение при 834 (совпадает с tablet) */
+
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-11: 44px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-3px: 3px;
+  --space-7px: 7px;
+  --space-10px: 10px;
+  --space-14px: 14px;
+  --space-15px: 15px;
+  --space-17px: 17px;
+  --space-18px: 18px;
+  --space-22px: 22px;
+  --space-26px: 26px;
+  --space-27px: 27px;
+  --space-30px: 30px;
+  --space-33px: 33px;
+  --space-35px: 35px;
+  --space-41px: 41px;
+  --space-42px: 42px;
+  --space-46px: 46px;
+  --space-64px: 64px;
+  --space-100px: 100px;
+
+  /* Radius */
+  --radius-1: 4px;
+  --radius-2: 8px;
+  --radius-3: 12px;
+  --radius-4: 22px;
+  --radius-5: 32px;
+  --radius-6: 64px;
+  --radius-pill: 1000px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+
+  /* Typography */
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Outfit", "Poppins", ui-sans-serif, system-ui;
+
+  --text-xs: 11px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 65px;
+  --text-11: 11px;
+  --text-14: 14px;
+  --text-15: 15px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-22: 22px;
+  --text-24: 24px;
+  --text-28: 28px;
+  --text-32: 32px;
+  --text-38: 38px;
+  --text-48: 48px;
+  --text-65: 65px;
+
+  --lh-tight: 1.15;
+  --lh-base: 1.45;
+
+  /* Colors */
+  --c-white: #ffffff;
+  --c-black: #000000;
+  --c-bg-1: #19161c;
+  --c-accent-1: #ff7b00;
+  --c-accent-2: #ffb661;
+  --c-muted-1: #c9cad6;
+  --c-muted-2: #c4c4c4;
+  --c-success: #14f195;
+  --c-danger: #ff3b30;
+
+  --bg: var(--c-bg-1);
+  --surface: var(--c-black);
+  --surface-2: var(--c-bg-1);
+  --text: var(--c-white);
+  --muted: var(--c-muted-1);
+  --border: var(--c-accent-1);
+  --primary: var(--c-accent-1);
+  --secondary: var(--c-accent-2);
+  --success: var(--c-success);
+  --danger: var(--c-danger);
+
+  /* Hero mobile (breakpoint 440) */
+  --hero-mobile-w: 440px;
+  --hero-mobile-h: 485px;
+
+  /* Z-index */
+  --z-nav: 50;
+  --z-modal: 100;
+  --z-toast: 150;
+
+  /* Utils */
+  --shadow-1: none;
+  --shadow-2: none;
+  --transition-fast: 0.2s ease;
+}

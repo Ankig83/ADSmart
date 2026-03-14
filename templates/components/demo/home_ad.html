@@ -31,6 +31,8 @@
       <form class="demo-ad__form" action="{% url 'submit_lead' %}" method="post" novalidate>
         {% csrf_token %}
         <input type="hidden" name="source" value="ad" />
+        <input type="hidden" name="page" value="{{ request.get_full_path }}" />
+        <input type="hidden" name="type" value="ad" />
         <input type="hidden" name="next" value="{{ request.get_full_path }}" />
         <label class="demo-ad__field demo-ad__field--name">
           <span class="sr-only">Имя</span>
@@ -48,7 +50,7 @@
           <span class="demo-ad__ph" aria-hidden="true">Сфера бизнеса</span>
         </label>
 
-        <button class="demo-ad__btn" type="submit">Рассчитать</button>
+        <button class="button button--lg button--primary" type="submit">Рассчитать</button>
       </form>
     </div>
   </div>

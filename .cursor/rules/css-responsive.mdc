@@ -1,0 +1,40 @@
+---
+description: CSS responsive — mobile-first, breakpoints, cascade, shared components
+globs: static/css/**/*.css
+alwaysApply: false
+---
+
+# CSS Responsive — правила для ADSmart
+
+## Контекст
+
+Django-проект, чистый CSS. Figma: 440px (mobile), 834px (tablet), 1440px (desktop). Много похожих блоков (hero, contact, steps).
+
+## Проблемы, с которыми столкнулись
+
+1. **Desktop переопределяет mobile и наоборот** — конфликты cascade из‑за desktop-first + mobile-lock
+2. **Слишком много !important** в mobile-lock — ломает каскад
+3. **Несогласованность брейкпоинтов** — 439/440, 500, 833/834
+4. **Дублирование** — hero, contact, steps копируются между страницами
+5. **Мёртвый код** — `@media (min-width: 0px) and (max-width: 0px)`
+6. **Порядок загрузки** — mobile-lock должен быть последним
+
+## Правила
+
+0. **440px больше не трогаем** — блоки на mobile 440px считаются готовыми. Вносим изменения только для tablet (834px+) и desktop (1440px). Фокус на планшетах.
+
+1. **Mobile-first** — базовые стили = mobile; tablet/desktop через `@media (min-width: Npx)`. Для новых блоков не desktop-first + mobile-lock.
+
+2. **Брейкпоинты** — только 439/440, 833/834, 1439/1440. Mobile S: max-width 439; Mobile M: 440–833; Tablet: 834–1439; Desktop: min-width 1440.
+
+3. **Порядок CSS**: page.css → tablet-lock → mobile-lock. Mobile-lock последний. Не добавлять mobile-стили в page.css, если конфликтуют с mobile-lock.
+
+4. **Избегать !important** — cascade, порядок, специфичность. !important только если без него нельзя.
+
+5. **Общие блоки** — hero, contact, steps выносить в `static/css/components/` (demo-hero-mobile.css и т.п.).
+
+6. **Модалки** — max-height: 90vh, overflow-y: auto. Проверка на 320px.
+
+7. **Удалять** — @media (min-width:0) and (max-width:0) и подобный мёртвый код.
+
+8. **Отступы между блоками** — использовать токены: `var(--space-4)` (16px) — плотно; `var(--space-6)` (24px) — стандарт между карточками, полями и кнопкой в формах; `var(--space-8)` (32px) — секции; `var(--space-12)` (48px) — крупные блоки.

@@ -1,0 +1,66 @@
+/* tablet-770.css — ширина 770px на брейкпоинте 834 для ВСЕХ блоков кроме Hero и Contact
+   clamp(770px, calc(770 * 100vw / 834), 1330px) → 770px @ 834, масштаб до 1330 @ 1439+ */
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* === css_v2: блоки с .container === */
+  .benefits .container,
+  .steps .container,
+  .feature-grid .container,
+  .why-cards .container,
+  .media-split .container,
+  .approach-cards .container {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* === css_v2: блоки с __inner === */
+  .content-media-block__inner,
+  .transport-formats__inner,
+  .billboard-formats__inner,
+  .ai-result__inner {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* comparison-expertise — контент (grid) 770px */
+  .comparison-expertise__grid {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* === Home: demo-steps, demo-exp, demo-tech19, demo-team, demo-faq === */
+  .demo-steps__inner,
+  .demo-exp__inner,
+  .demo-tech19__inner,
+  .demo-team__inner {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .demo-faq {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* === Print: content-media-rows, demo-print-solutions, demo-print-how === */
+  .content-media-rows__inner,
+  .demo-print-solutions__grid,
+  .demo-print-how__grid {
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1330px)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+}

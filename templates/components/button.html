@@ -1,12 +1,12 @@
-{# Params: label, variant=primary|secondary|ghost|danger, size=md|sm, href (optional), type (optional) #}
+{# Params: label, variant=primary|secondary|ghost|outline|danger, size=sm|md|lg, href (optional). danger→secondary #}
 {% with v=variant|default:"primary" s=size|default:"md" %}
   {% if href %}
-    <a class="c-btn c-btn--{{ v }} c-btn--{{ s }} {{ class|default:'' }}" href="{{ href }}">
+    <a class="button button--{{ s }} button--{% if v == "danger" %}secondary{% else %}{{ v }}{% endif %} {{ class|default:'' }}" href="{{ href }}">
       {{ label }}
     </a>
   {% else %}
     <button
-      class="c-btn c-btn--{{ v }} c-btn--{{ s }} {{ class|default:'' }}"
+      class="button button--{{ s }} button--{% if v == "danger" %}secondary{% else %}{{ v }}{% endif %} {{ class|default:'' }}"
       type="{{ type|default:'button' }}"
       {% if disabled %}disabled{% endif %}
     >
@@ -14,6 +14,3 @@
     </button>
   {% endif %}
 {% endwith %}
-
-
-

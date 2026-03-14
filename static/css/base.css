@@ -12,7 +12,27 @@ body {
   font-size: var(--text-16);
   line-height: 1.45;
   color: var(--text);
-  background: var(--bg);
+  /* Глобальный фон страниц — чёрный, как в макетах */
+  background: #000000;
+}
+
+.app,
+.app__main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  /* Keep all top-level page blocks centered in tablet range */
+  .demo-menu,
+  .demo-footer,
+  .app__main > * {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    left: auto;
+    right: auto;
+  }
 }
 
 .app,

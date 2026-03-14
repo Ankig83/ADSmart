@@ -1,0 +1,49 @@
+/* modal.css — модальное окно (BEM: c-modal) */
+
+.c-modal[hidden] {
+  display: none;
+}
+
+.c-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+}
+
+.c-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.c-modal__dialog {
+  position: relative;
+  width: min(560px, calc(100% - 2 * var(--space-4)));
+  max-height: 90vh;
+  margin: 10vh auto 0;
+  overflow-y: auto;
+  background: rgba(18, 26, 38, 0.96);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-2);
+}
+
+.c-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.c-modal__title {
+  margin: 0;
+  font-size: var(--text-lg);
+  letter-spacing: -0.01em;
+}
+
+.c-modal__body {
+  padding: var(--space-4);
+  color: var(--muted);
+}

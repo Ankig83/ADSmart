@@ -1,0 +1,234 @@
+/* comparison-expertise.css — Блок «Мы привносим экспертизу…» (платформа vs партнёр)
+   Reusable: 440, 834, 1440. */
+
+.comparison-expertise {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(32px, calc(44 * 100vw / 440), 88px) clamp(16px, calc(23 * 100vw / 440), 46px);
+  background: #000000;
+  box-sizing: border-box;
+}
+
+.comparison-expertise__title {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto clamp(24px, calc(32 * 100vw / 440), 64px);
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(20px, calc(28 * 100vw / 440), 53px);
+  font-weight: 600;
+  line-height: clamp(26px, calc(36.4 * 100vw / 440), 69px);
+  letter-spacing: 0.48px;
+  color: #ffffff;
+}
+
+.comparison-expertise__title-line {
+  display: block;
+}
+
+/* Responsive title: mobile / tablet / desktop */
+.comparison-expertise__title-mobile,
+.comparison-expertise__title-tablet,
+.comparison-expertise__title-desktop {
+  display: block;
+}
+.comparison-expertise__title-tablet,
+.comparison-expertise__title-desktop {
+  display: none;
+}
+
+@media (min-width: 834px) {
+  .comparison-expertise__title--responsive .comparison-expertise__title-mobile {
+    display: none;
+  }
+  .comparison-expertise__title--responsive .comparison-expertise__title-tablet {
+    display: block;
+  }
+}
+
+@media (min-width: 1440px) {
+  .comparison-expertise__title--responsive .comparison-expertise__title-tablet {
+    display: none;
+  }
+  .comparison-expertise__title--responsive .comparison-expertise__title-desktop {
+    display: block;
+  }
+}
+
+.comparison-expertise__grid {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, calc(19 * 100vw / 440), 38px);
+}
+
+.comparison-expertise__block {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.comparison-expertise__block-header {
+  padding: clamp(8px, calc(11 * 100vw / 440), 22px) clamp(12px, calc(16 * 100vw / 440), 32px);
+  font-family: var(--font-sans);
+  font-size: clamp(12px, calc(16 * 100vw / 440), 32px);
+  font-weight: 600;
+  line-height: clamp(15.6px, calc(20.8 * 100vw / 440), 41.6px);
+  letter-spacing: 0.18px;
+  color: #000000;
+  background: #ffb661;
+  border-radius: 12px 12px 0 0;
+}
+
+.comparison-expertise__block-header--accent {
+  background: #ff7b00;
+  color: #ffffff;
+}
+
+.comparison-expertise__block-cell {
+  padding: clamp(12px, calc(16 * 100vw / 440), 32px);
+  min-height: clamp(60px, calc(82 * 100vw / 440), 164px);
+  display: flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: clamp(12px, calc(14 * 100vw / 440), 28px);
+  font-weight: 400;
+  line-height: clamp(15.6px, calc(18.2 * 100vw / 440), 36.4px);
+  letter-spacing: 0.18px;
+  color: #ffffff;
+  background: #19161c;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+}
+
+/* Tablet 834px */
+@media (min-width: 834px) {
+  .comparison-expertise {
+    padding: clamp(44px, 5vw, 56px) clamp(32px, 2.6vw, 40px);
+  }
+
+  .comparison-expertise__title {
+    width: min(100%, 770px);
+    max-width: 770px;
+    margin: 0 auto 42px;
+    font-size: 24px;
+    line-height: 31.2px;
+    letter-spacing: 0.48px;
+  }
+
+  .comparison-expertise__grid {
+    width: min(100%, 770px);
+    max-width: 770px;
+    margin: 0 auto;
+    gap: 22px;
+  }
+
+  .comparison-expertise__block {
+    width: 100%;
+    max-width: 770px;
+    border-radius: 8px;
+  }
+
+  .comparison-expertise__block-header {
+    padding: 10px 12px;
+    font-size: 18px;
+    line-height: 23.4px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .comparison-expertise__block-cell {
+    padding: 3px 12px;
+    min-height: 82px;
+    height: 82px;
+    font-size: 14px;
+    line-height: 18.2px;
+  }
+}
+
+/* Desktop 1440px */
+@media (min-width: 1440px) {
+  .comparison-expertise {
+    position: relative;
+    padding: 292px clamp(24px, 2.5vw, 177px) clamp(44px, 5vw, 100px);
+    min-height: 747px;
+  }
+
+  .comparison-expertise__title {
+    position: absolute;
+    left: 12.22%;
+    right: 20.83%;
+    top: 100px;
+    height: 124px;
+    min-width: 750px;
+    margin: 0;
+    font-family: 'Poppins', var(--font-sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    letter-spacing: 0.48px;
+    color: #ffffff;
+  }
+
+  .comparison-expertise__title--two-lines .comparison-expertise__title-line {
+    white-space: nowrap;
+  }
+
+  .comparison-expertise__grid {
+    width: 100%;
+    max-width: 1090px;
+    flex-direction: row;
+    gap: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    align-items: stretch;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .comparison-expertise__block {
+    flex: 1 1 0;
+    min-width: 0;
+    border-radius: 0;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .comparison-expertise__block--partner {
+    border-right: none;
+  }
+
+  .comparison-expertise__block--platform .comparison-expertise__block-header {
+    border-radius: 12px 0 0 0;
+  }
+
+  .comparison-expertise__block--partner .comparison-expertise__block-header {
+    border-radius: 0 12px 0 0;
+  }
+
+  .comparison-expertise__block-header {
+    flex: 0 0 91px;
+    min-height: 91px;
+    padding: 15px 32px 14px;
+    font-size: 24px;
+    line-height: 31.2px;
+    letter-spacing: 0.48px;
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+  }
+
+  .comparison-expertise__block-cell {
+    flex: 1 1 0;
+    min-height: 91px;
+    height: auto;
+    padding: 34px 32px;
+    font-size: 18px;
+    line-height: 23.4px;
+    letter-spacing: 0.48px;
+  }
+}

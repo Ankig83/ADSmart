@@ -104,6 +104,84 @@
   border-radius: 8px;
 }
 
+/* Mobile: max 833px — Figma 140:7025 Footer 440×505, единый на всех моб страницах */
+@media (max-width: 833px) {
+  .demo-footer {
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-height: 400px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background: #19161c !important;
+    box-sizing: border-box !important;
+  }
+
+  .demo-footer__inner {
+    width: 100% !important;
+    max-width: min(clamp(440px, 92vw, 834px), calc(100vw - 32px)) !important;
+    min-height: 400px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 24px 16px !important;
+    box-sizing: border-box !important;
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+  }
+
+  .demo-footer__brand {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 22px !important;
+    width: 100% !important;
+  }
+
+  .demo-footer__logo {
+    width: 74px !important;
+    height: 46px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .demo-footer__title {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+
+  .demo-footer__social {
+    position: static !important;
+    display: flex !important;
+    gap: 14px !important;
+    height: 28px !important;
+  }
+
+  .demo-footer__cols {
+    position: static !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    height: auto !important;
+  }
+
+  .demo-footer__col {
+    position: static !important;
+    width: 100% !important;
+    display: grid !important;
+    gap: 18px !important;
+  }
+
+  .demo-footer__col:nth-child(1),
+  .demo-footer__col:nth-child(2),
+  .demo-footer__col:nth-child(3) {
+    order: unset !important;
+  }
+}
+
 @media (min-width: 1440px) {
   /* Figma 140:5025 — Desktop 1440 */
   .demo-footer {
@@ -181,14 +259,16 @@
 }
 
 @media (min-width: 834px) and (max-width: 1439px) {
-  /* Footer Pad (Figma node 140:8079): shared tablet layout for all pages */
+  /* Footer Pad (Figma node 140:8079): shared tablet layout for all pages, единый на всех страницах */
   .demo-footer {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    max-width: 100% !important;
     min-height: 328px !important;
     height: auto !important;
     margin: 0 auto !important;
     padding: 0 !important;
     background: #19161c !important;
+    box-sizing: border-box !important;
   }
 
   .demo-footer__inner {

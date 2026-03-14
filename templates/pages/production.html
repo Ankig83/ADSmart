@@ -4,9 +4,6 @@
 {% block title %}Производство наружной рекламы · {{ PROJECT_NAME }}{% endblock %}
 
 {% block page_css %}
-  <link rel="stylesheet" href="{% static 'css/components/demo-menu.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/demo-footer.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/demo-lead-success.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/production.css' %}" />
   <link rel="stylesheet" href="{% static 'css/pages/production-mobile-lock.css' %}" />
 {% endblock %}
@@ -17,10 +14,10 @@
 
 {% block content %}
   <div class="demo-prod">
-    <section class="demo-prod-hero" aria-labelledby="prod-hero-title">
-      <div class="demo-prod-hero__bg" aria-hidden="true">
+    <section class="hero hero--production section" aria-labelledby="prod-hero-title">
+      <div class="hero__bg" aria-hidden="true">
         <img
-          class="demo-prod-hero__bg-img"
+          class="hero__bg-img hero__bg-img--desktop"
           src="{% static 'assets/images/production-hero-bg.png' %}"
           alt=""
           width="834"
@@ -28,30 +25,46 @@
           loading="eager"
           decoding="async"
         />
-        <div class="demo-prod-hero__overlay"></div>
+        <img
+          class="hero__bg-img hero__bg-img--production-tablet"
+          src="{% static 'assets/images/fon_834_pr.png' %}"
+          alt=""
+          width="834"
+          height="435"
+          loading="eager"
+          decoding="async"
+        />
+        <img
+          class="hero__bg-img hero__bg-img--mobile"
+          src="{% static 'assets/images/2-55cbcda6.png' %}"
+          alt=""
+          loading="eager"
+          decoding="async"
+        />
+        <div class="hero__overlay"></div>
       </div>
 
-      <div class="demo-prod-hero__content">
-        <h1 class="demo-prod-hero__title" id="prod-hero-title">
-          Материализуем<br />
-          вашу репутацию
-        </h1>
-        <p class="demo-prod-hero__subtitle">
-          Производство наружной и интерьерной рекламы,<br />
-          вывесок и сувенирной продукции. Создаем<br />
-          физическое присутствие бренда, которому доверяют
-        </p>
-
-        <div class="demo-prod-hero__actions">
-          <a class="demo-prod-hero__btn demo-prod-hero__btn--primary" href="#contact">Рассчитать</a>
-          <a class="demo-prod-hero__btn demo-prod-hero__btn--outline" href="#cases">Наши кейсы</a>
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__title" id="prod-hero-title">
+            Материализуем<br />
+            вашу репутацию
+          </h1>
+          <p class="hero__subtitle">
+            Наружная и интерьерная реклама.<br />
+            Физическое присутствие бренда
+          </p>
+          <div class="hero__actions">
+            <button class="button button--lg button--primary" type="button" data-modal-open="home-calc-modal">Рассчитать</button>
+            <a class="button button--lg button--outline" href="#cases">Наши кейсы</a>
+          </div>
         </div>
       </div>
 
-      <div class="demo-prod-hero__image-wrap" aria-hidden="true">
-        <div class="demo-prod-hero__glow"></div>
+      <div class="hero__image-wrap" aria-hidden="true">
+        <div class="hero__glow"></div>
         <img
-          class="demo-prod-hero__img"
+          class="hero__img"
           src="{% static 'assets/images/production-hero.png' %}"
           alt=""
           width="473"
@@ -60,241 +73,163 @@
           decoding="async"
         />
       </div>
-    </section>
 
-    <section class="demo-prod-emotions" aria-labelledby="prod-emotions-title">
-      <h2 class="demo-prod-emotions__title" id="prod-emotions-title">
-        Бренд — это и эмоции, и метрология
-      </h2>
-
-      <div class="demo-prod-emotions__grid">
-        <div class="demo-prod-emotions__card">
-          <div class="demo-prod-emotions__icon-wrap">
-            <img class="demo-prod-emotions__icon" src="{% static 'assets/icons/icon-133-4980-140-5321.svg' %}" alt="" />
-          </div>
-          <div class="demo-prod-emotions__content">
-            <h3 class="demo-prod-emotions__h3">
-              Полный цикл — <br />
-              ваше спокойствие
-            </h3>
-            <p class="demo-prod-emotions__p">
-              От эскиза и 3D-визуализации до монтажа «под ключ» и обслуживания. Один подрядчик — полная ответственность
-            </p>
-          </div>
-        </div>
-
-        <div class="demo-prod-emotions__card">
-          <div class="demo-prod-emotions__icon-wrap">
-            <img class="demo-prod-emotions__icon" src="{% static 'assets/icons/frame-133-5113-140-5329.svg' %}" alt="" />
-          </div>
-          <div class="demo-prod-emotions__content">
-            <h3 class="demo-prod-emotions__h3">Прочность — наша ответственность</h3>
-            <p class="demo-prod-emotions__p">
-              Работаем с современными материалами (композит, нержавеющая сталь, долговечные пленки). Гарантируем устойчивость к саратовской погоде
-            </p>
-          </div>
-        </div>
-
-        <div class="demo-prod-emotions__card">
-          <div class="demo-prod-emotions__icon-wrap">
-            <img class="demo-prod-emotions__icon" src="{% static 'assets/icons/frame-133-5116-140-5337.svg' %}" alt="" />
-          </div>
-          <div class="demo-prod-emotions__content">
-            <h3 class="demo-prod-emotions__h3">
-              Легальность — <br />
-              основа уверенности
-            </h3>
-            <p class="demo-prod-emotions__p">
-              Помогаем в подготовке документов и получении разрешений на размещение в Саратове
-            </p>
-          </div>
-        </div>
+      {% comment %}AI-голова на мобильных{% endcomment %}
+      <div class="hero__ai" aria-hidden="true">
+        <div class="hero__ai-glow"></div>
+        <img
+          class="hero__ai-img"
+          src="{% static 'assets/images/vecteezy-hero-ai-7b6a4777.png' %}"
+          alt=""
+          width="274"
+          height="274"
+          loading="eager"
+          decoding="async"
+        />
       </div>
     </section>
 
-    <section class="demo-prod-solutions" aria-labelledby="prod-solutions-title">
-      <h2 class="demo-prod-solutions__title" id="prod-solutions-title">
-        От фасада до деталей интерьера
-      </h2>
+    {% include "components/why_cards.html" with title_id="prod-emotions-title" title_html="Бренд — это и эмоции, и метрология" modifier="desktop" card_1_icon="assets/icons/icon-133-4980-140-5321.svg" card_1_title="Полный цикл — ваше спокойствие" card_1_text="От эскиза и 3D-визуализации до монтажа «под ключ» и обслуживания. Один подрядчик — полная ответственность" card_2_icon="assets/icons/frame-133-5113-140-5329.svg" card_2_title="Прочность — наша ответственность" card_2_text="Работаем с современными материалами (композит, нержавеющая сталь, долговечные пленки). Гарантируем устойчивость к саратовской погоде" card_3_icon="assets/icons/frame-133-5116-140-5337.svg" card_3_title="Легальность — основа уверенности" card_3_text="Помогаем в подготовке документов и получении разрешений на размещение в Саратове" %}
 
-      <div class="demo-prod-solutions__grid">
-        <div class="demo-prod-solutions__card">
-          <div class="demo-prod-solutions__icon-wrap">
-            <img class="demo-prod-solutions__icon" src="{% static 'assets/icons/frame-133-5206-i140-5348-102-677.svg' %}" alt="" />
-          </div>
-          <div class="demo-prod-solutions__content">
-            <h3 class="demo-prod-solutions__h3">
-              Наружная реклама <br />
-              и вывески
-            </h3>
-            <p class="demo-prod-solutions__p">
-              Крышные установки, световые короба, панель-кронштейны, несветовые вывески. Ваш бренд заметен в любую погоду и время суток
-            </p>
-          </div>
-        </div>
-
-        <div class="demo-prod-solutions__card">
-          <div class="demo-prod-solutions__icon-wrap">
-            <img class="demo-prod-solutions__icon" src="{% static 'assets/icons/location-133-5138-i140-5349-102-677.svg' %}" alt="" />
-          </div>
-          <div class="demo-prod-solutions__content">
-            <h3 class="demo-prod-solutions__h3">
-              Интерьерная навигация <br />
-              и оформление
-            </h3>
-            <p class="demo-prod-solutions__p">
-              Навигация, таблички, информационные стойки, бренд-стены, стенды. Создаем логику пространства и комфорт для клиентов внутри
-            </p>
-          </div>
-        </div>
-
-        <div class="demo-prod-solutions__card">
-          <div class="demo-prod-solutions__icon-wrap">
-            <img class="demo-prod-solutions__icon" src="{% static 'assets/icons/printer-133-5212.svg' %}" alt="" />
-          </div>
-          <div class="demo-prod-solutions__content">
-            <h3 class="demo-prod-solutions__h3">Полиграфия для бизнеса</h3>
-            <p class="demo-prod-solutions__p">
-              Буклеты, каталоги, визитки, презентационные материалы. Четко доносим ценность и усиливаем доверие к бренду
-            </p>
-          </div>
-        </div>
-
-        <div class="demo-prod-solutions__card">
-          <div class="demo-prod-solutions__icon-wrap">
-            <img class="demo-prod-solutions__icon" src="{% static 'assets/icons/gift-133-5216.svg' %}" alt="" />
-          </div>
-          <div class="demo-prod-solutions__content">
-            <h3 class="demo-prod-solutions__h3">
-              Сувенирная продукция <br />
-              и упаковка
-            </h3>
-            <p class="demo-prod-solutions__p">
-              Бизнес-сувениры, мерч, фирменная упаковка. Оставляем осязаемое и запоминающееся впечатление
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="demo-prod-how" aria-labelledby="prod-how-title">
-      <h2 class="demo-prod-how__title" id="prod-how-title">
-        Как мы создаем результат
-      </h2>
-
-      <div class="demo-prod-how__grid">
-        <div class="demo-prod-how__card">
-          <div class="demo-prod-how__ring">
-            <img class="demo-prod-how__icon" src="{% static 'assets/icons/clipboard-133-5219-140-5359.svg' %}" alt="" />
-          </div>
-          <h3 class="demo-prod-how__h3">Бриф и концепция</h3>
-          <p class="demo-prod-how__p">
-            Вникаем в задачу, предлагаем варианты, готовим 3D-визуализацию
-          </p>
-        </div>
-
-        <div class="demo-prod-how__card">
-          <div class="demo-prod-how__ring">
-            <img class="demo-prod-how__icon" src="{% static 'assets/icons/file-133-5223.svg' %}" alt="" />
-          </div>
-          <h3 class="demo-prod-how__h3">Проект и согласование</h3>
-          <p class="demo-prod-how__p">
-            Разрабатываем техническую документацию, помогаем с разрешительной документацией
-          </p>
-        </div>
-
-        <div class="demo-prod-how__card">
-          <div class="demo-prod-how__ring">
-            <img class="demo-prod-how__icon" src="{% static 'assets/icons/settings-133-5227.svg' %}" alt="" />
-          </div>
-          <h3 class="demo-prod-how__h3">Производство</h3>
-          <p class="demo-prod-how__p">
-            Изготавливаем конструкцию на собственном или проверенном производстве с контролем качества
-          </p>
-        </div>
-
-        <div class="demo-prod-how__card">
-          <div class="demo-prod-how__ring">
-            <img class="demo-prod-how__icon" src="{% static 'assets/icons/tool-133-5230.svg' %}" alt="" />
-          </div>
-          <h3 class="demo-prod-how__h3">Монтаж и гарантия</h3>
-          <p class="demo-prod-how__p">
-            Профессионально устанавливаем и передаем гарантийные документы
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="demo-prod-expertise" aria-labelledby="prod-expertise-title">
-      <div class="demo-prod-expertise__inner">
-        <h2 class="demo-prod-expertise__title" id="prod-expertise-title">
-          Экспертиза, встроенная в систему
+    <section class="feature-grid feature-grid--production section" aria-labelledby="prod-solutions-title">
+      <div class="container">
+        <h2 class="feature-grid__title" id="prod-solutions-title">
+          От фасада до деталей интерьера
         </h2>
+        <ul class="feature-grid__grid" aria-label="Направления">
+          <li class="feature-card">
+            <img class="feature-card__icon" src="{% static 'assets/icons/frame-133-5206-i140-5348-102-677.svg' %}" alt="" aria-hidden="true" />
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Наружная реклама и вывески</h3>
+              <p class="feature-card__text">Крышные установки, световые короба, панель-кронштейны, несветовые вывески. Ваш бренд заметен в любую погоду и время суток</p>
+            </div>
+          </li>
+          <li class="feature-card">
+            <img class="feature-card__icon" src="{% static 'assets/icons/location-133-5138-i140-5349-102-677.svg' %}" alt="" aria-hidden="true" />
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Интерьерная навигация и оформление</h3>
+              <p class="feature-card__text">Навигация, таблички, информационные стойки, бренд-стены, стенды. Создаем логику пространства и комфорт для клиентов внутри</p>
+            </div>
+          </li>
+          <li class="feature-card">
+            <img class="feature-card__icon" src="{% static 'assets/icons/printer-133-5212.svg' %}" alt="" aria-hidden="true" />
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Полиграфия для бизнеса</h3>
+              <p class="feature-card__text">Буклеты, каталоги, визитки, презентационные материалы. Четко доносим ценность и усиливаем доверие к бренду</p>
+            </div>
+          </li>
+          <li class="feature-card">
+            <img class="feature-card__icon" src="{% static 'assets/icons/gift-133-5216.svg' %}" alt="" aria-hidden="true" />
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Сувенирная продукция и упаковка</h3>
+              <p class="feature-card__text">Бизнес-сувениры, мерч, фирменная упаковка. Оставляем осязаемое и запоминающееся впечатление</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-        <div class="demo-prod-expertise__content">
-          <div class="demo-prod-expertise__left">
-            <p class="demo-prod-expertise__text">
-              Мы — студия умной рекламы, поэтому понимаем, как физический носитель работает в общей коммуникационной стратегии. Ваша вывеска или стенд — это не изолированный объект, а важная часть бренда, которую мы создаем с учетом общей картины
-            </p>
-          </div>
-          <div class="demo-prod-expertise__right">
-            <img
-              class="demo-prod-expertise__img"
-              src="{% static 'assets/images/production-expertise.jpg' %}"
-              alt=""
-              width="504"
-              height="295"
-              loading="lazy"
-            />
-          </div>
+    <section class="steps steps--production section" aria-labelledby="prod-how-title">
+      <div class="container">
+        <h2 class="steps__title" id="prod-how-title">
+          Как мы создаем результат
+        </h2>
+        <div class="steps__grid" aria-label="Этапы работы">
+          <article class="step-card">
+            <div class="step-card__head">
+              <div class="step-card__circle">
+                <img class="step-card__icon" src="{% static 'assets/icons/clipboard-133-5219-140-5359.svg' %}" alt="" loading="lazy" decoding="async" />
+              </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
+            </div>
+            <div class="step-card__body">
+              <h3 class="step-card__title">Бриф и концепция</h3>
+              <p class="step-card__text">Вникаем в задачу, предлагаем варианты, готовим 3D-визуализацию</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-card__head">
+              <div class="step-card__circle">
+                <img class="step-card__icon" src="{% static 'assets/icons/file-133-5223.svg' %}" alt="" loading="lazy" decoding="async" />
+              </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
+            </div>
+            <div class="step-card__body">
+              <h3 class="step-card__title">Проект и согласование</h3>
+              <p class="step-card__text">Разрабатываем техническую документацию, помогаем с разрешительной документацией</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-card__head">
+              <div class="step-card__circle">
+                <img class="step-card__icon" src="{% static 'assets/icons/settings-133-5227.svg' %}" alt="" loading="lazy" decoding="async" />
+              </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
+            </div>
+            <div class="step-card__body">
+              <h3 class="step-card__title">Производство</h3>
+              <p class="step-card__text">Изготавливаем конструкцию на собственном или проверенном производстве с контролем качества</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-card__head">
+              <div class="step-card__circle">
+                <img class="step-card__icon" src="{% static 'assets/icons/tool-133-5230.svg' %}" alt="" loading="lazy" decoding="async" />
+              </div>
+              <img class="step-card__arrow" src="{% static 'assets/icons/step-arrow.svg' %}" alt="" aria-hidden="true" />
+            </div>
+            <div class="step-card__body">
+              <h3 class="step-card__title">Монтаж и гарантия</h3>
+              <p class="step-card__text">Профессионально устанавливаем и передаем гарантийные документы</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="demo-prod-contact" aria-labelledby="prod-contact-title">
-      <div class="demo-prod-contact__inner">
-        <h2 class="demo-prod-contact__title" id="prod-contact-title">
-          Сделайте свой бренд осязаемым
-        </h2>
-        <p class="demo-prod-contact__text">
-          Пришлите нам описание задачи или пример — мы подготовим коммерческое предложение с вариантами дизайна и стоимостью
-        </p>
+    {% include "components/prod_expertise.html" with title_id="prod-expertise-title" title_html="Экспертиза, встроенная в систему" text="Мы — студия умной рекламы, поэтому понимаем, как физический носитель работает в общей коммуникационной стратегии. Ваша вывеска или стенд — это не изолированный объект, а важная часть бренда, которую мы создаем с учетом общей картины" img_src="assets/images/production-expertise.jpg" img_width="504" img_height="295" %}
 
-        <form class="demo-prod-contact__form" action="{% url 'submit_lead' %}" method="post" novalidate>
-          {% csrf_token %}
-          <input type="hidden" name="source" value="production_contact" />
-          <input type="hidden" name="next" value="{{ request.get_full_path }}" />
-
-          <div class="demo-prod-contact__row">
-            <label class="demo-prod-contact__field">
-              <span class="sr-only">Имя</span>
-              <input class="demo-prod-contact__input" type="text" name="name" placeholder=" " autocomplete="name" />
-              <span class="demo-prod-contact__ph" aria-hidden="true">Имя</span>
-            </label>
-
-            <label class="demo-prod-contact__field">
-              <span class="sr-only">Телефон</span>
-              <input class="demo-prod-contact__input" type="tel" name="phone" placeholder=" " autocomplete="tel" required />
-              <span class="demo-prod-contact__ph" aria-hidden="true">Телефон</span>
-            </label>
+    <section class="cta-form cta-form--production section" aria-labelledby="prod-contact-title" id="contact">
+      <div class="container">
+        <div class="cta-form__content">
+          <h2 class="cta-form__title" id="prod-contact-title">
+            Сделайте свой бренд осязаемым
+          </h2>
+          <p class="cta-form__text">
+            Пришлите нам описание задачи или пример — мы подготовим коммерческое предложение с вариантами дизайна и стоимостью
+          </p>
+        </div>
+        <div class="cta-form__form-wrapper">
+          <div class="cta-form__form">
+            <div class="cta-form__form-title">Обсудим ваш проект?</div>
+            <form action="{% url 'submit_lead' %}" method="post" novalidate>
+              {% csrf_token %}
+              <input type="hidden" name="source" value="production_contact" />
+              <input type="hidden" name="page" value="{{ request.get_full_path }}" />
+              <input type="hidden" name="type" value="contact" />
+              <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+              <div class="cta-form__fields">
+                <label class="cta-form__field">
+                  <span class="sr-only">Имя</span>
+                  <input class="cta-form__input" type="text" name="name" placeholder="Имя" autocomplete="name" />
+                </label>
+                <label class="cta-form__field">
+                  <span class="sr-only">Телефон</span>
+                  <input class="cta-form__input" type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required />
+                </label>
+                <label class="cta-form__field">
+                  <span class="sr-only">Компания</span>
+                  <input class="cta-form__input" type="text" name="company" placeholder="Компания" autocomplete="organization" />
+                </label>
+                <label class="cta-form__field">
+                  <span class="sr-only">Какую задачу решаем?</span>
+                  <input class="cta-form__input" type="text" name="interest_format" placeholder="Какую задачу решаем?" />
+                </label>
+              </div>
+              <button class="button button--lg button--primary" type="submit">Рассчитать</button>
+            </form>
           </div>
-
-          <label class="demo-prod-contact__field demo-prod-contact__field--full">
-            <span class="sr-only">Сфера бизнеса</span>
-            <input class="demo-prod-contact__input" type="text" name="company" placeholder=" " />
-            <span class="demo-prod-contact__ph" aria-hidden="true">Сфера бизнеса</span>
-          </label>
-
-          <label class="demo-prod-contact__field demo-prod-contact__field--full">
-            <span class="sr-only">Какую задачу решаем?</span>
-            <input class="demo-prod-contact__input" type="text" name="interest_format" placeholder=" " />
-            <span class="demo-prod-contact__ph" aria-hidden="true">Какую задачу решаем?</span>
-          </label>
-
-          <div class="demo-prod-contact__actions">
-            <button class="demo-prod-contact__btn" type="submit">Заказать вывеску</button>
-          </div>
-        </form>
+        </div>
       </div>
     </section>
   </div>

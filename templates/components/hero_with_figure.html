@@ -1,0 +1,72 @@
+{% load static %}
+<section class="hero-with-figure section" aria-labelledby="{{ title_id|default:'hero-title' }}" {% if section_id %}id="{{ section_id }}"{% endif %}>
+  <div class="hero-with-figure__bg" aria-hidden="true">
+    {% if bg_desktop %}
+    <img
+      class="hero-with-figure__bg-img hero-with-figure__bg-img--desktop"
+      src="{% static bg_desktop %}"
+      alt=""
+      width="1440"
+      height="751"
+      loading="eager"
+      decoding="async"
+    />
+    {% endif %}
+    {% if bg_mobile %}
+    <img
+      class="hero-with-figure__bg-img hero-with-figure__bg-img--mobile"
+      src="{% static bg_mobile %}"
+      alt=""
+      loading="eager"
+      decoding="async"
+    />
+    {% endif %}
+    <div class="hero-with-figure__overlay"></div>
+  </div>
+
+  <div class="hero-with-figure__content">
+    <h1 class="hero-with-figure__title" id="{{ title_id|default:'hero-title' }}">
+      {% if title_html_mobile %}
+      <span class="hero-with-figure__title-mobile">{{ title_html_mobile|safe }}</span>
+      <span class="hero-with-figure__title-desktop">{% if title_html %}{{ title_html|safe }}{% endif %}</span>
+      {% elif title_html_tablet %}
+      <span class="hero-with-figure__title-mobile">{% if title_html %}{{ title_html|safe }}{% endif %}</span>
+      <span class="hero-with-figure__title-tablet">{{ title_html_tablet|safe }}</span>
+      <span class="hero-with-figure__title-desktop">{% if title_html %}{{ title_html|safe }}{% endif %}</span>
+      {% else %}
+      {% if title_html %}{{ title_html|safe }}{% else %}{{ title|default:"AI-ассистенты для вашего бизнеса" }}{% endif %}
+      {% endif %}
+    </h1>
+    <p class="hero-with-figure__subtitle">
+      {% if subtitle_html_tablet %}
+      <span class="hero-with-figure__subtitle-mobile">{% if subtitle_html %}{{ subtitle_html|safe }}{% endif %}</span>
+      <span class="hero-with-figure__subtitle-tablet">{{ subtitle_html_tablet|safe }}</span>
+      <span class="hero-with-figure__subtitle-desktop">{% if subtitle_html %}{{ subtitle_html|safe }}{% endif %}</span>
+      {% elif subtitle_html %}{{ subtitle_html|safe }}{% else %}{{ subtitle|default:"Сокращаем расходы, автоматизируя продажи, найм и поддержку." }}{% endif %}
+    </p>
+
+    <div class="hero-with-figure__actions">
+      {% if btn_primary_action %}
+      <button class="button button--lg button--primary" type="button" data-modal-open="{{ btn_primary_action }}">{{ btn_primary_text|default:"Рассчитать" }}</button>
+      {% else %}
+      <a class="button button--lg button--primary" href="{{ btn_primary_href|default:'#contact' }}">{{ btn_primary_text|default:"Рассчитать" }}</a>
+      {% endif %}
+      <a class="button button--lg button--outline" href="{{ btn_outline_href|default:'#cases' }}">{{ btn_outline_text|default:"Наши кейсы" }}</a>
+    </div>
+  </div>
+
+  {% if figure_img %}
+  <div class="hero-with-figure__image-wrap" aria-hidden="true">
+    <div class="hero-with-figure__glow"></div>
+    <img
+      class="hero-with-figure__img"
+      src="{% static figure_img %}"
+      alt=""
+      width="564"
+      height="564"
+      loading="eager"
+      decoding="async"
+    />
+  </div>
+  {% endif %}
+</section>

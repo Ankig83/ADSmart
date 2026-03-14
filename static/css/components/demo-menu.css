@@ -28,18 +28,6 @@
   align-items: center;
 }
 
-.demo-menu__toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 38px;
-  border-radius: var(--radius-2);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.0);
-  color: var(--text);
-}
-
 .demo-menu__burger,
 .demo-menu__burger::before,
 .demo-menu__burger::after {
@@ -200,15 +188,65 @@
 .demo-menu__services-sub-panel .demo-menu__services-link:nth-child(4) { position: absolute; left: 0; top: 111px; }
   .demo-menu__services-sub-panel .demo-menu__services-link:nth-child(5) { position: absolute; left: 0; top: 148px; }
 
+/* Mobile: max 833px — Figma 140:6945 Меню 440×70, единый на всех страницах */
+@media (max-width: 833px) {
+  .demo-menu {
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: 70px !important;
+    margin: 0 auto !important;
+    background: #000000 !important;
+    box-sizing: border-box !important;
+  }
+
+  .demo-menu__inner {
+    width: 100% !important;
+    padding: 0 16px !important;
+    display: block !important;
+    position: relative !important;
+    height: 70px !important;
+  }
+
+  .demo-menu__logo {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 17px !important;
+  }
+
+  .demo-menu__logo-img {
+    width: 58px !important;
+    height: 36px !important;
+  }
+
+  .demo-menu__toggle {
+    position: absolute !important;
+    left: 16px !important;
+    top: 23px !important;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+  }
+
+  .demo-menu__links.is-open {
+    left: 16px !important;
+    right: 16px !important;
+    width: auto !important;
+  }
+}
+
 /* Tablet: 834-1439px */
 @media (min-width: 834px) and (max-width: 1439px) {
-  /* Меню для разрешения 834-1439px */
+  /* Меню для разрешения 834-1439px — Figma 140:8232, единый на всех страницах */
   /* Figma node 140:8080: width=834px, height=70px */
   .demo-menu {
     width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    max-width: 100% !important;
     margin: 0 auto !important;
     height: 70px !important;
     background: rgba(0, 0, 0, 0.6) !important;
+    box-sizing: border-box !important;
   }
 
   .demo-menu__inner {

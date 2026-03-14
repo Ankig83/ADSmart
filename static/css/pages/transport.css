@@ -1,1159 +1,363 @@
-/* Transport page (Ready--Copy node 140:5488). Desktop 1440 only for now. */
+/* Transport page — v2 components, только модификаторы --transport */
+
 .app { background: #000000; }
-.app__main { padding: 0; }
+.transport-page { padding: 0; }
 
-.demo-transport {
-  width: 1440px;
-  margin: 0 auto;
-  background: #000000;
-}
-
-/* Hero frame 140:5491 starts at y=83 (menu is 70) => 13px gap below header */
-.demo-transport-hero {
-  position: relative;
-  width: 1440px;
-  height: 751px;
-  margin-top: 13px;
-  overflow: hidden;
-}
-
-.demo-transport-hero__bg {
-  position: absolute;
-  inset: 0;
-}
-
-.demo-transport-hero__bg-img {
-  width: 1440px;
-  height: 751px;
-  display: block;
+/* Фото фона — те же object-position по брейкпоинтам, что и Stops */
+.hero--transport .hero__bg-img {
   object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
-.demo-transport-hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.6193) 38.2143%,
-    rgba(0, 0, 0, 0.4) 84.6007%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
-  pointer-events: none;
+@media (max-width: 833px) {
+  .hero--transport .hero__bg-img {
+    object-position: 85% center;
+  }
+
+  /* 440: одна кнопка — Рассчитать кампанию */
+  .hero--transport .hero__actions .button--outline {
+    display: none;
+  }
 }
 
-.demo-transport-hero__content {
-  position: absolute;
-  left: 176px;
-  top: 182px; /* 265 - 83 */
-  width: 798px;
-}
-
-.demo-transport-hero__title {
-  width: 798px;
-  height: 186px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-  white-space: pre-line; /* keep \\n from Figma */
-}
-
-.demo-transport-hero__subtitle {
-  width: 608px;
-  height: 64px;
-  margin: 18px 0 0 0;
-  font-family: var(--font-sans);
-  font-size: 21px;
-  font-weight: 400;
-  line-height: 31.5px;
-  letter-spacing: 0;
-  color: #c4c4c4;
-}
-
-.demo-transport-hero__btn {
-  position: absolute;
-  left: 0;
-  top: 304px; /* 486 - 182 */
-  width: 265px;
-  height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 64px;
-  background: #14f195;
-  color: #000000;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  text-decoration: none;
-}
-.demo-transport-hero__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
-
-/* Desktop-22 (140:5498): benefits */
-.demo-transport-benefits {
-  position: relative;
-  width: 1440px;
-  height: 712px;
-}
-
-.demo-transport-benefits__title {
-  position: absolute;
-  left: 176px;
-  top: 100px; /* 934 - 834 */
-  width: 991px;
-  height: 124px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-transport-benefits__cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.demo-transport-benefits__card {
-  position: absolute;
-  top: 292px; /* 1126 - 834 */
-  width: 249px;
-  color: #ffffff;
-  text-align: center; /* per user: center text like in Figma */
-}
-.demo-transport-benefits__card--1 { left: 177px; height: 297px; }
-.demo-transport-benefits__card--2 { left: 456px; height: 297px; }
-.demo-transport-benefits__card--3 { left: 735px; height: 320px; }
-.demo-transport-benefits__card--4 { left: 1014px; height: 297px; }
-
-.demo-transport-benefits__ring {
-  position: absolute;
-  left: 43px;
-  top: 0;
-  width: 163px;
-  height: 163px;
-  border-radius: 1000px;
-  background: #19161c;
-  border: 3px solid #ff7b00;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* center the icon */
-}
-
-.demo-transport-benefits__icon {
-  width: 80px;
-  height: 80px;
-  display: block;
-}
-
-.demo-transport-benefits__h3 {
-  position: absolute;
-  left: 0;
-  top: 180px;
-  width: 249px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.demo-transport-benefits__p {
-  position: absolute;
-  left: 0;
-  width: 249px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-  text-align: center;
-}
-
-/* Per-card description offsets (from Figma) */
-.demo-transport-benefits__card--1 .demo-transport-benefits__p { top: 238px; height: 59px; }
-.demo-transport-benefits__card--2 .demo-transport-benefits__p { top: 238px; height: 82px; }
-.demo-transport-benefits__card--3 .demo-transport-benefits__p { top: 215px; height: 82px; }
-.demo-transport-benefits__card--4 .demo-transport-benefits__p { top: 238px; height: 82px; }
-
-/* Formats accordion (140:5526) */
-.demo-transport-formats {
-  position: relative;
-  width: 1440px;
-  height: 1273px;
-}
-
-.demo-transport-formats__title {
-  position: absolute;
-  left: 178px;
-  top: 100px; /* 1646 - 1546 */
-  width: 789px;
-  height: 124px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-transport-formats__items {
-  position: absolute;
-  left: 176px;
-  top: 269px;
-  width: 1088px;
-  height: 904px;
-}
-
-.demo-transport-format {
-  position: relative;
-  width: 1088px;
-  height: 104px; /* collapsed */
-  border-radius: 12px;
-  background: #19161c;
-  margin: 0 0 18px 0;
-  overflow: hidden;
-}
-.demo-transport-format:last-child { margin-bottom: 0; }
-.demo-transport-format[open] { height: 416px; }
-
-.demo-transport-format__summary {
-  list-style: none;
-  cursor: pointer;
-  position: relative;
-  width: 1088px;
-  height: 104px; /* matches collapsed */
-}
-.demo-transport-format__summary::-webkit-details-marker { display: none; }
-.demo-transport-format[open] .demo-transport-format__summary { height: 107px; }
-
-.demo-transport-format__title {
-  position: absolute;
-  left: 38px;
-  top: 30px;
-  width: 980px;
-  height: 17px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 31.2px;
-  letter-spacing: -0.72px;
-  color: #ffffff;
-}
-
-.demo-transport-format__subtitle {
-  position: absolute;
-  left: 38px;
-  top: 61px;
-  width: 980px;
-  height: 13px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.demo-transport-format__chevron {
-  position: absolute;
-  left: 1018px;
-  top: 36px;
-  width: 32px;
-  height: 32px;
-  display: block;
-}
-.demo-transport-format[open] .demo-transport-format__chevron {
-  left: 1017px;
-  top: 37px;
-  transform: rotate(180deg);
-}
-
-/* Open state header offsets */
-.demo-transport-format[open] .demo-transport-format__title { top: 38px; width: 478px; left: 38px; }
-.demo-transport-format[open] .demo-transport-format__subtitle { top: 69px; width: 478px; left: 38px; color: rgba(255,255,255,0.8); }
-
-.demo-transport-format__body { display: none; }
-.demo-transport-format[open] .demo-transport-format__body { display: block; }
-
-.demo-transport-format__img {
-  position: absolute;
-  left: 38px;
-  top: 107px;
-  width: 421px;
-  height: 271px;
-  border-radius: 12px;
-  display: block;
-}
-
-.demo-transport-format__box {
-  position: absolute;
-  left: 490px;
-  width: 559px;
-  border-radius: 22px;
-  background: #19161c;
-  border: 1px solid #ff7b00;
-}
-.demo-transport-format__box--ai { top: 107px; height: 152px; }
-.demo-transport-format__box--price { top: 269px; height: 109px; }
-
-.demo-transport-format__box-title {
-  position: absolute;
-  left: 26px; /* 516 - 490 */
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 36px;
-  letter-spacing: -0.72px;
-  color: #ffffff;
-}
-
-.demo-transport-format__box-text {
-  position: absolute;
-  left: 26px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-}
-
-/* Default (stickers / rear-window / rear-board / monitors) offsets */
-.demo-transport-format--stickers .demo-transport-format__box--ai .demo-transport-format__box-title,
-.demo-transport-format--rear-window .demo-transport-format__box--ai .demo-transport-format__box-title,
-.demo-transport-format--rear-board .demo-transport-format__box--ai .demo-transport-format__box-title,
-.demo-transport-format--monitors .demo-transport-format__box--ai .demo-transport-format__box-title { top: 38px; width: 494px; height: 17px; }
-
-.demo-transport-format--stickers .demo-transport-format__box--ai .demo-transport-format__box-text,
-.demo-transport-format--rear-window .demo-transport-format__box--ai .demo-transport-format__box-text,
-.demo-transport-format--rear-board .demo-transport-format__box--ai .demo-transport-format__box-text,
-.demo-transport-format--monitors .demo-transport-format__box--ai .demo-transport-format__box-text { top: 73px; width: 494px; }
-
-.demo-transport-format--stickers .demo-transport-format__box--price .demo-transport-format__box-title,
-.demo-transport-format--rear-window .demo-transport-format__box--price .demo-transport-format__box-title,
-.demo-transport-format--rear-board .demo-transport-format__box--price .demo-transport-format__box-title,
-.demo-transport-format--monitors .demo-transport-format__box--price .demo-transport-format__box-title { top: 30.5px; width: 507px; height: 17px; }
-
-.demo-transport-format--stickers .demo-transport-format__box--price .demo-transport-format__box-text,
-.demo-transport-format--rear-window .demo-transport-format__box--price .demo-transport-format__box-text,
-.demo-transport-format--rear-board .demo-transport-format__box--price .demo-transport-format__box-text,
-.demo-transport-format--monitors .demo-transport-format__box--price .demo-transport-format__box-text { top: 65.5px; width: 507px; }
-
-/* Headrests specific offsets (from 140:5839) */
-.demo-transport-format--headrests .demo-transport-format__box--ai .demo-transport-format__box-title { top: 24.5px; width: 494px; height: 17px; }
-.demo-transport-format--headrests .demo-transport-format__box--ai .demo-transport-format__box-text { top: 59.5px; width: 494px; }
-.demo-transport-format--headrests .demo-transport-format__box--price .demo-transport-format__box-title { top: 17px; width: 507px; height: 17px; }
-.demo-transport-format--headrests .demo-transport-format__box--price .demo-transport-format__box-text { top: 52px; width: 507px; }
-
-/* Steps (Desktop-15: 140:5535) */
-.demo-transport-steps {
-  position: relative;
-  width: 1440px;
-  height: 670px;
-}
-
-.demo-transport-steps__title {
-  position: absolute;
-  left: 176px;
-  top: 100px;
-  width: 805px;
-  height: 96px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: -1.44px;
-  color: #ffffff;
-}
-
-.demo-transport-steps__cards {
-  position: absolute;
-  left: 0;
-  top: 264px;
-  width: 1440px;
-  height: 406px;
-}
-
-.demo-transport-steps__card { position: absolute; top: 0; }
-.demo-transport-steps__card:nth-child(1) { left: 178px; width: 199px; }
-.demo-transport-steps__card:nth-child(2) { left: 399px; width: 200px; }
-.demo-transport-steps__card:nth-child(3) { left: 620px; width: 200px; }
-.demo-transport-steps__card:nth-child(4) { left: 841px; width: 200px; }
-.demo-transport-steps__card:nth-child(5) { left: 1063px; width: 199px; }
-
-/* Reuse step-card visuals (circle + arrow SVG) */
-.demo-transport-steps .demo-step-card { display: grid; gap: 41px; }
-.demo-transport-steps .demo-step-card__head { position: relative; width: 199px; height: 93px; }
-.demo-transport-steps .demo-step-card__circle {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 93px;
-  height: 93px;
-  border-radius: 50%;
-  background: #ffb661;
-  z-index: 2;
-}
-
-.demo-transport-steps .demo-step-card__line {
-  display: block;
-  position: absolute;
-  left: 35px;
-  top: 39.635px;
-  z-index: 1;
-}
-.demo-transport-steps .demo-step-card__arrow { display: block; width: 164px; height: 15px; }
-
-.demo-transport-steps .demo-step-card__icon {
-  position: absolute;
-  left: 21px;
-  top: 22px;
-  width: 50px;
-  height: 50px;
-  display: grid;
-  place-items: center;
-  z-index: 3;
-}
-.demo-transport-steps .demo-step-card__icon-img { width: 50px; height: 50px; display: block; }
-
-.demo-transport-steps .demo-step-card__body { display: grid; gap: 12px; }
-.demo-transport-steps .demo-step-card__title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 30.24px;
-  letter-spacing: -0.24px;
-  color: #ffffff;
-}
-.demo-transport-steps .demo-step-card__text {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 25.2px;
-  letter-spacing: 0;
-  color: #ffffff;
-}
-
-/* Last card: no line/arrow */
-.demo-transport-steps__card:last-child .demo-step-card__line { display: none; }
-
-/* Ideal tasks (Group 79: 140:5542) */
-.demo-transport-ideal {
-  position: relative;
-  width: 1440px;
-  height: 624px;
-}
-
-.demo-transport-ideal__title {
-  position: absolute;
-  left: 176px;
-  top: 0;
-  width: 917px;
-  height: 34px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: -1.44px;
-  color: #ffffff;
-}
-
-.demo-transport-ideal__grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.demo-transport-ideal__card {
-  position: absolute;
-  width: 533px;
-  height: 250px;
-  border-radius: 12px;
-  background: #19161c;
-  color: #ffffff;
-}
-.demo-transport-ideal__card--1 { left: 176px; top: 102px; }
-.demo-transport-ideal__card--2 { left: 731px; top: 102px; }
-.demo-transport-ideal__card--3 { left: 176px; top: 374px; }
-.demo-transport-ideal__card--4 { left: 731px; top: 374px; }
-
-.demo-transport-ideal__icon {
-  position: absolute;
-  left: 44px;
-  top: 75px;
-  width: 100px;
-  height: 100px;
-  display: block;
-}
-
-/* Wrapper for mobile flex layout; desktop uses contents to preserve absolute positioning */
-.demo-transport-ideal__content {
-  display: contents;
-}
-
-.demo-transport-ideal__h3 {
-  position: absolute;
-  left: 166px;
-  margin: 0;
-  width: 337px;
-  font-family: var(--font-sans);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 31.2px;
-  letter-spacing: -0.72px;
-  color: #ffffff;
-}
-
-.demo-transport-ideal__p {
-  position: absolute;
-  left: 166px;
-  margin: 0;
-  width: 337px;
-  font-family: var(--font-sans);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 28.6px;
-  letter-spacing: -0.66px;
-  color: #ffffff;
-}
-
-/* Per-row vertical offsets (from Figma local coords) */
-.demo-transport-ideal__card--1 .demo-transport-ideal__h3,
-.demo-transport-ideal__card--2 .demo-transport-ideal__h3 { top: 70.5px; height: 17px; }
-.demo-transport-ideal__card--1 .demo-transport-ideal__p,
-.demo-transport-ideal__card--2 .demo-transport-ideal__p { top: 109.5px; height: 73px; }
-
-.demo-transport-ideal__card--3 .demo-transport-ideal__h3,
-.demo-transport-ideal__card--4 .demo-transport-ideal__h3 { top: 85px; height: 17px; }
-.demo-transport-ideal__card--3 .demo-transport-ideal__p,
-.demo-transport-ideal__card--4 .demo-transport-ideal__p { top: 124px; height: 44px; }
-
-/* Contact us (140:5548 / component 140:5482) */
-.demo-transport-contact {
-  position: relative;
-  width: 1440px;
-  height: 425px;
-  margin-top: 205px;  /* 4318 - (3489 + 624) */
-  margin-bottom: 205px; /* 4948 - (4318 + 425) */
-}
-
-.demo-transport-contact__inner {
-  position: absolute;
-  left: 176px;
-  top: 0;
-  width: 1088px;
-  height: 425px;
-  border-radius: 12px;
-  background: #19161c;
-}
-
-/* Figma 140:5548: title и text — constraints horizontal CENTER, textAlignHorizontal CENTER */
-.demo-transport-contact__title {
-  position: absolute;
-  left: 50%;
-  top: 54px;
-  width: 781px;
-  max-width: calc(100% - 64px);
-  margin: 0;
-  transform: translateX(-50%);
-  font-family: var(--font-sans);
-  font-size: 38px;
-  font-weight: 600;
-  line-height: 49.4px;
-  letter-spacing: -1.14px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.demo-transport-contact__text {
-  position: absolute;
-  left: 50%;
-  top: 155px;
-  width: 660px;
-  max-width: calc(100% - 64px);
-  margin: 0;
-  transform: translateX(-50%);
-  font-family: var(--font-sans);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 28.6px;
-  letter-spacing: -0.66px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.demo-transport-contact__form { position: absolute; left: 0; top: 0; width: 1088px; height: 425px; }
-
-.demo-transport-contact__field {
-  position: absolute;
-  left: 354px;
-  top: 231px;
-  width: 383px;
-  height: 56px;
-}
-
-.demo-transport-contact__input {
-  width: 383px;
-  height: 56px;
-  border-radius: 12px;
-  border: 1px solid #ffffff;
-  background: transparent;
-  padding: 18px 22px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-  outline: none;
-}
-.demo-transport-contact__input:focus-visible { outline: 2px solid rgba(255,255,255,0.9); outline-offset: 2px; }
-
-.demo-transport-contact__ph {
-  position: absolute;
-  left: 22px;
-  top: 22px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-  opacity: 1;
-  pointer-events: none;
-}
-.demo-transport-contact__input:focus + .demo-transport-contact__ph,
-.demo-transport-contact__input:not(:placeholder-shown):valid + .demo-transport-contact__ph { opacity: 0; }
-
-.demo-transport-contact__btn {
-  position: absolute;
-  left: 471px;
-  top: 314px;
-  width: 145px;
-  height: 52px;
-  border: 0;
-  border-radius: 64px;
-  background: #14f195;
-  color: #000000;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  cursor: pointer;
-}
-.demo-transport-contact__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
-
-
-/* Tablet 834-1439: fluid scaling like billboards */
 @media (min-width: 834px) and (max-width: 1439px) {
-  .demo-transport {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    overflow-x: hidden !important;
+  .hero--transport .hero__bg-img {
+    object-position: 70% center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero--transport .hero__bg-img {
+    object-position: center center;
   }
 
-  /* Hero */
-  .demo-transport-hero {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    margin-top: 0 !important;
-    height: 435px !important;
-    padding: 99px clamp(32px, 3.8vw, 44px) 0 !important;
-    position: relative !important;
+  /* 1440: одна кнопка — Рассчитать кампанию */
+  .hero--transport .hero__actions .button--outline {
+    display: none;
   }
-  .demo-transport-hero__bg-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-  }
-  .demo-transport-hero__content {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: clamp(462px, 55vw, 560px) !important;
-  }
-  .demo-transport-hero__title {
-    width: 100% !important;
-    height: auto !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-    letter-spacing: -0.96px !important;
-  }
-  .demo-transport-hero__subtitle {
-    width: 100% !important;
-    height: auto !important;
-    margin-top: 16px !important;
-    font-size: 16px !important;
-    line-height: 22.4px !important;
-  }
-  .demo-transport-hero__btn {
-    position: static !important;
-    margin-top: 24px !important;
+}
+
+/* CTA form: layout контейнера */
+.cta-form.cta-form--transport .container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ═══ 440px — упрощённый контакт: карточка на всю ширину ═══ */
+@media (max-width: 833px) {
+  .cta-form.cta-form--transport {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    padding: 0 16px;
   }
 
-  /* Benefits */
-  .demo-transport-benefits {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
-  }
-  .demo-transport-benefits__title {
-    position: static !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    height: auto !important;
-    margin: 0 0 clamp(32px, 4vw, 42px) !important;
-    left: auto !important;
-    top: auto !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-    letter-spacing: -0.96px !important;
-  }
-  .demo-transport-benefits__cards {
-    position: static !important;
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    gap: clamp(10px, 1.2vw, 22px) !important;
-  }
-  .demo-transport-benefits__card,
-  .demo-transport-benefits__card--1,
-  .demo-transport-benefits__card--2,
-  .demo-transport-benefits__card--3,
-  .demo-transport-benefits__card--4 {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-    width: auto !important;
-    height: auto !important;
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
-    display: grid !important;
-    justify-items: center !important;
-    align-content: start !important;
-    gap: 12px !important;
-  }
-  .demo-transport-benefits__ring {
-    position: static !important;
-    width: 80px !important;
-    height: 80px !important;
-  }
-  .demo-transport-benefits__icon {
-    width: 50px !important;
-    height: 50px !important;
-  }
-  .demo-transport-benefits__h3,
-  .demo-transport-benefits__p,
-  .demo-transport-benefits__card--1 .demo-transport-benefits__p,
-  .demo-transport-benefits__card--2 .demo-transport-benefits__p,
-  .demo-transport-benefits__card--3 .demo-transport-benefits__p,
-  .demo-transport-benefits__card--4 .demo-transport-benefits__p {
-    position: static !important;
-    width: 100% !important;
-    left: auto !important;
-    top: auto !important;
-    height: auto !important;
-    margin: 0 !important;
-    text-align: center !important;
-  }
-  .demo-transport-benefits__h3 {
-    font-size: 18px !important;
-    line-height: 23.4px !important;
-  }
-  .demo-transport-benefits__p {
-    font-size: 16px !important;
-    line-height: 22.4px !important;
+  .cta-form.cta-form--transport .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    padding: 44px 16px;
+    background: #19161c;
+    border-radius: 12px;
   }
 
-  /* Formats — секция 140:7248 */
-  .demo-transport-formats {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
-  }
-  .demo-transport-formats__title {
-    position: static !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    margin: 0 0 24px !important;
-    left: auto !important;
-    top: auto !important;
-    height: auto !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-  }
-  .demo-transport-formats__items {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    height: auto !important;
-  }
-  .demo-transport-format,
-  .demo-transport-format[open] {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 104px !important;
-    margin-bottom: 18px !important;
-  }
-  .demo-transport-format__summary {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 104px !important;
-    padding: 30px 50px 30px 38px !important;
-    box-sizing: border-box !important;
-  }
-  .demo-transport-format__title,
-  .demo-transport-format__subtitle {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 0 4px 0 !important;
-    font-size: 20px !important;
-    line-height: 26px !important;
-  }
-  .demo-transport-format__subtitle {
-    font-size: 16px !important;
-    line-height: 22px !important;
-  }
-  .demo-transport-format__chevron {
-    position: absolute !important;
-    right: 20px !important;
-    left: auto !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-  }
-  .demo-transport-format[open] .demo-transport-format__chevron {
-    transform: translateY(-50%) rotate(180deg) !important;
-  }
-  .demo-transport-format__body {
-    display: none !important;
-  }
-  .demo-transport-format[open] .demo-transport-format__body {
-    display: grid !important;
-    grid-template-columns: minmax(280px, 40%) minmax(0, 1fr) !important;
-    column-gap: 24px !important;
-    row-gap: 12px !important;
-    align-items: start !important;
-    padding: 0 38px 38px !important;
-  }
-  .demo-transport-format__img {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: none !important;
-    height: auto !important;
-  }
-  .demo-transport-format[open] .demo-transport-format__img {
-    grid-column: 1 !important;
-    grid-row: 1 / span 2 !important;
-  }
-  .demo-transport-format__box,
-  .demo-transport-format__box--ai,
-  .demo-transport-format__box--price {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    padding: 24px !important;
-    box-sizing: border-box !important;
-  }
-  .demo-transport-format[open] .demo-transport-format__box--ai,
-  .demo-transport-format[open] .demo-transport-format__box--price {
-    grid-column: 2 !important;
-    margin-bottom: 0 !important;
-  }
-  .demo-transport-format__box-title,
-  .demo-transport-format__box-text,
-  .demo-transport-format--stickers .demo-transport-format__box--ai .demo-transport-format__box-title,
-  .demo-transport-format--rear-window .demo-transport-format__box--ai .demo-transport-format__box-title,
-  .demo-transport-format--rear-board .demo-transport-format__box--ai .demo-transport-format__box-title,
-  .demo-transport-format--monitors .demo-transport-format__box--ai .demo-transport-format__box-title,
-  .demo-transport-format--stickers .demo-transport-format__box--ai .demo-transport-format__box-text,
-  .demo-transport-format--rear-window .demo-transport-format__box--ai .demo-transport-format__box-text,
-  .demo-transport-format--rear-board .demo-transport-format__box--ai .demo-transport-format__box-text,
-  .demo-transport-format--monitors .demo-transport-format__box--ai .demo-transport-format__box-text,
-  .demo-transport-format--stickers .demo-transport-format__box--price .demo-transport-format__box-title,
-  .demo-transport-format--rear-window .demo-transport-format__box--price .demo-transport-format__box-title,
-  .demo-transport-format--rear-board .demo-transport-format__box--price .demo-transport-format__box-title,
-  .demo-transport-format--monitors .demo-transport-format__box--price .demo-transport-format__box-title,
-  .demo-transport-format--stickers .demo-transport-format__box--price .demo-transport-format__box-text,
-  .demo-transport-format--rear-window .demo-transport-format__box--price .demo-transport-format__box-text,
-  .demo-transport-format--rear-board .demo-transport-format__box--price .demo-transport-format__box-text,
-  .demo-transport-format--monitors .demo-transport-format__box--price .demo-transport-format__box-text,
-  .demo-transport-format--headrests .demo-transport-format__box--ai .demo-transport-format__box-title,
-  .demo-transport-format--headrests .demo-transport-format__box--ai .demo-transport-format__box-text,
-  .demo-transport-format--headrests .demo-transport-format__box--price .demo-transport-format__box-title,
-  .demo-transport-format--headrests .demo-transport-format__box--price .demo-transport-format__box-text {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 0 8px 0 !important;
-  }
-  .demo-transport-format__box-text { margin-bottom: 0 !important; }
-
-  /* Steps */
-  .demo-transport-steps {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
-  }
-  .demo-transport-steps__title {
-    position: static !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    height: auto !important;
-    margin: 0 0 32px !important;
-    left: auto !important;
-    top: auto !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-    letter-spacing: -0.96px !important;
-  }
-  .demo-transport-steps__cards {
-    position: static !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    height: auto !important;
-    display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-    gap: clamp(10px, 1.2vw, 22px) !important;
-  }
-  .demo-transport-steps__card,
-  .demo-transport-steps__card:nth-child(1),
-  .demo-transport-steps__card:nth-child(2),
-  .demo-transport-steps__card:nth-child(3),
-  .demo-transport-steps__card:nth-child(4),
-  .demo-transport-steps__card:nth-child(5) {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: auto !important;
-  }
-  .demo-transport-steps .demo-step-card__line,
-  .demo-transport-steps .demo-step-card__arrow {
-    display: none !important;
-  }
-  .demo-transport-steps .demo-step-card__head {
-    width: 100% !important;
-    height: auto !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-  .demo-transport-steps .demo-step-card__circle {
-    position: relative !important;
-    width: 80px !important;
-    height: 80px !important;
-    left: auto !important;
-    top: auto !important;
-  }
-  .demo-transport-steps .demo-step-card__icon {
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 44px !important;
-    height: 44px !important;
-  }
-  .demo-transport-steps .demo-step-card__icon-img {
-    width: 44px !important;
-    height: 44px !important;
-  }
-  .demo-transport-steps .demo-step-card__title {
-    font-size: 18px !important;
-    line-height: 23.4px !important;
-  }
-  .demo-transport-steps .demo-step-card__text {
-    font-size: 16px !important;
-    line-height: 22.4px !important;
+  .cta-form--transport .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    width: 100%;
   }
 
-  /* Ideal */
-  .demo-transport-ideal {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
-  }
-  .demo-transport-ideal__title {
-    position: static !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    height: auto !important;
-    margin: 0 0 24px !important;
-    left: auto !important;
-    top: auto !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-  }
-  .demo-transport-ideal__grid {
-    position: static !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: clamp(16px, 2vw, 24px) !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-  }
-  .demo-transport-ideal__card,
-  .demo-transport-ideal__card--1,
-  .demo-transport-ideal__card--2,
-  .demo-transport-ideal__card--3,
-  .demo-transport-ideal__card--4 {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 170px !important;
-    padding: 24px !important;
-    display: grid !important;
-    grid-template-columns: 80px minmax(0, 1fr) !important;
-    column-gap: 16px !important;
-    align-items: center !important;
-  }
-  .demo-transport-ideal__icon {
-    position: static !important;
-    width: 80px !important;
-    height: 80px !important;
-  }
-  .demo-transport-ideal__content {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    min-width: 0 !important;
-  }
-  .demo-transport-ideal__h3,
-  .demo-transport-ideal__p,
-  .demo-transport-ideal__card--1 .demo-transport-ideal__h3,
-  .demo-transport-ideal__card--1 .demo-transport-ideal__p,
-  .demo-transport-ideal__card--2 .demo-transport-ideal__h3,
-  .demo-transport-ideal__card--2 .demo-transport-ideal__p,
-  .demo-transport-ideal__card--3 .demo-transport-ideal__h3,
-  .demo-transport-ideal__card--3 .demo-transport-ideal__p,
-  .demo-transport-ideal__card--4 .demo-transport-ideal__h3,
-  .demo-transport-ideal__card--4 .demo-transport-ideal__p {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-  }
-  .demo-transport-ideal__h3 {
-    color: #ff7b00 !important;
-    font-size: 22px !important;
-    line-height: 28.6px !important;
-    margin-bottom: 10px !important;
-  }
-  .demo-transport-ideal__p {
-    font-size: 16px !important;
-    line-height: 22.4px !important;
+  .cta-form--transport .cta-form__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
   }
 
-  /* Contact */
-  .demo-transport-contact {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: clamp(44px, 5vw, 56px) auto 80px !important;
-    height: auto !important;
+  .cta-form--transport .cta-form__text {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
   }
-  .demo-transport-contact__inner {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+
+  .cta-form--transport .cta-form__form-wrapper {
+    width: 100%;
   }
-  .demo-transport-contact__title,
-  .demo-transport-contact__text {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    transform: none !important;
-    margin: 0 0 24px !important;
-    text-align: center !important;
-    font-size: 28px !important;
-    line-height: 36.4px !important;
+
+  .cta-form--transport .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 32px;
+    align-items: center;
   }
-  .demo-transport-contact__text {
-    font-size: 16px !important;
-    line-height: 22.4px !important;
-    margin-bottom: 32px !important;
+
+  .cta-form--transport .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
   }
-  .demo-transport-contact__form {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 16px !important;
+
+  .cta-form--transport .cta-form__form-title {
+    display: none;
   }
-  .demo-transport-contact__field {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: 383px !important;
+
+  /* Только поле телефона (второе поле) */
+  .cta-form--transport .cta-form__fields {
+    width: 100%;
   }
-  .demo-transport-contact__input {
-    width: 100% !important;
+
+  .cta-form--transport .cta-form__field:nth-child(1),
+  .cta-form--transport .cta-form__field:nth-child(3),
+  .cta-form--transport .cta-form__field:nth-child(4) {
+    display: none;
   }
-  .demo-transport-contact__ph {
-    position: absolute !important;
-    left: 22px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    font-size: 18px !important;
-    line-height: 23.4px !important;
-    color: #ffffff !important;
-    opacity: 1 !important;
-    pointer-events: none !important;
+
+  .cta-form--transport .cta-form__field:nth-child(2) {
+    width: 100%;
   }
-  .demo-transport-contact__input:focus + .demo-transport-contact__ph,
-  .demo-transport-contact__input:not(:placeholder-shown) + .demo-transport-contact__ph {
-    opacity: 0 !important;
+
+  .cta-form--transport .cta-form__input {
+    width: 100%;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
   }
-  .demo-transport-contact__btn {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: 200px !important;
+
+  .cta-form--transport .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
+  }
+}
+
+/* ═══ 834px — упрощённый контакт: Figma 770px карточка, 738px контент ═══ */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .cta-form.cta-form--transport {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+  }
+
+  .cta-form.cta-form--transport .container {
+    max-width: 770px;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    padding: 44px 16px;
+    background: #19161c;
+    border-radius: 12px;
+  }
+
+  .cta-form--transport .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__text {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-form--transport .cta-form__form-wrapper {
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .cta-form--transport .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__form-title {
+    display: none;
+  }
+
+  /* Только поле телефона (второе поле) */
+  .cta-form--transport .cta-form__fields {
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__field:nth-child(1),
+  .cta-form--transport .cta-form__field:nth-child(3),
+  .cta-form--transport .cta-form__field:nth-child(4) {
+    display: none;
+  }
+
+  .cta-form--transport .cta-form__field:nth-child(2) {
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__input {
+    width: 100%;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+  }
+
+  .cta-form--transport .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
+  }
+}
+
+/* ═══ 1440px — ширина 1088px ═══ */
+@media (min-width: 1440px) {
+  .cta-form.cta-form--transport {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    padding: 0 32px;
+  }
+
+  .cta-form.cta-form--transport .container {
+    max-width: 1088px;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    padding: 44px 16px;
+    background: #19161c;
+    border-radius: 12px;
+  }
+
+  .cta-form--transport .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .cta-form--transport .cta-form__title {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__text {
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-form--transport .cta-form__form-wrapper {
+    width: auto;
+  }
+
+  .cta-form--transport .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .cta-form--transport .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .cta-form--transport .cta-form__form-title {
+    display: none;
+  }
+
+  /* Только поле телефона — 383px */
+  .cta-form--transport .cta-form__fields {
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta-form--transport .cta-form__field:nth-child(1),
+  .cta-form--transport .cta-form__field:nth-child(3),
+  .cta-form--transport .cta-form__field:nth-child(4) {
+    display: none;
+  }
+
+  .cta-form--transport .cta-form__field:nth-child(2) {
+    width: 383px;
+  }
+
+  .cta-form--transport .cta-form__input {
+    width: 383px;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+  }
+
+  .cta-form--transport .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form--transport .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
   }
 }

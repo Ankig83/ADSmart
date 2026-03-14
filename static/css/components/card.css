@@ -9,7 +9,7 @@
 .c-card__title { margin: 0; font-size: var(--text-lg); line-height: var(--lh-tight); letter-spacing: -0.01em; }
 .c-card__subtitle { margin: var(--space-2) 0 0; color: var(--muted); font-size: var(--text-sm); }
 .c-card__body { padding: var(--space-4); color: var(--muted); }
-.c-card__body .c-btn { margin-top: var(--space-3); }
+.c-card__body .button { margin-top: var(--space-3); }
 
 
 

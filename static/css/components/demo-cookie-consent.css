@@ -59,23 +59,13 @@
 }
 .demo-cookie__link:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; border-radius: 6px; }
 
-.demo-cookie__btn {
+.demo-cookie .button {
   position: absolute;
   left: 229px;
   top: 374px;
-  width: 142px;
-  height: 52px;
-  border: 0;
-  border-radius: 64px;
-  background: #14f195;
-  color: #000000;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  cursor: pointer;
 }
-.demo-cookie__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+
+
 
 
 

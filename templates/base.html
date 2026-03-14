@@ -15,26 +15,14 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="{% static 'css/tokens.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
-
-    <link rel="stylesheet" href="{% static 'css/components/nav.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/button.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/input.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/card.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/section.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/badge.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/modal.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/toast.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/demo-cookie-consent.css' %}" />
-
+    <link rel="stylesheet" href="{% static 'css_v2/main.css' %}" />
     {% block page_css %}{% endblock %}
     <link rel="stylesheet" href="{% static 'css/components/demo-mobile-lock.css' %}" />
 
     <script src="{% static 'js/app.js' %}" defer></script>
     {% block page_js %}{% endblock %}
   </head>
-  <body class="app">
+  <body class="app {% block body_class %}{% endblock %}">
     {% block header %}
       {% include "components/nav.html" %}
     {% endblock %}
@@ -55,6 +43,7 @@
     {% endblock %}
 
     {% include "components/demo/cookie_consent_modal.html" %}
+    {% include "components/demo/home_calc_modal.html" %}
 
     <div class="c-toast-stack" data-toast-stack aria-live="polite" aria-relevant="additions">
       {% if messages %}

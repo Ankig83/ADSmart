@@ -1,0 +1,360 @@
+/* hero.css — универсальный компонент Hero v2 (mobile-first) */
+
+/* MOBILE — базовый слой (440×485 по Figma) */
+.hero {
+  position: relative;
+  min-height: var(--hero-mobile-h, 485px);
+  height: var(--hero-mobile-h, 485px);
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 80px 0;
+}
+
+.hero__title {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.hero__subtitle {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+/* TABLET — min-width: 834px */
+@media (min-width: 834px) {
+  .hero {
+    min-height: 485px;
+    height: auto;
+    max-width: none;
+  }
+
+  .hero__title {
+    font-size: 48px;
+  }
+
+  .hero__subtitle {
+    font-size: 18px;
+  }
+}
+
+/* DESKTOP — min-width: 1440px */
+@media (min-width: 1440px) {
+  .hero {
+    min-height: 485px;
+  }
+
+  .hero__title {
+    font-size: 64px;
+  }
+}
+
+/* Модификатор для страницы Radio: текст и фон по Figma (140:6367, 140:7441) */
+.hero--radio .hero__bg-img {
+  object-position: center center;
+}
+
+.hero--radio .hero__title-inner,
+.hero--radio .hero__subtitle-inner {
+  display: none;
+}
+
+/* MOBILE ≤833px — Figma 140:6367 (440) */
+@media (max-width: 833px) {
+  .hero--radio .hero__title--440 {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.48px;
+    line-height: 1.3;
+    color: #ffffff;
+  }
+
+  .hero--radio .hero__subtitle--mb {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #c4c4c4;
+    line-height: normal;
+    max-width: 306px;
+  }
+
+  /* Radio 440 — кнопки по Figma (Frame 427321850), влезают в экран */
+  .hero--radio .hero__actions {
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .hero--radio .hero__actions .button {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    padding: 16px 32px;
+    min-height: 56px;
+    height: 56px;
+    border-radius: 64px;
+    min-width: 0;
+  }
+
+  .hero--radio .hero__actions .button--primary {
+    flex: 1 1 218px;
+  }
+
+  .hero--radio .hero__actions .button--outline {
+    flex: 1 1 176px;
+  }
+}
+
+/* TABLET 834–1439px — Figma 140:7441 */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero--radio .hero__title--834 {
+    display: block;
+  }
+
+  .hero--radio .hero__title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.48px;
+    line-height: 1.3;
+  }
+
+  .hero--radio .hero__subtitle--mb {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #c4c4c4;
+    line-height: normal;
+    max-width: 439px;
+  }
+}
+
+/* DESKTOP ≥1440px — текст как в текущем макете */
+@media (min-width: 1440px) {
+  .hero--radio .hero__title--desktop {
+    display: block;
+  }
+
+  .hero--radio .hero__subtitle--desktop {
+    display: block;
+  }
+}
+
+/* Фокус фона (шкаф справа) */
+@media (min-width: 440px) and (max-width: 1439px) {
+  .hero--radio .hero__bg-img {
+    object-position: 90% center;
+  }
+}
+
+@media (max-width: 439px) {
+  .hero--radio .hero__bg-img {
+    object-position: right center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero--radio .hero__bg-img {
+    object-position: center center;
+  }
+}
+
+/* Модификатор для страницы Elevators: три варианта заголовка (440 / 834 / desktop) */
+.hero--elevators .hero__title-inner {
+  display: none;
+}
+
+/* По умолчанию скрываем все фоны лифтов */
+.hero--elevators .hero__bg-img--elevators-mobile,
+.hero--elevators .hero__bg-img--elevators-tablet,
+.hero--elevators .hero__bg-img--elevators-desktop {
+  display: none;
+}
+
+/* Mobile ≤833px */
+@media (max-width: 833px) {
+  .hero--elevators .hero__title--440 {
+    display: block;
+  }
+
+  .hero--elevators .hero__bg-img--elevators-mobile {
+    display: block;
+    object-position: center center;
+  }
+
+  /* Elevators 440 — кнопки по Figma (как Radio), влезают в экран */
+  .hero--elevators .hero__actions {
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .hero--elevators .hero__actions .button {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    padding: 16px 32px;
+    min-height: 56px;
+    height: 56px;
+    border-radius: 64px;
+    min-width: 0;
+  }
+
+  .hero--elevators .hero__actions .button--primary {
+    flex: 1 1 218px;
+  }
+
+  .hero--elevators .hero__actions .button--outline {
+    flex: 1 1 176px;
+  }
+}
+
+/* Tablet 834–1439px */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero--elevators .hero__bg-img--elevators-tablet {
+    display: block;
+  }
+}
+
+/* Desktop ≥1440px */
+@media (min-width: 1440px) {
+  .hero--elevators .hero__bg-img--elevators-desktop {
+    display: block;
+  }
+}
+
+/* TABLET 834–1439px — показываем только вариант 834 */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero--elevators .hero__title--834 {
+    display: block;
+  }
+}
+
+/* DESKTOP ≥1440px — показываем только desktop-вариант (layout не трогаем) */
+@media (min-width: 1440px) {
+  .hero--elevators .hero__title--desktop {
+    display: block;
+  }
+}
+
+/* Мобильная версия (≤833px) */
+@media (max-width: 833px) {
+  /* Для остановок - центрируем изображение */
+  .hero--stops {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero--stops .hero__bg-img {
+    position: absolute;
+    width: 800px; /* Фиксированная ширина */
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+  }
+
+  /* Billboards 440: заголовок и подзаголовок по Figma */
+  .hero--billboards .hero__title {
+    width: 100%;
+    max-width: calc(100vw - 32px);
+    font-family: 'Poppins', var(--font-sans);
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 130%;
+    letter-spacing: 0.48px;
+    color: #ffffff;
+  }
+  .hero--billboards .hero__subtitle {
+    color: #c4c4c4;
+  }
+
+  /* Production: AI-фигура — 15% обрезка справа, по центру */
+  .hero--production {
+    overflow: hidden;
+  }
+  .hero--production .hero__ai {
+    display: block;
+    position: absolute;
+    width: clamp(260px, 75vw, 420px);
+    height: clamp(260px, 75vw, 420px);
+    right: -30%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .hero--production .hero__ai-glow {
+    position: absolute;
+    width: 55%;
+    height: 59%;
+    left: 55%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 123, 0, 0.58);
+    filter: blur(56px);
+    border-radius: 100px;
+  }
+  
+  .hero--production .hero__ai-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Для лифтов - корректировка отступов */
+  .hero--elevators .hero__content {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  /* Лифты 440: убираем затемнение, чтобы фон не был слишком тёмным */
+  .hero--elevators .hero__overlay {
+    background: transparent;
+  }
+}

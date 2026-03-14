@@ -1,1142 +1,406 @@
-/* Billboards page (Ready--Copy node 140:5405). Desktop 1440 only for now. */
+/* Billboards page — v2 components, только модификаторы --billboards */
+
 .app { background: #000000; }
-.app__main { padding: 0; }
+.billboards-page { padding: 0; }
 
-.demo-billboards {
-  width: 1440px;
-  margin: 0 auto;
-  background: #000000;
-}
-
-.demo-billboards-hero {
-  position: relative;
-  width: 1440px;
-  height: 751px; /* starts after menu (70px) inside the page frame */
-  overflow: hidden;
-}
-
-.demo-billboards-hero__bg {
-  position: absolute;
-  inset: 0;
-}
-
-.demo-billboards-hero__bg-img {
-  width: 1440px;
-  height: 751px;
-  display: block;
+.hero--billboards .hero__bg-img {
   object-fit: cover;
 }
 
-/* Figma overlay: linear gradient (black with alpha) left -> right */
-.demo-billboards-hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.525) 58.1527%,
-    rgba(0, 0, 0, 0.05) 100%
-  );
-  pointer-events: none;
+/* 440: hero — 1 кнопка «Рассчитать кампанию» */
+@media (max-width: 833px) {
+  .hero--billboards .hero__actions .button--outline {
+    display: none;
+  }
 }
 
-.demo-billboards-hero__content {
-  position: absolute;
-  left: 176px;
-  top: 151px; /* 221 - menu(70) */
-  width: 798px;
-  height: 418px;
+/* Фон по брейкпоинтам — как на радио */
+@media (max-width: 439px) {
+  .hero--billboards .hero__bg-img {
+    object-position: right center;
+  }
 }
 
-.demo-billboards-hero__title {
-  width: 798px;
-  height: 248px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
+@media (min-width: 440px) and (max-width: 1439px) {
+  .hero--billboards .hero__bg-img {
+    object-position: 90% center;
+  }
 }
 
-.demo-billboards-hero__subtitle {
-  width: 798px;
-  height: 64px;
-  margin: 18px 0 0 0; /* keep a natural flow; positioning is fixed by container height */
-  font-family: var(--font-sans);
-  font-size: 21px;
-  font-weight: 400;
-  line-height: 31.5px;
-  color: #c4c4c4;
+@media (min-width: 1440px) {
+  .hero--billboards .hero__bg-img {
+    object-position: center center;
+  }
 }
 
-.demo-billboards-hero__btn {
-  position: absolute;
-  left: 0;
-  top: 366px; /* 517 - 151 */
-  width: 265px;
-  height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 64px;
-  background: #14f195;
-  color: #000000;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  text-decoration: none;
-}
-.demo-billboards-hero__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
-
-/* Desktop-22 (140:5415): "Почему билборд — ..." */
-.demo-billboards-invest {
-  position: relative;
-  width: 1440px;
-  height: 751px;
+/* Hero title/subtitle: mobile by default */
+.hero--billboards .hero__title-inner,
+.hero--billboards .hero__subtitle-inner {
+  display: none;
 }
 
-.demo-billboards-invest__title {
-  position: absolute;
-  left: 176px;
-  top: 104px;
-  width: 798px;
-  height: 124px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-billboards-invest__cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.demo-billboards-invest__card {
-  position: absolute;
-  top: 296px;
-  width: 249px;
-  color: #ffffff;
-}
-.demo-billboards-invest__card--1 { left: 177px; height: 297px; }
-.demo-billboards-invest__card--2 { left: 456px; height: 297px; }
-.demo-billboards-invest__card--3 { left: 735px; height: 320px; }
-.demo-billboards-invest__card--4 { left: 1014px; height: 297px; }
-
-.demo-billboards-invest__ring {
-  position: absolute;
-  left: 43px;
-  top: 0;
-  width: 163px;
-  height: 163px;
-  box-sizing: border-box;
-  border-radius: 1000px;
-  background: #19161c;
-  border: 3px solid #ff7b00;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.demo-billboards-invest__icon {
-  width: 80px;
-  height: 80px;
+.hero--billboards .hero__title--mobile,
+.hero--billboards .hero__subtitle--mobile {
   display: block;
 }
 
-.demo-billboards-invest__h3 {
-  position: absolute;
-  left: 0;
-  width: 249px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 23.4px; /* Figma */
-  letter-spacing: -0.54px;
-  color: #ffffff;
-  text-align: center;
-}
-.demo-billboards-invest__p {
-  position: absolute;
-  left: 0;
-  width: 249px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-  text-align: center;
-}
-
-/* Formats section (140:5454 / 140:5459 / 140:5460) */
-.demo-billboards-formats {
-  position: relative;
-  width: 1440px;
-  height: 981px;
-}
-
-.demo-billboards-formats__title {
-  position: absolute;
-  left: 175px;
-  top: 100px;
-  width: 798px;
-  height: 124px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-billboards-formats__tabs {
-  position: absolute;
-  left: 175px;
-  top: 292px;
-  width: 1090px;
-  height: 71px;
-  border-radius: 12px;
-  background: #19161c;
-}
-
-.demo-billboards-formats__tabs-pill {
-  position: absolute;
-  top: 8px;
-  left: 738px; /* default: digital active */
-  width: 335px;
-  height: 55px;
-  border-radius: 12px;
-  background: #ff7b00;
-  pointer-events: none;
-}
-
-.demo-billboards-formats__tabs[data-tabs-active="static"] .demo-billboards-formats__tabs-pill { left: 14px; }
-.demo-billboards-formats__tabs[data-tabs-active="prismatron"] .demo-billboards-formats__tabs-pill { left: 376px; }
-.demo-billboards-formats__tabs[data-tabs-active="digital"] .demo-billboards-formats__tabs-pill { left: 738px; }
-
-.demo-billboards-formats__tab {
-  position: absolute;
-  top: 0;
-  height: 71px;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background: transparent;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: 0.48px;
-}
-
-.demo-billboards-formats__tab-text {
-  position: absolute;
-  top: 29px;
-  white-space: nowrap;
-}
-
-.demo-billboards-formats__tab--static { left: 0; width: 358px; }
-.demo-billboards-formats__tab--static .demo-billboards-formats__tab-text { left: 71px; }
-
-.demo-billboards-formats__tab--prismatron { left: 365px; width: 358px; }
-.demo-billboards-formats__tab--prismatron .demo-billboards-formats__tab-text { left: 126px; }
-
-.demo-billboards-formats__tab--digital { left: 727px; width: 363px; }
-.demo-billboards-formats__tab--digital .demo-billboards-formats__tab-text { left: 92px; }
-
-.demo-billboards-formats__tabs[data-tabs-active="static"] .demo-billboards-formats__tab--static,
-.demo-billboards-formats__tabs[data-tabs-active="prismatron"] .demo-billboards-formats__tab--prismatron,
-.demo-billboards-formats__tabs[data-tabs-active="digital"] .demo-billboards-formats__tab--digital {
-  font-weight: 600;
-}
-
-.demo-billboards-formats__tab:focus-visible { outline: 2px solid rgba(255, 255, 255, 0.9); outline-offset: 4px; border-radius: 12px; }
-
-.demo-billboards-formats__panel-wrap {
-  position: absolute;
-  left: 175px;
-  top: 385px;
-  width: 1090px;
-  height: 496px;
-  border-radius: 12px;
-  background: #19161c;
-}
-
-.demo-billboards-formats__panel {
-  position: absolute;
-  inset: 0;
-}
-
-.demo-billboards-formats__img {
-  position: absolute;
-  left: 42px;
-  top: 64px;
-  width: 503px;
-  height: 368px;
-}
-.demo-billboards-formats__panel--prismatron .demo-billboards-formats__img { left: 49px; }
-
-.demo-billboards-formats__img-el {
-  width: 503px;
-  height: 368px;
-  display: block;
-}
-
-.demo-billboards-formats__text {
-  position: absolute;
-  left: 585px;
-  top: 68px;
-  width: 460px;
-  height: 360px;
-}
-.demo-billboards-formats__panel--prismatron .demo-billboards-formats__text { left: 584px; top: 90.5px; }
-
-.demo-billboards-formats__h3 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-billboards-formats__p {
-  position: absolute;
-  left: 0;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 28.6px;
-  letter-spacing: 0;
-  color: #ffffff;
-}
-
-/* Digital offsets */
-.demo-billboards-formats__panel--digital .demo-billboards-formats__h3 { width: 415px; height: 96px; }
-.demo-billboards-formats__panel--digital .demo-billboards-formats__p--1 { top: 126px; width: 460px; height: 73px; }
-.demo-billboards-formats__panel--digital .demo-billboards-formats__p--2 { top: 229px; width: 460px; height: 131px; }
-
-/* Static offsets */
-.demo-billboards-formats__panel--static .demo-billboards-formats__h3 { width: 415px; height: 96px; }
-.demo-billboards-formats__panel--static .demo-billboards-formats__p--1 { top: 126px; width: 460px; height: 102px; }
-.demo-billboards-formats__panel--static .demo-billboards-formats__p--2 { top: 258px; width: 460px; height: 102px; }
-
-/* Prismatron offsets (note different top in text container) */
-.demo-billboards-formats__panel--prismatron .demo-billboards-formats__h3 { width: 460px; height: 96px; }
-.demo-billboards-formats__panel--prismatron .demo-billboards-formats__p--1 { top: 118px; width: 460px; height: 73px; }
-.demo-billboards-formats__panel--prismatron .demo-billboards-formats__p--2 { top: 213px; width: 460px; height: 102px; }
-
-/* Approach section (140:5445) */
-.demo-billboards-approach {
-  position: relative;
-  width: 1440px;
-  height: 633px; /* section wrapper on page is Desktop-15, but 140:5445 itself is 433 tall; we keep local block sizing */
-}
-
-.demo-billboards-approach__title {
-  position: absolute;
-  left: 176px;
-  top: 100px; /* 2653 - 2553 */
-  width: 1088px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: -1.44px;
-  color: #ffffff;
-}
-
-.demo-billboards-approach__cards {
-  position: absolute;
-  left: 176px;
-  top: 202px; /* title(100) + 102 */
-  width: 1088px;
-  height: 331px;
-  margin: 0;
-  padding: 0;
-}
-
-.demo-billboards-approach__card {
-  position: absolute;
-  top: 0;
-}
-.demo-billboards-approach__card:nth-child(1) { left: 0; top: 0; width: 199px; }
-.demo-billboards-approach__card:nth-child(2) { left: 221px; top: 0; width: 200px; }
-.demo-billboards-approach__card:nth-child(3) { left: 443px; top: 0; width: 200px; }
-.demo-billboards-approach__card:nth-child(4) { left: 665px; top: 0; width: 200px; }
-.demo-billboards-approach__card:nth-child(5) { left: 887px; top: 0; width: 199px; }
-
-/* Reuse the exact "home" step card pattern (circle + arrow SVG) */
-.demo-step-card { display: grid; gap: 41px; }
-.demo-step-card__head { position: relative; width: 199px; height: 93px; }
-.demo-step-card__circle {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 93px;
-  height: 93px;
-  border-radius: 50%;
-  background: #ffb661;
-  z-index: 2;
-}
-
-.demo-step-card__line {
-  display: block;
-  position: absolute;
-  /* Use native SVG size (164×15) and shift left so the visible bbox matches Figma */
-  left: 35px;
-  top: 39.635px;
-  z-index: 1; /* behind the circle to hide arrow start */
-}
-.demo-step-card__arrow { display: block; width: 164px; height: 15px; }
-
-.demo-step-card__icon {
-  position: absolute;
-  left: 21px;
-  top: 22px;
-  width: 50px;
-  height: 50px;
-  display: grid;
-  place-items: center;
-  z-index: 3;
-}
-.demo-step-card__icon-img { width: 50px; height: 50px; display: block; }
-
-.demo-step-card__body { display: grid; gap: 12px; }
-.demo-step-card__title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 30.24px;
-  letter-spacing: -0.24px;
-  color: #ffffff;
-}
-.demo-step-card__text {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 25.2px;
-  letter-spacing: 0;
-  color: #ffffff;
-}
-
-/* Last card: no line/arrow at all */
-.demo-billboards-approach__card:last-child .demo-step-card__line { display: none; }
-
-/* Ideal section (140:5461) */
-.demo-billboards-ideal {
-  position: relative;
-  width: 1440px;
-  height: 824px;
-}
-
-.demo-billboards-ideal__title {
-  position: absolute;
-  left: 176px;
-  top: 100px;
-  width: 917px;
-  height: 34px;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: -1.44px;
-  color: #ffffff;
-}
-
-.demo-billboards-ideal__grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.demo-billboards-ideal__card {
-  position: absolute;
-  width: 533px;
-  height: 250px;
-  border-radius: 12px;
-  background: #19161c;
-  color: #ffffff;
-}
-.demo-billboards-ideal__card--1 { left: 176px; top: 202px; }
-.demo-billboards-ideal__card--2 { left: 731px; top: 202px; }
-.demo-billboards-ideal__card--3 { left: 176px; top: 474px; }
-.demo-billboards-ideal__card--4 { left: 731px; top: 474px; }
-
-.demo-billboards-ideal__icon {
-  position: absolute;
-  left: 44px;
-  top: 75px;
-  width: 100px;
-  height: 100px;
-  display: block;
-}
-
-/* Wrapper for mobile flex layout; desktop uses contents to preserve absolute positioning */
-.demo-billboards-ideal__content {
-  display: contents;
-}
-
-.demo-billboards-ideal__h3 {
-  position: absolute;
-  left: 166px;
-  margin: 0;
-  width: 337px;
-  font-family: var(--font-sans);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 31.2px;
-  letter-spacing: -0.72px;
-  color: #ffffff;
-}
-
-.demo-billboards-ideal__p {
-  position: absolute;
-  left: 166px;
-  margin: 0;
-  width: 337px;
-  font-family: var(--font-sans);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 28.6px;
-  letter-spacing: -0.66px;
-  color: #ffffff;
-}
-
-/* Per-card vertical offsets */
-.demo-billboards-ideal__card--1 .demo-billboards-ideal__h3 { top: 55px; height: 48px; }
-.demo-billboards-ideal__card--1 .demo-billboards-ideal__p { top: 125px; height: 73px; }
-
-.demo-billboards-ideal__card--2 .demo-billboards-ideal__h3 { top: 70.5px; height: 17px; }
-.demo-billboards-ideal__card--2 .demo-billboards-ideal__p { top: 109.5px; height: 73px; }
-
-.demo-billboards-ideal__card--3 .demo-billboards-ideal__h3 { top: 55px; height: 48px; }
-.demo-billboards-ideal__card--3 .demo-billboards-ideal__p { top: 125px; height: 73px; }
-
-.demo-billboards-ideal__card--4 .demo-billboards-ideal__h3 { top: 85px; height: 17px; }
-.demo-billboards-ideal__card--4 .demo-billboards-ideal__p { top: 124px; height: 44px; }
-
-/* Billboards contact (140:5468 / component 140:5482) */
-.demo-billboards-contact {
-  position: relative;
-  width: 1440px;
-  height: 425px;
-  margin-top: 72px;   /* 4082 - (3186+824) */
-  margin-bottom: 184px; /* 4691 - (4082+425) */
-}
-
-.demo-billboards-contact__inner {
-  position: absolute;
-  left: 176px;
-  top: 0;
-  width: 1088px;
-  height: 425px;
-  border-radius: 12px;
-  background: #19161c;
-}
-
-.demo-billboards-contact__title {
-  position: absolute;
-  left: 50%;
-  top: 54px;
-  width: 781px;
-  max-width: calc(100% - 64px);
-  margin: 0;
-  transform: translateX(-50%);
-  font-family: var(--font-sans);
-  font-size: 38px;
-  font-weight: 600;
-  line-height: 49.4px;
-  letter-spacing: -1.14px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.demo-billboards-contact__text {
-  position: absolute;
-  left: 50%;
-  top: 155px;
-  width: 660px;
-  max-width: calc(100% - 64px);
-  margin: 0;
-  transform: translateX(-50%);
-  font-family: var(--font-sans);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 28.6px;
-  letter-spacing: -0.66px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.demo-billboards-contact__form { position: absolute; left: 0; top: 0; width: 1088px; height: 425px; }
-
-.demo-billboards-contact__field {
-  position: absolute;
-  left: 354px;
-  top: 231px;
-  width: 383px;
-  height: 56px;
-}
-
-.demo-billboards-contact__input {
-  width: 383px;
-  height: 56px;
-  border-radius: 12px;
-  border: 1px solid #ffffff;
-  background: transparent;
-  padding: 18px 22px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-  outline: none;
-}
-.demo-billboards-contact__input:focus-visible { outline: 2px solid rgba(255,255,255,0.9); outline-offset: 2px; }
-
-.demo-billboards-contact__ph {
-  position: absolute;
-  left: 22px;
-  top: 22px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-  opacity: 1;
-  pointer-events: none;
-}
-.demo-billboards-contact__input:focus + .demo-billboards-contact__ph,
-.demo-billboards-contact__input:not(:placeholder-shown):valid + .demo-billboards-contact__ph { opacity: 0; }
-
-.demo-billboards-contact__btn {
-  position: absolute;
-  left: 471px;
-  top: 314px;
-  width: 145px;
-  height: 52px;
-  border: 0;
-  border-radius: 64px;
-  background: #14f195;
-  color: #000000;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  cursor: pointer;
-}
-.demo-billboards-contact__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
-
-/* Per-card vertical positions (pixel-perfect from Figma) */
-.demo-billboards-invest__card--1 .demo-billboards-invest__h3,
-.demo-billboards-invest__card--2 .demo-billboards-invest__h3 { top: 180px; }
-.demo-billboards-invest__card--1 .demo-billboards-invest__p,
-.demo-billboards-invest__card--2 .demo-billboards-invest__p { top: 238px; }
-
-.demo-billboards-invest__card--3 .demo-billboards-invest__h3,
-.demo-billboards-invest__card--4 .demo-billboards-invest__h3 { top: 180px; }
-.demo-billboards-invest__card--3 .demo-billboards-invest__p,
-.demo-billboards-invest__card--4 .demo-billboards-invest__p { top: 215px; }
-
-
-/* Tablet fluid layout (834-1439) */
+/* 834px: tablet — Figma Blok1 */
 @media (min-width: 834px) and (max-width: 1439px) {
-  .demo-billboards {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    overflow-x: hidden !important;
+  .hero--billboards {
+    min-height: 485px;
   }
 
-  /* Hero */
-  .demo-billboards-hero {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    height: 435px !important;
-    padding: 99px clamp(32px, 3.8vw, 44px) 0 !important;
-    position: relative !important;
-  }
-  .demo-billboards-hero__bg {
-    inset: 0 !important;
-  }
-  .demo-billboards-hero__bg-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-  }
-  .demo-billboards-hero__overlay {
-    inset: 0 !important;
-  }
-  .demo-billboards-hero__content {
-    position: relative !important;
-    z-index: 1 !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: clamp(462px, 55vw, 560px) !important;
-    height: auto !important;
-  }
-  .demo-billboards-hero__title {
-    width: 100% !important;
-    height: auto !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-  }
-  .demo-billboards-hero__subtitle {
-    width: 100% !important;
-    height: auto !important;
-    margin-top: 16px !important;
-    font-size: 16px !important;
-    line-height: 22.4px !important;
-  }
-  .demo-billboards-hero__btn {
-    position: static !important;
-    margin-top: 24px !important;
+  .hero--billboards .container {
+    max-width: 834px;
   }
 
-  /* Invest */
-  .demo-billboards-invest {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
-    position: relative !important;
-  }
-  .demo-billboards-invest__title {
-    position: static !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    height: auto !important;
-    margin: 0 0 clamp(32px, 4vw, 42px) !important;
-    left: auto !important;
-    top: auto !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-    letter-spacing: -0.96px !important;
-  }
-  .demo-billboards-invest__cards {
-    position: static !important;
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    gap: clamp(10px, 1.2vw, 22px) !important;
-  }
-  .demo-billboards-invest__card {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-    width: auto !important;
-    height: auto !important;
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
-    display: grid !important;
-    justify-items: center !important;
-    align-content: start !important;
-    gap: 12px !important;
-  }
-  .demo-billboards-invest__ring {
-    position: static !important;
-    width: 80px !important;
-    height: 80px !important;
-  }
-  .demo-billboards-invest__icon {
-    width: 50px !important;
-    height: 50px !important;
-  }
-  .demo-billboards-invest__h3,
-  .demo-billboards-invest__p {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    text-align: center !important;
-  }
-  .demo-billboards-invest__h3 {
-    font-size: 18px !important;
-    line-height: 23.4px !important;
-  }
-  .demo-billboards-invest__p {
-    font-size: 16px !important;
-    line-height: 22.4px !important;
+  .hero--billboards .hero__content {
+    padding: 56px 32px 80px;
+    gap: 18px;
+    align-items: flex-start;
   }
 
-  /* Formats */
-  .demo-billboards-formats {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
-  }
-  .demo-billboards-formats__title {
-    position: static !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    margin: 0 0 32px !important;
-    left: auto !important;
-    top: auto !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-    letter-spacing: -0.96px !important;
-  }
-  .demo-billboards-formats__tabs {
-    position: static !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    height: 71px !important;
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    align-items: center !important;
-    column-gap: 8px !important;
-    padding: 8px !important;
-  }
-  .demo-billboards-formats__tabs-pill {
-    display: none !important;
-  }
-  .demo-billboards-formats__tab {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: 55px !important;
-    border-radius: 12px !important;
-  }
-  .demo-billboards-formats__tab-text {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-  }
-  .demo-billboards-formats__tab[aria-selected="true"] {
-    background: #ff7b00 !important;
-    font-weight: 600 !important;
-  }
-  .demo-billboards-formats__panel-wrap {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    height: auto !important;
-    margin-top: 22px !important;
-    padding: 32px !important;
-  }
-  .demo-billboards-formats__panel {
-    position: static !important;
-    inset: auto !important;
-    display: grid !important;
-    grid-template-columns: minmax(280px, 44%) minmax(0, 1fr) !important;
-    column-gap: clamp(20px, 2.4vw, 40px) !important;
-    align-items: center !important;
-  }
-  .demo-billboards-formats__panel[hidden] {
-    display: none !important;
-  }
-  .demo-billboards-formats__img,
-  .demo-billboards-formats__panel--prismatron .demo-billboards-formats__img {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-  .demo-billboards-formats__img-el {
-    width: 100% !important;
-    height: auto !important;
-  }
-  .demo-billboards-formats__text,
-  .demo-billboards-formats__panel--prismatron .demo-billboards-formats__text {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-  .demo-billboards-formats__h3,
-  .demo-billboards-formats__p,
-  .demo-billboards-formats__panel--digital .demo-billboards-formats__h3,
-  .demo-billboards-formats__panel--digital .demo-billboards-formats__p--1,
-  .demo-billboards-formats__panel--digital .demo-billboards-formats__p--2,
-  .demo-billboards-formats__panel--static .demo-billboards-formats__h3,
-  .demo-billboards-formats__panel--static .demo-billboards-formats__p--1,
-  .demo-billboards-formats__panel--static .demo-billboards-formats__p--2,
-  .demo-billboards-formats__panel--prismatron .demo-billboards-formats__h3,
-  .demo-billboards-formats__panel--prismatron .demo-billboards-formats__p--1,
-  .demo-billboards-formats__panel--prismatron .demo-billboards-formats__p--2 {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-  }
-  .demo-billboards-formats__h3 {
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-    letter-spacing: -0.96px !important;
-    margin-bottom: 14px !important;
-  }
-  .demo-billboards-formats__p {
-    font-size: 16px !important;
-    line-height: 22.4px !important;
-    margin-bottom: 12px !important;
+  .hero--billboards .hero__content .hero__actions {
+    margin-top: 18px;
   }
 
-  /* Approach */
-  .demo-billboards-approach {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
-    position: relative !important;
-  }
-  .demo-billboards-approach__title {
-    position: static !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    margin: 0 0 clamp(32px, 4vw, 42px) !important;
-    left: auto !important;
-    top: auto !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-    letter-spacing: -0.96px !important;
-  }
-  .demo-billboards-approach__cards {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    height: auto !important;
-    display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-    gap: clamp(10px, 1.2vw, 22px) !important;
-  }
-  .demo-billboards-approach__card,
-  .demo-billboards-approach__card:nth-child(1),
-  .demo-billboards-approach__card:nth-child(2),
-  .demo-billboards-approach__card:nth-child(3),
-  .demo-billboards-approach__card:nth-child(4),
-  .demo-billboards-approach__card:nth-child(5) {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: auto !important;
-  }
-  .demo-step-card__line,
-  .demo-step-card__arrow {
-    display: none !important;
-  }
-  .demo-step-card__head {
-    width: 100% !important;
-    height: auto !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-  .demo-step-card__circle {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: 80px !important;
-    height: 80px !important;
-  }
-  .demo-step-card__icon {
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 44px !important;
-    height: 44px !important;
-  }
-  .demo-step-card__icon-img {
-    width: 44px !important;
-    height: 44px !important;
-  }
-  .demo-step-card__body {
-    gap: 10px !important;
-  }
-  .demo-step-card__title {
-    font-size: 18px !important;
-    line-height: 23.4px !important;
-  }
-  .demo-step-card__text {
-    font-size: 16px !important;
-    line-height: 22.4px !important;
+
+  .hero--billboards .hero__title--mobile,
+  .hero--billboards .hero__subtitle--mobile {
+    display: none;
   }
 
-  /* Ideal */
-  .demo-billboards-ideal {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) 60px !important;
-  }
-  .demo-billboards-ideal__title {
-    position: static !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-    height: auto !important;
-    margin: 0 0 24px !important;
-    left: auto !important;
-    top: auto !important;
-    font-size: 32px !important;
-    line-height: 41.6px !important;
-  }
-  .demo-billboards-ideal__grid {
-    position: static !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: clamp(16px, 2vw, 24px) !important;
-    width: 100% !important;
-    max-width: clamp(770px, 88vw, 1096px) !important;
-  }
-  .demo-billboards-ideal__card,
-  .demo-billboards-ideal__card--1,
-  .demo-billboards-ideal__card--2,
-  .demo-billboards-ideal__card--3,
-  .demo-billboards-ideal__card--4 {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 170px !important;
-    padding: 24px !important;
-    display: grid !important;
-    grid-template-columns: 80px minmax(0, 1fr) !important;
-    column-gap: 16px !important;
-    align-items: center !important;
-  }
-  .demo-billboards-ideal__icon {
-    position: static !important;
-    width: 80px !important;
-    height: 80px !important;
-  }
-  .demo-billboards-ideal__content {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    min-width: 0 !important;
-  }
-  .demo-billboards-ideal__h3,
-  .demo-billboards-ideal__p,
-  .demo-billboards-ideal__card--1 .demo-billboards-ideal__h3,
-  .demo-billboards-ideal__card--1 .demo-billboards-ideal__p,
-  .demo-billboards-ideal__card--2 .demo-billboards-ideal__h3,
-  .demo-billboards-ideal__card--2 .demo-billboards-ideal__p,
-  .demo-billboards-ideal__card--3 .demo-billboards-ideal__h3,
-  .demo-billboards-ideal__card--3 .demo-billboards-ideal__p,
-  .demo-billboards-ideal__card--4 .demo-billboards-ideal__h3,
-  .demo-billboards-ideal__card--4 .demo-billboards-ideal__p {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-  }
-  .demo-billboards-ideal__h3 {
-    color: #ff7b00 !important;
-    font-size: 22px !important;
-    line-height: 28.6px !important;
-    margin-bottom: 10px !important;
-  }
-  .demo-billboards-ideal__p {
-    font-size: 16px !important;
-    line-height: 22.4px !important;
+  .hero--billboards .hero__title--834,
+  .hero--billboards .hero__subtitle--834 {
+    display: block;
   }
 
-  /* Contact */
-  .demo-billboards-contact {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    margin: clamp(44px, 5vw, 56px) auto 80px !important;
-    height: auto !important;
+  .hero--billboards .hero__title {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.48px;
   }
-  .demo-billboards-contact__inner {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    padding: clamp(44px, 5vw, 56px) clamp(32px, 3.8vw, 44px) !important;
+
+  .hero--billboards .hero__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #c4c4c4;
+    margin-bottom: 0;
   }
-  .demo-billboards-contact__title,
-  .demo-billboards-contact__text {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    transform: none !important;
-    margin: 0 0 24px !important;
-    text-align: center !important;
-    font-size: 28px !important;
-    line-height: 36.4px !important;
+
+  .hero--billboards .hero__actions {
+    gap: 0;
   }
-  .demo-billboards-contact__text {
-    font-size: 16px !important;
-    line-height: 22.4px !important;
-    margin-bottom: 32px !important;
+
+  .hero--billboards .hero__actions .button--outline {
+    display: none;
   }
-  .demo-billboards-contact__form {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 16px !important;
+
+  .hero--billboards .hero__actions .button--primary {
+    width: 243px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #14f195;
+    color: #000000;
+    border-radius: 64px;
   }
-  .demo-billboards-contact__field {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: 383px !important;
+}
+
+/* 1440px: desktop variants */
+@media (min-width: 1440px) {
+  .hero--billboards .hero__title--mobile,
+  .hero--billboards .hero__subtitle--mobile,
+  .hero--billboards .hero__title--834,
+  .hero--billboards .hero__subtitle--834 {
+    display: none;
   }
-  .demo-billboards-contact__input {
-    width: 100% !important;
+
+  .hero--billboards .hero__title--desktop,
+  .hero--billboards .hero__subtitle--desktop {
+    display: block;
   }
-  .demo-billboards-contact__ph {
-    position: absolute !important;
-    left: 22px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    font-size: 18px !important;
-    line-height: 23.4px !important;
-    color: #ffffff !important;
-    opacity: 1 !important;
-    pointer-events: none !important;
+
+  .hero--billboards .hero__actions .button--outline {
+    display: none;
   }
-  .demo-billboards-contact__input:focus + .demo-billboards-contact__ph,
-  .demo-billboards-contact__input:not(:placeholder-shown) + .demo-billboards-contact__ph {
-    opacity: 0 !important;
+}
+
+.media-split--billboards .container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 834px) {
+  .media-split--billboards .container {
+    gap: 40px;
   }
-  .demo-billboards-contact__btn {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: 200px !important;
+}
+@media (min-width: 1440px) {
+  .media-split--billboards .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 48px;
+  }
+  .media-split--billboards .media-split__title {
+    flex-basis: 100%;
+  }
+}
+
+.cta-form.cta-form--billboards .container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 834px) {
+  .cta-form.cta-form--billboards .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .cta-form.cta-form--billboards .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (min-width: 1440px) {
+  .cta-form.cta-form--billboards .container {
+    gap: 48px;
+  }
+}
+
+/* Steps: центральная (3-я) иконка — чёрная */
+.steps--billboards .step-card:nth-child(3) .step-card__icon {
+  filter: brightness(0);
+}
+
+/* ═══ CTA Contact 440 — Figma Frame 427321845. При увеличении 440→834 — центрирование ═══ */
+@media (max-width: 833px) {
+  .cta-form.cta-form--billboards .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 44px clamp(20px, 5vw, 32px);
+    gap: 26px;
+    background: #19161c;
+    width: 100%;
+    max-width: min(440px, calc(100% - 40px));
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 408px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__title {
+    width: 100%;
+    max-width: 408px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form-wrapper {
+    width: 100%;
+    max-width: 408px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form-title {
+    display: none;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__fields {
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(1),
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(3) {
+    display: none;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(2) {
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__input {
+    width: 100%;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
+  }
+}
+
+/* ═══ CTA Contact 1440px — Figma 1088px карточка ═══ */
+@media (min-width: 1440px) {
+  .cta-form.cta-form--billboards {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    padding: 0 32px;
+  }
+
+  .cta-form.cta-form--billboards .container {
+    max-width: 1088px;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 54px 44px 60px;
+    background: #19161c;
+    border-radius: 12px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__title {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__text {
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form-wrapper {
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form-title {
+    display: none;
+  }
+
+  /* Только поле телефона — 383px */
+  .cta-form.cta-form--billboards .cta-form__fields {
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(1),
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(3) {
+    display: none;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(2) {
+    width: 383px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__input {
+    width: 383px;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
   }
 }

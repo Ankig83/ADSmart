@@ -1,602 +1,142 @@
-/* Telegram promotion page (140:5019). Desktop 1440 only. */
+/* Telegram promotion page — Hero как AI Assistants (hero-with-figure) */
 .app { background: #000000; }
 .app__main { padding: 0; }
 
 .demo-tg {
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   background: #000000;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* Hero Section (140:5019 direct children) */
-.demo-tg-hero {
-  position: relative;
-  width: 1440px;
-  height: 787px; /* 1613 - 826 */
-  background: #000000;
-  overflow: hidden;
+/* Desktop 1440+ */
+@media (min-width: 1440px) {
+  .demo-tg {
+    width: 1440px;
+  }
+  .hero-with-figure__bg {
+    display: none;
+  }
+  .hero-with-figure__overlay {
+    display: none;
+  }
 }
 
-.demo-tg-hero__bg { position: absolute; inset: 0; }
-.demo-tg-hero__bg-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
+/* Tablet 834-1439 — как AI Assistants */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-tg {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .hero-with-figure {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    height: clamp(435px, 38vw, 535px) !important;
+    min-height: 485px !important;
+    padding: clamp(86px, 8vw, 110px) clamp(24px, 2.8vw, 40px) clamp(52px, 6vw, 80px) !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .hero-with-figure::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 4.4%, rgba(0, 0, 0, 0.52) 42.8%, rgba(0, 0, 0, 0.05) 70.4%) !important;
+  }
+  .hero-with-figure__bg,
+  .hero-with-figure__bg-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .hero-with-figure__content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: min(100%, clamp(462px, 56vw, 690px)) !important;
+    z-index: 2 !important;
+  }
+  .hero-with-figure__title {
+    width: 100% !important;
+    margin: 0 0 24px !important;
+    font-size: 32px !important;
+    line-height: 41.6px !important;
+  }
+  .hero-with-figure__subtitle {
+    width: 100% !important;
+    margin: 0 0 24px !important;
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+  }
+  .hero-with-figure__actions {
+    display: flex !important;
+    gap: 8px !important;
+  }
+  .hero-with-figure__image-wrap {
+    display: none !important;
+  }
 }
 
-.demo-tg-hero__content {
-  position: absolute;
-  left: 178px;
-  top: 184px; /* 1010 - 826 */
-  width: 686px;
-  z-index: 2;
-}
-
-.demo-tg-hero__title {
-  margin: 0 0 88px;
-  font-family: var(--font-sans);
-  font-size: 65px;
-  font-weight: 800;
-  line-height: 84.5px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-tg-hero__subtitle {
-  width: 512px;
-  margin: 0 0 36px;
-  font-family: var(--font-sans);
-  font-size: 21px;
-  font-weight: 400;
-  line-height: 31.5px;
-  color: #c4c4c4;
-}
-
-.demo-tg-hero__actions {
-  display: flex;
-  gap: 14px;
-}
-
-.demo-tg-hero__btn {
-  width: 177px;
-  height: 52px;
-  border-radius: 64px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  text-decoration: none;
-  transition: transform 0.2s, background 0.2s;
-}
-
-.demo-tg-hero__btn--primary {
-  background: #14f195;
-  color: #000000;
-}
-
-.demo-tg-hero__btn--outline {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-}
-
-.demo-tg-hero__btn:hover {
-  transform: scale(1.05);
-}
-
-.demo-tg-hero__image-wrap {
-  position: absolute;
-  left: 894px; /* 20295 - 19401 */
-  top: 139px; /* 965 - 826 */
-  width: 473px;
-  height: 519px;
-  z-index: 1;
-}
-
-.demo-tg-hero__glow {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 514px;
-  height: 453px;
-  background: #ff7b00;
-  opacity: 0.3;
-  filter: blur(250px);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.demo-tg-hero__img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-}
+/* Hero — hero-with-figure (css_v2) */
 
 /* Section 2: Why Telegram? (140:5028) */
-.demo-tg-why {
-  position: relative;
-  width: 1440px;
-  height: 678px;
-  background: #000000;
-  padding-top: 40px; /* 1653 - 1613 */
-}
+/* WHY — перенесён в css_v2/components/why-cards.css, include why_cards.html */
 
-.demo-tg-why__title {
-  width: 960px;
-  margin: 0 0 58px 177px;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
+/* Approach — css_v2/components/approach-cards.css */
 
-.demo-tg-why__grid {
-  width: 1089px;
-  margin: 0 auto;
-  display: flex;
-  gap: 22px;
-}
+/* Section 4: Benefits — css_v2/components/benefits.css */
 
-.demo-tg-why__card {
-  width: 348px;
-  height: 447px;
-  background: #19161c;
-  border-radius: 32px;
-  padding: 48px 36px;
+/* Section 5: Expertise — css_v2/components/comparison-expertise.css */
+
+/* Section 6: Contact — css_v2/components/cta-form.css (как лифты) */
+.cta-form.cta-form--telegram .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  gap: 32px;
 }
-
-.demo-tg-why__icon-wrap {
-  width: 125px;
-  height: 125px;
-  margin-bottom: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.demo-tg-why__content {
-  width: 100%;
-  text-align: center;
-}
-
-.demo-tg-why__icon {
-  width: 125px;
-  height: 125px;
-  display: block;
-}
-
-.demo-tg-why__h3 {
-  margin: 0 0 8px;
-  font-family: var(--font-sans);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 31.2px;
-  letter-spacing: -0.72px;
-  color: #ffffff;
-}
-
-.demo-tg-why__p {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-}
-
-/* Section 3: Approach (140:5056) */
-.demo-tg-approach {
-  position: relative;
-  width: 1440px;
-  height: 948px;
-  background: #000000;
-  padding-top: 100px; /* 2391 - 2291 */
-}
-
-.demo-tg-approach__title {
-  width: 917px;
-  margin: 0 0 68px 177px;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-tg-approach__grid {
-  width: 1088px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-}
-
-.demo-tg-approach__card {
-  width: 533px;
-  height: 281px;
-  background: #19161c;
-  border-radius: 32px;
-  padding: 44px 36px;
-  display: flex;
-  align-items: center;
-  gap: 22px;
-}
-
-.demo-tg-approach__icon-wrap {
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
-}
-
-.demo-tg-approach__icon {
-  width: 100px;
-  height: 100px;
-  display: block;
-}
-
-.demo-tg-approach__h3 {
-  margin: 0 0 22px;
-  font-family: var(--font-sans);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: -0.72px;
-  color: #ffffff;
-}
-
-.demo-tg-approach__p {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.6px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-}
-
-/* Section 4: Benefits (140:5064) */
-.demo-tg-benefits {
-  position: relative;
-  width: 1440px;
-  height: 712px;
-  background: #000000;
-  padding-top: 100px; /* 3339 - 3239 */
-}
-
-.demo-tg-benefits__title {
-  width: 819px;
-  margin: 0 0 68px 177px;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-tg-benefits__grid {
-  width: 1088px;
-  margin: 0 auto;
-  display: flex;
-  gap: 30px;
-}
-
-.demo-tg-benefits__card {
-  width: 249px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.demo-tg-benefits__ring {
-  width: 163px;
-  height: 163px;
-  border-radius: 50%;
-  background: #19161c;
-  border: 2px solid #ff7b00;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 17px;
-}
-
-.demo-tg-benefits__icon {
-  width: 80px;
-  height: 80px;
-  display: block;
-}
-
-.demo-tg-benefits__h3 {
-  margin: 0 0 22px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-}
-
-.demo-tg-benefits__p {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-}
-
-/* Section 5: Comparison (140:5093) — base для mobile; desktop 1440+ в @media.
-   834-1439: в telegram-tablet-lock.css */
-.demo-tg-comparison {
-  position: relative;
-  width: 1440px;
-  height: 847px;
-  background: #000000;
-  padding-top: 100px;
-}
-
-.demo-tg-comparison__title {
-  width: 770px;
-  margin: 0 auto 68px;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 62.4px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
-}
-
-.demo-tg-comparison__grid {
-  width: 770px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.demo-tg-comparison__block {
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.demo-tg-comparison__block-header {
-  padding: 10px 12px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 23.4px;
-  color: #000000;
-  background: #ffb661;
-  border-radius: 8px 8px 0 0;
-}
-
-.demo-tg-comparison__block-header--accent {
-  background: #ff7b00;
-  color: #ffffff;
-}
-
-.demo-tg-comparison__block-cell {
-  padding: 3px 12px;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 18.2px;
-  font-weight: 400;
-  color: #ffffff;
-  background: #19161c;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Desktop 1440+ — Figma 140:5093 (Desktop - 27): 2 колонки 543px, таблица с обводкой */
-@media (min-width: 1440px) {
-  .demo-tg-comparison__title {
-    width: 100%;
-    max-width: 1088px;
-    margin: 0 auto 68px;
-  }
-  .demo-tg-comparison__grid {
-    width: 100%;
-    max-width: 1086px;
-    margin: 0 auto;
+@media (min-width: 834px) {
+  .cta-form.cta-form--telegram .container {
     flex-direction: row;
-    gap: 0;
-    border-radius: 12px;
-    overflow: hidden;
-    align-items: stretch;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  .demo-tg-comparison__block {
-    flex: 0 0 543px;
-    width: 543px;
-    min-width: 543px;
-    border-radius: 0;
-    border: none;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  .demo-tg-comparison__block--partner {
-    border-right: none;
-  }
-  .demo-tg-comparison__block--platform .demo-tg-comparison__block-header {
-    border-radius: 12px 0 0 0;
-  }
-  .demo-tg-comparison__block--partner .demo-tg-comparison__block-header {
-    border-radius: 0 12px 0 0;
-  }
-  .demo-tg-comparison__block-header {
-    flex: 0 0 91px;
-    min-height: 91px;
-    padding: 15px 32px 14px 32px;
-    font-size: 24px;
-    line-height: 31.2px;
-    letter-spacing: 0.48px;
-    box-sizing: border-box;
-    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 40px;
   }
-  .demo-tg-comparison__block-cell {
-    flex: 1 1 0;
-    min-height: 91px;
-    padding: 34px 32px;
-    font-size: 18px;
-    line-height: 23.4px;
-    letter-spacing: 0.48px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
+}
+@media (min-width: 1440px) {
+  .cta-form.cta-form--telegram .container {
+    gap: 48px;
   }
 }
 
-/* Desktop: hide form-title, left as contents, formbox wraps form */
-.demo-tg-contact__left { display: contents; }
-.demo-tg-contact__form-title { display: none; }
-.demo-tg-contact__formbox { width: 780px; margin: 0 auto; }
+/* Tablet fluid layout (834-1439) — как design/print/production */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-tg {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+  }
 
-/* Section 6: Contact (140:5118) */
-.demo-tg-contact {
-  position: relative;
-  width: 1440px;
-  height: 746px;
-  background: #000000;
-  padding-top: 100px; /* 4898 - 4798 */
-}
+  /* Hero — hero-with-figure (css_v2) */
+  .hero-with-figure {
+    min-height: 485px !important;
+    padding: clamp(86px, 8vw, 110px) clamp(24px, 2.8vw, 40px) clamp(52px, 6vw, 80px) !important;
+  }
+  .hero-with-figure__content { width: min(100%, clamp(462px, 56vw, 690px)) !important; }
+  .hero-with-figure__image-wrap { display: none !important; }
 
-.demo-tg-contact__inner {
-  width: 1086px;
-  height: 546px;
-  margin: 0 auto;
-  background: #19161c;
-  border-radius: 32px;
-  border: 1px solid #ff7b00;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.demo-tg-contact__title {
-  width: 777px;
-  margin: 0 0 24px;
-  font-family: var(--font-sans);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -1.44px;
-  color: #ffffff;
-}
-
-.demo-tg-contact__text {
-  width: 777px;
-  margin: 0 0 38px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.6px;
-  letter-spacing: -0.54px;
-  color: #ffffff;
-}
-
-.demo-tg-contact__form {
-  width: 780px;
-}
-
-.demo-tg-contact__row {
-  display: flex;
-  gap: 14px;
-  margin-bottom: 14px;
-}
-
-.demo-tg-contact__field {
-  position: relative;
-  width: 383px;
-  height: 56px;
-  display: block;
-}
-
-.demo-tg-contact__field--full {
-  width: 780px;
-  margin-bottom: 14px;
-}
-
-.demo-tg-contact__input {
-  width: 100%;
-  height: 56px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 0 22px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  color: #ffffff;
-  transition: border-color 0.2s;
-}
-
-.demo-tg-contact__input:focus {
-  outline: none;
-  border-color: #14f195;
-}
-
-.demo-tg-contact__ph {
-  position: absolute;
-  left: 22px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.5);
-  transition: all 0.2s;
-}
-
-.demo-tg-contact__input:focus ~ .demo-tg-contact__ph,
-.demo-tg-contact__input:not(:placeholder-shown) ~ .demo-tg-contact__ph {
-  top: 0;
-  font-size: 12px;
-  background: #19161c;
-  padding: 0 4px;
-}
-
-.demo-tg-contact__actions {
-  margin-top: 17px;
-  display: flex;
-  justify-content: center;
-}
-
-.demo-tg-contact__btn {
-  width: 383px;
-  height: 52px;
-  background: #14f195;
-  border: none;
-  border-radius: 64px;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  color: #000000;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.demo-tg-contact__btn:hover {
-  transform: scale(1.02);
+  /* WHY — css_v2 why-cards.css */
+  /* Approach — css_v2 approach-cards.css */
+  /* Benefits — css_v2/components/benefits.css */
+  /* Expertise — css_v2/components/comparison-expertise.css */
+  /* Contact — css_v2/components/cta-form.css */
 }
 
 /* Tablet fluid layout (834-1439) — как design/print/production */

@@ -1,0 +1,200 @@
+/* steps.css — fluid 320→834, tablet 834+ */
+
+:root {
+  --step-circle-size: 93px;
+  --step-icon-size: 50px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, calc(24px + (32 - 24) * (100vw - 320px) / 514), 32px);
+  width: 100%;
+  background: #000;
+  color: #fff;
+}
+
+.steps__title {
+  margin: 0 0 clamp(24px, calc(24px + (32 - 24) * (100vw - 320px) / 514), 32px);
+  font-size: clamp(20px, calc(20px + (28 - 20) * (100vw - 320px) / 514), 28px);
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.steps__grid {
+  display: grid;
+  gap: clamp(18px, calc(18px + (30 - 18) * (100vw - 320px) / 514), 30px);
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, calc(12px + (16 - 12) * (100vw - 320px) / 514), 16px);
+  text-align: center;
+}
+
+.step-card__head {
+  position: relative;
+  width: 100%;
+  height: clamp(70px, calc(70px + (93 - 70) * (100vw - 320px) / 514), 93px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.step-card__circle {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: clamp(70px, calc(70px + (93 - 70) * (100vw - 320px) / 514), 93px);
+  height: clamp(70px, calc(70px + (93 - 70) * (100vw - 320px) / 514), 93px);
+  background-color: var(--step-circle-bg, #ffb661);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.step-card__icon {
+  width: clamp(38px, calc(38px + (50 - 38) * (100vw - 320px) / 514), 50px);
+  height: clamp(38px, calc(38px + (50 - 38) * (100vw - 320px) / 514), 50px);
+  display: block;
+}
+
+/* Стрелка — скрыта по умолчанию (mobile/tablet) */
+.step-card__arrow {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  object-fit: contain;
+}
+
+.step-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, calc(6px + (8 - 6) * (100vw - 320px) / 514), 8px);
+}
+
+.step-card__title {
+  margin: 0;
+  font-size: clamp(16px, calc(16px + (18 - 16) * (100vw - 320px) / 514), 18px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.step-card__text {
+  margin: 0;
+  font-size: clamp(14px, calc(14px + (16 - 14) * (100vw - 320px) / 514), 16px);
+  line-height: 1.45;
+  color: #c9cad6;
+}
+
+/* MOBILE — 2 колонки, fluid gap */
+@media (max-width: 833px) {
+  .steps__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(24px, calc(24px + (40 - 24) * (100vw - 320px) / 514), 40px) clamp(12px, calc(12px + (20 - 12) * (100vw - 320px) / 514), 20px);
+  }
+
+  .step-card:last-child {
+    grid-column: 1;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* TABLET 834px — 5 колонок, фикс. размеры */
+@media (min-width: 834px) {
+  .step-card__head { height: 93px; }
+  .step-card__circle { width: 93px; height: 93px; }
+  .step-card__icon { width: 50px; height: 50px; }
+  .step-card__title { font-size: 18px; }
+  .step-card__text { font-size: 16px; }
+
+  .steps__title {
+    font-size: clamp(32px, 3vw, 36px);
+    margin-bottom: 40px;
+  }
+
+  .steps__grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+  }
+
+  .step-card:last-child {
+    grid-column: auto;
+  }
+}
+
+/* DESKTOP 1440px — 5 колонок + стрелки */
+@media (min-width: 1440px) {
+  .steps {
+    padding: 100px 0;
+  }
+
+  .steps__title {
+    font-size: clamp(40px, 3vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 48px;
+  }
+
+  .steps__grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 22px;
+    overflow: visible;
+  }
+
+  /* z-index: стрелка карточки N рисуется над карточкой N+1 */
+  .step-card {
+    position: relative;
+  }
+  .step-card:nth-child(1) { z-index: 5; }
+  .step-card:nth-child(2) { z-index: 4; }
+  .step-card:nth-child(3) { z-index: 3; }
+  .step-card:nth-child(4) { z-index: 2; }
+  .step-card:nth-child(5) { z-index: 1; }
+
+  /* Стрелка: из центра круга — до левого края соседнего круга справа */
+  .step-card__arrow {
+    display: block;
+    width: 175px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+  }
+
+  .step-card:last-child .step-card__arrow {
+    display: none;
+  }
+
+  .step-card__circle {
+    width: var(--step-circle-size);
+    height: var(--step-circle-size);
+  }
+
+  .step-card__icon {
+    width: var(--step-icon-size);
+    height: var(--step-icon-size);
+  }
+
+  .step-card__title {
+    font-size: 24px;
+  }
+
+  .step-card__text {
+    font-size: 18px;
+  }
+}
+
+/* Центральная иконка (3-я карточка) — чёрная для stops и transport */
+.steps--stops .step-card:nth-child(3) .step-card__icon,
+.steps--transport .step-card:nth-child(3) .step-card__icon {
+  filter: grayscale(1) brightness(0);
+}

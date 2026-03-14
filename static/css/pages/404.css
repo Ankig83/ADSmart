@@ -45,25 +45,11 @@
   color: #ffffff;
 }
 
-.demo-404__btn {
+.demo-404__content .button {
   position: absolute;
   left: 176px;
   top: 480px; /* 550 - 70 */
-  width: 265px;
-  height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 64px;
-  background: #14f195;
-  color: #000000;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  text-decoration: none;
 }
-.demo-404__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
 
 .demo-404__art {
   position: absolute;

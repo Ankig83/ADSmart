@@ -1,0 +1,194 @@
+/* ai-result.css — исключение, блок «Эфирный ролик + AI-ассистент» (Radio) */
+
+/* 1. Общие настройки секции — левый край как у .container (benefits) */
+.ai-result {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 60px max(16px, calc((100vw - min(1120px, calc(100vw - 32px))) / 2));
+  background: #000000;
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: var(--font-sans, 'Poppins', sans-serif);
+}
+
+.ai-result__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Desktop 1440px — фикс. padding, иначе диаграмма «катается» при ресайзе */
+@media (min-width: 1440px) {
+  .ai-result {
+    max-width: 1440px;
+    padding: 60px 20px 60px 160px;
+  }
+
+  .ai-result__inner {
+    display: grid;
+    grid-template-columns: 1fr 404px;
+    grid-template-areas:
+      "title title"
+      "visual card";
+    align-items: start;
+    gap: 24px 32px;
+    max-width: 1264px;
+    margin: 0 auto;
+    padding-right: 20px;
+  }
+
+  /* Заголовок — по Figma */
+  .ai-result__title {
+    grid-area: title;
+    width: 1055px;
+    max-width: 100%;
+    font-size: 48px;
+    letter-spacing: 0.48px;
+    line-height: 130%;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+  }
+
+  /* Диаграмма: не выходит правее заголовка (Figma 140:5680) */
+  .ai-visual {
+    grid-area: visual;
+    max-width: 1055px;
+  }
+
+  .ai-result__card {
+    grid-area: card;
+    align-self: center;
+    width: 404px;
+    max-width: none;
+  }
+
+  .ai-result__card-title {
+    font-size: 32px;
+  }
+
+  .ai-result__steps li {
+    font-size: 22px;
+  }
+}
+
+.ai-result__title {
+  width: 100%;
+  position: relative;
+  font-size: 24px;
+  letter-spacing: 0.48px;
+  line-height: 130%;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  text-align: left;
+  display: inline-block;
+  margin: 0;
+}
+
+/* 2. Визуальный блок — увеличиваем его общее пространство */
+.ai-visual {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.ai-visual__container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+.ai-visual__diagram {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Карточка "Схема работы" — по Figma 140:5682 */
+.ai-result__card {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #19161c;
+  border: 2px solid #ff7b00;
+  border-radius: 22px;
+  padding: 30px 28px;
+  box-sizing: border-box;
+}
+
+.ai-result__card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff7b00;
+  margin: 0 0 26px;
+}
+
+.ai-result__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  list-style: disc;
+  padding-left: 33px;
+  margin: 0;
+}
+
+.ai-result__steps li {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.ai-result__steps li::marker {
+  color: #ff7b00;
+}
+
+/* 834px — заголовок и карточка по макету */
+@media (min-width: 834px) {
+  .ai-result__card-title {
+    font-size: 28px;
+  }
+
+  .ai-result__steps li {
+    font-size: 20px;
+  }
+
+  .ai-result__title {
+    width: 100%;
+    position: relative;
+    font-size: 32px;
+    letter-spacing: 0.81px;
+    line-height: 130%;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    text-align: left;
+    display: inline-block;
+  }
+}
+
+/* 440: заголовок чётко — 2 строки, по центру */
+@media (max-width: 439px) {
+  .ai-result__title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .ai-result__card {
+    padding: 16px;
+  }
+  .ai-result__title {
+    font-size: 18px;
+  }
+}
