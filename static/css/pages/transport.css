@@ -15,15 +15,69 @@
     object-position: 85% center;
   }
 
-  /* 440: одна кнопка — Рассчитать кампанию */
+  /* < 440: текст переносится; 440–834: не переносится при увеличении */
+  .hero--transport .hero__title,
+  .hero--transport .hero__subtitle {
+    white-space: normal;
+  }
+
+  /* 440: одна кнопка «Рассчитать кампанию» в одну строку */
   .hero--transport .hero__actions .button--outline {
     display: none;
+  }
+
+  .hero--transport .hero__actions .button--primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    gap: 10px;
+    width: 243px;
+    min-width: 243px;
+    height: 52px;
+    background: #14f195;
+    border-radius: 64px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    white-space: nowrap;
+  }
+}
+
+/* 440–834: текст не переносится при увеличении экрана */
+@media (min-width: 440px) and (max-width: 833px) {
+  .hero--transport .hero__title,
+  .hero--transport .hero__subtitle {
+    white-space: nowrap;
   }
 }
 
 @media (min-width: 834px) and (max-width: 1439px) {
   .hero--transport .hero__bg-img {
     object-position: 70% center;
+  }
+
+  /* 834: одна кнопка «Рассчитать кампанию» в одну строку */
+  .hero--transport .hero__actions .button--outline {
+    display: none;
+  }
+
+  .hero--transport .hero__actions .button--primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    gap: 10px;
+    width: 243px;
+    height: 52px;
+    background: #14f195;
+    border-radius: 64px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    white-space: nowrap;
   }
 }
 
@@ -159,7 +213,9 @@
   }
 
   .cta-form.cta-form--transport .container {
-    max-width: 770px;
+    max-width: min(100%, clamp(770px, calc(770 * 100vw / 834), 1088px));
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: column;
     align-items: center;
     gap: 26px;

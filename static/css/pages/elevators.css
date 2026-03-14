@@ -3,6 +3,29 @@
 .app { background: #000000; }
 .elevators-page { padding: 0; }
 
+/* Hero subtitle — варианты 440 / 834 / desktop */
+.hero--elevators .hero__subtitle-inner {
+  display: none;
+}
+
+@media (max-width: 833px) {
+  .hero--elevators .hero__subtitle--440 {
+    display: block;
+  }
+}
+
+@media (min-width: 834px) and (max-width: 1439px) {
+  .hero--elevators .hero__subtitle--834 {
+    display: block;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero--elevators .hero__subtitle--desktop {
+    display: block;
+  }
+}
+
 @media (max-width: 833px) {
   /* Benefits grid order on 440: 1 & 4 сверху, 2 & 3 снизу */
   .benefits--elevators .benefits__grid {

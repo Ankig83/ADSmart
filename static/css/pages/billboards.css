@@ -7,10 +7,31 @@
   object-fit: cover;
 }
 
-/* 440: hero — 1 кнопка «Рассчитать кампанию» */
+/* 440: hero — 1 кнопка «Рассчитать кампанию», fluid 440→834 */
 @media (max-width: 833px) {
   .hero--billboards .hero__actions .button--outline {
     display: none;
+  }
+
+  .hero--billboards .hero__actions .button--primary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(16px, calc(16 * 100vw / 440), 30px) clamp(32px, calc(32 * 100vw / 440), 60px);
+    gap: clamp(10px, calc(10 * 100vw / 440), 19px);
+    width: clamp(243px, calc(243 * 100vw / 440), 460px);
+    min-width: 243px;
+    height: clamp(52px, calc(52 * 100vw / 440), 98px);
+    flex: none;
+    background: #14f195;
+    border-radius: 64px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: clamp(16px, calc(16 * 100vw / 440), 18px);
+    line-height: 1.25;
+    color: #000000;
+    white-space: nowrap;
   }
 }
 
@@ -99,14 +120,20 @@
   }
 
   .hero--billboards .hero__actions .button--primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    gap: 10px;
     width: 243px;
     height: 52px;
-    padding: 16px 32px;
     font-size: 16px;
     font-weight: 500;
+    line-height: 20px;
     background: #14f195;
     color: #000000;
     border-radius: 64px;
+    white-space: nowrap;
   }
 }
 
@@ -126,6 +153,23 @@
 
   .hero--billboards .hero__actions .button--outline {
     display: none;
+  }
+
+  .hero--billboards .hero__actions .button--primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    gap: 10px;
+    width: 243px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    background: #14f195;
+    color: #000000;
+    border-radius: 64px;
+    white-space: nowrap;
   }
 }
 
@@ -156,21 +200,111 @@
   flex-direction: column;
   gap: 32px;
 }
-@media (min-width: 834px) {
+
+/* 834–1439: та же структура, что 440 и 1440 — column, центрирование, карточка */
+@media (min-width: 834px) and (max-width: 1439px) {
   .cta-form.cta-form--billboards .container {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 26px;
+    padding: 44px clamp(24px, 3vw, 44px);
+    background: #19161c;
+    max-width: min(770px, calc(100% - 48px));
+    margin-inline: auto;
+    border-radius: 12px;
+    box-sizing: border-box;
   }
+
   .cta-form.cta-form--billboards .cta-form__content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 408px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__title {
+    font-size: clamp(24px, calc(24 + (38 - 24) * (100vw - 834px) / 606), 38px);
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__text {
+    font-size: clamp(18px, calc(18 + (22 - 18) * (100vw - 834px) / 606), 22px);
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form-wrapper {
+    width: 100%;
+    max-width: 408px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form-title {
+    display: none;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(1),
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(3) {
+    display: none;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__field:nth-child(2) {
+    width: 100%;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__input {
+    width: 100%;
+    max-width: 383px;
+    height: 56px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-form.cta-form--billboards .cta-form__form .button {
+    width: 145px;
+    height: 52px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 64px;
+    background: #14f195;
+    color: #000000;
   }
 }
+
 @media (min-width: 1440px) {
   .cta-form.cta-form--billboards .container {
     gap: 48px;
@@ -182,18 +316,18 @@
   filter: brightness(0);
 }
 
-/* ═══ CTA Contact 440 — Figma Frame 427321845. При увеличении 440→834 — центрирование ═══ */
+/* ═══ CTA Contact 440 — Fluid 440→834: масштабируется при увеличении экрана ═══ */
 @media (max-width: 833px) {
   .cta-form.cta-form--billboards .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 44px clamp(20px, 5vw, 32px);
-    gap: 26px;
+    padding: clamp(44px, calc(44px + (54 - 44) * (100vw - 440px) / 394), 54px) clamp(20px, calc(20px + (44 - 20) * (100vw - 440px) / 394), 44px);
+    gap: clamp(26px, calc(26px + (32 - 26) * (100vw - 440px) / 394), 32px);
     background: #19161c;
     width: 100%;
-    max-width: min(440px, calc(100% - 40px));
+    max-width: min(100%, clamp(440px, calc(440px + (770 - 440) * (100vw - 440px) / 394), 770px));
     margin-inline: auto;
     box-sizing: border-box;
   }
@@ -206,13 +340,13 @@
     text-align: center;
     gap: 24px;
     width: 100%;
-    max-width: 408px;
+    max-width: min(100%, clamp(408px, calc(408px + (480 - 408) * (100vw - 440px) / 394), 480px));
   }
 
   .cta-form.cta-form--billboards .cta-form__title {
     width: 100%;
-    max-width: 408px;
-    font-size: 24px;
+    max-width: 100%;
+    font-size: clamp(24px, calc(24px + (32 - 24) * (100vw - 440px) / 394), 32px);
     font-weight: 600;
     line-height: 130%;
     letter-spacing: -0.03em;
@@ -221,7 +355,7 @@
   }
 
   .cta-form.cta-form--billboards .cta-form__text {
-    font-size: 18px;
+    font-size: clamp(18px, calc(18px + (22 - 18) * (100vw - 440px) / 394), 22px);
     font-weight: 400;
     line-height: 130%;
     letter-spacing: -0.03em;
@@ -231,7 +365,7 @@
 
   .cta-form.cta-form--billboards .cta-form__form-wrapper {
     width: 100%;
-    max-width: 408px;
+    max-width: min(100%, clamp(408px, calc(408px + (480 - 408) * (100vw - 440px) / 394), 480px));
   }
 
   .cta-form.cta-form--billboards .cta-form__form {
