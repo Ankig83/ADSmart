@@ -159,14 +159,11 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
+# В проде статику отдаёт nginx из staticfiles/ — манифест не нужен, иначе возможна 500 при отсутствии записи
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
     "staticfiles": {
-        "BACKEND": (
-            "django.contrib.staticfiles.storage.StaticFilesStorage"
-            if DEBUG
-            else "whitenoise.storage.CompressedManifestStaticFilesStorage"
-        )
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
 
@@ -211,7 +208,8 @@ DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "ADSmart <kunichkin83@gmail
 # Список админов для уведомлений о заявках: (имя, email)
 ADMIN_EMAILS = [
     ("Админ 1", "kunichkin83@gmail.com"),
-    ("Админ 2", "carenza.orders@gmail.com"),
+    ("Админ 2", "artm.medvedev@gmail.com"),
+
 ]
 
 # Security defaults for prod (override via env as needed)
