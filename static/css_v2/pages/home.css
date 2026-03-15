@@ -1168,7 +1168,8 @@
 }
 
 
-@media (min-width: 1440px) {
+/* Фиксированная pixel-верстка demo-tech19: только 1920+; на 1440–1919 всегда grid из блока ниже */
+@media (min-width: 1920px) {
   .demo-tech19 { width: 1440px; height: 751px; margin: 0 auto; position: relative; }
   .demo-tech19__inner { left: 0; top: 0; width: 1440px; height: 751px; }
 
@@ -1233,15 +1234,15 @@
 
   /* Rotation - РІСЃРµ СЃС‚СЂРµР»РєРё Р±РµР· РїРѕРІРѕСЂРѕС‚Р° (РѕСЂРёРіРёРЅР°Р»СЊРЅР°СЏ РѕСЂРёРµРЅС‚Р°С†РёСЏ) */
 
-  .demo-tech19__card { left: 858px; top: 200px; width: 404px; height: 504px; position: absolute; display: block; }
-  .demo-tech19__card-inner { position: absolute; inset: 0; display: block; }
-  .demo-tech19__card-item { position: absolute; left: 28px; width: 348px; display: grid; }
-  .demo-tech19__card-item:nth-child(1) { top: 38px; }
-  .demo-tech19__card-item:nth-child(2) { top: 201px; }
-  .demo-tech19__card-item:nth-child(3) { top: 364px; }
+  .demo-tech19__card { left: 858px; top: 200px; width: 400px; height: 500px; position: absolute; display: block; }
+  .demo-tech19__card-inner { position: absolute; inset: 0; display: block; padding: 12px 16px !important; box-sizing: border-box; }
+  .demo-tech19__card-item { position: absolute; left: 16px; right: 16px; width: auto; max-width: 368px; display: grid; gap: 4px; }
+  .demo-tech19__card-item:nth-child(1) { top: 24px; }
+  .demo-tech19__card-item:nth-child(2) { top: 180px; }
+  .demo-tech19__card-item:nth-child(3) { top: 336px; }
 
-  .demo-tech19__card-title { font-size: 24px; line-height: 36px; letter-spacing: -0.72px; margin: 0; color: #ff7b00; }
-  .demo-tech19__card-text { font-size: 18px; line-height: 27px; letter-spacing: -0.54px; margin: 0; color: #ffffff; }
+  .demo-tech19__card-title { font-size: 22px; line-height: 1.35; letter-spacing: -0.72px; margin: 0; color: #ff7b00; }
+  .demo-tech19__card-text { font-size: 16px; line-height: 1.5; letter-spacing: -0.54px; margin: 0; color: #ffffff; }
 }
 
 /* AD (Ready--Copy: desktop 140:4903; mobile 140:5988; tablet 140:8177) */
@@ -4022,6 +4023,17 @@
     letter-spacing: -0.54px;
   }
 
+  /* Близко к 1440: компактные отступы карточки как в макете */
+  @media (min-width: 1340px) {
+    .demo-tech19__card-inner {
+      padding: 12px 16px !important;
+      gap: 10px;
+    }
+    .demo-tech19__card-item { gap: 4px; }
+    .demo-tech19__card-title { font-size: 22px; }
+    .demo-tech19__card-text { font-size: 16px; line-height: 1.5; }
+  }
+
   /* 140:8177 AD */
   .demo-ad {
     width: min(100%, clamp(834px, 92vw, 1160px));
@@ -4323,7 +4335,7 @@
 
   .demo-tech19__inner {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 404px;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 400px);
     grid-template-areas: "title title" "visual card";
     align-items: start;
     gap: 24px 32px;
@@ -4333,6 +4345,7 @@
     left: auto;
     top: auto;
     width: 100%;
+    height: auto; /* переопределить height: 751px из первого блока 1440 */
   }
 
   .demo-tech19__title {
@@ -4342,6 +4355,7 @@
     top: auto;
     width: 100%;
     max-width: 1055px;
+    height: auto;
     font-size: 48px;
     line-height: 1.3;
   }
@@ -4374,9 +4388,10 @@
     position: relative;
     left: auto;
     top: auto;
-    width: 404px;
-    max-width: 404px;
+    width: 100%;
+    max-width: 400px;
     min-width: 0;
+    height: 500px; /* макет: 400×500 */
     align-self: center;
   }
 
@@ -4384,8 +4399,12 @@
     position: relative;
     inset: auto;
     display: grid;
-    gap: 12px;
-    padding: 20px 24px;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 12px 16px !important;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 0;
   }
 
   .demo-tech19__card-item {
@@ -4393,18 +4412,22 @@
     left: auto;
     top: auto;
     width: 100%;
-    display: grid;
-    gap: 6px;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
   }
 
   .demo-tech19__card-title {
-    font-size: 24px;
-    line-height: 1.5;
+    font-size: 22px !important;
+    line-height: 1.35;
     margin: 0 0 0;
   }
 
   .demo-tech19__card-text {
-    font-size: 18px;
+    font-size: 16px !important;
     line-height: 1.5;
     margin: 0;
   }
