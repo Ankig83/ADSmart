@@ -114,18 +114,19 @@ def submit_lead(request):
             message_lines.append(f"Доп: {interest}")
         text = "\n".join(message_lines)
 
-        # Email-рассылка админу о новой заявке
-        admin_email = getattr(settings, "ADMIN_LEAD_EMAIL", None)
-        if admin_email:
+        # Email-рассылка всем админам из ADMIN_EMAILS
+        admin_emails = getattr(settings, "ADMIN_EMAILS", None)
+        if admin_emails:
+            recipient_list = [email for _, email in admin_emails]
             try:
                 send_mail(
                     subject="🚀 Новая заявка с сайта ADSmart",
                     message=text,
                     from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[admin_email],
+                    recipient_list=recipient_list,
                     fail_silently=False,
                 )
-                logger.info("Lead sent via email: phone=%s, source=%s", phone, source)
+                logger.info("Lead sent via email: phone=%s, source=%s, recipients=%s", phone, source, recipient_list)
             except Exception as exc:
                 logger.exception("Error sending lead email: %s", exc)
 

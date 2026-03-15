@@ -51,7 +51,7 @@
       {% else %}
       <a class="button button--lg button--primary" href="{{ btn_primary_href|default:'#contact' }}">{{ btn_primary_text|default:"Рассчитать" }}</a>
       {% endif %}
-      <a class="button button--lg button--outline" href="{{ btn_outline_href|default:'#cases' }}">{{ btn_outline_text|default:"Наши кейсы" }}</a>
+      <a class="button button--lg button--outline" href="{{ btn_outline_href|default:'#cases' }}"{% if btn_outline_href and 'http' in btn_outline_href %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ btn_outline_text|default:"Наши кейсы" }}</a>
     </div>
   </div>
 

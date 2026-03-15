@@ -12,17 +12,17 @@
         />
         <div class="demo-footer__title">Студия умной рекламы ADSmart</div>
       </div>
-      <div class="demo-footer__social" aria-label="Messengers">
-      <a class="demo-footer__social-link" href="#" aria-label="Messenger 1 (TODO)">
-        <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13222.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      </a>
-      <a class="demo-footer__social-link" href="#" aria-label="Messenger 2 (TODO)">
-        <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13226.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      </a>
-      <a class="demo-footer__social-link" href="#" aria-label="Messenger 3 (TODO)">
-        <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13230.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      </a>
-    </div>
+      <div class="demo-footer__social" aria-label="Контакты">
+        <a class="demo-footer__social-link" href="{{ FOOTER_PHONE_URL }}" aria-label="Позвонить">
+          <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13222.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        </a>
+        <a class="demo-footer__social-link" href="{{ FOOTER_TELEGRAM_URL }}" target="_blank" rel="noopener noreferrer" aria-label="Telegram канал">
+          <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13226.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        </a>
+        <a class="demo-footer__social-link" href="{{ FOOTER_EMAIL_URL }}" target="_blank" rel="noopener noreferrer" aria-label="Написать на почту">
+          <img class="demo-footer__social-icon" src="{% static 'assets/icons/frame-140-13230.svg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        </a>
+      </div>
     </div>
 
     <div class="demo-footer__cols">
@@ -49,6 +49,7 @@
       <details class="demo-footer__accordion" data-footer-accordion>
         <summary class="demo-footer__col-title">Информационные разделы</summary>
         <nav class="demo-footer__col" aria-label="Информационные разделы">
+          <a class="demo-footer__link" href="{{ CASES_URL }}"{% if 'http' in CASES_URL %} target="_blank" rel="noopener noreferrer"{% endif %}>Наши кейсы</a>
           <a class="demo-footer__link" href="{% url 'home' %}#help">FAQ</a>
           <a class="demo-footer__link" href="{% url 'home' %}#about">Команда</a>
           <a class="demo-footer__link" href="{% url 'home' %}#contacts">Контакты</a>

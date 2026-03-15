@@ -28,8 +28,8 @@
           <img src="{% static 'assets/icons/frame-133-5069.svg' %}" alt="" loading="lazy" decoding="async" />
         </div>
         <div class="demo-contact__item-body">
-          <div class="demo-contact__item-label">Telegram / WhatsApp</div>
-          <a class="demo-contact__item-value" href="tel:+79179816000">+7 (917) 981-60-00</a>
+          <div class="demo-contact__item-label">Telegram / Макс</div>
+          <a class="demo-contact__item-value" href="tel:+{{ CONTACT_PHONE }}">{{ CONTACT_PHONE_DISPLAY }}</a>
         </div>
       </li>
 
@@ -39,7 +39,7 @@
         </div>
         <div class="demo-contact__item-body">
           <div class="demo-contact__item-label">Электронная почта</div>
-          <a class="demo-contact__item-value" href="mailto:welcome@ad-smart.ru">welcome@ad-smart.ru</a>
+          <a class="demo-contact__item-value" href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a>
         </div>
       </li>
     </ul>

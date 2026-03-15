@@ -179,19 +179,40 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 # TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
-# Email — оповещение админа о новых заявках
-# Dev: не задавай EMAIL_BACKEND — письма пойдут в консоль (stdout)
+# Контакты для подвала и блока «Свяжитесь с нами»
+CONTACT_PHONE = os.getenv("CONTACT_PHONE", "79179816000").strip()  # цифры без +, для tel: и отображения
+CONTACT_PHONE_DISPLAY = os.getenv("CONTACT_PHONE_DISPLAY", "+7 (917) 981-60-00").strip()
+CONTACT_EMAIL = os.getenv("CONTACT_EMAIL", "welcome@ad-smart.ru").strip()
+# Канал в Telegram для иконки в подвале (slug без t.me/), например artm_medvedev
+CONTACT_TELEGRAM_CHANNEL = os.getenv("CONTACT_TELEGRAM_CHANNEL", "artm_medvedev").strip().lstrip("@")
+
+# Кейсы: со страницы Telegram — один документ, с остальных страниц — другой
+TELEGRAM_CASES_URL = os.getenv(
+    "TELEGRAM_CASES_URL",
+    "https://docs.google.com/document/d/1XgtH0kbz_ENKITt01irpXKrjUFLgXDu-JC-tv0waQe0/edit?usp=sharing",
+).strip()
+CASES_URL = os.getenv(
+    "CASES_URL",
+    "https://docs.google.com/document/d/1247eN8K2uyX-ir4qNdk-6idESXc90xjNnnwVNJRpN6A/edit?usp=sharing",
+).strip()
+
+# Email — оповещение админов о новых заявках (Gmail SMTP)
 _email_backend = os.getenv("EMAIL_BACKEND", "").strip()
 EMAIL_BACKEND = _email_backend or (
     "django.core.mail.backends.console.EmailBackend" if DEBUG else "django.core.mail.backends.smtp.EmailBackend"
 )
-EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.example.com")
+EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.gmail.com")
 EMAIL_PORT = int(os.getenv("EMAIL_PORT", "587"))
-EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "true").lower() in ("1", "true", "yes")
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+EMAIL_USE_TLS = env_bool("EMAIL_USE_TLS", default=True)
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "kunichkin83@gmail.com")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "noreply@ad-smart.ru")
-ADMIN_LEAD_EMAIL = os.getenv("ADMIN_LEAD_EMAIL", "welcome@ad-smart.ru")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "ADSmart <kunichkin83@gmail.com>")
+
+# Список админов для уведомлений о заявках: (имя, email)
+ADMIN_EMAILS = [
+    ("Админ 1", "kunichkin83@gmail.com"),
+    ("Админ 2", "carenza.orders@gmail.com"),
+]
 
 # Security defaults for prod (override via env as needed)
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")

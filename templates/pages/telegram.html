@@ -15,7 +15,7 @@
 
 {% block content %}
   <div class="demo-tg">
-    {% include "components/hero_with_figure.html" with figure_img="assets/images/telegram-hero.png" bg_desktop="assets/images/figma-1-910e2421.png" bg_mobile="assets/images/fon_2.png" title_html="Продажи и сервис<br />там, где общается<br />ваша аудитория" subtitle_html="Telegram от ADSmart — канал роста бизнеса.<br />Превращаем подписчиков в клиентов" btn_primary_text="Рассчитать" btn_primary_action="home-calc-modal" btn_outline_text="Наши кейсы" btn_outline_href="#cases" title_id="tg-hero-title" %}
+    {% include "components/hero_with_figure.html" with figure_img="assets/images/telegram-hero.png" bg_desktop="assets/images/figma-1-910e2421.png" bg_mobile="assets/images/fon_2.png" title_html="Продажи и сервис<br />там, где общается<br />ваша аудитория" subtitle_html="Telegram от ADSmart — канал роста бизнеса.<br />Превращаем подписчиков в клиентов" btn_primary_text="Рассчитать" btn_primary_action="home-calc-modal" btn_outline_text="Наши кейсы" btn_outline_href=TELEGRAM_CASES_URL title_id="tg-hero-title" %}
 
     {% include "components/why_cards.html" with title_id="tg-why-title" title_html="Telegram центр цифровой<br />гравитации бизнеса" modifier="desktop" card_1_icon="assets/icons/icon-133-4980-140-5033.svg" card_1_title="Безопасность и легальность" card_1_text="Официальная рекламная платформа Telegram Ads — легальный и предсказуемый канал после изменений на рынке. Мы работаем строго в рамках правил и закона о маркировке рекламы" card_2_icon="assets/icons/frame-133-5113.svg" card_2_title="Экосистема, а не лента" card_2_text="Telegram уникален сочетанием мессенджера для личного общения, платформы для массовых рассылок через каналы и полноценной среды для коммерции через Mini Apps" card_3_icon="assets/icons/frame-133-5116-140-5049.svg" card_3_title="Лояльность и доверие" card_3_text="Аудитория в Telegram воспринимает информацию в каналах как рекомендацию, а не назойливую рекламу, что повышает конверсию. Канал становится точкой входа в ваш сервис" %}
 
@@ -108,7 +108,7 @@
                 </div>
                 <div class="cta-form__actions">
                   <button class="button button--lg button--primary" type="submit">Обсудить проект</button>
-                  <a class="button button--lg button--outline" href="#cases">Посмотреть кейсы</a>
+                  <a class="button button--lg button--outline" href="{{ TELEGRAM_CASES_URL }}" target="_blank" rel="noopener noreferrer">Посмотреть кейсы</a>
                 </div>
               </form>
             </div>

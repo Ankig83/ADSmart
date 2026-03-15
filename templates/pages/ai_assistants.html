@@ -13,7 +13,7 @@
 
 {% block content %}
   <div class="demo-ai">
-    {% include "components/hero_with_figure.html" with figure_img="assets/images/ai-assistants-hero.png" bg_desktop="assets/images/figma-1-5462128d.png" bg_mobile="assets/images/fon_2.png" title_html="AI-ассистенты для<br />вашего бизнеса" title_html_tablet="AI-ассистенты для<br />вашего бизнеса" subtitle_html="Сокращаем расходы через автоматизацию продаж,<br />найма и поддержки" subtitle_html_tablet="Сокращаем расходы через автоматизацию продаж,<br />найма и поддержки" btn_primary_text="Обсудить проект" btn_primary_href="#contact" btn_outline_text="Наши кейсы" btn_outline_href="#cases" title_id="ai-hero-title" %}
+    {% include "components/hero_with_figure.html" with figure_img="assets/images/ai-assistants-hero.png" bg_desktop="assets/images/figma-1-5462128d.png" bg_mobile="assets/images/fon_2.png" title_html="AI-ассистенты для<br />вашего бизнеса" title_html_tablet="AI-ассистенты для<br />вашего бизнеса" subtitle_html="Сокращаем расходы через автоматизацию продаж,<br />найма и поддержки" subtitle_html_tablet="Сокращаем расходы через автоматизацию продаж,<br />найма и поддержки" btn_primary_text="Обсудить проект" btn_primary_href="#contact" btn_outline_text="Наши кейсы" btn_outline_href=CASES_URL title_id="ai-hero-title" %}
 
     {% include "components/comparison_expertise.html" with title_id="ai-comparison-title" title_html_mobile="Мы привносим экспертизу<br />туда, где технологии<br />нуждаются в стратегии" title_html_tablet="Мы привносим экспертизу туда, где технологии<br />нуждаются в стратегии" title_html_desktop="Мы привносим экспертизу туда, где<br />технологии нуждаются в стратегии" %}
 
@@ -61,7 +61,7 @@
 
     {% include "components/content_media_block.html" with title_id="ai-security-title" title="Мы понимаем специфику требований безопасности и импортозамещения" text="Работая с проверенной российской платформой, мы гарантируем полное соответствие требованиям 152-ФЗ и регуляторов. Мы берем на себя всю проектно-техническую работу по подготовке документации и внедрению решений в строгих IT-контурах" img_src="assets/images/ai-assistants-security.jpg" img_width="504" img_height="295" %}
 
-    {% include "components/cta_card.html" with title_id="ai-cta-title" title_html="Давайте обсудим не возможности платформы, <br />а ваши бизнес-задачи" text_html="Расскажите о процессе, который хотите автоматизировать. <br />Мы подготовим концепцию внедрения и покажем кейсы для вашей отрасли" btn_primary_text="Обсудить проект" btn_primary_href="#contact" btn_outline_text="Посмотреть кейсы" btn_outline_href="#cases" %}
+    {% include "components/cta_card.html" with title_id="ai-cta-title" title_html="Давайте обсудим не возможности платформы, <br />а ваши бизнес-задачи" text_html="Расскажите о процессе, который хотите автоматизировать. <br />Мы подготовим концепцию внедрения и покажем кейсы для вашей отрасли" btn_primary_text="Обсудить проект" btn_primary_href="#contact" btn_outline_text="Посмотреть кейсы" btn_outline_href=CASES_URL %}
   </div>
 
   {% include "components/demo/lead_success_modal.html" %}
