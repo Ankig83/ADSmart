@@ -45,15 +45,24 @@
   }
   .demo-design-hero__actions {
     display: flex !important;
-    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
     gap: clamp(8px, 2vw, 12px) !important;
+    width: 100% !important;
   }
+
+  /* Design hero 440: две CTA‑кнопки в один ряд, тянутся по ширине и выровнены по левому краю */
   .demo-design-hero__btn {
-    width: auto !important;
+    flex: 1 1 0 !important;
     min-width: 0 !important;
+    width: auto !important;
     height: 48px !important;
-    padding: 12px clamp(20px, 5vw, 28px) !important;
+    padding: 12px clamp(16px, 4vw, 22px) !important;
     font-size: clamp(14px, 3.8vw, 16px) !important;
+    text-align: center !important;
+    white-space: normal !important;
   }
   .demo-design-hero__image-wrap {
     display: none !important;

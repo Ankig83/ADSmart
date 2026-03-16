@@ -123,43 +123,24 @@
   .demo-ai .hero-with-figure__actions {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: clamp(10px, calc(14 * 100vw / 440), 21px);
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
   }
 
-  /* 440: «Обсудить проект» и «Наши кейсы» — как на Billboards/Transport */
-  .demo-ai .hero-with-figure__actions .button--primary {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 218px;
-    height: 56px;
-    padding: 16px 32px;
-    gap: 10px;
+  /* 440: две CTA‑кнопки в один ряд как на Home hero 440 */
+  .demo-ai .hero-with-figure__actions .button--lg {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    height: 52px;
     font-size: 16px;
-    font-weight: 500;
     line-height: 20px;
-    background: #14f195;
-    color: #000000;
     border-radius: 64px;
-    white-space: nowrap;
-  }
-
-  .demo-ai .hero-with-figure__actions .button--outline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 176px;
-    height: 56px;
-    padding: 16px 32px;
-    gap: 10px;
-    font-size: 16px;
-    font-weight: 500;
-    border: 1px solid #ffffff;
-    border-radius: 64px;
-    color: #ffffff;
-    white-space: nowrap;
   }
 
   .demo-ai .hero-with-figure__image-wrap {
@@ -175,14 +156,15 @@
 
   /* CTA: padding, отступ до подвала, кнопки — wrap как reference (Print/Radio) */
   .demo-ai .cta-card .cta-card__actions {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
   }
   .demo-ai .cta-card .cta-card__actions .button--primary,
   .demo-ai .cta-card .cta-card__actions .button--outline {
-    min-width: 120px;
+    flex: 1 1 0;
+    min-width: 0;
     width: auto;
-    max-width: 199px;
+    max-width: none;
   }
   .demo-ai .cta-card {
     padding: clamp(20px, calc(24 * 100vw / 440), 32px) 16px;

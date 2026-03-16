@@ -1,18 +1,18 @@
 [Unit]
 Description=gunicorn daemon (adsmart)
-Requires=gunicorn.socket
-After=network.target
+Requires=gunicorn-adsmart.socket
+After=network.target gunicorn-adsmart.socket
 
 [Service]
 Type=notify
 User=www-data
 Group=www-data
 
-WorkingDirectory=/srv/adsmart
-EnvironmentFile=/srv/adsmart/.env
+WorkingDirectory=/var/www/ADSmart
+EnvironmentFile=/var/www/ADSmart/.env
 
-# If you keep venv inside /srv/adsmart/.venv:
-ExecStart=/srv/adsmart/.venv/bin/gunicorn --config /srv/adsmart/deploy/gunicorn.conf.py
+# venv: /var/www/ADSmart/venv
+ExecStart=/var/www/ADSmart/venv/bin/gunicorn --config /var/www/ADSmart/deploy/gunicorn.conf.py
 
 Restart=always
 RestartSec=3

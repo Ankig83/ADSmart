@@ -99,7 +99,26 @@
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
+    justify-content: center !important; /* как hero Design/AI 440 */
     gap: clamp(10px, calc(14 * 100vw / 440), 21px) !important;
+    width: 100% !important;
+    max-width: clamp(286px, calc(408 * 100vw / 440), 612px) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  /* Hero Print 440: две CTA‑кнопки в один ряд, как на Design hero */
+  .demo-print .hero-with-figure__actions .button--lg {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+    padding: 16px 20px !important;
+    height: 52px !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    border-radius: 64px !important;
+    white-space: nowrap !important; /* текст в одну строку */
   }
   /* AI-фигура: 20% обрезка справа, прижата вправо, по центру по вертикали */
   .demo-print .hero-with-figure__image-wrap {

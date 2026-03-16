@@ -182,6 +182,15 @@
     text-align: left;
   }
 
+  /* Design hero 440: центрируем весь контентный блок по экрану */
+  .demo-design .hero-with-figure__content {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(408px, calc(100% - 32px));
+    max-width: 100%;
+    align-items: stretch;
+  }
+
   .hero-with-figure__title {
     width: 100%;
     margin: 0;
@@ -204,12 +213,43 @@
     color: #c4c4c4;
   }
 
-  .hero-with-figure__actions {
+  .demo-design .hero-with-figure__actions {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: clamp(10px, calc(14 * 100vw / 440), 21px);
+    justify-content: center; /* как на AI hero 440 */
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Design hero 440: повторяем паттерн AI hero 440 */
+  .demo-design .hero-with-figure__actions .button--lg {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 20px;
+    border-radius: 64px;
+    white-space: nowrap; /* текст кнопок в одну строку */
+  }
+
+  /* Очень узкие экраны (< 360px): ещё чуть уменьшаем кнопку, чтобы текст влезал */
+  @media (max-width: 359px) {
+    .demo-design .hero-with-figure__actions {
+      gap: 8px;
+    }
+
+    .demo-design .hero-with-figure__actions .button--lg.button--primary,
+    .demo-design .hero-with-figure__actions .button--lg.button--outline {
+      padding: 10px 8px;
+      font-size: 12px;
+    }
   }
 
   .hero-with-figure__image-wrap {
@@ -330,6 +370,25 @@
 
   .demo-design .feature-grid__grid {
     gap: 16px;
+  }
+}
+
+/* CTA Design — экраны < 440px: две кнопки строго в один ряд */
+@media (max-width: 439px) {
+  .cta-card--design .cta-card__actions {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .cta-card--design .cta-card__actions .button--primary,
+  .cta-card--design .cta-card__actions .button--outline {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+    padding-inline: 10px;
+    font-size: 14px;
   }
 }
 
