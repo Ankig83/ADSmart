@@ -200,7 +200,9 @@
     display: none;
   }
 
-  /* Home 834: на всю ширину экрана, макет Figma (контент + фигура справа) */
+  /* Home 834: на всю ширину экрана, макет Figma (контент + фигура справа)
+     Фикс: после ~900px ширины кнопки не должны «проваливаться» ниже hero,
+     поэтому даём герою больше высоты и не обрезаем контент по нижней границе. */
   .demo-home .hero-with-figure {
     position: relative;
     width: 100vw;
@@ -208,16 +210,15 @@
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     margin-top: 70px;
-    min-height: 439px;
-    height: clamp(435px, 38vw, 535px);
-    overflow: hidden;
+    min-height: 485px;
+    height: clamp(485px, 46vw, 600px);
+    overflow: visible;
   }
 
   /* Контентный фрейм 427321882 (текст + кнопки) */
   .demo-home .hero-with-figure__content {
     position: absolute;
     width: 440px;
-    height: 271px;
     left: 32px;
     top: 50%;
     transform: translateY(-50%);
