@@ -200,9 +200,9 @@
     display: none;
   }
 
-  /* Home 834: на всю ширину экрана, макет Figma (контент + фигура справа)
-     Фикс: после ~900px ширины кнопки не должны «проваливаться» ниже hero,
-     поэтому даём герою больше высоты и не обрезаем контент по нижней границе. */
+  /* Home 834: на всю ширину экрана, макет Figma (контент + фигура справа).
+     Восстанавливаем точные размеры из Figma: hero 439px высотой, контентный фрейм 440×271,
+     центрируем его по вертикали через фиксированную высоту. */
   .demo-home .hero-with-figure {
     position: relative;
     width: 100vw;
@@ -210,9 +210,9 @@
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     margin-top: 70px;
-    min-height: 485px;
-    height: clamp(485px, 46vw, 600px);
-    overflow: visible;
+    min-height: 439px;
+    height: 439px; /* Figma: hero 439px */
+    overflow: hidden;
   }
 
   /* Контентный фрейм 427321882 (текст + кнопки) */
@@ -221,16 +221,17 @@
     width: 440px;
     left: 32px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* строгая вертикальная центровка всего блока внутри hero 439px */
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 36px;
+    gap: 28px; /* было 36px — чуть плотнее между блоками */
   }
 
   .demo-home .hero-with-figure__title {
     width: 445px;
+    margin: 0 0 10px; /* уменьшаем отступ вниз (было 16/24 по умолчанию) */
     font-size: 32px;
     line-height: 130%;
     letter-spacing: 0.48px;
@@ -238,6 +239,7 @@
 
   .demo-home .hero-with-figure__subtitle {
     width: 445px;
+    margin: 0 0 16px; /* вместо 24px — меньше воздуха над кнопками */
     font-size: 18px;
     line-height: 27px;
     color: #c4c4c4;
@@ -247,7 +249,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 6px; /* кнопки чуть ближе друг к другу */
   }
 
   /* Фигура: Group 427320861 (коробка 389×408 справа) */

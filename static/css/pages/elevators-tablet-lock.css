@@ -87,6 +87,11 @@
     width: auto !important;
   }
 
+  /* Hero 834: кнопка «Посмотреть кейс» в одну строку */
+  .hero__actions .button--outline {
+    white-space: nowrap !important;
+  }
+
   /* 140:7692 Benefits — отступ заголовок→карточки = 45px */
   .demo-elevators-benefits {
     width: 100% !important;

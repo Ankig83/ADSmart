@@ -1628,7 +1628,7 @@
     height: auto;
     display: grid;
     grid-template-columns: 1fr 408px;
-    align-items: center;
+    align-items: center; /* форма и текстовый блок выровнены по центру строки */
     gap: 42px;
     background: transparent;
     border-radius: 0;
@@ -1639,6 +1639,9 @@
     display: flex;
     flex-direction: column;
     gap: 0;
+    justify-content: center;      /* центрируем контент внутри колонки */
+    height: 100%;                 /* растягиваем колонку по высоте строки grid */
+    align-self: stretch;          /* колонка тянется по высоте, чтобы center работал */
   }
 
   .demo-contact__title,
@@ -3182,7 +3185,7 @@
 
   .demo-contact__box {
     grid-template-columns: minmax(0, 1fr) minmax(340px, clamp(340px, 38vw, 430px));
-    align-items: start;
+    align-items: center; /* текстовый блок и форма выровнены по центру по вертикали, как в Figma */
     gap: clamp(24px, 3vw, 42px);
   }
 

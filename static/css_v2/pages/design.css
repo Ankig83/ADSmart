@@ -99,6 +99,11 @@
     flex-shrink: 0;
   }
 
+  /* Hero Design 834: «Посмотреть кейсы» в одну строку */
+  .demo-design .hero-with-figure__actions .button--outline {
+    white-space: nowrap;
+  }
+
   /* Hero buttons 218×56 / 176×56 — button.css */
   .hero-with-figure__actions .button--primary {
     width: 218px;

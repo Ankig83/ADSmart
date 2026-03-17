@@ -70,6 +70,21 @@
   }
 }
 
+/* Contact — layout как у Печати (print.css): mobile column, 834+ две колонки, по центру */
+.cta-form--production .container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 834px) {
+  .cta-form--production .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
 /* CTA 1440: сетка инпутов + кнопка */
 @media (min-width: 1440px) {
   .cta-form--production .cta-form__content {
@@ -94,6 +109,13 @@
     grid-column: span 2;
   }
 
+  .cta-form--production .cta-form__form .button {
+    white-space: nowrap;
+  }
+}
+
+/* CTA 834–1439: фиксируем текст кнопки в одну строку */
+@media (min-width: 834px) and (max-width: 1439px) {
   .cta-form--production .cta-form__form .button {
     white-space: nowrap;
   }
