@@ -30,7 +30,7 @@
 
       <form class="demo-ad__form" action="{% url 'submit_lead' %}" method="post" novalidate>
         {% csrf_token %}
-        <input type="hidden" name="source" value="ad" />
+        <input type="hidden" name="source" value="home_lost_leads_banner_form" />
         <input type="hidden" name="page" value="{{ request.get_full_path }}" />
         <input type="hidden" name="type" value="ad" />
         <input type="hidden" name="next" value="{{ request.get_full_path }}" />

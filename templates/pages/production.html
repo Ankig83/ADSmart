@@ -193,7 +193,7 @@
             <div class="cta-form__form-title">Обсудим ваш проект?</div>
             <form action="{% url 'submit_lead' %}" method="post" novalidate>
               {% csrf_token %}
-              <input type="hidden" name="source" value="production_contact" />
+              <input type="hidden" name="source" value="production_contact_form" />
               <input type="hidden" name="page" value="{{ request.get_full_path }}" />
               <input type="hidden" name="type" value="contact" />
               <input type="hidden" name="next" value="{{ request.get_full_path }}" />

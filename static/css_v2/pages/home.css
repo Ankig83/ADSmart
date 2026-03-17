@@ -1391,27 +1391,32 @@
     left: 0;
     top: 251px;
     width: 383px;
-    height: 282px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
-  .demo-ad__field { position: absolute; left: 0; width: 383px; margin: 0; }
-  .demo-ad__field--name { top: 0; }
-  .demo-ad__field--phone { top: 74px; }  /* 325-251 */
-  .demo-ad__field--biz { top: 148px; }   /* 399-251 */
+  .demo-ad__field {
+    position: relative;
+    left: 0;
+    width: 100%;
+    margin: 0;
+  }
+  .demo-ad__field--name,
+  .demo-ad__field--phone,
+  .demo-ad__field--biz { top: auto; }
 
   .demo-ad__input {
-    width: 383px;
-    padding-top: 19px;   /* visually matches Figma leading trim */
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 19px;
     padding-bottom: 0;
     padding-left: 22px;
     padding-right: 22px;
   }
 
   .demo-ad .button {
-    position: absolute;
-    left: 0;
-    top: 222px;
-    width: 383px;
-    height: 56px;
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -4101,7 +4106,7 @@
     max-width: 460px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 18px; /* равномерный вертикальный шаг между полями и кнопкой */
     position: static;
   }
 

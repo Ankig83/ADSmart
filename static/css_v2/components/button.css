@@ -70,6 +70,12 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
+/* Все CTA-кнопки всегда в одну строку */
+.button--primary,
+.button--outline {
+  white-space: nowrap;
+}
+
 /* Вариант: белый фон, чёрная обводка */
 .button--outline.button--light {
   background: #ffffff;

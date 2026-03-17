@@ -334,9 +334,4 @@
     line-height: 130%;
     text-align: center;
   }
-
-  /* CTA buttons 834+: «Посмотреть кейсы» в одну строку */
-  .demo-ai .cta-card .cta-card__actions .button--outline {
-    white-space: nowrap;
-  }
 }
