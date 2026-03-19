@@ -1236,7 +1236,21 @@
   /* Rotation - РІСЃРµ СЃС‚СЂРµР»РєРё Р±РµР· РїРѕРІРѕСЂРѕС‚Р° (РѕСЂРёРіРёРЅР°Р»СЊРЅР°СЏ РѕСЂРёРµРЅС‚Р°С†РёСЏ) */
 
   /* Right card (Figma 1440) */
-  .demo-tech19__card { left: 858px; top: 200px; width: 404px; height: 504px; position: absolute; display: block; }
+  .demo-tech19__card {
+    left: 858px;
+    top: 200px;
+    width: 404px;
+    height: 504px;
+    position: absolute;
+    display: block;
+    /* Figma: real border on outer bounds, not outline */
+    background: #19161c;
+    border: 3px solid #ff7b00;
+    border-radius: 22px;
+    outline: none;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
 
   /* Content block inside card: left=28, top=38 => padding 38px 28px */
   .demo-tech19__card-inner {
@@ -4439,6 +4453,13 @@
     min-width: 0;
     height: 504px; /* Figma: 404×504 */
     align-self: center;
+    /* Figma: real border on outer bounds, not outline */
+    background: #19161c;
+    border: 3px solid #ff7b00;
+    border-radius: 22px;
+    outline: none;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .demo-tech19__card-inner {
