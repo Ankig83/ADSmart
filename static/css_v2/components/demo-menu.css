@@ -778,6 +778,7 @@
   /* show desktop items */
   .demo-menu__services-dd--desktop {
     display: block;
+    flex: 0 0 auto; /* avoid shrinking that could force other header links to wrap */
   }
 
   .demo-menu__link--desktop {
@@ -793,6 +794,8 @@
     color: #ffffff;
     text-decoration: none;
     transition: none;
+    white-space: nowrap; /* keep "О нас" on one line on 1440+ */
+    flex: 0 0 auto;
   }
 
   .demo-menu__link--desktop:hover,

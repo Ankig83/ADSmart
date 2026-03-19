@@ -44,17 +44,39 @@ function initMenu() {
   const menu = qs("[data-menu]");
   if (!toggle || !menu) return;
 
+  function lockBodyScroll(locked) {
+    const body = document.body;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    if (locked) {
+      // Compensate scrollbar removal to avoid horizontal layout shift (e.g. header links).
+      if (menu.dataset.prevBodyPaddingRight === undefined) {
+        menu.dataset.prevBodyPaddingRight = body.style.paddingRight;
+      }
+      body.style.overflow = "hidden";
+      body.style.paddingRight = scrollbarWidth > 0 ? `${scrollbarWidth}px` : body.style.paddingRight;
+    } else {
+      body.style.overflow = "";
+      if (menu.dataset.prevBodyPaddingRight !== undefined) {
+        body.style.paddingRight = menu.dataset.prevBodyPaddingRight;
+        delete menu.dataset.prevBodyPaddingRight;
+      } else {
+        body.style.paddingRight = "";
+      }
+    }
+  }
+
   const closeMenu = () => {
     menu.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
+    lockBodyScroll(false);
     menu.querySelectorAll("details[open]").forEach((d) => (d.open = false));
   };
 
   toggle.addEventListener("click", () => {
     const isOpen = menu.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    lockBodyScroll(isOpen);
     if (!isOpen) menu.querySelectorAll("details[open]").forEach((d) => (d.open = false));
   });
 
