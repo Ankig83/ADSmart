@@ -5660,7 +5660,7 @@
     width: 655px !important;
     height: 505px !important;
     max-width: none !important;
-    overflow: hidden;
+    overflow: visible !important;
     box-sizing: border-box;
   }
 
