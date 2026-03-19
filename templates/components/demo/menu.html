@@ -82,17 +82,28 @@
           </summary>
           <div class="demo-menu__services-pop">
             <div class="demo-menu__services-panel">
-              <!-- Десктопная группа «Наружная реклама» с подменю -->
-              <div class="demo-menu__services-row demo-menu__services-row--has-sub">
-                <a class="demo-menu__services-link" href="#outdoor">Наружная реклама</a>
-                <img class="demo-menu__services-arrow" src="{% static 'assets/icons/chevron-down-140-13284.svg' %}" alt="" aria-hidden="true" />
-                <div class="demo-menu__services-sub">
-                  <a class="demo-menu__services-link" href="{% url 'billboards' %}">Билборды</a>
-                  <a class="demo-menu__services-link" href="{% url 'transport' %}">Транспорт</a>
-                  <a class="demo-menu__services-link" href="{% url 'stops' %}">Остановки/Афиши</a>
-                  <a class="demo-menu__services-link" href="{% url 'radio' %}">Радио</a>
-                  <a class="demo-menu__services-link" href="{% url 'elevators' %}">Лифты/Домофоны</a>
-                </div>
+              <!-- Вариант 1: основная карточка -->
+              <div class="demo-menu__services-card-variant1">
+                <!-- Наружная реклама: раскрывает подменю (десктоп) -->
+                <details class="demo-menu__services-outdoor-dd demo-menu__services-outdoor-dd--desktop">
+                  <summary class="demo-menu__services-row demo-menu__services-row--has-sub">
+                    <span class="demo-menu__services-outdoor-label">Наружная реклама</span>
+                    <img class="demo-menu__services-arrow" src="{% static 'assets/icons/chevron-down-140-13284.svg' %}" width="18" height="18" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                  </summary>
+                  <div class="demo-menu__services-sub demo-menu__services-sub--desktop">
+                    <a class="demo-menu__services-link" href="{% url 'billboards' %}">Билборды</a>
+                    <a class="demo-menu__services-link" href="{% url 'transport' %}">Транспорт</a>
+                    <a class="demo-menu__services-link" href="{% url 'stops' %}">Остановки/Афиши</a>
+                    <a class="demo-menu__services-link" href="{% url 'radio' %}">Радио</a>
+                    <a class="demo-menu__services-link" href="{% url 'elevators' %}">Лифты/Домофоны</a>
+                  </div>
+                </details>
+
+                <a class="demo-menu__services-link" href="{% url 'ai_assistants' %}">AI ассистенты</a>
+                <a class="demo-menu__services-link" href="{% url 'telegram' %}">Телеграм</a>
+                <a class="demo-menu__services-link" href="{% url 'design' %}">Графический Дизайн</a>
+                <a class="demo-menu__services-link" href="{% url 'print_polygraphy' %}">Печать и полиграфия</a>
+                <a class="demo-menu__services-link" href="{% url 'production' %}">Производство наружной рекламы</a>
               </div>
             </div>
           </div>

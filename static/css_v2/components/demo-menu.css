@@ -44,6 +44,101 @@
   justify-content: space-between;
 }
 
+/* Контейнер ссылок меню (мобайл/планшет) скрыт по умолчанию;
+   JS добавляет класс .is-open по клику на бургер */
+.demo-menu__links {
+  display: none;
+}
+
+/* Общий хедер карточки меню (все брейкпоинты):
+   крестик (data-menu-close), логотип и текст ADSmart */
+.demo-menu__links.is-open {
+  position: fixed;
+}
+
+/* "Версия для компьютера" превращаем в крестик закрытия */
+.demo-menu__links.is-open a[data-menu-close] {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  color: transparent; /* спрятать текст */
+  font-size: 0;
+}
+
+.demo-menu__links.is-open a[data-menu-close]::before,
+.demo-menu__links.is-open a[data-menu-close]::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+.demo-menu__links.is-open a[data-menu-close]::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.demo-menu__links.is-open a[data-menu-close]::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.demo-menu__links.is-open a[data-menu-close]:hover {
+  background: transparent;
+}
+
+/* Заголовок карточки рядом с крестиком */
+.demo-menu__links.is-open::before {
+  content: "ADSmart";
+  position: absolute;
+  left: 116px;
+  top: 23px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: #ff7b00;
+}
+
+/* Логотип слева от текста ADSmart в шапке карточки */
+.demo-menu__links.is-open::after {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: 15px;
+  width: 46px;
+  height: 29px;
+  background-image: url("../../assets/images/image-12-cf0ca1e7.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Убрать дублирующееся "Услуги" на второй карточке (для всех брейкпоинтов):
+   прячем сам summary и убираем у него фон/маркер */
+.demo-menu__services-dd-mobile > summary {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.demo-menu__services-dd-mobile > summary::-webkit-details-marker {
+  display: none;
+}
+
+.demo-menu__services-dd-mobile[open] > summary {
+  display: none !important;
+}
+
 /* ---------------------------------------- */
 /* Mobile card menu (<= 833px) */
 /* JS toggles .is-open on [data-menu] */
@@ -66,13 +161,8 @@
     display: none !important;
   }
 
-  .demo-menu__links {
-    display: none; /* hidden by default */
-  }
-
   .demo-menu__links.is-open {
     display: block;
-    position: fixed;
     top: calc(var(--menu-height) + 20px);
     left: 22.5px;
     right: 22.5px;
@@ -90,33 +180,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
-  }
-
-  /* Заголовок карточки рядом с крестиком */
-  .demo-menu__links.is-open::before {
-    content: "ADSmart";
-    position: absolute;
-    left: 116px;
-    top: 23px;
-    font-family: var(--font-sans);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 130%;
-    letter-spacing: -0.03em;
-    color: #ff7b00;
-  }
-
-  /* Логотип слева от текста ADSmart в шапке карточки */
-  .demo-menu__links.is-open::after {
-    content: "";
-    position: absolute;
-    left: 60px;
-    top: 15px;
-    width: 46px;
-    height: 29px;
-    background-image: url("../../assets/images/image-12-cf0ca1e7.png");
-    background-size: contain;
-    background-repeat: no-repeat;
   }
 
   /* сами ссылки без прозрачного hover-фона на мобилке */
@@ -142,56 +205,19 @@
     transform: rotate(-90deg);
   }
 
-  /* "Версия для компьютера" превращаем в крестик закрытия */
-  .demo-menu__links.is-open a[data-menu-close] {
-    position: absolute;
-    top: 18px;
-    left: 18px;
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: transparent;
-    border-radius: 0;
-    color: transparent; /* спрятать текст */
-    font-size: 0;
-  }
-
-  .demo-menu__links.is-open a[data-menu-close]::before,
-  .demo-menu__links.is-open a[data-menu-close]::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 18px;
-    height: 2px;
-    background: #ffffff;
-    border-radius: 2px;
-    transform-origin: center;
-  }
-
-  .demo-menu__links.is-open a[data-menu-close]::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-  .demo-menu__links.is-open a[data-menu-close]::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-
-  .demo-menu__links.is-open a[data-menu-close]:hover {
-    background: transparent;
-  }
-
   /* Кнопка "← Услуги" внутри второй карточки: убрать белый фон/рамку */
-  .demo-menu__back-btn {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0 0 12px 0;
-    color: #ffffff;
-    font: inherit;
-    text-align: left;
-  }
+.demo-menu__back-btn {
+  background: transparent !important;
+  border: none !important;
+  padding: 0;
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  font: inherit;
+  text-align: left;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
 
   /* Когда раздел "Услуги" открыт, прячем верхний заголовок summary,
      чтобы над второй карточкой не дублировался текст "Услуги" ещё раз */
@@ -618,24 +644,82 @@
   .demo-menu__service-card:not(:first-child) {
     margin-top: -30px;
   }
+
+  /* Сбросить фон/рамку кнопки "← Услуги" и на планшете */
+  .demo-menu__back-btn {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+    color: #ffffff;
+    font: inherit;
+    text-align: left;
+  }
+
+   /* Внутри карточки-оверлея на планшете показываем только мобильную часть меню:
+      десктопные "Услуги" и ссылки прячем, чтобы не было второй строки "Услуги" на белом фоне */
+   .demo-menu__links.is-open .demo-menu__services-dd--desktop,
+   .demo-menu__links.is-open .demo-menu__link--desktop {
+     display: none !important;
+   }
+
+  /* Планшет: используем тот же контейнер .demo-menu__links, что и на мобилке,
+     но делаем карточку чуть шире и по центру экрана */
+  .demo-menu__links.is-open {
+    display: block;
+    position: fixed;
+    top: calc(var(--menu-height) + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(440px, 100% - 80px);
+    max-height: calc(100vh - var(--menu-height) - 40px);
+    z-index: 1001;
+    background: #19161c;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    padding: 56px 18px 18px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* Убрать дублирующееся "Услуги" в шапке второй карточки (как на мобилке) */
+  .demo-menu__services-dd-mobile[open] > summary {
+    display: none;
+  }
+
+  /* На всякий случай прячем дефолтный маркер summary и фон */
+  .demo-menu__links.is-open summary {
+    list-style: none;
+  }
+  .demo-menu__links.is-open summary::-webkit-details-marker {
+    display: none;
+  }
 }
 
 /* ---------------------------------------- */
 /* ДЕСКТОП (>=1440px) */
 /* ---------------------------------------- */
 @media (min-width: 1440px) {
-  /* На десктопе меняем структуру на горизонтальное меню */
+  /* Desktop header like Figma (matches current menu.html markup) */
   .demo-menu {
-    background: transparent;
+    background: #000000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .demo-menu__inner {
-    padding: 0 48px 0 178px;
-    gap: 226px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0;
   }
 
   .demo-menu__logo {
-    position: static;
+    position: absolute;
+    left: 178px; /* 1440 - 1188 - 74 */
+    top: calc(50% - 46px / 2);
     transform: none;
   }
 
@@ -649,159 +733,250 @@
     display: none;
   }
 
-  /* Десктопная навигация */
-  .demo-menu__desktop-nav {
+  /* main row */
+  .demo-menu__links {
     display: flex;
+    position: absolute;
+    top: 18px;
+    left: calc(50% - 485px / 2);
+    transform: none;
+    width: 485px;
+    height: 34px;
+    gap: 41px;
     align-items: center;
-    flex: 1;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
   }
 
-  .demo-menu__desktop-links {
+  /* если вдруг остался класс .is-open после ресайза — приводим к desktop */
+  .demo-menu__links.is-open {
     display: flex;
+    position: absolute;
+    top: 18px;
+    left: calc(50% - 485px / 2);
+    transform: none;
+    width: 485px;
+    max-height: none;
+    background: transparent;
+    padding: 0;
+    overflow: visible;
+    flex-direction: row;
     align-items: center;
     gap: 41px;
   }
 
-  .demo-menu__desktop-link {
+  /* hide mobile-only blocks inside the same container */
+  .demo-menu__services-dd-mobile,
+  .demo-menu__links-logo--mobile,
+  .demo-menu__link--mobile {
+    display: none;
+  }
+
+  /* show desktop items */
+  .demo-menu__services-dd--desktop {
+    display: block;
+  }
+
+  .demo-menu__link--desktop {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
     font-family: var(--font-sans);
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--menu-text);
-    text-decoration: none;
-    transition: var(--menu-transition);
+    font-size: 22px;
     line-height: 34px;
-    position: relative;
+    font-weight: 400;
+    letter-spacing: 0.48px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: none;
   }
 
-  .demo-menu__desktop-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--menu-accent);
-    transform: scaleX(0);
-    transition: transform 0.2s ease;
+  .demo-menu__link--desktop:hover,
+  .demo-menu__link--desktop:focus-visible {
+    background: transparent;
+    padding-left: 0;
   }
 
-  .demo-menu__desktop-link:hover::after {
-    transform: scaleX(1);
+  /* Услуги */
+  .demo-menu__services-dd--desktop > summary {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
   }
 
-  /* Десктопный дропдаун */
-  .demo-menu__desktop-services {
-    position: relative;
+  .demo-menu__services-dd--desktop > summary::-webkit-details-marker {
+    display: none;
   }
 
-  .demo-menu__desktop-services-trigger {
+  .demo-menu__services {
     display: flex;
     align-items: center;
     gap: 4px;
+    height: 34px;
+  }
+
+  .demo-menu__services .demo-menu__link-text {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0.48px;
+    color: #ffffff;
+  }
+
+  .demo-menu__services-dd--desktop .demo-menu__chevron {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+    opacity: 1;
+  }
+
+  /* avoid unstyled <details> dropdown blocks showing as white rectangles */
+  .demo-menu__services-dd--desktop .demo-menu__services-pop,
+  .demo-menu__services-dd--desktop .demo-menu__services-panel,
+  .demo-menu__services-dd--desktop .demo-menu__services-sub,
+  .demo-menu__services-dd--desktop .demo-menu__services-row--has-sub {
+    display: none;
+  }
+
+  /* when open - show desktop dropdown card */
+  .demo-menu__services-dd--desktop[open] .demo-menu__services-pop {
+    display: block;
+  }
+  .demo-menu__services-dd--desktop[open] .demo-menu__services-panel {
+    display: block;
+  }
+  /* подменю «Наружная реклама» только при раскрытии вложенного details */
+  .demo-menu__services-dd--desktop[open]
+    .demo-menu__services-outdoor-dd--desktop[open]
+    .demo-menu__services-sub--desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 306px;
+    padding-bottom: 4px;
+  }
+  .demo-menu__services-dd--desktop[open] .demo-menu__services-row--has-sub {
+    display: flex;
+  }
+
+  .demo-menu__services-dd--desktop {
+    position: relative;
+  }
+
+  .demo-menu__services-dd--desktop[open] .demo-menu__services-pop {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 0;
+    width: 454px;
+    min-height: 330px;
+    height: auto;
+    background: var(--menu-bg-card);
+    border-radius: 12px;
+    z-index: 1002;
+    box-sizing: border-box;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .demo-menu__services-card-variant1 {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 414px;
+    min-height: 0;
+    height: auto;
+    margin: 0 auto;
     background: transparent;
-    border: none;
+    border-radius: 12px;
+    /* верх/низ = внутренний отступ слева (54px); margin убран — меньше пустоты у краёв попапа */
+    padding: 54px 54px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* вложенное «Наружная реклама» */
+  .demo-menu__services-outdoor-dd--desktop {
+    width: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .demo-menu__services-outdoor-dd--desktop > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .demo-menu__services-outdoor-dd--desktop > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .demo-menu__services-row--has-sub {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 4px;
+    width: 306px;
+  }
+
+  /* Наружная реклама — как остальные пункты по высоте строки */
+  .demo-menu__services-card-variant1 .demo-menu__services-row--has-sub > .demo-menu__services-outdoor-label {
     font-family: var(--font-sans);
     font-size: 18px;
     font-weight: 400;
-    color: var(--menu-text);
-    cursor: pointer;
-    padding: 0;
-    line-height: 34px;
+    letter-spacing: 0.48px;
+    line-height: 130%;
+    color: #ffffff;
+    max-width: 176px;
+    display: flex;
+    align-items: center;
   }
 
-  .demo-menu__desktop-services-trigger .chevron {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.2s ease;
+  /* chevron для «Наружная реклама»: вправо закрыто, вниз открыто */
+  .demo-menu__services-card-variant1 .demo-menu__services-arrow {
+    width: 18px;
+    height: 18px;
     filter: brightness(0) invert(1);
+    transform: rotate(-90deg);
+    transition: transform 0.15s ease;
   }
 
-  .demo-menu__desktop-services:hover .chevron {
-    transform: rotate(180deg);
+  .demo-menu__services-outdoor-dd--desktop[open] .demo-menu__services-arrow {
+    transform: rotate(0deg);
   }
 
-  /* Выпадающая панель на десктопе */
-  .demo-menu__desktop-dropdown {
-    position: absolute;
-    top: calc(100% + 16px);
-    left: 0;
-    min-width: 520px;
-    background: var(--menu-bg-card); /* #19161c */
-    border-radius: var(--menu-radius);
-    box-shadow: var(--menu-shadow);
-    padding: 28px;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--menu-transition);
-    border: 1px solid rgba(255, 123, 0, 0.2);
-  }
-
-  .demo-menu__desktop-services:hover .demo-menu__desktop-dropdown,
-  .demo-menu__desktop-services:focus-within .demo-menu__desktop-dropdown {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* Сетка услуг на десктопе */
-  .demo-menu__desktop-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .demo-menu__desktop-card {
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 16px;
-    padding: 20px;
-    text-decoration: none;
-    transition: var(--menu-transition);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-  }
-
-  .demo-menu__desktop-card:hover {
-    background: rgba(255, 123, 0, 0.05);
-    border-color: var(--menu-accent);
-    transform: translateY(-4px);
-  }
-
-  .demo-menu__desktop-card h4 {
+  /* Все остальные ссылки внутри карточки */
+  .demo-menu__services-card-variant1 .demo-menu__services-link {
     font-family: var(--font-sans);
     font-size: 18px;
-    font-weight: 600;
-    color: var(--menu-text);
-    margin: 0 0 10px 0;
-  }
-
-  .demo-menu__desktop-card p {
-    font-family: var(--font-sans);
-    font-size: 14px;
-    color: var(--menu-text-secondary);
-    margin: 0;
-    line-height: 1.5;
-  }
-
-  /* Подменю второго уровня */
-  .demo-menu__desktop-sub {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 123, 0, 0.2);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 24px;
-  }
-
-  .demo-menu__desktop-sub-link {
-    font-family: var(--font-sans);
-    font-size: 15px;
-    color: var(--menu-text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.48px;
+    line-height: 130%;
+    color: #ffffff;
     text-decoration: none;
-    transition: var(--menu-transition);
-    white-space: nowrap;
   }
 
-  .demo-menu__desktop-sub-link:hover {
-    color: var(--menu-text);
+  .demo-menu__services-sub {
+    flex-direction: column;
+    gap: 14px;
+    width: 306px;
+  }
+
+  .demo-menu__services-dd--desktop[open] .demo-menu__chevron {
+    transform: rotate(-90deg);
   }
 }
 
