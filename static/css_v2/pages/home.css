@@ -1168,8 +1168,8 @@
 }
 
 
-/* Фиксированная pixel-верстка demo-tech19: только 1920+; на 1440–1919 всегда grid из блока ниже */
-@media (min-width: 1920px) {
+/* Desktop-19: pixel-верстка demo-tech19 (с 1440px). */
+@media (min-width: 1440px) {
   .demo-tech19 { width: 1440px; height: 751px; margin: 0 auto; position: relative; }
   .demo-tech19__inner { left: 0; top: 0; width: 1440px; height: 751px; }
 
@@ -1196,7 +1196,8 @@
     width: 117px;
     height: 108px;
     background: rgba(255, 123, 0, 0.8);
-    filter: blur(239.5px);
+    /* Figma: Frame 427321521 blur(119.75px) */
+    filter: blur(119.75px);
     position: absolute;
   }
 
@@ -1234,15 +1235,51 @@
 
   /* Rotation - РІСЃРµ СЃС‚СЂРµР»РєРё Р±РµР· РїРѕРІРѕСЂРѕС‚Р° (РѕСЂРёРіРёРЅР°Р»СЊРЅР°СЏ РѕСЂРёРµРЅС‚Р°С†РёСЏ) */
 
-  .demo-tech19__card { left: 858px; top: 200px; width: 400px; height: 500px; position: absolute; display: block; }
-  .demo-tech19__card-inner { position: absolute; inset: 0; display: block; padding: 12px 16px !important; box-sizing: border-box; }
-  .demo-tech19__card-item { position: absolute; left: 16px; right: 16px; width: auto; max-width: 368px; display: grid; gap: 4px; }
-  .demo-tech19__card-item:nth-child(1) { top: 24px; }
-  .demo-tech19__card-item:nth-child(2) { top: 180px; }
-  .demo-tech19__card-item:nth-child(3) { top: 336px; }
+  /* Right card (Figma 1440) */
+  .demo-tech19__card { left: 858px; top: 200px; width: 404px; height: 504px; position: absolute; display: block; }
 
-  .demo-tech19__card-title { font-size: 22px; line-height: 1.35; letter-spacing: -0.72px; margin: 0; color: #ff7b00; }
-  .demo-tech19__card-text { font-size: 16px; line-height: 1.5; letter-spacing: -0.54px; margin: 0; color: #ffffff; }
+  /* Content block inside card: left=28, top=38 => padding 38px 28px */
+  .demo-tech19__card-inner {
+    position: static;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 38px 28px;
+    box-sizing: border-box;
+    gap: 34px; /* gap between item frames (163 - 129 = 34) */
+  }
+
+  .demo-tech19__card-item {
+    position: static;
+    width: 348px; /* 404 - 2*28 */
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Figma frames 427321529/530: title + paragraph gap */
+  }
+
+  /* Remove unintended weight override from mobile/tablet */
+  .demo-tech19__card-item:first-child .demo-tech19__card-title { font-weight: 700; }
+
+  .demo-tech19__card-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.72px; /* -0.03em @ 24px */
+    margin: 0;
+    color: #ff7b00;
+  }
+
+  .demo-tech19__card-text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.54px; /* -0.03em @ 18px */
+    margin: 0;
+    color: #ffffff;
+    overflow-wrap: break-word;
+  }
 }
 
 /* AD (Ready--Copy: desktop 140:4903; mobile 140:5988; tablet 140:8177) */
@@ -4343,7 +4380,8 @@
 
   .demo-tech19__inner {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(360px, 400px);
+    /* Figma 1440: Right card width is 404px */
+    grid-template-columns: minmax(0, 1fr) 404px;
     grid-template-areas: "title title" "visual card";
     align-items: start;
     gap: 24px 32px;
@@ -4396,23 +4434,24 @@
     position: relative;
     left: auto;
     top: auto;
-    width: 100%;
-    max-width: 400px;
+    width: 404px;
+    max-width: none;
     min-width: 0;
-    height: 500px; /* макет: 400×500 */
+    height: 504px; /* Figma: 404×504 */
     align-self: center;
   }
 
   .demo-tech19__card-inner {
     position: relative;
     inset: auto;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px;
-    padding: 12px 16px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 38px 28px !important;
     box-sizing: border-box;
     height: 100%;
     min-height: 0;
+    justify-content: flex-start;
   }
 
   .demo-tech19__card-item {
@@ -4424,20 +4463,25 @@
     min-height: 0;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    justify-content: center;
+    gap: 18px;
+    justify-content: flex-start;
   }
 
   .demo-tech19__card-title {
-    font-size: 22px !important;
-    line-height: 1.35;
-    margin: 0 0 0;
+    font-size: 24px !important;
+    line-height: 36px !important;
+    letter-spacing: -0.72px !important;
+    font-weight: 700 !important;
+    margin: 0;
+    color: #ff7b00;
   }
 
   .demo-tech19__card-text {
-    font-size: 16px !important;
-    line-height: 1.5;
+    font-size: 18px !important;
+    line-height: 27px !important;
+    letter-spacing: -0.54px !important;
     margin: 0;
+    color: #ffffff;
   }
 
   /* demo-team (РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»С‹) вЂ" desktop РєР°Рє feature-grid: 2Г—2, РєР°СЂС‚РѕС‡РєР° 533Г—250 */
