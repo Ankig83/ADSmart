@@ -4390,6 +4390,9 @@
     padding: 60px clamp(80px, 11vw, 160px);
     box-sizing: border-box;
     position: relative;
+    /* Tech19 содержит absolute-графику, которая может визуально залезать под следующий AD.
+       Фиксим наложение клиппингом контейнера. */
+    overflow: hidden;
   }
 
   .demo-tech19__inner {
