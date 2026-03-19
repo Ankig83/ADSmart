@@ -5654,3 +5654,30 @@
 }
 
 
+/* Tech19 1440px exact (Figma 140:4902): left=655x505, card=404x505 */
+@media (min-width: 1440px) and (max-width: 1449px) {
+  .demo-tech19__left {
+    width: 655px !important;
+    height: 505px !important;
+    max-width: none !important;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .demo-tech19__card {
+    width: 404px !important;
+    height: 505px !important;
+    box-sizing: border-box;
+  }
+
+  .demo-tech19__card-inner {
+    padding: 38px 28px !important;
+    gap: 18px !important;
+    box-sizing: border-box;
+  }
+
+  .demo-tech19__card-item {
+    gap: 18px !important;
+  }
+}
+
