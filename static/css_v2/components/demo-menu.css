@@ -1,570 +1,837 @@
+/* ======================================== */
+/* MENU.CSS — ЕДИНЫЙ СТИЛЬ ДЛЯ ВСЕХ БРЕЙКПОИНТОВ */
+/* Все разрешения работают как на 440px */
+/* Карточки #19161c, каскадное перекрытие */
+/* ======================================== */
+
+:root {
+  --menu-height: 70px;
+  --menu-bg: #000000;
+  --menu-bg-card: #19161c;
+  --menu-text: #ffffff;
+  --menu-text-secondary: rgba(255, 255, 255, 0.7);
+  --menu-accent: #ff7b00;
+  --menu-accent-dim: rgba(255, 123, 0, 0.2);
+  --menu-overlay: rgba(0, 0, 0, 0.7);
+  --menu-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --menu-radius: 16px;
+  --menu-radius-sm: 12px;
+  --menu-transition: all 0.3s ease;
+}
+
+/* ---------------------------------------- */
+/* БАЗОВЫЙ СТИЛЬ (ВСЕ РАЗРЕШЕНИЯ) */
+/* ---------------------------------------- */
 .demo-menu {
-  /* From Figma: menu instance bbox 1440×70 */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 70px;
-  background: transparent;
-  position: relative;
-  z-index: 1000; /* Ensure it's above hero art */
+  height: var(--menu-height);
+  background: var(--menu-bg);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .demo-menu__inner {
-  height: 70px;
+  position: relative;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 226px; /* 478 - (178 + 74) */
-  padding-left: 178px;
-  padding-right: 24px;
+  justify-content: space-between;
+}
+
+/* ---------------------------------------- */
+/* Mobile card menu (<= 833px) */
+/* JS toggles .is-open on [data-menu] */
+/* ---------------------------------------- */
+@media (max-width: 833px) {
+  .demo-menu__inner {
+    /* сделать отступы слева/справа симметричными (440 -> 395 блок) */
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+  }
+
+  /* спрятать десктопные элементы внутри меню */
+  .demo-menu__link--desktop,
+  .demo-menu__services-dd--desktop {
+    display: none !important;
+  }
+
+  /* скрыть логотип и второй блок ссылок внизу, чтобы не было дубляжа */
+  .demo-menu__links-logo {
+    display: none !important;
+  }
+
+  .demo-menu__links {
+    display: none; /* hidden by default */
+  }
+
+  .demo-menu__links.is-open {
+    display: block;
+    position: fixed;
+    top: calc(var(--menu-height) + 20px);
+    left: 22.5px;
+    right: 22.5px;
+    transform: none;
+    max-width: none;
+    width: auto;
+    max-height: calc(100vh - var(--menu-height) - 40px);
+    z-index: 1001; /* above .demo-menu (z-index: 1000) */
+    background: #19161c; /* Deep Dark из макета */
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    padding: 56px 18px 18px; /* место под "X" слева сверху */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* Заголовок карточки рядом с крестиком */
+  .demo-menu__links.is-open::before {
+    content: "ADSmart";
+    position: absolute;
+    left: 116px;
+    top: 23px;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: -0.03em;
+    color: #ff7b00;
+  }
+
+  /* Логотип слева от текста ADSmart в шапке карточки */
+  .demo-menu__links.is-open::after {
+    content: "";
+    position: absolute;
+    left: 60px;
+    top: 15px;
+    width: 46px;
+    height: 29px;
+    background-image: url("../../assets/images/image-12-cf0ca1e7.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  /* сами ссылки без прозрачного hover-фона на мобилке */
+  .demo-menu__link {
+    background: transparent;
+  }
+
+  .demo-menu__link:hover,
+  .demo-menu__link:focus-visible {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  /* Убрать дефолтный треугольник у <summary> (иначе два маркера: и из браузера, и наш) */
+  .demo-menu__links.is-open summary {
+    list-style: none;
+  }
+  .demo-menu__links.is-open summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Стрелка "chevron-down" из макета: повернуть как нужно */
+  .demo-menu__chevron--rotate {
+    transform: rotate(-90deg);
+  }
+
+  /* "Версия для компьютера" превращаем в крестик закрытия */
+  .demo-menu__links.is-open a[data-menu-close] {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    color: transparent; /* спрятать текст */
+    font-size: 0;
+  }
+
+  .demo-menu__links.is-open a[data-menu-close]::before,
+  .demo-menu__links.is-open a[data-menu-close]::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transform-origin: center;
+  }
+
+  .demo-menu__links.is-open a[data-menu-close]::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .demo-menu__links.is-open a[data-menu-close]::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .demo-menu__links.is-open a[data-menu-close]:hover {
+    background: transparent;
+  }
+
+  /* Кнопка "← Услуги" внутри второй карточки: убрать белый фон/рамку */
+  .demo-menu__back-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+    color: #ffffff;
+    font: inherit;
+    text-align: left;
+  }
+
+  /* Когда раздел "Услуги" открыт, прячем верхний заголовок summary,
+     чтобы над второй карточкой не дублировался текст "Услуги" ещё раз */
+  .demo-menu__services-dd-mobile[open] > summary {
+    display: none;
+  }
+
+  /* Подравнять заголовок "Услуги" по макету: без лишних отступов */
+  .demo-menu__services-row--mobile {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .demo-menu__services-row--mobile .demo-menu__services-label {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.48px;
+  }
+}
+
+/* Логотип */
+.demo-menu__logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .demo-menu__logo-img {
-  width: 74px;
-  height: 46px;
   display: block;
+  width: 46px;
+  height: 29px;
+  transition: var(--menu-transition);
 }
 
-.demo-menu__nav {
+/* Бургер-кнопка */
+.demo-menu__toggle {
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  background: transparent; /* без рамки и плашки */
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  transition: var(--menu-transition);
+}
+
+.demo-menu__toggle:hover {
+  background: transparent;
+  border-color: transparent;
+}
+
+.demo-menu__burger-wrapper {
+  width: 24px;
+  height: 24px;
+  position: relative;
 }
 
 .demo-menu__burger,
 .demo-menu__burger::before,
 .demo-menu__burger::after {
   display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--menu-text);
+  border-radius: 4px;
+  transition: var(--menu-transition);
+  content: '';
+  position: absolute;
+}
+
+.demo-menu__burger {
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+}
+
+.demo-menu__burger::before {
+  top: -8px;
+  left: 0;
+}
+
+.demo-menu__burger::after {
+  top: 8px;
+  left: 0;
+}
+
+/* Анимация бургера */
+.demo-menu__toggle.is-active {
+  background: transparent;
+  border-color: transparent;
+}
+
+.demo-menu__toggle.is-active .demo-menu__burger {
+  background: transparent;
+}
+
+.demo-menu__toggle.is-active .demo-menu__burger::before {
+  top: 0;
+  transform: rotate(45deg);
+  background: var(--menu-accent);
+}
+
+.demo-menu__toggle.is-active .demo-menu__burger::after {
+  top: 0;
+  transform: rotate(-45deg);
+  background: var(--menu-accent);
+}
+
+/* Меню-панель */
+.demo-menu__panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--menu-overlay);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--menu-transition);
+  z-index: 999;
+}
+
+.demo-menu__panel.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.demo-menu__panel-inner {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  bottom: 20px;
+  width: 360px;
+  max-width: calc(100% - 40px);
+  background: var(--menu-bg-card); /* #19161c */
+  border-radius: var(--menu-radius);
+  box-shadow: var(--menu-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: var(--menu-transition);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.demo-menu__panel.is-open .demo-menu__panel-inner {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Шапка панели */
+.demo-menu__panel-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.demo-menu__panel-logo {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--menu-accent);
+  text-decoration: none;
+  background: rgba(255, 123, 0, 0.1);
+  padding: 6px 16px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 123, 0, 0.2);
+}
+
+.demo-menu__panel-close {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: var(--menu-transition);
+}
+
+.demo-menu__panel-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--menu-accent);
+  transform: rotate(90deg);
+}
+
+.demo-menu__panel-close::before,
+.demo-menu__panel-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 18px;
   height: 2px;
-  background: var(--text);
-  margin: 0 auto;
-  content: "";
+  background: var(--menu-text);
   border-radius: 2px;
-  position: relative;
-}
-.demo-menu__burger::before { top: -6px; position: relative; }
-.demo-menu__burger::after { top: 4px; position: relative; }
-
-.demo-menu__links {
-  display: none;
-  align-items: center;
-  gap: 41px; /* itemSpacing */
-  font-family: var(--font-sans);
-  font-size: 22px;          /* Figma */
-  font-weight: 400;         /* Figma */
-  line-height: 96px;        /* Figma (as-is) */
-  letter-spacing: 0.48px;   /* Figma: 0.48 */
-  color: #ffffff;           /* Figma */
+  transition: var(--menu-transition);
 }
 
-.demo-menu__links.is-open {
+.demo-menu__panel-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.demo-menu__panel-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.demo-menu__panel-close:hover::before,
+.demo-menu__panel-close:hover::after {
+  background: var(--menu-accent);
+}
+
+/* Контент панели */
+.demo-menu__panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 16px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 70px;
-  padding: 16px 24px;
-  background: rgba(25, 22, 28, 0.98);
+  gap: 4px;
+  -webkit-overflow-scrolling: touch;
 }
 
+/* Основные ссылки */
 .demo-menu__link {
-  color: inherit;
-  text-decoration: none;
-  outline: none;
-}
-.demo-menu__link:focus-visible {
-  box-shadow: 0 0 0 4px rgba(255, 123, 0, 0.25);
-  border-radius: 8px;
-}
-
-.demo-menu__services {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px; /* Frame 14 itemSpacing */
-}
-
-.demo-menu__chevron {
-  width: 18px;
-  height: 18px;
   display: block;
-}
-
-/* Services dropdown (Ready--Copy components: 140:13593 / 140:13603) */
-.demo-menu__services-dd { position: relative; }
-.demo-menu__services-summary { list-style: none; cursor: pointer; }
-.demo-menu__services-summary::-webkit-details-marker { display: none; }
-
-.demo-menu__services-dd[open] .demo-menu__chevron { transform: rotate(180deg); }
-
-.demo-menu__services-pop {
-  display: none;
-  position: absolute;
-  top: 70px; /* below header */
-  left: -54px; /* component panel starts at x=54 */
-  width: 414px;
-  height: 330px;
-  background: #000000;
-  border-radius: 12px;
-  z-index: 100;
-}
-.demo-menu__services-dd[open] .demo-menu__services-pop { display: block; }
-
-.demo-menu__services-panel {
-  position: absolute;
-  left: 54px;
-  top: 44px;
-  width: 306px;
-  height: 242px;
-}
-
-.demo-menu__services-link {
-  display: block;
-  width: 306px;
+  padding: 14px 20px;
   font-family: var(--font-sans);
   font-size: 18px;
-  font-weight: 400;
-  line-height: 23px;
-  letter-spacing: 0.48px;
-  color: #ffffff;
+  font-weight: 500;
+  color: var(--menu-text);
   text-decoration: none;
-  padding: 6px 0;
-}
-.demo-menu__services-link--wrap { padding-top: 2px; padding-bottom: 2px; }
-
-.demo-menu__services-link:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.9);
-  outline-offset: 4px;
-  border-radius: 8px;
+  border-radius: var(--menu-radius-sm);
+  transition: var(--menu-transition);
 }
 
-.demo-menu__services-row { position: relative; width: 306px; height: 34px; }
+.demo-menu__link:hover,
+.demo-menu__link:focus-visible {
+  background: rgba(255, 255, 255, 0.05);
+  padding-left: 26px;
+  outline: none;
+}
 
-/* Outdoor dd (Наружная реклама) — desktop hover submenu */
-.demo-menu__outdoor-dd { position: relative; width: 306px; height: 34px; }
-.demo-menu__outdoor-dd summary { list-style: none; cursor: pointer; }
-.demo-menu__outdoor-dd summary::-webkit-details-marker { display: none; }
-.demo-menu__services-summary-inner {
-  display: inline-flex;
+/* Секция услуг */
+.demo-menu__services {
+  margin-top: 8px;
+}
+
+.demo-menu__services-trigger {
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
   align-items: center;
-  gap: 4px;
-  font: inherit;
-  color: inherit;
-  padding: 0;
+  justify-content: space-between;
+  background: rgba(255, 123, 0, 0.05);
+  border: 1px solid rgba(255, 123, 0, 0.1);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--menu-text);
+  cursor: pointer;
+  border-radius: var(--menu-radius-sm);
+  transition: var(--menu-transition);
 }
 
-.demo-menu__services-arrow {
-  position: absolute;
-  right: 0;
-  top: 8px; /* visually centered in 34px row */
-  width: 18px;
-  height: 18px;
-  display: block;
-  transform: rotate(-90deg); /* Figma rotation: -1.5707963705062848 radians = -90deg */
+.demo-menu__services-trigger:hover {
+  background: rgba(255, 123, 0, 0.1);
+  border-color: var(--menu-accent);
 }
 
-/* Main list vertical spacing matches Figma (y: 0, 48, 85, 122, 159, 196) */
-.demo-menu__services-panel > .demo-menu__outdoor-dd { position: absolute; left: 0; top: 0; }
-.demo-menu__services-panel > .demo-menu__services-link:nth-of-type(1) { position: absolute; left: 0; top: 48px; height: 23px; padding: 0; line-height: 23px; }
-.demo-menu__services-panel > .demo-menu__services-link:nth-of-type(2) { position: absolute; left: 0; top: 85px; height: 23px; padding: 0; line-height: 23px; }
-.demo-menu__services-panel > .demo-menu__services-link:nth-of-type(3) { position: absolute; left: 0; top: 122px; height: 23px; padding: 0; line-height: 23px; }
-.demo-menu__services-panel > .demo-menu__services-link:nth-of-type(4) { position: absolute; left: 0; top: 159px; height: 23px; padding: 0; line-height: 23px; }
-.demo-menu__services-panel > .demo-menu__services-link:nth-of-type(5) { position: absolute; left: 0; top: 196px; height: 46px; padding: 0; line-height: 23px; }
-
-/* Submenu (Ready--Copy: 140:13603) */
-.demo-menu__services-sub {
-  display: none;
-  position: absolute;
-  left: 306px;
-  top: 0;
-  width: 414px;
-  height: 259px;
-  background: #000000;
-  border-radius: 12px;
+.demo-menu__services-trigger .chevron {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
 }
-.demo-menu__services-row--has-sub:hover .demo-menu__services-sub,
-.demo-menu__services-row--has-sub:focus-within .demo-menu__services-sub,
-.demo-menu__outdoor-dd:hover .demo-menu__services-sub,
-.demo-menu__outdoor-dd:focus-within .demo-menu__services-sub {
+
+.demo-menu__services-trigger.is-open .chevron {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* КАСКАДНЫЕ КАРТОЧКИ УСЛУГ */
+.demo-menu__services-grid {
+  margin: 12px 0 8px 12px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 12px 0;
-}
-.demo-menu__services-row--has-sub .demo-menu__services-sub .demo-menu__services-link,
-.demo-menu__outdoor-dd .demo-menu__services-sub .demo-menu__services-link {
-  padding: 0;
-  line-height: 23px;
+  position: relative;
 }
 
-/* Mobile: max 833px — Figma Default 346×547 */
-@media (max-width: 833px) {
-  .demo-menu__services-dd--desktop,
-  .demo-menu__link--desktop {
-    display: none !important;
-  }
+.demo-menu__service-card {
+  background: var(--menu-bg-card); /* #19161c */
+  border-radius: var(--menu-radius-sm);
+  padding: 18px;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
 
-  .demo-menu {
-    width: 100% !important;
-    max-width: 100vw !important;
-    height: 70px !important;
-    margin: 0 auto !important;
-    background: #000000 !important;
-    box-sizing: border-box !important;
-  }
+/* КАСКАДНЫЙ ЭФФЕКТ */
+.demo-menu__service-card:not(:first-child) {
+  margin-top: -30px;
+}
 
-  .demo-menu__inner {
-    width: 100% !important;
-    padding: 0 18px !important;
-    display: block !important;
-    position: relative !important;
-    height: 70px !important;
-  }
+.demo-menu__service-card:nth-child(1) { z-index: 5; }
+.demo-menu__service-card:nth-child(2) { z-index: 4; }
+.demo-menu__service-card:nth-child(3) { z-index: 3; }
+.demo-menu__service-card:nth-child(4) { z-index: 2; }
+.demo-menu__service-card:nth-child(5) { z-index: 1; }
 
-  .demo-menu__logo {
-    position: absolute !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    top: 50% !important;
+.demo-menu__service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  border-color: var(--menu-accent);
+  background: #1e1b22;
+}
+
+.demo-menu__service-card:active {
+  transform: translateY(-4px) scale(1.01);
+}
+
+.demo-menu__service-title {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--menu-text);
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.demo-menu__service-title .badge {
+  font-size: 11px;
+  padding: 4px 10px;
+  background: var(--menu-accent);
+  color: #000;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.demo-menu__service-desc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--menu-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Подменю */
+.demo-menu__submenu {
+  margin: 16px 0 8px 16px;
+  padding: 12px 0 12px 16px;
+  border-left: 2px dashed var(--menu-accent);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 0 16px;
+}
+
+.demo-menu__submenu-link {
+  display: block;
+  padding: 10px 16px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--menu-text-secondary);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: var(--menu-transition);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.demo-menu__submenu-link:hover {
+  background: rgba(255, 123, 0, 0.1);
+  color: var(--menu-text);
+  padding-left: 24px;
+}
+
+/* ---------------------------------------- */
+/* ПЛАНШЕТ (834px - 1439px) */
+/* ---------------------------------------- */
+@media (min-width: 834px) {
+  /* Сохраняем ту же структуру, только увеличиваем размеры */
+  .demo-menu__panel-inner {
+    width: 400px;
+    left: 32px;
   }
 
   .demo-menu__logo-img {
-    width: 46px !important;
-    height: 29px !important;
+    width: 58px;
+    height: 36px;
   }
 
-  .demo-menu__toggle {
-    position: absolute !important;
-    left: 18px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 24px !important;
-    height: 24px !important;
-    min-width: 24px !important;
-    min-height: 24px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+  /* Каскад остается таким же */
+  .demo-menu__service-card:not(:first-child) {
+    margin-top: -30px;
+  }
+}
+
+/* ---------------------------------------- */
+/* ДЕСКТОП (>=1440px) */
+/* ---------------------------------------- */
+@media (min-width: 1440px) {
+  /* На десктопе меняем структуру на горизонтальное меню */
+  .demo-menu {
+    background: transparent;
   }
 
-  /* Panel: Figma Property 1=Default — 346×547, left 20px top 20px */
-  .demo-menu__links {
-    font-family: var(--font-sans);
-    font-size: 18px !important;
-    font-weight: 500 !important;
-    line-height: 130% !important;
-    letter-spacing: 0.48px !important;
-    color: #ffffff !important;
+  .demo-menu__inner {
+    padding: 0 48px 0 178px;
+    gap: 226px;
   }
 
-  .demo-menu__links.is-open {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    position: fixed !important;
-    left: 20px !important;
-    top: 20px !important;
-    width: 346px !important;
-    min-height: 547px !important;
-    max-height: calc(100vh - 40px) !important;
-    padding: 0 !important;
-    gap: 14px !important;
-    background: #000000 !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    z-index: 999 !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Frame 427321901: left 18px top 78px, gap 14px */
-  .demo-menu__links.is-open .demo-menu__link,
-  .demo-menu__links.is-open .demo-menu__services-row--mobile {
-    width: 306px !important;
-    margin-left: 18px !important;
-    margin-right: 18px !important;
-  }
-  .demo-menu__links.is-open > .demo-menu__link:first-child {
-    margin-top: 78px !important;
-  }
-  .demo-menu__links.is-open > .demo-menu__link,
-  .demo-menu__links.is-open > .demo-menu__services-row--mobile {
-    height: 23px !important;
-    min-height: 23px !important;
-  }
-  .demo-menu__links.is-open >   .demo-menu__services-row--mobile {
-    height: 34px !important;
-    min-height: 34px !important;
-  }
-
-  /* Услуги submenu — overlays default panel, no offset */
-  .demo-menu__services-dd-mobile {
+  .demo-menu__logo {
     position: static;
-    width: 100%;
-    align-self: stretch;
-  }
-  .demo-menu__services-dd-mobile summary {
-    list-style: none;
-    cursor: pointer;
-  }
-  .demo-menu__services-dd-mobile summary::-webkit-details-marker {
-    display: none;
-  }
-  .demo-menu__services-pop-mobile {
-    display: none;
-  }
-  .demo-menu__services-dd-mobile[open] .demo-menu__services-pop-mobile {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    min-height: 100% !important;
-    padding: 78px 18px 18px 18px !important;
-    gap: 14px !important;
-    background: #000000 !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    z-index: 1 !important;
-  }
-  .demo-menu__services-pop-mobile .demo-menu__link,
-  .demo-menu__services-pop-mobile .demo-menu__services-row--mobile {
-    width: 306px !important;
-    max-width: 306px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  .demo-menu__services-pop-mobile .demo-menu__services-row--outdoor {
-    font-weight: 400 !important;
-  }
-  .demo-menu__services-sub-mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    padding-left: 0;
-  }
-  .demo-menu__outdoor-dd-mobile summary {
-    list-style: none;
-    cursor: pointer;
-  }
-  .demo-menu__outdoor-dd-mobile summary::-webkit-details-marker {
-    display: none;
-  }
-  .demo-menu__outdoor-dd-mobile[open] .demo-menu__chevron--rotate {
-    transform: rotate(0deg) !important;
+    transform: none;
   }
 
-  .demo-menu__back-btn {
-    appearance: none;
-    border: none;
-    background: none;
-    padding: 0;
-    font: inherit;
-    color: #ffffff;
-    font-weight: 400;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
+  .demo-menu__logo-img {
+    width: 74px;
+    height: 46px;
+  }
+
+  .demo-menu__toggle,
+  .demo-menu__panel {
+    display: none;
+  }
+
+  /* Десктопная навигация */
+  .demo-menu__desktop-nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .demo-menu__desktop-links {
+    display: flex;
+    align-items: center;
+    gap: 41px;
+  }
+
+  .demo-menu__desktop-link {
     font-family: var(--font-sans);
     font-size: 18px;
-    letter-spacing: 0.48px;
+    font-weight: 400;
+    color: var(--menu-text);
+    text-decoration: none;
+    transition: var(--menu-transition);
+    line-height: 34px;
+    position: relative;
   }
 
-  .demo-menu__services-row--mobile {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 4px !important;
-  }
-  .demo-menu__services-label {
-    font-weight: 400 !important;
-    color: #ffffff !important;
-  }
-  .demo-menu__chevron--rotate {
-    transform: rotate(-90deg) !important;
+  .demo-menu__desktop-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--menu-accent);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
   }
 
-  .demo-menu__links-logo--mobile {
-    position: absolute !important;
-    left: 116px !important;
-    top: 23px !important;
-    font-weight: 700 !important;
-    font-size: 18px !important;
-    letter-spacing: -0.03em !important;
-    color: #ff7b00 !important;
-    text-decoration: none !important;
-    margin: 0 !important;
+  .demo-menu__desktop-link:hover::after {
+    transform: scaleX(1);
   }
 
-  /* Burger → X when menu open */
-  .demo-menu__nav:has(.demo-menu__links.is-open) .demo-menu__toggle .demo-menu__burger {
-    background: transparent !important;
+  /* Десктопный дропдаун */
+  .demo-menu__desktop-services {
+    position: relative;
   }
-  .demo-menu__nav:has(.demo-menu__links.is-open) .demo-menu__toggle .demo-menu__burger::before {
-    top: 0;
-    transform: rotate(45deg);
+
+  .demo-menu__desktop-services-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--menu-text);
+    cursor: pointer;
+    padding: 0;
+    line-height: 34px;
   }
-  .demo-menu__nav:has(.demo-menu__links.is-open) .demo-menu__toggle .demo-menu__burger::after {
-    top: -2px;
-    transform: rotate(-45deg);
+
+  .demo-menu__desktop-services-trigger .chevron {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+    filter: brightness(0) invert(1);
+  }
+
+  .demo-menu__desktop-services:hover .chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Выпадающая панель на десктопе */
+  .demo-menu__desktop-dropdown {
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 0;
+    min-width: 520px;
+    background: var(--menu-bg-card); /* #19161c */
+    border-radius: var(--menu-radius);
+    box-shadow: var(--menu-shadow);
+    padding: 28px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--menu-transition);
+    border: 1px solid rgba(255, 123, 0, 0.2);
+  }
+
+  .demo-menu__desktop-services:hover .demo-menu__desktop-dropdown,
+  .demo-menu__desktop-services:focus-within .demo-menu__desktop-dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Сетка услуг на десктопе */
+  .demo-menu__desktop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .demo-menu__desktop-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    padding: 20px;
+    text-decoration: none;
+    transition: var(--menu-transition);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .demo-menu__desktop-card:hover {
+    background: rgba(255, 123, 0, 0.05);
+    border-color: var(--menu-accent);
+    transform: translateY(-4px);
+  }
+
+  .demo-menu__desktop-card h4 {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--menu-text);
+    margin: 0 0 10px 0;
+  }
+
+  .demo-menu__desktop-card p {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--menu-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Подменю второго уровня */
+  .demo-menu__desktop-sub {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 123, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+
+  .demo-menu__desktop-sub-link {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: var(--menu-text-secondary);
+    text-decoration: none;
+    transition: var(--menu-transition);
+    white-space: nowrap;
+  }
+
+  .demo-menu__desktop-sub-link:hover {
+    color: var(--menu-text);
   }
 }
 
-@media (min-width: 834px) {
-  .demo-menu__services-dd--desktop { display: block !important; }
-  .demo-menu__link--desktop { display: block !important; }
-  .demo-menu__link--mobile,
-  .demo-menu__services-row--mobile,
-  .demo-menu__links-logo--mobile {
-    display: none !important;
-  }
+/* ---------------------------------------- */
+/* СКРОЛЛБАР */
+/* ---------------------------------------- */
+.demo-menu__panel-content::-webkit-scrollbar {
+  width: 4px;
 }
 
-/* Tablet: 834-1439px */
-@media (min-width: 834px) and (max-width: 1439px) {
-  /* Меню для разрешения 834-1439px — Figma 140:8232, единый на всех страницах */
-  /* Figma node 140:8080: width=834px, height=70px */
-  .demo-menu {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    height: 70px !important;
-    background: rgba(0, 0, 0, 0.6) !important;
-    box-sizing: border-box !important;
-  }
-
-  .demo-menu__inner {
-    width: 100% !important;
-    height: 70px !important;
-    padding: 0 !important;
-    display: block !important;
-    position: relative !important;
-  }
-
-  /* Логотип: из Figma layout_QNNULG - x=388, y=17, w=58, h=36 */
-  .demo-menu__logo {
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    top: 17px !important;
-    display: block !important;
-  }
-
-  .demo-menu__logo-img {
-    width: 58px !important;
-    height: 36px !important;
-  }
-
-  /* Бургер меню: из Figma layout_4OR009 - x=16, y=23, w=24, h=24 */
-  .demo-menu__toggle {
-    position: absolute !important;
-    left: clamp(16px, 2vw, 24px) !important;
-    top: 23px !important;
-    width: 24px !important;
-    height: 24px !important;
-    display: inline-flex !important;
-  }
-
-  .demo-menu__burger,
-  .demo-menu__burger::before,
-  .demo-menu__burger::after {
-    width: 20px !important;
-    height: 2px !important;
-  }
-
-  .demo-menu__links {
-    display: none !important;
-  }
-
-  .demo-menu__links.is-open {
-    display: flex !important;
-    position: absolute !important;
-    left: clamp(16px, 2vw, 24px) !important;
-    right: auto !important;
-    top: 70px !important;
-    width: 306px !important;
-    padding: 16px !important;
-    gap: 12px !important;
-    border-radius: 12px !important;
-    background: rgba(25, 22, 28, 0.98) !important;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35) !important;
-    align-items: flex-start !important;
-    flex-direction: column !important;
-  }
+.demo-menu__panel-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
 }
 
-/* Tablet menu hard-fix */
-@media (min-width: 834px) and (max-width: 1439px) {
-  .demo-menu {
-    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
-  }
-
-  .demo-menu__inner {
-    width: 100% !important;
-  }
+.demo-menu__panel-content::-webkit-scrollbar-thumb {
+  background: var(--menu-accent);
+  border-radius: 4px;
 }
 
-@media (min-width: 1440px) {
-  /* Pixel-perfect header layout (Ready--Copy node 140:13532): */
-  .demo-menu { width: 1440px !important; margin: 0 auto !important; }
-
-  .demo-menu__inner {
-    display: flex !important;
-    align-items: center !important;
-    width: 1440px !important;
-    height: 70px !important;
-    padding-left: 178px !important;
-    padding-right: 24px !important;
-    gap: 226px !important;
-  }
-
-  .demo-menu__logo {
-    display: flex !important;
-    align-items: center !important;
-    flex-shrink: 0 !important;
-  }
-
-  .demo-menu__logo-img {
-    width: 74px !important;
-    height: 46px !important;
-    display: block !important;
-    vertical-align: middle !important;
-  }
-
-  .demo-menu__toggle { display: none !important; }
-
-  .demo-menu__nav {
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  /* Frame 15 bbox: x=478 w=483 h=34 — выровнено с логотипом через flex */
-  .demo-menu__links {
-    display: flex !important;
-    align-items: center !important;
-    gap: 41px !important;
-    background: transparent !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  .demo-menu__link { 
-    line-height: 34px !important; 
-    font-size: 22px !important;
-    white-space: nowrap !important;
-    flex-shrink: 0 !important;
-  }
-
-  /* Услуги (Frame 14) - первый элемент с chevron */
-  .demo-menu__services {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    flex-shrink: 0 !important;
-  }
+.demo-menu__panel-content::-webkit-scrollbar-thumb:hover {
+  background: #ff944d;
 }
 
+/* Mobile (440px): cards background from dark -> grey */
+@media (max-width: 440px) {
+  .demo-menu__service-card {
+    background: #2f2c36;
+  }
 
+  .demo-menu__service-card:hover {
+    background: #3b3843;
+  }
+}

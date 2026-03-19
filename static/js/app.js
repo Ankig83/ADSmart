@@ -71,6 +71,14 @@ function initMenu() {
       if (dd) dd.removeAttribute("open");
     });
   });
+
+  // Close menu on click outside
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!menu.classList.contains("is-open")) return;
+    if (menu.contains(target) || toggle.contains(target)) return;
+    closeMenu();
+  });
 }
 
 function initFaqAccordion() {

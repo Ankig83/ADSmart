@@ -457,3 +457,206 @@
     margin: 0 auto !important;
   }
 }
+/* FINAL LOCK (834-1439): Телеграм — все секции кроме Hero */
+@media (min-width: 834px) and (max-width: 1439px) {
+  .demo-tg {
+    width: min(100%, clamp(834px, 92vw, 1160px)) !important;
+    margin: 0 auto !important;
+    background: #000000 !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Hero — как AI Assistants (140:7680 Blok1 Figma 834px) */
+  .hero-with-figure {
+    min-height: 485px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  /* overlay — в hero-with-figure.css (общий для всех 834) */
+  .hero-with-figure__bg-img--mobile {
+    display: none !important;
+  }
+  .hero-with-figure__bg-img--desktop {
+    display: block !important;
+  }
+  .hero-with-figure__content {
+    position: absolute !important;
+    left: 32px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 462px !important;
+    max-width: calc(100% - 64px) !important;
+    padding: 0 !important;
+    gap: 18px !important;
+  }
+  .hero-with-figure__content .hero-with-figure__actions {
+    margin-top: 18px !important;
+  }
+  .hero-with-figure__title {
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.48px !important;
+    margin: 0 !important;
+  }
+  .hero-with-figure__subtitle {
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #c4c4c4 !important;
+    margin: 0 !important;
+    max-width: 439px !important;
+  }
+  .hero-with-figure__actions {
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+  .hero-with-figure__actions .button--primary {
+    width: 196px !important;
+    height: 56px !important;
+    padding: 16px 32px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.02em !important;
+    background: #14f195 !important;
+    color: #000000 !important;
+    border-radius: 64px !important;
+  }
+  .hero-with-figure__actions .button--outline {
+    width: 164px !important;
+    height: 52px !important;
+    padding: 16px 32px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 64px !important;
+    color: #ffffff !important;
+  }
+  .hero-with-figure__image-wrap {
+    display: none !important;
+  }
+
+  /* Why (3 cards) */
+  /* WHY — перенесён в css_v2/components/why-cards.css (834 стили добавятся позже) */
+
+  /* Approach — css_v2/components/approach-cards.css */
+  /* Benefits — css_v2/components/benefits.css */
+  /* Expertise — css_v2/components/comparison-expertise.css */
+  /* Contact — CTA кнопки 834: вертикально, расстояние 12px */
+  .cta-form--telegram .cta-form__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+/*
+  ═══════════════════════════════════════════════════════════════════════════════
+  TELEGRAM PAGE — Mobile ≤833px  Figma 140:6684 (440×5404)
+  #2 Hero | Blok2 Why | Blok3 Approach | Block4 Benefits | Blok5 Comparison | Blok Contact
+  clamp(min, calc(X * 100vw / 440), max)
+  ═══════════════════════════════════════════════════════════════════════════════
+*/
+@media (max-width: 833px) {
+  .app { background: #000000 !important; }
+  .app__main { padding: 0 !important; }
+
+  .demo-tg {
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 auto !important;
+    background: #000000 !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hero — hero-with-figure (css_v2), те же паттерны что AI */
+  .hero-with-figure {
+    width: 100% !important;
+    min-height: 485px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .hero-with-figure__bg { position: absolute !important; inset: 0 !important; z-index: 0 !important; }
+  .hero-with-figure__bg-img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; }
+  .hero-with-figure__bg-img--desktop { display: none !important; }
+  .hero-with-figure__bg-img--mobile { display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .hero-with-figure__overlay {
+    position: absolute !important; inset: 0 !important;
+    background: linear-gradient(90deg, rgba(0,0,0,0.8) 4.38%, rgba(0,0,0,0.619) 28.02%, rgba(0,0,0,0.4) 56.72%, rgba(0,0,0,0.1) 66.25%) !important;
+    z-index: 1 !important;
+  }
+  .hero-with-figure__content {
+    position: absolute !important; left: 16px !important; top: 50% !important; transform: translateY(-50%) !important;
+    width: min(408px, calc(100% - 32px)) !important; max-width: 408px !important; margin: 0 !important; padding: 0 !important;
+    z-index: 3 !important; display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 36px !important; text-align: left !important;
+  }
+  .hero-with-figure__title { width: 100% !important; margin: 0 !important; font-family: 'Poppins', var(--font-sans) !important; font-weight: 800 !important; font-size: 32px !important; line-height: 1.3 !important; letter-spacing: 0.48px !important; color: #fff !important; }
+  .hero-with-figure__subtitle { width: 100% !important; max-width: 277px !important; margin: 0 !important; font-family: 'Poppins', var(--font-sans) !important; font-weight: 400 !important; font-size: 16px !important; line-height: 24px !important; color: #c4c4c4 !important; }
+  .demo-tg .hero-with-figure__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  /* Hero Telegram 440: две CTA‑кнопки в один ряд, как на Home/AI hero */
+  .demo-tg .hero-with-figure__actions .button--lg {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+    padding: 16px 20px !important;
+    height: 52px !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    border-radius: 64px !important;
+  }
+  /* AI-фигура: 30% обрезка справа, прижата вправо, по центру по вертикали */
+  .hero-with-figure__image-wrap {
+    display: block !important; position: absolute !important; right: -30% !important; top: 50% !important; transform: translateY(-50%) !important; left: auto !important;
+    width: clamp(260px, 75vw, 420px) !important;
+    height: clamp(260px, 75vw, 420px) !important;
+  }
+
+/* WHY — перенесён в css_v2/components/why-cards.css */
+
+  /* Approach — перенесён в css_v2/components/approach-cards.css */
+  /* Benefits — css_v2/components/benefits.css */
+  /* Expertise — css_v2/components/comparison-expertise.css */
+  /* Contact — CTA кнопки 440: распределены во фрейме */
+  .cta-form--telegram .cta-form__actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 12px;
+    width: 100%;
+  }
+  .cta-form--telegram .cta-form__actions .button--primary {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    padding: 12px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+    text-align: center;
+    margin-right: 6px;
+  }
+  .cta-form--telegram .cta-form__actions .button--outline {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    padding: 12px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: normal;
+    text-align: center;
+    margin-left: 6px;
+  }
+}
