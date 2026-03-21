@@ -1,6 +1,11 @@
 /* hero-full-bleed.css — Hero ВСЕГДА 100vw на ВСЕХ страницах.
    Подключается последним. !important перебивает hero.css 1440 и page overflow. */
 
+/* Фикс. меню (70px) — main начинается под ним, Hero не перекрывается */
+.app:has(.demo-menu) .app__main {
+  padding-top: var(--menu-height, 70px) !important;
+}
+
 .hero,
 .hero-with-figure {
   width: 100vw !important;
