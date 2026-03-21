@@ -1,0 +1,22 @@
+/*
+  Stops — Mobile < 440px.
+  Hero кнопки в одну строку.
+*/
+@media (max-width: 439px) {
+  .stops-page .hero--stops .hero__actions {
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .stops-page .hero--stops .hero__actions .button--primary,
+  .stops-page .hero--stops .hero__actions .button--outline {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding: 16px 12px !important;
+    height: 52px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+}
