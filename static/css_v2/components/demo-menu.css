@@ -779,6 +779,8 @@
   .demo-menu__services-dd--desktop {
     display: block;
     flex: 0 0 auto; /* avoid shrinking that could force other header links to wrap */
+    height: 34px;
+    align-self: center;
   }
 
   .demo-menu__link--desktop {
@@ -813,6 +815,7 @@
     border-radius: 0;
     display: flex;
     align-items: center;
+    height: 34px;
   }
 
   .demo-menu__services-dd--desktop > summary::-webkit-details-marker {
@@ -824,6 +827,7 @@
     align-items: center;
     gap: 4px;
     height: 34px;
+    margin-top: 0;
   }
 
   .demo-menu__services .demo-menu__link-text {

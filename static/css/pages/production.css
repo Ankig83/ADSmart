@@ -51,12 +51,29 @@
     gap: 40px;
     min-height: 485px;
     padding: 0;
+    position: relative;
+  }
+  /* Прямоугольник свечения как у hero-with-figure (Home, Design, AI) */
+  .hero--production::before {
+    content: "";
+    position: absolute;
+    left: 59.97%;
+    right: -3.95%;
+    top: 76px;
+    height: 642px;
+    background: rgba(255, 123, 0, 0.3);
+    filter: blur(250px);
+    border-radius: 100px;
+    pointer-events: none;
+    z-index: 0;
   }
   .hero--production .container {
     flex: 0 1 560px;
     max-width: 560px;
     padding: 0;
     margin: 0;
+    position: relative;
+    z-index: 1;
   }
   .hero--production .hero__content {
     padding: 184px 0 150px;
@@ -84,6 +101,7 @@
     margin-right: -24px;
     align-items: center;
     justify-content: center;
+    z-index: 1;
   }
   .hero--production .hero__img {
     width: 100%;
